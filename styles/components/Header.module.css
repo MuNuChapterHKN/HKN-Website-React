@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    height: 130px;
+    background: #fff;
+    width: 100%;
+}
+
+.logo {
+    margin-left: 15px;
+}
+
+.menu {
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.active {
+    color: darkgoldenrod;
+    font-size: 18px;
+    background: rgba(0,0,0,0);
+    border-width: 0;
+}
+
+.inactive {
+    color: grey;
+    font-size: 18px;
+    background: rgba(0,0,0,0);
+    border-width: 0;
+}
