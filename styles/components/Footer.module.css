@@ -1,0 +1,37 @@
+.footer {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.columnLogo {
+    display:flex;
+    flex-direction: column;
+    margin-right: 20px;
+    margin-left: 90px;
+}
+
+.column {
+    display:flex;
+    flex-direction: column;
+    margin-right: 90px;
+}
+
+.columnTitle {
+    display:flex;
+    flex-direction: column;
+    height: 51px;
+    justify-content: center;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 3px;
+}

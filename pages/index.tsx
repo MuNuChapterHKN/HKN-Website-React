@@ -5,6 +5,7 @@ import styles from '@/styles/Home.module.css'
 import {useRouter} from "next/router";
 import Header from "../components/Header";
 import BackgroundPolygons from "@/components/BackgroundPolygons";
+import Footer from "@/components/Footer";
 
 const inconsolata = Inconsolata({subsets: ['latin']})
 
@@ -24,6 +25,10 @@ export default function Home() {
 
                 <Header/>
 
+                <div className={styles.ideogramma}>
+                    <Image  src="/hkn_ideogramma_blu.svg" alt="HKN PoliTO Logo" width={250} height={250}/>
+                </div>
+
                 <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
                 <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
                 <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
@@ -50,6 +55,8 @@ export default function Home() {
                 <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
                 <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
                 <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+
+                <Footer/>
             </main>
         </>
     )

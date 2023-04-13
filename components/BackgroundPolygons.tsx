@@ -16,7 +16,7 @@ const Header = () => {
         triangleLeft1: `translateY(-${scrollY / 3}px)`,
         triangleLeft2: `translateY(-${scrollY / 4}px)`,
     };
-    
+
     return (
         <div className={styles.backgroundPolygons}>
             <div className={styles.triangleRight1} style={{ transform: triangleStyles.triangleRight1 }}></div>

@@ -13,22 +13,30 @@
 
 .menu {
     display: flex;
-    width: 60%;
+    width: 40%;
     justify-content: space-between;
     flex-direction: row;
 }
 
 .active {
-    color: #d99e0b;
-    font-size: 17px;
+    font-family: "Montserrat";
     background: rgba(0,0,0,0);
     border-width: 0;
+    color: white;
+    font-size: 16px;
+    text-decoration: underline;
+    text-underline-position: under;
 }
 
 .inactive {
-    color: white;
-    font-size: 16px;
+    font-family: "Montserrat";
     background: rgba(0,0,0,0);
     border-width: 0;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
 }
 
+.headerSpace {
+    width: 115px;
+}
