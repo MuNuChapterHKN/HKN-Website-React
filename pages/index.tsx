@@ -26,7 +26,7 @@ export default function Home() {
                 <Header/>
 
                 <div className={styles.ideogramma}>
-                    <Image  src="/hkn_ideogramma_blu.svg" alt="HKN PoliTO Logo" width={250} height={250}/>
+                    <Image  src="/hkn_ideogramma_blu.svg" alt="HKN PoliTO Logo" width={350} height={350}/>
                 </div>
 
                 <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>

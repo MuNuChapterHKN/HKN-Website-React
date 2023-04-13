@@ -8,7 +8,7 @@
 
 .ideogramma {
     align-self: flex-end;
-    margin-right: 15vw;
+    margin-right: 20vw;
     perspective: 1000px;
     animation: wobble 5s linear infinite;
     transform-origin: center;

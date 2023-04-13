@@ -9,24 +9,30 @@ const Header = () => {
 
     return (
         <header className={styles.header}>
-            <Image className={styles.logo} src="/hkn_logo_white_vector.svg" alt="HKN PoliTO Logo" width={100} height={100}/>
+            <div className={styles.logoTitle} onClick={() => router.push('/')} >
+                <Image className={styles.logo} src="/hkn_logo_white_vector.svg" alt="HKN PoliTO Logo" width={80} height={80}/>
+                <div className={styles.title} >
+                    <text style={{fontSize:25, fontWeight:600}}>HKN</text>
+                    <text style={{fontSize:15.2, fontWeight:400, marginTop:-10}}>POLITO</text>
+                </div>
+            </div>
 
             <div className={styles.menu}>
-                <button className={isActive('/') ? styles.active : styles.inactive} onClick={() => router.push('/')}>
+                <div className={isActive('/') ? styles.active : styles.inactive} onClick={() => router.push('/')}>
                     Home
-                </button>
-                <button className={isActive('/About') ? styles.active : styles.inactive} onClick={() => router.push('/About')}>
+                </div>
+                <div className={isActive('/About') ? styles.active : styles.inactive} onClick={() => router.push('/About')}>
                     About
-                </button>
-                <button className={isActive('/People') ? styles.active : styles.inactive} onClick={() => router.push('/People')}>
+                </div>
+                <div className={isActive('/People') ? styles.active : styles.inactive} onClick={() => router.push('/People')}>
                     Members
-                </button>
-                <button className={isActive('/Events') ? styles.active : styles.inactive} onClick={() => router.push('/Events')}>
+                </div>
+                <div className={isActive('/Events') ? styles.active : styles.inactive} onClick={() => router.push('/Events')}>
                     Events
-                </button>
-                <button className={isActive('/Apply') ? styles.active : styles.inactive} onClick={() => router.push('/Apply')}>
+                </div>
+                <div className={isActive('/Apply') ? styles.active : styles.inactive} onClick={() => router.push('/Apply')}>
                     Apply
-                </button>
+                </div>
             </div>
 
             <div className={styles.headerSpace}></div>

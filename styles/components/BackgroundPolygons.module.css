@@ -2,9 +2,10 @@
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #0d1923;
     width: 100%;
     height: 100vh;
+    background: linear-gradient(to bottom, #0d1923, #11283b); /* set the initial gradient */
+    transition: background 0.5s ease-out;
     z-index: -1;
 }
 

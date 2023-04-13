@@ -7,8 +7,24 @@
     width: 100%;
 }
 
+.logoTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25px;
+}
+
 .logo {
-    margin-left: 15px;
+}
+
+.title {
+    display:flex;
+    flex-direction: column;
+    height: 51px;
+    justify-content: center;
+    margin-bottom: 8px;
+    margin-left: 12px;
 }
 
 .menu {
@@ -19,11 +35,6 @@
 }
 
 .active {
-    font-family: "Montserrat";
-    background: rgba(0,0,0,0);
-    border-width: 0;
-    color: white;
-    font-size: 16px;
     text-decoration: underline;
     text-underline-position: under;
 }
@@ -38,5 +49,5 @@
 }
 
 .headerSpace {
-    width: 115px;
+    width: 200px;
 }
