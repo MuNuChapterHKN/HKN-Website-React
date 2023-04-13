@@ -9,7 +9,7 @@ const Header = () => {
 
     return (
         <header className={styles.header}>
-            <Image className={styles.logo} src="/hkn_logo_blu_vector.svg" alt="HKN PoliTO Logo" width={100} height={100}/>
+            <Image className={styles.logo} src="/hkn_logo_white_vector.svg" alt="HKN PoliTO Logo" width={100} height={100}/>
 
             <div className={styles.menu}>
                 <button className={isActive('/') ? styles.active : styles.inactive} onClick={() => router.push('/')}>
@@ -38,7 +38,7 @@ const Header = () => {
                 </button>
             </div>
 
-            <div className={styles.headerSpacer}/>
+            <div/>
         </header>
     )
 }

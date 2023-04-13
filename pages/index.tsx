@@ -4,6 +4,7 @@ import {Inconsolata} from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import {useRouter} from "next/router";
 import Header from "../components/Header";
+import BackgroundPolygons from "@/components/BackgroundPolygons";
 
 const inconsolata = Inconsolata({subsets: ['latin']})
 
@@ -18,7 +19,37 @@ export default function Home() {
                 <link rel="icon" href="/hkn_logo_blu_vector.svg"/>
             </Head>
             <main className={styles.main}>
+
+                <BackgroundPolygons/>
+
                 <Header/>
+
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
             </main>
         </>
     )
