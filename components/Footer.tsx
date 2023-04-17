@@ -19,10 +19,10 @@ const Footer = () => {
                 </div>
 
                 <a className={styles.link} href={"#"}>Home</a>
-                <a className={styles.link}>About Us</a>
-                <a className={styles.link}>Events</a>
-                <a className={styles.link}>People</a>
-                <a className={styles.link}>Recruitment</a>
+                <a className={styles.link} href={"/AboutUs"}>About Us</a>
+                <a className={styles.link} href={"/Events"}>Events</a>
+                <a className={styles.link} href={"/People"}>People</a>
+                <a className={styles.link} href={"/Apply"}>Recruitment</a>
             </div>
 
             <div className={styles.column}>

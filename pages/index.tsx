@@ -46,15 +46,12 @@ export default function Home() {
                 <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
                 <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
                 <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
-                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
-                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
-                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
-                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
-                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
-                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
-                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
-                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
-                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+
+                <div className={styles.applyCard}>
+                    <text className={styles.textAreYouReady}>ARE YOU READY?</text>
+                    <text className={styles.textJoinOurChapter}>Join Our Chapter And Become The Next HKNuer</text>
+                    <button className={styles.buttonJoinUs}>JOIN US</button>
+                </div>
 
                 <Footer/>
             </main>
