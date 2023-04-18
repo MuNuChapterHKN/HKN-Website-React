@@ -5,13 +5,14 @@
     align-items: center;
     min-height: 100vh;
 }
+.ideogrammaContainer {
+    perspective: 1000px;
+}
 
 .ideogramma {
-    align-self: flex-end;
-    margin-right: 20vw;
-    perspective: 1000px;
+    position: relative;
     animation: wobble 5s linear infinite;
-    transform-origin: center;
+    transform-origin:20vh 50vw;
 }
 
 .textRandom {
@@ -34,12 +35,12 @@
 .textAreYouReady {
     font-weight: 500;
     font-size: 19px;
+    margin:0 0 30px 0;
 }
 
 .textJoinOurChapter {
     font-weight: 600;
     font-size: 50px;
-    margin: 30px 0;
     text-align: center;
 }
 
@@ -52,7 +53,7 @@
     font-weight: 500;
     padding: 17px 80px;
     border-radius: 50px;
-    margin: 10px 0;
+    margin: 30px 0 10px 0;
 }
 
 @keyframes wobble {

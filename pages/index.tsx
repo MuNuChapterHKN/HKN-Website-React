@@ -7,9 +7,8 @@ import Header from "../components/Header";
 import BackgroundPolygons from "@/components/BackgroundPolygons";
 import Footer from "@/components/Footer";
 
-const inconsolata = Inconsolata({subsets: ['latin']})
-
 export default function Home() {
+    const router = useRouter();
 
     return (
         <>
@@ -25,18 +24,13 @@ export default function Home() {
 
                 <Header/>
 
-                <div className={styles.ideogramma}>
-                    <Image  src="/hkn_ideogramma_blu.svg" alt="HKN PoliTO Logo" width={350} height={350}/>
+                <div className={styles.ideogrammaContainer}>
+                    <div className={styles.ideogramma}>
+                        <Image  src="/hkn_ideogramma_blu.svg" alt="HKN PoliTO Logo" width={350} height={350}/>
+                    </div>
                 </div>
 
-                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
-                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
-                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
-                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
-                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
-                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
-                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
-                <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
+
                 <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
                 <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
                 <text className={styles.textRandom}>wefa bfawfywaergrstgthtrtgesagifwegyireg</text>
@@ -49,8 +43,9 @@ export default function Home() {
 
                 <div className={styles.applyCard}>
                     <text className={styles.textAreYouReady}>ARE YOU READY?</text>
-                    <text className={styles.textJoinOurChapter}>Join Our Chapter And Become The Next HKNuer</text>
-                    <button className={styles.buttonJoinUs}>JOIN US</button>
+                    <text className={styles.textJoinOurChapter}>Join Our Chapter And</text>
+                    <text className={styles.textJoinOurChapter}>Become The Next HKNuer</text>
+                    <button className={styles.buttonJoinUs} onClick={() => router.push('/Apply')}>JOIN US</button>
                 </div>
 
                 <Footer/>

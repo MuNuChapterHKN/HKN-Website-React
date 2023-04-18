@@ -12,7 +12,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-left: 25px;
+    margin-left: 60px;
 }
 
 .logo {
@@ -49,5 +49,5 @@
 }
 
 .headerSpace {
-    width: 200px;
+    width: 220px;
 }
