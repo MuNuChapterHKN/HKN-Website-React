@@ -21,7 +21,7 @@ const Header = () => {
                 <div className={isActive('/') ? styles.active : styles.inactive} onClick={() => router.push('/')}>
                     Home
                 </div>
-                <div className={isActive('/About') ? styles.active : styles.inactive} onClick={() => router.push('/About')}>
+                <div className={isActive('/AboutUs') ? styles.active : styles.inactive} onClick={() => router.push('/AboutUs')}>
                     About
                 </div>
                 <div className={isActive('/People') ? styles.active : styles.inactive} onClick={() => router.push('/People')}>

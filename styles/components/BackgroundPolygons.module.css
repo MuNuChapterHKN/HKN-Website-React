@@ -8,7 +8,7 @@
     overflow: hidden;
     background-color: #091721; /* set the initial gradient */
     transition: background 0.5s ease-out;
-    z-index: -1;
+    z-index: 0;
 }
 
 @keyframes rotate {

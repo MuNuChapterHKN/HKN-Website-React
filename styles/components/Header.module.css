@@ -5,6 +5,7 @@
     align-items: center;
     height: 130px;
     width: 100%;
+    z-index: 1;
 }
 
 .logoTitle {

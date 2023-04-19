@@ -23,7 +23,7 @@ const Header = () => {
             setMouseY(clientY);
         }
 
-        const handleMove = (e) => {
+        const handleMove = (e: { clientX: any; clientY: any; }) => {
             const { clientX, clientY } = e;
 
             if (blobRef.current) {
