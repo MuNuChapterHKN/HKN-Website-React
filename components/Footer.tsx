@@ -18,7 +18,7 @@ const Footer = () => {
                     <text style={{fontSize:15.2, fontWeight:400, marginTop:-10}}>POLITO</text>
                 </div>
 
-                <a className={styles.link} href={"#"}>Home</a>
+                <a className={styles.link} href={"/"}>Home</a>
                 <a className={styles.link} href={"/AboutUs"}>About Us</a>
                 <a className={styles.link} href={"/Events"}>Events</a>
                 <a className={styles.link} href={"/People"}>People</a>
