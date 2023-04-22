@@ -1,3 +1,9 @@
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0 30px 0;
+}
 
 .ideogrammaContainer {
     perspective: 1000px;
