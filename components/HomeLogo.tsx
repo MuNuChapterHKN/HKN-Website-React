@@ -21,7 +21,7 @@ const Logo = () => {
                 {
                     transform: 'rotateY(0deg)',
                 },
-                { duration: 300, fill: 'forwards', easing: 'ease-in-out' }
+                { duration: 800, fill: 'forwards', easing: 'ease-in-out' }
             );
         }
     };
@@ -37,7 +37,7 @@ const Logo = () => {
                     {
                         transform: `rotateY(${deg}deg)`,
                     },
-                    { duration: 300, fill: 'forwards', easing: 'ease-in-out' }
+                    { duration: 1000, fill: 'forwards', easing: 'ease-in-out' }
                 );
             }
         }

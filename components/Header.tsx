@@ -30,8 +30,11 @@ const Header = () => {
                 <div className={isActive('/Events') ? styles.active : styles.inactive} onClick={() => router.push('/Events')}>
                     Events
                 </div>
-                <div className={isActive('/Apply') ? styles.active : styles.inactive} onClick={() => router.push('/Apply')}>
-                    Apply
+                <div className={isActive('/Recognitions') ? styles.active : styles.inactive} onClick={() => router.push('/Recognitions')}>
+                    Recognitions
+                </div>
+                <div className={isActive('/JoinUs') ? styles.active : styles.inactive} onClick={() => router.push('/JoinUs')}>
+                    Join Us
                 </div>
             </div>
 

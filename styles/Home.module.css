@@ -1,19 +1,62 @@
+.titleFlexContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px; /* set the maximum width */
+    width: 100%; /* take up all available width */
+    margin: 0 auto; /* center horizontally and apply max margin */
+}
+
+.titleColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 570px;
+}
+
+.driveByPassion {
+    font-weight: 600;
+    font-size: 60px;
+}
+
+.welcomeTo {
+    font-weight: 400;
+    font-size: 20px;
+    margin: 15px 0 35px 0;
+}
+
+.titleButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.joinUsTitleButton {
+    background-color: #ffb700;
+}
+
+.aboutUsTitleButton {
+    border: #e37a01 solid 2px;
+    background-color: transparent;
+}
+
 .logoContainer {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 0 30px 0;
-}
-
-.ideogrammaContainer {
-    perspective: 1000px;
-}
-
-.ideogramma {
-    position: relative;
-    animation: wobble 5s linear infinite;
-    transform-origin:20vh 50vw;
 }
 
 .applyCard {
@@ -43,13 +86,6 @@
 
 .buttonJoinUs {
     background-color: #11283b;
-    color: white;
-    border: none;
-    font-family: Montserrat, serif;
-    font-size: 18px;
-    font-weight: 500;
-    padding: 17px 80px;
-    border-radius: 50px;
     margin: 30px 0 10px 0;
 }
 

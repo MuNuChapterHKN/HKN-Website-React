@@ -1,6 +1,6 @@
 import Layout from "./Layout";
 
-export default function Apply() {
+export default function JoinUs() {
 
     return (
         <Layout>
