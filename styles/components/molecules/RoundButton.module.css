@@ -1,12 +1,11 @@
 .button {
     color: white;
-    border: none;
     padding: 17px 80px;
     border-radius: 50px;
 }
 
 .text {
     font-weight: 500;
-    font-family: Montserrat, serif;
+    font-family: Outfit, serif;
     font-size: 18px;
 }

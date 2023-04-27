@@ -36,12 +36,13 @@
 }
 
 .active {
+    font-family: "Outfit", serif;
     text-decoration: underline;
     text-underline-position: under;
 }
 
 .inactive {
-    font-family: "Montserrat";
+    font-family: "Outfit", serif;
     background: rgba(0,0,0,0);
     border-width: 0;
     font-size: 16px;

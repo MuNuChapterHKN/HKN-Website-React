@@ -1,3 +1,5 @@
+
+/* first section - title */
 .titleFlexContainer {
     display: flex;
     flex-direction: column;
@@ -21,37 +23,41 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    max-width: 570px;
+    max-width: 560px;
+    max-width: 555px;
 }
 
-.driveByPassion {
+.drivenByPassion,.visionTitle, .originsTitle {
     font-weight: 600;
-    font-size: 60px;
+    font-size: 65px;
 }
 
-.welcomeTo {
+.welcomeTo, .vision, .origins {
     font-weight: 400;
     font-size: 20px;
     margin: 15px 0 35px 0;
 }
 
-.titleButtons {
+.titleButtons,.visionButtons {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding-right: 10px;
 }
 
-.joinUsTitleButton {
-    background-color: #ffb700;
+.joinUsTitleButton, .peopleVisionButton {
+    background-color: #FCB702;
 }
 
-.aboutUsTitleButton {
-    border: #e37a01 solid 2px;
+.aboutUsTitleButton, .galleryVisionButton {
+    border: #CA5B01 solid 1.5px;
     background-color: transparent;
 }
 
+
+/* logo */
 .logoContainer {
     position: relative;
     display: flex;
@@ -59,17 +65,93 @@
     align-items: center;
 }
 
+
+/* second section - awards */
+.awardsContainer {
+    display: flex;
+    justify-content: center;
+    background-color:  rgba(17, 72, 119, 0.6);
+    width: 100%;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.awards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 20px;
+}
+
+.outstandingAward {
+    opacity: 1;
+}
+
+/* third section - vision */
+.visionContainer, .originsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(18, 72, 119, 0.6), rgba(9, 23, 33, 0));
+    width: 85%;
+    max-width: 1450px;
+    border-radius: 40px;
+    padding: 35px;
+    margin-top: 100px;
+}
+
+.visionLeft, .originsRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60%;
+    padding: 0 20px;
+}
+
+.visionText, .originsText {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/* fourth section: origins */
+.originsContainer {
+    margin-top: 250px;
+}
+
+.originsButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.readMeOriginsButton {
+    background-color: #FC9402;
+}
+
+/* fifth section: projects */
+
+
+/* sixth section: apply */
+
 .applyCard {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 40px 10%;
-    width: 75%;
+    width: 85%;
+    max-width: 1450px;
     height: 50%;
     border-radius: 40px;
     background: linear-gradient(to right, #ffc300, #ff1300);
-    margin: 40px 0;
+    margin: 250px 0 50px 0;
 }
 
 .textAreYouReady {
@@ -88,6 +170,8 @@
     background-color: #11283b;
     margin: 30px 0 10px 0;
 }
+
+
 
 @keyframes wobble {
     0% {
