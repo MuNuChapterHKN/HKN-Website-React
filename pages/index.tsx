@@ -31,10 +31,10 @@ export default function Home() {
 
             <div className={styles.awardsContainer}>
                 <div className={styles.awards}>
-                <Image className={styles.outstandingAward} src="/outstanding_awards/outstanding-2019.png" alt="HKN PoliTO Logo" width={200} height={200}/>
-                <Image className={styles.outstandingAward} src="/outstanding_awards/outstanding-2020.png" alt="HKN PoliTO Logo" width={200} height={200}/>
-                <Image className={styles.outstandingAward} src="/outstanding_awards/outstanding-2021.png" alt="HKN PoliTO Logo" width={200} height={200}/>
-                <Image className={styles.outstandingAward} src="/outstanding_awards/outstanding-2022.png" alt="HKN PoliTO Logo" width={200} height={200}/>
+                    <Image className={styles.outstandingAward} src="/home/outstanding-2019.png" alt="Award" width={200} height={200}/>
+                    <Image className={styles.outstandingAward} src="/home/outstanding-2020.png" alt="Award" width={200} height={200}/>
+                    <Image className={styles.outstandingAward} src="/home/outstanding-2021.png" alt="Award" width={200} height={200}/>
+                    <Image className={styles.outstandingAward} src="/home/outstanding-2022.png" alt="Award" width={200} height={200}/>
                 </div>
             </div>
 
@@ -48,12 +48,11 @@ export default function Home() {
                         <RoundButton className={styles.galleryVisionButton} onClick={() => router.push('/AboutUs')} text={"PHOTO GALLERY"}/>
                     </div>
                 </div>
+                <img className={styles.visionImage} src="/home/vision.jpg" alt="Vision"/>
             </div>
 
             <div className={styles.originsContainer}>
-                <div className={styles.originsLeft}>
-
-                </div>
+                <img className={styles.originsImage} src="/home/origins.jpg" alt="Vision"/>
                 <div className={styles.originsRight}>
                     <text className={styles.originsText}>ORIGINS</text>
                     <text className={styles.originsTitle}>Eta Kappa Nu, IEEE Honor Society</text>
@@ -63,20 +62,36 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-                {/*<div className={styles.ideogrammaContainer}>
 
-                    <HomeLogo/>
-                    <div className={styles.ideogramma}>
-                        <Image  src="/hkn_ideogramma_blu.svg" alt="HKN PoliTO Logo" width={350} height={350}/>
+            <div className={styles.projectsContainer}>
+                <text className={styles.projectsText}>NEWS</text>
+                <text className={styles.projectsTitle}>Our Latest</text>
+                <text className={styles.projectsTitle}>Projects</text>
+                <div className={styles.projectsCards}>
+                    <div className={styles.projectsLeft}>
+                        {/* ADD PICTURE */}
+                        <text className={styles.projectTitle}>Sirius: Vedere il futuro con gli occhi del presente</text>
+                        <text className={styles.project}>Per la prima volta sono i ragazzi di HKN a far visita ad un’azienda: la SIRIUS (Sirius | Home). Per i nuovi associati questa è stata la prima esperienza di formazione interna, ma la vera novità ha coinvolto i già associati: potersi recare in prima persona a visitare un’impresa si è rivelata un’esperienza ...</text>
                     </div>
-                </div>*/}
-
-                <div className={styles.applyCard}>
-                    <text className={styles.textAreYouReady}>ARE YOU READY?</text>
-                    <text className={styles.textJoinOurChapter}>Join Our Chapter And</text>
-                    <text className={styles.textJoinOurChapter}>Become The Next HKNuer</text>
-                    <RoundButton className={styles.buttonJoinUs} text={"JOIN US"} onClick={() => router.push('/JoinUs')}/>
+                    <div className={styles.projectsCenter}>
+                        {/* ADD PICTURE */}
+                        <text className={styles.projectTitle}>Vivere l’associazione Online: una guida per principianti</text>
+                        <text className={styles.project}>Inizialmente l’idea è nata dalla solitudine. Starsene chiusi in casa e non vedere nessuno per via del lockdown era una condizione che se all’inizio poteva sembrare esaltante e quasi eroica, con l’andar del tempo era diventata devastante. Il pensiero di entrare a far parte di una honor society ...</text>
+                    </div>
+                    <div className={styles.projectsRight}>
+                        {/* ADD PICTURE */}
+                        <text className={styles.projectTitle}>POLITO, HKN e Covid-19: una riflessione</text>
+                        <text className={styles.project}>Ore diciassette di una silenziosa domenica di marzo. Silenziosa perché le strade sono deserte e più forte che mai risuonano soltanto i nostri pensieri. In questi casi non resta che dar loro una forma proiettandoli in mondi molto più vasti rispetto alle mura in cui siamo confinati in questi ...</text>
+                    </div>
                 </div>
+            </div>
+
+            <div className={styles.applyCard}>
+                <text className={styles.textAreYouReady}>ARE YOU READY?</text>
+                <text className={styles.textJoinOurChapter}>Join Our Chapter And</text>
+                <text className={styles.textJoinOurChapter}>Become The Next HKNuer</text>
+                <RoundButton className={styles.buttonJoinUs} text={"JOIN US"} onClick={() => router.push('/JoinUs')}/>
+            </div>
 
         </Layout>
     )
