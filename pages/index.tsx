@@ -68,18 +68,24 @@ export default function Home() {
                 <text className={styles.projectsTitle}>Our Latest</text>
                 <text className={styles.projectsTitle}>Projects</text>
                 <div className={styles.projectsCards}>
-                    <div className={styles.projectsLeft}>
-                        {/* ADD PICTURE */}
+                    <div className={styles.projectsLeft} onClick={() => router.push('/404')}>
+                        <div className={styles.projectsImageClip}>
+                            <img className={styles.projectsPicture} src="/home/Projects/Sirius_vedere.jpg" alt="project"/>
+                        </div>
                         <text className={styles.projectTitle}>Sirius: Vedere il futuro con gli occhi del presente</text>
                         <text className={styles.project}>Per la prima volta sono i ragazzi di HKN a far visita ad un’azienda: la SIRIUS (Sirius | Home). Per i nuovi associati questa è stata la prima esperienza di formazione interna, ma la vera novità ha coinvolto i già associati: potersi recare in prima persona a visitare un’impresa si è rivelata un’esperienza ...</text>
                     </div>
                     <div className={styles.projectsCenter}>
-                        {/* ADD PICTURE */}
-                        <text className={styles.projectTitle}>Vivere l’associazione Online: una guida per principianti</text>
-                        <text className={styles.project}>Inizialmente l’idea è nata dalla solitudine. Starsene chiusi in casa e non vedere nessuno per via del lockdown era una condizione che se all’inizio poteva sembrare esaltante e quasi eroica, con l’andar del tempo era diventata devastante. Il pensiero di entrare a far parte di una honor society ...</text>
+                        <div className={styles.projectsImageClip} onClick={() => router.push('/404')}>
+                            <img className={styles.projectsPicture} src="/home/Projects/Vivere_lassociazione.png" alt="project"/>
+                        </div>
+                            <text className={styles.projectTitle}>Vivere l’associazione Online: una guida per principianti</text>
+                            <text className={styles.project}>Inizialmente l’idea è nata dalla solitudine. Starsene chiusi in casa e non vedere nessuno per via del lockdown era una condizione che se all’inizio poteva sembrare esaltante e quasi eroica, con l’andar del tempo era diventata devastante. Il pensiero di entrare a far parte di una honor society ...</text>
                     </div>
                     <div className={styles.projectsRight}>
-                        {/* ADD PICTURE */}
+                        <div className={styles.projectsImageClip} onClick={() => router.push('/404')}>
+                            <img className={styles.projectsPicture} src="/home/Projects/Poli_covid.png" alt="project"/>
+                        </div>
                         <text className={styles.projectTitle}>POLITO, HKN e Covid-19: una riflessione</text>
                         <text className={styles.project}>Ore diciassette di una silenziosa domenica di marzo. Silenziosa perché le strade sono deserte e più forte che mai risuonano soltanto i nostri pensieri. In questi casi non resta che dar loro una forma proiettandoli in mondi molto più vasti rispetto alle mura in cui siamo confinati in questi ...</text>
                     </div>
