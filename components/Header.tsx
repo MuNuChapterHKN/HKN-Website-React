@@ -1,6 +1,7 @@
 import styles from "@/styles/components/Header.module.css";
 import Image from "next/image";
 import {useRouter} from "next/router";
+import RoundButton from "./molecules/RoundButton";
 
 
 const Header = () => {
@@ -36,9 +37,7 @@ const Header = () => {
             </div>
 
             <div className={styles.headerSpace}>
-                <div className={isActive('/JoinUs') ? styles.active : styles.inactive} onClick={() => router.push('/JoinUs')}>
-                    Join Us
-                </div>
+                <RoundButton style={{padding:'10px 25px', backgroundColor: '#FCB702'}} onClick={() => router.push('/JoinUs')} text={"Join Us"}/>
             </div>
         </header>
     )

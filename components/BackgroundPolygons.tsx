@@ -70,32 +70,6 @@ const Header = () => {
 
     };
 
-    /*const triangleStyles = {
-        triangleLeft1: `translateY(-${scrollY * 1}px)`,
-        triangleLeft2: `translateY(-${scrollY * 1}px)`,
-        triangleLeft3: `translateY(-${scrollY * 1}px)`,
-
-        triangleRight1: `translateY(-${scrollY * 1}px)`,
-        triangleRight2: `translateY(-${scrollY * 1}px)`,
-        triangleRight3: `translateY(-${scrollY * 1}px)`,
-
-        triangleLeft4: `translateY(-${scrollY * 1}px)`,
-        triangleLeft5: `translateY(-${scrollY * 1}px)`,
-        triangleLeft6: `translateY(-${scrollY * 1}px)`,
-
-        triangleRight4: `translateY(-${scrollY * 1}px)`,
-        triangleRight5: `translateY(-${scrollY * 1}px)`,
-        triangleRight6: `translateY(-${scrollY * 1}px)`,
-
-        triangleLeft7: `translateY(-${scrollY * 1}px)`,
-        triangleLeft8: `translateY(-${scrollY * 1}px)`,
-        triangleLeft9: `translateY(-${scrollY * 1}px)`,
-
-        triangleCenter1: `translateY(-${scrollY * 1}px)`,
-        triangleCenter2: `translateY(-${scrollY * 1}px)`,
-        triangleCenter3: `translateY(-${scrollY * 1}px)`,
-
-    };*/
     return (
         <div className={styles.backgroundPolygons}>
             <div className={styles.blob} style={{left: mouseX, top: mouseY}} ref={blobRef}/>

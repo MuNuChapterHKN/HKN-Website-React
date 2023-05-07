@@ -1,0 +1,68 @@
+/* 1st section: AWARDS */
+.awardsCard {
+    background: #FCA702;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1350px;
+    border-radius: 40px;
+    padding: 40px;
+    margin-top: 100px;
+}
+
+.carouselImage {
+    align-self: center;
+    justify-self: center;
+    margin: 0px 70px;
+}
+
+.awardsRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+    width: 60%;
+    padding: 0 40px;
+}
+
+.awardsText {
+    font-weight: 500;
+    font-size: 20px;
+    color: #11283b;
+}
+
+.awardsTitle {
+    font-weight: 600;
+    font-size: 65px;
+    color: #11283b;
+}
+
+.awards {
+    font-weight: 400;
+    font-size: 21px;
+    margin: 15px 0 35px 0;
+    color: #11283b;
+}
+
+/* 1st section: INTERNATIONAL COLLECTIVE */
+.internationalCollective {
+    background: linear-gradient(to right, rgba(254, 66, 1, 0.9), rgba(252, 167, 2, 0.9));
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    margin-top: 100px;
+}
+
+.internationalCollectiveText {
+    color: white;
+    font-weight: 600;
+    font-size: 42px;
+    width: 500px;
+    text-align: center;
+    margin-left: 100px;
+}

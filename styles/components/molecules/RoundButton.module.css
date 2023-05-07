@@ -1,7 +1,8 @@
-.button {
+.buttonMine {
     color: white;
     padding: 17px 80px;
     border-radius: 50px;
+    border-width: 0;
 }
 
 .text {
