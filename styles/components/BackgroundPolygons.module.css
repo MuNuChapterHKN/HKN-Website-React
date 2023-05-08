@@ -19,7 +19,19 @@
     backdrop-filter: blur(12vmax);
 }
 
-
+/*.blob {
+    height: 22vw;
+    aspect-ratio: 1;
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    background: linear-gradient(to right, #041098, aquamarine);
+    animation: rotate 10s linear infinite;
+    filter: blur(2px);
+    opacity: 0.9;
+}*/
 
 .triangleLeft1 {
     position: absolute;
