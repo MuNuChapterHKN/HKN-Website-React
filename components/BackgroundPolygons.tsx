@@ -1,9 +1,9 @@
 import styles from "@/styles/components/BackgroundPolygons.module.css";
-import {useEffect, useRef, useState} from "react";
+import {RefObject, useEffect, useRef, useState} from "react";
 import {blob} from "stream/consumers";
 
 const Header = () => {
-    const blobRef = useRef(null);
+    const blobRef = useRef<HTMLDivElement>(null);
     const [scrollY, setScrollY] = useState(0);
     const [mouseX, setMouseX] = useState(0);
     const [mouseY, setMouseY] = useState(0);

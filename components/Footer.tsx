@@ -49,6 +49,10 @@ const Footer = () => {
                 <a className={styles.link}>IEEE</a>
                 <a className={styles.link}>HKN-Mamma</a>
             </div>
+
+            <div className={styles.columnLogoSociety}>
+                <Image className={styles.logo} src="/hkn_logo_white_vector.svg" alt="HKN PoliTO Logo" width={60} height={60}/>
+            </div>
         </div>
     )
 }

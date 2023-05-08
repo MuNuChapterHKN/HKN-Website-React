@@ -6,9 +6,8 @@ const delays = [0, 0.5, 1, 3, 3.5, 2.5, 1.5, 0.25];
 const durations = [2, 2, 2, 2, 2, 2, 2, 2];
 
 const Logo = () => {
-    const logoRef = useRef(null);
-    const svgRef = useRef(null);
-    const isHovering = useRef(false);
+    const logoRef = useRef<HTMLDivElement>(null);
+    const isHovering = useRef<Boolean>(false);
 
     const handleMouseEnter = (e: { clientX: any; clientY: any; }) => {
         isHovering.current = true;
