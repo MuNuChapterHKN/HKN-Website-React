@@ -1,20 +1,12 @@
 
 /* first section - title */
-.titleFlexContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    height: 100%;
-}
-
 .titleContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     max-width: 1300px; /* set the maximum width */
-    width: 100%; /* take up all available width */
+    width: 95%; /* take up all available width */
     margin: 0 auto; /* center horizontally and apply max margin */
 }
 

@@ -77,9 +77,9 @@ const BackgroundPolygons = ({polygons} : {polygons : PolygonProps[]}) => {
             <div className={styles.blob} style={{left: mouseX, top: mouseY}} ref={blobRef}/>
             <div className={styles.blur}/>
 
-            {polygons && polygons.map((p) => {
+            {polygons && polygons.map((p, index) => {
                 return (
-                    <Polygon gradient={p.gradient} width={p.width} height={p.height}
+                    <Polygon key={index} gradient={p.gradient} width={p.width} height={p.height}
                          vertices={p.vertices} top={p.top}
                          left={p.left ? p.left : undefined}
                          right={p.right ? p.right : undefined}/>

@@ -57,34 +57,34 @@ const Logo = () => {
                         <mask id="svgmask2">
                             <polygon points="150,58 0,164 0,0 300,0 300,164" height="100%" width="100%" fill="white"/>
                         </mask>
-                        <image href="/home/home_logo/hkn_ideogramma_white.svg" width="100%" height="100%" y="4.35%"/>
+                        <image href="/Home/home_logo/hkn_ideogramma_white.svg" width="100%" height="100%" y="4.35%"/>
 
-                        <image mask="url(#svgmask2)" href="/home/home_logo/Castle.svg" width="100%" height="100%" y="50">
+                        <image mask="url(#svgmask2)" href="/Home/home_logo/Castle.svg" width="100%" height="100%" y="50">
                             <animate attributeName="y" values="50; 0" dur={durations[0]} begin={delays[0]} fill="freeze"/>
                         </image>
-                        <image mask="url(#svgmask2)" href="/home/home_logo/Mole.svg" width="100%" height="100%" y="75">
+                        <image mask="url(#svgmask2)" href="/Home/home_logo/Mole.svg" width="100%" height="100%" y="75">
                             <animate attributeName="y" values="75; 0" dur={durations[1]} begin={delays[1]} fill="freeze"/>
                         </image>
-                        <image mask="url(#svgmask2)" href="/home/home_logo/Dome.svg" width="100%" height="100%" y="50">
+                        <image mask="url(#svgmask2)" href="/Home/home_logo/Dome.svg" width="100%" height="100%" y="50">
                             <animate attributeName="y" values="50; 0" dur={durations[2]} begin={delays[2]} fill="freeze"/>
                         </image>
-                        <image mask="url(#svgmask2)" href="/home/home_logo/Chiesa.svg" width="100%" height="100%" y="50">
+                        <image mask="url(#svgmask2)" href="/Home/home_logo/Chiesa.svg" width="100%" height="100%" y="50">
                             <animate attributeName="y" values="50; 0" dur={durations[3]} begin={delays[3]} fill="freeze"/>
                         </image>
-                        <image mask="url(#svgmask2)" href="/home/home_logo/Torre.svg" width="100%" height="100%" y="50">
+                        <image mask="url(#svgmask2)" href="/Home/home_logo/Torre.svg" width="100%" height="100%" y="50">
                             <animate attributeName="y" values="50; 0" dur={durations[4]} begin={delays[4]} fill="freeze"/>
                         </image>
-                        <image mask="url(#svgmask2)" href="/home/home_logo/Poli.svg" width="100%" height="100%" y="55">
+                        <image mask="url(#svgmask2)" href="/Home/home_logo/Poli.svg" width="100%" height="100%" y="55">
                             <animate attributeName="y" values="55; 0" dur={durations[5]} begin={delays[5]} fill="freeze"/>
                         </image>
-                        <image mask="url(#svgmask2)" href="/home/home_logo/SC.svg" width="100%" height="100%" y="50">
+                        <image mask="url(#svgmask2)" href="/Home/home_logo/SC.svg" width="100%" height="100%" y="50">
                             <animate attributeName="y" values="50; 0" dur={durations[6]} begin={delays[6]} fill="freeze"/>
                         </image>
-                        <image mask="url(#svgmask2)" href="/home/home_logo/GM.svg" width="100%" height="100%" y="50">
+                        <image mask="url(#svgmask2)" href="/Home/home_logo/GM.svg" width="100%" height="100%" y="50">
                             <animate attributeName="y" values="50; 0" dur={durations[7]} begin={delays[7]} fill="freeze"/>
                         </image>
                     </mask>
-                    <image mask="url(#svgmask1)" width="110%" x="-6%" y="4.5%" href="/home/home_logo/polygons_bg.png"/>
+                    <image mask="url(#svgmask1)" width="110%" x="-6%" y="4.5%" href="/Home/home_logo/polygons_bg.png"/>
                 </svg>
             </div>
         </div>

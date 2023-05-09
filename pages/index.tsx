@@ -105,36 +105,34 @@ export default function Home() {
     return (
         <Layout polygons={polygons}>
 
-            <div className={styles.titleFlexContainer}>
-                <div className={styles.titleContainer}>
-                    <div className={styles.titleColumn}>
-                        <text className={styles.drivenByPassion}>Driven By Passion</text>
-                        <text className={styles.drivenByPassion}>Guided By Values</text>
-                        <text className={styles.welcomeTo}>Welcome to our world, we are the Mu Nu Chapter of IEEE-HKN at
-                            the Polytechnic University of Turin.
-                        </text>
-                        <div className={styles.titleButtons}>
-                            <RoundButton className={styles.joinUsTitleButton} onClick={() => router.push('/JoinUs')}
-                                         text={"JOIN US"}/>
-                            <RoundButton style={{border: 'solid 1.5px #CA5B01'}} className={styles.aboutUsTitleButton}
-                                         onClick={() => router.push('/AboutUs')} text={"ABOUT US"}/>
-                        </div>
+            <div className={styles.titleContainer}>
+                <div className={styles.titleColumn}>
+                    <text className={styles.drivenByPassion}>Driven By Passion</text>
+                    <text className={styles.drivenByPassion}>Guided By Values</text>
+                    <text className={styles.welcomeTo}>Welcome to our world, we are the Mu Nu Chapter of IEEE-HKN at
+                        the Polytechnic University of Turin.
+                    </text>
+                    <div className={styles.titleButtons}>
+                        <RoundButton className={styles.joinUsTitleButton} onClick={() => router.push('/JoinUs')}
+                                     text={"JOIN US"}/>
+                        <RoundButton style={{border: 'solid 1.5px #CA5B01'}} className={styles.aboutUsTitleButton}
+                                     onClick={() => router.push('/AboutUs')} text={"ABOUT US"}/>
                     </div>
-                    <div className={styles.logoContainer}>
-                        <HomeLogo/>
-                    </div>
+                </div>
+                <div className={styles.logoContainer}>
+                    <HomeLogo/>
                 </div>
             </div>
 
             <div className={styles.awardsContainer}>
                 <div className={styles.awards}>
-                    <Image className={styles.outstandingAward} src="/home/outstanding-2019.png" alt="Award" width={228}
+                    <Image className={styles.outstandingAward} src="/Home/outstanding-2019.png" alt="Award" width={228}
                            height={200}/>
-                    <Image className={styles.outstandingAward} src="/home/outstanding-2020.png" alt="Award" width={228}
+                    <Image className={styles.outstandingAward} src="/Home/outstanding-2020.png" alt="Award" width={228}
                            height={200}/>
-                    <Image className={styles.outstandingAward} src="/home/outstanding-2021.png" alt="Award" width={228}
+                    <Image className={styles.outstandingAward} src="/Home/outstanding-2021.png" alt="Award" width={228}
                            height={200}/>
-                    <Image className={styles.outstandingAward} src="/home/outstanding-2022.png" alt="Award" width={228}
+                    <Image className={styles.outstandingAward} src="/Home/outstanding-2022.png" alt="Award" width={228}
                            height={200}/>
                 </div>
             </div>

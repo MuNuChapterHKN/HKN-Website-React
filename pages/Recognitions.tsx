@@ -77,8 +77,8 @@ export default function JoinUs() {
                 <text className={styles.professionalsTitle}>Take The Floor</text>
                 <div className={styles.professionalsCards}>
                     {/*TODO: image transition animation*/}
-                    {currentProfessional.map((professional) => (
-                        <ProfessionalCard name={professional.name} title={professional.title} text={professional.text} imageSrc={professional.imageSrc}/>
+                    {currentProfessional.map((professional, index) => (
+                        <ProfessionalCard key={index} name={professional.name} title={professional.title} text={professional.text} imageSrc={professional.imageSrc}/>
                     ))}
 
                     <button className={styles.professionalsButton} onClick={handleRightArrowProfessional}>
