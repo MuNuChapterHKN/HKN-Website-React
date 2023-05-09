@@ -4,8 +4,9 @@ import Header from "../components/Header";
 import BackgroundPolygons from "@/components/BackgroundPolygons";
 import Footer from "@/components/Footer";
 import {ReactNode} from "react";
+import {PolygonProps} from "@/components/Polygon";
 
-const Layout = ( { children }: { children: ReactNode }) => {
+const Layout = ( { polygons, children }: { polygons? :  PolygonProps[], children: ReactNode }) => {
 
     return (
             <div className={styles.main}>
@@ -16,7 +17,7 @@ const Layout = ( { children }: { children: ReactNode }) => {
                     <link rel="icon" href="/hkn_logo_blu_vector.svg"/>
                 </Head>
 
-                <BackgroundPolygons/>
+                <BackgroundPolygons polygons={polygons ? polygons : []}/>
 
                 <Header/>
 
