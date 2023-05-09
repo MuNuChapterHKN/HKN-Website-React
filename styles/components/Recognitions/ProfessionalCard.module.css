@@ -1,0 +1,33 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 30px;
+    background: linear-gradient(to right, #1A3247, #124877);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+    padding: 20px;
+    margin: 0 20px;
+}
+.image {
+    width:20%;
+    height:100%;
+    border-radius: 50%;
+    filter: sepia(90%) saturate(150%) hue-rotate(180deg) brightness(90%);
+}
+
+.name {
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.title {
+    font-weight: 400;
+    font-size: 21px;
+}
+
+.profText {
+    font-weight: 400;
+    font-size: 18px;
+    margin-top: 10px;
+}

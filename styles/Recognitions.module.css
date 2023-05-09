@@ -9,6 +9,7 @@
     border-radius: 40px;
     padding: 40px;
     margin-top: 100px;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
 }
 
 .carouselImage {
@@ -27,26 +28,35 @@
     padding: 0 40px;
 }
 
-.awardsText {
+.awardsText, .mentionsText {
     font-weight: 500;
     font-size: 20px;
+}
+
+.awardsText {
     color: #11283b;
+}
+
+.awardsTitle, .mentionsTitle  {
+    font-weight: 600;
+    font-size: 65px;
 }
 
 .awardsTitle {
-    font-weight: 600;
-    font-size: 65px;
     color: #11283b;
+}
+
+.awards, .mentionsImageText, .professionalsText {
+    font-weight: 400;
+    font-size: 21px;
 }
 
 .awards {
-    font-weight: 400;
-    font-size: 21px;
-    margin: 15px 0 35px 0;
     color: #11283b;
+    margin: 15px 0 35px 0;
 }
 
-/* 1st section: INTERNATIONAL COLLECTIVE */
+/* 2nd section: INTERNATIONAL COLLECTIVE */
 .internationalCollective {
     background: linear-gradient(to right, rgba(254, 66, 1, 0.9), rgba(252, 167, 2, 0.9));
     display: flex;
@@ -64,4 +74,109 @@
     width: 500px;
     text-align: center;
     margin-left: 100px;
+}
+
+/* 3rd section: MENTIONS */
+.mentionsCard {
+    background: linear-gradient(to right, #061E33, #061E33 30%, rgba(17, 40, 59, 0));
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1350px;
+    border-radius: 40px;
+    padding: 40px;
+    margin-top: 100px;
+}
+
+.mentionsLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 70%;
+}
+
+.mentionsRight {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    background: linear-gradient(150deg, #092B48, #124877 70%, #124877);
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+}
+
+.mentionsImage {
+    filter: sepia(90%) saturate(150%) hue-rotate(180deg) brightness(90%);
+    width: 300px;
+    height: auto;
+}
+
+.mentionsImageRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 700px;
+    padding: 0 30px;
+}
+
+.mentionsImageTitle {
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 50px;
+}
+
+.mentionsImageSubTitle {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+
+/* 4th section: PROFESSIONALS */
+.professionalsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 100px 0;
+}
+
+.professionalsTitle {
+    font-weight: 600;
+    font-size: 45px;
+}
+
+.professionalsCards {
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    padding: 0;
+}
+
+.professionalsButton {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    right: -5px;
+    transform: translateY(-50%);
+    background: #1A3247;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-width: 0;
+    cursor: pointer;
 }

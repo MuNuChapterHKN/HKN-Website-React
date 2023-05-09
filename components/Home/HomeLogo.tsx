@@ -1,4 +1,4 @@
-import styles from "@/styles/components/HomeLogo.module.css";
+import styles from "@/styles/components/Home/HomeLogo.module.css";
 import {useEffect, useRef, useState} from "react";
 import beforeEach from "node:test";
 

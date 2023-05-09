@@ -51,7 +51,7 @@ const Footer = () => {
             </div>
 
             <div className={styles.columnLogoSociety}>
-                <Image className={styles.logo} src="/hkn_logo_white_vector.svg" alt="HKN PoliTO Logo" width={60} height={60}/>
+                <Image className={styles.logoSociety} src="/hkn_logo_society.png" alt="HKN PoliTO Logo" width="0" height="0" sizes="100vw"/>
             </div>
         </div>
     )
