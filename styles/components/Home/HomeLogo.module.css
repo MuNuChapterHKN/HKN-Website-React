@@ -1,15 +1,20 @@
 .logoContContainer {
-    position: relative;
     width: 550px;
     height: 550px;
     perspective: 1000px;
+    position: relative;
 }
 
-.logoContainer {
+.logoContainer, .logoContainer2 {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     transition: transform 0.5s ease-in-out; /* Add transition for smooth animation */
+}
+
+.logoContainer2 {
+    top: 4px;
+    left: 0px;
 }

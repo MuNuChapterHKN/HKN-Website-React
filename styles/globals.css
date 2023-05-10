@@ -12,6 +12,7 @@ html, body {
   background-color: #091721;
   scrollbar-width: none; /* hide the scrollbar */
   scrollbar-color: transparent transparent;
+  overflow-x: hidden;
 }
 
 body {

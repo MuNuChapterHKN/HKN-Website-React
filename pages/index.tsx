@@ -5,6 +5,7 @@ import Layout from "./Layout";
 import HomeLogo from "../components/Home/HomeLogo";
 import RoundButton from "../components/molecules/RoundButton";
 import {PolygonProps} from "@/components/Polygon";
+import {useEffect, useState} from "react";
 
 const polygons: PolygonProps[] = [
     {
@@ -100,6 +101,20 @@ const polygons: PolygonProps[] = [
 
 export default function Home() {
     const router = useRouter();
+    const [windowWidth, setWindowWidth] = useState(0);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup the event listener when the component unmounts
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
 
     // @ts-ignore
     return (
@@ -115,13 +130,13 @@ export default function Home() {
                     <div className={styles.titleButtons}>
                         <RoundButton className={styles.joinUsTitleButton} onClick={() => router.push('/JoinUs')}
                                      text={"JOIN US"}/>
-                        <RoundButton style={{border: 'solid 1.5px #CA5B01'}} className={styles.aboutUsTitleButton}
+                        <RoundButton style={{border: 'solid 2px #CA5B01'}} className={styles.aboutUsTitleButton}
                                      onClick={() => router.push('/AboutUs')} text={"ABOUT US"}/>
                     </div>
                 </div>
-                <div className={styles.logoContainer}>
+                {(windowWidth == 0 || windowWidth > 1100) && <div className={styles.logoContainer}>
                     <HomeLogo/>
-                </div>
+                </div>}
             </div>
 
             <div className={styles.awardsContainer}>
@@ -149,7 +164,7 @@ export default function Home() {
                         <RoundButton className={styles.peopleVisionButton} onClick={() => router.push('/People')}
                                      text={"PEOPLE"}/>
                         {/*TODO: add link*/}
-                        <RoundButton style={{border: 'solid 1.5px #CA5B01'}} className={styles.galleryVisionButton}
+                        <RoundButton style={{border: 'solid 2px #CA5B01'}} className={styles.galleryVisionButton}
                                      onClick={() => router.push('/404')} text={"PHOTO GALLERY"}/>
                     </div>
                 </div>
@@ -157,7 +172,7 @@ export default function Home() {
             </div>
 
             <div className={styles.originsContainer}>
-                <img className={styles.originsImage} src="/Home/origins.jpg" alt="Vision"/>
+                <Image className={styles.originsImage} src="/Home/origins.jpg" alt="Vision" width="0" height="0" sizes="100vw"/>
                 <div className={styles.originsRight}>
                     <text className={styles.originsText}>ORIGINS</text>
                     <text className={styles.originsTitle}>Eta Kappa Nu, IEEE Honor Society</text>
