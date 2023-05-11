@@ -7,6 +7,8 @@
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
     padding: 20px;
     margin: 0 20px;
+    max-height: 40vh;
+    overflow: hidden;
 }
 .image {
     width:20%;
@@ -29,5 +31,4 @@
 .profText {
     font-weight: 400;
     font-size: 18px;
-    margin-top: 10px;
 }

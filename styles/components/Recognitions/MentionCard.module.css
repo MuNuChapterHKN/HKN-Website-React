@@ -1,0 +1,43 @@
+.mentionsCard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    background: linear-gradient(150deg, #092B48, #124877 70%, #124877);
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.5);
+}
+
+.mentionsImage {
+    filter: sepia(90%) saturate(150%) hue-rotate(180deg) brightness(90%);
+    width: 300px;
+    height: auto;
+}
+
+.mentionsCardRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 700px;
+    padding: 0 30px;
+}
+
+.mentionsCardTitle {
+    font-weight: 600;
+    font-size: 45px;
+    line-height: 50px;
+}
+
+.mentionsCardSubTitle {
+    font-weight: 400;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.mentionsCardText {
+    font-weight: 400;
+    font-size: 21px;
+}
