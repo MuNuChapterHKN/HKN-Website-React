@@ -129,9 +129,9 @@ export default function Home() {
                     </text>
                     <div className={styles.titleButtons}>
                         <RoundButton className={styles.joinUsTitleButton} onClick={() => router.push('/JoinUs')}
-                                     text={"JOIN US"}/>
+                                     textButton={"JOIN US"}/>
                         <RoundButton style={{border: 'solid 2px #CA5B01'}} className={styles.aboutUsTitleButton}
-                                     onClick={() => router.push('/AboutUs')} text={"ABOUT US"}/>
+                                     onClick={() => router.push('/AboutUs')} textButton={"ABOUT US"}/>
                     </div>
                 </div>
                 {(windowWidth == 0 || windowWidth > 1100) && <div className={styles.logoContainer}>
@@ -162,10 +162,10 @@ export default function Home() {
                     </text>
                     <div className={styles.visionButtons}>
                         <RoundButton className={styles.peopleVisionButton} onClick={() => router.push('/People')}
-                                     text={"PEOPLE"}/>
+                                     textButton={"PEOPLE"}/>
                         {/*TODO: add link*/}
                         <RoundButton style={{border: 'solid 2px #CA5B01'}} className={styles.galleryVisionButton}
-                                     onClick={() => router.push('/404')} text={"PHOTO GALLERY"}/>
+                                     onClick={() => router.push('/404')} textButton={"PHOTO GALLERY"}/>
                     </div>
                 </div>
                 <img className={styles.visionImage} src="/Home/vision.jpg" alt="Vision"/>
@@ -182,7 +182,7 @@ export default function Home() {
                     </text>
                     <div className={styles.originsButtons}>
                         <RoundButton className={styles.readMeOriginsButton} onClick={() => router.push('/404')}
-                                     text={"READ ME"}/>
+                                     textButton={"READ ME"}/>
                         {/*TODO: add link*/}
                     </div>
                 </div>
@@ -239,7 +239,7 @@ export default function Home() {
                 <text className={styles.textAreYouReady}>ARE YOU READY?</text>
                 <text className={styles.textJoinOurChapter}>Join Our Chapter And</text>
                 <text className={styles.textJoinOurChapter}>Become The Next HKNuer</text>
-                <RoundButton className={styles.buttonJoinUs} text={"JOIN US"} onClick={() => router.push('/JoinUs')}/>
+                <RoundButton className={styles.buttonJoinUs} textButton={"JOIN US"} onClick={() => router.push('/JoinUs')}/>
             </div>
 
         </Layout>

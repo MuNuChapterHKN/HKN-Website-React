@@ -25,7 +25,8 @@ const Header = () => {
                 <div className={isActive('/AboutUs') ? styles.active : styles.inactive} onClick={() => router.push('/AboutUs')}>
                     About
                 </div>
-                <div className={isActive('/Events') ? styles.active : styles.inactive} onClick={() => router.push('/Events')}>
+                <div className={isActive('/Events') || isActive('/EventsExternal') || isActive('/EventsStudyGroups') || isActive('/EventsMasterclass') ? styles.active : styles.inactive}
+                     onClick={() => router.push('/Events')}>
                     Events
                 </div>
                 <div className={isActive('/People') ? styles.active : styles.inactive} onClick={() => router.push('/People')}>
@@ -37,7 +38,7 @@ const Header = () => {
             </div>
 
             <div className={styles.headerSpace}>
-                <RoundButton style={{padding:'10px 25px', backgroundColor: '#FCB702'}} onClick={() => router.push('/JoinUs')} text={"Join Us"}/>
+                <RoundButton style={{padding:'10px 25px', backgroundColor: '#FCB702'}} onClick={() => router.push('/JoinUs')} textButton={"Join Us"}/>
             </div>
         </header>
     )

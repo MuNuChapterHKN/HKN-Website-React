@@ -1,0 +1,94 @@
+/* 1st section: LATEST EVENT */
+.latestEventContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.latestEventImage {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.latestEventRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 48%;
+    height: 100%;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+.latestEventDate, .pastText {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.latestEventTitle {
+    font-weight: 600;
+    font-size: 60px;
+    margin: 0 0 20px 0;
+}
+
+.latestEventDesc {
+    font-size: 21px;
+    font-weight: 400;
+    width: 100%;
+    word-wrap: break-word;
+    margin: 0 0 25px 0;
+}
+
+.latestEventButton {
+    background: linear-gradient(90deg, #fc2802, #e0fa81);
+}
+
+/* 2nd section: PAST YEARS */
+.pastContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: 100px 0;
+}
+
+.pastTitle {
+    font-weight: 600;
+    font-size: 45px;
+}
+
+.pastEvents {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.pastEventsButton {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 60%;
+    right: -50px;
+    background: #FC5C02;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-width: 0;
+    cursor: pointer;
+}
+

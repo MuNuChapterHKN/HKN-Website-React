@@ -39,14 +39,14 @@ export default function JoinUs() {
     // Timer to change the award every 5 seconds
     useEffect(() => {
         const interval = setInterval(() => {
-            setAwardIndex(awardIndex + 1);
+            handleRightArrowAwards();
         }, 5000);
 
         // Cleanup function to clear the timer when the component unmounts
         return () => {
             clearInterval(interval);
         };
-    }, []);
+    }, [awardIndex]);
 
     // this useEffect runs every time the professionalIndex changes, it updates 3 professionals array that is displayed
     useEffect(() => {
@@ -89,10 +89,10 @@ export default function JoinUs() {
                 <div className={styles.awardsLeft}>
                     <Image className={styles.awardImage} src={awards[awardIndex % awards.length]} alt="Award" width="0" height="0" sizes="100vw"/>
                     <button className={styles.awardsLeftButton} onClick={handleLeftArrowAwards}>
-                        <Image src="/Recognitions/left-arrow.svg" alt="Right Arrow" width={35} height={35}/>
+                        <Image src="/left-arrow.svg" alt="Right Arrow" width={35} height={35}/>
                     </button>
                     <button className={styles.awardsRightButton} onClick={handleRightArrowAwards}>
-                        <Image src="/Recognitions/right-arrow.svg" alt="Right Arrow" width={35} height={35}/>
+                        <Image src="/right-arrow.svg" alt="Right Arrow" width={35} height={35}/>
                     </button>
                 </div>
                 <div className={styles.awardsRight}>
@@ -117,7 +117,7 @@ export default function JoinUs() {
                 <MentionCard mention={mentions[mentionIndex % mentions.length]}/>
                 {mentions.length > 1 &&
                     <button className={styles.mentionsButton} onClick={handleRightArrowMentions}>
-                        <Image src="/Recognitions/right-arrow.svg" alt="Right Arrow" width={35} height={35}/>
+                        <Image src="/right-arrow.svg" alt="Right Arrow" width={35} height={35}/>
                     </button>
                 }
             </div>
@@ -133,7 +133,7 @@ export default function JoinUs() {
                     ))}
                     {professionals.length > 3 &&
                         <button className={styles.professionalsButton} onClick={handleRightArrowProfessionals}>
-                            <Image src="/Recognitions/right-arrow.svg" alt="Right Arrow" width={35} height={35}/>
+                            <Image src="/right-arrow.svg" alt="Right Arrow" width={35} height={35}/>
                         </button>
                     }
                 </div>
