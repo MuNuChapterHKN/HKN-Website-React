@@ -1,0 +1,84 @@
+.cardEven, .cardOdd {
+    width: 100%;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px 40px 40px ;
+    margin: 50px 0;
+}
+
+.cardOdd {
+    background: linear-gradient(to bottom, #FCB702 40%, rgba(252, 183, 2, 0));
+    color: black;
+}
+
+.cardEven {
+    background:  linear-gradient(to bottom, #124877 40%, rgba(18, 72, 119, 0));
+    color: white;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 33%;
+    height: fit-content;
+}
+
+.name {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    min-height: 33vw;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 34%;
+}
+
+.textLocation {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.buttonOdd, .buttonEven {
+    padding: 15px 35px;
+    margin-top: 10px;
+}
+
+.buttonEven {
+    background: #FCB702;
+    color: black;
+}
+
+.buttonOdd {
+    background: #124877;
+    color: white;
+}
+
+
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 33%;
+}
+
+.description {
+    font-size: 20px;
+    font-weight: 400;
+}

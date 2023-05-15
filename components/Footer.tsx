@@ -8,6 +8,7 @@ const Footer = () => {
 
     return (
         <div className={styles.footer}>
+            {/* TODO: add links */}
             <div className={styles.columnLogo}>
                 <Image className={styles.logo} src="/hkn_logo_white_vector.svg" alt="HKN PoliTO Logo" width={60} height={60}/>
             </div>
@@ -29,8 +30,8 @@ const Footer = () => {
                 <text className={styles.columnTitle}>Follow our work</text>
 
                 <a className={styles.link}>Github</a>
-                <a className={styles.link}>Past Events</a>
-                <a className={styles.link}>Study Groups</a>
+                <a className={styles.link} href={"/Events/External"}>Past Events</a>
+                <a className={styles.link} href={"/Events/StudyGroups"}>Study Groups</a>
             </div>
 
             <div className={styles.column}>

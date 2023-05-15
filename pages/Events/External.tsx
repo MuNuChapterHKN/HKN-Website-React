@@ -1,16 +1,14 @@
 import Image from 'next/image'
-import styles from '@/styles/EventsExternal.module.css'
+import styles from '@/styles/Events/EventsExternal.module.css'
 import {useRouter} from "next/router";
-import Layout from "./Layout";
-import HomeLogo from "../components/Home/HomeLogo";
-import RoundButton from "../components/molecules/RoundButton";
+import Layout from "../../components/Layout";
+import RoundButton from "../../components/molecules/RoundButton";
 import {PolygonProps} from "@/components/Polygon";
 import {useEffect, useState} from "react";
-import ProfessionalCard from "@/components/Recognitions/ProfessionalCard";
 import YearEventsColumn, {YearEvents} from "@/components/Events/YearEventsColumn";
 
 const latestEvent = {
-    imageSrc: "/Events/EventsExternal/latestEvent.png",
+    imageSrc: "/Events/External/latestEvent.png",
     title: "New event - Title Long",
     date: "20 MAY 2021",
     description: "haifahbdf ahbhbfoahbdhbadhfbahdbfah bdfhabfhasbchabo hdb afhabfhbad hbaohbfahbd ohbdahbdhbahakf kabkjfkabfkjab kfjbkjbakjbfka bkbakbfka",
@@ -23,17 +21,17 @@ const pastEvents : YearEvents[] = [
             {
                 title: "Hackaton Carduino & ConnectiCity",
                 date: "21 MAY 2022",
-                imageSrc: "/Events/EventsExternal/event_2022.png",
+                imageSrc: "/Events/External/event_2022.png",
             },
             {
                 title: "Hackaton Carduino & ConnectiCity",
                 date: "22 MAY 2022",
-                imageSrc: "/Events/EventsExternal/event_2022.png",
+                imageSrc: "/Events/External/event_2022.png",
             },
             {
                 title: "Hackaton Carduino & ConnectiCity",
                 date: "23 MAY 2022",
-                imageSrc: "/Events/EventsExternal/event_2022.png",
+                imageSrc: "/Events/External/event_2022.png",
             }
         ],
     },
@@ -43,17 +41,17 @@ const pastEvents : YearEvents[] = [
             {
                 title: "Block Chain - (not) a bitcoin event",
                 date: "11 DECEMBER 2021",
-                imageSrc: "/Events/EventsExternal/event_2021.png",
+                imageSrc: "/Events/External/event_2021.png",
             },
             {
                 title: "Block Chain - (not) a bitcoin event",
                 date: "11 DECEMBER 2021",
-                imageSrc: "/Events/EventsExternal/event_2021.png",
+                imageSrc: "/Events/External/event_2021.png",
             },
             {
                 title: "Block Chain - (not) a bitcoin event",
                 date: "11 DECEMBER 2021",
-                imageSrc: "/Events/EventsExternal/event_2021.png",
+                imageSrc: "/Events/External/event_2021.png",
             },
         ],
     },
@@ -63,12 +61,12 @@ const pastEvents : YearEvents[] = [
             {
                 title: "Block Chain - (not) a bitcoin event",
                 date: "11 DECEMBER 2020",
-                imageSrc: "/Events/EventsExternal/event_2021.png",
+                imageSrc: "/Events/External/event_2021.png",
             },
             {
                 title: "Block Chain - (not) a bitcoin event",
                 date: "11 DECEMBER 2020",
-                imageSrc: "/Events/EventsExternal/event_2021.png",
+                imageSrc: "/Events/External/event_2021.png",
             },
         ],
     }
@@ -78,7 +76,7 @@ const polygons: PolygonProps[] = [
 
 ];
 
-export default function EventsExternal() {
+export default function External() {
     const router = useRouter();
     const [currentPastEvents, setPastEvents] = useState(pastEvents.slice(0, 3));
     const [pastEventsIndex, setPastEventsIndex] = useState<number>(0);

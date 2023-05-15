@@ -1,4 +1,4 @@
-import Layout from "./Layout";
+import Layout from "../components/Layout";
 import styles from '@/styles/Recognitions.module.css'
 import {useRouter} from "next/router";
 import Image from "next/image";
