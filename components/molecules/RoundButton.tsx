@@ -1,10 +1,9 @@
 import styles from "@/styles/components/molecules/RoundButton.module.css";
 
-const RoundButton = ({ onClick, textButton, children, className, style }: { onClick?: () => void, textButton?: string, children?: any, className?: any, style?: any}) => {
+const RoundButton = ({ onClick, children, className, style }: { onClick?: () => void, children?: any, className?: any, style?: any}) => {
 
     return (
-        <button style={style} className={`${styles.button} ${className}`} onClick={onClick}>
-            <text className={styles.text}>{textButton}</text>
+        <button style={style} className={`roundButton ${className}`} onClick={onClick}>
             {children}
         </button>
     );

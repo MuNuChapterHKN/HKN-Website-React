@@ -5,6 +5,7 @@ import Image from "next/image";
 import ProfessionalCard, {Professional} from "@/components/Recognitions/ProfessionalCard";
 import {useEffect, useState} from "react";
 import MentionCard, {Mention} from "../components/Recognitions/MentionCard";
+import ArrowButton from "@/components/molecules/ArrowButton";
 
 const awards : string[] = [
     "/Home/outstanding-2022.png",
@@ -88,12 +89,8 @@ export default function JoinUs() {
                 {/*TODO: image carousel*/}
                 <div className={styles.awardsLeft}>
                     <Image className={styles.awardImage} src={awards[awardIndex % awards.length]} alt="Award" width="0" height="0" sizes="100vw"/>
-                    <button className={styles.awardsLeftButton} onClick={handleLeftArrowAwards}>
-                        <Image src="/left-arrow.svg" alt="Right Arrow" width={35} height={35}/>
-                    </button>
-                    <button className={styles.awardsRightButton} onClick={handleRightArrowAwards}>
-                        <Image src="/right-arrow.svg" alt="Right Arrow" width={35} height={35}/>
-                    </button>
+                    <ArrowButton left className={styles.awardsLeftButton} onClick={handleLeftArrowAwards}/>
+                    <ArrowButton right className={styles.awardsRightButton} onClick={handleRightArrowAwards}/>
                 </div>
                 <div className={styles.awardsRight}>
                     <text className={styles.awardsText}>AWARDS</text>
@@ -116,9 +113,7 @@ export default function JoinUs() {
                 </div>
                 <MentionCard mention={mentions[mentionIndex % mentions.length]}/>
                 {mentions.length > 1 &&
-                    <button className={styles.mentionsButton} onClick={handleRightArrowMentions}>
-                        <Image src="/right-arrow.svg" alt="Right Arrow" width={35} height={35}/>
-                    </button>
+                    <ArrowButton className={styles.mentionsButton} onClick={handleRightArrowMentions}/>
                 }
             </div>
 
@@ -132,9 +127,7 @@ export default function JoinUs() {
                         <ProfessionalCard key={index} professional={professional}/>
                     ))}
                     {professionals.length > 3 &&
-                        <button className={styles.professionalsButton} onClick={handleRightArrowProfessionals}>
-                            <Image src="/right-arrow.svg" alt="Right Arrow" width={35} height={35}/>
-                        </button>
+                        <ArrowButton className={styles.professionalsButton} onClick={handleRightArrowProfessionals}/>
                     }
                 </div>
             </div>

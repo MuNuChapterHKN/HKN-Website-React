@@ -16,7 +16,7 @@ export default function StudyGroup({studyGroup, index}: {studyGroup: StudyGroupP
             <div className={styles.center}>
                 <text className={styles.textLocation}>🕰️ {studyGroup.date}</text>
                 <text className={styles.textLocation}>📍SALA C</text>
-                <RoundButton className={index % 2 == 0 ? styles.buttonEven : styles.buttonOdd} onClick={() => window.open(studyGroup.link)} textButton="TELEGRAM"/>
+                <RoundButton className={index % 2 == 0 ? styles.buttonEven : styles.buttonOdd} onClick={() => window.open(studyGroup.link)}>TELEGRAM</RoundButton>
             </div>
 
             <div className={styles.right}>

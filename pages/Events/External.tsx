@@ -1,11 +1,12 @@
 import Image from 'next/image'
-import styles from '@/styles/Events/EventsExternal.module.css'
+import styles from '@/styles/Events/External.module.css'
 import {useRouter} from "next/router";
 import Layout from "../../components/Layout";
 import RoundButton from "../../components/molecules/RoundButton";
 import {PolygonProps} from "@/components/Polygon";
 import {useEffect, useState} from "react";
 import YearEventsColumn, {YearEvents} from "@/components/Events/YearEventsColumn";
+import ArrowButton from "@/components/molecules/ArrowButton";
 
 const latestEvent = {
     imageSrc: "/Events/External/latestEvent.png",
@@ -108,7 +109,7 @@ export default function External() {
                     <text className={styles.latestEventTitle}>{latestEvent.title}</text>
                     <text className={styles.latestEventDesc}>{latestEvent.description}</text>
                     {/* TODO: Add link to event page */}
-                    <RoundButton style={{color: "black"}} className={styles.latestEventButton} onClick={() => router.push('/404')} textButton={"READ MORE"}/>
+                    <RoundButton style={{color: "black"}} className={styles.latestEventButton} onClick={() => router.push('/404')}>READ MORE</RoundButton>
                 </div>
             </div>
 
@@ -122,9 +123,7 @@ export default function External() {
                         <YearEventsColumn key={index} yearEvents={yearEvents}/>
                     ))}
                     {currentPastEvents.length > 1 &&
-                        <button className={styles.pastEventsButton} onClick={handleRightArrowPastEvents}>
-                            <Image src="/right-arrow.svg" alt="Right Arrow" width={35} height={35}/>
-                        </button>
+                        <ArrowButton right className={styles.pastEventsButton} onClick={handleRightArrowPastEvents}/>
                     }
                 </div>
             </div>

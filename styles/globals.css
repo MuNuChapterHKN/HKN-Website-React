@@ -31,6 +31,30 @@ a {
   display: none;
 }
 
+
+.roundButton {
+  color: white;
+  padding: 17px 70px;
+  border-radius: 50px;
+  border-width: 0;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.arrowButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FC5C02;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-width: 0;
+  cursor: pointer;
+}
+
+
 @font-face {
   font-family: 'Outfit';
   src: url('/fonts/Outfit-Medium.ttf') format('truetype');
