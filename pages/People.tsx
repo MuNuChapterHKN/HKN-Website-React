@@ -2,6 +2,7 @@ import Layout from "../components/Layout";
 import styles from '@/styles/People.module.css'
 import RoundButton from "@/components/molecules/RoundButton";
 import {useRouter} from "next/router";
+import {useState} from "react";
 
 // Images should be in a 4:5 ratio
 const Board : BoardMemberProps[] = [
@@ -147,10 +148,24 @@ export default function People() {
 }
 
 function BoardMember({boardMemberProps, index}: {boardMemberProps : BoardMemberProps, index: number}) {
+    const [isHovered, setHovered] = useState(false);
+
+    const handleMouseEnter = () => {
+        setHovered(true);
+    };
+
+    const handleMouseLeave = () => {
+        setHovered(false);
+    };
+
     return (
-        <div className={styles.boardMember}>
+        <div className={styles.boardMember} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <div className={styles.boardImageContainer}>
                 <div className={index % 2 == 0 ? styles.boardCardEven : styles.boardCardOdd}/>
+                <div className={styles.overlayContainer}>
+                    <img style={{visibility: isHovered ? 'visible' : 'hidden'}} className={`${styles.boardOverlay} ${isHovered ? styles.slideIn : styles.slideOut}`}
+                        src={'/People/Board/' + (index % 2 == 0 ? 'overlay_board_red.svg' : 'overlay_board_blue.svg')} alt={'overlay'}/>
+                </div>
                 <img className={styles.boardMemberImage} src={boardMemberProps.imageSrc} alt={boardMemberProps.imageSrc}/>
             </div>
             <text className={styles.boardMemberName}>{boardMemberProps.name}</text>
