@@ -82,7 +82,7 @@ export default function Masterclasses() {
     }
 
     return (
-        <Layout polygons={polygons}>
+        <Layout>
             <div className={styles.masterclassesContainer}>
                 <div className={styles.topCircle}/>
                 <div className={styles.bottomCircle}/>

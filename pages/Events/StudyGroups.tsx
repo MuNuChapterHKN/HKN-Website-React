@@ -31,15 +31,11 @@ const studyGroups : StudyGroupProps[] = [
     }
 ];
 
-const polygons: PolygonProps[] = [
-
-];
-
 export default function StudyGroups() {
 
     // @ts-ignore
     return (
-        <Layout polygons={polygons}>
+        <Layout>
             <div className={styles.groupsContainer}>
                 {studyGroups.map((sGroup, index) => {
                     return (

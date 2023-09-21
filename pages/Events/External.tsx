@@ -73,10 +73,6 @@ const pastEvents : YearEvents[] = [
     }
 ];
 
-const polygons: PolygonProps[] = [
-
-];
-
 export default function External() {
     const router = useRouter();
     const [currentPastEvents, setPastEvents] = useState(pastEvents.slice(0, 3));
@@ -101,7 +97,7 @@ export default function External() {
 
     // @ts-ignore
     return (
-        <Layout polygons={polygons}>
+        <Layout>
             <div className={styles.latestEventContainer}>
                 <Image className={styles.latestEventImage} src={latestEvent.imageSrc} alt="Latest Event"  width="0" height="0" sizes="100vw"/>
                 <div className={styles.latestEventRight}>
