@@ -38,7 +38,7 @@ const Header = () => {
             </div>
 
             <div className={styles.headerSpace}>
-                <RoundButton style={{padding:'10px 25px', backgroundColor: '#FCB702'}} onClick={() => router.push('/JoinUs')}>Join Us</RoundButton>
+                <RoundButton className={styles.joinUsButton} onClick={() => router.push('/JoinUs')}>Join Us</RoundButton>
             </div>
         </header>
     )

@@ -1,14 +1,13 @@
 /* 1st section: AWARDS */
 .awardsCard {
-    background: #FCA702;
-    display: flex;
+    background: linear-gradient(180deg, #FFF 0%, #FFF 0.01%, #E4E4E4 60.42%, #D1D1D1 100%);    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 90%;
     max-width: 1350px;
     border-radius: 40px;
-    padding: 40px;
+    padding: 70px 3vw;
     margin-top: 100px;
     box-shadow: 0 0 15px 0 rgba(0,0,0,0.5);
 }
@@ -42,21 +41,15 @@
 }
 
 .awardsText, .mentionsText {
+    color: #061E33;
     font-weight: 500;
     font-size: 20px;
-}
-
-.awardsText {
-    color: #11283b;
 }
 
 .awardsTitle, .mentionsTitle  {
     font-weight: 600;
     font-size: 65px;
-}
-
-.awardsTitle {
-    color: #11283b;
+    color: #061E33;
 }
 
 .awards, .professionalsText {
@@ -77,20 +70,19 @@
 }
 
 .awardsLeftButton {
-    background: #FC5C02;
+    background: #061E33;
     left: -17px;
 }
 
 .awardsRightButton {
-    background: #FC5C02;
+    background: #061E33;
     right: -17px;
 }
 
 
 /* 2nd section: INTERNATIONAL COLLECTIVE */
 .internationalCollective {
-    background: linear-gradient(to right, rgba(254, 66, 1, 0.9), rgba(252, 167, 2, 0.9));
-    display: flex;
+    background: linear-gradient(266deg, rgba(242, 242, 242, 0.50) 21.13%, rgba(184, 191, 191, 0.37) 61.16%, rgba(146, 154, 166, 0.37) 97.8%, rgba(100, 117, 140, 0.37) 127.65%);    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -99,18 +91,21 @@
 }
 
 .internationalCollectiveText {
-    color: white;
-    font-weight: 600;
-    font-size: 42px;
-    width: 500px;
+    width: 550px;
     text-align: center;
     margin-left: 100px;
+    color: #FFF;
+    font-family: Outfit;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
 }
 
 /* 3rd section: MENTIONS */
 .mentionsCard {
     position: relative;
-    background: linear-gradient(to right, #061E33, #061E33 30%, rgba(17, 40, 59, 0));
+    background: linear-gradient(90deg, #F2F2F2 0%, #DADADA 26.62%, #BBB 100%);
     display: flex;
     flex-direction: row;
     justify-content: space-between;

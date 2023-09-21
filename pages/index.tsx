@@ -7,98 +7,6 @@ import RoundButton from "../components/molecules/RoundButton";
 import {PolygonProps} from "@/components/Polygon";
 import {useEffect, useState} from "react";
 
-const polygons: PolygonProps[] = [
-    {
-        width: 270, height: 240, left: 10, top: 0,
-        gradient: "linear-gradient(to top, #FF0000, #FCA702 60%, #FCA702)",
-        vertices: [{x: 0, y: 0}, {x: 100, y: 0}, {x: 8, y: 100}]
-    },
-    {
-        width: 170,
-        height: 340,
-        left: 80,
-        top: 0,
-        gradient: "linear-gradient(to bottom, #efab00, #FFC700)",
-        vertices: [
-            {x: 0, y: 0},
-            {x: 100, y: 0},
-            {x: 20, y: 100}
-        ]
-    },
-    {
-        width: 270,
-        height: 280,
-        left: 120,
-        top: 0,
-        gradient: "linear-gradient(150deg, #FCB702, #FCB702 20%, rgba(255,23,0,1) 75%, rgba(255,23,0,1) 100%)",
-        vertices: [
-            {x: 0, y: 0},
-            {x: 30, y: 0},
-            {x: 100, y: 80}
-        ]
-    },
-    {
-        width: 1000,
-        height: 800,
-        right: -670,
-        top: 130,
-        gradient: "linear-gradient(to bottom, rgba(252,167,2,1) 0%, rgba(211,88,18,1) 72%, rgba(181,29,29,1) 100%)",
-        vertices: [
-            {x: 0, y: 0},
-            {x: 70, y: 100},
-            {x: 100, y: 60}
-        ]
-    },
-    {
-        width: 1200,
-        height: 750,
-        right: -620,
-        top: 290,
-        gradient: "linear-gradient(to bottom, rgba(255,0,0,1) 0%, rgba(252,183,2,1) 63%, rgba(252,183,2,1) 100%)",
-        vertices: [
-            {x: 50, y: 0},
-            {x: 100, y: 40},
-            {x: 0, y: 100}
-        ]
-    },
-    {
-        width: 1000,
-        height: 800,
-        right: -300,
-        top: 230,
-        gradient: "linear-gradient(to top, rgba(255,0,0,1) 0%, rgba(252,167,2,1) 35%, rgba(252,167,2,1) 100%)",
-        vertices: [
-            {x: 95, y: 0},
-            {x: 100, y: 35},
-            {x: 0, y: 100}
-        ]
-    },
-    {
-        width: 400,
-        height: 650,
-        left: -120,
-        top: 1800,
-        gradient: "linear-gradient(117deg, rgba(252,167,2,1) 0%, rgba(211,88,18,1) 45%,  rgba(181,29,29,1) 55%, rgba(181,29,29,1) 100%)",
-        vertices: [{x:0, y:25}, {x:20, y:100}, {x:100, y:0}]
-    },
-    {
-        width: 700,
-        height: 800,
-        left: -200,
-        top: 1540,
-        gradient: "linear-gradient(120deg, rgba(255,0,0,1) 0%, rgba(252,183,2,1) 53%, rgba(252,183,2,1) 100%)",
-        vertices: [{x:10, y:35}, {x:100, y:0}, {x:0, y:100}]
-    },
-    {
-        width: 500,
-        height: 850,
-        left: -200,
-        top: 1200,
-        gradient: "linear-gradient(to right, rgb(252, 144, 2) 0%, rgb(252, 173, 2) 60%, rgba(252,183,2,1) 100%)",
-        vertices: [{x:0, y:0}, {x:100, y:20}, {x:0, y:100}]
-    }
-];
-
 export default function Home() {
     const router = useRouter();
     const [windowWidth, setWindowWidth] = useState(0);
@@ -118,7 +26,7 @@ export default function Home() {
 
     // @ts-ignore
     return (
-        <Layout polygons={polygons}>
+        <Layout>
 
             <div className={styles.titleContainer}>
                 <div className={styles.titleColumn}>
@@ -132,9 +40,11 @@ export default function Home() {
                         <RoundButton className={styles.aboutUsTitleButton} onClick={() => router.push('/AboutUs')}>ABOUT US</RoundButton>
                     </div>
                 </div>
-                {(windowWidth == 0 || windowWidth > 1100) && <div className={styles.logoContainer}>
-                    <HomeLogo/>
-                </div>}
+                {(windowWidth == 0 || windowWidth > 1100) &&
+                    <div className={styles.logoContainer}>
+                        <HomeLogo/>
+                    </div>
+                }
             </div>
 
             <div className={styles.awardsContainer}>
@@ -159,7 +69,8 @@ export default function Home() {
                         members and society overall
                     </text>
                     <div className={styles.visionButtons}>
-                        <RoundButton className={styles.peopleVisionButton} onClick={() => router.push('/People')}>PEOPLE</RoundButton>
+                        <RoundButton className={styles.peopleVisionButton}
+                                     onClick={() => router.push('/People')}>READ ME</RoundButton>
                         {/*TODO: add link*/}
                         <RoundButton className={styles.galleryVisionButton} onClick={() => router.push('/404')}>PHOTO GALLERY</RoundButton>
                     </div>
@@ -168,7 +79,8 @@ export default function Home() {
             </div>
 
             <div className={styles.originsContainer}>
-                <Image className={styles.originsImage} src="/Home/origins.jpg" alt="Vision" width="0" height="0" sizes="100vw"/>
+                <Image className={styles.originsImage} src="/Home/origins.jpg" alt="Vision" width="0" height="0"
+                       sizes="100vw"/>
                 <div className={styles.originsRight}>
                     <text className={styles.originsText}>ORIGINS</text>
                     <text className={styles.originsTitle}>Eta Kappa Nu, IEEE Honor Society</text>
@@ -177,7 +89,8 @@ export default function Home() {
                         origins.
                     </text>
                     <div className={styles.originsButtons}>
-                        <RoundButton className={styles.readMeOriginsButton} onClick={() => router.push('/404')}>READ ME</RoundButton>
+                        <RoundButton className={styles.readMeOriginsButton} onClick={() => router.push('/404')}>READ
+                            ME</RoundButton>
                         {/*TODO: add link*/}
                     </div>
                 </div>
@@ -232,9 +145,10 @@ export default function Home() {
 
             <div className={styles.applyCard}>
                 <text className={styles.textAreYouReady}>ARE YOU READY?</text>
-                <text className={styles.textJoinOurChapter}>Join Our Chapter And</text>
+                <text className={styles.textJoinOurChapter}>Join Our Chapter &</text>
                 <text className={styles.textJoinOurChapter}>Become The Next HKNuer</text>
-                <RoundButton className={styles.buttonJoinUs} onClick={() => router.push('/JoinUs')}>JOIN US</RoundButton>
+                <RoundButton className={styles.buttonJoinUs} onClick={() => router.push('/JoinUs')}>JOIN
+                    US</RoundButton>
             </div>
 
         </Layout>

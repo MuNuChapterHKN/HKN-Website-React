@@ -195,6 +195,107 @@
     text-transform: uppercase;
 }
 
+/* BOARD POP UP */
+.popUpBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.boardPopUp {
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    background: #FCA702;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 30px;
+    padding: 40px;
+}
+
+.imageContainer {
+    position: relative;
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageBackground {
+    position: relative;
+    background: linear-gradient(135deg, #124877, #061E33 65%, #061E33);
+    width: 100%;
+    padding-bottom: 100%;
+    border-radius: 50%;
+}
+
+.arrowButtonLeft, .arrowButtonRight {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.arrowButtonLeft {
+    left: -25px;
+}
+
+.arrowButtonRight {
+    right: -25px;
+}
+
+.imageClipMask {
+    position: absolute;
+    width: 100%;
+    height: calc(100% + 40px);
+    top: -30px;
+    left: 0;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    overflow: hidden;
+}
+
+.boardPopUpImage {
+    width: 100%;
+}
+
+.popUpTextContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #061E33;
+}
+
+.ourBoard {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.role {
+    font-size: 46px;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+.description {
+    font-size: 18px;
+    font-weight: 400;
+}
+
 @media (max-width: 900px) {
     .boardMember {
         flex: 1 0 45%;

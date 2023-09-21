@@ -2,7 +2,8 @@ import Layout from "../components/Layout";
 import styles from '@/styles/People.module.css'
 import RoundButton from "@/components/molecules/RoundButton";
 import {useRouter} from "next/router";
-import {useState} from "react";
+import {MouseEventHandler, useState} from "react";
+import ArrowButton from "@/components/molecules/ArrowButton";
 
 // Images should be in a 4:5 ratio
 const Board : BoardMemberProps[] = [
@@ -92,16 +93,28 @@ const Teams : TeamProps[] = [
 
 export default function People() {
     const router = useRouter();
+    const [boardIndex, setBoardIndex] = useState(0);
+    const [boardPopUpVisible, setBoardPopUpVisible] = useState(false);
+
+    const handleBoardMemberClick = (index: number) => {
+        setBoardIndex(index);
+        setBoardPopUpVisible(true);
+    }
+
+    const handleHideBoardPopUp = () => {
+        setBoardPopUpVisible(false);
+    }
 
     return (
        <Layout>
+            <BoardPopUp index={boardIndex} visible={boardPopUpVisible} disablePopUp={handleHideBoardPopUp}/>
             <div className={styles.boardContainer}>
                 <text className={styles.theBoard}>THE BOARD</text>
                 <text className={styles.managementArea}>Management</text>
                 <text className={styles.managementArea}>Area</text>
                 <div className={styles.boardGrid}>
                     {Board.map((bmp, index) => (
-                        <BoardMember boardMemberProps={bmp} index={index}/>
+                        <BoardMember boardMemberProps={bmp} index={index} onClick={() => handleBoardMemberClick(index)}/>
                     ))}
                 </div>
             </div>
@@ -147,7 +160,7 @@ export default function People() {
     )
 }
 
-function BoardMember({boardMemberProps, index}: {boardMemberProps : BoardMemberProps, index: number}) {
+function BoardMember({boardMemberProps, index, onClick}: {boardMemberProps : BoardMemberProps, index: number, onClick: MouseEventHandler<HTMLDivElement>}) {
     const [isHovered, setHovered] = useState(false);
 
     const handleMouseEnter = () => {
@@ -159,7 +172,7 @@ function BoardMember({boardMemberProps, index}: {boardMemberProps : BoardMemberP
     };
 
     return (
-        <div className={styles.boardMember} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div className={styles.boardMember} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={onClick}>
             <div className={styles.boardImageContainer}>
                 <div className={index % 2 == 0 ? styles.boardCardEven : styles.boardCardOdd}/>
                 <div className={styles.overlayContainer}>
@@ -187,6 +200,28 @@ function Team({teamProps} : {teamProps: TeamProps}) {
     )
 }
 
+function BoardPopUp({index, visible, disablePopUp}: {index: number, visible: Boolean, disablePopUp:  MouseEventHandler<HTMLDivElement>}) {
+    return (
+        <div className={styles.popUpBackground} onClick={disablePopUp} style={{visibility: visible ? 'visible' : 'hidden'}}>
+            <div className={styles.boardPopUp}>
+                <div className={styles.imageContainer}>
+                    <ArrowButton left onClick={() => {}} className={styles.arrowButtonLeft}/>
+                    <div className={styles.imageBackground}>
+                        <div className={styles.imageClipMask}>
+                            <img className={styles.boardPopUpImage} src={Board[index].imageSrc} alt={Board[index].imageSrc}/>
+                        </div>
+                    </div>
+                    <ArrowButton right onClick={() => {}} className={styles.arrowButtonRight}/>
+                </div>
+                <div className={styles.popUpTextContainer}>
+                    <text className={styles.ourBoard}>OUR BOARD</text>
+                    <text className={styles.role}>{Board[index].role}</text>
+                    <text className={styles.roleDescription}>{Board[index].roleDescription}</text>
+                </div>
+            </div>
+        </div>
+    )
+}
 export interface BoardMemberProps {
     name: string;
     role: string;

@@ -8,10 +8,6 @@ const Footer = () => {
 
     return (
         <div className={styles.footer}>
-            {/* TODO: add links */}
-            <div className={styles.columnLogo}>
-                <Image className={styles.logo} src="/hkn_logo_white_vector.svg" alt="HKN PoliTO Logo" width={60} height={60}/>
-            </div>
 
             <div className={styles.column}>
                 <div className={styles.columnTitle} >

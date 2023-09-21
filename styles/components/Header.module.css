@@ -63,3 +63,16 @@
     padding-right: 5%;
     flex:1;
 }
+
+
+.joinUsButton {
+    padding: 10px 25px;
+    background-color: white;
+    color: #061E33;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
