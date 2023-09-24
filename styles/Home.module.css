@@ -144,6 +144,7 @@
     font-style: normal;
     font-weight: 600;
     text-transform: uppercase;
+    padding: 17px 60px;
 }
 
 /* fifth section: projects */
@@ -243,6 +244,7 @@
 .buttonJoinUs {
     background-color: #11283b;
     margin: 30px 0 10px 0;
+    padding: 17px 80px;
 }
 
 

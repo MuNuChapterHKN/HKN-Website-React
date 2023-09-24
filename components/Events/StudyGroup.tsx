@@ -1,5 +1,5 @@
 import {useRouter} from "next/router";
-import styles from "@/styles/components/Events/StudyGroup.module.css";
+import styles from "@/styles/components/Activities/StudyGroup.module.css";
 import RoundButton from "@/components/molecules/RoundButton";
 import Image from "next/image";
 
@@ -10,7 +10,7 @@ export default function StudyGroup({studyGroup, index}: {studyGroup: StudyGroupP
         <div className={index % 2 == 0 ? styles.cardEven : styles.cardOdd}>
             <div className={styles.left}>
                 <text className={styles.name}>{studyGroup.name}</text>
-                <Image className={styles.image} src={"/Events/StudyGroups/StudyGroup.jpg"} alt={studyGroup.name} width="0" height="0" sizes="100vw"/>
+                <Image className={styles.image} src={"/Activities/StudyGroups/StudyGroup.jpg"} alt={studyGroup.name} width="0" height="0" sizes="100vw"/>
             </div>
 
             <div className={styles.center}>

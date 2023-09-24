@@ -1,0 +1,96 @@
+.yearEventsColumn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    margin: 0 10px;
+}
+
+.yearCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 25px;
+    background: linear-gradient(to right, #FC9402 35%, #FF0000);
+}
+
+.year {
+    color:black;
+    font-weight: 600;
+    font-size: 45px;
+}
+
+.eventRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.eventImage {
+    object-fit: cover;
+    border-radius: 20px;
+    width: 26%;
+    height: 16vw;
+}
+
+.divider {
+    width: 5px;
+    height: calc(16vw + 30px);
+    background-color: #FC9402;
+    margin: 0 10px;
+}
+
+.eventCard {
+    border-radius: 20px;
+    background: linear-gradient(to left, #061E33 35%, #124877);
+    width: 70%;
+    height: 16vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 15px 0;
+    padding: 25px;
+    overflow: hidden;
+}
+
+.eventDate {
+    font-weight: 400;
+    font-size: 17px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.eventTitle {
+    font-weight: 600;
+    font-size: 30px;
+    margin: 0 0 20px 0;
+    width: 100%;
+}
+
+.dividerContainer {
+    width:100%;
+    padding: 0 calc(26% + 10px);
+}
+
+.horizontalDivider {
+    width: 100%;
+    align-self: center;
+    justify-self: center;
+    height: 5px;
+    background-color: #FC9402;
+}
+
+.dividerEnd {
+    bottom: 0;
+    position: absolute;
+    width: 5px;
+    height: 20px;
+    background-color: #FC9402;
+}

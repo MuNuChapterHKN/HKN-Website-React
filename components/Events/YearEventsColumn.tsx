@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import styles from '@/styles/components/Events/YearEventsColumn.module.css'
+import styles from '@/styles/components/Activities/YearEventsColumn.module.css'
 import {useRouter} from "next/router";
 
 export default function YearEventsColumn({yearEvents}: { yearEvents: YearEvents }) {

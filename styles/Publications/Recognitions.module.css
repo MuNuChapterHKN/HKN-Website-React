@@ -1,0 +1,164 @@
+/* 1st section: AWARDS */
+.awardsCard {
+    background: linear-gradient(180deg, #FFF 0%, #FFF 0.01%, #E4E4E4 60.42%, #D1D1D1 100%);    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1350px;
+    border-radius: 40px;
+    padding: 70px 3vw;
+    margin-top: 100px;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.5);
+}
+
+.awardsLeft {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+    margin: 0 70px;
+}
+
+.awardImage {
+    align-self: center;
+    justify-self: center;
+    width: 100%;
+    height: auto;
+}
+
+.awardsRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+    width: 60%;
+    padding: 0 40px;
+}
+
+.awardsText, .mentionsText {
+    color: #061E33;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.awardsTitle, .mentionsTitle  {
+    font-weight: 600;
+    font-size: 65px;
+    color: #061E33;
+}
+
+.awards, .professionalsText {
+    font-weight: 400;
+    font-size: 21px;
+}
+
+.awards {
+    color: #11283b;
+    margin: 15px 0 35px 0;
+}
+
+.awardsLeftButton, .awardsRightButton, .mentionsButton, .professionalsButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #1A3247;
+}
+
+.awardsLeftButton {
+    background: #061E33;
+    left: -17px;
+}
+
+.awardsRightButton {
+    background: #061E33;
+    right: -17px;
+}
+
+
+/* 2nd section: INTERNATIONAL COLLECTIVE */
+.internationalCollective {
+    background: linear-gradient(266deg, rgba(242, 242, 242, 0.50) 21.13%, rgba(184, 191, 191, 0.37) 61.16%, rgba(146, 154, 166, 0.37) 97.8%, rgba(100, 117, 140, 0.37) 127.65%);    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.internationalCollectiveText {
+    width: 550px;
+    text-align: center;
+    margin-left: 100px;
+    color: #FFF;
+    font-family: Outfit;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+/* 3rd section: MENTIONS */
+.mentionsCard {
+    position: relative;
+    background: linear-gradient(90deg, #F2F2F2 0%, #DADADA 26.62%, #BBB 100%);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1350px;
+    border-radius: 40px;
+    padding: 40px;
+    margin-top: 100px;
+}
+
+.mentionsLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+    width: 70%;
+}
+
+.mentionsButton {
+    right: 14px;
+}
+
+
+/* 4th section: PROFESSIONALS */
+.professionalsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 100px 0;
+}
+
+.professionalsTitle {
+    font-weight: 600;
+    font-size: 45px;
+}
+
+.professionalsCards {
+    position:relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 40px;
+    padding: 0;
+}
+
+.professionalsButton {
+    right: -5px;
+}
+
