@@ -19,7 +19,7 @@ export default function JoinUs() {
                     </div>
                     <div className={styles.requirementRow}>
                         <div className={styles.requirementImage}>
-                            <Image src="/hkn_logo_blu_vector.svg" alt="TODO" width={0} height={0} className={styles.image}/>
+                            <Image src="/Common/hkn_logo_blu_vector.svg" alt="TODO" width={0} height={0} className={styles.image}/>
                         </div>
                         <span className={styles.verticalSeparator}></span>
                         <div className={styles.requirementText}>
@@ -49,7 +49,7 @@ export default function JoinUs() {
                         </p>
                         <span className={styles.verticalSeparator}></span>
                         <div className={styles.requirementImage}>
-                            <Image src="/hkn_logo_blu_vector.svg" alt="TODO" width={0} height={0} className={styles.image}/>
+                            <Image src="/Common/hkn_logo_blu_vector.svg" alt="TODO" width={0} height={0} className={styles.image}/>
                         </div>
                     </div>
                     <div className={styles.horizontalSeparatorContainer}>
@@ -58,7 +58,7 @@ export default function JoinUs() {
                     </div>
                     <div className={styles.requirementRow}>
                         <div className={styles.requirementImage}>
-                            <Image src="/hkn_logo_blu_vector.svg" alt="TODO" width={0} height={0} className={styles.image}/>
+                            <Image src="/Common/hkn_logo_blu_vector.svg" alt="TODO" width={0} height={0} className={styles.image}/>
                         </div>
                         <span className={styles.verticalSeparator}></span>
                         <p className={styles.requirementText}>
@@ -99,7 +99,8 @@ export default function JoinUs() {
 
                         <input type="submit" className={styles.submitButton} value="SEND"/>
                         <p className={styles.formText}>
-                            *You can contact us using the form above or sending an email to info@hknpolito.org
+                            *You can contact us using the form above or sending an email to
+                            <a href='mailto:info@hknpolito.org'> info@hknpolito.org</a>
                         </p>
                     </form>
                 </section>
