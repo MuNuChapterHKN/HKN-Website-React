@@ -1,15 +1,10 @@
 import styles from "@/styles/Activities/Masterclasses.module.css";
 import Layout from "../../components/Layout";
-import {PolygonProps} from "@/components/Polygon";
 import {useRouter} from "next/router";
 import {useState} from "react";
-import Image from "next/image";
 import ArrowButton from "@/components/molecules/ArrowButton";
 import RoundButton from "@/components/molecules/RoundButton";
 
-const polygons: PolygonProps[] = [
-
-];
 
 const masterclasses = [
     {
@@ -92,8 +87,8 @@ export default function Masterclasses() {
                     <div className={styles.dividerVertical}/>
                     <div className={styles.left}>
                         <div className={styles.row}>
-                            <ArrowButton left className={styles.leftArrowButton} onClick={handleMasterclassLeftClick}/>
-                            <ArrowButton right className={styles.rightArrowButton} onClick={handleMasterclassRightClick}/>
+                            <ArrowButton left color={"#061E33"} className={styles.leftArrowButton} onClick={handleMasterclassLeftClick}/>
+                            <ArrowButton right color={"#061E33"} className={styles.rightArrowButton} onClick={handleMasterclassRightClick}/>
                         </div>
                         <div className={styles.row}>
                             <div className={styles.spacer}/>
@@ -155,11 +150,11 @@ export default function Masterclasses() {
                     <text className={styles.trending}>Trending</text>
                     <text className={styles.seeAlso}>SEE ALSO</text>
                 </div>
-                <ArrowButton className={styles.leftArrowButton} left onClick={handleMasterclassLeftClick}/>
+                <ArrowButton style={{visibility: "hidden"}} className={styles.leftArrowButton} left onClick={handleMasterclassLeftClick}/>
                 <MasterclassCard small masterclass={masterclasses[(mcIndex - 1 + masterclasses.length) % masterclasses.length]}/>
                 <MasterclassCard masterclass={masterclasses[mcIndex]}/>
                 <MasterclassCard small masterclass={masterclasses[(mcIndex + 1) % masterclasses.length]}/>
-                <ArrowButton className={styles.rightArrowButton} right onClick={handleMasterclassRightClick}/>
+                <ArrowButton style={{visibility: "hidden"}} className={styles.rightArrowButton} right onClick={handleMasterclassRightClick}/>
             </div>
         </Layout>
     )

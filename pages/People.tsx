@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import styles from '@/styles/People.module.css'
+import styles from '@/styles/People/People.module.scss'
 import RoundButton from "@/components/molecules/RoundButton";
 import {useRouter} from "next/router";
 import {MouseEventHandler, useState} from "react";
@@ -8,39 +8,39 @@ import ArrowButton from "@/components/molecules/ArrowButton";
 // Images should be in a 4:5 ratio
 const Board : BoardMemberProps[] = [
     {
-        name: "Edoardo Colella",
-        role: "President",
-        imageSrc: "/People/Board/EdoardoColella.png",
+        name: "Claudio Fantasia",
+        role: "Vice President",
+        imageSrc: "/People/Board/ClaudioFantasia.png",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
-        name: "Edoardo Colella",
+        name: "Serena Canavero",
         role: "President",
-        imageSrc: "/People/Board/EdoardoColella.png",
+        imageSrc: "/People/Board/SerenaCanavero.png",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
-        name: "Edoardo Colella",
-        role: "President",
-        imageSrc: "/People/Board/EdoardoColella.png",
+        name: "Francesco Anzoino",
+        role: "Tesoriere",
+        imageSrc: "/People/Board/FrancescoAnzoino.png",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
-        name: "Edoardo Colella",
-        role: "President",
-        imageSrc: "/People/Board/EdoardoColella.png",
+        name: "Gustavo Nicoletti",
+        role: "Recording Secretary",
+        imageSrc: "/People/Board/GustavoNicoletti.png",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
-        name: "Edoardo Colella",
-        role: "President",
-        imageSrc: "/People/Board/EdoardoColella.png",
+        name: "Dario Gosmar",
+        role: "Web Correspondent",
+        imageSrc: "/People/Board/DarioGosmar.png",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
-        name: "Edoardo Colella",
-        role: "President",
-        imageSrc: "/People/Board/EdoardoColella.png",
+        name: "Alberto Castrignanò",
+        role: "Corresponding Secretary",
+        imageSrc: "/People/Board/AlbertoCastrignano.png",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
 ];
@@ -107,11 +107,10 @@ export default function People() {
 
     return (
        <Layout>
-            <BoardPopUp index={boardIndex} visible={boardPopUpVisible} disablePopUp={handleHideBoardPopUp}/>
+            <BoardPopUp index={boardIndex} visible={false} disablePopUp={handleHideBoardPopUp}/>
             <div className={styles.boardContainer}>
                 <text className={styles.theBoard}>THE BOARD</text>
-                <text className={styles.managementArea}>Management</text>
-                <text className={styles.managementArea}>Area</text>
+                <text className={styles.managementArea}>Management Area</text>
                 <div className={styles.boardGrid}>
                     {Board.map((bmp, index) => (
                         <BoardMember boardMemberProps={bmp} index={index} onClick={() => handleBoardMemberClick(index)}/>
@@ -121,7 +120,6 @@ export default function People() {
 
            <div className={styles.teamsContainer}>
                <text className={styles.theTeams}>THE TEAMS</text>
-               <text className={styles.joinOurTeams}>Join</text>
                <text className={styles.joinOurTeams}>Our Teams</text>
                <div className={styles.teamsGrid}>
                    {Teams.map((team, index) => (
@@ -130,31 +128,10 @@ export default function People() {
                </div>
            </div>
 
-           <div className={styles.discoverContainer}>
-                <div className={styles.discoverCard}>
-                    <div className={styles.discoverTextContainer}>
-                        <text className={styles.discoverText}>Discover</text>
-                        <text className={styles.discoverTitle}>Alumni</text>
-                        <text className={styles.discoverDescription}>Former members of the chapter share their stories and their careers </text>
-                    </div>
-                    <RoundButton className={styles.discoverButton} onClick={() => router.push("/404")}>ALUMNI</RoundButton>
-                </div>
-                <div className={styles.discoverCard}>
-                    <div className={styles.discoverTextContainer}>
-                        <text className={styles.discoverText}>Discover</text>
-                        <text className={styles.discoverTitle}>Professionals</text>
-                        <text className={styles.discoverDescription}>Discover the many connections that the chapter shares with the professional figures of the Politecnico</text>
-                    </div>
-                    <RoundButton className={styles.discoverButton} onClick={() => router.push("/404")}>Professionals</RoundButton>
-                </div>
-                <div className={styles.discoverCard}>
-                    <div className={styles.discoverTextContainer}>
-                        <text className={styles.discoverText}>Discover</text>
-                        <text className={styles.discoverTitle}>Past Boards</text>
-                        <text className={styles.discoverDescription}>Heads of areas and past boards share their careers and stories with the chapter</text>
-                    </div>
-                    <RoundButton className={styles.discoverButton} onClick={() => router.push("/404")}>PAST BOARDS</RoundButton>
-                </div>
+           <div className={styles.discover}>
+               <div className={styles.discover__coming}>coming soon</div>
+               <div className={styles.discover__title}>discover</div>
+               <div className={styles.discover__title}>past boards and alumni</div>
            </div>
        </Layout>
     )
@@ -174,11 +151,7 @@ function BoardMember({boardMemberProps, index, onClick}: {boardMemberProps : Boa
     return (
         <div className={styles.boardMember} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={onClick}>
             <div className={styles.boardImageContainer}>
-                <div className={index % 2 == 0 ? styles.boardCardEven : styles.boardCardOdd}/>
-                <div className={styles.overlayContainer}>
-                    <img style={{visibility: isHovered ? 'visible' : 'hidden'}} className={`${styles.boardOverlay} ${isHovered ? styles.slideIn : styles.slideOut}`}
-                        src={'/People/Board/' + (index % 2 == 0 ? 'overlay_board_red.svg' : 'overlay_board_blue.svg')} alt={'overlay'}/>
-                </div>
+                <div className={styles.boardCard}/>
                 <img className={styles.boardMemberImage} src={boardMemberProps.imageSrc} alt={boardMemberProps.imageSrc}/>
             </div>
             <text className={styles.boardMemberName}>{boardMemberProps.name}</text>

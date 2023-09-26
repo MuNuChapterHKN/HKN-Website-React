@@ -7,16 +7,22 @@ export default function StudyGroup({studyGroup, index}: {studyGroup: StudyGroupP
     const router = useRouter();
 
     return (
-        <div className={index % 2 == 0 ? styles.cardEven : styles.cardOdd}>
+        <div className={styles.card}>
             <div className={styles.left}>
                 <text className={styles.name}>{studyGroup.name}</text>
                 <Image className={styles.image} src={"/Activities/StudyGroups/StudyGroup.jpg"} alt={studyGroup.name} width="0" height="0" sizes="100vw"/>
             </div>
 
             <div className={styles.center}>
-                <text className={styles.textLocation}>🕰️ {studyGroup.date}</text>
-                <text className={styles.textLocation}>📍SALA C</text>
-                <RoundButton className={index % 2 == 0 ? styles.buttonEven : styles.buttonOdd} onClick={() => window.open(studyGroup.link)}>TELEGRAM</RoundButton>
+                <div className={styles.location}>
+                    <img className={styles.iconLocation} src="/Activities/StudyGroups/clock.png" alt="Calendar"/>
+                    <text className={styles.textLocation}>{studyGroup.date}</text>
+                </div>
+                <div className={styles.location}>
+                    <img className={styles.iconLocation} src="/Activities/StudyGroups/pin.png" alt="Calendar"/>
+                    <text className={styles.textLocation}>SALA C</text>
+                </div>
+                <RoundButton className={styles.buttonTelegram} onClick={() => window.open(studyGroup.link)}>TELEGRAM</RoundButton>
             </div>
 
             <div className={styles.right}>

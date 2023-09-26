@@ -3,11 +3,6 @@ import styles from '@/styles/Activities/Activities.module.scss'
 import {useRouter} from "next/router";
 import Layout from "../../components/Layout";
 import RoundButton from "../../components/molecules/RoundButton";
-import {PolygonProps} from "@/components/Polygon";
-import {useEffect, useState} from "react";
-import YearEventsColumn, {YearEvents} from "@/components/Events/YearEventsColumn";
-import ArrowButton from "@/components/molecules/ArrowButton";
-
 export default function External() {
     const router = useRouter();
 
@@ -105,7 +100,7 @@ export default function External() {
 
                                 <div className={styles.allActivities__group1__discover}>
                                     Discover
-                                    <RoundButton className={styles.allActivities__group__button}>events</RoundButton>
+                                    <RoundButton className={styles.allActivities__group__button} onClick={() => router.push('/Activities/Events') }>events</RoundButton>
                                 </div>
                             </div>
                             <div className={styles.allActivities__group2}>
@@ -125,7 +120,7 @@ export default function External() {
 
                                 <div className={styles.allActivities__group2__discover}>
                                     Discover
-                                    <RoundButton className={styles.allActivities__group__button}>masterclass</RoundButton>
+                                    <RoundButton className={styles.allActivities__group__button} onClick={() => router.push('/Activities/Masterclasses') }>masterclass</RoundButton>
                                 </div>
                             </div>
                         </div>
@@ -149,7 +144,7 @@ export default function External() {
 
                                 <div className={styles.allActivities__group3__discover}>
                                     Discover
-                                    <RoundButton className={styles.allActivities__group__button}>study groups</RoundButton>
+                                    <RoundButton className={styles.allActivities__group__button} onClick={() => router.push('/Activities/StudyGroups') }>study groups</RoundButton>
                                 </div>
                             </div>
                         </div>

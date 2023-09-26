@@ -15,7 +15,7 @@
     align-items: center;
     width: 100%;
     border-radius: 25px;
-    background: linear-gradient(to right, #FC9402 35%, #FF0000);
+    background: linear-gradient(268deg, #FFF 71.01%, #B8BBBF 145.39%);
 }
 
 .year {
@@ -42,7 +42,7 @@
 .divider {
     width: 5px;
     height: calc(16vw + 30px);
-    background-color: #FC9402;
+    background-color: white;
     margin: 0 10px;
 }
 
@@ -84,7 +84,7 @@
     align-self: center;
     justify-self: center;
     height: 5px;
-    background-color: #FC9402;
+    background-color: white;
 }
 
 .dividerEnd {
@@ -92,5 +92,5 @@
     position: absolute;
     width: 5px;
     height: 20px;
-    background-color: #FC9402;
+    background-color: white;
 }

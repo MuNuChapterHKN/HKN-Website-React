@@ -3,13 +3,12 @@ import styles from '@/styles/Activities/Events.module.css'
 import {useRouter} from "next/router";
 import Layout from "../../components/Layout";
 import RoundButton from "../../components/molecules/RoundButton";
-import {PolygonProps} from "@/components/Polygon";
 import {useEffect, useState} from "react";
 import YearEventsColumn, {YearEvents} from "@/components/Events/YearEventsColumn";
 import ArrowButton from "@/components/molecules/ArrowButton";
 
 const latestEvent = {
-    imageSrc: "/Activities/Activities/latestEvent.png",
+    imageSrc: "/Activities/Events/latestEvent.png",
     title: "New event - Title Long",
     date: "20 MAY 2021",
     description: "haifahbdf ahbhbfoahbdhbadhfbahdbfah bdfhabfhasbchabo hdb afhabfhbad hbaohbfahbd ohbdahbdhbahakf kabkjfkabfkjab kfjbkjbakjbfka bkbakbfka",
@@ -22,17 +21,17 @@ const pastEvents : YearEvents[] = [
             {
                 title: "Hackaton Carduino & ConnectiCity",
                 date: "21 MAY 2022",
-                imageSrc: "/Activities/Activities/event_2022.png",
+                imageSrc: "/Activities/Events/event_2022.png",
             },
             {
                 title: "Hackaton Carduino & ConnectiCity",
                 date: "22 MAY 2022",
-                imageSrc: "/Activities/Activities/event_2022.png",
+                imageSrc: "/Activities/Events/event_2022.png",
             },
             {
                 title: "Hackaton Carduino & ConnectiCity",
                 date: "23 MAY 2022",
-                imageSrc: "/Activities/Activities/event_2022.png",
+                imageSrc: "/Activities/Events/event_2022.png",
             }
         ],
     },
@@ -42,17 +41,17 @@ const pastEvents : YearEvents[] = [
             {
                 title: "Block Chain - (not) a bitcoin event",
                 date: "11 DECEMBER 2021",
-                imageSrc: "/Activities/Activities/event_2021.png",
+                imageSrc: "/Activities/Events/event_2021.png",
             },
             {
                 title: "Block Chain - (not) a bitcoin event",
                 date: "11 DECEMBER 2021",
-                imageSrc: "/Activities/Activities/event_2021.png",
+                imageSrc: "/Activities/Events/event_2021.png",
             },
             {
                 title: "Block Chain - (not) a bitcoin event",
                 date: "11 DECEMBER 2021",
-                imageSrc: "/Activities/Activities/event_2021.png",
+                imageSrc: "/Activities/Events/event_2021.png",
             },
         ],
     },
@@ -62,12 +61,12 @@ const pastEvents : YearEvents[] = [
             {
                 title: "Block Chain - (not) a bitcoin event",
                 date: "11 DECEMBER 2020",
-                imageSrc: "/Activities/Activities/event_2021.png",
+                imageSrc: "/Activities/Events/event_2021.png",
             },
             {
                 title: "Block Chain - (not) a bitcoin event",
                 date: "11 DECEMBER 2020",
-                imageSrc: "/Activities/Activities/event_2021.png",
+                imageSrc: "/Activities/Events/event_2021.png",
             },
         ],
     }

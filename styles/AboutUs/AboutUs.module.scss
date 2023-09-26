@@ -1,0 +1,26 @@
+.vision {
+  display: flex;
+  flex-direction: column;
+  width:95%;
+
+  &__title {
+    color: #FFF;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: capitalize;
+    opacity: 0.5;
+    margin-bottom: 15px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    width: 100%;
+    background: linear-gradient(238deg, #FFF 55.73%, rgba(187, 187, 187, 0.73) 135.34%);
+    border-radius: 40px;
+    padding: 2.7rem;
+  }
+}

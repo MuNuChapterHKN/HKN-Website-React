@@ -1,4 +1,4 @@
-.cardEven, .cardOdd {
+.card {
     width: 100%;
     border-radius: 40px;
     display: flex;
@@ -7,17 +7,9 @@
     align-items: center;
     padding: 20px 40px 40px 40px ;
     margin: 50px 0;
-}
-
-.cardOdd {
-    background: linear-gradient(to bottom, #FCB702 40%, rgba(252, 183, 2, 0));
-    color: black;
-}
-
-.cardEven {
-    background:  linear-gradient(to bottom, #124877 40%, rgba(18, 72, 119, 0));
-    color: white;
-}
+    background: linear-gradient(180deg, #F2F2F2 7.14%, #B8BBBF 55.05%, #929AA6 101.93%);
+    color: #061E33;
+ }
 
 .left {
     display: flex;
@@ -28,9 +20,13 @@
 }
 
 .name {
-    font-size: 40px;
-    font-weight: 600;
-    margin-bottom: 10px;
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 100%; /* 67px */
+    text-transform: capitalize;
+    white-space: nowrap;
 }
 
 .image {
@@ -38,7 +34,7 @@
     height: auto;
     border-radius: 20px;
     object-fit: cover;
-    min-height: 33vw;
+    min-height: 18vw;
 }
 
 .center {
@@ -49,25 +45,39 @@
     width: 34%;
 }
 
+.location {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.iconLocation {
+    height: 55px;
+}
+
 .textLocation {
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 20px;
+    color: #F2F2F2;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Outfit;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 100%;
+    text-transform: capitalize;
+    margin-bottom: 5px;
 }
 
-.buttonOdd, .buttonEven {
-    padding: 15px 35px;
-    margin-top: 10px;
-}
-
-.buttonEven {
-    background: #FCB702;
-    color: black;
-}
-
-.buttonOdd {
-    background: #124877;
-    color: white;
+.buttonTelegram {
+    padding: 20px 35px;
+    background: #061E33;
+    margin-top: 20px;
+    color: #F2F2F2;
+    font-family: Inter;
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 
@@ -79,6 +89,10 @@
 }
 
 .description {
-    font-size: 20px;
+    font-family: Inter;
+    font-size: 26px;
+    font-style: normal;
     font-weight: 400;
+    line-height: normal;
+    text-transform: lowercase;
 }

@@ -48,7 +48,15 @@
 }
 
 .latestEventButton {
-    background: linear-gradient(90deg, #fc2802, #e0fa81);
+    padding-left: 75px;
+    padding-right: 75px;
+    background: white;
+    text-align: center;
+    font-family: Outfit;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 /* 2nd section: PAST YEARS */
@@ -81,6 +89,6 @@
     position: absolute;
     top: 60%;
     right: -50px;
-    background: #FC5C02;
+    background: #061E33;
 }
 

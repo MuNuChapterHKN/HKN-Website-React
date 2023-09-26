@@ -1,7 +1,6 @@
 import {useRouter} from "next/router";
 import styles from "@/styles/Activities/StudyGroups.module.css";
 import Layout from "../../components/Layout";
-import {PolygonProps} from "@/components/Polygon";
 import StudyGroup, {StudyGroupProps} from "@/components/Events/StudyGroup";
 
 const studyGroups : StudyGroupProps[] = [

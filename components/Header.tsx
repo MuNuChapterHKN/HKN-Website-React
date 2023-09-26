@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <div className={styles.logoTitle} onClick={() => router.push('/')} >
-                <Image className={styles.logo} src="/hkn_logo_white_vector.svg" alt="HKN PoliTO Logo" width={120} height={120}/>
+                <Image className={styles.logo} src="/Common/hkn_logo_white_vector.svg" alt="HKN PoliTO Logo" width={120} height={120}/>
                 {/*<div className={styles.title} >
                     <text style={{fontSize:25, fontWeight:600}}>HKN</text>
                     <text style={{fontSize:15.2, fontWeight:400, marginTop:-10}}>POLITO</text>
@@ -28,7 +28,7 @@ const Header = () => {
                 <div className={isActive('/People') ? styles.active : styles.inactive} onClick={() => router.push('/People')}>
                     People
                 </div>
-                <div className={isActive('/Activities/Activities') || isActive('/Activities/Activities') || isActive('/Activities/StudyGroups') || isActive('/Activities/Masterclasses') ? styles.active : styles.inactive}
+                <div className={isActive('/Activities/Activities') || isActive('/Activities/Events') || isActive('/Activities/StudyGroups') || isActive('/Activities/Masterclasses') ? styles.active : styles.inactive}
                      onClick={() => router.push('/Activities/Activities')}>
                     Activities
                 </div>
