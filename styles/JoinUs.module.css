@@ -97,3 +97,98 @@
     display: block;
     margin-left: auto;
 }
+
+/* Submission form */
+
+.formPreamble {
+    min-width: 270px;
+    max-width: 500px;
+    width: 90%;
+    color: #fff;
+    font-size: 1.2em;
+    text-align: center;
+    margin: 4em auto 1.6em;
+}
+
+.submissionForm {
+    min-width: 270px;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 90%;
+    background: rgb(242, 242, 242);
+    background: linear-gradient(0deg, rgba(242, 242, 242, 1) 0%, rgba(184, 187, 191, 1) 50%, rgba(146, 154, 166, 1) 100%);
+    padding: 2em 3em;
+    border-radius: 30px;
+}
+
+.formLabel {
+    color: #061E33;
+    display: inline-block;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    width: 100%;
+}
+
+.formInput {
+    background-color: #061E33;
+    text-transform: uppercase;
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    min-height: 30px;
+    padding: 7px;
+    margin-bottom: 1.4em;
+    border: none;
+    transition: .25s ease-out outline;
+    color: #fff;
+}
+
+.formText {
+    color: #061E33;
+    font-size: .8em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.formTextarea {
+    resize: vertical;
+    min-height: 6em;
+}
+
+.cvRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cvButton {
+    border-radius: 50px;
+    display: inline-block;
+    border: 2px solid #061E33;
+    padding: .7em .85em;
+    background-color: transparent;
+    color: #061E33;
+    cursor: pointer;
+}
+
+.fileInput {
+    display: none;
+}
+
+.noWidth {
+    width: auto;
+}
+
+.submitButton {
+    border-radius: 50px;
+    display: block;
+    padding: .85em;
+    width: 130px;
+    font-size: 1em;
+    margin: 2em auto;
+    background-color: #061E33;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}

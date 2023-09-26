@@ -74,6 +74,35 @@ export default function JoinUs() {
                         <span className={styles.emptyCircle}></span>
                     </div>
                 </section>
+
+                {/* Submission form */}
+                <section>
+                    <p className={styles.formPreamble}>IF WE CONVINCED YOU...</p>
+                    <form className={styles.submissionForm}>
+
+                        <label htmlFor="name" className={styles.formLabel}>Name & Surname</label>
+                        <input type="text" id="name" name="name" className={styles.formInput}/>
+
+                        <label htmlFor="email" className={styles.formLabel}>Email Address</label>
+                        <input type="email" id="email" name="email" className={styles.formInput}/>
+
+                        <label htmlFor="message" className={styles.formLabel}>Send A Message</label>
+                        <textarea id="message" name="message" className={`${styles.formTextarea} ${styles.formInput}`}/>
+
+                        <div className={styles.cvRow}>
+                            <label htmlFor="cv" className={`${styles.formLabel} ${styles.noWidth}`}>
+                                Attach Your CV:
+                            </label>
+                            <label htmlFor="cv" className={styles.cvButton}>ATTACH A FILE</label>
+                            <input type="file" className={styles.fileInput} name="cv" id="cv"/>
+                        </div>
+
+                        <input type="submit" className={styles.submitButton} value="SEND"/>
+                        <p className={styles.formText}>
+                            *You can contact us using the form above or sending an email to info@hknpolito.org
+                        </p>
+                    </form>
+                </section>
             </main>
         </Layout>
     )
