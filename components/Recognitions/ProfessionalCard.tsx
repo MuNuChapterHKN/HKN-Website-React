@@ -1,5 +1,5 @@
 import {useRouter} from "next/router";
-import styles from '@/styles/components/Recognitions/ProfessionalCard.module.css'
+import styles from '@/styles/components/Recognitions/ProfessionalCard.module.scss'
 import Image from "next/image";
 
 const ProfessionalCard = ({professional} : {professional : Professional}) => {

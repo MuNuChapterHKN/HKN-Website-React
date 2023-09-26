@@ -1,4 +1,4 @@
-import styles from "@/styles/components/Footer.module.css";
+import styles from "@/styles/components/Footer.module.scss";
 import {useRouter} from "next/router";
 import Image from "next/image";
 
@@ -17,7 +17,7 @@ const Footer = () => {
 
                 <a className={styles.link} href={"/"}>Home</a>
                 <a className={styles.link} href={"/AboutUs"}>About Us</a>
-                <a className={styles.link} href={"/Events"}>Events</a>
+                <a className={styles.link} href={"/Activities/Activities"}>Events</a>
                 <a className={styles.link} href={"/People"}>People</a>
                 <a className={styles.link} href={"/JoinUs"}>Recruitment</a>
             </div>
@@ -26,8 +26,8 @@ const Footer = () => {
                 <text className={styles.columnTitle}>Follow our work</text>
 
                 <a className={styles.link}>Github</a>
-                <a className={styles.link} href={"/Events/External"}>Past Events</a>
-                <a className={styles.link} href={"/Events/StudyGroups"}>Study Groups</a>
+                <a className={styles.link} href={"/Activities/Events"}>Past Events</a>
+                <a className={styles.link} href={"/Activities/StudyGroups"}>Study Groups</a>
             </div>
 
             <div className={styles.column}>

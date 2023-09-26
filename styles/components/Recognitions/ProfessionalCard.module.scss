@@ -1,0 +1,42 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 30px;background: linear-gradient(108deg, #FFF 15.47%, #B8BBBF 101.57%);
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.5);
+    padding: 20px 20px 50px 20px ;
+    margin: 0 10px;
+    max-height: 50vh;
+    overflow: hidden;
+}
+
+/* black and white image */
+.image {
+    width:20%;
+    height:100%;
+    border-radius: 50%;
+    filter: grayscale(100%);
+}
+
+.name {
+    color: #061E33;
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.title {
+    color: #061E33;
+    font-weight: 400;
+    font-family: Outfit;
+    font-size: 17px;
+}
+
+.profText {
+    color: #061E33;
+    margin-top: 12px;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+}

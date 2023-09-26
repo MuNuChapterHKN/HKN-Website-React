@@ -1,10 +1,9 @@
 import Image from 'next/image'
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Home/Home.module.css'
 import {useRouter} from "next/router";
 import Layout from "../components/Layout";
 import HomeLogo from "../components/Home/HomeLogo";
 import RoundButton from "../components/molecules/RoundButton";
-import {PolygonProps} from "@/components/Polygon";
 import {useEffect, useState} from "react";
 
 export default function Home() {

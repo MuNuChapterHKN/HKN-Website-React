@@ -1,0 +1,235 @@
+.masterclassesContainer {
+    position: relative;
+    width: 90%;
+    max-width: 1100px;
+    margin: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.topCircle, .bottomCircle {
+    width: 15px;
+    height: 15px;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+.topCircle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.bottomCircle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 100%);
+}
+
+
+/* TOP SECTION */
+.topSection, .section {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 60px 0;
+    height: 33rem;
+}
+
+.dividerVertical {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 3px;
+    height: 100%;
+    background-color: white;
+}
+
+.dividerHorizontal, .dividerHorizontalOdd {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-100%);
+    width: 5rem;
+    height: 3px;
+    background-color: white;
+}
+
+.left, .leftOdd, .rightEven {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 47%;
+    height: 100%;
+}
+
+.row, .rowButtons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 17px;
+}
+
+.leftArrowButton, .rightArrowButton {
+    margin: 5px;
+}
+
+.spacer {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 0 12px;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.title {
+    font-size: 42px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+.description {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 35px;
+}
+
+.rowButtons {
+    width: 100%;
+    justify-content: center;
+    padding-right: 23px;
+}
+
+.viewButton {
+    background: white;
+    padding: 17px 0;
+    width: 16vw;
+    margin: 0 20px;
+    color: #061E33;
+}
+
+.signUpButton {
+    background: transparent;
+    padding: 15px 0;
+    width: 16vw;
+    border: solid 2px white;
+    margin: 0 20px;
+}
+
+.right, .leftEven, .rightOdd  {
+    width: 47%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.masterclassImage {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+/* SECTIONS */
+
+.dividerHorizontalEven {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 5rem;
+    height: 3px;
+    background-color: white;
+}
+
+.leftOdd {
+    align-items: flex-end;
+    text-align: right;
+}
+
+
+/* TRENDING MENU */
+
+.trendingContainer {
+    position: relative;
+    display: flex;
+    width: 98%;
+    max-width: 1000px;
+    height: 30rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0 6rem 0;
+}
+
+.trendingText {
+    position: absolute;
+    top: 0;
+    left: 65px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.trending {
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.seeAlso {
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.masterclassCard, .masterclassCardSmall {
+    background: linear-gradient(180deg, #F2F2F2 7.14%, #B8BBBF 55.05%, #929AA6 101.93%);
+    color: #061E33;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 40px;
+    border-radius: 15px;
+    width: calc((100% - 150px) * 0.4);
+    height: 100%;
+    margin: 6px;
+}
+
+.masterclassCardSmall {
+    width: calc((100% - 156px) * 0.3);
+    height: 70%;
+    padding: 25px 25px;
+}
+
+.cardTitle {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.cardDescription {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    overflow: clip;
+}
+
+.cardViewButton {
+    background: #061E33;
+    padding: 16px 35px ;
+}

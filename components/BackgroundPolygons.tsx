@@ -1,8 +1,7 @@
 import styles from "@/styles/components/BackgroundPolygons.module.css";
 import {RefObject, useEffect, useRef, useState} from "react";
-import Polygon, {PolygonProps} from "@/components/Polygon";
 
-const BackgroundPolygons = ({polygons} : {polygons : PolygonProps[]}) => {
+const BackgroundPolygons = () => {
 
     const [scrollY, setScrollY] = useState(0);
     useEffect(() => {
@@ -77,14 +76,6 @@ const BackgroundPolygons = ({polygons} : {polygons : PolygonProps[]}) => {
             <div className={styles.blob} style={{left: mouseX, top: mouseY}} ref={blobRef}/>
             <div className={styles.blur}/>
 
-            {polygons && polygons.map((p, index) => {
-                return (
-                    <Polygon key={index} gradient={p.gradient} width={p.width} height={p.height}
-                         vertices={p.vertices} top={p.top}
-                         left={p.left ? p.left : undefined}
-                         right={p.right ? p.right : undefined}/>
-                )})
-            }
             {/*<>
                 {polygons ? polygons.map((p) => {
                     <Polygon gradient={p.gradient} width={p.width} height={p.height}

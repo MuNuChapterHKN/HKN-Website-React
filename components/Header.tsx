@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <header className={styles.header}>
             <div className={styles.logoTitle} onClick={() => router.push('/')} >
-                <Image className={styles.logo} src="/hkn_logo_white_vector.svg" alt="HKN PoliTO Logo" width={120} height={120}/>
+                <Image className={styles.logo} src="/Common/hkn_logo_white_vector.svg" alt="HKN PoliTO Logo" width={120} height={120}/>
                 {/*<div className={styles.title} >
                     <text style={{fontSize:25, fontWeight:600}}>HKN</text>
                     <text style={{fontSize:15.2, fontWeight:400, marginTop:-10}}>POLITO</text>
@@ -25,15 +25,15 @@ const Header = () => {
                 <div className={isActive('/AboutUs') ? styles.active : styles.inactive} onClick={() => router.push('/AboutUs')}>
                     About
                 </div>
-                <div className={isActive('/Events') || isActive('/Events/External') || isActive('/Events/StudyGroups') || isActive('/Events/Masterclasses') ? styles.active : styles.inactive}
-                     onClick={() => router.push('/Events')}>
-                    Events
-                </div>
                 <div className={isActive('/People') ? styles.active : styles.inactive} onClick={() => router.push('/People')}>
                     People
                 </div>
-                <div className={isActive('/Recognitions') ? styles.active : styles.inactive} onClick={() => router.push('/Recognitions')}>
-                    Recognitions
+                <div className={isActive('/Activities/Activities') || isActive('/Activities/Events') || isActive('/Activities/StudyGroups') || isActive('/Activities/Masterclasses') ? styles.active : styles.inactive}
+                     onClick={() => router.push('/Activities/Activities')}>
+                    Activities
+                </div>
+                <div className={isActive('/Publications/Recognitions') ? styles.active : styles.inactive} onClick={() => router.push('/Publications/Recognitions')}>
+                    Publications
                 </div>
             </div>
 
