@@ -28,7 +28,7 @@
     margin-left: 20px;
 }
 
-.latestEventDate, .pastText {
+.lateEventLocation, .latestEventDate, .pastText {
     font-weight: 500;
     font-size: 20px;
 }

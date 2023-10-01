@@ -217,7 +217,7 @@ export const pastEvents = [
 ];
 
 export const latestEvent = {
-    imageSrc: "/Activities/Events/latestEvent.png",
+    imageSrc: "/Activities/Events/ieeeEurocon2023.png",
     title: "IEEE EUROCON 2023",
     location: "Politecnico di Torino",
     date: "JULY 6-8, 2023",
