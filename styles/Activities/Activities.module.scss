@@ -22,7 +22,7 @@
 
         &__title {
             color: #FFF;
-            font-family: Outfit;
+            font-family: Outfit, sans-serif;
             font-size: 67px;
             font-style: normal;
             font-weight: 700;
@@ -62,14 +62,14 @@
             }
 
             &__events {
-                font-family: Inter;
+                font-family: Inter, sans-serif;
                 font-size: 24px;
                 font-weight: 600;
                 text-transform: uppercase;
             }
 
             &__title {
-                font-family: Outfit;
+                font-family: Outfit, sans-serif;
                 font-size: 50px;
                 font-weight: 700;
                 line-height: 100%;
@@ -77,7 +77,7 @@
             }
 
             &__topic {
-                font-family: Inter;
+                font-family: Inter, sans-serif;
                 font-size: 26px;
                 font-weight: 400;
                 text-transform: lowercase;
@@ -137,14 +137,14 @@
             }
 
             &__activities {
-                font-family: Inter;
+                font-family: Inter, sans-serif;
                 font-size: 24px;
                 font-weight: 600;
                 text-transform: uppercase;
             }
 
             &__title {
-                font-family: Outfit;
+                font-family: Outfit, sans-serif;
                 font-size: 35px;
                 font-weight: 700;
                 line-height: 100%;
@@ -152,7 +152,7 @@
             }
 
             &__topic {
-                font-family: Inter;
+                font-family: Inter, sans-serif;
                 font-size: 26px;
                 font-weight: 400;
                 text-transform: lowercase;
@@ -197,7 +197,7 @@
     &__events {
         color: #FFF;
         text-align: center;
-        font-family: Outfit;
+        font-family: Outfit, sans-serif;
         font-size: 20px;
         font-weight: 600;
         letter-spacing: 2px;
@@ -209,7 +209,7 @@
         width:295px;
         color: #FFF;
         text-align: center;
-        font-family: Outfit;
+        font-family: Outfit, sans-serif;
         font-size: 40px;
         font-weight: 700;
         text-transform: capitalize;
@@ -252,7 +252,7 @@
         color: #061E33;
 
         &__events {
-            font-family: Inter;
+            font-family: Inter, sans-serif;
             width: 100%;
             font-size: 24px;
             font-weight: 600;
@@ -260,7 +260,7 @@
         }
 
         &__title {
-            font-family: Outfit;
+            font-family: Outfit, sans-serif;
             font-size: 50px;
             font-weight: 700;
             line-height: 100%; /* 50px */
@@ -270,10 +270,9 @@
         }
 
         &__text {
-            font-family: Inter;
+            font-family: Inter, sans-serif;
             font-size: 26px;
             font-weight: 400;
-            text-transform: lowercase;
         }
 
         &__img {
@@ -283,7 +282,7 @@
         }
 
         &__button {
-            font-family: Inter;
+            font-family: Inter, sans-serif;
             font-size: 20px;
             font-weight: 600;
             text-transform: uppercase;
@@ -297,7 +296,7 @@
         border-radius: 20px;
         background: linear-gradient(254deg, #B8BBBF -1.26%, #FFF 93.39%);
         color: #061E33;
-        font-family: Outfit;
+        font-family: Outfit, sans-serif;
         font-size: 40px;
         font-weight: 700;
         line-height: 100%; /* 40px */

@@ -89,13 +89,13 @@ export default function External() {
                                 <div className={styles.allActivities__group__text}>Our events are thought for anyone who likes talking, debating, learning and discovering</div>
 
                                 <div className={styles.allActivities__group1__imgcont1}>
-                                    <img className={styles.allActivities__group__img} src={'/Activities/Activities/Discover_2.jpeg'} alt={'discover1'}/>
+                                    <img className={styles.allActivities__group__img} src={'/Activities/Events/mentalWellnessDigitalWellBeing.png'} alt={'Event 3'}/>
                                 </div>
                                 <div className={styles.allActivities__group1__imgcont2}>
-                                    <img className={styles.allActivities__group__img} src={'/Activities/Activities/Discover_1.jpeg'} alt={'discover2'} style={{objectPosition:"75% 100%"}}/>
+                                    <img className={styles.allActivities__group__img} src={'/Activities/Events/event_2022.png'} alt={'Event 2'} style={{objectPosition:"75% 100%"}}/>
                                 </div>
                                 <div className={styles.allActivities__group1__imgcont3}>
-                                    <img className={styles.allActivities__group__img} src={'/Activities/Activities/Discover_3.jpeg'} alt={'discover1'}/>
+                                    <img className={styles.allActivities__group__img} src={'/Activities/Events/quantumQuest.png'} alt={'Event 1'}/>
                                 </div>
 
                                 <div className={styles.allActivities__group1__discover}>
@@ -109,13 +109,13 @@ export default function External() {
                                 <div className={styles.allActivities__group__text}>Our experts will provide you advices and tips that will help you improving your skills & enriching your CV</div>
 
                                 <div className={styles.allActivities__group2__imgcont1}>
-                                    <img className={styles.allActivities__group__img} src={'/Activities/Activities/Discover_2.jpeg'} alt={'discover1'}/>
+                                    <img className={styles.allActivities__group__img} src={'/Activities/AboutUs/MentalWellness.jpg'} alt={'discover1'}/>
                                 </div>
                                 <div className={styles.allActivities__group2__imgcont2}>
-                                    <img className={styles.allActivities__group__img} src={'/Activities/Activities/Discover_1.jpeg'} alt={'discover2'} style={{objectPosition:"75% 100%"}}/>
+                                    <img className={styles.allActivities__group__img} src={'/Activities/Activities/Hexakappathlon.jpg'} alt={'discover2'} style={{objectPosition:"75% 100%"}}/>
                                 </div>
                                 <div className={styles.allActivities__group2__imgcont3}>
-                                    <img className={styles.allActivities__group__img} src={'/Activities/Activities/Discover_3.jpeg'} alt={'discover1'}/>
+                                    <img className={styles.allActivities__group__img} src={'/Activities/Activities/FoundersDay.jpg'} alt={'discover1'}/>
                                 </div>
 
                                 <div className={styles.allActivities__group2__discover}>
@@ -130,13 +130,13 @@ export default function External() {
                             <div className={styles.allActivities__group3}>
                                 <div className={styles.allActivities__group__events}>events</div>
                                 <div className={styles.allActivities__group__title}>Study Groups</div>
-                                <div className={styles.allActivities__group__text}>hkn members and phd students will help you with whatever concept you might be struggling with</div>
+                                <div className={styles.allActivities__group__text}>HKN members and phd students will help you with whatever concept you might be struggling with</div>
 
                                 <div className={styles.allActivities__group3__imgcont1}>
                                     <img className={styles.allActivities__group__img} src={'/Activities/Activities/Discover_2.jpeg'} alt={'discover1'}/>
                                 </div>
                                 <div className={styles.allActivities__group3__imgcont2}>
-                                    <img className={styles.allActivities__group__img} src={'/Activities/Activities/Discover_1.jpeg'} alt={'discover2'} style={{objectPosition:"75% 100%"}}/>
+                                    <img className={styles.allActivities__group__img} src={'/Activities/AboutUs/FormazioneInternaReply.jpeg'} alt={'discover2'} style={{objectPosition:"75% 100%"}}/>
                                 </div>
                                 <div className={styles.allActivities__group3__imgcont3}>
                                     <img className={styles.allActivities__group__img} src={'/Activities/Activities/Discover_3.jpeg'} alt={'discover1'}/>
