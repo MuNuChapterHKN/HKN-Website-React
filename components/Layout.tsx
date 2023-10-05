@@ -5,10 +5,12 @@ import BackgroundPolygons from "@/components/BackgroundPolygons";
 import Footer from "@/components/Footer";
 import {ReactNode} from "react";
 
-const Layout = ( { children }: {children: ReactNode }) => {
+const Layout = ( { children, triangles = false, darkHeader = false }: {children: ReactNode, triangles?: boolean, darkHeader?: boolean }) => {
+
+
 
     return (
-            <div className={styles.main}>
+            <div className={`${styles.main} ${darkHeader ? styles.darkBg : ''}`}>
                 <Head>
                     <title>HKN PoliTO</title>
                     <meta name="description" content="HKN PoliTo | Mu Nu Chapter of IEEE-HKN"/>
@@ -16,9 +18,12 @@ const Layout = ( { children }: {children: ReactNode }) => {
                     <link rel="icon" href="/public/Common/hkn_logo_blu_vector.svg"/>
                 </Head>
 
-                {/*<BackgroundPolygons />*/}
+                {triangles &&
+                    <BackgroundPolygons />
+                }
 
-                <Header/>
+
+                <Header darkHeader/>
 
                 <div className={styles.pageContent}>
                     {children}

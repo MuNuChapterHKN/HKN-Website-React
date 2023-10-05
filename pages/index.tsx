@@ -25,7 +25,7 @@ export default function Home() {
 
     // @ts-ignore
     return (
-        <Layout>
+        <Layout triangles>
 
             <div className={styles.titleContainer}>
                 <div className={styles.titleColumn}>
