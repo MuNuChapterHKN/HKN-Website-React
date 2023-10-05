@@ -1,0 +1,197 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 92%;
+    max-width: 1100px;
+    margin-bottom: 70px;
+}
+
+.pageSubtitle {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.pageTitle {
+    font-size: 2.5em;
+    font-weight: 600;
+    padding-bottom: 2em;
+    text-align: center;
+}
+
+/* Requirements */
+
+.requirementRow {
+    display: flex;
+    justify-content: center;
+}
+
+.requirementImage {
+    border-radius: 30px;
+    flex: 1;
+}
+
+.requirementText {
+    padding: 1em 0;
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+    flex: 1;
+}
+
+.requirementList {
+    padding: 1em;
+}
+
+.image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    padding: 4em 0;
+}
+
+.verticalSeparator {
+    border-left: 4px solid #ddd;
+    margin: 0 2em;
+    width: 0;
+}
+
+.horizontalSeparatorContainer {
+    margin: -10px 25% -10px calc(50% - 2px);
+    align-items: center;
+    display: flex;
+    width: 25%;
+}
+
+.horizontalSeparatorContainer:nth-of-type(5) {
+    margin: -10px calc(50% + 2px) -10px 25%;
+    transform: rotateY(180deg);
+}
+
+.horizontalSeparator {
+    border-top: 4px solid #ddd;
+    display: inline-block;
+    width: 100%;
+    height: 0;
+}
+
+.emptyCircle {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 4px solid #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: transparent;
+}
+
+.requirementRow:nth-of-type(4n) > .requirementText {
+    text-align: right;
+}
+
+.requirementRow:nth-of-type(4n) > .requirementImage > img {
+    margin-right: auto;
+    margin-left: 0;
+}
+
+.requirementRow:nth-of-type(4n + 2) > .requirementImage > img {
+    display: block;
+    margin-left: auto;
+}
+
+/* Submission form */
+
+.formPreamble {
+    min-width: 270px;
+    max-width: 500px;
+    width: 90%;
+    color: #fff;
+    font-size: 1.2em;
+    text-align: center;
+    margin: 4em auto 1.6em;
+}
+
+.submissionForm {
+    min-width: 270px;
+    max-width: 500px;
+    margin: 0 auto;
+    width: 90%;
+    background: rgb(242, 242, 242);
+    background: linear-gradient(0deg, rgba(242, 242, 242, 1) 0%, rgba(184, 187, 191, 1) 50%, rgba(146, 154, 166, 1) 100%);
+    padding: 2em 3em;
+    border-radius: 30px;
+}
+
+.formLabel {
+    color: #061E33;
+    display: inline-block;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    width: 100%;
+}
+
+.formInput {
+    background-color: #061E33;
+    text-transform: uppercase;
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    min-height: 30px;
+    padding: 12px 7px;
+    margin-bottom: 1.4em;
+    border: none;
+    transition: .25s ease-out outline;
+    color: #fff;
+}
+
+.formText {
+    color: #061E33;
+    font-size: .8em;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.formTextarea {
+    resize: vertical;
+    min-height: 6em;
+}
+
+.cvRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cvButton {
+    border-radius: 50px;
+    display: inline-block;
+    border: 2px solid #061E33;
+    padding: .7em .85em;
+    background-color: transparent;
+    color: #061E33;
+    cursor: pointer;
+}
+
+.fileInput {
+    display: none;
+}
+
+.noWidth {
+    width: auto;
+}
+
+.submitButton {
+    border-radius: 50px;
+    display: block;
+    padding: .85em;
+    width: 130px;
+    font-size: 1em;
+    margin: 2em auto;
+    background-color: #061E33;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
