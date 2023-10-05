@@ -6,28 +6,13 @@ import ProfessionalCard, {Professional} from "@/components/Recognitions/Professi
 import {useEffect, useState} from "react";
 import MentionCard, {Mention} from "../../components/Recognitions/MentionCard";
 import ArrowButton from "@/components/molecules/ArrowButton";
+import {mentions, professionals} from "@/data/recognitions";
 
-const awards : string[] = [
-    "/Home/outstanding-2022.png",
-    "/Home/outstanding-2021.png",
-    "/Home/outstanding-2020.png",
-    "/Home/outstanding-2019.png",
-];
-
-const mentions : Mention[] = [
-    {imageSrc:"/Publications/Mentions/mentions.jpg", title: "Worldwide Known", subtitle: "POLITO NEWSLETTER", text:"Six years after its foundation, IEEE-ETA KAPPA NU CHAPTER AT POLITO MAkes headlines worldwide"},
-    {imageSrc:"/Publications/Mentions/mentions.jpg", title: "Locally Known", subtitle: "Massachusetts Institute of Technology", text:"Six years after its foundation, IEEE-ETA KAPPA NU CHAPTER AT POLITO MAkes headlines worldwide"},
-    {imageSrc:"/Publications/Mentions/mentions.jpg", title: "Unknown", subtitle: "Caltech", text:"Six years after its foundation, IEEE-ETA KAPPA NU CHAPTER AT POLITO MAkes headlines worldwide"},
-]
-
-const professionals : Professional[] = [
-    {imageSrc:"/Publications/Professionals/Montuschi.jpeg", name: "Paolo Montuschi", title: "Associate Professor", text:"\"adjfbiaboidsboiabfoibdofia bdfhbahdbahbfoahdsbfoahsbd oh dfoihabodhbfoajncajnijnaj jsnvlajnljvnlajnvajbv abdsivbviabvoiabvoahbvhbahd\""},
-    {imageSrc:"/Publications/Professionals/Montuschi.jpeg", name: "Alessandro Volta", title: "Associate Professor", text:"\"adjfbiaboidsboiabfoibdofia bdfhbahdbahbfoahdsbfoahsbd oh dfoihabodhbfoajncajnijnaj jsnvlajnljvnlajnvajbv abdsivbviabvoiabvoahbvhbahd\""},
-    {imageSrc:"/Publications/Professionals/Montuschi.jpeg", name: "James Clerk Maxwell", title: "Associate Professor", text:"\"adjfbiaboidsboiabfoibdofia bdfhbahdbahbfoahdsbfoahsbd oh dfoihabodhbfoajncajnijnaj jsnvlajnljvnlajnvajbv abdsivbviabvoiabvoahbvhbahd\""},
-    {imageSrc:"/Publications/Professionals/Montuschi.jpeg", name: "Nikola Tesla", title: "Associate Professor", text:"\"adjfbiaboidsboiabfoibdofia bdfhbahdbahbfoahdsbfoahsbd oh dfoihabodhbfoajncajnijnaj jsnvlajnljvnlajnvajbv abdsivbviabvoiabvoahbvhbahd\""},
-    {imageSrc:"/Publications/Professionals/Montuschi.jpeg", name: "Thomas Edison", title: "Associate Professor", text:"\"adjfbiaboidsboiabfoibdofia bdfhbahdbahbfoahdsbfoahsbd oh dfoihabodhbfoajncajnijnaj jsnvlajnljvnlajnvajbv abdsivbviabvoiabvoahbvhbahd\""},
-    {imageSrc:"/Publications/Professionals/Montuschi.jpeg", name: "Albert Einstein", title: "Associate Professor", text:"\"adjfbiaboidsboiabfoibdofia bdfhbahdbahbfoahdsbfoahsbd oh dfoihabodhbfoajncajnijnaj jsnvlajnljvnlajnvajbv abdsivbviabvoiabvoahbvhbahd\""},
-    {imageSrc:"/Publications/Professionals/Montuschi.jpeg", name: "Isaac Newton", title: "Associate Professor", text:"\"adjfbiaboidsboiabfoibdofia bdfhbahdbahbfoahdsbfoahsbd oh dfoihabodhbfoajncajnijnaj jsnvlajnljvnlajnvajbv abdsivbviabvoiabvoahbvhbahd\""},
+const awards: string[] = [
+    "/Home/outstanding-2022-color.png",
+    "/Home/outstanding-2021-color.png",
+    "/Home/outstanding-2020-color.png",
+    "/Home/outstanding-2019-color.png",
 ];
 
 export default function JoinUs() {
@@ -95,13 +80,17 @@ export default function JoinUs() {
                 <div className={styles.awardsRight}>
                     <text className={styles.awardsText}>AWARDS</text>
                     <text className={styles.awardsTitle}>Outstanding Chapter Award</text>
-                    <text className={styles.awards}>The IEEE-Eta Kappa Nu HKN PoliTo chapter was awarded among 253 selected chapters around the world, alongside universities such as the Massachusetts Institute of Technology (MIT) and UCLA.</text>
+                    <text className={styles.awards}>The IEEE-Eta Kappa Nu HKN PoliTo chapter was awarded among 253
+                                                    selected chapters around the world. This award recognizes excellence
+                                                    in IEEE-HKN chapters for their activities.
+                    </text>
                 </div>
             </div>
+            {/* TODO: Outstanding Student Award */}
 
             <div className={styles.internationalCollective}>
                 {/*TODO: add link*/}
-                <img src="/Publications/hkn_ideogramma_collective.svg" alt="HKN Ideaogramma" />
+                <img src="/Publications/hkn_ideogramma_collective.svg" alt="HKN Ideaogramma"/>
                 <text className={styles.internationalCollectiveText}>Discover the International Collective</text>
             </div>
 
