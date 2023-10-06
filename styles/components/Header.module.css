@@ -6,7 +6,8 @@
     height: 130px;
     width: 100%;
     z-index: 2;
-    margin-top: 10px;
+    margin-top: 20px;
+    padding-bottom: 20px;
 }
 
 .logoTitle {

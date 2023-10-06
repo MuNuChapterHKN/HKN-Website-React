@@ -2,7 +2,7 @@ import styles from "@/styles/components/BackgroundPolygons.module.css";
 import {RefObject, useEffect, useRef, useState} from "react";
 
 const BackgroundPolygons = () => {
-
+/*
     const [scrollY, setScrollY] = useState(0);
     useEffect(() => {
         setScrollY(window.scrollY);
@@ -42,7 +42,7 @@ const BackgroundPolygons = () => {
 
         return () => window.removeEventListener('mousemove', handleMove);
     }, []);
-
+*/
     /*
     const triangleStyles = {
         triangleLeft1: `translateY(-${scrollY * 0.4}px)`,
@@ -71,12 +71,49 @@ const BackgroundPolygons = () => {
 
     };
 */
+    const [shouldRenderBottom, setShouldRenderBottom] = useState(false);
+    const parentRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (parentRef.current) {
+            const parentHeight = parentRef.current.offsetHeight;
+            const parentWidth = parentRef.current.offsetWidth;
+            if (parentHeight > 3000) {
+                setShouldRenderBottom(true);
+            }
+            else {
+                setShouldRenderBottom(false);
+            }
+        }
+    }, []);
+
     return (
-        <div className={styles.backgroundPolygons}>
-            <div className={styles.blob} style={{left: mouseX, top: mouseY}} ref={blobRef}/>
+        <div className={styles.backgroundPolygons} ref={parentRef}>
+
+            <div className={`${styles.triangle} ${styles.triangleLeft1}`}/>
+            <div className={`${styles.triangle} ${styles.triangleLeft2}`}/>
+            <div className={`${styles.triangle} ${styles.triangleLeft3}`}/>
+
+            <div className={`${styles.triangle} ${styles.triangleRight1}`}/>
+            <div className={`${styles.triangle} ${styles.triangleRight2}`}/>
+            <div className={`${styles.triangle} ${styles.triangleRight3}`}/>
+
+            {shouldRenderBottom &&
+                <>
+                    <div className={`${styles.triangle} ${styles.triangleLeft4}`}/>
+                    <div className={`${styles.triangle} ${styles.triangleLeft5}`}/>
+                    <div className={`${styles.triangle} ${styles.triangleLeft6}`}/>
+
+                    <div className={`${styles.triangle} ${styles.triangleRight4}`}/>
+                    <div className={`${styles.triangle} ${styles.triangleRight5}`}/>
+                    <div className={`${styles.triangle} ${styles.triangleRight6}`}/>
+                </>
+            }
+
+            {/*<div className={styles.blob} style={{left: mouseX, top: mouseY}} ref={blobRef}/>
             <div className={styles.blur}/>
 
-            {/*<>
+            <>
                 {polygons ? polygons.map((p) => {
                     <Polygon gradient={p.gradient} width={p.width} height={p.height}
                              vertices={p.vertices}  top={p.top} left={p.left ? p.left : undefined} right={p.left ? p.left : undefined}/>

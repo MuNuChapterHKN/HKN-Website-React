@@ -8,7 +8,7 @@ export default function External() {
 
     // @ts-ignore
     return (
-        <Layout>
+        <Layout darkHeader>
 
             <div className={styles.latestActivitiesBackground}>
                 <div className={styles.latestActivities}>

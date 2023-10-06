@@ -4,12 +4,12 @@ import {useRouter} from "next/router";
 import RoundButton from "./molecules/RoundButton";
 
 
-const Header = () => {
+const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
     const router = useRouter();
     const isActive = (pathname : string) => router.pathname === pathname;
 
     return (
-        <header className={styles.header}>
+        <header className={styles.header} >
             <div className={styles.logoTitle} onClick={() => router.push('/')} >
                 <Image className={styles.logo} src="/Common/hkn_logo_white_vector.svg" alt="HKN PoliTO Logo" width={120} height={120}/>
                 {/*<div className={styles.title} >
