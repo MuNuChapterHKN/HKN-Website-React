@@ -37,7 +37,8 @@ export default function Events() {
                 <Image className={styles.latestEventImage} src={latestEvent.imageSrc} alt={`${latestEvent.title} poster`} width="0" height="0" sizes="100vw"/>
                 <div className={styles.latestEventRight}>
                     <text className={styles.latestEventDate}>{latestEvent.date}</text>
-                    <text className={styles.lateEventLocation}>{latestEvent.location}</text>
+                    <text className={styles.latestEventDate}>{latestEvent.time}</text>
+                    {/*<text className={styles.lateEventLocation}>{latestEvent.location}</text>*/}
                     <text className={styles.latestEventTitle}>{latestEvent.title}</text>
                     {
                         latestEvent.description &&
@@ -46,7 +47,7 @@ export default function Events() {
                     {
                         latestEvent.link &&
                         <RoundButton style={{color: "black"}} className={styles.latestEventButton} onClick={() => router.push(latestEvent.link)}>
-                            READ MORE
+                            DISCOVER MORE
                         </RoundButton>
                     }
                 </div>

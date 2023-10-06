@@ -217,10 +217,13 @@ export const pastEvents = [
 ];
 
 export const latestEvent = {
-    imageSrc: "/Activities/Events/ieeeEurocon2023.png",
-    title: "IEEE EUROCON 2023",
+    imageSrc: "/Activities/Events/quantumQuest.png",
+    title: "Quantum Quest - Beyond 0s and 1s",
     location: "Politecnico di Torino",
-    date: "JULY 6-8, 2023",
-    link: "",
-    description: "",
+    date: "7 June 2023, Wednesday",
+    time: "15:00 PM - 17:30 PM",
+    link: "https://www.youtube.com/watch?v=US-0U6EHW6o",
+    description: "Pronti per entrare nell'era quantistica?\n" +
+        "Scopri un paradigma computazionale rivoluzionario\n" +
+        "Esplora le applicazioni del calcolo quantistico nell'industria e nel mondo accademico\n"
 }
