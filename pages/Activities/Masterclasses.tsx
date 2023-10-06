@@ -77,7 +77,7 @@ export default function Masterclasses() {
     }
 
     return (
-        <Layout>
+        <Layout triangles>
             <div className={styles.masterclassesContainer}>
                 <div className={styles.topCircle}/>
                 <div className={styles.bottomCircle}/>

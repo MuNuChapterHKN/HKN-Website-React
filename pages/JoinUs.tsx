@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function JoinUs() {
 
     return (
-        <Layout>
+        <Layout triangles>
             <main className={styles.container}>
                 <section>
                     <h2 className={styles.pageSubtitle}>DISCOVER HOW TO JOIN US</h2>

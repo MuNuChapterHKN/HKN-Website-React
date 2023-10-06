@@ -96,7 +96,7 @@ export default function Events() {
 
     // @ts-ignore
     return (
-        <Layout>
+        <Layout triangles>
             <div className={styles.latestEventContainer}>
                 <Image className={styles.latestEventImage} src={latestEvent.imageSrc} alt="Latest Event"  width="0" height="0" sizes="100vw"/>
                 <div className={styles.latestEventRight}>

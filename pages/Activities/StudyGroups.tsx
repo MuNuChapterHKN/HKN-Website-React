@@ -34,7 +34,7 @@ export default function StudyGroups() {
 
     // @ts-ignore
     return (
-        <Layout>
+        <Layout triangles>
             <div className={styles.groupsContainer}>
                 {studyGroups.map((sGroup, index) => {
                     return (

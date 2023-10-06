@@ -5,7 +5,7 @@ const ArrowButton = ({right, left, className, onClick, style, size, color} :
 
     const circleSize: number = size ? size : 50;
     const arrowSize: number = size ? Math.round(size * 0.7) : 35;
-    const arrowColor: string = color ? color : "#FFFFFF";
+    const arrowColor: string = color ? color : "#061E33";
 
     return (
       <div style={{...style, width: circleSize, height: circleSize }} className={`arrowButton ${className}`} onClick={onClick}>

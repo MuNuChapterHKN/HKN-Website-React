@@ -48,7 +48,7 @@ const Footer = () => {
             </div>
 
             <div className={styles.columnLogoSociety}>
-                <Image className={styles.logoSociety} src="/hkn_logo_society.png" alt="HKN PoliTO Logo" width="0" height="0" sizes="100vw"/>
+                <Image className={styles.logoSociety} src="/common/hkn_logo_society.png" alt="HKN PoliTO Logo" width="0" height="0" sizes="100vw"/>
             </div>
         </div>
     )

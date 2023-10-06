@@ -106,8 +106,8 @@ export default function People() {
     }
 
     return (
-       <Layout>
-            <BoardPopUp index={boardIndex} visible={false} disablePopUp={handleHideBoardPopUp}/>
+       <Layout triangles>
+           {/*<BoardPopUp index={boardIndex} visible={false} disablePopUp={handleHideBoardPopUp}/>*/}
             <div className={styles.boardContainer}>
                 <text className={styles.theBoard}>THE BOARD</text>
                 <text className={styles.managementArea}>Management Area</text>
