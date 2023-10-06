@@ -1,0 +1,454 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 92%;
+  max-width: 1100px;
+  margin-bottom: 70px;
+}
+
+.pageSubtitle {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.pageTitle {
+  font-size: 2.5em;
+  font-weight: 600;
+  padding-bottom: 2em;
+  text-align: center;
+}
+
+.gradientBackground {
+  background: rgb(242, 242, 242);
+  background: linear-gradient(0deg, rgba(146, 154, 166, 1) 0%, rgba(184, 187, 191, 1) 50%, rgba(242, 242, 242, 1) 100%);
+  border-radius: 30px;
+  padding: 2em 3em;
+  color: #061E33;
+}
+
+.spacing {
+  margin: 4rem 0;
+}
+
+/* Heading */
+
+.heading {
+  margin-bottom: 6rem;
+}
+
+.requirementColumn,
+.halfWidth {
+  vertical-align: top;
+  display: inline-block;
+  width: 50%;
+}
+
+.paddingRight {
+  padding-right: .6em;
+}
+
+.paddingLeft {
+  padding-left: .6em;
+}
+
+.requirementColumn {
+  vertical-align: middle;
+}
+
+.headingImage {
+  display: block;
+  margin: 0 auto;
+}
+
+.headingTitle {
+  font-size: 4.8em;
+  line-height: 1.1em;
+  margin-bottom: 30px;
+}
+
+.headingDescription {
+  font-size: 1.8em;
+}
+
+/* Recruitment steps */
+
+.recruitmentTitle {
+  font-size: 2.4em;
+}
+
+.recruitmentContainer {
+  margin-right: 3rem;
+}
+
+.requiredGrades {
+  padding-left: 3rem;
+}
+
+.requiredGradesContainerWhite {
+  margin-top: 60px;
+  position: relative;
+  z-index: 10;
+  height: 56px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: 60px;
+    background: #fff;
+    width: 4px;
+    top: -60px;
+    left: 60px;
+  }
+
+}
+
+.requirementPointList:nth-last-child(3) {
+  height: 150px;
+  padding-left: 80px;
+}
+
+.requiredGradesContainerGray {
+  position: relative;
+  z-index: 9;
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: 330px;
+    background: #c0c0c0;
+    width: 4px;
+    top: -330px;
+    left: 26px;
+  }
+
+}
+
+.recruitmentStep {
+  padding-left: 2rem;
+  margin-top: 1rem;
+  position: relative;
+
+  &:not(:last-of-type) {
+
+    margin-bottom: 1rem;
+
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      width: 4px;
+      top: 1em;
+      left: 10px;
+      bottom: -2rem;
+      background-color: #061E33;
+    }
+  }
+
+}
+
+.recruitmentStepTitle {
+  font-size: 2rem;
+  font-weight: 700;
+
+  &::before {
+    display: block;
+    content: '';
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 0;
+    top: 14px;
+    border-radius: 50%;
+    background-color: #061E33;
+  }
+}
+
+.shortRecruitmentStepText,
+.recruitmentStepText {
+  font-size: 1.4rem;
+  padding-bottom: 1rem;
+}
+
+.shortRecruitmentStepText {
+  position: relative;
+  min-width: 200px;
+  width: 66%;
+  margin: 2rem;
+
+  &:last-child::after {
+    content: '';
+    background-size: 90px 100px;
+    background-image: url("/JoinUs/form.png");
+    position: absolute;
+    right: 20px;
+    top: 55px;
+    height: 100px;
+    width: 90px;
+  }
+
+}
+
+.exceptionContainer {
+  position: relative;
+  padding-left: 40px;
+}
+
+.cfuSlider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 80%;
+  margin: 0 10%;
+  height: 5px;
+  background: #061E33;
+  outline: none;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    cursor: default;
+    border-radius: 50%;
+    border: none;
+  }
+
+  &::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    cursor: default;
+    border-radius: 50%;
+    border: none;
+  }
+
+  &::-webkit-slider-runnable-track {
+    height: 5px;
+    -webkit-appearance: none;
+    color: #fff;
+    margin-top: -1px;
+  }
+
+  &::-ms-fill-lower {
+    height: 5px;
+    background-color: #fff;
+  }
+
+  &::-moz-range-progress {
+    height: 5px;
+    background-color: #fff;
+  }
+
+  &--inverted {
+    background: #fff;
+
+    //&::-webkit-slider-runnable-track {
+    //  background-color: #061E33;
+    //}
+
+    &::-ms-fill-lower {
+      background-color: #061E33;
+    }
+
+    &::-moz-range-progress {
+      background-color: #061E33;
+    }
+
+  }
+
+}
+
+//@media screen and (-webkit-min-device-pixel-ratio: 0) {
+//  .cfuSlider {
+//    overflow: hidden;
+//  }
+//}
+
+/* Requirements */
+
+.boxedText {
+  border-radius: 4rem;
+  background: #f2f2f2;
+  background: linear-gradient(90deg, #fff 0%, #f2f2f2 100%);
+  display: inline-block;
+  color: #061E33;
+}
+
+.requirementTitle {
+  font-size: 2.4rem;
+  padding: 0.3em 1em;
+  position: relative;
+
+  &--shadow {
+    box-shadow: -6px 7px 0 0 #bbb, -6px 7px 0 0 #f2f2f2;
+  }
+
+  &::after {
+    width: 120px;
+    height: 105px;
+    position: absolute;
+    top: -60px;
+    right: -20px;
+    background-image: url('/JoinUs/graduateHat.png');
+    background-size: 120px 105px;
+    content: '';
+  }
+}
+
+.requirementTitle.noHat::after {
+  content: none;
+}
+
+.requirementPointList {
+  margin: 2rem 0;
+}
+
+.requirementPoint {
+  font-size: 1.6em;
+  padding: .3em;
+}
+
+.requirementRow {
+  display: flex;
+  justify-content: center;
+}
+
+.requirementImage {
+  border-radius: 30px;
+  flex: 1;
+}
+
+.requirementText {
+  padding: 1em 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  flex: 1;
+}
+
+.requirementList {
+  padding: 1em;
+}
+
+.requirementSubtitle {
+  padding: .4em 1.2em;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.halfWidth > *:nth-last-child(2) > .requirementSubtitle {
+  background: #c0c0c0;
+}
+
+/* Submission form */
+
+.formPreamble {
+  min-width: 270px;
+  max-width: 500px;
+  width: 90%;
+  color: #fff;
+  font-size: 1.2em;
+  text-align: center;
+  margin: 4em auto 1.6em;
+}
+
+.submissionForm {
+  min-width: 270px;
+  max-width: 500px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.formLabel {
+  color: #061E33;
+  display: inline-block;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 700;
+  width: 100%;
+}
+
+.fileInputContainer > .formLabel {
+  font-size: 1.15em;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.formInput {
+  background-color: #061E33;
+  text-transform: uppercase;
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+  min-height: 30px;
+  padding: 12px 7px;
+  margin-bottom: 1.4em;
+  border: none;
+  transition: .25s ease-out outline;
+  color: #fff;
+}
+
+.formText {
+  color: #061E33;
+  font-size: .8em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 6em;
+}
+
+.fileInputContainer {
+  margin: 0.5em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fileButton {
+  border-radius: 50px;
+  display: inline-block;
+  border: 2px solid #061E33;
+  padding: .7em .85em;
+  background-color: transparent;
+  color: #061E33;
+  cursor: pointer;
+}
+
+.fileInput {
+  display: none;
+}
+
+.noWidth {
+  width: auto;
+}
+
+.submitButton {
+  border-radius: 50px;
+  display: block;
+  padding: .85em;
+  width: 130px;
+  font-size: 1em;
+  margin: 2em auto;
+  background-color: #061E33;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .halfWidth {
+    width: 100%;
+  }
+  .requiredGrades {
+    padding-left: 0;
+  }
+  .recruitmentContainer {
+    margin-right: 0;
+  }
+}
