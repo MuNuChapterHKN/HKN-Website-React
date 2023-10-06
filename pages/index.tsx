@@ -88,7 +88,7 @@ export default function Home() {
                 <div className={styles.originsRight}>
                     <text className={styles.originsText}>ORIGINS</text>
                     <text className={styles.originsTitle}>Eta Kappa Nu, IEEE Honor Society</text>
-                    <text className={styles.origins}>Founded in 1904, Eta Kappa Nu (IEEE-HKN), the honor society of
+                    <text className={styles.originst}>Founded in 1904, Eta Kappa Nu (IEEE-HKN), the honor society of
                                                      IEEE, promotes the ideals of Scholarship, Character, and Attitude.
                                                      Catch a glimpse of our origins.
                     </text>
