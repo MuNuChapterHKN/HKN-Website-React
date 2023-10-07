@@ -28,6 +28,14 @@
   color: #061E33;
 }
 
+.bgWhite {
+  background: #fff;
+}
+
+.bgBlue {
+  background: #061E33;
+}
+
 .spacing {
   margin: 4rem 0;
 }
@@ -46,11 +54,11 @@
 }
 
 .paddingRight {
-  padding-right: .6em;
+  padding-right: .5em;
 }
 
 .paddingLeft {
-  padding-left: .6em;
+  padding-left: .5em;
 }
 
 .requirementColumn {
@@ -195,76 +203,31 @@
   padding-left: 40px;
 }
 
-.cfuSlider {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 80%;
-  margin: 0 10%;
-  height: 5px;
-  background: #061E33;
-  outline: none;
-
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 14px;
-    height: 14px;
-    background: #fff;
-    cursor: default;
-    border-radius: 50%;
-    border: none;
-  }
-
-  &::-moz-range-thumb {
-    width: 14px;
-    height: 14px;
-    background: #fff;
-    cursor: default;
-    border-radius: 50%;
-    border: none;
-  }
-
-  &::-webkit-slider-runnable-track {
-    height: 5px;
-    -webkit-appearance: none;
-    color: #fff;
-    margin-top: -1px;
-  }
-
-  &::-ms-fill-lower {
-    height: 5px;
-    background-color: #fff;
-  }
-
-  &::-moz-range-progress {
-    height: 5px;
-    background-color: #fff;
-  }
-
-  &--inverted {
-    background: #fff;
-
-    //&::-webkit-slider-runnable-track {
-    //  background-color: #061E33;
-    //}
-
-    &::-ms-fill-lower {
-      background-color: #061E33;
-    }
-
-    &::-moz-range-progress {
-      background-color: #061E33;
-    }
-
-  }
-
+.cfuSliderHandle {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 -7px -5px;
+  z-index: 3;
+  position: relative;
 }
 
-//@media screen and (-webkit-min-device-pixel-ratio: 0) {
-//  .cfuSlider {
-//    overflow: hidden;
-//  }
-//}
+.cfuSliderLeft {
+  display: inline-block;
+  height: 5px;
+  width: 20%;
+  margin-left: 10%;
+  z-index: 2;
+}
+
+.cfuSliderRight {
+  display: inline-block;
+  width: 50%;
+  height: 5px;
+  z-index: 2;
+}
 
 /* Requirements */
 
@@ -336,6 +299,7 @@
   padding: .4em 1.2em;
   font-size: 1.5em;
   text-align: center;
+  vertical-align: middle;
 }
 
 .halfWidth > *:nth-last-child(2) > .requirementSubtitle {
@@ -346,7 +310,7 @@
 
 .formPreamble {
   min-width: 270px;
-  max-width: 500px;
+  max-width: 600px;
   width: 90%;
   color: #fff;
   font-size: 1.2em;
@@ -356,43 +320,66 @@
 
 .submissionForm {
   min-width: 270px;
-  max-width: 500px;
+  max-width: 520px;
   margin: 0 auto;
-  width: 90%;
+  width: 90vw;
 }
 
 .formLabel {
   color: #061E33;
   display: inline-block;
-  text-align: center;
+  text-align: left;
   font-size: 1.5em;
   font-weight: 700;
   width: 100%;
 }
 
 .fileInputContainer > .formLabel {
-  font-size: 1.15em;
-  margin-left: auto;
+  font-size: 1.3em;
   margin-right: 10px;
 }
 
 .formInput {
+  font-family: Inter, sans-serif;
+  font-weight: 500;
   background-color: #061E33;
   text-transform: uppercase;
   width: 100%;
   display: block;
   border-radius: 5px;
   min-height: 30px;
-  padding: 12px 7px;
+  font-size: 1em;
+  padding: 1em;
   margin-bottom: 1.4em;
   border: none;
   transition: .25s ease-out outline;
-  color: #fff;
+  color: #bbb;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &:focus {
+    outline: #061E3388 4px solid;
+  }
+}
+
+.fileName {
+  width: 100%;
+  flex-basis: 100%;
+  display: block;
+  color: #061E33;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: .9em;
+  margin-top: -.6em;
+  max-width: 260px;
 }
 
 .formText {
   color: #061E33;
-  font-size: .8em;
+  font-size: 1.1em;
   text-align: center;
   text-transform: uppercase;
   font-weight: 600;
@@ -404,7 +391,7 @@
 }
 
 .fileInputContainer {
-  margin: 0.5em 0;
+  margin-top: 2em;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -418,10 +405,28 @@
   background-color: transparent;
   color: #061E33;
   cursor: pointer;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+
+  &:focus {
+    outline: #061E3388 4px solid;
+  }
 }
 
 .fileInput {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.fileInput:focus + .fileButton {
+  outline: #061E3388 4px solid;
 }
 
 .noWidth {
@@ -433,18 +438,49 @@
   display: block;
   padding: .85em;
   width: 130px;
-  font-size: 1em;
+  font-size: 1.1em;
   margin: 2em auto;
   background-color: #061E33;
   border: none;
   color: #fff;
   cursor: pointer;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+
+  &:focus {
+    outline: #061E3388 4px solid;
+  }
+}
+
+.successfulSubmission {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 800px;
+  min-width: 280px;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+@media screen and (max-width: 1230px) {
+  .requirementSubtitle {
+    font-size: 1.3em;
+    padding: 0.4em 0.8em;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .halfWidth {
     width: 100%;
   }
+
+  .paddingRight {
+    padding-right: 0;
+  }
+
+  .paddingLeft {
+    padding-left: 0;
+  }
+
   .requiredGrades {
     padding-left: 0;
   }

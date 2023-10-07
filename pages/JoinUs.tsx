@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
 import styles from "@/styles/JoinUs/JoinUs.module.scss";
-import Image from "next/image";
+import SubmissionForm from "@/components/JoinUs/SubmissionForm";
 
 export default function JoinUs() {
 
@@ -73,10 +73,13 @@ export default function JoinUs() {
                             Master of Science
                         </h4>
                         <div className={styles.requiredGradesContainerWhite}>
-                            <h5 className={`${styles.requirementSubtitle} ${styles.boxedText}`}>Less than 20 CFU</h5>
+                            <h5 className={`${styles.requirementSubtitle} ${styles.boxedText} ${styles.requirementColumn}`}>
+                                Less than 20 CFU
+                            </h5>
                             <div className={styles.requirementColumn}>
-                                <input type="range" disabled={true} min="0" max="180" value="40"
-                                       className={`${styles.cfuSlider} ${styles.requirementColumn}`}/>
+                                <span className={`${styles.cfuSliderLeft} ${styles.bgWhite}`}></span>
+                                <span className={`${styles.cfuSliderHandle}`}></span>
+                                <span className={`${styles.cfuSliderRight} ${styles.bgBlue}`}></span>
                             </div>
                         </div>
                         <ul className={styles.requirementPointList}>
@@ -90,8 +93,9 @@ export default function JoinUs() {
                                 20 CFU or more
                             </h5>
                             <div className={styles.requirementColumn}>
-                                <input type="range" disabled={true} min="0" max="180" value="40"
-                                       className={`${styles.cfuSlider} ${styles['cfuSlider--inverted']}`}/>
+                                <span className={`${styles.cfuSliderLeft} ${styles.bgBlue}`}></span>
+                                <span className={`${styles.cfuSliderHandle}`}></span>
+                                <span className={`${styles.cfuSliderRight} ${styles.bgWhite}`}></span>
                             </div>
                         </div>
                         <ul className={styles.requirementPointList}>
@@ -158,58 +162,7 @@ export default function JoinUs() {
                 </section>
 
                 {/* Submission form */}
-                <section>
-                    <p className={styles.formPreamble}>IF WE CONVINCED YOU...</p>
-                    <form className={`${styles.submissionForm} ${styles.gradientBackground}`}>
-
-                        <label htmlFor="name" className={styles.formLabel}>Name & Surname</label>
-                        <input type="text" id="name" name="name" className={styles.formInput}/>
-
-                        <div className={`${styles.halfWidth} ${styles.paddingRight}`}>
-                            <label htmlFor="average" className={styles.formLabel}>Weighted Average</label>
-                            <input type="number" id="average" name="average" className={styles.formInput} min={18} max={30} step={0.1}/>
-                        </div>
-                        <div className={`${styles.halfWidth} ${styles.paddingLeft}`}>
-                            <label htmlFor="degreeType" className={styles.formLabel}>Type of Degree</label>
-                            <select name="degreeType" id="degreeType" className={styles.formInput}>
-                                <option value="Bachelor">Bachelor</option>
-                                <option value="Bachelor">Master</option>
-                                <option value="Bachelor">PhD</option>
-                            </select>
-                        </div>
-
-                        <label htmlFor="email" className={styles.formLabel}>University Email Address</label>
-                        <input type="email" id="email" name="email" className={styles.formInput}/>
-
-                        <label htmlFor="course" className={styles.formLabel}>Course Degree</label>
-                        <select name="course" id="course" className={styles.formInput}>
-                            <option value="Bachelor">Bachelor</option>
-                            <option value="Bachelor">Master</option>
-                            <option value="Bachelor">PhD</option>
-                        </select>
-
-                        <div className={styles.fileInputContainer}>
-                            <label htmlFor="cv" className={`${styles.formLabel} ${styles.noWidth}`}>
-                                Attach Your CV:
-                            </label>
-                            <label htmlFor="cv" className={styles.fileButton}>ATTACH A FILE</label>
-                            <input type="file" className={styles.fileInput} name="cv" id="cv"/>
-                        </div>
-                        <div className={styles.fileInputContainer}>
-                            <label htmlFor="studyPlan" className={`${styles.formLabel} ${styles.noWidth}`}>
-                                Attach Your Study Plan:
-                            </label>
-                            <label htmlFor="studyPlan" className={styles.fileButton}>ATTACH A FILE</label>
-                            <input type="file" className={styles.fileInput} name="studyPlan" id="studyPlan"/>
-                        </div>
-
-                        <input type="submit" className={styles.submitButton} value="SEND"/>
-                        <p className={styles.formText}>
-                            *You can contact us using the form above or sending an email to
-                            <a href="mailto:info@hknpolito.org"> info@hknpolito.org</a>
-                        </p>
-                    </form>
-                </section>
+                <SubmissionForm />
             </main>
         </Layout>
     )
