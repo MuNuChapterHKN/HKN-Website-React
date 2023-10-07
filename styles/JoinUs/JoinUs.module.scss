@@ -37,7 +37,7 @@
 }
 
 .spacing {
-  margin: 4rem 0;
+  margin: 4rem 0 2rem;
 }
 
 /* Heading */
@@ -127,7 +127,7 @@
     height: 330px;
     background: #c0c0c0;
     width: 4px;
-    top: -330px;
+    top: -327px;
     left: 26px;
   }
 
@@ -313,9 +313,9 @@
   max-width: 600px;
   width: 90%;
   color: #fff;
-  font-size: 1.2em;
+  font-size: 1.6em;
   text-align: center;
-  margin: 4em auto 1.6em;
+  margin: 1.6em auto;
 }
 
 .submissionForm {
@@ -419,6 +419,11 @@
   cursor: pointer;
   font-family: Inter, sans-serif;
   font-weight: 600;
+  transition: background-color .2s ease-out;
+
+  &:hover {
+    background-color: #061E3322;
+  }
 
   &:focus {
     outline: #061E3388 4px solid;
@@ -458,7 +463,11 @@
   cursor: pointer;
   font-family: Inter, sans-serif;
   font-weight: 600;
+  transition: background-color .25s ease-out;
 
+  &:hover {
+    background-color: #061E33cc;
+  }
   &:focus {
     outline: #061E3388 4px solid;
   }
@@ -564,9 +573,12 @@
     font-size: 1.3em;
     padding: 0.4em 0.8em;
   }
+  .requirementPoint {
+    font-size: 1.5rem;
+  }
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1079px) {
   .recruitmentTitle {
     font-size: 2rem;
   }
@@ -580,6 +592,18 @@
   .requirementSubtitle {
     font-size: 1.16rem;
     padding: 0.3em .6em;
+  }
+  .recruitmentContainer {
+    margin-right: 1.5rem;
+  }
+  .requiredGrades {
+    padding-left: 1.5rem;
+  }
+  .requirementPoint {
+    font-size: 1.4rem;
+  }
+  .headingTitle {
+    font-size: 3.7rem;
   }
 }
 
@@ -597,9 +621,83 @@
   }
 
   .requiredGrades {
+    margin-top: 4rem;
     padding-left: 0;
   }
+
+  .recruitmentStepTitle {
+    font-size: 1.7rem;
+  }
+
   .recruitmentContainer {
     margin-right: 0;
   }
+
+  .headingImage {
+    width: 50%;
+    margin: 0 auto;
+    min-width: 280px;
+  }
+
+  .shortRecruitmentStepText {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .headingTitle {
+    font-size: 2.8rem;
+  }
+
+  .headingDescription {
+    font-size: 1.5rem;
+  }
+
+  .requirementTitle {
+    font-size: 1.7rem;
+
+    &:after {
+      width: 90px;
+      height: 70px;
+      top: -40px;
+      right: -15px;
+      background-size: 90px 70px;
+    }
+  }
+
+  .requirementColumn {
+    width: auto;
+  }
+
+  .requirementColumn:nth-child(even) {
+    display: none;
+  }
+
+  .requirementSubtitle {
+    font-size: 1.3rem;
+    padding: .5rem 1rem;
+  }
+
+  .requirementPointList {
+    margin: 1rem 0 3rem;
+  }
+
+  .recruitmentStepTitle:before {
+    width: 18px;
+    height: 18px;
+    left: 3px;
+  }
+
+  .fileInputContainer > .formLabel {
+    max-width: calc(50% - 10px);
+  }
+
+  .shortRecruitmentStepText:last-child::after {
+    height: 60px;
+    width: 54px;
+    top: 80px;
+    background-size: 54px 60px;
+  }
+
 }
