@@ -107,14 +107,16 @@ export default function JoinUs() {
                 <section className={styles.spacing}>
                     {/* Fees & Instructions */}
                     <div className={styles.halfWidth}>
-                        <h4 className={`${styles.requirementTitle} ${styles.noHat} ${styles.boxedText}`}>Induction
-                                                                                                         Fees</h4>
+                        <h4 className={`${styles.requirementTitle} ${styles.noHat} ${styles.boxedText}`}>
+                            Induction Fees
+                        </h4>
                         <p className={styles.shortRecruitmentStepText}>
                             Furthermore to become a fully inducted HKN member you have to pay a lump sum membership fee
                             of € 80.00 (IEEE+HKN).
                         </p>
-                        <h4 className={`${styles.requirementTitle} ${styles.noHat} ${styles.boxedText}`}>Form
-                                                                                                         Instructions</h4>
+                        <h4 className={`${styles.requirementTitle} ${styles.noHat} ${styles.boxedText}`}>
+                            Form Instructions
+                        </h4>
                         <p className={styles.shortRecruitmentStepText}>
                             To complete the application form you must enter:
                             <ul>

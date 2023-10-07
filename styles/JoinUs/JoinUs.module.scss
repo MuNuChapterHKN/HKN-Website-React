@@ -24,7 +24,7 @@
   background: rgb(242, 242, 242);
   background: linear-gradient(0deg, rgba(146, 154, 166, 1) 0%, rgba(184, 187, 191, 1) 50%, rgba(242, 242, 242, 1) 100%);
   border-radius: 30px;
-  padding: 2em 3em;
+  padding: 2em;
   color: #061E33;
 }
 
@@ -319,6 +319,7 @@
 }
 
 .submissionForm {
+  position: relative;
   min-width: 270px;
   max-width: 520px;
   margin: 0 auto;
@@ -329,9 +330,20 @@
   color: #061E33;
   display: inline-block;
   text-align: left;
-  font-size: 1.5em;
+  font-size: 1.6em;
   font-weight: 700;
   width: 100%;
+}
+
+.errorMessage {
+  margin: -1em 0 1em 0;
+  color: #be2312;
+  font-size: 1.05em;
+  word-wrap: break-word;
+}
+
+.fileName + .errorMessage {
+  margin-top: 0;
 }
 
 .fileInputContainer > .formLabel {
@@ -461,6 +473,92 @@
   text-align: center;
 }
 
+.overlay {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.4);
+  display: grid;
+  place-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 30px;
+  transition: opacity 0.3s ease-out;
+}
+
+.loader {
+  --color: #061E33;
+  --size-mid: 6vmin;
+  --size-dot: 1.5vmin;
+  --size-bar: 0.4vmin;
+  --size-square: 3vmin;
+  position: relative;
+  width: 50%;
+  display: grid;
+  place-items: center;
+
+  &::before,
+  &::after {
+    width: var(--size-square);
+    height: var(--size-square);
+    background-color: var(--color);
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+  }
+
+  &::before {
+    top: calc(50% - var(--size-square));
+    left: calc(50% - var(--size-square));
+    -webkit-animation: loader1 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+    animation: loader1 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+  }
+
+  &::after {
+    top: 50%;
+    left: 50%;
+    -webkit-animation: loader2 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+    animation: loader2 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+  }
+}
+
+@keyframes loader1 {
+  0%, 100% {
+    transform: none;
+  }
+
+  25% {
+    transform: translateX(100%);
+  }
+
+  50% {
+    transform: translateX(100%) translateY(100%);
+  }
+
+  75% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes loader2 {
+  0%, 100% {
+    transform: none;
+  }
+
+  25% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+
+  75% {
+    transform: translateY(-100%);
+  }
+}
+
+
 @media screen and (max-width: 1230px) {
   .requirementSubtitle {
     font-size: 1.3em;
@@ -468,7 +566,24 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1020px) {
+  .recruitmentTitle {
+    font-size: 2rem;
+  }
+  .recruitmentStep {
+    font-size: 1.7rem;
+  }
+  .requirementTitle {
+    font-size: 2rem;
+    padding: 0.3em .6em;
+  }
+  .requirementSubtitle {
+    font-size: 1.16rem;
+    padding: 0.3em .6em;
+  }
+}
+
+@media screen and (max-width: 868px) {
   .halfWidth {
     width: 100%;
   }
