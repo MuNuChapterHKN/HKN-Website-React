@@ -2,6 +2,7 @@ import {NextApiRequest, NextApiResponse} from 'next'
 import formidable, {PersistentFile} from 'formidable';
 import {writeFile, mkdir, readFile} from 'fs/promises';
 import {sendEmail} from "@/service/mailService";
+const logger = require('pino')()
 import {z} from 'zod';
 
 const schema = z.object({
@@ -24,7 +25,7 @@ async function saveFileLocally(file: PersistentFile, applicant: string, name: st
 
 function formatData(data: { [key: string]: string | number }) {
     return `Nome: ${data.name}\nEmail: ${data.email}\nMedia Voti: ${data.average}\n` +
-        `Laurea: ${data.degree}\nCorso: ${data.course}\nArea: ${data.area}\n`;
+        `Laurea: ${data.degree}\nCorso: ${data.course}\nArea: ${data.area}\nData: ${formatDate()}`;
 }
 
 function getApplicationPath(applicant: string, file: string) {
@@ -47,8 +48,8 @@ async function saveApplicationLocally(data: { [key: string]: string | number }, 
 }
 
 function handleError(e: unknown, type: string) {
-    console.log(e)
-    // TODO: LOG & NOTIFY IT SUPPORT
+    logger.error(e)
+    // TODO: NOTIFY IT SUPPORT
 }
 
 function flatten(fields: { any: [any] }) {
@@ -78,6 +79,7 @@ function formatDate() {
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     try {
+        logger.info('New application received');
         const {method} = req;
 
         if (method === 'POST') {
@@ -134,6 +136,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                     }
                 ];
                 await sendEmail(parsedFields.name, mailText, attachments);
+                logger.info('Email sent')
+
             } catch (e) {
                 handleError(e, 'Email');
             }
