@@ -6,5 +6,5 @@ export const courses = [
     "Matematica",
     "Elettrica",
     "Energetica",
-    "Cinema "
+    "Cinema"
 ]

@@ -1,7 +1,6 @@
 import styles from "@/styles/JoinUs/JoinUs.module.scss";
 import {courses} from "@/data/JoinUs/Courses";
 import React, {useState, FormEvent} from "react";
-import {string} from "prop-types";
 
 type Degree = "Bachelor" | "Master" | "PhD";
 
@@ -26,7 +25,7 @@ export default function SubmissionForm() {
     const [errors, setErrors] = useState<Errors>({});
     const [submitted, setSubmitted] = useState(false);
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const [submissionError, setSubmissionError] = useState<string | null>(null)
+    const [submissionError, setSubmissionError] = useState<string | null>(null);
 
     const setFileName = (setFileNameFunction: Function, files: FileList | null) => {
         if (files)
@@ -71,7 +70,7 @@ export default function SubmissionForm() {
             errors.studyPlan = 'File is too large, maximum size: 2MB'
 
         setErrors(errors);
-        return errors;
+        return Object.entries(errors).length === 0;
     };
 
     async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -83,16 +82,26 @@ export default function SubmissionForm() {
         setSubmissionError(null);
 
         try {
-            const formData = new FormData(event.currentTarget)
+            const formData = new FormData(event.currentTarget);
+            const cv = (document.getElementById('cv') as HTMLInputElement).files?.[0] as File;
+            const studyPlan = (document.getElementById('studyPlan') as HTMLInputElement).files?.[0] as File;
+            formData.set('cv', cv);
+            formData.set('studyPlan', studyPlan);
             const response = await fetch('/api/application', {
                 method: 'POST',
                 body: formData,
             });
-
-            const data = await response.json()
-        } catch (error) {
+            console.log(response)
+            if (response.ok) {
+                setSubmitted(true);
+            } else {
+                const data = await response.json();
+                setSubmissionError("An error occurred, please try again later");
+                console.log(data)
+            }
+        } catch (error: any) {
             console.error(error)
-            // setSubmissionError(error.message);
+            setSubmissionError(error.message);
         } finally {
             setIsLoading(false)
         }
@@ -117,7 +126,8 @@ export default function SubmissionForm() {
         submitted ?
             <section>
                 <div className={styles.successfulSubmission}>
-                    <img src="/JoinUs/successfulSubmission.png" alt={"Submission sent!"} width={'100%'} height={'auto'}/>
+                    <img src="/JoinUs/successfulSubmission.png" alt={"Submission sent!"} width={'100%'}
+                         height={'auto'}/>
                     <h3>
                         Thank you! Your application has been sent, we'll evaluate it and contact you as soon as
                         possible
@@ -136,7 +146,8 @@ export default function SubmissionForm() {
 
                     <div className={`${styles.halfWidth} ${styles.paddingRight}`}>
                         <label htmlFor="average" className={styles.formLabel}>Weighted Average</label>
-                        <input type="number" id="average" name="average" className={styles.formInput} min={18} max={30} step={0.1}
+                        <input type="number" id="average" name="average" className={styles.formInput} min={18} max={30}
+                               step={0.1}
                                value={average} onChange={(e) => {
                             resetError('average');
                             setAverage(Number(e.target.value));
@@ -154,7 +165,8 @@ export default function SubmissionForm() {
                     </div>
 
                     <label htmlFor="email" className={styles.formLabel}>University Email Address</label>
-                    <input type="email" id="email" name="email" className={styles.formInput} value={email} maxLength={255}
+                    <input type="email" id="email" name="email" className={styles.formInput} value={email}
+                           maxLength={255}
                            onChange={(e) => updateField(e, "email", setEmail)} required={true}/>
                     {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
 
@@ -170,14 +182,15 @@ export default function SubmissionForm() {
 
                     <label htmlFor="area" className={styles.formLabel}>Degree Area</label>
                     <input type="area" id="area" name="area" className={styles.formInput} value={area} maxLength={400}
-                           onChange={(e) => setArea(e.target.value)} required={true}
+                           onChange={(e) => setArea(e.target.value)}
                            placeholder={'e.g. AI, Quantum Engineering, Nanotechnologies for ICTs...'}/>
 
                     <div className={styles.fileInputContainer}>
                         <label htmlFor="cv" className={`${styles.formLabel} ${styles.noWidth}`}>
                             Attach Your CV:
                         </label>
-                        <input type="file" className={styles.fileInput} name="cv" id="cv" accept={'application/pdf'} required={true}
+                        <input type="file" className={styles.fileInput} name="cv" id="cv" accept={'application/pdf'}
+                               required={true}
                                onChange={(e) => {
                                    resetError('cv');
                                    setFileName(setCvFile, e.currentTarget.files)
@@ -190,7 +203,8 @@ export default function SubmissionForm() {
                         <label htmlFor="studyPlan" className={`${styles.formLabel} ${styles.noWidth}`}>
                             Attach Your Study Plan:
                         </label>
-                        <input type="file" className={styles.fileInput} name="studyPlan" id="studyPlan" accept={'application/pdf'} required={true}
+                        <input type="file" className={styles.fileInput} name="studyPlan" id="studyPlan"
+                               accept={'application/pdf'} required={true}
                                onChange={(e) => {
                                    resetError('studyPlan');
                                    setFileName(setStudyPlanFile, e.currentTarget.files)
@@ -213,6 +227,9 @@ export default function SubmissionForm() {
                         </div>
                     }
                 </form>
+                {submissionError && <span onClick={() => setSubmissionError(null)} className={styles.submissionError}>
+                    {submissionError}
+                </span>}
             </section>
     );
 }

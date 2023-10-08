@@ -482,6 +482,17 @@
   text-align: center;
 }
 
+.submissionError {
+  padding: 1em;
+  background-color: #be2312;
+  color: #d1d1d1;
+  border-radius: 20px;
+  word-break: break-word;
+  text-align: center;
+  display: block;
+  margin: 2rem;
+}
+
 .overlay {
   position: absolute;
   background: rgba(255, 255, 255, 0.4);
@@ -604,6 +615,12 @@
   }
   .headingTitle {
     font-size: 3.7rem;
+  }
+  .shortRecruitmentStepText:last-child::after {
+    height: 80px;
+    width: 72px;
+    top: 80px;
+    background-size: 72px 80px;
   }
 }
 
