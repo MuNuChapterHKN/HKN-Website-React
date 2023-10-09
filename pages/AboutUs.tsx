@@ -2,6 +2,10 @@ import Layout from "../components/Layout";
 import styles from "../styles/AboutUs/AboutUs.module.scss";
 import Gallery from "@/components/AboutUs/Gallery";
 import SectionAboutUs, {SectionAboutUsElement} from "@/components/AboutUs/SectionAboutUs";
+import {useEffect, useRef, useState} from "react";
+
+const yearWidth = 240;
+const yearHeight = 100;
 
 const sections: SectionAboutUsElement[] = [
     {
@@ -27,7 +31,30 @@ const sections: SectionAboutUsElement[] = [
 
 ]
 export default function AboutUs() {
+    const sectionsRef = useRef<HTMLDivElement>(null);
+    const [svgWidth, setSvgWidth] = useState(0);
 
+    useEffect(() => {
+        const handleResize = () => {
+            if (sectionsRef.current) {
+                setSvgWidth(sectionsRef.current.clientWidth);
+            }
+        };
+
+        // Initialize
+        handleResize();
+
+        // Subscribe to window resize events
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [sectionsRef]);
+
+
+    console.log(svgWidth)
     return (
         <Layout>
             <div className={styles.vision}>
@@ -73,28 +100,29 @@ export default function AboutUs() {
                 </div>
             </div>
 
-            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="102" viewBox="0 0 36 102" fill="none">
-                <line x1="17.4998" y1="0.965348" x2="18.4998" y2="101.965" stroke="#929AA6" stroke-opacity="0.74902" stroke-width="7"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="102" fill="none">
+                <line x1="17.4998" y1="0.965348" x2="18.4998" y2="101.965" stroke="#929AA6" stroke-width="7"/>
                 <line x1="3.49983" y1="0.965348" x2="4.49983" y2="101.965" stroke="#64758C" stroke-width="7"/>
                 <line x1="31.4998" y1="0.965348" x2="32.4998" y2="101.965" stroke="#929AA6" stroke-width="7"/>
             </svg>
 
             <Gallery className={styles.gallery}/>
 
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="230" viewBox="0 0 40 230" fill="none">
-                <line y1="0" x1="4" y2="230" x2="4" stroke="#929AA6" stroke-opacity="0.74902" stroke-width="8"/>
-                <line y1="0" x1="20" y2="230" x2="20" stroke="#64758C" stroke-width="8"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="230" fill="none">
+                <line y1="0" x1="4" y2="230" x2="4" stroke="#64758C" stroke-width="8"/>
+                <line y1="0" x1="20" y2="230" x2="20" stroke="#7A8698" stroke-width="8"/>
                 <line y1="0" x1="36" y2="230" x2="36" stroke="#929AA6" stroke-width="8"/>
             </svg>
 
-            <svg xmlns="http://www.w3.org/2000/svg" width="40%" height="40" fill="none">
-                <path d="M 4 0 A 4 4 0 0 1 0 4" stroke="#929AA6" stroke-opacity="0.74902" stroke-width="8"/>
-                <path d="M 20 0 A 20 20 0 0 1 0 20" stroke="#64758C" stroke-width="8"/>
-                <path d="M 36 0 A 36 36 0 0 1 0 36" stroke="#929AA6" stroke-width="8"/>
-            </svg>
+            <div className={styles.divider1}>
+                <svg xmlns="http://www.w3.org/2000/svg" width={svgWidth} height="40" fill="none" >
+                    <path d={`M ${yearWidth/2 - 16} 40 A 36 36 90 0 1 ${yearWidth/2 + 20} 4 H ${svgWidth / 2 - 20} A 4 4 90 0 0 ${svgWidth / 2 - 16} 0`} stroke="#64758C" stroke-width="8"/>
+                    <path d={`M ${yearWidth/2} 40 A 20 20 90 0 1 ${yearWidth/2 + 20} 20 H ${svgWidth / 2 - 20} A 20 20 90 0 0 ${svgWidth / 2} 0`} stroke="#7A8698" stroke-width="8"/>
+                    <path d={`M ${yearWidth/2 + 16} 40 A 4 4 90 0 1 ${yearWidth/2 + 20} 36 H ${svgWidth / 2 - 20} A 36 36 90 0 0 ${svgWidth / 2 + 16} 0`} stroke="#929AA6" stroke-width="8"/>
+                </svg>
+            </div>
 
-
-            <div className={styles.sections}>
+            <div className={styles.sections} ref={sectionsRef}>
                 <SectionAboutUs left section={sections[0]}>
                     <div className={styles.section__container_img}>
                         <img src="/AboutUs/1904_2.jpeg" className={`${styles.section1_image1} ${styles.section_image}`} alt="IEEE_logo" />
@@ -120,6 +148,8 @@ export default function AboutUs() {
 
                 <SectionAboutUs right end section={sections[3]}>
                     <div className={styles.section__container_img}>
+                        <img src="/AboutUs/2023_1.png" className={`${styles.section4_image1} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/Common/hkn_ideogramma_white.svg" className={`${styles.section4_image2} ${styles.section_image}`} alt="IEEE_logo" />
                     </div>
                 </SectionAboutUs>
             </div>

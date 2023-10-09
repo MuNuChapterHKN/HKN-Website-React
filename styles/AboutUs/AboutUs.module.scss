@@ -260,12 +260,30 @@ top: 60px;
 }
 
 .section3_image3 {
-  bottom:-40px;
+  bottom:-30px;
   left: -40px;
   width: 130px;
+}
+
+.section4_image1 {
+  top: 50px;
+  left: 0;
+  width: 450px;
+  height: 450px;
+  box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.section4_image2 {
+  bottom: -40px;
+  right: -40px;
+  width: 150px;
 }
 
 .sections {
   width: 95%;
   max-width: 1400px;
+}
+
+.divider1 {
+  height: 40px;
 }
