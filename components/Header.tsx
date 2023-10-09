@@ -22,12 +22,15 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
                 <div className={isActive('/') ? styles.active : styles.inactive} onClick={() => router.push('/')}>
                     Home
                 </div>
+
                 <div className={isActive('/AboutUs') ? styles.active : styles.inactive} onClick={() => router.push('/AboutUs')}>
                     About
                 </div>
+
                 <div className={isActive('/People') ? styles.active : styles.inactive} onClick={() => router.push('/People')}>
                     People
                 </div>
+
                 <div className={`${isActive('/Activities/Activities') || isActive('/Activities/Events') || isActive('/Activities/StudyGroups') || isActive('/Activities/Masterclasses') ? styles.active : styles.inactive} ${styles.menuItem}`}
                      onClick={() => router.push('/Activities/Activities')}>
                     <div className={styles.itemWrapper}>
@@ -40,7 +43,12 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
                         <li className={isActive('/Activities/StudyGroups') ? styles.activeDropdown : ''} onClick={() => router.push('/Activities/StudyGroups')}>Study Groups</li>
                     </ul>
                 </div>
-                <div className={`${isActive('/Publications/Recognitions') || isActive('/Publications/Blogs') ? styles.active : styles.inactive} onClick={() => router.push('/Publications/Recognitions') ${styles.menuItem}`}>
+
+                <div className={isActive('/Publications/Recognitions') ? styles.active : styles.inactive} onClick={() => router.push('/Publications/Recognitions')}>
+                    Publications
+                </div>
+
+                {/*<div className={`${isActive('/Publications/Recognitions') || isActive('/Publications/Blogs') ? styles.active : styles.inactive} onClick={() => router.push('/Publications/Recognitions') ${styles.menuItem}`}>
                     <div className={styles.itemWrapper}>
                         Publications
                         <div className={styles.arrowDown}></div>
@@ -49,7 +57,8 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
                         <li className={isActive('/Publications/Recognitions') ? styles.activeDropdown : ''} onClick={() => router.push('/Publications/Recognitions')}>Recognitions</li>
                         <li className={isActive('/Publications/Blogs') ? styles.activeDropdown : ''} onClick={() => router.push('/Publications/Blogs')}>Blogs</li>
                     </ul>
-                </div>
+                </div>*/}
+
             </div>
 
             <div className={styles.headerSpace}>

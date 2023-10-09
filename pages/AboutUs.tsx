@@ -62,13 +62,13 @@ export default function AboutUs() {
 
                     <div className={styles.vision__card__bull}>
                         <div className={styles.vision__card__bull__circle}>
-                            <img src="/AboutUs/bull.png" className={styles.vision__card__bull__circle__img} alt="bull" />
+                            <img src="/AboutUs/Vision/bull.png" className={styles.vision__card__bull__circle__img} alt="bull" />
                         </div>
                         <div className={styles.vision__card__bull__citation}>
                             <div className={styles.vision__card__bull__citation__text}>HKN IS THE PLACE WHERE I WAS ABLE TO IMPROVE MYSELF, ALLOWING ME TO GET INVOLVED AND BELIEVE IN MY POTENTIAL</div>
                             <div className={styles.vision__card__bull__citation__author}>Matteo Alasio - Student Governor 2023</div>
                             <div className={styles.vision__card__bull__citation__quotes}>
-                                <img src="/AboutUs/quotes.png" className={styles.vision__card__bull__citation__quotes__img} alt="quotes" />
+                                <img src="/AboutUs/Vision/quotes.png" className={styles.vision__card__bull__citation__quotes__img} alt="quotes" />
                             </div>
 
                             <div className={styles.vision__card__bull__citation__halo}/>
@@ -81,29 +81,29 @@ export default function AboutUs() {
 
                     <div className={styles.vision__card__visions}>
                         <div className={styles.vision__card__visions__col1}>
-                            <img src="/AboutUs/vision1.png" className={styles.vision__card__visions__col1__img} alt="AboutUs1" />
+                            <img src="/AboutUs/Vision/vision1.png" className={styles.vision__card__visions__col1__img} alt="AboutUs1" />
                         </div>
                         <div className={styles.vision__card__visions__col2}>Le nostre competenze vengono messe al servizio della comunità studentesca attraverso l'organizzazione di gruppi studio e masterclass</div>
                         <div className={styles.vision__card__visions__col1}>
-                            <img src="/AboutUs/vision2.png" className={styles.vision__card__visions__col1__img} alt="AboutUs1" />
+                            <img src="/AboutUs/Vision/vision2.png" className={styles.vision__card__visions__col1__img} alt="AboutUs1" />
                         </div>
                         <div className={styles.vision__card__visions__col2}>La crescita personale e professionale a cui miriamo con le nostre attività si realizza tramite l'incontro coi professionisti del settore e con la nostra rete di alumni.</div>
                         <div className={styles.vision__card__visions__col1}>
-                            <img src="/AboutUs/vision3.png" className={styles.vision__card__visions__col1__img} alt="AboutUs1" />
+                            <img src="/AboutUs/Vision/vision3.png" className={styles.vision__card__visions__col1__img} alt="AboutUs1" />
                         </div>
                         <div className={styles.vision__card__visions__col2}>All'interno della community gli associati curano numerose attività di team-building volte ad assicurare un'atmosfera rispettosa, inclusiva e motivante.</div>
                         <div className={styles.vision__card__visions__col1}>
-                            <img src="/AboutUs/vision4.png" className={styles.vision__card__visions__col1__img} alt="AboutUs1" />
+                            <img src="/AboutUs/Vision/vision4.png" className={styles.vision__card__visions__col1__img} alt="AboutUs1" />
                         </div>
                         <div className={styles.vision__card__visions__col2}>il nostro Capitolo è parte di una rete internazionale che riunisce oltre 200 capitoli  dei IEEE-hkn, ciò permette agli associati di fare networking.</div>
                     </div>
                 </div>
             </div>
 
-            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="102" fill="none">
-                <line x1="17.4998" y1="0.965348" x2="18.4998" y2="101.965" stroke="#929AA6" stroke-width="7"/>
-                <line x1="3.49983" y1="0.965348" x2="4.49983" y2="101.965" stroke="#64758C" stroke-width="7"/>
-                <line x1="31.4998" y1="0.965348" x2="32.4998" y2="101.965" stroke="#929AA6" stroke-width="7"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="102" fill="none">
+                <line y1="0" x1="4" y2="102" x2="4" stroke="#64758C" stroke-width="8"/>
+                <line y1="0" x1="20" y2="102" x2="20" stroke="#7A8698" stroke-width="8"/>
+                <line y1="0" x1="36" y2="102" x2="36" stroke="#929AA6" stroke-width="8"/>
             </svg>
 
             <Gallery className={styles.gallery}/>
@@ -125,30 +125,30 @@ export default function AboutUs() {
             <div className={styles.sections} ref={sectionsRef}>
                 <SectionAboutUs left section={sections[0]}>
                     <div className={styles.section__container_img}>
-                        <img src="/AboutUs/1904_2.jpeg" className={`${styles.section1_image1} ${styles.section_image}`} alt="IEEE_logo" />
-                        <img src="/AboutUs/1904_1.jpeg" className={`${styles.section1_image2} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/1904_2.jpeg" className={`${styles.section1_image1} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/1904_1.jpeg" className={`${styles.section1_image2} ${styles.section_image}`} alt="IEEE_logo" />
                         <img src="/AboutUs/hkn_simple_logo.png" className={`${styles.section1_image3} ${styles.section_image}`} alt="IEEE_logo" />
                     </div>
                 </SectionAboutUs>
 
                 <SectionAboutUs right section={sections[1]}>
                     <div className={styles.section__container_img}>
-                        <img src="/AboutUs/2010_1.jpeg" className={`${styles.section2_image1} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/2010_1.jpeg" className={`${styles.section2_image1} ${styles.section_image}`} alt="IEEE_logo" />
                         <img src="/AboutUs/IEEE_logo.png" className={`${styles.section2_image2} ${styles.section_image}`} alt="IEEE_logo" />
                     </div>
                 </SectionAboutUs>
 
                 <SectionAboutUs left section={sections[2]}>
                     <div className={styles.section__container_img}>
-                        <img src="/AboutUs/2017_1.jpeg" className={`${styles.section3_image1} ${styles.section_image}`} alt="IEEE_logo" />
-                        <img src="/AboutUs/2017_2.png" className={`${styles.section3_image2} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/2017_1.jpeg" className={`${styles.section3_image1} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/2017_2.png" className={`${styles.section3_image2} ${styles.section_image}`} alt="IEEE_logo" />
                         <img src="/Common/hkn_logo_white_vector.svg" className={`${styles.section3_image3} ${styles.section_image}`} alt="IEEE_logo" />
                     </div>
                 </SectionAboutUs>
 
                 <SectionAboutUs right end section={sections[3]}>
                     <div className={styles.section__container_img}>
-                        <img src="/AboutUs/2023_1.png" className={`${styles.section4_image1} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/2023_1.png" className={`${styles.section4_image1} ${styles.section_image}`} alt="IEEE_logo" />
                         <img src="/Common/hkn_ideogramma_white.svg" className={`${styles.section4_image2} ${styles.section_image}`} alt="IEEE_logo" />
                     </div>
                 </SectionAboutUs>
