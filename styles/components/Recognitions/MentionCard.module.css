@@ -26,9 +26,10 @@
 }
 
 .mentionsCardTitle {
+    margin-top: 20px;
     font-weight: 600;
     font-size: 45px;
-    line-height: 50px;
+    line-height: 40px;
 }
 
 .mentionsCardSubTitle {
@@ -40,4 +41,5 @@
 .mentionsCardText {
     font-weight: 400;
     font-size: 21px;
+    margin-bottom: 20px;
 }

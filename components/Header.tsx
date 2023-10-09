@@ -30,8 +30,10 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
                 </div>
                 <div className={`${isActive('/Activities/Activities') || isActive('/Activities/Events') || isActive('/Activities/StudyGroups') || isActive('/Activities/Masterclasses') ? styles.active : styles.inactive} ${styles.menuItem}`}
                      onClick={() => router.push('/Activities/Activities')}>
-                    Activities
-                    <div className={styles.arrowDown}></div>
+                    <div className={styles.itemWrapper}>
+                        Activities
+                        <div className={styles.arrowDown}></div>
+                    </div>
                     <ul className={styles.dropdown}>
                         <li className={isActive('/Activities/Events') ? styles.activeDropdown : ''} onClick={() => router.push('/Activities/Events')}>Events</li>
                         <li className={isActive('/Activities/Masterclasses') ? styles.activeDropdown  : ''} onClick={() => router.push('/Activities/Masterclasses')}>Masterclasses</li>
@@ -39,8 +41,10 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
                     </ul>
                 </div>
                 <div className={`${isActive('/Publications/Recognitions') || isActive('/Publications/Blogs') ? styles.active : styles.inactive} onClick={() => router.push('/Publications/Recognitions') ${styles.menuItem}`}>
-                    Publications
-                    <div className={styles.arrowDown}></div>
+                    <div className={styles.itemWrapper}>
+                        Publications
+                        <div className={styles.arrowDown}></div>
+                    </div>
                     <ul className={styles.dropdown}>
                         <li className={isActive('/Publications/Recognitions') ? styles.activeDropdown : ''} onClick={() => router.push('/Publications/Recognitions')}>Recognitions</li>
                         <li className={isActive('/Publications/Blogs') ? styles.activeDropdown : ''} onClick={() => router.push('/Publications/Blogs')}>Blogs</li>
