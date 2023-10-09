@@ -84,6 +84,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
         if (method === 'POST') {
 
+            console.log("#1# <ENV>", process.env.AUTH_TYPE);
+            console.log("#2# <ENV>", process.env.USER);
+
             // File validation
             const options = {
                 maxFiles: 2,
@@ -117,8 +120,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             } catch (e) {
                 handleError(e, 'Local');
             }
-
-            console.log("3", files)
 
             // Send email to HR
             try {

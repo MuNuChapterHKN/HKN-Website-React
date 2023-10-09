@@ -1,10 +1,10 @@
 export const courses = [
-    "Informatica",
-    "Elettronica",
-    "Biomedica",
-    "Fisica",
-    "Matematica",
-    "Elettrica",
-    "Energetica",
-    "Cinema"
+    "COMPUTER TECHNOLOGY",
+    "ELECTRICAL",
+    "ELECTRONIC",
+    "BIOMEDICAL",
+    "PHYSICS",
+    "MATHEMATIC",
+    "ENERGY",
+    "CINEMA AND MEDIA"
 ]

@@ -13,7 +13,9 @@ export async function sendEmail(name: string, text: string, attachments: { filen
             refreshToken: process.env.REFRESH_TOKEN,
             accessToken: process.env.ACCESS_TOKEN,
         },
-    });
+    })
+
+    console.log("#3# <ENV>", process.env.USER);
 
     const mailOptions = {
         from: 'responsabile.hr@hknpolito.org',

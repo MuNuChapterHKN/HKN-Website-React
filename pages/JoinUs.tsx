@@ -18,7 +18,7 @@ export default function JoinUs() {
                         <h1 className={styles.headingTitle}>Build your future with us</h1>
                         <p className={styles.headingDescription}>
                             Being an HKN member means not only you're part of an international network of students who
-                            will be tomorrow's leaders in the fields of IT and Electronics, but also to increase your
+                            will be tomorrow's leaders in the STEM fields, but also to increase your
                             knowledge and skills.
                         </p>
                     </div>
@@ -101,6 +101,7 @@ export default function JoinUs() {
                         <ul className={styles.requirementPointList}>
                             <li className={styles.requirementPoint}>Weighted average ≥ 27</li>
                         </ul>
+                        <p className={styles.additionalRequirement}>Fluency in the Italian language is a prerequisite for admission to the chapter</p>
                     </div>
                 </section>
 
