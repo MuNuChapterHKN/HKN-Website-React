@@ -29,12 +29,12 @@ const Footer = () => {
                 </div>
 
                 <div className={styles.links}>
-                    <LinkIcon src="/Icons/Facebook.png" srcHover="/Icons/facebook_color.png" link="https://www.facebook.com/hknpolito/"/>
-                    <LinkIcon src="/Icons/Instagram.png" srcHover="/Icons/instagram_color.png"  link="https://www.instagram.com/hknpolito/"/>
+                    <LinkIcon src="/Icons/facebook.png" srcHover="/Icons/facebook_color.png" link="https://www.facebook.com/hknpolito/"/>
+                    <LinkIcon src="/Icons/instagram.png" srcHover="/Icons/instagram_color.png"  link="https://www.instagram.com/hknpolito/"/>
                     <LinkIcon src="/Icons/youtube.png" srcHover="/Icons/youtube.png"  link="https://www.youtube.com/channel/UCEPeZOBv08kO2ImbjgM7yBw"/>
                     <LinkIcon src="/Icons/twitter.png" srcHover="/Icons/twitter_color.png"  link="https://twitter.com/HKNPoliTo"/>
-                    <LinkIcon src="/Icons/Spotify.png" srcHover="/Icons/spotify_color.png"  link=""/>
-                    <LinkIcon src="/Icons/Linkedin.png" srcHover="/Icons/linkedin_color.png"  link="https://www.linkedin.com/company/mu-nu-chapter-of-ieee-eta-kappa-nu"/>
+                    <LinkIcon src="/Icons/spotify.png" srcHover="/Icons/spotify_color.png"  link=""/>
+                    <LinkIcon src="/Icons/linkedin.png" srcHover="/Icons/linkedin_color.png"  link="https://www.linkedin.com/company/mu-nu-chapter-of-ieee-eta-kappa-nu"/>
                 </div>
             </div>
 
