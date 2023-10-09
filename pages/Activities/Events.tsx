@@ -22,12 +22,13 @@ export default function Events() {
         }
     }, [pastEventsIndex]);
 
-    const handleRightArrowPastEvents = () => {
-        if (pastEventsIndex == pastEvents.length - 1) {
-            setPastEventsIndex(0);
-        } else {
-            setPastEventsIndex(pastEventsIndex + 1)
-        }
+    const mod = (n: number, m: number) => {
+        return ((n % m) + m) % m;
+    }
+
+    const changeEventsPage = (action: number) => {
+        console.log(pastEventsIndex, (pastEventsIndex + action) % pastEvents.length)
+        setPastEventsIndex((pastEventsIndex) => mod((pastEventsIndex + action), pastEvents.length))
     }
 
     // @ts-ignore
@@ -61,8 +62,10 @@ export default function Events() {
                     {currentPastEvents.map((yearEvents, index) => (
                         <YearEventsColumn key={index} yearEvents={yearEvents}/>
                     ))}
-                    {currentPastEvents.length > 1 &&
-                        <ArrowButton right className={styles.pastEventsButton} onClick={handleRightArrowPastEvents}/>
+                    {currentPastEvents.length > 1 && <>
+                        <ArrowButton left className={styles.pastEventsButton} onClick={() => changeEventsPage(-1)}/>
+                        <ArrowButton right className={styles.pastEventsButton} onClick={() => changeEventsPage(+1)}/>
+                    </>
                     }
                 </div>
             </div>
