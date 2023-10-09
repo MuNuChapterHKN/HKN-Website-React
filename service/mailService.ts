@@ -15,11 +15,9 @@ export async function sendEmail(name: string, text: string, attachments: { filen
         },
     })
 
-    console.log("#3# <ENV>", process.env.USER);
-
     const mailOptions = {
-        from: 'responsabile.hr@hknpolito.org',
-        to: 'albertobaroso999@gmail.com',
+        from: 'recruitment@hknpolito.org',
+        to: 'recruitment@hknpolito.org',
         subject: `RECRUITMENT - ${name} SUBMISSION`,
         attachments,
         text,

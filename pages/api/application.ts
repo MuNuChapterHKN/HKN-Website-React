@@ -2,15 +2,16 @@ import {NextApiRequest, NextApiResponse} from 'next'
 import formidable, {PersistentFile} from 'formidable';
 import {writeFile, mkdir, readFile} from 'fs/promises';
 import {sendEmail} from "@/service/mailService";
+
 const logger = require('pino')()
 import {z} from 'zod';
 
 const schema = z.object({
     name: z.string().min(1).max(200),
     average: z.number().min(25.6).max(30),
-    email: z.string().email().endsWith('polito.it'),
+    email: z.string().email().toLowerCase().endsWith('polito.it'),
     degree: z.enum(["Bachelor", "Master", "PhD"]),
-    course: z.enum(["Informatica", "Elettronica", "Biomedica", "Fisica", "Matematica", "Elettrica", "Energetica", "Cinema"]),
+    course: z.enum(["COMPUTER TECHNOLOGY", "ELECTRICAL", "ELECTRONIC", "BIOMEDICAL", "PHYSICS", "MATHEMATIC", "ENERGY", "CINEMA AND MEDIA"]),
     area: z.optional(z.string())
 });
 
@@ -83,9 +84,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         const {method} = req;
 
         if (method === 'POST') {
-
-            console.log("#1# <ENV>", process.env.AUTH_TYPE);
-            console.log("#2# <ENV>", process.env.USER);
 
             // File validation
             const options = {
