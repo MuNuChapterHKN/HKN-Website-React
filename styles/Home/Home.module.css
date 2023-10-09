@@ -83,6 +83,7 @@
 
 .outstandingAward {
     opacity: 1;
+    filter: grayscale(100%);
 }
 
 /* third section - vision */
