@@ -124,3 +124,8 @@
     border-right: 6px solid transparent;
     border-top: 6px solid #f2f2f2;
 }
+
+.itemWrapper {
+    display: flex;
+    align-items: center;
+}

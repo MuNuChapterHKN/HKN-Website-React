@@ -20,12 +20,12 @@ export default function External() {
 
                         <div className={styles.latestActivities__left__card}>
                             <div className={styles.latestActivities__left__card__imageContainer}>
-                                <img className={styles.latestActivities__left__card__image} src={'/Activities/Activities/Latest.png'} alt={'latest'}/>
+                                <img className={styles.latestActivities__left__card__image} src={'/Activities/Events/quantumQuest.png'} alt={'latest'}/>
                             </div>
 
                             <div className={styles.latestActivities__left__card__text}>
                                 <div className={styles.latestActivities__left__card__events}>EVENTS</div>
-                                <div className={styles.latestActivities__left__card__title}>Festa di fine anno</div>
+                                <div className={styles.latestActivities__left__card__title}>Quantum Quest</div>
                             </div>
                         </div>
                     </div>
@@ -52,19 +52,6 @@ export default function External() {
                                 <div className={styles.latestActivities__right__card__activities}>STUDY GROUP</div>
                                 <div className={styles.latestActivities__right__card__title}>Tutoring</div>
                                 <div className={styles.latestActivities__right__card__topic}>Discover our 2023 study groups</div>
-                            </div>
-                        </a>
-
-                        <a className={styles.latestActivities__right__events} rel='noopener' target='_blank' href={'https://www.instagram.com/p/CtqseJPNv9p/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA=='}>
-                            <div className={styles.latestActivities__right__card__imageContainer}>
-                                <img className={styles.latestActivities__right__card__image} src={'/Activities/Events/mentalWellnessDigitalWellBeing.png'} alt={'latest event'}/>
-                            </div>
-                            <div className={styles.latestActivities__right__card__text}>
-                                <div className={styles.latestActivities__right__card__activities}>EVENTS</div>
-                                <div className={styles.latestActivities__right__card__title}>Mental Wellness</div>
-                                <div className={styles.latestActivities__right__card__topic}>
-                                    & Digital well being - MAY 27, 2023
-                                </div>
                             </div>
                         </a>
                     </div>

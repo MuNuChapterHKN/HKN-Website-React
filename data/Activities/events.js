@@ -223,7 +223,5 @@ export const latestEvent = {
     date: "7 June 2023, Wednesday",
     time: "15:00 PM - 17:30 PM",
     link: "https://www.youtube.com/watch?v=US-0U6EHW6o",
-    description: "Pronti per entrare nell'era quantistica?\n" +
-        "Scopri un paradigma computazionale rivoluzionario\n" +
-        "Esplora le applicazioni del calcolo quantistico nell'industria e nel mondo accademico\n"
+    description: "Ready to Enter the Quantum Era? Discover a Revolutionary Computational Paradigm. Explore the Applications of Quantum Computing in Industry and Academia."
 }

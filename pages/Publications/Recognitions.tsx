@@ -106,12 +106,12 @@ export default function JoinUs() {
                 }
             </div>
 
-            <div className={styles.professionalsContainer}>
+            {/*<div className={styles.professionalsContainer}>
                 <text className={styles.professionalsText}>PROFESSIONALS</text>
                 <text className={styles.professionalsTitle}>Professors</text>
                 <text className={styles.professionalsTitle}>Take The Floor</text>
                 <div className={styles.professionalsCards}>
-                    {/*TODO: image transition animation*/}
+                    {/*TODO: image transition animation* /}
                     {currentProfessional.map((professional, index) => (
                         <ProfessionalCard key={index} professional={professional}/>
                     ))}
@@ -119,7 +119,7 @@ export default function JoinUs() {
                         <ArrowButton className={styles.professionalsButton} onClick={handleRightArrowProfessionals}/>
                     }
                 </div>
-            </div>
+            </div>*/}
         </Layout>
     )
 }

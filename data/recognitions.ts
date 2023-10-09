@@ -5,9 +5,9 @@ export const mentions: Mention[] = [
     // {imageSrc:"/Publications/Mentions/mentions.jpg", title: "Worldwide Known", subtitle: "POLITO NEWSLETTER", text:"Six years after its foundation, IEEE-ETA KAPPA NU CHAPTER AT POLITO Makes headlines worldwide"},
     {
         imageSrc: "/Publications/Mentions/stemStudents.jpg",
-        title: "Gli studenti STEM del Politecnico ricevono un riconoscimento mondiale",
+        title: "Politecnico's STEM Students Receive Global Recognition",
         subtitle: "Poliflash",
-        text: "E' arrivata la vittoria dell’Outstanding Chapter Award per il suo impegno nei campi di interesse di IEEE…",
+        text: "The Outstanding Chapter Award has arrived for its commitment in the fields of IEEE's interest...",
         link: "https://www.polito.it/ateneo/comunicazione-e-ufficio-stampa/poliflash/gli-studenti-stem-del-politecnico-ricevono-un-riconoscimento"
     },
 ];

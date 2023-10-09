@@ -12,7 +12,7 @@
     display: grid;
     grid-template-columns: auto auto;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     width:90%;
     max-width: 1400px;
     padding-bottom: 90px;
@@ -116,6 +116,7 @@
                 height: auto;
                 position: relative;
                 width: 7vw;
+                min-width: 100px;
                 background-color: #1A3247;
             }
 
@@ -132,20 +133,20 @@
                 flex-grow: 1;
                 display: flex;
                 flex-direction: column;
-                padding: 10px;
+                padding: 26px 10px;
                 white-space: nowrap;
             }
 
             &__activities {
                 font-family: Inter, sans-serif;
-                font-size: 24px;
+                font-size: 28px;
                 font-weight: 600;
                 text-transform: uppercase;
             }
 
             &__title {
                 font-family: Outfit, sans-serif;
-                font-size: 35px;
+                font-size: 40px;
                 font-weight: 700;
                 line-height: 100%;
                 text-transform: capitalize;
@@ -153,9 +154,13 @@
 
             &__topic {
                 font-family: Inter, sans-serif;
-                font-size: 26px;
+                font-size: 30px;
                 font-weight: 400;
             }
+        }
+
+        &__card:last-child, &__masterclass:last-child, &__studyGroup:last-child, &__events:last-child {
+          margin-bottom: 0;
         }
     }
 }
