@@ -10,7 +10,7 @@ export default function StudyGroup({studyGroup, index}: {studyGroup: StudyGroupP
         <div className={styles.card}>
             <div className={styles.left}>
                 <text className={styles.name}>{studyGroup.name}</text>
-                <Image className={styles.image} src={"/Activities/StudyGroups/StudyGroup.jpg"} alt={studyGroup.name} width="0" height="0" sizes="100vw"/>
+                <Image className={styles.image} src={studyGroup.imageSrc} alt={studyGroup.name} width="0" height="0" sizes="100vw"/>
             </div>
 
             <div className={styles.center}>
@@ -34,6 +34,7 @@ export default function StudyGroup({studyGroup, index}: {studyGroup: StudyGroupP
 
 export interface StudyGroupProps {
     name: string;
+    tutor: string;
     description: string;
     imageSrc: string;
     link: string;

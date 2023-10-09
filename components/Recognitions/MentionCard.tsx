@@ -9,11 +9,11 @@ const MentionCard = ({mention} : {mention : Mention}) => {
         <div className={styles.mentionsCard}>
             <Image src={mention.imageSrc} alt="HKN Ideaogramma"
                    width="0" height="0" sizes="100vw" className={styles.mentionsImage}/>
-            <div className={styles.mentionsCardRight}>
+            <a className={styles.mentionsCardRight} href={mention.link ?? '#'} rel='noopener' target='_blank'>
                 <text className={styles.mentionsCardTitle}>{mention.title}</text>
                 <text className={styles.mentionsCardSubTitle}>{mention.subtitle}</text>
                 <text className={styles.mentionsCardText}>{mention.text}</text>
-            </div>
+            </a>
         </div>
     )
 }
@@ -25,5 +25,6 @@ export interface Mention {
     imageSrc : string,
     title : string,
     subtitle : string,
-    text : string
+    text : string,
+    link?: string
 }

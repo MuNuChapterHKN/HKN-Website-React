@@ -35,6 +35,7 @@
     border-radius: 20px;
     object-fit: cover;
     min-height: 18vw;
+    max-height: 300px;
 }
 
 .center {
@@ -61,7 +62,7 @@
 .textLocation {
     color: #F2F2F2;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Outfit;
+    font-family: Outfit, sans-serif;
     font-size: 35px;
     font-weight: 700;
     line-height: 100%;
@@ -74,7 +75,7 @@
     background: #061E33;
     margin-top: 20px;
     color: #F2F2F2;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-size: 24px;
     font-weight: 600;
     text-transform: uppercase;
@@ -89,10 +90,20 @@
 }
 
 .description {
-    font-family: Inter;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: lowercase;
+    font-family: Outfit, sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    text-align: center;
+    /*font-family: Inter, sans-serif;*/
+    /*font-size: 26px;*/
+    /*font-style: normal;*/
+    /*font-weight: 400;*/
+    /*line-height: normal;*/
+    /*text-transform: lowercase;*/
+}
+
+.right,
+.center {
+    margin-top: 70px;
+    vertical-align: bottom;
 }

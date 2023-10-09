@@ -73,7 +73,7 @@
 
 .boardImageContainer {
     width: 100%;
-    height: 100%;
+    height: 120%;
     overflow: hidden;
     display: flex;
     align-items: flex-end;
@@ -129,11 +129,12 @@
     border-radius: 25px;
     align-items: flex-end;
     color: #061E33;
+    cursor: pointer;
 }
 
 .teamRespImage {
     position: relative;
-    width: 32%;
+    width: 300px;
     left: -5%;
     filter: grayscale(100%);
 }
