@@ -4,90 +4,122 @@ import RoundButton from "@/components/molecules/RoundButton";
 import {useRouter} from "next/router";
 import {MouseEventHandler, useState} from "react";
 import ArrowButton from "@/components/molecules/ArrowButton";
+import React, {useRef, useEffect} from "react";
 
 // Images should be in a 4:5 ratio
-const Board : BoardMemberProps[] = [
+const Board: BoardMemberProps[] = [
     {
-        name: "Claudio Fantasia",
-        role: "Vice President",
-        imageSrc: "/People/Board/ClaudioFantasia.png",
+        name: "Gustavo Nicoletti",
+        role: "Recording Secretary",
+        imageSrc: "/People/Board/Gustavo Nicoletti Rosa.png",
+        linkedIn: "https://www.linkedin.com/in/gustavo-nicoletti-rosa/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
         name: "Serena Canavero",
         role: "President",
-        imageSrc: "/People/Board/SerenaCanavero.png",
+        imageSrc: "/People/Board/Serena Canavero.png",
+        linkedIn: "https://www.linkedin.com/in/serenacanavero/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
         name: "Francesco Anzoino",
-        role: "Tesoriere",
-        imageSrc: "/People/Board/FrancescoAnzoino.png",
+        role: "Treasurer",
+        imageSrc: "/People/Board/Francesco Anzoino.png",
+        linkedIn: "",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
-        name: "Gustavo Nicoletti",
-        role: "Recording Secretary",
-        imageSrc: "/People/Board/GustavoNicoletti.png",
+        name: "Claudio Fantasia",
+        role: "Vice President",
+        imageSrc: "/People/Board/Claudio Fantasia.png",
+        linkedIn: "https://www.linkedin.com/in/claudio-fantasia-120560224/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
         name: "Dario Gosmar",
         role: "Web Correspondent",
-        imageSrc: "/People/Board/DarioGosmar.png",
+        imageSrc: "/People/Board/Dario Gosmar.png",
+        linkedIn: "https://www.linkedin.com/in/dario-gosmar/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
         name: "Alberto Castrignanò",
         role: "Corresponding Secretary",
-        imageSrc: "/People/Board/AlbertoCastrignano.png",
+        imageSrc: "/People/Board/Alberto Castrignano.png",
+        linkedIn: "https://www.linkedin.com/in/albertocastrignano2/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
 ];
 
 // Images work well in a 3:5 ratio
-const Teams : TeamProps[] = [
+const Teams: TeamProps[] = [
     {
         area: "Comms",
-        description: "The Comms team is responsible for the communication of the society. This includes the website, social media, and the newsletter.",
-        imageSrc: "/People/Teams/resp_comms.png",
-        managerName: "Edoardo Colella",
+        longName: "Communications",
+        description: "Informing, engaging, motivating and creating: we constitute the link between the chapter and the student community",
+        imageSrc: "/People/Resp/resp-comms.png",
+        managerName: "Dario Gosmar",
+        members: [
+            'Alessia Scardi',
+            'Lorenzo Fezza'
+        ]
+    },
+    {
+        area: "HR",
+        longName: "Human Resources",
+        description: "Networking is our keyword: we manage the recruitment and organize any event/activity regarding the chapter",
+        imageSrc: "/People/Resp/resp-hr.png",
+        managerName: "Francesca Portadibasso & Luca Filippetti",
+        members: [
+            "Davide D'Adamo",
+            "Giacomo Maino"
+        ]
+    },
+    {
+        area: "Internal training",
+        longName: "Internal training",
+        description: "We are responsible for the talks and the workshops that constitute the interfaces with the professionals  ",
+        imageSrc: "/People/Resp/resp-fi.png",
+        managerName: "Claudio Fantasia",
+        members: [
+            'Matteo Sperti',
+            'Costanza Galante',
+        ]
+    },
+    {
+        area: "Tutoring",
+        longName: "Tutoring",
+        description: "We put at the first place the neworking between the students, organizing study groups open to everyone who wants to join ",
+        imageSrc: "/People/Resp/resp-tutoring.png",
+        managerName: "Orlando Zaccaria & Elena Favero",
         members: []
     },
     {
-        area: "Comms",
-        description: "The Comms team is responsible for the communication of the society. This includes the website, social media, and the newsletter.",
-        imageSrc: "/People/Teams/resp_comms.png",
-        managerName: "Edoardo Colella",
-        members: []
+        area: "Events",
+        longName: "Events",
+        description: "We organize hackatons & competitions related to the areas of interest of the students community",
+        imageSrc: "/People/Resp/resp-eventi.png",
+        managerName: "Sebastiano Guzzone",
+        members: [
+            'Alessandro Cardinale',
+            'Davide Macario',
+            'Mattia Chiarle'
+        ]
     },
     {
-        area: "Comms",
-        description: "The Comms team is responsible for the communication of the society. This includes the website, social media, and the newsletter.",
-        imageSrc: "/People/Teams/resp_comms.png",
-        managerName: "Edoardo Colella",
-        members: []
-    },
-    {
-        area: "Comms",
-        description: "The Comms team is responsible for the communication of the society. This includes the website, social media, and the newsletter.",
-        imageSrc: "/People/Teams/resp_comms.png",
-        managerName: "Edoardo Colella",
-        members: []
-    },
-    {
-        area: "Comms",
-        description: "The Comms team is responsible for the communication of the society. This includes the website, social media, and the newsletter.",
-        imageSrc: "/People/Teams/resp_comms.png",
-        managerName: "Edoardo Colella",
-        members: []
-    },
-    {
-        area: "Comms",
-        description: "The Comms team is responsible for the communication of the society. This includes the website, social media, and the newsletter.",
-        imageSrc: "/People/Teams/resp_comms.png",
-        managerName: "Edoardo Colella",
-        members: []
+        area: "IT",
+        longName: "IT",
+        description: "We manage IT-related projects for the chapter, such as our own website or the recruitment software",
+        imageSrc: "/People/Resp/resp-it.png",
+        managerName: "Alberto Baroso & Francesco Baldini",
+        members: [
+            'Manuel Colotti',
+            'Marco Pascarella',
+            'Marco Rosa Gobbo',
+            'Micol Rosini',
+            'Vito Palmisano'
+        ]
     },
 ];
 
@@ -113,7 +145,8 @@ export default function People() {
                 <text className={styles.managementArea}>Management Area</text>
                 <div className={styles.boardGrid}>
                     {Board.map((bmp, index) => (
-                        <BoardMember boardMemberProps={bmp} index={index} onClick={() => handleBoardMemberClick(index)}/>
+                        <BoardMember boardMemberProps={bmp} index={index}
+                                     onClick={() => handleBoardMemberClick(index)}/>
                     ))}
                 </div>
             </div>
@@ -128,16 +161,20 @@ export default function People() {
                </div>
            </div>
 
-           <div className={styles.discover}>
-               <div className={styles.discover__coming}>coming soon</div>
-               <div className={styles.discover__title}>discover</div>
-               <div className={styles.discover__title}>past boards and alumni</div>
-           </div>
-       </Layout>
+            <div className={styles.discover}>
+                <div className={styles.discover__coming}>coming soon</div>
+                <div className={styles.discover__title}>discover</div>
+                <div className={styles.discover__title}>past boards and alumni</div>
+            </div>
+        </Layout>
     )
 }
 
-function BoardMember({boardMemberProps, index, onClick}: {boardMemberProps : BoardMemberProps, index: number, onClick: MouseEventHandler<HTMLDivElement>}) {
+function BoardMember({boardMemberProps, index, onClick}: {
+    boardMemberProps: BoardMemberProps,
+    index: number,
+    onClick: MouseEventHandler<HTMLDivElement>
+}) {
     const [isHovered, setHovered] = useState(false);
 
     const handleMouseEnter = () => {
@@ -149,10 +186,11 @@ function BoardMember({boardMemberProps, index, onClick}: {boardMemberProps : Boa
     };
 
     return (
-        <div className={styles.boardMember} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={onClick}>
+        <div className={styles.boardMember} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
+             onClick={onClick}>
             <div className={styles.boardImageContainer}>
                 <div className={styles.boardCard}/>
-                <img className={styles.boardMemberImage} src={boardMemberProps.imageSrc} alt={boardMemberProps.imageSrc}/>
+                <img className={styles.boardMemberImage} src={boardMemberProps.imageSrc} alt={boardMemberProps.name}/>
             </div>
             <text className={styles.boardMemberName}>{boardMemberProps.name}</text>
             <text className={styles.boardMemberRole}>{boardMemberProps.role}</text>
@@ -160,7 +198,7 @@ function BoardMember({boardMemberProps, index, onClick}: {boardMemberProps : Boa
     );
 }
 
-function Team({teamProps} : {teamProps: TeamProps}) {
+function Team({teamProps}: { teamProps: TeamProps }) {
     return (
         <div className={styles.team}>
             <img className={styles.teamRespImage} src={teamProps.imageSrc} alt={teamProps.imageSrc}/>
@@ -199,11 +237,13 @@ export interface BoardMemberProps {
     name: string;
     role: string;
     imageSrc: string;
+    linkedIn: string;
     roleDescription: string;
 }
 
 export interface TeamProps {
     area: string;
+    longName: string;
     description: string;
     imageSrc: string;
     managerName: string;
