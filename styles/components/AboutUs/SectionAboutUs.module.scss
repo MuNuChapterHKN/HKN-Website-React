@@ -54,15 +54,12 @@
     margin: 50px 0 50px 0;
     width: 450px;
 
-    @media (max-width: 1200px) {
+    @media (max-width: 1300px) {
       transform: scale(0.7);
       width: 400px;
     }
+
     @media (max-width: 1000px) {
-      transform: scale(0.6);
-      width: 350px;
-    }
-    @media (max-width: 950px) {
       width: 0px;
       visibility: hidden;
     }

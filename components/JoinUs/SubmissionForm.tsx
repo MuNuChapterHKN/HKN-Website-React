@@ -125,13 +125,13 @@ export default function SubmissionForm() {
     return (
         submitted ?
             <section>
-                <div className={styles.successfulSubmission}>
                     <img src="/JoinUs/successfulSubmission.png" alt={"Submission sent!"} width={'100%'}
-                         height={'auto'}/>
-                    <h3>
-                        Thank you! Your application has been sent, we'll evaluate it and contact you as soon as
-                        possible
-                    </h3>
+                         height={'auto'} className={styles.submissionImage}/>
+                <div className={`${styles.submissionText}`}>
+                {/*<div className={styles.successfulSubmission}>*/}
+                    <div className={styles.disabledJoinUs__text}>
+                        Thank you! Your application has been sent, we'll evaluate it and contact you as soon as possible
+                    </div>
                 </div>
             </section>
             :

@@ -1,7 +1,7 @@
 .vision {
   display: flex;
   flex-direction: column;
-  width: 91%;
+  width: 87%;
   margin-top: 70px;
 
   &__title {
@@ -45,7 +45,6 @@
       font-family: Inter;
       font-size: 26px;
       font-weight: 400;
-      text-transform: lowercase;
     }
 
     &__visions {
@@ -70,7 +69,6 @@
         font-family: Inter;
         font-size: 26px;
         font-weight: 400;
-        text-transform: lowercase;
         padding-left: 10px;
       }
     }
@@ -145,6 +143,9 @@
         width: 30%
       }
 
+      @media(max-width: 1000px) {
+        visibility: collapse;
+      }
     }
 
     @media(min-width: 2000px) {

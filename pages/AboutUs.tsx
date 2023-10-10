@@ -10,22 +10,22 @@ const yearHeight = 100;
 const sections: SectionAboutUsElement[] = [
     {
         title: "HKN - the Founders",
-        description: "Eta Kappa Nu è stata fondata il 28 ottobre 1904 come società d'onore nazionale per gli studenti di ingegneria elettrica presso l'Università dell'Illinois a Urbana-Champaign. Maurice L. Carr e altri nove studenti universitari formarono il primo capitolo e svilupparono una struttura nazionale. La loro visione dell'associazione d'onore combinava l'impegno collegiale con una comunità professionale per aiutare gli studenti e gli ex studenti e per sostenere tali professioni in generale.",
+        description: "Eta Kappa Nu was founded on October 28, 1904, as a national honor society for electrical engineering students at the University of Illinois at Urbana-Champaign. Maurice L. Carr and nine other college students formed the first chapter and developed a national structure. Their vision for the honor society combined collegiate commitment with a professional community to assist students and alumni, and to support such professions in general.",
         year: "1904",
     },
     {
         title: "IEEE-HKN - The Merge",
-        description: "A partire dal 2010 Eta Kappa Nu si è legata in via ufficiale a IEEE in veste di unità organizzativa sotto il nome di IEEE-HKN. Come risultato della fusione, i capitoli vengono istituiti a livello internazionale e l'idoneità all'adesione viene estesa a tutti i campi di interesse dell'IEEE.",
+        description: "Starting from 2010, Eta Kappa Nu officially affiliated with IEEE as an organizational unit under the name IEEE-HKN. As a result of the merger, chapters are established internationally, and eligibility for membership is extended to all fields of interest within IEEE.",
         year: "2010",
     },
     {
         title: "Mu Nu Chapter - Installation",
-        description: "Nel 2017 il nostro capitolo viene fondato grazie all’iniziativa di una brillante studentessa che presto trasforma un’idea di community in una vera e propria confraternita al Politecnico di Torino. Già da allora l’associazione nasce con l’obbiettivo di portare formazione interna per i membri, tutoraggi gratuiti e eventi pubblici.",
+        description: "In 2017, our chapter was founded thanks to the initiative of a brilliant student who quickly transformed an idea of a community into a real fraternity at the Polytechnic University of Turin. Right from the start, the association was established with the goal of providing internal training for members, free tutoring, and public events.",
         year: "2017",
     },
     {
         title: "Mu Nu Chapter - Today",
-        description: "Oggi il Mu Nu chapter di IEEE-HKN al Politecnico di Torino è una vivace realtà portata avanti da un sempre più grande gruppo di studenti appassionati di informatica, elettronica e molto altro. HKN rappresenta per noi un nuovo modo di apprendere competenze e conoscenze e allo stesso tempo di coltivare le proprie passioni circondati da un ambiente ispirante e stimolante.",
+        description: "Today, the Mu Nu chapter of IEEE-HKN at the Polytechnic University of Turin is a vibrant reality carried forward by an ever-growing group of students passionate about computer science, electronics, and much more. For us, HKN represents a new way to acquire skills and knowledge while at the same time nurturing our passions in an inspiring and stimulating environment.",
         year: "2023",
     },
 
@@ -57,12 +57,12 @@ export default function AboutUs() {
     console.log(svgWidth)
     return (
         <Layout>
-            <div className={styles.vision}>
+            <div className={styles.vision}  id="vision">
                 <div className={styles.vision__card}>
 
                     <div className={styles.vision__card__bull}>
                         <div className={styles.vision__card__bull__circle}>
-                            <img src="/AboutUs/Vision/bull.png" className={styles.vision__card__bull__circle__img} alt="bull" />
+                            <img src="/AboutUs/Vision/bull.png" loading="lazy" className={styles.vision__card__bull__circle__img} alt="bull" />
                         </div>
                         <div className={styles.vision__card__bull__citation}>
                             <div className={styles.vision__card__bull__citation__text}>HKN IS THE PLACE WHERE I WAS ABLE TO IMPROVE MYSELF, ALLOWING ME TO GET INVOLVED AND BELIEVE IN MY POTENTIAL</div>
@@ -77,30 +77,30 @@ export default function AboutUs() {
 
                     <div className={styles.vision__card__uptitle}>about us</div>
                     <div className={styles.vision__card__title}>We Are HKN</div>
-                    <div className={styles.vision__card__description}>IEEE-HKN riconosce l’eccellenza tra pari, incoraggia la crescita individuale attraverso l’educazione e l’impegno professionale nelle attività associative. I pilastri su cui si fondano le nostre attività sono:</div>
+                    <div className={styles.vision__card__description}> IEEE-HKN recognizes excellence among peers, encourages individual growth through education, and professional commitment in associative activities. The pillars on which our activities are based are:</div>
 
                     <div className={styles.vision__card__visions}>
                         <div className={styles.vision__card__visions__col1}>
                             <img src="/AboutUs/Vision/vision1.png" className={styles.vision__card__visions__col1__img} alt="AboutUs1" />
                         </div>
-                        <div className={styles.vision__card__visions__col2}>Le nostre competenze vengono messe al servizio della comunità studentesca attraverso l'organizzazione di gruppi studio e masterclass</div>
+                        <div className={styles.vision__card__visions__col2}>Our skills are put to the service of the student community through the organization of study groups and masterclasses.</div>
                         <div className={styles.vision__card__visions__col1}>
                             <img src="/AboutUs/Vision/vision2.png" className={styles.vision__card__visions__col1__img} alt="AboutUs1" />
                         </div>
-                        <div className={styles.vision__card__visions__col2}>La crescita personale e professionale a cui miriamo con le nostre attività si realizza tramite l'incontro coi professionisti del settore e con la nostra rete di alumni.</div>
+                        <div className={styles.vision__card__visions__col2}>The personal and professional growth we aim for with our activities is achieved through meetings with industry professionals and our network of alumni.</div>
                         <div className={styles.vision__card__visions__col1}>
                             <img src="/AboutUs/Vision/vision3.png" className={styles.vision__card__visions__col1__img} alt="AboutUs1" />
                         </div>
-                        <div className={styles.vision__card__visions__col2}>All'interno della community gli associati curano numerose attività di team-building volte ad assicurare un'atmosfera rispettosa, inclusiva e motivante.</div>
+                        <div className={styles.vision__card__visions__col2}>Within the community, members manage various team-building activities aimed at ensuring a respectful, inclusive, and motivating atmosphere.</div>
                         <div className={styles.vision__card__visions__col1}>
                             <img src="/AboutUs/Vision/vision4.png" className={styles.vision__card__visions__col1__img} alt="AboutUs1" />
                         </div>
-                        <div className={styles.vision__card__visions__col2}>il nostro Capitolo è parte di una rete internazionale che riunisce oltre 200 capitoli  dei IEEE-hkn, ciò permette agli associati di fare networking.</div>
+                        <div className={styles.vision__card__visions__col2}>Our chapter is part of an international network that brings together over 200 IEEE-HKN chapters, allowing members to network.</div>
                     </div>
                 </div>
             </div>
 
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="102" fill="none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="102" fill="none" id="gallery">
                 <line y1="0" x1="4" y2="102" x2="4" stroke="#64758C" stroke-width="8"/>
                 <line y1="0" x1="20" y2="102" x2="20" stroke="#7A8698" stroke-width="8"/>
                 <line y1="0" x1="36" y2="102" x2="36" stroke="#929AA6" stroke-width="8"/>
@@ -108,7 +108,7 @@ export default function AboutUs() {
 
             <Gallery className={styles.gallery}/>
 
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="230" fill="none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="230" fill="none" id="origin">
                 <line y1="0" x1="4" y2="230" x2="4" stroke="#64758C" stroke-width="8"/>
                 <line y1="0" x1="20" y2="230" x2="20" stroke="#7A8698" stroke-width="8"/>
                 <line y1="0" x1="36" y2="230" x2="36" stroke="#929AA6" stroke-width="8"/>
@@ -125,31 +125,31 @@ export default function AboutUs() {
             <div className={styles.sections} ref={sectionsRef}>
                 <SectionAboutUs left section={sections[0]}>
                     <div className={styles.section__container_img}>
-                        <img src="/AboutUs/Sections/1904_2.jpeg" className={`${styles.section1_image1} ${styles.section_image}`} alt="IEEE_logo" />
-                        <img src="/AboutUs/Sections/1904_1.jpeg" className={`${styles.section1_image2} ${styles.section_image}`} alt="IEEE_logo" />
-                        <img src="/AboutUs/hkn_simple_logo.png" className={`${styles.section1_image3} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/1904_2.jpeg" loading="lazy" className={`${styles.section1_image1} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/1904_1.jpeg" loading="lazy" className={`${styles.section1_image2} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/hkn_simple_logo.png" loading="lazy" className={`${styles.section1_image3} ${styles.section_image}`} alt="IEEE_logo" />
                     </div>
                 </SectionAboutUs>
 
                 <SectionAboutUs right section={sections[1]}>
                     <div className={styles.section__container_img}>
-                        <img src="/AboutUs/Sections/2010_1.jpeg" className={`${styles.section2_image1} ${styles.section_image}`} alt="IEEE_logo" />
-                        <img src="/AboutUs/IEEE_logo.png" className={`${styles.section2_image2} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/2010_1.jpeg" loading="lazy" className={`${styles.section2_image1} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/IEEE_logo.png" loading="lazy" className={`${styles.section2_image2} ${styles.section_image}`} alt="IEEE_logo" />
                     </div>
                 </SectionAboutUs>
 
                 <SectionAboutUs left section={sections[2]}>
                     <div className={styles.section__container_img}>
-                        <img src="/AboutUs/Sections/2017_1.jpeg" className={`${styles.section3_image1} ${styles.section_image}`} alt="IEEE_logo" />
-                        <img src="/AboutUs/Sections/2017_2.png" className={`${styles.section3_image2} ${styles.section_image}`} alt="IEEE_logo" />
-                        <img src="/Common/hkn_logo_white_vector.svg" className={`${styles.section3_image3} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/2017_1.jpeg" loading="lazy" className={`${styles.section3_image1} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/2017_2.png" loading="lazy" className={`${styles.section3_image2} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/Common/hkn_logo_white_vector.svg" loading="lazy" className={`${styles.section3_image3} ${styles.section_image}`} alt="IEEE_logo" />
                     </div>
                 </SectionAboutUs>
 
                 <SectionAboutUs right end section={sections[3]}>
                     <div className={styles.section__container_img}>
-                        <img src="/AboutUs/Sections/2023_1.png" className={`${styles.section4_image1} ${styles.section_image}`} alt="IEEE_logo" />
-                        <img src="/Common/hkn_ideogramma_white.svg" className={`${styles.section4_image2} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/2023_1.png" loading="lazy" className={`${styles.section4_image1} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/Common/hkn_ideogramma_white.svg" loading="lazy" className={`${styles.section4_image2} ${styles.section_image}`} alt="IEEE_logo" />
                     </div>
                 </SectionAboutUs>
             </div>
@@ -168,7 +168,7 @@ export default function AboutUs() {
                         <img src="/AboutUs/hkn_simple_logo.png" className={styles.stats__img} alt="hkn_simple" />
                     </div>
                     <div className={styles.stats__number}>+200</div>
-                    <div className={styles.stats__text}>International memebers</div>
+                    <div className={styles.stats__text}>Different Chapters</div>
                 </div>
 
                 <div className={styles.stats__element}>
@@ -176,7 +176,7 @@ export default function AboutUs() {
                         <img src="/Common/hkn_logo_white_vector.svg" className={styles.stats__img} alt="hkn_ideogramma" />
                     </div>
                     <div className={styles.stats__number}>+200</div>
-                    <div className={styles.stats__text}>International memebers</div>
+                    <div className={styles.stats__text}>Mu Nu chapter members</div>
                 </div>
             </div>
 

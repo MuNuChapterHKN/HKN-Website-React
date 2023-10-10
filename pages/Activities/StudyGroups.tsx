@@ -5,15 +5,15 @@ import StudyGroup, {StudyGroupProps} from "@/components/Events/StudyGroup";
 
 const studyGroups: StudyGroupProps[] = [
     {
-        name: "Fondamenti di biologia, anatomia e fisiologia",
+        name: "Fondamenti di Biologia, Anatomia e Fisiologia",
         description: "COMING SOON",
         imageSrc: "/Activities/Activities/Activities.png",
-        link: "https://t.me/+ayAR5WTQVyoxMjI8",
+        link: "",
         date: "MONDAY 18:00",
         tutor: "Orlando Zaccaria"
     },
     {
-        name: "Tecniche di programmazione",
+        name: "Tecniche di Programmazione",
         description: "COMING SOON",
         link: "",
         imageSrc: "/Activities/StudyGroups/StudyGroup.jpg",

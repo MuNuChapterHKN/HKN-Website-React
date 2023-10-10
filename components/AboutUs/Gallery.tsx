@@ -4,7 +4,7 @@ import ArrowButton from "@/components/molecules/ArrowButton";
 
 const images = [
     {title: "Chapter's Birthday", src: "/AboutUs/Gallery/Compleanno del Chapter - March 2023.JPG", date: "March 2023"},
-    {title: "Formazione Interna Reply", src: "/AboutUs/Gallery/Formazione Interna Reply - May 2023.jpeg", date: "May 2023"},
+    {title: "Internal Training Reply", src: "/AboutUs/Gallery/Formazione Interna Reply - May 2023.jpeg", date: "May 2023"},
     {title: "Founders'Day", src: "/AboutUs/Gallery/Founders' Day - October 2022.JPG", date: "October 2022"},
     {title: "Hexakappathlon", src: "/AboutUs/Gallery/Hexakappathlon - June 2023.jpg", date: "June 2023"},
     {title: "Mental Wellness & Digital Wellbeing", src: "/AboutUs/Gallery/Mental Wellness & Digital Wellbeing - June 2023.jpg", date: "June 2023"},
@@ -64,6 +64,7 @@ export default function Gallery({ className } : { className?: string }) {
                                 src={image.src}
                                 alt={`Image ${index}`}
                                 className={styles.carousel__image}
+                                loading="lazy"
                             />
                         </div>
                     ))}

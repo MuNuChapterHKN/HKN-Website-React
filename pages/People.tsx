@@ -77,8 +77,8 @@ const Teams: TeamProps[] = [
         ]
     },
     {
-        area: "Internal training",
-        longName: "Internal training",
+        area: "Corporate training",
+        longName: "Corporate training",
         description: "We are responsible for the talks and the workshops that constitute the interfaces with the professionals  ",
         imageSrc: "/People/Resp/resp-fi.png",
         managerName: "Claudio Fantasia",
@@ -145,7 +145,7 @@ export default function People() {
                 <text className={styles.managementArea}>Management Area</text>
                 <div className={styles.boardGrid}>
                     {Board.map((bmp, index) => (
-                        <BoardMember boardMemberProps={bmp} index={index}
+                        <BoardMember boardMemberProps={bmp} index={index} key={index}
                                      onClick={() => handleBoardMemberClick(index)}/>
                     ))}
                 </div>
@@ -156,7 +156,7 @@ export default function People() {
                <text className={styles.joinOurTeams}>Our Teams</text>
                <div className={styles.teamsGrid}>
                    {Teams.map((team, index) => (
-                       <Team teamProps={team}/>
+                       <Team teamProps={team} key={team.area}/>
                    ))}
                </div>
            </div>
@@ -190,7 +190,7 @@ function BoardMember({boardMemberProps, index, onClick}: {
              onClick={onClick}>
             <div className={styles.boardImageContainer}>
                 <div className={styles.boardCard}/>
-                <img className={styles.boardMemberImage} src={boardMemberProps.imageSrc} alt={boardMemberProps.name}/>
+                <img className={styles.boardMemberImage} src={boardMemberProps.imageSrc} alt={boardMemberProps.name} loading="lazy"/>
             </div>
             <text className={styles.boardMemberName}>{boardMemberProps.name}</text>
             <text className={styles.boardMemberRole}>{boardMemberProps.role}</text>
@@ -219,7 +219,7 @@ function BoardPopUp({index, visible, disablePopUp}: {index: number, visible: Boo
                     <ArrowButton left onClick={() => {}} className={styles.arrowButtonLeft}/>
                     <div className={styles.imageBackground}>
                         <div className={styles.imageClipMask}>
-                            <img className={styles.boardPopUpImage} src={Board[index].imageSrc} alt={Board[index].imageSrc}/>
+                            <img className={styles.boardPopUpImage} src={Board[index].imageSrc} alt={Board[index].imageSrc} loading="lazy"/>
                         </div>
                     </div>
                     <ArrowButton right onClick={() => {}} className={styles.arrowButtonRight}/>

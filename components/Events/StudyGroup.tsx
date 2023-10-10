@@ -22,7 +22,7 @@ export default function StudyGroup({studyGroup, index}: {studyGroup: StudyGroupP
                     <img className={styles.iconLocation} src="/Activities/StudyGroups/pin.png" alt="Calendar"/>
                     <text className={styles.textLocation}>SALA C</text>
                 </div>
-                <RoundButton className={styles.buttonTelegram} onClick={() => window.open(studyGroup.link)}>TELEGRAM</RoundButton>
+                {/*<RoundButton className={styles.buttonTelegram} onClick={() => window.open(studyGroup.link)}>TELEGRAM</RoundButton> TODO add back*/}
             </div>
 
             <div className={styles.right}>

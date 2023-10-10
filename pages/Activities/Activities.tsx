@@ -13,7 +13,7 @@ export default function External() {
 
             <div className={styles.latestActivitiesBackground}>
                 <div className={styles.latestActivities}>
-                    <div className={styles.latestActivities__left}>
+                    <div className={styles.latestActivities__left} onClick={() => router.push("/Activities/Events#QuantumQuest")}>
                         <div className={styles.latestActivities__left__title}>
                             Latest Activities
                         </div>
@@ -38,8 +38,9 @@ export default function External() {
 
                             <div className={styles.latestActivities__right__card__text}>
                                 <div className={styles.latestActivities__right__card__activities}>MASTERCLASS</div>
-                                <div className={styles.latestActivities__right__card__title}>Versioning con Git</div>
-                                <div className={styles.latestActivities__right__card__topic}>A Gentle Introduction to Git</div>
+                                <div className={styles.latestActivities__right__card__title}>Coming Soon</div>
+                                {/*<div className={styles.latestActivities__right__card__topic}>A Gentle Introduction to Git</div>*/}
+                                <div className={styles.latestActivities__right__card__topic}>&nbsp;</div>
                             </div>
                         </div>
 
@@ -114,7 +115,8 @@ export default function External() {
 
                                 <div className={styles.allActivities__group2__discover}>
                                     Discover
-                                    <RoundButton className={styles.allActivities__group__button} onClick={() => router.push('/Activities/Masterclasses')}>masterclass</RoundButton>
+                                    {/*<RoundButton className={styles.allActivities__group__button} onClick={() => router.push('/Activities/Masterclasses')}>Masterclasses</RoundButton>*/}
+                                    <RoundButton className={styles.allActivities__group__button} onClick={() => {}}>COMING SOON</RoundButton>
                                 </div>
                             </div>
                         </div>

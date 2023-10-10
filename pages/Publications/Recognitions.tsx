@@ -74,8 +74,8 @@ export default function JoinUs() {
                 {/*TODO: image carousel*/}
                 <div className={styles.awardsLeft}>
                     <Image className={styles.awardImage} src={awards[awardIndex % awards.length]} alt="Award" width="0" height="0" sizes="100vw"/>
-                    <ArrowButton left className={styles.awardsLeftButton} onClick={handleLeftArrowAwards}/>
-                    <ArrowButton right className={styles.awardsRightButton} onClick={handleRightArrowAwards}/>
+                    <ArrowButton left className={styles.awardsLeftButton} color="#F2F2F2" onClick={handleLeftArrowAwards}/>
+                    <ArrowButton right className={styles.awardsRightButton} color="#F2F2F2" onClick={handleRightArrowAwards}/>
                 </div>
                 <div className={styles.awardsRight}>
                     <text className={styles.awardsText}>AWARDS</text>
@@ -102,7 +102,7 @@ export default function JoinUs() {
                 </div>
                 <MentionCard mention={mentions[mentionIndex % mentions.length]}/>
                 {mentions.length > 1 &&
-                    <ArrowButton className={styles.mentionsButton} onClick={handleRightArrowMentions}/>
+                    <ArrowButton className={styles.mentionsButton} color="#F2F2F2" onClick={handleRightArrowMentions}/>
                 }
             </div>
 

@@ -582,6 +582,7 @@
   }
 }
 
+.submissionText,
 .disabledJoinUs {
   display: flex;
   flex-direction: column;
@@ -603,6 +604,20 @@
   }
 }
 
+.submissionImage {
+  z-index: -1;
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  display: block;
+}
+
+.submissionText {
+  z-index: 10;
+  width: 100%;
+  margin: -3rem auto 0;
+  max-width: 900px;
+}
 
 @media screen and (max-width: 1230px) {
   .requirementSubtitle {

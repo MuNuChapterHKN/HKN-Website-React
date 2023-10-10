@@ -71,12 +71,12 @@
 
 .awardsLeftButton {
     background: #061E33;
-    left: -17px;
+    left: -45px;
 }
 
 .awardsRightButton {
     background: #061E33;
-    right: -17px;
+    right: -45px;
 }
 
 
@@ -123,7 +123,7 @@
     justify-content: center;
     align-items: flex-start;
     height: 100%;
-    width: 70%;
+    width: 65%;
 }
 
 .mentionsButton {

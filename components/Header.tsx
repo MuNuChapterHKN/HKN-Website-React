@@ -10,6 +10,12 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
     const isActive = (pathname : string) => router.pathname === pathname;
     const [navbarOpen, toggleNavbar] = useState(false);
 
+    const handleNavigate = (event : any, pathname : string) => {
+        event.preventDefault();
+        event.stopPropagation();
+        router.push(pathname);
+    }
+
     return (
         <header className={`${styles.header} ${navbarOpen ? styles.open : ''}`} >
             <div className={styles.logoTitle} onClick={() => router.push('/')} >
@@ -40,9 +46,9 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
                         <div className={styles.arrowDown}></div>
                     </div>
                     <ul className={styles.dropdown}>
-                        <li className={isActive('/Activities/Events') ? styles.activeDropdown : ''} onClick={() => router.push('/Activities/Events')}>Events</li>
-                        <li className={isActive('/Activities/Masterclasses') ? styles.activeDropdown  : ''} onClick={() => router.push('/Activities/Masterclasses')}>Masterclasses</li>
-                        <li className={isActive('/Activities/StudyGroups') ? styles.activeDropdown : ''} onClick={() => router.push('/Activities/StudyGroups')}>Study Groups</li>
+                        <li className={isActive('/Activities/Events') ? styles.activeDropdown : ''} onClick={(e) => handleNavigate(e, '/Activities/Events')}>Events</li>
+                        {/*<li className={isActive('/Activities/Masterclasses') ? styles.activeDropdown  : ''} onClick={() => router.push('/Activities/Masterclasses')}>Masterclasses</li>*/}
+                        <li className={isActive('/Activities/StudyGroups') ? styles.activeDropdown : ''} onClick={(e) => handleNavigate(e, '/Activities/StudyGroups')}>Study Groups</li>
                     </ul>
                 </div>
 
