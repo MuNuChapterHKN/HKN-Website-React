@@ -20,7 +20,8 @@
 
 .drivenByPassion,.visionTitle, .originsTitle {
     font-weight: 600;
-    font-size: 65px;
+    font-size: 62px;
+    line-height: 62px;
 }
 
 .welcomeTo, .vision, .origins, .project {
@@ -32,7 +33,7 @@
 .titleButtons,.visionButtons {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     width: 100%;
     padding-right: 10px;
@@ -43,6 +44,10 @@
     min-width: 230px;
     border: none;
     color: #061E33;
+}
+
+.showMenu {
+    cursor: pointer;
 }
 
 .aboutUsTitleButton,.galleryVisionButton {
@@ -83,6 +88,10 @@
 
 .outstandingAward {
     opacity: 1;
+    margin: 1rem;
+    width: auto;
+    flex: 1;
+    height: auto;
     filter: grayscale(100%);
 }
 
@@ -134,6 +143,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin-top: 1rem;
     width: 100%;
 }
 
@@ -271,5 +281,99 @@
     }
     100% {
         transform: rotateY(0deg) translateY(-2px);
+    }
+}
+
+@media screen and (max-width: 1100px) {
+
+    .peopleVisionButton, .galleryVisionButton,
+    .joinUsTitleButton, .aboutUsTitleButton {
+        min-width: 200px;
+        width: 50%;
+        max-width: 200px;
+        margin-bottom: 3rem;
+        padding: .8rem;
+    }
+
+    .visionImage {
+        width: calc(40% - 6vw);
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .awards {
+        flex-wrap: wrap;
+        max-width: 400px;
+    }
+
+    .drivenByPassion {
+        font-size: 40px;
+    }
+
+    .textJoinOurChapter {
+        font-size: 36px;
+        line-height: 36px;
+    }
+
+    .visionContainer {
+        flex-direction: column;
+    }
+
+    .visionLeft {
+        width: 100%;
+    }
+
+    .visionImage {
+        margin: 0;
+        width: 100%;
+    }
+
+    .peopleVisionButton, .galleryVisionButton,
+    .joinUsTitleButton, .aboutUsTitleButton {
+        min-width: 120px;
+        width: 50%;
+        max-width: 200px;
+        margin-bottom: 3rem;
+        padding: .8rem;
+    }
+
+    .projectsCards {
+        flex-direction: column;
+    }
+
+    .projectsCenter, .projectsLeft, .projectsRight {
+        width: 100%;
+    }
+
+    .visionLeft {
+        padding: 0;
+    }
+
+    .originsContainer {
+        flex-direction: column;
+    }
+
+    .originsImage {
+        width: 100%;
+        margin: 0;
+    }
+
+    .originsTitle {
+        margin: 1rem 0;
+    }
+
+    .originsRight {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+
+@media screen and (max-width: 440px) {
+
+    .drivenByPassion {
+        line-height: 35px;
+        font-size: 30px;
     }
 }

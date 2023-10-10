@@ -2,14 +2,16 @@ import styles from "@/styles/components/Header.module.css";
 import Image from "next/image";
 import {useRouter} from "next/router";
 import RoundButton from "./molecules/RoundButton";
+import { useState } from "react";
 
 
 const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
     const router = useRouter();
     const isActive = (pathname : string) => router.pathname === pathname;
+    const [navbarOpen, toggleNavbar] = useState(false);
 
     return (
-        <header className={styles.header} >
+        <header className={`${styles.header} ${navbarOpen ? styles.open : ''}`} >
             <div className={styles.logoTitle} onClick={() => router.push('/')} >
                 <Image className={styles.logo} src="/Common/hkn_logo_white_vector.svg" alt="HKN PoliTO Logo" width={120} height={120}/>
                 {/*<div className={styles.title} >
@@ -18,7 +20,7 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
                 </div>*/}
             </div>
 
-            <div className={styles.menu}>
+            <div className={`${styles.menu} ${navbarOpen ? styles.open : ''}`}>
                 <div className={isActive('/') ? styles.active : styles.inactive} onClick={() => router.push('/')}>
                     Home
                 </div>
@@ -64,6 +66,8 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
             <div className={styles.headerSpace}>
                 <RoundButton className={styles.joinUsButton} onClick={() => router.push('/JoinUs')}>Join Us</RoundButton>
             </div>
+
+            <img onClick={() => toggleNavbar((open) => !open)} src={'/Common/bars.svg'} height={'30px'} width={'30px'} alt="Menu" className={styles.showMenu}/>
         </header>
     )
 }
