@@ -137,6 +137,11 @@
     width: 300px;
     left: -5%;
     filter: grayscale(100%);
+    transition: all 0.2s ease;
+
+    &:hover {
+        filter: grayscale(0%);
+    }
 }
 
 .teamTextBox {
@@ -351,6 +356,9 @@
     }
     .team {
         flex: 1 0 95%;
+    }
+    .discover__title {
+        font-size: 34px;
     }
 }
 
