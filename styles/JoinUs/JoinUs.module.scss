@@ -578,6 +578,27 @@
   }
 }
 
+.disabledJoinUs {
+  display: flex;
+  flex-direction: column;
+  padding: 45px;
+  width: 90%;
+  max-width: 1300px;
+  border-radius: 40px;
+  background-color: #F2F2F2;
+  color: #061E33;
+  margin-top: 50px;
+  margin-bottom:50px;
+
+  &__text {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 8px 0;
+  }
+}
+
 
 @media screen and (max-width: 1230px) {
   .requirementSubtitle {
