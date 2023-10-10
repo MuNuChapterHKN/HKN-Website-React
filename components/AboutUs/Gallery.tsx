@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 import ArrowButton from "@/components/molecules/ArrowButton";
 
 const images = [
-    {title: "Compleanno del Chapter", src: "/AboutUs/Gallery/Compleanno del Chapter - March 2023.JPG", date: "March 2023"},
+    {title: "Chapter's Birthday", src: "/AboutUs/Gallery/Compleanno del Chapter - March 2023.JPG", date: "March 2023"},
     {title: "Formazione Interna Reply", src: "/AboutUs/Gallery/Formazione Interna Reply - May 2023.jpeg", date: "May 2023"},
     {title: "Founders'Day", src: "/AboutUs/Gallery/Founders' Day - October 2022.JPG", date: "October 2022"},
     {title: "Hexakappathlon", src: "/AboutUs/Gallery/Hexakappathlon - June 2023.jpg", date: "June 2023"},
@@ -35,18 +35,18 @@ export default function Gallery({ className } : { className?: string }) {
     };
 
     const getCurrentClassNames = (index : number) => {
-        const diff = (index + currentIndex) % images.length;
-        if (diff === 0) return styles.carousel__container__2;
+        const diff = Math.abs(index - currentIndex) % images.length;
+        if (diff === 0) return styles.carousel__container__0;
         if (diff === 1) return styles.carousel__container__1;
-        if (diff === 2) return styles.carousel__container__0;
-        if (diff === images.length - 1) return styles.carousel__container__4;
+        if (diff === 2) return styles.carousel__container__2;
+        if (diff === images.length - 1) return styles.carousel__container__3;
         return styles.carousel__container__next;
     };
 
 
     return (
         <div className={`${styles.gallery} ${className}`}>
-            <ArrowButton className={styles.gallery__arrows} onClick={handlePrev} left/>
+            <ArrowButton className={styles.gallery__arrows} color="#061E33" onClick={handlePrev} left/>
 
             <div className={styles.gallery__center}>
                 <div className={styles.gallery__uptitle}>
@@ -77,7 +77,7 @@ export default function Gallery({ className } : { className?: string }) {
                 </div>
             </div>
 
-            <ArrowButton className={styles.gallery__arrows}  onClick={handleNext} right/>
+            <ArrowButton className={styles.gallery__arrows} color="#061E33" onClick={handleNext} right/>
         </div>
     );
 };

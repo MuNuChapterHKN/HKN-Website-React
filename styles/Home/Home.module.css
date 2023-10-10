@@ -112,7 +112,7 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 40px;
-    height: 100%;
+    height: auto;
     width: 60%;
 }
 
