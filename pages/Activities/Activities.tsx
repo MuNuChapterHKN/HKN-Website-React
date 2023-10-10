@@ -103,13 +103,13 @@ export default function External() {
                                 </div>
 
                                 <div className={styles.allActivities__group2__imgcont1}>
-                                    <img className={styles.allActivities__group__img} src={'/AboutUs/MentalWellness.jpg'} alt={'discover1'}/>
+                                    <img className={styles.allActivities__group__img} src={'/Activities/Activities/MentalWellness.jpg'} alt={'discover1'}/>
                                 </div>
                                 <div className={styles.allActivities__group2__imgcont2}>
-                                    <img className={styles.allActivities__group__img} src={'/AboutUs/Hexakappathlon.jpg'} alt={'discover2'} style={{objectPosition: "75% 100%"}}/>
+                                    <img className={styles.allActivities__group__img} src={'/Activities/Activities/Hexakappathlon.jpg'} alt={'discover2'} style={{objectPosition: "75% 100%"}}/>
                                 </div>
                                 <div className={styles.allActivities__group2__imgcont3}>
-                                    <img className={styles.allActivities__group__img} src={'/AboutUs/FoundersDay.jpg'} alt={'discover1'}/>
+                                    <img className={styles.allActivities__group__img} src={'/Activities/Activities/FoundersDay.jpg'} alt={'discover1'}/>
                                 </div>
 
                                 <div className={styles.allActivities__group2__discover}>
@@ -133,7 +133,7 @@ export default function External() {
                                     <img className={styles.allActivities__group__img} src={'/Activities/Activities/Discover_2.jpeg'} alt={'discover1'}/>
                                 </div>
                                 <div className={styles.allActivities__group3__imgcont2}>
-                                    <img className={styles.allActivities__group__img} src={'/AboutUs/FormazioneInternaReply.jpeg'} alt={'discover2'} style={{objectPosition: "75% 100%"}}/>
+                                    <img className={styles.allActivities__group__img} src={'/Activities/Activities/FormazioneInternaReply.jpeg'} alt={'discover2'} style={{objectPosition: "75% 100%"}}/>
                                 </div>
                                 <div className={styles.allActivities__group3__imgcont3}>
                                     <img className={styles.allActivities__group__img} src={'/Activities/Activities/Discover_3.jpeg'} alt={'discover1'}/>

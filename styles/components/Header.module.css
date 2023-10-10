@@ -7,7 +7,7 @@
     width: 100%;
     z-index: 2;
     margin-top: 20px;
-    padding-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .logoTitle {
@@ -128,4 +128,52 @@
 .itemWrapper {
     display: flex;
     align-items: center;
+}
+
+.showMenu {
+    display: none;
+}
+
+@media screen and (max-width: 960px) {
+    .showMenu {
+        fill: white;
+        display: block;
+        margin-right: auto;
+        position: absolute;
+        top: 3.5rem;
+        right: 50px;
+    }
+
+    .headerSpace,
+    .menu {
+        display: none;
+        flex: 1;
+        text-align: center;
+    }
+
+    .menu {
+        padding-right: 3rem;
+        padding-top: 2rem;
+    }
+
+    .header.open {
+        height: 11rem;
+        align-items: flex-start;
+    }
+
+    .dropdown {
+        left: auto;
+        right: auto;
+        z-index: 10;
+    }
+    
+    .menuItem {
+        justify-content: center;
+        display: flex;
+    }
+
+    .headerSpace.open,
+    .menu.open {
+        display: block;
+    }
 }

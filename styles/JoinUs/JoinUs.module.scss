@@ -1,0 +1,750 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 92%;
+  max-width: 1100px;
+  margin-bottom: 70px;
+}
+
+.pageSubtitle {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 400;
+}
+
+.pageTitle {
+  font-size: 2.5em;
+  font-weight: 600;
+  padding-bottom: 2em;
+  text-align: center;
+}
+
+.gradientBackground {
+  background: rgb(242, 242, 242);
+  background: linear-gradient(0deg, rgba(146, 154, 166, 1) 0%, rgba(184, 187, 191, 1) 50%, rgba(242, 242, 242, 1) 100%);
+  border-radius: 30px;
+  padding: 2em;
+  color: #061E33;
+}
+
+.bgWhite {
+  background: #fff;
+}
+
+.bgBlue {
+  background: #061E33;
+}
+
+.spacing {
+  margin: 4rem 0 2rem;
+}
+
+/* Heading */
+
+.heading {
+  margin-bottom: 6rem;
+}
+
+.requirementColumn,
+.halfWidth {
+  vertical-align: top;
+  display: inline-block;
+  width: 50%;
+}
+
+.paddingRight {
+  padding-right: .5em;
+}
+
+.paddingLeft {
+  padding-left: .5em;
+}
+
+.requirementColumn {
+  vertical-align: middle;
+}
+
+.headingImage {
+  display: block;
+  margin: 0 auto;
+}
+
+.headingTitle {
+  font-size: 4.8em;
+  line-height: 1.1em;
+  margin-bottom: 30px;
+}
+
+.headingDescription {
+  font-size: 1.8em;
+}
+
+/* Recruitment steps */
+
+.recruitmentTitle {
+  font-size: 2.4em;
+}
+
+.recruitmentContainer {
+  margin-right: 3rem;
+}
+
+.requiredGrades {
+  padding-left: 3rem;
+}
+
+.requiredGradesContainerWhite {
+  margin-top: 60px;
+  position: relative;
+  z-index: 10;
+  height: 56px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: 60px;
+    background: #fff;
+    width: 4px;
+    top: -60px;
+    left: 60px;
+  }
+
+}
+
+.requirementPointList:nth-last-child(4) {
+  height: 150px;
+  padding-left: 80px;
+}
+
+.additionalRequirement {
+  font-size: 1.4em;
+}
+
+.requiredGradesContainerGray {
+  position: relative;
+  z-index: 9;
+
+  &:before {
+    content: '';
+    position: absolute;
+    height: 310px;
+    background: #c0c0c0;
+    width: 4px;
+    top: -310px;
+    left: 26px;
+  }
+
+}
+
+.recruitmentStep {
+  padding-left: 2rem;
+  margin-top: 1rem;
+  position: relative;
+
+  &:not(:last-of-type) {
+
+    margin-bottom: 1rem;
+
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      width: 4px;
+      top: 1em;
+      left: 10px;
+      bottom: -2rem;
+      background-color: #061E33;
+    }
+  }
+
+}
+
+.recruitmentStepTitle {
+  font-size: 2rem;
+  font-weight: 700;
+
+  &::before {
+    display: block;
+    content: '';
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 0;
+    top: 14px;
+    border-radius: 50%;
+    background-color: #061E33;
+  }
+}
+
+.shortRecruitmentStepText,
+.recruitmentStepText {
+  font-size: 1.4rem;
+  padding-bottom: 1rem;
+}
+
+.shortRecruitmentStepText {
+  position: relative;
+  min-width: 200px;
+  width: 66%;
+  margin: 2rem;
+
+  &:last-child::after {
+    content: '';
+    background-size: 90px 100px;
+    background-image: url("/JoinUs/form.png");
+    position: absolute;
+    right: 20px;
+    top: 55px;
+    height: 100px;
+    width: 90px;
+  }
+
+}
+
+.exceptionContainer {
+  position: relative;
+  padding-left: 40px;
+}
+
+.cfuSliderHandle {
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 -7px -5px;
+  z-index: 3;
+  position: relative;
+}
+
+.cfuSliderLeft {
+  display: inline-block;
+  height: 5px;
+  width: 20%;
+  margin-left: 10%;
+  z-index: 2;
+}
+
+.cfuSliderRight {
+  display: inline-block;
+  width: 50%;
+  height: 5px;
+  z-index: 2;
+}
+
+/* Requirements */
+
+.boxedText {
+  border-radius: 4rem;
+  background: #f2f2f2;
+  background: linear-gradient(90deg, #fff 0%, #f2f2f2 100%);
+  display: inline-block;
+  color: #061E33;
+}
+
+.requirementTitle {
+  font-size: 2.4rem;
+  padding: 0.3em 1em;
+  position: relative;
+
+  &--shadow {
+    box-shadow: -6px 7px 0 0 #bbb, -6px 7px 0 0 #f2f2f2;
+  }
+
+  &::after {
+    width: 120px;
+    height: 105px;
+    position: absolute;
+    top: -60px;
+    right: -20px;
+    background-image: url('/JoinUs/graduateHat.png');
+    background-size: 120px 105px;
+    content: '';
+  }
+}
+
+.requirementTitle.noHat::after {
+  content: none;
+}
+
+.requirementPointList {
+  margin: 1.5rem 0;
+}
+
+.requirementPoint {
+  font-size: 1.6em;
+  padding: .3em;
+}
+
+.requirementRow {
+  display: flex;
+  justify-content: center;
+}
+
+.requirementImage {
+  border-radius: 30px;
+  flex: 1;
+}
+
+.requirementText {
+  padding: 1em 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  flex: 1;
+}
+
+.requirementList {
+  padding: 1em;
+}
+
+.requirementSubtitle {
+  padding: .4em 1.2em;
+  font-size: 1.5em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.halfWidth > *:nth-last-child(3) > .requirementSubtitle {
+  background: #c0c0c0;
+}
+
+/* Submission form */
+
+.formPreamble {
+  min-width: 270px;
+  max-width: 600px;
+  width: 90%;
+  color: #fff;
+  font-size: 1.6em;
+  text-align: center;
+  margin: 1.6em auto;
+}
+
+.submissionForm {
+  position: relative;
+  min-width: 270px;
+  max-width: 520px;
+  margin: 0 auto;
+  width: 90vw;
+}
+
+.formLabel {
+  color: #061E33;
+  display: inline-block;
+  text-align: left;
+  font-size: 1.6em;
+  font-weight: 700;
+  width: 100%;
+}
+
+.errorMessage {
+  margin: -1em 0 1em 0;
+  color: #be2312;
+  font-size: 1.05em;
+  word-wrap: break-word;
+}
+
+.fileName + .errorMessage {
+  margin-top: 0;
+}
+
+.fileInputContainer > .formLabel {
+  font-size: 1.3em;
+  margin-right: 10px;
+}
+
+.formInput {
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  background-color: #061E33;
+  text-transform: uppercase;
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+  min-height: 30px;
+  font-size: 1em;
+  padding: 1em;
+  margin-bottom: 1.4em;
+  border: none;
+  transition: .25s ease-out outline;
+  color: #bbb;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  &:focus {
+    outline: #061E3388 4px solid;
+  }
+}
+
+.fileName {
+  width: 100%;
+  flex-basis: 100%;
+  display: block;
+  color: #061E33;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: .9em;
+  margin-top: -.6em;
+  max-width: 260px;
+}
+
+.formText {
+  color: #061E33;
+  font-size: 1.1em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 6em;
+}
+
+.fileInputContainer {
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fileButton {
+  border-radius: 50px;
+  display: inline-block;
+  border: 2px solid #061E33;
+  padding: .7em .85em;
+  background-color: transparent;
+  color: #061E33;
+  cursor: pointer;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  transition: background-color .2s ease-out;
+
+  &:hover {
+    background-color: #061E3322;
+  }
+
+  &:focus {
+    outline: #061E3388 4px solid;
+  }
+}
+
+.fileInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.fileInput:focus + .fileButton {
+  outline: #061E3388 4px solid;
+}
+
+.noWidth {
+  width: auto;
+}
+
+.submitButton {
+  border-radius: 50px;
+  display: block;
+  padding: .85em;
+  width: 130px;
+  font-size: 1.1em;
+  margin: 2em auto;
+  background-color: #061E33;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-family: Inter, sans-serif;
+  font-weight: 600;
+  transition: background-color .25s ease-out;
+
+  &:hover {
+    background-color: #061E33cc;
+  }
+  &:focus {
+    outline: #061E3388 4px solid;
+  }
+}
+
+.successfulSubmission {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 800px;
+  min-width: 280px;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+.submissionError {
+  padding: 1em;
+  background-color: #be2312;
+  color: #d1d1d1;
+  border-radius: 20px;
+  word-break: break-word;
+  text-align: center;
+  display: block;
+  margin: 2rem;
+}
+
+.overlay {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.4);
+  display: grid;
+  place-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 30px;
+  transition: opacity 0.3s ease-out;
+}
+
+.loader {
+  --color: #061E33;
+  --size-mid: 6vmin;
+  --size-dot: 1.5vmin;
+  --size-bar: 0.4vmin;
+  --size-square: 3vmin;
+  position: relative;
+  width: 50%;
+  display: grid;
+  place-items: center;
+
+  &::before,
+  &::after {
+    width: var(--size-square);
+    height: var(--size-square);
+    background-color: var(--color);
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+  }
+
+  &::before {
+    top: calc(50% - var(--size-square));
+    left: calc(50% - var(--size-square));
+    -webkit-animation: loader1 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+    animation: loader1 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+  }
+
+  &::after {
+    top: 50%;
+    left: 50%;
+    -webkit-animation: loader2 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+    animation: loader2 2.4s cubic-bezier(0, 0, 0.24, 1.21) infinite;
+  }
+}
+
+@keyframes loader1 {
+  0%, 100% {
+    transform: none;
+  }
+
+  25% {
+    transform: translateX(100%);
+  }
+
+  50% {
+    transform: translateX(100%) translateY(100%);
+  }
+
+  75% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes loader2 {
+  0%, 100% {
+    transform: none;
+  }
+
+  25% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(-100%) translateY(-100%);
+  }
+
+  75% {
+    transform: translateY(-100%);
+  }
+}
+
+.disabledJoinUs {
+  display: flex;
+  flex-direction: column;
+  padding: 45px;
+  width: 90%;
+  max-width: 1300px;
+  border-radius: 40px;
+  background-color: #F2F2F2;
+  color: #061E33;
+  margin-top: 50px;
+  margin-bottom:50px;
+
+  &__text {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 8px 0;
+  }
+}
+
+
+@media screen and (max-width: 1230px) {
+  .requirementSubtitle {
+    font-size: 1.3em;
+    padding: 0.4em 0.8em;
+  }
+  .requirementPoint {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1079px) {
+  .recruitmentTitle {
+    font-size: 2rem;
+  }
+  .recruitmentStep {
+    font-size: 1.7rem;
+  }
+  .requirementTitle {
+    font-size: 2rem;
+    padding: 0.3em .6em;
+  }
+  .requirementSubtitle {
+    font-size: 1.16rem;
+    padding: 0.3em .6em;
+  }
+  .recruitmentContainer {
+    margin-right: 1.5rem;
+  }
+  .requiredGrades {
+    padding-left: 1.5rem;
+  }
+  .requirementPoint {
+    font-size: 1.4rem;
+  }
+  .headingTitle {
+    font-size: 3.7rem;
+  }
+  .shortRecruitmentStepText:last-child::after {
+    height: 80px;
+    width: 72px;
+    top: 80px;
+    background-size: 72px 80px;
+  }
+}
+
+@media screen and (max-width: 868px) {
+  .halfWidth {
+    width: 100%;
+  }
+
+  .paddingRight {
+    padding-right: 0;
+  }
+
+  .paddingLeft {
+    padding-left: 0;
+  }
+
+  .requiredGrades {
+    margin-top: 4rem;
+    padding-left: 0;
+  }
+
+  .recruitmentStepTitle {
+    font-size: 1.7rem;
+  }
+
+  .recruitmentContainer {
+    margin-right: 0;
+  }
+
+  .headingImage {
+    width: 50%;
+    margin: 0 auto;
+    min-width: 280px;
+  }
+
+  .shortRecruitmentStepText {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .headingTitle {
+    font-size: 2.8rem;
+  }
+
+  .headingDescription {
+    font-size: 1.5rem;
+  }
+
+  .requirementTitle {
+    font-size: 1.7rem;
+
+    &:after {
+      width: 90px;
+      height: 70px;
+      top: -40px;
+      right: -15px;
+      background-size: 90px 70px;
+    }
+  }
+
+  .requiredGradesContainerGray:before {
+      height: 330px;
+      top: -330px;
+  }
+
+  .requirementColumn {
+    width: auto;
+  }
+
+  .requirementColumn:nth-child(even) {
+    display: none;
+  }
+
+  .requirementSubtitle {
+    font-size: 1.3rem;
+    padding: .5rem 1rem;
+  }
+
+  .requirementPointList {
+    margin: 1rem 0 3rem;
+  }
+
+  .recruitmentStepTitle:before {
+    width: 18px;
+    height: 18px;
+    left: 3px;
+  }
+
+  .fileInputContainer > .formLabel {
+    max-width: calc(50% - 10px);
+  }
+
+  .shortRecruitmentStepText:last-child::after {
+    height: 60px;
+    width: 54px;
+    top: 80px;
+    background-size: 54px 60px;
+  }
+
+}
