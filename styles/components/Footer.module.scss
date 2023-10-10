@@ -45,6 +45,10 @@
             font-size: 20px;
             font-weight: 600;
         }
+
+        &__item:hover {
+            text-decoration: underline;
+        }
     }
 }
 
@@ -72,12 +76,17 @@
     width: 45px;
     height: 35px;
     margin: 0 10px;
+    cursor: pointer;
 
     &__icon {
         width: auto;
         height: 100%;
         object-fit: cover;
     }
+}
+
+.linkIcon:hover {
+    transform: scale(1.1);
 }
 
 .columnLogo {

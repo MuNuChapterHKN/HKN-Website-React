@@ -52,14 +52,14 @@ export default function Home() {
 
             <div className={styles.awardsContainer}>
                 <div className={styles.awards}>
-                    <Image className={styles.outstandingAward} src="/Home/outstanding-2019.png"
-                           alt="Outstanding Chapter Award 2019" width={228} height={200}/>
-                    <Image className={styles.outstandingAward} src="/Home/outstanding-2020.png"
-                           alt="Outstanding Chapter Award 2020" width={228} height={200}/>
-                    <Image className={styles.outstandingAward} src="/Home/outstanding-2021.png"
-                           alt="Outstanding Chapter Award 2021" width={228} height={200}/>
-                    <Image className={styles.outstandingAward} src="/Home/outstanding-2022.png"
-                           alt="Outstanding Chapter Award 2022" width={228} height={200}/>
+                    <img className={styles.outstandingAward} src="/Home/outstanding-2019.png"
+                           alt="Outstanding Chapter Award 2019"/>
+                    <img className={styles.outstandingAward} src="/Home/outstanding-2020.png"
+                           alt="Outstanding Chapter Award 2020"/>
+                    <img className={styles.outstandingAward} src="/Home/outstanding-2021.png"
+                           alt="Outstanding Chapter Award 2021"/>
+                    <img className={styles.outstandingAward} src="/Home/outstanding-2022.png"
+                           alt="Outstanding Chapter Award 2022"/>
                 </div>
             </div>
 

@@ -79,17 +79,17 @@
 .awards {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    max-width: 1100px;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    height: 200px;
     width: 100%;
     margin: 0 20px;
 }
 
 .outstandingAward {
-    opacity: 1;
-    margin: 1rem;
-    width: 15vw;
-    height: auto;
+    width: auto;
+    height: 100%;
     filter: grayscale(100%);
 }
 
@@ -304,13 +304,11 @@
 }
 
 @media screen and (max-width: 768px) {
-    .awards {
-        flex-wrap: wrap;
-    }
-
-    .outstandingAward {
-        width: 30vw;
-        min-width: 200px;
+    .awardsContainer {
+        visibility: hidden;
+        height: 0;
+        margin: 0;
+        padding: 0;
     }
 
     .drivenByPassion {
@@ -323,6 +321,7 @@
     }
 
     .visionContainer {
+        margin-top: 0;
         flex-direction: column;
     }
 

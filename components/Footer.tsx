@@ -18,23 +18,23 @@ const Footer = () => {
                 <div className={styles.column__title}>Copyright © 2023 All rights reserved</div>
 
                 <div className={styles.column__contact}>
-                    <div className={styles.column__contact__item}>
+                    <a className={styles.column__contact__item} href="https://www.polito.it/">
                         <ContactIcon src="/Icons/Location.png"/>
                         Politecnico Di Torino
-                    </div>
-                    <div className={styles.column__contact__item}>
+                    </a>
+                    <a className={styles.column__contact__item} href="mailto:info@hknpolito.org">
                         <ContactIcon src="/Icons/Mail.png"/>
                         info@hknpolito.org
-                    </div>
+                    </a>
                 </div>
 
                 <div className={styles.links}>
-                    <LinkIcon src="/Icons/facebook.png" srcHover="/Icons/facebook_color.png" link="https://www.facebook.com/hknpolito/"/>
-                    <LinkIcon src="/Icons/instagram.png" srcHover="/Icons/instagram_color.png"  link="https://www.instagram.com/hknpolito/"/>
-                    <LinkIcon src="/Icons/youtube.png" srcHover="/Icons/youtube.png"  link="https://www.youtube.com/channel/UCEPeZOBv08kO2ImbjgM7yBw"/>
-                    <LinkIcon src="/Icons/twitter.png" srcHover="/Icons/twitter_color.png"  link="https://twitter.com/HKNPoliTo"/>
-                    <LinkIcon src="/Icons/spotify.png" srcHover="/Icons/spotify_color.png"  link=""/>
-                    <LinkIcon src="/Icons/linkedin.png" srcHover="/Icons/linkedin_color.png"  link="https://www.linkedin.com/company/mu-nu-chapter-of-ieee-eta-kappa-nu"/>
+                    <LinkIcon src="/Icons/facebook.png" link="https://www.facebook.com/hknpolito/"/>
+                    <LinkIcon src="/Icons/instagram.png" link="https://www.instagram.com/hknpolito/"/>
+                    <LinkIcon src="/Icons/youtube.png" link="https://www.youtube.com/channel/UCEPeZOBv08kO2ImbjgM7yBw"/>
+                    <LinkIcon src="/Icons/twitter.png" link="https://twitter.com/HKNPoliTo"/>
+                    <LinkIcon src="/Icons/spotify.png" link=""/>
+                    <LinkIcon src="/Icons/linkedin.png" link="https://www.linkedin.com/company/mu-nu-chapter-of-ieee-eta-kappa-nu"/>
                 </div>
             </div>
 
@@ -54,21 +54,11 @@ const ContactIcon = ({src}: {src: string}) => {
     )
 }
 
-const LinkIcon = ({src, srcHover, link}: {src: string, srcHover: string, link: string}) => {
-
-    const [imgSrc, setImgSrc] = useState<string>(src);
-
-    const handleMouseOver = () => {
-        setImgSrc(srcHover);
-    };
-
-    const handleMouseOut = () => {
-        setImgSrc(src);
-    };
+const LinkIcon = ({src, link}: {src: string, link: string}) => {
 
     return (
         <a className={styles.linkIcon} href={link}>
-            <img className={styles.linkIcon__icon} src={imgSrc} alt="Link Icon" onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}/>
+            <img className={styles.linkIcon__icon} src={src} alt="Link Icon"/>
         </a>
     )
 }
