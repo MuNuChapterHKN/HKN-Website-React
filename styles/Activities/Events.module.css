@@ -86,15 +86,17 @@
     margin-top: 40px;
 }
 
-.pastEventsButton {
+.pastEventsButton_1 {
     position: absolute;
     top: 13px;
     left: -50px;
     background: #061E33;
 }
 
-.pastEventsButton:last-child {
+.pastEventsButton_2 {
+    position: absolute;
+    top: 13px;
     right: -50px;
-    left: initial;
+    background: #061E33;
 }
 

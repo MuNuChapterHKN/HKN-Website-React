@@ -73,9 +73,9 @@ export default function Home() {
                     </text>
                     <div className={styles.visionButtons}>
                         <RoundButton className={styles.peopleVisionButton}
-                                     onClick={() => router.push('/People')}>READ ME</RoundButton>
+                                     onClick={() => router.push('/AboutUs#vision')}>READ ME</RoundButton>
                         {/*TODO: add link*/}
-                        <RoundButton className={styles.galleryVisionButton} onClick={() => router.push('/404')}>PHOTO
+                        <RoundButton className={styles.galleryVisionButton} onClick={() => router.push('/AboutUs#gallery')}>PHOTO
                             GALLERY</RoundButton>
                     </div>
                 </div>
@@ -88,12 +88,12 @@ export default function Home() {
                 <div className={styles.originsRight}>
                     <text className={styles.originsText}>ORIGINS</text>
                     <text className={styles.originsTitle}>Eta Kappa Nu, IEEE Honor Society</text>
-                    <text className={styles.originst}>Founded in 1904, Eta Kappa Nu (IEEE-HKN), the honor society of
+                    <text className={styles.origins}>Founded in 1904, Eta Kappa Nu (IEEE-HKN), the honor society of
                         IEEE, promotes the ideals of Scholarship, Character, and Attitude.
                         Catch a glimpse of our origins.
                     </text>
                     <div className={styles.originsButtons}>
-                        <RoundButton className={styles.readMeOriginsButton} onClick={() => router.push('/404')}>
+                        <RoundButton className={styles.readMeOriginsButton} onClick={() => router.push('/AboutUs#origin')}>
                             READ ME
                         </RoundButton>
                         {/*TODO: add link*/}
