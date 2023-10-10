@@ -18,12 +18,12 @@ const Footer = () => {
                 <div className={styles.column__title}>Copyright © 2023 All rights reserved</div>
 
                 <div className={styles.column__contact}>
-                    <a className={styles.column__contact__item} href="https://www.polito.it/">
-                        <ContactIcon src="/Icons/Location.png"/>
+                    <a className={styles.column__contact__item} href="https://www.polito.it/" rel={'noopener'} target={'_blank'}>
+                        <ContactIcon src="/Icons/location.png"/>
                         Politecnico Di Torino
                     </a>
-                    <a className={styles.column__contact__item} href="mailto:info@hknpolito.org">
-                        <ContactIcon src="/Icons/Mail.png"/>
+                    <a className={styles.column__contact__item} href="mailto:info@hknpolito.org" rel={'noopener'} target={'_blank'}>
+                        <ContactIcon src="/Icons/mail.png"/>
                         info@hknpolito.org
                     </a>
                 </div>

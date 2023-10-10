@@ -103,10 +103,10 @@ export default function Home() {
 
             <div className={styles.projectsContainer}>
                 <text className={styles.projectsText}>NEWS</text>
-                <text className={styles.projectsTitle}>Our Latest</text>
-                <text className={styles.projectsTitle}>Projects</text>
+                <text className={styles.projectsTitle}>Our Latest Projects</text>
+                <text className={styles.projectsSubtitle}>COMING SOON</text>
                 <div className={styles.projectsCards}>
-                    <div className={styles.projectsLeft} onClick={() => router.push('/404')}>
+                    <div className={styles.projectsLeft}>
                         <div className={styles.projectsImageClip}>
                             <img className={styles.projectsPicture} src="/Home/Projects/Sirius_vedere.jpg"
                                  alt="project"/>
@@ -122,7 +122,7 @@ export default function Home() {
                         {/*TODO: add link*/}
                     </div>
                     <div className={styles.projectsCenter}>
-                        <div className={styles.projectsImageClip} onClick={() => router.push('/404')}>
+                        <div className={styles.projectsImageClip}>
                             <img className={styles.projectsPicture} src="/Home/Projects/Vivere_lassociazione.png"
                                  alt="project"/>
                         </div>
@@ -136,7 +136,7 @@ export default function Home() {
                         {/*TODO: add link*/}
                     </div>
                     <div className={styles.projectsRight}>
-                        <div className={styles.projectsImageClip} onClick={() => router.push('/404')}>
+                        <div className={styles.projectsImageClip}>
                             <img className={styles.projectsPicture} src="/Home/Projects/Poli_covid.png" alt="project"/>
                         </div>
                         <text className={styles.projectTitle}>POLITO, HKN, and Covid-19: A Reflection</text>

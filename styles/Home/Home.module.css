@@ -168,6 +168,11 @@
     font-size: 45px;
 }
 
+.projectsSubtitle {
+    font-weight: 600;
+    font-size: 25px;
+}
+
 .projectsCards {
     display: flex;
     flex-direction: row;
