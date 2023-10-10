@@ -64,6 +64,7 @@ export default function Gallery({ className } : { className?: string }) {
                                 src={image.src}
                                 alt={`Image ${index}`}
                                 className={styles.carousel__image}
+                                loading="lazy"
                             />
                         </div>
                     ))}

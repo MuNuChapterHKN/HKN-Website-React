@@ -57,12 +57,12 @@ export default function AboutUs() {
     console.log(svgWidth)
     return (
         <Layout>
-            <div className={styles.vision}>
+            <div className={styles.vision}  id="vision">
                 <div className={styles.vision__card}>
 
                     <div className={styles.vision__card__bull}>
                         <div className={styles.vision__card__bull__circle}>
-                            <img src="/AboutUs/Vision/bull.png" className={styles.vision__card__bull__circle__img} alt="bull" />
+                            <img src="/AboutUs/Vision/bull.png" loading="lazy" className={styles.vision__card__bull__circle__img} alt="bull" />
                         </div>
                         <div className={styles.vision__card__bull__citation}>
                             <div className={styles.vision__card__bull__citation__text}>HKN IS THE PLACE WHERE I WAS ABLE TO IMPROVE MYSELF, ALLOWING ME TO GET INVOLVED AND BELIEVE IN MY POTENTIAL</div>
@@ -100,7 +100,7 @@ export default function AboutUs() {
                 </div>
             </div>
 
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="102" fill="none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="102" fill="none" id="gallery">
                 <line y1="0" x1="4" y2="102" x2="4" stroke="#64758C" stroke-width="8"/>
                 <line y1="0" x1="20" y2="102" x2="20" stroke="#7A8698" stroke-width="8"/>
                 <line y1="0" x1="36" y2="102" x2="36" stroke="#929AA6" stroke-width="8"/>
@@ -108,7 +108,7 @@ export default function AboutUs() {
 
             <Gallery className={styles.gallery}/>
 
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="230" fill="none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="230" fill="none" id="origin">
                 <line y1="0" x1="4" y2="230" x2="4" stroke="#64758C" stroke-width="8"/>
                 <line y1="0" x1="20" y2="230" x2="20" stroke="#7A8698" stroke-width="8"/>
                 <line y1="0" x1="36" y2="230" x2="36" stroke="#929AA6" stroke-width="8"/>
@@ -125,31 +125,31 @@ export default function AboutUs() {
             <div className={styles.sections} ref={sectionsRef}>
                 <SectionAboutUs left section={sections[0]}>
                     <div className={styles.section__container_img}>
-                        <img src="/AboutUs/Sections/1904_2.jpeg" className={`${styles.section1_image1} ${styles.section_image}`} alt="IEEE_logo" />
-                        <img src="/AboutUs/Sections/1904_1.jpeg" className={`${styles.section1_image2} ${styles.section_image}`} alt="IEEE_logo" />
-                        <img src="/AboutUs/hkn_simple_logo.png" className={`${styles.section1_image3} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/1904_2.jpeg" loading="lazy" className={`${styles.section1_image1} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/1904_1.jpeg" loading="lazy" className={`${styles.section1_image2} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/hkn_simple_logo.png" loading="lazy" className={`${styles.section1_image3} ${styles.section_image}`} alt="IEEE_logo" />
                     </div>
                 </SectionAboutUs>
 
                 <SectionAboutUs right section={sections[1]}>
                     <div className={styles.section__container_img}>
-                        <img src="/AboutUs/Sections/2010_1.jpeg" className={`${styles.section2_image1} ${styles.section_image}`} alt="IEEE_logo" />
-                        <img src="/AboutUs/IEEE_logo.png" className={`${styles.section2_image2} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/2010_1.jpeg" loading="lazy" className={`${styles.section2_image1} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/IEEE_logo.png" loading="lazy" className={`${styles.section2_image2} ${styles.section_image}`} alt="IEEE_logo" />
                     </div>
                 </SectionAboutUs>
 
                 <SectionAboutUs left section={sections[2]}>
                     <div className={styles.section__container_img}>
-                        <img src="/AboutUs/Sections/2017_1.jpeg" className={`${styles.section3_image1} ${styles.section_image}`} alt="IEEE_logo" />
-                        <img src="/AboutUs/Sections/2017_2.png" className={`${styles.section3_image2} ${styles.section_image}`} alt="IEEE_logo" />
-                        <img src="/Common/hkn_logo_white_vector.svg" className={`${styles.section3_image3} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/2017_1.jpeg" loading="lazy" className={`${styles.section3_image1} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/2017_2.png" loading="lazy" className={`${styles.section3_image2} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/Common/hkn_logo_white_vector.svg" loading="lazy" className={`${styles.section3_image3} ${styles.section_image}`} alt="IEEE_logo" />
                     </div>
                 </SectionAboutUs>
 
                 <SectionAboutUs right end section={sections[3]}>
                     <div className={styles.section__container_img}>
-                        <img src="/AboutUs/Sections/2023_1.png" className={`${styles.section4_image1} ${styles.section_image}`} alt="IEEE_logo" />
-                        <img src="/Common/hkn_ideogramma_white.svg" className={`${styles.section4_image2} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/AboutUs/Sections/2023_1.png" loading="lazy" className={`${styles.section4_image1} ${styles.section_image}`} alt="IEEE_logo" />
+                        <img src="/Common/hkn_ideogramma_white.svg" loading="lazy" className={`${styles.section4_image2} ${styles.section_image}`} alt="IEEE_logo" />
                     </div>
                 </SectionAboutUs>
             </div>

@@ -11,6 +11,7 @@
 
 .mentionsImage {
     filter: sepia(90%) saturate(150%) hue-rotate(180deg) brightness(90%);
+    margin-left: 20px;
     width: 300px;
     height: auto;
 }

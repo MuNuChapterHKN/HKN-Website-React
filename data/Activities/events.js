@@ -81,24 +81,28 @@ export const pastEvents = [
                 title: "Research Radio: Innovation #1",
                 date: "NOVEMBER 18, 2020",
                 imageSrc: "/Activities/Events/researchRadioInnovation1.png",
+                link: "https://open.spotify.com/episode/3LyPIGNYzalVkK3Aj2LuDj?si=46f1defdbbed4845",
             },
             {
                 location: "Online",
                 title: "Research Radio: Innovation #2",
                 date: "NOVEMBER 20, 2020",
                 imageSrc: "/Activities/Events/researchRadioInnovation2.png",
+                link: "https://open.spotify.com/episode/47QiFTEDO6NDCyGXyUpTO9?si=83b0c3efa578472e",
             },
             {
                 location: "Online",
                 title: "Research Radio: Innovation #3",
                 date: "NOVEMBER 27, 2020",
                 imageSrc: "/Activities/Events/researchRadioInnovation3.png",
+                link: "https://open.spotify.com/episode/01Y3Mn0N0jnj46nBvQeX4z?si=d73671c436044a15",
             },
             {
                 location: "Online",
                 title: "Research Radio: Innovation #4",
                 date: "DECEMBER 4, 2020",
                 imageSrc: "/Activities/Events/researchRadioInnovation4.png",
+                link: "https://open.spotify.com/episode/566uFA7EyEgmc1M2nXAm4s?si=b067d8d353be478b",
             },
         ],
     },
@@ -217,6 +221,7 @@ export const pastEvents = [
 ];
 
 export const latestEvent = {
+    id: "QuantumQuest",
     imageSrc: "/Activities/Events/quantumQuest.png",
     title: "Quantum Quest - Beyond 0s and 1s",
     location: "Politecnico di Torino",
