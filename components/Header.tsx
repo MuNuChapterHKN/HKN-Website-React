@@ -10,7 +10,7 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
     const isActive = (pathname : string) => router.pathname === pathname;
     const [navbarOpen, toggleNavbar] = useState(false);
 
-    const handleNavigate = (event : MouseEvent, pathname : string) => {
+    const handleNavigate = (event : any, pathname : string) => {
         event.preventDefault();
         event.stopPropagation();
         router.push(pathname);
