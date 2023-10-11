@@ -11,17 +11,12 @@ const schema = z.object({
     average: z.number().min(25.6).max(30),
     email: z.string().email().toLowerCase().endsWith('polito.it'),
     degree: z.enum(["Bachelor", "Master", "PhD"]),
-    course: z.enum(["COMPUTER TECHNOLOGY", "ELECTRICAL", "ELECTRONIC", "BIOMEDICAL", "PHYSICS", "MATHEMATIC", "ENERGY", "CINEMA AND MEDIA"]),
+    course: z.enum(["COMPUTER TECHNOLOGY", "ELECTRICAL", "ELECTRONIC", "BIOMEDICAL", "PHYSICS", "MATHEMATICS", "ENERGY", "CINEMA AND MEDIA", "OTHER"]),
     area: z.optional(z.string())
 });
 
 function randomID() {
     return Array.from({length: 16}, () => Math.floor(Math.random() * 10)).join('');
-}
-
-// @ts-ignore
-async function saveFileLocally(file: PersistentFile, applicant: string, name: string) {
-    await writeFile(getApplicationPath(applicant, name), await readFile(file.filepath));
 }
 
 function formatData(data: { [key: string]: string | number }) {
@@ -31,21 +26,6 @@ function formatData(data: { [key: string]: string | number }) {
 
 function getApplicationPath(applicant: string, file: string) {
     return `./applications/${applicant}/${file}`;
-}
-
-async function saveInfoLocally(data: { [key: string]: string | number }, applicant: string) {
-    await writeFile(getApplicationPath(applicant, 'info.txt'), formatData(data));
-}
-
-async function saveApplicationLocally(data: { [key: string]: string | number }, files: {
-    cv: [File],
-    studyPlan: [File]
-}) {
-    const applicant = randomID();
-    await mkdir(getApplicationPath(applicant, ''), {recursive: true});
-    await saveInfoLocally(data, applicant);
-    await saveFileLocally(files.cv[0], applicant, 'curriculum.pdf');
-    await saveFileLocally(files.studyPlan[0], applicant, 'study-plan.pdf');
 }
 
 function handleError(e: unknown, type: string) {
@@ -109,14 +89,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                 return res.status(404).json({
                     message: "The provided data was incorrect or invalid, try again",
                 });
-            }
-
-            // Save Application locally
-            try {
-                // @ts-ignore
-                await saveApplicationLocally(parsedFields, files);
-            } catch (e) {
-                handleError(e, 'Local');
             }
 
             // Send email to HR

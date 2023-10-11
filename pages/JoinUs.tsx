@@ -104,7 +104,8 @@ export default function JoinUs() {
                         <ul className={styles.requirementPointList}>
                             <li className={styles.requirementPoint}>Weighted average ≥ 27</li>
                         </ul>
-                        <p className={styles.additionalRequirement}>Fluency in the Italian language is a prerequisite for admission to the chapter</p>
+                        <p className={styles.additionalRequirement}>Fluency in the Italian language is a prerequisite
+                            for admission to the chapter</p>
                     </div>
                 </section>
 
@@ -123,13 +124,15 @@ export default function JoinUs() {
                         </h4>
                         <p className={styles.shortRecruitmentStepText}>
                             To complete the application form you must enter:
-                            <ul>
-                                <li>First name</li>
-                                <li>Surname</li>
-                                <li>Email address</li>
-                                <li>Weighted average of your grades</li>
-                                <li>Type of degree you're attending</li>
-                            </ul>
+                        </p>
+                        <ul className={styles.shortRecruitmentStepText}>
+                            <li>First name</li>
+                            <li>Surname</li>
+                            <li>Email address</li>
+                            <li>Weighted average of your grades</li>
+                            <li>Type of degree you're attending</li>
+                        </ul>
+                        <p className={styles.shortRecruitmentStepText}>
                             Finally, it is necessary to upload a PDF file with your CV and the extract of grades
                             (obtainable from the personal university page under the heading:
                             <strong> General Secretariat/Self-certifications</strong>)
@@ -169,11 +172,12 @@ export default function JoinUs() {
 
                 {/* Submission form */}
                 {JoinUsEnabled ?
-                    <SubmissionForm />
+                    <SubmissionForm/>
                     :
                     <div className={styles.disabledJoinUs}>
                         <div className={styles.disabledJoinUs__text}>Applications are currently closed</div>
-                        <div className={styles.disabledJoinUs__text}>Come back at the beginning of the next semester!</div>
+                        <div className={styles.disabledJoinUs__text}>Come back at the beginning of the next semester!
+                        </div>
                     </div>
                 }
             </main>

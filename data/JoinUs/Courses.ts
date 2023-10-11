@@ -4,7 +4,8 @@ export const courses = [
     "ELECTRONIC",
     "BIOMEDICAL",
     "PHYSICS",
-    "MATHEMATIC",
+    "MATHEMATICS",
     "ENERGY",
-    "CINEMA AND MEDIA"
+    "CINEMA AND MEDIA",
+    "OTHER"
 ]
