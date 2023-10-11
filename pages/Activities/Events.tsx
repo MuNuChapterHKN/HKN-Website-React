@@ -31,10 +31,9 @@ export default function Events() {
         setPastEventsIndex((pastEventsIndex) => mod((pastEventsIndex + action), pastEvents.length))
     }
 
-    // @ts-ignore
     return (
         <Layout triangles>
-            <div className={styles.latestEventContainer}>
+            <div className={styles.latestEventContainer} id={latestEvent.id ? latestEvent.id : "latestEvent"}>
                 <Image className={styles.latestEventImage} src={latestEvent.imageSrc} alt={`${latestEvent.title} poster`} width="0" height="0" sizes="100vw"/>
                 <div className={styles.latestEventRight}>
                     <text className={styles.latestEventDate}>{latestEvent.date}</text>
@@ -63,8 +62,8 @@ export default function Events() {
                         <YearEventsColumn key={index} yearEvents={yearEvents}/>
                     ))}
                     {currentPastEvents.length > 1 && <>
-                        <ArrowButton left className={styles.pastEventsButton} onClick={() => changeEventsPage(-1)}/>
-                        <ArrowButton right className={styles.pastEventsButton} onClick={() => changeEventsPage(+1)}/>
+                        {pastEventsIndex > 0 && <ArrowButton left className={styles.pastEventsButton_1} color="#F2F2F2" onClick={() => changeEventsPage(-1)}/>}
+                        {pastEventsIndex < pastEvents.length-2 && <ArrowButton right className={styles.pastEventsButton_2} color="#F2F2F2" onClick={() => changeEventsPage(+1)}/>}
                     </>
                     }
                 </div>
