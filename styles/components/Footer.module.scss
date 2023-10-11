@@ -30,6 +30,14 @@
         text-transform: capitalize;
     }
 
+    &__subtitle {
+        color: #FFF;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 700;
+        text-transform: capitalize;
+    }
+
     &__contact {
         display: flex;
         flex-direction: row;
@@ -103,5 +111,34 @@
         object-fit: cover;
         width: 100px;
         height: auto;
+    }
+}
+
+@media screen and (max-width: 885px) {
+    .column__contact {
+        flex-direction: column;
+    }
+
+    .column {
+        min-width: 100%;
+        margin-top: 2rem;
+        order: 2;
+    }
+
+    .footer {
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .columnLogo {
+        order: 1;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .linkIcon {
+        width: 36px;
+        height: 27px;
+        margin: 0 4px;
     }
 }

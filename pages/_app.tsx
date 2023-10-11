@@ -2,11 +2,14 @@ import '@/styles/globals.css'
 import type {AppProps} from 'next/app'
 import {Analytics} from '@vercel/analytics/react';
 import '../styles/fonts.css'
+import Head from "next/head";
 
 export default function App({Component, pageProps}: AppProps) {
     return (<>
-            <Component {...pageProps} />
-            <Analytics/>
-        </>
-    );
+        <Head>
+            <link rel="shortcut icon" href="/images/favicon.ico"/>
+        </Head>
+        <Component {...pageProps} />
+        <Analytics/>
+    </>);
 }

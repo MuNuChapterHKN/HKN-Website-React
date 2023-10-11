@@ -189,7 +189,7 @@
   width: 66%;
   margin: 2rem;
 
-  &:last-child::after {
+  &:nth-last-child(3)::after {
     content: '';
     background-size: 90px 100px;
     background-image: url("/JoinUs/form.png");
