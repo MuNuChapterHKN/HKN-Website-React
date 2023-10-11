@@ -11,7 +11,7 @@ const schema = z.object({
     average: z.number().min(25.6).max(30),
     email: z.string().email().toLowerCase().endsWith('polito.it'),
     degree: z.enum(["Bachelor", "Master", "PhD"]),
-    course: z.enum(["COMPUTER TECHNOLOGY", "ELECTRICAL", "ELECTRONIC", "BIOMEDICAL", "PHYSICS", "MATHEMATIC", "ENERGY", "CINEMA AND MEDIA"]),
+    course: z.enum(["COMPUTER TECHNOLOGY", "ELECTRICAL", "ELECTRONIC", "BIOMEDICAL", "PHYSICS", "MATHEMATICS", "ENERGY", "CINEMA AND MEDIA", "OTHER"]),
     area: z.optional(z.string())
 });
 
