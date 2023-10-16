@@ -2,7 +2,7 @@ import styles from "@/styles/components/Header.module.css";
 import Image from "next/image";
 import {useRouter} from "next/router";
 import RoundButton from "./molecules/RoundButton";
-import { useState } from "react";
+import React, { useState } from "react";
 
 
 const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
@@ -10,7 +10,7 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
     const isActive = (pathname : string) => router.pathname === pathname;
     const [navbarOpen, toggleNavbar] = useState(false);
 
-    const handleNavigate = (event : MouseEvent, pathname : string) => {
+    const handleNavigate = (event: React.MouseEvent<Element, MouseEvent>, pathname : string) => {
         event.preventDefault();
         event.stopPropagation();
         router.push(pathname);
@@ -46,9 +46,9 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
                         <div className={styles.arrowDown}></div>
                     </div>
                     <ul className={styles.dropdown}>
-                        <li className={isActive('/Activities/Events') ? styles.activeDropdown : ''} onClick={(e) => handleNavigate(e, '/Activities/Events')}>Events</li>
+                        <li className={isActive('/Activities/Events') ? styles.activeDropdown : ''} onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleNavigate(e, '/Activities/Events')}>Events</li>
                         {/*<li className={isActive('/Activities/Masterclasses') ? styles.activeDropdown  : ''} onClick={() => router.push('/Activities/Masterclasses')}>Masterclasses</li>*/}
-                        <li className={isActive('/Activities/StudyGroups') ? styles.activeDropdown : ''} onClick={(e) => handleNavigate(e, '/Activities/StudyGroups')}>Study Groups</li>
+                        <li className={isActive('/Activities/StudyGroups') ? styles.activeDropdown : ''} onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleNavigate(e, '/Activities/StudyGroups')}>Study Groups</li>
                     </ul>
                 </div>
 
