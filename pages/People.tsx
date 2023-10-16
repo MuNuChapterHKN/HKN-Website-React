@@ -90,7 +90,7 @@ const Teams: TeamProps[] = [
     {
         area: "Tutoring",
         longName: "Tutoring",
-        description: "We put at the first place the neworking between the students, organizing study groups open to everyone who wants to join ",
+        description: "We put at the first place the networking between the students, organizing masterclasses and study groups open to everyone who wants to join",
         imageSrc: "/People/Resp/resp-tutoring.png",
         managerName: "Orlando Zaccaria & Elena Favero",
         members: []
@@ -98,7 +98,7 @@ const Teams: TeamProps[] = [
     {
         area: "Events",
         longName: "Events",
-        description: "We organize hackatons & competitions related to the areas of interest of the students community",
+        description: "We organize hackathons & competitions related to the areas of interest of the students community",
         imageSrc: "/People/Resp/resp-eventi.png",
         managerName: "Sebastiano Guzzone",
         members: [
