@@ -1,10 +1,10 @@
-import {NextApiRequest, NextApiResponse} from 'next'
-import formidable, {PersistentFile} from 'formidable';
-import {writeFile, mkdir, readFile} from 'fs/promises';
-import {sendEmail} from "@/service/mailService";
+import { NextApiRequest, NextApiResponse } from 'next'
+import { sendEmail } from "@/service/mailService";
+import { shareNewApply } from "./telegram";
+import formidable from 'formidable';
 
 const logger = require('pino')()
-import {z} from 'zod';
+import { z } from 'zod';
 
 const schema = z.object({
     name: z.string().min(1).max(200),
@@ -15,17 +15,9 @@ const schema = z.object({
     area: z.optional(z.string())
 });
 
-function randomID() {
-    return Array.from({length: 16}, () => Math.floor(Math.random() * 10)).join('');
-}
-
 function formatData(data: { [key: string]: string | number }) {
     return `Nome: ${data.name}\nEmail: ${data.email}\nMedia Voti: ${data.average}\n` +
         `Laurea: ${data.degree}\nCorso: ${data.course}\nArea: ${data.area}\nData: ${formatDate()}`;
-}
-
-function getApplicationPath(applicant: string, file: string) {
-    return `./applications/${applicant}/${file}`;
 }
 
 function handleError(e: unknown, type: string) {
@@ -61,7 +53,7 @@ function formatDate() {
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     try {
         logger.info('New application received');
-        const {method} = req;
+        const { method } = req;
 
         if (method === 'POST') {
 
@@ -69,14 +61,13 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             const options = {
                 maxFiles: 2,
                 maxFileSize: 2097152,
-                filter: function ({mimetype}: { mimetype: string }) {
+                filter: function ({ mimetype }: { mimetype: string }) {
                     return mimetype && mimetype === 'application/pdf';
                 }
             };
             // @ts-ignore
             const form = formidable(options);
             const [fields, files] = await form.parse(req);
-            // TODO: Send wrong files and check it fails
             // @ts-ignore
             const fieldsSingle = flatten(fields);
             fieldsSingle.average = Number(fieldsSingle.average);
@@ -85,6 +76,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             // Field validation
             try {
                 parsedFields = schema.parse(fieldsSingle);
+            } catch (e) {
+                return res.status(404).json({
+                    message: "The provided data was incorrect or invalid, try again",
+                });
+            }
+
+            try {
+                shareNewApply(fields.name);
             } catch (e) {
                 return res.status(404).json({
                     message: "The provided data was incorrect or invalid, try again",
@@ -119,6 +118,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             res.status(405).end(`Method ${method} Not Allowed`);
         }
     } catch (err: any) {
-        res.status(500).json({message: err.message});
+        res.status(500).json({ message: err.message });
     }
 }
