@@ -50,7 +50,7 @@ export default function YearEventsColumn({yearEvents}: { yearEvents: YearEvents 
                     </div>
                 </>
             ))}
-            <div style={yearEvents.events.length % 2 == 0 ? {left: "calc(26% + 10px)"} : {right: "calc(26% + 10px)"}} className={styles.dividerEnd}></div>
+            <div style={yearEvents.events.length % 2 == 0 ? {left: "calc(30% + 10px)"} : {right: "calc(30% + 10px)"}} className={styles.dividerEnd}></div>
         </div>
     )
 }
