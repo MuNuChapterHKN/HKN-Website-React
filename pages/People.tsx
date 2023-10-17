@@ -1,10 +1,10 @@
 import Layout from "../components/Layout";
 import styles from '@/styles/People/People.module.scss'
 import RoundButton from "@/components/molecules/RoundButton";
-import {useRouter} from "next/router";
-import {MouseEventHandler, useState} from "react";
+import { useRouter } from "next/router";
+import { MouseEventHandler, useState } from "react";
 import ArrowButton from "@/components/molecules/ArrowButton";
-import React, {useRef, useEffect} from "react";
+import React, { useRef, useEffect } from "react";
 
 // Images should be in a 4:5 ratio
 const Board: BoardMemberProps[] = [
@@ -77,14 +77,14 @@ const Teams: TeamProps[] = [
         ]
     },
     {
-        area: "Corporate training",
-        longName: "Corporate training",
+        area: "Corporate Training",
+        longName: "Corporate Training",
         description: "We are responsible for the talks and the workshops that constitute the interfaces with the professionals  ",
         imageSrc: "/People/Resp/resp-fi.png",
         managerName: "Claudio Fantasia",
         members: [
-            'Matteo Sperti',
-            'Costanza Galante',
+            'Leonardo Pavarino',
+            'Michele Ferrero'
         ]
     },
     {
@@ -93,7 +93,10 @@ const Teams: TeamProps[] = [
         description: "We put at the first place the networking between the students, organizing masterclasses and study groups open to everyone who wants to join",
         imageSrc: "/People/Resp/resp-tutoring.png",
         managerName: "Orlando Zaccaria & Elena Favero",
-        members: []
+        members: [
+            'Matteo Sperti',
+            'Costanza Galante',
+        ]
     },
     {
         area: "Events",
@@ -126,40 +129,52 @@ const Teams: TeamProps[] = [
 export default function People() {
     const router = useRouter();
     const [boardIndex, setBoardIndex] = useState(0);
+    const [teamIndex, setTeamIndex] = useState(0);
     const [boardPopUpVisible, setBoardPopUpVisible] = useState(false);
+    const [teamPopUpVisible, setTeamPopUpVisible] = useState(false);
 
     const handleBoardMemberClick = (index: number) => {
         setBoardIndex(index);
         setBoardPopUpVisible(true);
     }
 
+    const handleTeamMemberClick = (index: number) => {
+        setTeamIndex(index);
+        setTeamPopUpVisible(true);
+    }
+
     const handleHideBoardPopUp = () => {
         setBoardPopUpVisible(false);
     }
 
+    const handleHideTeamPopUp = () => {
+        setTeamPopUpVisible(false);
+    }
+
     return (
-       <Layout triangles>
-           {/*<BoardPopUp index={boardIndex} visible={false} disablePopUp={handleHideBoardPopUp}/>*/}
+        <Layout triangles>
+            {/*<BoardPopUp index={boardIndex} visible={false} disablePopUp={handleHideBoardPopUp}/>*/}
             <div className={styles.boardContainer}>
                 <text className={styles.theBoard}>THE BOARD</text>
                 <text className={styles.managementArea}>Management Area</text>
                 <div className={styles.boardGrid}>
                     {Board.map((bmp, index) => (
                         <BoardMember boardMemberProps={bmp} index={index} key={index}
-                                     onClick={() => handleBoardMemberClick(index)}/>
+                            onClick={() => handleBoardMemberClick(index)} />
                     ))}
                 </div>
             </div>
 
-           <div className={styles.teamsContainer}>
-               <text className={styles.theTeams}>THE TEAMS</text>
-               <text className={styles.joinOurTeams}>Our Teams</text>
-               <div className={styles.teamsGrid}>
-                   {Teams.map((team, index) => (
-                       <Team teamProps={team} key={team.area}/>
-                   ))}
-               </div>
-           </div>
+            <TeamPopUp index={teamIndex} visible={teamPopUpVisible} disablePopUp={handleHideTeamPopUp} />
+            <div className={styles.teamsContainer}>
+                <text className={styles.theTeams}>THE TEAMS</text>
+                <text className={styles.joinOurTeams}>Our Teams</text>
+                <div className={styles.teamsGrid}>
+                    {Teams.map((team, index) => (
+                        <Team teamProps={team} key={team.area} onClick={() => handleTeamMemberClick(index)} />
+                    ))}
+                </div>
+            </div>
 
             <div className={styles.discover}>
                 <div className={styles.discover__coming}>coming soon</div>
@@ -170,7 +185,7 @@ export default function People() {
     )
 }
 
-function BoardMember({boardMemberProps, index, onClick}: {
+function BoardMember({ boardMemberProps, index, onClick }: {
     boardMemberProps: BoardMemberProps,
     index: number,
     onClick: MouseEventHandler<HTMLDivElement>
@@ -187,10 +202,10 @@ function BoardMember({boardMemberProps, index, onClick}: {
 
     return (
         <div className={styles.boardMember} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
-             onClick={onClick}>
+            onClick={onClick}>
             <div className={styles.boardImageContainer}>
-                <div className={styles.boardCard}/>
-                <img className={styles.boardMemberImage} src={boardMemberProps.imageSrc} alt={boardMemberProps.name} loading="lazy"/>
+                <div className={styles.boardCard} />
+                <img className={styles.boardMemberImage} src={boardMemberProps.imageSrc} alt={boardMemberProps.name} loading="lazy" />
             </div>
             <text className={styles.boardMemberName}>{boardMemberProps.name}</text>
             <text className={styles.boardMemberRole}>{boardMemberProps.role}</text>
@@ -198,10 +213,10 @@ function BoardMember({boardMemberProps, index, onClick}: {
     );
 }
 
-function Team({teamProps}: { teamProps: TeamProps }) {
+function Team({ teamProps, onClick }: { teamProps: TeamProps, onClick: MouseEventHandler<HTMLDivElement> }) {
     return (
-        <div className={styles.team}>
-            <img className={styles.teamRespImage} src={teamProps.imageSrc} alt={teamProps.imageSrc}/>
+        <div className={styles.team} onClick={onClick}>
+            <img className={styles.teamRespImage} src={teamProps.imageSrc} alt={teamProps.imageSrc} />
             <div className={styles.teamTextBox}>
                 <text className={styles.peopleOf}>people of</text>
                 <text className={styles.teamArea}>{teamProps.area}</text>
@@ -211,28 +226,53 @@ function Team({teamProps}: { teamProps: TeamProps }) {
     )
 }
 
-function BoardPopUp({index, visible, disablePopUp}: {index: number, visible: Boolean, disablePopUp:  MouseEventHandler<HTMLDivElement>}) {
+function TeamPopUp({ index, visible, disablePopUp }: { index: number, visible: Boolean, disablePopUp: MouseEventHandler<HTMLDivElement> }) {
+    const team = Teams[index];
     return (
-        <div className={styles.popUpBackground} onClick={disablePopUp} style={{visibility: visible ? 'visible' : 'hidden'}}>
-            <div className={styles.boardPopUp}>
-                <div className={styles.imageContainer}>
-                    <ArrowButton left onClick={() => {}} className={styles.arrowButtonLeft}/>
-                    <div className={styles.imageBackground}>
-                        <div className={styles.imageClipMask}>
-                            <img className={styles.boardPopUpImage} src={Board[index].imageSrc} alt={Board[index].imageSrc} loading="lazy"/>
+        <div className={styles.popUpBackground} onClick={disablePopUp} style={{ visibility: visible ? 'visible' : 'hidden' }}>
+            <div className={styles.teamPopUp}>
+                <div className={styles.teamHeader}>
+                    <div className={styles.teamHeaderLeft}>
+                        <div className={styles.managerPopUpImageContainer}>
+                            <img className={styles.managerImage} alt={`Coordinators of ${team.area} area`} src={team.imageSrc} width={'100px'} height={'100px'} />
                         </div>
+                        <h4 className={styles.managerName}>{team.managerName}</h4>
+                        <h6 className={styles.managerTitle}>Area manager{team.managerName.includes('&') ? 's' : ''}</h6>
                     </div>
-                    <ArrowButton right onClick={() => {}} className={styles.arrowButtonRight}/>
+                    <div className={styles.teamHeaderRight}>
+                        <h2 className={styles.teamTitle}>We are {team.area}</h2>
+                        <text className={styles.teamDescription}>{team.description}</text>
+                    </div>
                 </div>
-                <div className={styles.popUpTextContainer}>
-                    <text className={styles.ourBoard}>OUR BOARD</text>
-                    <text className={styles.role}>{Board[index].role}</text>
-                    <text className={styles.roleDescription}>{Board[index].roleDescription}</text>
+                <div className={styles.teamBody}>
+                    {
+                        team.members.map((member: string) =>
+                            <TeamMember key={member} area={team.area} name={member} />
+                        )
+                    }
                 </div>
             </div>
         </div>
     )
 }
+
+function TeamMember({ area, name }: TeamMemberProps) {
+    return (
+        <div className={styles.teamMember}>
+            <div className={styles.memberPopUpImageContainer}>
+                <img className={styles.memberPopUpImage} src={`/People/Areas/${area}/${name}.png`} alt={name} loading="lazy" />
+            </div>
+            <h5 className={styles.memberName}>{name}</h5>
+            <h6 className={styles.memberTitle}>MEMBER</h6>
+        </div>
+    );
+}
+
+export interface TeamMemberProps {
+    area: string,
+    name: string
+}
+
 export interface BoardMemberProps {
     name: string;
     role: string;
