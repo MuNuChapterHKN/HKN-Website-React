@@ -6,7 +6,6 @@ const JoinUsEnabled = process.env.NEXT_PUBLIC_JOINUS_ENABLED === "true";
 
 export default function JoinUs() {
 
-    console.log(process.env.NEXT_PUBLIC_JOINUS_ENABLED, JoinUsEnabled)
     return (
         <Layout triangles>
             <main className={styles.container}>
