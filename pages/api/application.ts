@@ -82,14 +82,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                 });
             }
 
-            try {
-                shareNewApply(fields.name);
-            } catch (e) {
-                return res.status(404).json({
-                    message: "The provided data was incorrect or invalid, try again",
-                });
-            }
-
             // Send email to HR
             try {
                 const mailText = `Nuova apply ricevuta alle ${formatDate()}\n\n${formatData(parsedFields)}`;
@@ -111,6 +103,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             } catch (e) {
                 handleError(e, 'Email');
             }
+
+            // try {
+            //     await shareNewApply(fields.name);
+            // } catch (e) {
+            //     handleError(e, 'Telegram notification');
+            // }
 
             res.status(200).send("");
         } else {
