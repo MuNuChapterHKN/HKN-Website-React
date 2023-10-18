@@ -27,7 +27,7 @@
     overflow: hidden;
 
     &__uptitle {
-      font-family: Inter;
+      font-family: Inter, sans-serif;
       font-size: 24px;
       font-weight: 600;
       text-transform: uppercase;
@@ -42,7 +42,7 @@
 
     &__description {
       margin: 20px 0 40px 0;
-      font-family: Inter;
+      font-family: Inter, sans-serif;
       font-size: 26px;
       font-weight: 400;
     }
@@ -66,7 +66,7 @@
 
       &__col2 {
         grid-column: 2;
-        font-family: Inter;
+        font-family: Inter, sans-serif;
         font-size: 26px;
         font-weight: 400;
         padding-left: 10px;
@@ -100,16 +100,16 @@
 
         &__text {
           text-align: center;
-          font-family: Inter;
-          font-size: 18px;
+          font-family: Inter, sans-serif;
+          font-size: 15px;
           font-weight: 700;
-          text-transform: lowercase;
+          text-transform: uppercase;
         }
 
         &__author {
           margin-top: 20px;
           text-align: center;
-          font-family: Inter;
+          font-family: Inter, sans-serif;
           font-size: 15px;
           font-weight: 300;
         }
@@ -180,7 +180,7 @@
 
   &__number {
     margin-top: 10px;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     text-align: center;
     font-size: 40px;
     font-weight: 700;
@@ -214,14 +214,14 @@
     width: 270px;
   top: 50px;
   filter: grayscale(100%);
-  box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .section1_image2 {
   top:0;
   left:170px;
   width: 250px;
-  box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 
@@ -236,7 +236,7 @@
   left:0;
   width: 450px;
   height: 450px;
-  box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .section2_image2 {
@@ -250,14 +250,14 @@ top: 60px;
   left: 0;
   width: 430px;
     height: 430px;
-  box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .section3_image2 {
-  top:30px;
-  right: 0px;
+  top: 30px;
+  right: 0;
   width: 180px;
-  box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .section3_image3 {
@@ -271,7 +271,7 @@ top: 60px;
   left: 0;
   width: 450px;
   height: 450px;
-  box-shadow: 0px 10px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .section4_image2 {

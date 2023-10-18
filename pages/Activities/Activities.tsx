@@ -126,7 +126,7 @@ export default function External() {
                             <div className={styles.allActivities__group3}>
                                 <div className={styles.allActivities__group__events}>events</div>
                                 <div className={styles.allActivities__group__title}>Study Groups</div>
-                                <div className={styles.allActivities__group__text}>HKN members and phd students will
+                                <div className={styles.allActivities__group__text}>HKN members and PhD students will
                                                                                    help you with whatever concept you
                                                                                    might be struggling with
                                 </div>

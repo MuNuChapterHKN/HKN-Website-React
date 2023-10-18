@@ -70,7 +70,6 @@ export default function AboutUs() {
                             <div className={styles.vision__card__bull__citation__quotes}>
                                 <img src="/AboutUs/Vision/quotes.png" className={styles.vision__card__bull__citation__quotes__img} alt="quotes" />
                             </div>
-
                             <div className={styles.vision__card__bull__citation__halo}/>
                         </div>
                     </div>

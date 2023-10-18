@@ -89,14 +89,14 @@
 .pastEventsButton_1 {
     position: absolute;
     top: 13px;
-    left: -50px;
+    left: calc(15% - 65px);
     background: #061E33;
 }
 
 .pastEventsButton_2 {
     position: absolute;
     top: 13px;
-    right: -50px;
+    right: calc(15% - 65px);
     background: #061E33;
 }
 

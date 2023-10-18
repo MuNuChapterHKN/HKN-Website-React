@@ -117,7 +117,7 @@ export default function JoinUs() {
                         </h4>
                         <p className={styles.shortRecruitmentStepText}>
                             Furthermore to become a fully inducted HKN member you have to pay a lump sum membership fee
-                            of € 80.00 (IEEE+HKN).
+                            of 78.00$ (IEEE+HKN).
                         </p>
                         <h4 className={`${styles.requirementTitle} ${styles.noHat} ${styles.boxedText}`}>
                             Form Instructions

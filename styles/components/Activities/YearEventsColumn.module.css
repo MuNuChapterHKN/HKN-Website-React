@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 50%;
+    width: 70%;
     margin: 0 10px;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .year {
-    color:black;
+    color: black;
     font-weight: 600;
     font-size: 45px;
 }
@@ -33,8 +33,8 @@
 }
 
 .eventLink {
-    width: 26%;
-    height: 16vw;
+    width: 30%;
+    height: 200px;
 }
 
 .eventImage {
@@ -46,26 +46,42 @@
 
 .divider {
     width: 5px;
-    height: calc(16vw + 30px);
-    background-color: white;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 .eventCard {
     border-radius: 20px;
     background: linear-gradient(to left, #061E33 35%, #124877);
-    width: 70%;
-    height: 16vw;
+    width: calc(70% - 35px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     margin: 15px 0;
     padding: 25px;
-    overflow: hidden;
+    position: relative;
 }
 
-.eventLocation, .eventDate {
+.eventCard:nth-child(1):after {
+    content: '';
+    width: 5px;
+    right: -20px;
+    position: absolute;
+    height: calc(100% + 30px);
+    background-color: white;
+}
+
+.eventCard:nth-child(3)::before {
+    content: '';
+    width: 5px;
+    left: -20px;
+    position: absolute;
+    height: calc(100% + 30px);
+    background-color: white;
+}
+
+.eventLocation,
+.eventDate {
     font-weight: 400;
     font-size: 17px;
     margin-bottom: 8px;
@@ -84,8 +100,8 @@
 }
 
 .dividerContainer {
-    width:100%;
-    padding: 0 calc(26% + 10px);
+    width: 100%;
+    padding: 0 calc(30% + 15px);
 }
 
 .horizontalDivider {
