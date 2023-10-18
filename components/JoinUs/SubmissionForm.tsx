@@ -49,7 +49,7 @@ export default function SubmissionForm() {
             errors.email = 'Email is required.';
         } else if (!/\S+@\S+\.\S+/.test(email)) {
             errors.email = 'Provide a valid email address';
-        } else if (!email.endsWith('polito.it')) {
+        } else if (!email.toLowerCase().endsWith('polito.it')) {
             errors.email = 'Please use your PoliTo email';
         }
 
@@ -91,7 +91,6 @@ export default function SubmissionForm() {
                 method: 'POST',
                 body: formData,
             });
-            console.log(response)
             if (response.ok) {
                 setSubmitted(true);
             } else {

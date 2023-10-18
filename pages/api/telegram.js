@@ -3,9 +3,10 @@ import { kv } from '@vercel/kv';
 
 const token = process.env.TELEGRAM_TOKEN;
 const chatId = process.env.TELEGRAM_CHAT_ID;
+const threadId = process.env.TELEGRAM_THREAD_ID;
 
 export async function shareNewApply(name) {
-  const bot = new TelegramBot(token, {polling: false});
+  const bot = new TelegramBot(token, { polling: false });
   let counter;
   try {
     const counterValue = Number(await kv.hget('apply', 'counter')) + 1;
@@ -16,5 +17,5 @@ export async function shareNewApply(name) {
     console.log("Error retrieving count from KV", e);
   }
   const message = `Nuova Candidatura: ${name}\nCount: ${counter}`;
-  bot.sendMessage(chatId, message);
+  bot.sendMessage(chatId, message, { message_thread_id: threadId });
 }

@@ -104,11 +104,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                 handleError(e, 'Email');
             }
 
-            // try {
-            //     await shareNewApply(fields.name);
-            // } catch (e) {
-            //     handleError(e, 'Telegram notification');
-            // }
+            try {
+                await shareNewApply(fields.name);
+            } catch (e) {
+                handleError(e, 'Telegram notification');
+            }
 
             res.status(200).send("");
         } else {
