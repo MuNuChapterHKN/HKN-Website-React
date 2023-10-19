@@ -9,7 +9,7 @@ import { z } from 'zod';
 const schema = z.object({
     name: z.string().min(1).max(200),
     average: z.number().min(25.6).max(30),
-    email: z.string().email().toLowerCase().endsWith('polito.it'),
+    email: z.string().email(), //.toLowerCase().endsWith('polito.it'),
     degree: z.enum(["Bachelor", "Master", "PhD"]),
     course: z.enum(["COMPUTER TECHNOLOGY", "ELECTRICAL", "ELECTRONIC", "BIOMEDICAL", "PHYSICS", "MATHEMATICS", "ENERGY", "CINEMA AND MEDIA", "OTHER"]),
     area: z.optional(z.string())
@@ -76,6 +76,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             // Field validation
             try {
                 parsedFields = schema.parse(fieldsSingle);
+                logger.info('Field validated')
             } catch (e) {
                 return res.status(404).json({
                     message: "The provided data was incorrect or invalid, try again",
