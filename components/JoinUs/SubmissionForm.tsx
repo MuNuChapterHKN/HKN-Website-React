@@ -49,9 +49,10 @@ export default function SubmissionForm() {
             errors.email = 'Email is required.';
         } else if (!/\S+@\S+\.\S+/.test(email)) {
             errors.email = 'Provide a valid email address';
-        } else if (!email.endsWith('polito.it')) {
-            errors.email = 'Please use your PoliTo email';
         }
+        // else if (!email.endsWith('polito.it')) {
+        //     errors.email = 'Please use your PoliTo email';
+        // }
 
         const cv = (document.getElementById('cv') as HTMLInputElement).files?.[0];
         if (!cv)
@@ -95,9 +96,7 @@ export default function SubmissionForm() {
             if (response.ok) {
                 setSubmitted(true);
             } else {
-                const data = await response.json();
-                setSubmissionError("An error occurred, please try again later");
-                console.log(data)
+                setSubmissionError("An error occurred, please try again later or send an email");
             }
         } catch (error: any) {
             console.error(error)
