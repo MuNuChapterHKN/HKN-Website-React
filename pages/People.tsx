@@ -2,9 +2,8 @@ import Layout from "../components/Layout";
 import styles from '@/styles/People/People.module.scss'
 import RoundButton from "@/components/molecules/RoundButton";
 import { useRouter } from "next/router";
-import { MouseEventHandler, useState } from "react";
+import {MouseEventHandler, useEffect, useState} from "react";
 import ArrowButton from "@/components/molecules/ArrowButton";
-import React, { useRef, useEffect } from "react";
 
 // Images should be in a 4:5 ratio
 const Board: BoardMemberProps[] = [
@@ -59,10 +58,48 @@ const Teams: TeamProps[] = [
         longName: "Communications",
         description: "Informing, engaging, motivating and creating: we constitute the link between the chapter and the student community",
         imageSrc: "/People/Resp/resp-comms.png",
-        managerName: "Dario Gosmar",
+        managers: [
+            {
+                name: "Dario Gosmar",
+                imageSrc: "/People/Areas/Comms/Dario Gosmar.png",
+                linkedIn: "https://www.linkedin.com/in/dario-gosmar/",
+            }
+        ],
         members: [
-            'Alessia Scardi',
-            'Lorenzo Fezza'
+            {
+                name: "Alessia Scardi",
+                imageSrc: "/People/Areas/Comms/Alessia Scardi.png",
+                linkedIn: "https://www.linkedin.com/in/alessia-scardi-ab863a247/",
+            },
+            {
+                name: "Antonio Capace",
+                imageSrc: "/People/Areas/Comms/Antonio Capace.png",
+            },
+            {
+                name: "Francesco Di Stefano",
+                imageSrc: "/People/Areas/Comms/Francesco Di Stefano.png",
+            },
+            {
+                name: "Lorenzo Fezza",
+                imageSrc: "/People/Areas/Comms/Lorenzo Fezza.png",
+            },
+            {
+                name: "Marco Rosa Gobbo",
+                imageSrc: "/People/Areas/Comms/Marco Rosa Gobbo.png",
+            },
+            {
+                name: "Lucrezia Marcovaldi",
+                imageSrc: "/People/Areas/Comms/Lucrezia Marcovaldi.png",
+            },
+            {
+                name: "Alex Martinelli",
+                imageSrc: "/People/Areas/Comms/Alex Martinelli.png",
+            },
+            {
+                name: "Andrea Minardi",
+                imageSrc: "/People/Areas/Comms/Andrea Minardi.png",
+            },
+
         ]
     },
     {
@@ -70,10 +107,49 @@ const Teams: TeamProps[] = [
         longName: "Human Resources",
         description: "Networking is our keyword: we manage the recruitment and organize any event/activity regarding the chapter",
         imageSrc: "/People/Resp/resp-hr.png",
-        managerName: "Francesca Portadibasso & Luca Filippetti",
+        managers: [
+            {
+                name: "Francesca Portadibasso",
+                imageSrc: "/People/Areas/HR/Francesca Portadibasso.png",
+            },
+            {
+                name: "Luca Filippetti",
+                imageSrc: "/People/Areas/HR/Luca Filippetti.png",
+            }
+        ],
         members: [
-            "Davide D'Adamo",
-            "Giacomo Maino"
+            {
+                name: "Giacomo Maino",
+                imageSrc: "/People/Areas/HR/Giacomo Maino.png",
+            },
+            {
+                name: "Rosario Francesco Cavalli",
+                imageSrc: "/People/Areas/HR/Rosario Francesco Cavalli.png",
+            },
+            {
+                name: "Stefano Cerutti",
+                imageSrc: "/People/Areas/HR/Stefano Cerutti.png",
+            },
+            {
+                name: "Edoardo Colella",
+                imageSrc: "/People/Areas/HR/Edoardo Colella.png",
+            },
+            {
+                name: "Marco Del Core",
+                imageSrc: "/People/Areas/HR/Marco Del Core.png",
+            },
+            {
+                name: "Alessandro Gasbarri",
+                imageSrc: "/People/Areas/HR/Alessandro Gasbarri.png",
+            },
+            {
+                name: "Kaliroi Mignone",
+                imageSrc: "/People/Areas/HR/Kaliroi Mignone.png",
+            },
+            {
+                name: "Andrea Pignata",
+                imageSrc: "/People/Areas/HR/Andrea Pignata.png",
+            },
         ]
     },
     {
@@ -81,10 +157,50 @@ const Teams: TeamProps[] = [
         longName: "Corporate Training",
         description: "We are responsible for the talks and the workshops that constitute the interfaces with the professionals  ",
         imageSrc: "/People/Resp/resp-fi.png",
-        managerName: "Claudio Fantasia",
+        managers: [
+            {
+                name: "Elena Favero",
+                imageSrc: "/People/Areas/Corporate Training/Elena Favero.png",
+            }
+        ],
         members: [
-            'Leonardo Pavarino',
-            'Michele Ferrero'
+            {
+                name: "Ismaele Bahti",
+                imageSrc: "/People/Areas/Corporate Training/Ismaele Bahti.png",
+            },
+            {
+                name: "Marco Canavero",
+                imageSrc: "/People/Areas/Corporate Training/Marco Canavero.png",
+            },
+            {
+                name: "Marco D'Andria",
+                imageSrc: "/People/Areas/Corporate Training/Marco DAndria.png",
+            },
+            {
+                name: "Arber Kryeziu",
+                imageSrc: "/People/Areas/Corporate Training/Arber Kryeziu.png",
+            },
+            {
+                name: "Vittorio Macripò",
+                imageSrc: "/People/Areas/Corporate Training/Vittorio Macripò.png",
+            },
+            {
+                name: "Paolo Molino",
+                imageSrc: "/People/Areas/Corporate Training/Paolo Molino.png",
+            },
+            {
+                name: "Stefano Negri Merlo",
+                imageSrc: "/People/Areas/Corporate Training/Stefano Negri Merlo.png",
+            },
+            {
+                name: "Gustavo Ramirez",
+                imageSrc: "/People/Areas/Corporate Training/Gustavo Ramirez.png",
+            },
+            {
+                name: "Sofia Russo",
+                imageSrc: "/People/Areas/Corporate Training/Sofia Russo.png",
+            },
+
         ]
     },
     {
@@ -92,10 +208,33 @@ const Teams: TeamProps[] = [
         longName: "Tutoring",
         description: "We put at the first place the networking between the students, organizing masterclasses and study groups open to everyone who wants to join",
         imageSrc: "/People/Resp/resp-tutoring.png",
-        managerName: "Orlando Zaccaria & Elena Favero",
+        managers: [
+            {
+                name: "Orlando Zaccaria",
+                imageSrc: "/People/Areas/Tutoring/Orlando Zaccaria.png",
+            }
+        ],
         members: [
-            'Matteo Sperti',
-            'Costanza Galante',
+            {
+                name: "Lorenzo Bonfanti Posta",
+                imageSrc: "/People/Areas/Tutoring/Lorenzo Bonfanti Posta.png",
+            },
+            {
+                name: "Alessia De Crescenzo",
+                imageSrc: "/People/Areas/Tutoring/Alessia De Crescenzo.png",
+            },
+            {
+                name: "Marco Donnarumma",
+                imageSrc: "/People/Areas/Tutoring/Marco Donnarumma.png",
+            },
+            {
+                name: "Leonardo Gallina",
+                imageSrc: "/People/Areas/Tutoring/Leonardo Gallina.png",
+            },
+            {
+                name: "Mattia Molinari",
+                imageSrc: "/People/Areas/Tutoring/Mattia Molinari.png",
+            },
         ]
     },
     {
@@ -103,11 +242,49 @@ const Teams: TeamProps[] = [
         longName: "Events",
         description: "We organize hackathons & competitions related to the areas of interest of the students community",
         imageSrc: "/People/Resp/resp-eventi.png",
-        managerName: "Sebastiano Guzzone",
+        managers: [
+            {
+                name: "Sebastiano Guzzone",
+                imageSrc: "/People/Areas/Events/Sebastiano Guzzone.png",
+            }
+        ],
         members: [
-            'Alessandro Cardinale',
-            'Davide Macario',
-            'Mattia Chiarle'
+            {
+                name: "Davide Arcolini",
+                imageSrc: "/People/Areas/Events/Davide Arcolini.png",
+            },
+            {
+                name: "Daniele De Rossi",
+                imageSrc: "/People/Areas/Events/Daniele De Rossi.png",
+            },
+            {
+                name: "Freddy Dongue Dongmo yann",
+                imageSrc: "/People/Areas/Events/Freddy Dongue Dongmo yann.png",
+            },
+            {
+                name: "Francesco Fusco",
+                imageSrc: "/People/Areas/Events/Francesco Fusco.png",
+            },
+            {
+                name: "Gabriele Iurlaro",
+                imageSrc: "/People/Areas/Events/Gabriele Iurlaro.png",
+            },
+            {
+                name: "Raffaele Negri",
+                imageSrc: "/People/Areas/Events/Raffaele Negri.png",
+            },
+            {
+                name: "Mina Nikolova",
+                imageSrc: "/People/Areas/Events/Mina Nikolova.png",
+            },
+            {
+                name: "Marco Pascarella",
+                imageSrc: "/People/Areas/Events/Marco Pascarella.png",
+            },
+            {
+                name: "Stefano Ravera",
+                imageSrc: "/People/Areas/Events/Stefano Ravera.png",
+            },
         ]
     },
     {
@@ -115,13 +292,41 @@ const Teams: TeamProps[] = [
         longName: "IT",
         description: "We manage IT-related projects for the chapter, such as our own website or the recruitment software",
         imageSrc: "/People/Resp/resp-it.png",
-        managerName: "Alberto Baroso & Francesco Baldini",
+        managers: [
+            {
+                name: "Alberto Baroso",
+                imageSrc: "/People/Areas/IT/Alberto Baroso.png",
+            },
+            {
+                name: "Francesco Baldini",
+                imageSrc: "/People/Areas/IT/Francesco Baldini.png",
+            }
+        ],
         members: [
-            'Manuel Colotti',
-            'Marco Pascarella',
-            'Marco Rosa Gobbo',
-            'Micol Rosini',
-            'Vito Palmisano'
+            {
+                name: "Pasquale Bianco",
+                imageSrc: "/People/Areas/IT/Pasquale Bianco.png",
+            },
+            {
+                name: "Damiano Bonaccorsi",
+                imageSrc: "/People/Areas/IT/Damiano Bonaccorsi.png",
+            },
+            {
+                name: "Marco De Luca",
+                imageSrc: "/People/Areas/IT/Marco De Luca.png",
+            },
+            {
+                name: "Elti Gjiriti",
+                imageSrc: "/People/Areas/IT/Elti Gjiriti.png",
+            },
+            {
+                name: "Matteo Mugnai",
+                imageSrc: "/People/Areas/IT/Matteo Mugnai.png",
+            },
+            {
+                name: "Marco Pappalardo",
+                imageSrc: "/People/Areas/IT/Marco Pappalardo.png",
+            }
         ]
     },
 ];
@@ -236,18 +441,30 @@ function TeamPopUp({ index, visible, disablePopUp }: { index: number, visible: B
                         <div className={styles.managerPopUpImageContainer}>
                             <img className={styles.managerImage} alt={`Coordinators of ${team.area} area`} src={team.imageSrc} width={'100px'} height={'100px'} />
                         </div>
-                        <h4 className={styles.managerName}>{team.managerName}</h4>
-                        <h6 className={styles.managerTitle}>Area manager{team.managerName.includes('&') ? 's' : ''}</h6>
+                        <div className={styles.managerName}>{team.managers[0].name + (team.managers.length > 1 ? ' &' : '')}</div>
+                        {team.managers.length > 1 && <div className={styles.managerName}>{team.managers[1].name}</div>}
+                        <h6 className={styles.managerTitle}>Area manager{team.managers.length > 1 ? 's' : ''}</h6>
+                        {team.managers.map(manager =>
+                            {return (manager.linkedIn ?
+                                <div className={styles.linkIcon}>
+                                    <a className={styles.linkIcon} href={manager.linkedIn}>
+                                        <img className={styles.linkIcon__icon} src={"/Icons/linkedin_logo_blue.png"} alt="LinkedIn Icon"/>
+                                    </a>
+                                </div>
+                                :
+                                <></>
+                            )}
+                        )}
                     </div>
                     <div className={styles.teamHeaderRight}>
-                        <h2 className={styles.teamTitle}>We are {team.area}</h2>
-                        <text className={styles.teamDescription}>{team.description}</text>
+                        <h2 className={styles.teamPopUp__Title}>We are {team.area}</h2>
+                        <text className={styles.teamPopUp__Description}>{team.description}</text>
                     </div>
                 </div>
                 <div className={styles.teamBody}>
                     {
-                        team.members.map((member: string) =>
-                            <TeamMember key={member} area={team.area} name={member} />
+                        team.members.map((member: TeamMemberProps) =>
+                            <TeamMember key={member.name} member={member} />
                         )
                     }
                 </div>
@@ -256,28 +473,48 @@ function TeamPopUp({ index, visible, disablePopUp }: { index: number, visible: B
     )
 }
 
-function TeamMember({ area, name }: TeamMemberProps) {
+function TeamMember({ member } : {member : TeamMemberProps}) {
+    const [imageExists, setImageExists] = useState(false);
+
+    useEffect(() => {
+        const img = new Image();
+        img.src = member.imageSrc || "";
+        img.onload = () => setImageExists(true);
+    }, []);
+
     return (
         <div className={styles.teamMember}>
             <div className={styles.memberPopUpImageContainer}>
-                <img className={styles.memberPopUpImage} src={`/People/Areas/${area}/${name}.png`} alt={name} loading="lazy" />
+                {imageExists ?
+                    <img className={styles.memberPopUpImage} src={member.imageSrc} alt={member.name} loading="lazy" />
+                :
+                    <img></img>
+                }
             </div>
-            <h5 className={styles.memberName}>{name}</h5>
+            <h5 className={styles.memberName}>{member.name}</h5>
             <h6 className={styles.memberTitle}>MEMBER</h6>
+            {member.linkedIn &&
+                <div className={styles.linkIcon}>
+                    <a className={styles.linkIcon} href={member.linkedIn}>
+                        <img className={styles.linkIcon__icon} src={"/Icons/linkedin_logo_blue.png"} alt="LinkedIn Icon"/>
+                    </a>
+                </div>
+            }
         </div>
     );
 }
 
 export interface TeamMemberProps {
-    area: string,
-    name: string
+    name: string,
+    imageSrc?: string,
+    linkedIn?: string,
 }
 
 export interface BoardMemberProps {
     name: string;
     role: string;
     imageSrc: string;
-    linkedIn: string;
+    linkedIn?: string;
     roleDescription: string;
 }
 
@@ -286,6 +523,6 @@ export interface TeamProps {
     longName: string;
     description: string;
     imageSrc: string;
-    managerName: string;
-    members: string[];
+    managers: TeamMemberProps[];
+    members: TeamMemberProps[];
 }

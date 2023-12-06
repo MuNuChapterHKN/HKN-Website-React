@@ -257,8 +257,9 @@
     transform: translate(-50%, -50%);
     width: 90vw;
     max-height: 90vh;
+    max-width: 1100px;
     color: #061E33;
-    background: #eee;
+    background: #E4E4E4;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -266,6 +267,22 @@
     justify-content: space-between;
     border-radius: 30px;
     padding: 40px;
+    z-index: 1000;
+
+    &__Title {
+        font-size: 3.5rem;
+        font-weight: 600;
+        @media (max-width: 510px) {
+            display: none;
+        }
+    }
+
+    &__Description {
+        font-size: 1.4rem;
+        @media (max-width: 710px) {
+            display: none;
+        }
+    }
 }
 
 .teamHeader {
@@ -273,21 +290,23 @@
 }
 
 .teamHeaderLeft {
-    flex: 1 0 30%;
+    flex: 1;
     display: inline-block;
 }
 
 .teamHeaderRight {
-    flex: 3 0 70%;
+    padding-left: 2rem;
 }
 
 .teamBody {
     display: flex;
+    width: 95%;
     flex-wrap: wrap;
+    margin-top: 1.5rem;
 }
 
 .teamTitle {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: 600;
     color: #061E33;
 }
@@ -302,14 +321,19 @@
     background: linear-gradient(135deg, #124877, #061E33 65%, #061E33);
     border-radius: 100%;
     overflow: hidden;
-    width: 100px;
-    height: 100px;
-    margin: 1rem;
+    width: 140px;
+    height: 140px;
+    margin-bottom: 0.5rem;
+
+    @media (max-width: 500px) {
+        width: 110px;
+        height: 110px;
+    }
 }
 
 .managerPopUpImageContainer {
-    width: 160px;
-    height: 160px;
+    width: 180px;
+    height: 180px;
 }
 
 .managerImage {
@@ -329,6 +353,8 @@
 }
 
 .managerName {
+    white-space: nowrap;
+    font-weight: 700;
     font-size: 1.6rem;
 }
 
@@ -336,6 +362,23 @@
     font-size: 1.2rem;
     text-transform: uppercase;
     font-weight: 300;
+}
+
+.linkIcon {
+    margin-top: 3px;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+
+    &__icon {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.linkIcon:hover {
+    transform: scale(1.08);
 }
 
 .memberTitle {
@@ -369,7 +412,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1000;
+    z-index: 100;
 }
 
 .arrowButtonLeft {
@@ -449,6 +492,7 @@
     }
 }
 
+
 @media (max-width: 900px) {
     .boardMember {
         flex: 1 0 45%;
@@ -478,4 +522,5 @@
     .teamsContainer {
         width: 90%;
     }
+
 }
