@@ -62,14 +62,12 @@ const Teams: TeamProps[] = [
             {
                 name: "Dario Gosmar",
                 imageSrc: "/People/Areas/Comms/Dario Gosmar.png",
-                linkedIn: "https://www.linkedin.com/in/dario-gosmar/",
             }
         ],
         members: [
             {
                 name: "Alessia Scardi",
                 imageSrc: "/People/Areas/Comms/Alessia Scardi.png",
-                linkedIn: "https://www.linkedin.com/in/alessia-scardi-ab863a247/",
             },
             {
                 name: "Antonio Capace",
@@ -485,11 +483,7 @@ function TeamMember({ member } : {member : TeamMemberProps}) {
     return (
         <div className={styles.teamMember}>
             <div className={styles.memberPopUpImageContainer}>
-                {imageExists ?
-                    <img className={styles.memberPopUpImage} src={member.imageSrc} alt={member.name} loading="lazy" />
-                :
-                    <img></img>
-                }
+                <img className={styles.memberPopUpImage} src={imageExists ? member.imageSrc : '/Icons/person.svg'} alt={member.name} loading="lazy" />
             </div>
             <h5 className={styles.memberName}>{member.name}</h5>
             <h6 className={styles.memberTitle}>MEMBER</h6>
