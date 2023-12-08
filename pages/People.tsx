@@ -121,8 +121,8 @@ const Teams: TeamProps[] = [
                 imageSrc: "/People/Areas/HR/Giacomo Maino.png",
             },
             {
-                name: "Rosario Francesco Cavalli",
-                imageSrc: "/People/Areas/HR/Rosario Francesco Cavalli.png",
+                name: "Rosario Francesco Cavelli",
+                imageSrc: "/People/Areas/HR/Rosario Francesco Cavelli.png",
             },
             {
                 name: "Stefano Cerutti",
