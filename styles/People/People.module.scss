@@ -313,7 +313,8 @@
 
 .teamMember {
     margin: 1rem;
-    flex: 1;
+    flex: 1 0 calc(20% - 10px); /* Adjust the width as needed, considering margins and paddings */
+    box-sizing: border-box;
 
     @media (max-width: 500px) {
         margin: 0.5rem;
