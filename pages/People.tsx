@@ -121,8 +121,8 @@ const Teams: TeamProps[] = [
                 imageSrc: "/People/Areas/HR/Giacomo Maino.png",
             },
             {
-                name: "Rosario Francesco Cavalli",
-                imageSrc: "/People/Areas/HR/Rosario Francesco Cavalli.png",
+                name: "Rosario Francesco Cavelli",
+                imageSrc: "/People/Areas/HR/Rosario Francesco Cavelli.png",
             },
             {
                 name: "Stefano Cerutti",
@@ -256,11 +256,11 @@ const Teams: TeamProps[] = [
                 imageSrc: "/People/Areas/Events/Daniele De Rossi.png",
             },
             {
-                name: "Freddy Dongue Dongmo yann",
-                imageSrc: "/People/Areas/Events/Freddy Dongue Dongmo yann.png",
+                name: "Freddy Dongue Dongmo Yann",
+                imageSrc: "/People/Areas/Events/Freddy Dongue Dongmo Yann.png",
             },
             {
-                name: "Francesco Fusco",
+                name: "Francesca Fusco",
                 imageSrc: "/People/Areas/Events/Francesco Fusco.png",
             },
             {
