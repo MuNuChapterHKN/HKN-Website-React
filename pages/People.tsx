@@ -344,6 +344,7 @@ export default function People() {
     const handleTeamMemberClick = (index: number) => {
         setTeamIndex(index);
         setTeamPopUpVisible(true);
+        document.body.style.overflow = 'hidden';
     }
 
     const handleHideBoardPopUp = () => {
@@ -352,6 +353,7 @@ export default function People() {
 
     const handleHideTeamPopUp = () => {
         setTeamPopUpVisible(false);
+        document.body.style.overflow = 'auto';
     }
 
     return (
