@@ -40,10 +40,10 @@
 }
 
 .joinUsTitleButton, .peopleVisionButton {
-    background-color: white;
+    /* background-color: white; */
     min-width: 230px;
-    border: none;
-    color: #061E33;
+    /* border: none; */
+    /* color: #061E33; */
 }
 
 .showMenu {
@@ -51,10 +51,10 @@
 }
 
 .aboutUsTitleButton,.galleryVisionButton {
-    background-color: transparent;
+    /* background-color: transparent; */
     min-width: 270px;
     margin-left: 10px;
-    border: solid 2px white
+    /* border: solid 2px white */
 }
 
 /* logo */
@@ -146,10 +146,10 @@
 }
 
 .readMeOriginsButton {
-    background-color: white;
+    /* background-color: white; */
     min-width: 230px;
-    border: none;
-    color: #061E33;
+    /* border: none; */
+    /* color: #061E33; */
 
 }
 
@@ -255,6 +255,7 @@
     background-color: #11283b;
     margin: 30px 0 10px 0;
     padding: 17px 80px;
+    color: white;
 }
 
 
