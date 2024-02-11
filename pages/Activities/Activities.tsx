@@ -92,7 +92,7 @@ export default function External() {
 
                                 <div className={styles.allActivities__group1__discover}>
                                     Discover
-                                    <RoundButton className={styles.allActivities__group__button} onClick={() => router.push('/Activities/Events')}>events</RoundButton>
+                                    <RoundButton className={`darkButton ${styles.allActivities__group__button}`} onClick={() => router.push('/Activities/Events')}>events</RoundButton>
                                 </div>
                             </div>
                             <div className={styles.allActivities__group2}>
@@ -116,7 +116,7 @@ export default function External() {
                                 <div className={styles.allActivities__group2__discover}>
                                     Discover
                                     {/*<RoundButton className={styles.allActivities__group__button} onClick={() => router.push('/Activities/Masterclasses')}>Masterclasses</RoundButton>*/}
-                                    <RoundButton className={styles.allActivities__group__button} onClick={() => {}}>COMING SOON</RoundButton>
+                                    <RoundButton className={`darkButton ${styles.allActivities__group__button}`} onClick={() => {}}>COMING SOON</RoundButton>
                                 </div>
                             </div>
                         </div>
@@ -143,7 +143,7 @@ export default function External() {
 
                                 <div className={styles.allActivities__group3__discover}>
                                     Discover
-                                    <RoundButton className={styles.allActivities__group__button} onClick={() => router.push('/Activities/StudyGroups')}>study
+                                    <RoundButton className={`darkButton ${styles.allActivities__group__button}`} onClick={() => router.push('/Activities/StudyGroups')}>study
                                                                                                                                                         groups</RoundButton>
                                 </div>
                             </div>
