@@ -35,7 +35,7 @@ export default function Events() {
                     }
                     {
                         latestEvent.link &&
-                        <RoundButton style={{color: "black"}} className={styles.latestEventButton} onClick={() => router.push(latestEvent.link)}>
+                        <RoundButton className={styles.latestEventButton} onClick={() => router.push(latestEvent.link)}>
                             DISCOVER MORE
                         </RoundButton>
                     }

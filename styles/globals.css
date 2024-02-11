@@ -31,15 +31,29 @@ a {
   display: none;
 }
 
-
 .roundButton {
-  color: white;
+  color: #061E33;
+  background-color: white;
   padding: 17px 25px;
   border-radius: 50px;
-  border-width: 0;
+  border: 3px solid white;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 18px;
+  transition: 0.2s;
+}
+
+.darkButton {
+  border: 3px solid #061E33;
+}
+
+.roundButton:hover {
+  color: white;
+  background: transparent;
+}
+
+.darkButton:hover {
+  color: #061E33;
 }
 
 .arrowButton {

@@ -154,7 +154,7 @@ export default function Home() {
                 <text className={styles.textAreYouReady}>ARE YOU READY?</text>
                 <text className={styles.textJoinOurChapter}>Join Our Chapter &</text>
                 <text className={styles.textJoinOurChapter}>Become The Next HKNuer</text>
-                <RoundButton className={styles.buttonJoinUs} onClick={() => router.push('/JoinUs')}>JOIN
+                <RoundButton className={`darkButton ${styles.buttonJoinUs}`} onClick={() => router.push('/JoinUs')}>JOIN
                     US</RoundButton>
             </div>
 

@@ -70,14 +70,15 @@
 
 .joinUsButton {
     padding: 10px 25px;
-    background-color: white;
-    color: #061E33;
+    /* background-color: white; */
+    /* color: #061E33; */
     font-family: Inter, sans-serif;
     font-size: 24px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
     text-transform: capitalize;
+    border-width: 4px;
 }
 
 .menuItem {
