@@ -79,7 +79,7 @@
 .awards {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     max-width: 1400px;
     height: 200px;
