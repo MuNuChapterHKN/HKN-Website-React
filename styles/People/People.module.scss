@@ -285,6 +285,10 @@
     }
 }
 
+.teamPopUp::-webkit-scrollbar {
+    width: 0;
+}
+
 .teamHeader {
     display: flex;
 }

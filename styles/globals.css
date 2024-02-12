@@ -21,7 +21,7 @@ html, body {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #fff; /* Color of the scroll thumb */
-  border-radius: 10px;
+  border-radius: 0 10px 10px 0;
 }
 
 /* Track */
