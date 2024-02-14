@@ -285,10 +285,6 @@
     }
 }
 
-.teamPopUp::-webkit-scrollbar {
-    width: 0;
-}
-
 .teamHeader {
     display: flex;
 }
@@ -497,7 +493,7 @@
     width: 90%;
     max-width: 1300px;
     border-radius: 40px;
-    background: linear-gradient(94.91deg, #FFFFFF 2.49%, #D7D5D5 104.22%);
+    background-color: white;
     color: #061E33;
     margin-top: 100px;
     margin-bottom:150px;

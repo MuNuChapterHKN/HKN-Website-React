@@ -47,7 +47,7 @@ export default function JoinUs() {
         if (awardIndex == 0) {
             setAwardIndex(awards.length - 1);
         } else {
-            setAwardIndex(awardIndex - 1);
+            setAwardIndex(mentionIndex - 1);
         }
     }
 

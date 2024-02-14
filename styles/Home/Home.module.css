@@ -79,7 +79,7 @@
 .awards {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     max-width: 1400px;
     height: 200px;
@@ -233,7 +233,7 @@
     max-width: 1450px;
     height: 50%;
     border-radius: 40px;
-    background: linear-gradient(94.91deg, #FFFFFF 2.49%, #D7D5D5 104.22%);
+    background: white;
     margin: 150px 0 100px 0;
 }
 
