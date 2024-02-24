@@ -23,11 +23,11 @@ jobs:
             VERSION=${GITHUB_REF#refs/tags/}
             TAGS="$DOCKER_IMAGE:$VERSION,$DOCKER_IMAGE:latest"
           elif [[ $GITHUB_REF == refs/heads/main ]]; then
-            VERSION=$(git rev-parse --short ${{ github.sha }})
+            VERSION=main-$(git rev-parse --short ${{ github.sha }})
             TAGS="$DOCKER_IMAGE:$VERSION,$DOCKER_IMAGE:latest"
           elif [[ $GITHUB_REF == refs/heads/develop ]]; then
             VERSION=dev-$(git rev-parse --short ${{ github.sha }})
-            TAGS="$DOCKER_IMAGE:$VERSION"
+            TAGS="$DOCKER_IMAGE:$VERSION,$DOCKER_IMAGE:test"
           else
             VERSION=$(git rev-parse --short ${{ github.sha }})
             TAGS="$DOCKER_IMAGE:$VERSION"
