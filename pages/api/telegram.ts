@@ -35,8 +35,8 @@ export async function sendMessage(message: string) {
 function readCounter(): number {
   try {
     if (isFileOlderThanNDays(filePath, 30)) return 0;
-    const data = fs.readFileSync(filePath, "utf-8");
-    return parseInt(data);
+    const data = parseInt(fs.readFileSync(filePath, "utf-8"));
+    return isNaN(data) ? 0 : data;
   } catch (error) {
     return 0; // File doesn't exist or couldn't be read
   }
