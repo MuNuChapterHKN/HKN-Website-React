@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { sendEmail } from "@/service/mailService";
-import { shareNewApply } from "./telegram";
+import { shareNewApply, sendApplyFailedMessage } from "./telegram";
 import formidable from 'formidable';
 
 const logger = require('pino')()
@@ -16,13 +16,13 @@ const schema = z.object({
 });
 
 function formatData(data: { [key: string]: string | number }) {
-    return `Nome: ${data.name}\nEmail: ${data.email}\nMedia Voti: ${data.average}\n` +
-        `Laurea: ${data.degree}\nCorso: ${data.course}\nArea: ${data.area}\nData: ${formatDate()}`;
+    return `Name: ${data.name}\nEmail: ${data.email}\nGrades average: ${data.average}\n` +
+        `Degree: ${data.degree}\nCourse: ${data.course}\nArea: ${data.area ?? '-'}\nData: ${formatDate()}`;
 }
 
-function handleError(e: unknown, type: string) {
-    logger.error(e)
+export function handleError(error: unknown, message: string) {
     // TODO: NOTIFY IT SUPPORT
+    logger.error(`${message}: ${error}`);
 }
 
 function flatten(fields: { any: [any] }) {
@@ -60,32 +60,47 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             // File validation
             const options = {
                 maxFiles: 2,
-                maxFileSize: 2097152,
+                maxFileSize: 1048576 * 5, // 5MB
                 filter: function ({ mimetype }: { mimetype: string }) {
                     return mimetype && mimetype === 'application/pdf';
-                }
+                },
             };
+
+            let fieldsSingle, parsedFields;
+            let form, fields, files;
+            
+            try {
+                // @ts-ignore
+                form = formidable(options);
+                [fields, files] = await form.parse(req);
+            } catch (e) {
+                handleError('Files validatation', 'Files too large or incorrect');
+                return res.status(413).json({
+                    message: "The files you provided were too large or not in the correct format. Try again.",
+                });
+            }
+
             // @ts-ignore
-            const form = formidable(options);
-            const [fields, files] = await form.parse(req);
-            // @ts-ignore
-            const fieldsSingle = flatten(fields);
+            fieldsSingle = flatten(fields);
             fieldsSingle.average = Number(fieldsSingle.average);
-            let parsedFields;
 
             // Field validation
             try {
                 parsedFields = schema.parse(fieldsSingle);
                 logger.info('Field validated')
             } catch (e) {
-                return res.status(404).json({
+                handleError('Field validatation', 'Incorrect data provided');
+                return res.status(422).json({
                     message: "The provided data was incorrect or invalid, try again",
                 });
             }
 
             // Send email to HR
             try {
-                const mailText = `Nuova apply ricevuta alle ${formatDate()}\n\n${formatData(parsedFields)}`;
+                const mailSubjectHR = `RECRUITMENT - ${parsedFields.name} SUBMISSION`;
+                const mailSubjectApplicant = `Your application was successful!`;
+                const mailBodyHR = `Nuova apply ricevuta alle ${formatDate()}\n\n${formatData(parsedFields)}`;
+                const mailBodyApplicant = `Thank you for applying to the Mu Nu Chapter of IEEE-Eta Kappa Nu!\nExpect to hear from us shortly. In the meanwhile here's the data we've received. If there is any error feel free to re-submit the application form.\n\n${formatData(parsedFields)}`;
                 const attachments = [
                     {
                         filename: 'Curriculum.pdf',
@@ -98,18 +113,23 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                         path: files.studyPlan[0].filepath,
                     }
                 ];
-                await sendEmail(parsedFields.name, mailText, attachments);
-                logger.info('Email sent')
+                await sendEmail(mailSubjectHR, mailBodyHR, process.env.HKN_RECRUITMENT_EMAIL, attachments);
+                logger.info('Apply Email sent to HR');
+                await sendEmail(mailSubjectApplicant, mailBodyApplicant, parsedFields.email, attachments);
+                logger.info('Confirmation Email sent to applicant');
+                
+                try {
+                    await shareNewApply(parsedFields.name);
+                    logger.info('Telegram notification sent');
+                } catch (e) {
+                    handleError(e, 'Telegram notification');
+                }
 
             } catch (e) {
-                handleError(e, 'Email');
+                const stage = "Confirmation Emails";
+                await sendApplyFailedMessage(stage, parsedFields.name);
+                handleError(e, stage);
             }
-
-            // try {
-            //     await shareNewApply(fields.name);
-            // } catch (e) {
-            //     handleError(e, 'Telegram notification');
-            // }
 
             res.status(200).send("");
         } else {
@@ -117,6 +137,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             res.status(405).end(`Method ${method} Not Allowed`);
         }
     } catch (err: any) {
+        handleError(err, 'Application');
         res.status(500).json({ message: err.message });
     }
 }
