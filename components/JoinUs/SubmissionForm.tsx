@@ -96,7 +96,19 @@ export default function SubmissionForm() {
             if (response.ok) {
                 setSubmitted(true);
             } else {
-                setSubmissionError("An error occurred, please try again later or send an email");
+                switch (response.status) {
+                    case 413:
+                        setSubmissionError("The files you provided were too large (Max 2MB) or not in the correct format. Try again.");
+                        break;
+                    case 422:
+                        setSubmissionError("The provided data was incorrect or invalid, try again");
+                        break;
+                    case 405:
+                        setSubmissionError("Something went wrong, refresh the page and try again");
+                        break;
+                    default:
+                        setSubmissionError("An error occurred, please try again later or send an email");
+                }   
             }
         } catch (error: any) {
             console.error(error)

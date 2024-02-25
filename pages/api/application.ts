@@ -60,25 +60,37 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             // File validation
             const options = {
                 maxFiles: 2,
-                maxFileSize: 2097152,
+                maxFileSize: 1048576 * 5, // 5MB
                 filter: function ({ mimetype }: { mimetype: string }) {
                     return mimetype && mimetype === 'application/pdf';
-                }
+                },
             };
+
+            let fieldsSingle, parsedFields;
+            let form, fields, files;
+            
+            try {
+                // @ts-ignore
+                form = formidable(options);
+                [fields, files] = await form.parse(req);
+            } catch (e) {
+                handleError('Files validatation', 'Files too large or incorrect');
+                return res.status(413).json({
+                    message: "The files you provided were too large or not in the correct format. Try again.",
+                });
+            }
+
             // @ts-ignore
-            const form = formidable(options);
-            const [fields, files] = await form.parse(req);
-            // @ts-ignore
-            const fieldsSingle = flatten(fields);
+            fieldsSingle = flatten(fields);
             fieldsSingle.average = Number(fieldsSingle.average);
-            let parsedFields;
 
             // Field validation
             try {
                 parsedFields = schema.parse(fieldsSingle);
                 logger.info('Field validated')
             } catch (e) {
-                return res.status(404).json({
+                handleError('Field validatation', 'Incorrect data provided');
+                return res.status(422).json({
                     message: "The provided data was incorrect or invalid, try again",
                 });
             }
