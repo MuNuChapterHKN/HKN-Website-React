@@ -5,6 +5,7 @@ import { handleError } from "./application";
 const token = process.env.TELEGRAM_TOKEN;
 const chatId = process.env.TELEGRAM_CHAT_ID;
 const filePath = process.env.COUNTER_FILE_PATH ?? "HKN_APPLY_COUNTER.txt";
+const threadId = process.env.TELEGRAM_THREAD_ID ?? 1;
 
 export async function shareNewApply(name: string) {
   let counter: number | undefined;
@@ -22,14 +23,13 @@ export async function shareNewApply(name: string) {
 }
 
 export async function sendApplyFailedMessage(stage: string, applicant: string) {
-  const bot = new TelegramBot(token, { polling: false });
   const message = `Apply failed ☠️\n\nStage: ${stage}\n Applicant: ${applicant}`;
-  await bot.sendMessage(chatId, message);
+  await sendMessage(message);
 }
 
 export async function sendMessage(message: string) {
   const bot = new TelegramBot(token, { polling: false });
-  await bot.sendMessage(chatId, message);
+  await bot.sendMessage(chatId, message, { message_thread_id: threadId });
 }
 
 function readCounter(): number {
