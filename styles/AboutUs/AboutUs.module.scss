@@ -227,6 +227,11 @@
   padding: 0 13vw;
   margin-top: 100px;
 
+  @media(max-width: 480px) {
+    flex-direction: column-reverse;
+    padding: 50px 0;
+  }
+
   &__element {
     display: flex;
     flex-direction: column;
@@ -234,6 +239,12 @@
     align-items: center;
     width: 20vw;
     padding: 40px 0;
+
+    @media(max-width: 480px) {
+      width: 100%;
+      font-size: 20px;
+      // padding: 20px 0;
+    }
   }
 
   &__number {
@@ -248,6 +259,11 @@
   &__container_img {
     width: 6vw;
     height: 6vw;
+
+    @media(max-width: 480px) {
+      width: 80px;
+      height: 80px;
+    }
   }
 
   &__img {
