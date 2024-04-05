@@ -96,6 +96,15 @@ export default function AboutUs() {
                         </div>
                         <div className={styles.vision__card__visions__col2}>Our chapter is part of an international network that brings together over 200 IEEE-HKN chapters, allowing members to network.</div>
                     </div>
+
+                    {/* <div className={styles.vision__card__citation_mobile}>
+                        <div className={styles.vision__card__bull__citation__text}>HKN IS THE PLACE WHERE I WAS ABLE TO IMPROVE MYSELF, ALLOWING ME TO GET INVOLVED AND BELIEVE IN MY POTENTIAL</div>
+                        <div className={styles.vision__card__bull__citation__author}>Matteo Alasio - Student Governor 2023</div>
+                        <div className={styles.vision__card__bull__citation__quotes}>
+                            <img src="/AboutUs/Vision/quotes.png" className={styles.vision__card__bull__citation__quotes__img} alt="quotes" />
+                        </div>
+                        <div className={styles.vision__card__bull__citation__halo}/>
+                    </div> */}
                 </div>
             </div>
 

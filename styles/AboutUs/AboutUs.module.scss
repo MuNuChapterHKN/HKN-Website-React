@@ -4,6 +4,10 @@
   width: 87%;
   margin-top: 70px;
 
+  @media(max-width: 480px) {
+    width: 100%;
+  }
+
   &__title {
     color: #FFF;
     font-size: 40px;
@@ -31,6 +35,11 @@
       font-size: 24px;
       font-weight: 600;
       text-transform: uppercase;
+
+      @media(max-width: 480px) {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
     }
 
     &__title {
@@ -38,6 +47,11 @@
       font-weight: 700;
       line-height: 100%; /* 67px */
       text-transform: capitalize;
+
+      @media(max-width: 480px) {
+        font-size: 32px;
+        margin-bottom: 18px;
+      }
     }
 
     &__description {
@@ -45,6 +59,10 @@
       font-family: Inter, sans-serif;
       font-size: 26px;
       font-weight: 400;
+
+      @media(max-width: 480px) {
+        font-size: 20px;
+      }
     }
 
     &__visions {
@@ -53,14 +71,27 @@
       grid-template-columns: min-content 1fr;
       gap: 13px;
 
+      @media(max-width: 480px) {
+        row-gap: 50px;
+      }
+
       &__col1 {
         grid-column: 1;
         align-items: center;
         display: flex;
 
+        @media(max-width: 480px) {
+          align-items: start;
+        }
+
         &__img {
           width: 80px;
           border-radius: 100%;
+
+          @media(max-width: 480px) {
+            width: 50px;
+            margin-top: 10px;
+          }
         }
       }
 
@@ -70,6 +101,10 @@
         font-size: 26px;
         font-weight: 400;
         padding-left: 10px;
+
+        @media(max-width: 480px) {
+          font-size: 20px;
+        }
       }
     }
 
@@ -84,6 +119,10 @@
 
       &__circle {
         width: 80%;
+
+        @media(max-width: 480px) {
+          width: 95%;
+        }
 
         &__img {
           object-fit: cover;
@@ -137,6 +176,10 @@
           border-radius: 100%;
           background: linear-gradient(145deg, rgba(187, 187, 187, 0.00) 28.64%, rgba(187, 187, 187, 0.32) 79.41%);
         }
+
+        @media(max-width: 480px) {
+          display: none;
+        }
       }
 
       @media(min-width: 2000px) {
@@ -144,12 +187,27 @@
       }
 
       @media(max-width: 1000px) {
-        visibility: collapse;
+        // visibility: collapse;
+      }
+
+      @media(max-width: 480px) {
+        position: relative;
+        width: 100%;
+        top: -2.2rem;
+        right: -2.2rem;
+        margin-bottom: -2rem;
       }
     }
 
     @media(min-width: 2000px) {
       padding: 3rem 30% 3rem 3rem;
+    }
+
+    @media(max-width: 480px) {
+      padding: 2.2rem;
+      border-radius: 0px;
+      background: linear-gradient(237.61deg, #FFFFFF 55.73%, rgba(187, 187, 187, 0.733333) 135.34%);
+      line-height: 24.2px;
     }
   }
 }
