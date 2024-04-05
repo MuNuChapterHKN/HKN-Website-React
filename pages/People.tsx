@@ -214,7 +214,7 @@ const Teams: TeamProps[] = [
         ],
         members: [
             {
-                name: "Lorenzo Bonfanti Posta",
+                name: "Lorenza Bonfanti Posta",
                 imageSrc: "/People/Areas/Tutoring/Lorenzo Bonfanti Posta.png",
             },
             {
