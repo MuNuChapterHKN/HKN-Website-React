@@ -211,10 +211,6 @@ const Teams: TeamProps[] = [
                 imageSrc: "/People/Areas/Corporate Training/Vittorio Macripò.png",
             },
             {
-                name: "Paolo Molino",
-                imageSrc: "/People/Areas/Corporate Training/Paolo Molino.png",
-            },
-            {
                 name: "Stefano Negri Merlo",
                 imageSrc: "/People/Areas/Corporate Training/Stefano Negri Merlo.png",
             },
@@ -225,6 +221,10 @@ const Teams: TeamProps[] = [
             {
                 name: "Sofia Russo",
                 imageSrc: "/People/Areas/Corporate Training/Sofia Russo.png",
+            },
+            {
+                name: "Paolo Molino",
+                imageSrc: "/People/Areas/Corporate Training/Paolo Molino.png",
             },
 
         ]
@@ -266,16 +266,16 @@ const Teams: TeamProps[] = [
                 imageSrc: "/People/Areas/Tutoring/Alessia De Crescenzo.png",
             },
             {
-                name: "Marco Donnarumma",
-                imageSrc: "/People/Areas/Tutoring/Marco Donnarumma.png",
-            },
-            {
                 name: "Leonardo Gallina",
                 imageSrc: "/People/Areas/Tutoring/Leonardo Gallina.png",
             },
             {
                 name: "Mattia Molinari",
                 imageSrc: "/People/Areas/Tutoring/Mattia Molinari.png",
+            },
+            {
+                name: "Marco Donnarumma",
+                imageSrc: "/People/Areas/Tutoring/Marco Donnarumma.png",
             },
         ]
     },
