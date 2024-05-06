@@ -78,8 +78,8 @@ const Teams: TeamProps[] = [
                 imageSrc: "/People/Areas/Comms/Vittoria Drago.png",
             },
             {
-                name: "Antonio Capace",
-                imageSrc: "/People/Areas/Comms/Antonio Capace.png",
+                name: "Antonio Capece",
+                imageSrc: "/People/Areas/Comms/Antonio Capece.png",
             },
             {
                 name: "Francesco Di Stefano",
@@ -130,7 +130,7 @@ const Teams: TeamProps[] = [
             },
             {
                 name: "Renata De Gennaro",
-                imageSrc: "Renata De Gennaro.png",
+                imageSrc: "/People/Areas/HR/Renata De Gennaro.png",
             },
             {
                 name: "Giacomo Maino",
@@ -192,7 +192,7 @@ const Teams: TeamProps[] = [
             },
             {
                 name: "Ismaele Bahti",
-                imageSrc: "/People/Areas/Corporate Training/Ismaele Bahti.png",
+                imageSrc: "/People/Areas/Corporate Training/Ismaele Bahati.png",
             },
             {
                 name: "Marco Canavero",
@@ -200,7 +200,7 @@ const Teams: TeamProps[] = [
             },
             {
                 name: "Marco D'Andria",
-                imageSrc: "/People/Areas/Corporate Training/Marco DAndria.png",
+                imageSrc: "/People/Areas/Corporate Training/Marco Dandria.png",
             },
             {
                 name: "Arber Kryeziu",
@@ -259,7 +259,7 @@ const Teams: TeamProps[] = [
             },
             {
                 name: "Lorenza Bonfanti Posta",
-                imageSrc: "/People/Areas/Tutoring/Lorenzo Bonfanti Posta.png",
+                imageSrc: "/People/Areas/Tutoring/Lorenza Bonfanti Posta.png",
             },
             {
                 name: "Alessia De Crescenzo",
