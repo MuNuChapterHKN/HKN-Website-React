@@ -70,8 +70,16 @@ const Teams: TeamProps[] = [
                 imageSrc: "/People/Areas/Comms/Alessia Scardi.png",
             },
             {
-                name: "Antonio Capace",
-                imageSrc: "/People/Areas/Comms/Antonio Capace.png",
+                name: "Riccardo Alfonso Cerrone",
+                imageSrc: "/People/Areas/Comms/Riccardo Alfonso Cerrone.png",
+            },
+            {
+                name: "Vittoria Drago",
+                imageSrc: "/People/Areas/Comms/Vittoria Drago.png",
+            },
+            {
+                name: "Antonio Capece",
+                imageSrc: "/People/Areas/Comms/Antonio Capece.png",
             },
             {
                 name: "Francesco Di Stefano",
@@ -116,6 +124,14 @@ const Teams: TeamProps[] = [
             }
         ],
         members: [
+            {
+                name: "Edoardo Demichelis",
+                imageSrc: "/People/Areas/HR/Edoardo Demichelis.png",
+            },
+            {
+                name: "Renata De Gennaro",
+                imageSrc: "/People/Areas/HR/Renata De Gennaro.png",
+            },
             {
                 name: "Giacomo Maino",
                 imageSrc: "/People/Areas/HR/Giacomo Maino.png",
@@ -163,8 +179,20 @@ const Teams: TeamProps[] = [
         ],
         members: [
             {
+                name: "Benedetta Perrone",
+                imageSrc: "/People/Areas/Corporate Training/Benedetta Perrone.png",
+            },
+            {
+                name: "Lorenzo Barbati",
+                imageSrc: "/People/Areas/Corporate Training/Lorenzo Barbati.png",
+            },
+            {
+                name: "Riccardo Bracciale",
+                imageSrc: "/People/Areas/Corporate Training/Riccardo Bracciale.png",
+            },
+            {
                 name: "Ismaele Bahti",
-                imageSrc: "/People/Areas/Corporate Training/Ismaele Bahti.png",
+                imageSrc: "/People/Areas/Corporate Training/Ismaele Bahati.png",
             },
             {
                 name: "Marco Canavero",
@@ -172,7 +200,7 @@ const Teams: TeamProps[] = [
             },
             {
                 name: "Marco D'Andria",
-                imageSrc: "/People/Areas/Corporate Training/Marco DAndria.png",
+                imageSrc: "/People/Areas/Corporate Training/Marco Dandria.png",
             },
             {
                 name: "Arber Kryeziu",
@@ -181,10 +209,6 @@ const Teams: TeamProps[] = [
             {
                 name: "Vittorio Macripò",
                 imageSrc: "/People/Areas/Corporate Training/Vittorio Macripò.png",
-            },
-            {
-                name: "Paolo Molino",
-                imageSrc: "/People/Areas/Corporate Training/Paolo Molino.png",
             },
             {
                 name: "Stefano Negri Merlo",
@@ -197,6 +221,10 @@ const Teams: TeamProps[] = [
             {
                 name: "Sofia Russo",
                 imageSrc: "/People/Areas/Corporate Training/Sofia Russo.png",
+            },
+            {
+                name: "Paolo Molino",
+                imageSrc: "/People/Areas/Corporate Training/Paolo Molino.png",
             },
 
         ]
@@ -214,16 +242,28 @@ const Teams: TeamProps[] = [
         ],
         members: [
             {
-                name: "Lorenzo Bonfanti Posta",
-                imageSrc: "/People/Areas/Tutoring/Lorenzo Bonfanti Posta.png",
+                name: "Eduard Antonovic Occhipinti",
+                imageSrc: "/People/Areas/Tutoring/Eduard Antonovic Occhipinti.png",
+            },
+            {
+                name: "Erik Scolaro",
+                imageSrc: "/People/Areas/Tutoring/Erik Scolaro.png",
+            },
+            {
+                name: "Jad Sarkis",
+                imageSrc: "/People/Areas/Tutoring/Jad Sarkis.png",
+            },
+            {
+                name: "Sabina Sarcuni",
+                imageSrc: "/People/Areas/Tutoring/Sabina Sarcuni.png",
+            },
+            {
+                name: "Lorenza Bonfanti Posta",
+                imageSrc: "/People/Areas/Tutoring/Lorenza Bonfanti Posta.png",
             },
             {
                 name: "Alessia De Crescenzo",
                 imageSrc: "/People/Areas/Tutoring/Alessia De Crescenzo.png",
-            },
-            {
-                name: "Marco Donnarumma",
-                imageSrc: "/People/Areas/Tutoring/Marco Donnarumma.png",
             },
             {
                 name: "Leonardo Gallina",
@@ -232,6 +272,10 @@ const Teams: TeamProps[] = [
             {
                 name: "Mattia Molinari",
                 imageSrc: "/People/Areas/Tutoring/Mattia Molinari.png",
+            },
+            {
+                name: "Marco Donnarumma",
+                imageSrc: "/People/Areas/Tutoring/Marco Donnarumma.png",
             },
         ]
     },
@@ -247,6 +291,18 @@ const Teams: TeamProps[] = [
             }
         ],
         members: [
+            {
+                name: "Alessio Melone",
+                imageSrc: "/People/Areas/Events/Alessio Melone.png",
+            },
+            {
+                name: "Elisa Misuri",
+                imageSrc: "/People/Areas/Events/Elisa Misuri.png",
+            },
+            {
+                name: "Nicolo Benso",
+                imageSrc: "/People/Areas/Events/Nicolo Benso.png",
+            },
             {
                 name: "Davide Arcolini",
                 imageSrc: "/People/Areas/Events/Davide Arcolini.png",
@@ -301,6 +357,22 @@ const Teams: TeamProps[] = [
             }
         ],
         members: [
+            {
+                name: "Alessio Menichinelli",
+                imageSrc: "/People/Areas/IT/Alessio Menichinelli.png",
+            },
+            {
+                name: "Filippo Goffredo",
+                imageSrc: "/People/Areas/IT/Filippo Goffredo.png",
+            },
+            {
+                name: "Isabella Lombardi",
+                imageSrc: "/People/Areas/IT/Isabella Lombardi.png",
+            },
+            {
+                name: "Massimo Aresca",
+                imageSrc: "/People/Areas/IT/Massimo Aresca.png",
+            },
             {
                 name: "Pasquale Bianco",
                 imageSrc: "/People/Areas/IT/Pasquale Bianco.png",

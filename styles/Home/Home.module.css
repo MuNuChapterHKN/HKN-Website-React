@@ -22,9 +22,17 @@
     font-weight: 600;
     font-size: 62px;
     line-height: 62px;
+    transform: translateY(19px);
 }
 
-.welcomeTo, .vision, .origins, .project {
+.welcomeTo {
+    font-weight: 400;
+    font-size: 24px;
+    margin: 15px 0 35px 0;
+    transform: translateY(13px);
+}
+
+.vision, .origins, .project {
     font-weight: 400;
     font-size: 24px;
     margin: 15px 0 35px 0;
