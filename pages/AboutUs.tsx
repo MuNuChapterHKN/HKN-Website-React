@@ -26,10 +26,11 @@ const sections: SectionAboutUsElement[] = [
     {
         title: "Mu Nu Chapter - Today",
         description: "Today, the Mu Nu chapter of IEEE-HKN at the Polytechnic University of Turin is a vibrant reality carried forward by an ever-growing group of students passionate about computer science, electronics, and much more. For us, HKN represents a new way to acquire skills and knowledge while at the same time nurturing our passions in an inspiring and stimulating environment.",
-        year: "2023",
+        year: new Date().getFullYear().toString(),
     },
 
 ]
+
 export default function AboutUs() {
     const sectionsRef = useRef<HTMLDivElement>(null);
     const [svgWidth, setSvgWidth] = useState(0);
