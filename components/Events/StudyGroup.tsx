@@ -1,32 +1,33 @@
-import {useRouter} from "next/router";
 import styles from "@/styles/components/Activities/StudyGroup.module.css";
 import RoundButton from "@/components/molecules/RoundButton";
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function StudyGroup({studyGroup, index}: {studyGroup: StudyGroupProps, index: number}) {
-    const router = useRouter();
 
     return (
         <div className={styles.card}>
-            <div className={styles.left}>
-                <text className={styles.name}>{studyGroup.name}</text>
+            <div className={styles.top}>
+                <h2 className={styles.name}>{studyGroup.name}</h2>
+            </div>
+            {/* <div className={styles.left}>
                 <Image className={styles.image} src={studyGroup.imageSrc} alt={studyGroup.name} width="0" height="0" sizes="100vw"/>
-            </div>
+            </div> */}
+            <div className={styles["card-body"]}>
 
-            <div className={styles.center}>
-                <div className={styles.location}>
-                    <img className={styles.iconLocation} src="/Activities/StudyGroups/clock.png" alt="Calendar"/>
-                    <text className={styles.textLocation}>{studyGroup.date}</text>
+                <div className={styles.center}>
+                    <text className={styles.description}>{studyGroup.description}</text>
                 </div>
-                <div className={styles.location}>
-                    <img className={styles.iconLocation} src="/Activities/StudyGroups/pin.png" alt="Calendar"/>
-                    <text className={styles.textLocation}>SALA C</text>
+                <div className={styles.right}>
+                    <div className={styles.location}>
+                        <img className={styles.iconLocation} src="/Activities/StudyGroups/clock.png" alt="Calendar"/>
+                        <text className={styles.textLocation}>{studyGroup.date}</text>
+                    </div>
+                    <div className={styles.location}>
+                        <img className={styles.iconLocation} src="/Activities/StudyGroups/pin.png" alt="Calendar"/>
+                        <text className={styles.textLocation}>SALA C</text>
+                    </div>
+                    <RoundButton className={`darkButton ${styles.buttonTelegram}`} onClick={() => window.open(studyGroup.link)}>TELEGRAM</RoundButton>
                 </div>
-                <RoundButton className={`darkButton ${styles.buttonTelegram}`} onClick={() => window.open(studyGroup.link)}>TELEGRAM</RoundButton>
-            </div>
-
-            <div className={styles.right}>
-                <text className={styles.description}>{studyGroup.description}</text>
             </div>
         </div>
     )
@@ -39,4 +40,5 @@ export interface StudyGroupProps {
     imageSrc: string;
     link: string;
     date: string;
+    location: string;
 }
