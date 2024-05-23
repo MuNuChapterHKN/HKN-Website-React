@@ -35,7 +35,7 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
                     About
                 </div>
 
-                <div className={`${isActive('/People/People') || isActive('/People/Alumni')? styles.active : styles.inactive} ${styles.menuItem}`}
+                <div className={`${isActive('/People/People') || isActive('/People/Alumni') || isActive('/People/Professionals') ? styles.active : styles.inactive} ${styles.menuItem}`}
                      onClick={() => router.push('/People/People')}>
                     <div className={styles.itemWrapper}>
                         People
@@ -44,7 +44,7 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
                     <ul className={styles.dropdown}>
                         <li className={isActive('/People/People') ? styles.activeDropdown : ''} onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleNavigate(e, '/People/People')}>People</li>
                         <li className={isActive('/People/Alumni') ? styles.activeDropdown : ''} onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleNavigate(e, '/People/Alumni')}>Alumni</li>
-                        {/*<li className={isActive('/Activities/Masterclasses') ? styles.activeDropdown  : ''} onClick={() => router.push('/Activities/Masterclasses')}>Masterclasses</li>*/}
+                        <li className={isActive('/People/Professionals') ? styles.activeDropdown : ''} onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleNavigate(e, '/People/Professionals')}>Professionals</li>
                     </ul>
                 </div>
 
