@@ -52,7 +52,7 @@ export default function External() {
                             <div className={styles.latestActivities__right__card__text}>
                                 <div className={styles.latestActivities__right__card__activities}>STUDY GROUP</div>
                                 <div className={styles.latestActivities__right__card__title}>Tutoring</div>
-                                <div className={styles.latestActivities__right__card__topic}>Discover our 2023 study groups</div>
+                                <div className={styles.latestActivities__right__card__topic}>Discover our 2024 study groups</div>
                             </div>
                         </a>
                     </div>
