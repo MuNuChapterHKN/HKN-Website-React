@@ -1,4 +1,4 @@
-import Layout from "../../components/Layout";
+import Layout from "../components/Layout";
 import styles from '@/styles/People/People.module.scss'
 import RoundButton from "@/components/molecules/RoundButton";
 import { useRouter } from "next/router";
