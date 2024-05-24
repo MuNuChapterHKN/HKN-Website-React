@@ -1,39 +1,17 @@
-import Layout from "../../components/Layout";
+import Layout from "@/components/Layout";
 import styles from '@/styles/People/Alumni.module.scss'
 import RoundButton from "@/components/molecules/RoundButton";
 import { useRouter } from "next/router";
-import {MouseEventHandler, useEffect, useState} from "react";
+import { useState } from "react";
 import ArrowButton from "@/components/molecules/ArrowButton";
-
-enum BadgeType {
-    Head,
-    Board,
-    Inducted
-}
+import Alumno, {Badge, BadgeType} from "@/components/People/Alumno";
 
 // Images should be in a 4:5 ratio
 const AlumniData : AlumnoProps[] = [
     {
         name: "Gustavo Nicoletti",
         imageSrc: "/People/Board/Gustavo Nicoletti Rosa.png",
-        linkedIn: "https://www.linkedin.com/in/gustavo-nicoletti-rosa/",
-        badges: [
-        {
-            type: BadgeType.Head,
-            year: 2021,
-            role: "Head of Communications"
-        },
-        {
-            type: BadgeType.Board,
-            year: 2020,
-            role: "Vice President"
-        },
-        {
-            type: BadgeType.Inducted,
-            year: 2019,
-            role: "Member of Comms"
-        }
-            ]
+        badges: []
     },
     {
         name: "Gustavo Nicoletti",
@@ -63,11 +41,6 @@ const AlumniData : AlumnoProps[] = [
         linkedIn: "https://www.linkedin.com/in/gustavo-nicoletti-rosa/",
         badges: [
             {
-                type: BadgeType.Head,
-                year: 2021,
-                role: "Head of Communications"
-            },
-            {
                 type: BadgeType.Board,
                 year: 2020,
                 role: "Vice President"
@@ -85,14 +58,20 @@ const AlumniData : AlumnoProps[] = [
         linkedIn: "https://www.linkedin.com/in/gustavo-nicoletti-rosa/",
         badges: [
             {
+                type: BadgeType.Inducted,
+                year: 2019,
+                role: "Member of Comms"
+            }
+        ]
+    },
+    {
+        name: "Gustavo Nicoletti",
+        imageSrc: "/People/Board/Gustavo Nicoletti Rosa.png",
+        badges: [
+            {
                 type: BadgeType.Head,
                 year: 2021,
                 role: "Head of Communications"
-            },
-            {
-                type: BadgeType.Board,
-                year: 2020,
-                role: "Vice President"
             },
             {
                 type: BadgeType.Inducted,
@@ -105,23 +84,6 @@ const AlumniData : AlumnoProps[] = [
         name: "Gustavo Nicoletti",
         imageSrc: "/People/Board/Gustavo Nicoletti Rosa.png",
         linkedIn: "https://www.linkedin.com/in/gustavo-nicoletti-rosa/",
-        badges: [
-            {
-                type: BadgeType.Head,
-                year: 2021,
-                role: "Head of Communications"
-            },
-            {
-                type: BadgeType.Board,
-                year: 2020,
-                role: "Vice President"
-            },
-            {
-                type: BadgeType.Inducted,
-                year: 2019,
-                role: "Member of Comms"
-            }
-        ]
     },
     {
         name: "Gustavo Nicoletti",
@@ -192,7 +154,11 @@ const AlumniData : AlumnoProps[] = [
 ];
 
 export default function Alumni() {
-    const router = useRouter();
+    const [activeId, setActiveId] = useState<number | null>(null);
+
+    const handleAlumnoClick = (id : number) => {
+        setActiveId(id === activeId ? null : id);
+    };
 
     return (
         <Layout triangles>
@@ -211,7 +177,7 @@ export default function Alumni() {
                 <text className={styles.alumniContainer__alumni}>Alumni</text>
                 <div className={styles.alumniContainer__grid}>
                     {AlumniData.map((al, index) => (
-                        <Alumno alumno={al} key={index} />
+                        <Alumno alumno={al} key={index} index={index} onClick={() => handleAlumnoClick(index)} active={index===activeId}/>
                     ))}
                 </div>
             </div>
@@ -220,29 +186,9 @@ export default function Alumni() {
     )
 }
 
-function Alumno({ alumno }: {
-    alumno: AlumnoProps,
-}) {
-    return (
-        <div className={styles.boardMember} onClick={() => {}}>
-            <div className={styles.boardImageContainer}>
-                <div className={styles.boardCard} />
-                <img className={styles.boardMemberImage} src={alumno.imageSrc} alt={alumno.name} loading="lazy" />
-            </div>
-            <text className={styles.boardMemberName}>{alumno.name}</text>
-        </div>
-    );
-}
-
 export interface AlumnoProps {
     name: string,
     imageSrc?: string,
     linkedIn?: string,
     badges?: Badge[],
-}
-
-interface Badge {
-    type: BadgeType,
-    year: number,
-    role: string,
 }

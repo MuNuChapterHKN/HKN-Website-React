@@ -59,3 +59,49 @@
 
   }
 }
+
+.alumniContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+
+  &__directory {
+    color: #F2F2F2;
+    text-align: center;
+    font-family: Outfit;
+    font-size: 25px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  &__alumni {
+    color: #F2F2F2;
+    text-align: center;
+    font-family: Outfit;
+    font-size: 58px;
+    font-weight: 600;
+    text-transform: capitalize;
+    line-height: 59px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 30px 10px 10px 10px;
+
+    @media (max-width: 1030px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 510px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
