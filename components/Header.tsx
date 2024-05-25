@@ -35,8 +35,17 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
                     About
                 </div>
 
-                <div className={isActive('/People') ? styles.active : styles.inactive} onClick={() => router.push('/People')}>
-                    People
+                <div className={`${isActive('/People/People') || isActive('/People/Alumni') || isActive('/People/Professionals') ? styles.active : styles.inactive} ${styles.menuItem}`}
+                     onClick={() => router.push('/People/People')}>
+                    <div className={styles.itemWrapper}>
+                        People
+                        <div className={styles.arrowDown}></div>
+                    </div>
+                    <ul className={styles.dropdown}>
+                        <li className={isActive('/People/People') ? styles.activeDropdown : ''} onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleNavigate(e, '/People/People')}>People</li>
+                        <li className={isActive('/People/Alumni') ? styles.activeDropdown : ''} onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleNavigate(e, '/People/Alumni')}>Alumni</li>
+                        <li className={isActive('/People/Professionals') ? styles.activeDropdown : ''} onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleNavigate(e, '/People/Professionals')}>Professionals</li>
+                    </ul>
                 </div>
 
                 <div className={`${isActive('/Activities/Activities') || isActive('/Activities/Events') || isActive('/Activities/StudyGroups') || isActive('/Activities/Masterclasses') ? styles.active : styles.inactive} ${styles.menuItem}`}
