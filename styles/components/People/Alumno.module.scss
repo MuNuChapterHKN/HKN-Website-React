@@ -1,0 +1,211 @@
+.alumno {
+    transition: background 0.3s ease-in-out, max-height 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 40px;
+    background: #DDDDDD;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-height: 301px;
+
+  &:hover {
+    background: #F7F7F7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  &__active {
+    transition: background 0.3s ease-in-out, max-height 0.4s ease-in-out;
+    max-height: 520px;
+    background: #F0F0F0;
+  }
+
+  &__linkedin {
+    transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+
+    &__active {
+      transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+      width: 26px;
+      height: 26px;
+      visibility: visible;
+    }
+
+    &__icon {
+      transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+      width: 0px;
+      height: 0px;
+
+      &__active {
+        transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+        width: 26px;
+        height: 26px;
+      }
+    }
+  }
+
+  &__imagecontainer {
+    transition: background-color 0.4s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 180px;
+    min-height: 180px;
+    border-radius: 180px;
+    position: relative;
+    margin: 0 1rem;
+    background: transparent;
+
+    &__active {
+      transition: background-color 0.4s ease-in-out;
+      background: #0B3151;
+    }
+
+    &__mask {
+      position: absolute;
+      top: -20px;
+      left: 0;
+      border-radius: 0 0 180px 180px;
+      overflow: hidden;
+      width: 100%;
+      height: calc(100% + 20px);
+    }
+
+    &__image {
+      transition: top 0.3s ease-in-out;
+      width: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 20px;
+      left: 0;
+      filter: grayscale(100%);
+
+      &__active {
+        transition: top 0.3s ease-in-out, filter 0.3s ease-in-out;
+        filter: grayscale(0%);
+        top: 5px;
+      }
+    }
+  }
+
+  &__name {
+    margin-top: 0.7rem;
+    color: #061E33;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &__badges {
+    transition: width 0.4s ease-in-out, background 0.4s ease-in-out, max-height 1s ease-in-out, height 0.4s ease-in-out;
+    display: flex;
+    max-height: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    flex-direction: row;
+    background:  #C0C0C0;
+    border-radius: 40px;
+    padding: 0 8px;
+    width: 50%;
+    min-width: fit-content;
+    overflow: hidden;
+
+    &__active {
+      transition: background 0.4s ease-in-out, width 0.4s ease-in-out, max-height 0.4s ease-in-out, height 0.4s ease-in-out;
+      display: flex;
+      max-height: 1000px;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background:  #D9D9D9;
+      border-radius: 30px;
+      padding: 7px 13px;
+      margin-top: 0.5rem;
+      overflow: hidden;
+    }
+  }
+
+  &__badgeRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0.4rem 0;
+
+    &__active {
+      justify-content: space-between;
+      margin: 0;
+      width: 100%;
+      margin: 0.4rem 0;
+    }
+
+    &__badge {
+      height: 28px;
+      width: 28px;
+      min-width: 28px;
+      min-height: 28px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      margin: 0 8px;
+
+      &__active {
+        align-self: flex-start;
+        margin: 0;
+      }
+
+      &__board {
+        background: #124877;
+        color: #F2F2F2;
+      }
+
+      &__head {
+        background: #375171;
+        color: #F2F2F2;
+      }
+
+      &__inducted {
+        background: #4986BB;
+        color: #F2F2F2;
+
+      }
+    }
+
+    &__textcol {
+      display: flex;
+      flex-direction: column;
+      flex:1;
+      color: #061E33;
+      margin: 0 0 0 10px;
+    }
+
+    &__title {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    &__role {
+      width: 90px;
+      font-weight: 400;
+      overflow: hidden;
+    }
+
+    &__year {
+      font-size: 14px;
+      align-self: end;
+      color: #061E33;
+      font-weight: 700;
+    }
+  }
+}
