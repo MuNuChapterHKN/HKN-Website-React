@@ -1,4 +1,4 @@
-import Layout from "../../components/Layout";
+import Layout from "@/components/Layout";
 import styles from '@/styles/People/Professionals.module.scss'
 import { useRouter } from "next/router";
 import Image from 'next/image';
