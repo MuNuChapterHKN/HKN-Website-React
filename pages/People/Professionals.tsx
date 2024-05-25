@@ -3,12 +3,6 @@ import styles from '@/styles/People/Professionals.module.scss'
 import { useRouter } from "next/router";
 import Image from 'next/image';
 
-enum BadgeType {
-    Head,
-    Board,
-    Inducted
-}
-
 // Images should be in a 4:5 ratio
 const ProfessionalsData : ProfessionalProps[] = [
     {
@@ -45,41 +39,42 @@ const ProfessionalsData : ProfessionalProps[] = [
     },
 ];
 
-const awards: string[] = [
-    "/Home/outstanding-2022-color.png",
-    "/Home/outstanding-2021-color.png",
-    "/Home/outstanding-2020-color.png",
-    "/Home/outstanding-2019-color.png",
-];
-
 export default function Professionals() {
-    const router = useRouter();
-  
+
     return (
         <Layout triangles>
-            <div className={styles.awardsCard}>
-                {/*TODO: image carousel*/}
-                <div className={styles.awardsLeft}>
-                    <Image className={styles.awardImage} src={'/People/Board/Claudio Fantasia.png'} alt="Faculty Advisor" width="0" height="0" sizes="100vw"/>
+
+            <div className={styles.faculty}>
+                <div className={styles.faculty__left}>
+                    <div className={styles.faculty__left__imageContainer}>
+                        <div className={styles.faculty__left__imageContainer__mask}>
+                            <Image className={styles.faculty__left__imageContainer__image} src={'/People/Board/Francesco Anzoino.png'}
+                                   alt="Faculty Advisor" width="0" height="0" sizes="100vw"/>
+                        </div>
+                    </div>
+                    <text className={styles.faculty__left__name}>Paolo Montuschi</text>
+                    <text className={styles.faculty__left__role}>Associate professor</text>
                 </div>
-                <div className={styles.awardsRight}>
-                    <text className={styles.awardsText}>SOMETHING</text>
-                    <text className={styles.awardsTitle}>FACULTY ADVISOR</text>
-                    <text className={styles.awards}>LOREM IPSUM ... The IEEE-Eta Kappa Nu HKN PoliTo 
-                                                chapter was awarded among 253 selected chapters
-                                                 around the world, alongside universities such as 
-                                                 the Massachusetts Institute of Technology (MIT) 
-                                                 and UCLA.
+
+                <div className={styles.faculty__right}>
+                    <text className={styles.faculty__right__subtitle}>SOMETHING</text>
+                    <text className={styles.faculty__right__title}>FACULTY ADVISOR</text>
+                    <text className={styles.faculty__right__text}>LOREM IPSUM ... The IEEE-Eta Kappa Nu HKN PoliTo
+                        chapter was awarded among 253 selected chapters
+                        around the world, alongside universities such as
+                        the Massachusetts Institute of Technology (MIT)
+                        and UCLA.
                     </text>
                 </div>
             </div>
 
             <div className={styles.professionalsContainer}>
-                <text className={styles.professionalsContainer__directory}>Directory</text>
-                <text className={styles.professionalsContainer__professionals}>Professionals</text>
-                <div className={styles.professionalsContainerProfessional__grid}>
+                <text className={styles.professionalsContainer__professionals}>professionals</text>
+                <text className={styles.professionalsContainer__inducted}>Inducted Members</text>
+
+                <div className={styles.professionalsContainer__grid}>
                     {ProfessionalsData.map((al, index) => (
-                        <Professional professional={al} key={index} />
+                        <Professional professional={al} key={index}/>
                     ))}
                 </div>
             </div>
@@ -88,16 +83,15 @@ export default function Professionals() {
     )
 }
 
-function Professional({ professional }: {
+function Professional({professional}: {
     professional: ProfessionalProps,
 }) {
     return (
-        <div className={styles.boardMember} onClick={() => {}}>
-            <div className={styles.boardImageContainer}>
-                <div className={styles.boardCard} />
-                <img className={styles.boardMemberImage} src={professional.imageSrc} alt={professional.name} loading="lazy" />
+        <div className={styles.professional} onClick={() => {}}>
+            <div className={styles.professional__imageContainer}>
+                <img className={styles.professional__imageContainer__image} src={professional.imageSrc} alt={professional.name} loading="lazy" />
             </div>
-            <text className={styles.boardMemberName}>{professional.name}</text>
+            <text className={styles.professional__name}>{professional.name}</text>
         </div>
     );
 }
