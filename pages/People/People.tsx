@@ -62,7 +62,6 @@ const Teams: TeamProps[] = [
             {
                 name: "Dario Gosmar",
                 imageSrc: "/People/Areas/Comms/Dario Gosmar.png",
-                linkedIn: "https://www.linkedin.com/in/dario-gosmar/",
             }
         ],
         members: [
@@ -177,7 +176,6 @@ const Teams: TeamProps[] = [
             {
                 name: "Benedetta Perrone",
                 imageSrc: "/People/Areas/Corporate Training/Benedetta Perrone.png",
-                linkedIn: "https://www.linkedin.com/in/benedetta-perrone-1b1b1b1b/",
             },
             {
                 name: "Lorenzo Barbati",
@@ -339,19 +337,16 @@ const Teams: TeamProps[] = [
             {
                 name: "Alberto Baroso",
                 imageSrc: "/People/Areas/IT/Alberto Baroso.png",
-                linkedIn: "https://www.linkedin.com/in/alberto-baroso-1b1b1b1b/",
             },
             {
                 name: "Francesco Baldini",
                 imageSrc: "/People/Areas/IT/Francesco Baldini.png",
-                linkedIn: "https://www.linkedin.com/in/francesco-baldini-1b1b1b1b/",
             }
         ],
         members: [
             {
                 name: "Alessio Menichinelli",
                 imageSrc: "/People/Areas/IT/Alessio Menichinelli.png",
-                linkedIn: "https://www.linkedin.com/in/alessio-menichinelli-1b1b1b1b/",
             },
             {
                 name: "Filippo Goffredo",
@@ -372,7 +367,6 @@ const Teams: TeamProps[] = [
             {
                 name: "Damiano Bonaccorsi",
                 imageSrc: "/People/Areas/IT/Damiano Bonaccorsi.png",
-                linkedIn: "https://www.linkedin.com/in/damiano-bonaccorsi-1b1b1b1b/",
             },
             {
                 name: "Marco De Luca",
