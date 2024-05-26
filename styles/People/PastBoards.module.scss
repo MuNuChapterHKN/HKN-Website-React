@@ -1,0 +1,83 @@
+.title {
+  color: #F2F2F2;
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 60px;
+  margin: 80px 0 30px 0;
+}
+
+.pastboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(120deg, #FFFFFF 0%, #E4E4E4 60%, #D1D1D1 100%);
+  border-radius: 30px;
+  margin: 30px 0;
+  padding: 30px;
+
+  &__year {
+    color: #0B3151;
+    font-weight: 700;
+    font-size: 45px;
+    line-height: 52px;
+  }
+
+  &__members {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin: 20px 0 0 0;
+  }
+}
+
+
+.boardMember {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0 0 0;
+
+    &__imageContainer {
+        width: 220px;
+        height: 230px;
+        border-radius: 20px;
+        background: #B8BBBF;
+        position: relative;
+
+        &__mask {
+          position:absolute;
+            top: -60px;
+            left: 0;
+            width: 100%;
+          height: calc(100% + 60px);
+          overflow: hidden;
+          border-radius: 0 0 20px 20px;
+        }
+
+        &__image {
+          position: absolute;
+            top: 0;
+            left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+            filter: grayscale(100%);
+        }
+
+    }
+
+    &__name {
+        color: #0B3151;
+        font-weight: 600;
+        font-size: 25px;
+        margin: 10px 0 0 0;
+    }
+
+    &__role {
+        color: #0B3151;
+        font-weight: 500;
+        font-size: 15px;
+      line-height: 15px;
+      text-transform: uppercase;
+    }
+}

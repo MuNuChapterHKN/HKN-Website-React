@@ -257,7 +257,7 @@
     left: 50vw;
     transform: translate(-50%, -50%);
     width: 90vw;
-    max-height: 90vh;
+    max-height: 97vh;
     max-width: 1100px;
     color: #061E33;
     background: #E4E4E4;
@@ -267,7 +267,7 @@
     overflow-y: scroll;
     justify-content: space-between;
     border-radius: 30px;
-    padding: 40px;
+    padding: 30px 40px;
     z-index: 1000;
 
     &__Title {
@@ -291,19 +291,70 @@
 }
 
 .teamHeaderLeft {
-    flex: 1;
     display: inline-block;
+    min-width: 220px;
 }
 
 .teamHeaderRight {
     padding-left: 2rem;
 }
 
-.teamBody {
+$member-width: 160px;
+$member-height: 215px;
+$member-margin: 30px;
+
+.teamContainer {
+    position: relative;
+    margin: 20px 0 0 0;
+    width: calc(((($member-margin * 2) + $member-width) * 4) + 30px);
+    height: calc(2 * $member-height);
+    overflow: hidden;
+
+    &__button {
+        position: absolute;
+        top: 45%;
+        z-index: 100;
+        background: #061E33;
+
+        &__left {
+            left: 0;
+            transform: translate(0, -50%);
+        }
+
+        &__right {
+            right: 0;
+            transform: translate(-10px, -50%);
+        }
+    }
+
+    @media (max-width: 1050px) {
+        width: calc(((($member-margin * 2) + $member-width) * 3) + 30px);
+    }
+    @media (max-width: 800px) {
+        width: calc(((($member-margin * 2) + $member-width) * 2) + 30px);
+    }
+}
+
+.teamRow, .teamRowTwo {
+    transition: left 0.8s ease-in-out;
+    height: $member-height;
+    overflow: hidden;
     display: flex;
-    width: 95%;
-    flex-wrap: wrap;
-    margin-top: 1.5rem;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    left: 30px;
+}
+
+.teamRowTwo {
+    top: $member-height;
+}
+
+.managerTitleLink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .teamTitle {
@@ -313,13 +364,13 @@
 }
 
 .teamMember {
-    margin: 1rem;
-    flex: 1 0 calc(20% - 10px); /* Adjust the width as needed, considering margins and paddings */
-    box-sizing: border-box;
-
-    @media (max-width: 500px) {
-        margin: 0.5rem;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: $member-width;
+    min-width: $member-width;
+    min-height: $member-height;
+    margin: 0 $member-margin;
 }
 
 .managerPopUpImageContainer,
@@ -327,8 +378,8 @@
     background: linear-gradient(135deg, #124877, #061E33 65%, #061E33);
     border-radius: 100%;
     overflow: hidden;
-    width: 120px;
-    height: 120px;
+    width: 115px;
+    height: 115px;
     margin-bottom: 0.5rem;
 
     @media (max-width: 500px) {
@@ -348,8 +399,8 @@
 }
 
 .managerPopUpImageContainer {
-    width: 180px;
-    height: 180px;
+    width: 170px;
+    height: 170px;
 }
 
 .managerImage {
@@ -371,20 +422,28 @@
 .managerName {
     white-space: nowrap;
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
 }
 
 .managerTitle {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     text-transform: uppercase;
     font-weight: 300;
 }
 
+.managersLinkedin {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0 0 0 12px;
+}
+
 .linkIcon {
-    margin-top: 3px;
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
     cursor: pointer;
+    margin: 0 7px 0 0;
 
     &__icon {
         width: 100%;
@@ -394,7 +453,7 @@
 }
 
 .linkIcon:hover {
-    transform: scale(1.08);
+    transform: scale(1.07);
 }
 
 .memberTitle {
@@ -407,8 +466,28 @@
     }
 }
 
+.memberRoleLink {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+
+    &__linkIcon {
+        margin: 0 0 0 6px;
+        width: 18px;
+        height: 18px;
+        cursor: pointer;
+
+        :hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
 .memberName {
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1.05rem;
 
     @media (max-width: 400px) {
         font-size: 0.8rem;
