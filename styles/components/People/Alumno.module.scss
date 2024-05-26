@@ -11,6 +11,7 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-height: 301px;
+  cursor: pointer;
 
   &:hover {
     background: #F7F7F7;
@@ -30,10 +31,16 @@
     visibility: hidden;
 
     &__active {
-      transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+      transition: height 0.3s ease-in-out, width 0.3s ease-in-out, transform 0.3s;
       width: 26px;
       height: 26px;
       visibility: visible;
+      transform: scale(1);
+
+      &:hover {
+        transition: transform 0.3s;
+        transform: scale(1.1);
+      }
     }
 
     &__icon {

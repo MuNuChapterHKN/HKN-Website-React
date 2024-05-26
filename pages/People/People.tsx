@@ -1,8 +1,8 @@
-import Layout from "../components/Layout";
+import Layout from "../../components/Layout";
 import styles from '@/styles/People/People.module.scss'
 import RoundButton from "@/components/molecules/RoundButton";
 import { useRouter } from "next/router";
-import {MouseEventHandler, useEffect, useState} from "react";
+import React, {MouseEventHandler, useEffect, useRef, useState} from "react";
 import ArrowButton from "@/components/molecules/ArrowButton";
 
 // Images should be in a 4:5 ratio
@@ -62,6 +62,7 @@ const Teams: TeamProps[] = [
             {
                 name: "Dario Gosmar",
                 imageSrc: "/People/Areas/Comms/Dario Gosmar.png",
+                linkedIn: "https://www.linkedin.com/in/dario-gosmar/",
             }
         ],
         members: [
@@ -91,11 +92,9 @@ const Teams: TeamProps[] = [
             },
             {
                 name: "Marco Rosa Gobbo",
-                imageSrc: "/People/Areas/Comms/Marco Rosa Gobbo.png",
             },
             {
                 name: "Lucrezia Marcovaldi",
-                imageSrc: "/People/Areas/Comms/Lucrezia Marcovaldi.png",
             },
             {
                 name: "Alex Martinelli",
@@ -103,7 +102,6 @@ const Teams: TeamProps[] = [
             },
             {
                 name: "Andrea Minardi",
-                imageSrc: "/People/Areas/Comms/Andrea Minardi.png",
             },
 
         ]
@@ -138,11 +136,9 @@ const Teams: TeamProps[] = [
             },
             {
                 name: "Rosario Francesco Cavelli",
-                imageSrc: "/People/Areas/HR/Rosario Francesco Cavelli.png",
             },
             {
                 name: "Stefano Cerutti",
-                imageSrc: "/People/Areas/HR/Stefano Cerutti.png",
             },
             {
                 name: "Edoardo Colella",
@@ -181,6 +177,7 @@ const Teams: TeamProps[] = [
             {
                 name: "Benedetta Perrone",
                 imageSrc: "/People/Areas/Corporate Training/Benedetta Perrone.png",
+                linkedIn: "https://www.linkedin.com/in/benedetta-perrone-1b1b1b1b/",
             },
             {
                 name: "Lorenzo Barbati",
@@ -208,11 +205,9 @@ const Teams: TeamProps[] = [
             },
             {
                 name: "Vittorio Macripò",
-                imageSrc: "/People/Areas/Corporate Training/Vittorio Macripò.png",
             },
             {
                 name: "Stefano Negri Merlo",
-                imageSrc: "/People/Areas/Corporate Training/Stefano Negri Merlo.png",
             },
             {
                 name: "Gustavo Ramirez",
@@ -305,7 +300,6 @@ const Teams: TeamProps[] = [
             },
             {
                 name: "Davide Arcolini",
-                imageSrc: "/People/Areas/Events/Davide Arcolini.png",
             },
             {
                 name: "Daniele De Rossi",
@@ -313,15 +307,12 @@ const Teams: TeamProps[] = [
             },
             {
                 name: "Freddy Dongue Dongmo Yann",
-                imageSrc: "/People/Areas/Events/Freddy Dongue Dongmo Yann.png",
             },
             {
                 name: "Francesca Fusco",
-                imageSrc: "/People/Areas/Events/Francesco Fusco.png",
             },
             {
                 name: "Gabriele Iurlaro",
-                imageSrc: "/People/Areas/Events/Gabriele Iurlaro.png",
             },
             {
                 name: "Raffaele Negri",
@@ -329,11 +320,9 @@ const Teams: TeamProps[] = [
             },
             {
                 name: "Mina Nikolova",
-                imageSrc: "/People/Areas/Events/Mina Nikolova.png",
             },
             {
                 name: "Marco Pascarella",
-                imageSrc: "/People/Areas/Events/Marco Pascarella.png",
             },
             {
                 name: "Stefano Ravera",
@@ -350,16 +339,19 @@ const Teams: TeamProps[] = [
             {
                 name: "Alberto Baroso",
                 imageSrc: "/People/Areas/IT/Alberto Baroso.png",
+                linkedIn: "https://www.linkedin.com/in/alberto-baroso-1b1b1b1b/",
             },
             {
                 name: "Francesco Baldini",
                 imageSrc: "/People/Areas/IT/Francesco Baldini.png",
+                linkedIn: "https://www.linkedin.com/in/francesco-baldini-1b1b1b1b/",
             }
         ],
         members: [
             {
                 name: "Alessio Menichinelli",
                 imageSrc: "/People/Areas/IT/Alessio Menichinelli.png",
+                linkedIn: "https://www.linkedin.com/in/alessio-menichinelli-1b1b1b1b/",
             },
             {
                 name: "Filippo Goffredo",
@@ -380,10 +372,10 @@ const Teams: TeamProps[] = [
             {
                 name: "Damiano Bonaccorsi",
                 imageSrc: "/People/Areas/IT/Damiano Bonaccorsi.png",
+                linkedIn: "https://www.linkedin.com/in/damiano-bonaccorsi-1b1b1b1b/",
             },
             {
                 name: "Marco De Luca",
-                imageSrc: "/People/Areas/IT/Marco De Luca.png",
             },
             {
                 name: "Elti Gjiriti",
@@ -395,7 +387,6 @@ const Teams: TeamProps[] = [
             },
             {
                 name: "Marco Pappalardo",
-                imageSrc: "/People/Areas/IT/Marco Pappalardo.png",
             }
         ]
     },
@@ -490,7 +481,7 @@ function BoardMember({ boardMemberProps, index, onClick }: {
     );
 }
 
-function Team({ teamProps, onClick }: { teamProps: TeamProps, onClick: MouseEventHandler<HTMLDivElement> }) {
+function Team({ teamProps, onClick }: { teamProps: TeamProps, onClick: () => void }) {
     return (
         <div className={styles.team} onClick={onClick}>
             <img className={styles.teamRespImage} src={teamProps.imageSrc} alt={teamProps.imageSrc} />
@@ -503,49 +494,163 @@ function Team({ teamProps, onClick }: { teamProps: TeamProps, onClick: MouseEven
     )
 }
 
-function TeamPopUp({ index, visible, disablePopUp }: { index: number, visible: Boolean, disablePopUp: MouseEventHandler<HTMLDivElement> }) {
-    const team = Teams[index];
+function TeamPopUp({ index, visible, disablePopUp }: { index: number, visible: Boolean, disablePopUp: () => void }) {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const contentRefFirst = useRef<HTMLDivElement>(null);
+    const contentRefSecond = useRef<HTMLDivElement>(null);
+    const [pageIndex, setPageIndex] = useState(0);
+    const [numPages, setNumPages] = useState(0);
+    const [firstRow, setFirstRow] = useState<TeamMemberProps[]>([]);
+    const [secondRow, setSecondRow] = useState<TeamMemberProps[]>([]);
+    const [team, setTeam] = useState(Teams[index]);
+    const [numPeople, setNumPeople] = useState(4);
+
+    useEffect(() => {
+        let newTeam = Teams[index];
+        let fRow: TeamMemberProps[] = [];
+        let sRow: TeamMemberProps[] = [];
+        const memberswithpictures = newTeam.members.filter(member => member.imageSrc !== undefined);
+        const memberswithoutpictures = newTeam.members.filter(member => member.imageSrc === undefined);
+
+        const sortedMembers = [...memberswithpictures, ...memberswithoutpictures];
+
+        if (newTeam.members.length <= numPeople) {
+            fRow = sortedMembers;
+        } else if (newTeam.members.length <= numPeople*2) {
+            fRow = sortedMembers.slice(0, numPeople);
+            sRow = sortedMembers.slice(numPeople);
+        } else {
+            let n = Math.ceil(sortedMembers.length / 2);
+            if (memberswithpictures.length > numPeople*2) {
+                fRow = memberswithpictures.slice(0, Math.ceil(memberswithpictures.length / 2));
+                sRow = memberswithpictures.slice(Math.ceil(memberswithpictures.length / 2));
+                let l = fRow.length;
+                fRow = [...fRow, ...memberswithoutpictures.slice(0, n - l)];
+                sRow = [...sRow, ...memberswithoutpictures.slice(n - l)];
+            } else {
+                fRow = memberswithpictures.slice(0, numPeople);
+                sRow = memberswithpictures.slice(numPeople);
+                let l = fRow.length;
+                fRow = [...fRow, ...memberswithoutpictures.slice(0, n - l)];
+                sRow = [...sRow, ...memberswithoutpictures.slice(n - l)];
+            }
+        }
+
+        if (contentRefFirst.current && contentRefSecond.current) {
+            contentRefFirst.current.style.left = `30px`;
+            contentRefSecond.current.style.left = `30px`;
+        }
+        setTeam(newTeam);
+        setFirstRow(fRow);
+        setSecondRow(sRow);
+        setNumPages(Math.ceil(fRow.length / numPeople));
+        setPageIndex(0);
+    }, [index, visible, numPeople]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth > 1050) {
+                setNumPeople(4);
+            } else if (window.innerWidth > 800) {
+                setNumPeople(3);
+            } else {
+                setNumPeople(2);
+            }
+        };
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Clean up the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const handleLeftClick = (event: React.MouseEvent<Element, MouseEvent>) => {
+        event.preventDefault();
+        event.stopPropagation();
+        if (contentRefFirst.current && contentRefSecond.current && containerRef.current) {
+            contentRefFirst.current.style.left = `${30 - ((containerRef.current.offsetWidth - 30) * (pageIndex - 1))}px`;
+            contentRefSecond.current.style.left = `${30 - ((containerRef.current.offsetWidth - 30) * (pageIndex - 1))}px`;
+            setPageIndex(pageIndex - 1);
+        }
+    }
+
+    const handleRightClick = (event: React.MouseEvent<Element, MouseEvent>) => {
+        event.preventDefault();
+        event.stopPropagation();
+        if (contentRefFirst.current && contentRefSecond.current && containerRef.current) {
+            contentRefFirst.current.style.left = `${30 - ((containerRef.current.offsetWidth - 30) * (pageIndex + 1))}px`;
+            contentRefSecond.current.style.left = `${30 - ((containerRef.current.offsetWidth - 30) * (pageIndex + 1))}px`;
+            setPageIndex(pageIndex + 1);
+        }
+    }
+
+    const handleClosePupUp = () => {
+        if (contentRefFirst.current && contentRefSecond.current) {
+            contentRefFirst.current.style.left = `30px`;
+            contentRefSecond.current.style.left = `30px`;
+        }
+        setPageIndex(0);
+        disablePopUp();
+    }
+
     return (
-        <div className={styles.popUpBackground} onClick={disablePopUp} style={{ visibility: visible ? 'visible' : 'hidden' }}>
+        <div className={styles.popUpBackground} onClick={handleClosePupUp} style={{ visibility: visible ? 'visible' : 'hidden' }}>
             <div className={styles.teamPopUp}>
                 <div className={styles.teamHeader}>
                     <div className={styles.teamHeaderLeft}>
                         <div className={styles.managerPopUpImageContainer}>
-                            <img className={styles.managerImage} alt={`Coordinators of ${team.area} area`} src={team.imageSrc} width={'100px'} height={'100px'} />
+                            <img className={styles.managerImage} alt={`Coordinators of ${team.area} area`}
+                                 src={team.imageSrc} width={'100px'} height={'100px'}/>
                         </div>
                         <div className={styles.managerName}>{team.managers[0].name + (team.managers.length > 1 ? ' &' : '')}</div>
-                        {team.managers.length > 1 && <div className={styles.managerName}>{team.managers[1].name}</div>}
-                        <h6 className={styles.managerTitle}>Area manager{team.managers.length > 1 ? 's' : ''}</h6>
-                        {team.managers.map(manager =>
-                            {return (manager.linkedIn ?
-                                <div className={styles.linkIcon}>
-                                    <a className={styles.linkIcon} href={manager.linkedIn}>
-                                        <img className={styles.linkIcon__icon} src={"/Icons/linkedin_logo_blue.png"} alt="LinkedIn Icon"/>
-                                    </a>
-                                </div>
-                                :
-                                <></>
-                            )}
-                        )}
+                        {team.managers.length > 1 &&
+                            <div className={styles.managerName}>{team.managers[1].name}</div>
+                        }
+                        <div className={styles.managerTitleLink}>
+                            <div className={styles.managerTitle}>Area manager{team.managers.length > 1 ? 's' : ''}</div>
+                            <div className={styles.managersLinkedin}>
+                                {team.managers.map(manager => {
+                                        return (manager.linkedIn &&
+                                            <div className={styles.linkIcon}>
+                                                <a className={styles.linkIcon} href={manager.linkedIn}>
+                                                    <img className={styles.linkIcon__icon} src={"/Icons/linkedin_logo_blue.png"}
+                                                         alt="LinkedIn Icon"/>
+                                                </a>
+                                            </div>
+                                        )
+                                    }
+                                )}
+                            </div>
+                        </div>
                     </div>
                     <div className={styles.teamHeaderRight}>
                         <h2 className={styles.teamPopUp__Title}>We are {team.area}</h2>
                         <text className={styles.teamPopUp__Description}>{team.description}</text>
                     </div>
                 </div>
-                <div className={styles.teamBody}>
-                    {
-                        team.members.map((member: TeamMemberProps) =>
-                            <TeamMember key={member.name} member={member} />
-                        )
-                    }
+                <div className={styles.teamContainer} ref={containerRef}>
+                    {pageIndex > 0  && <ArrowButton className={`${styles.teamContainer__button} ${styles.teamContainer__button__left}`} size={37} onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleLeftClick(e)} color={'#FFFFFF'} left/>}
+                    <div className={styles.teamRow} ref={contentRefFirst}>
+                        {firstRow.map((member: TeamMemberProps) =>
+                            <TeamMember key={member.name} member={member}/>
+                        )}
+                    </div>
+                    <div className={styles.teamRowTwo} ref={contentRefSecond}>
+                        {secondRow.map((member: TeamMemberProps) =>
+                            <TeamMember key={member.name} member={member}/>
+                        )}
+                    </div>
+                    {pageIndex < numPages-1 && <ArrowButton className={`${styles.teamContainer__button} ${styles.teamContainer__button__right}`} size={37} onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleRightClick(e)} color={'#FFFFFF'} right/>}
                 </div>
             </div>
         </div>
     )
 }
 
-function TeamMember({ member } : {member : TeamMemberProps}) {
+function TeamMember({member } : {member : TeamMemberProps}) {
     const [imageExists, setImageExists] = useState(false);
 
     useEffect(() => {
@@ -557,17 +662,21 @@ function TeamMember({ member } : {member : TeamMemberProps}) {
     return (
         <div className={styles.teamMember}>
             <div className={styles.memberPopUpImageContainer}>
-                <img className={styles.memberPopUpImage} src={imageExists ? member.imageSrc : '/Icons/person.svg'} alt={member.name} loading="lazy" />
+                <img className={styles.memberPopUpImage} src={imageExists ? member.imageSrc : '/Icons/person.svg'}
+                     alt={member.name} loading="lazy"/>
             </div>
-            <h5 className={styles.memberName}>{member.name}</h5>
-            <h6 className={styles.memberTitle}>MEMBER</h6>
-            {member.linkedIn &&
-                <div className={styles.linkIcon}>
-                    <a className={styles.linkIcon} href={member.linkedIn}>
-                        <img className={styles.linkIcon__icon} src={"/Icons/linkedin_logo_blue.png"} alt="LinkedIn Icon"/>
-                    </a>
-                </div>
-            }
+            <text className={styles.memberName}>{member.name}</text>
+            <div className={styles.memberRoleLink}>
+                <text className={styles.memberTitle}>MEMBER</text>
+                {member.linkedIn &&
+                    <div className={styles.memberRoleLink__linkIcon}>
+                        <a className={styles.memberRoleLink__linkIcon} href={member.linkedIn}>
+                            <img className={styles.linkIcon__icon} src={"/Icons/linkedin_logo_blue.png"}
+                                 alt="LinkedIn Icon"/>
+                        </a>
+                    </div>
+                }
+            </div>
         </div>
     );
 }

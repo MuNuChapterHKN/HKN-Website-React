@@ -5,7 +5,7 @@ const ArrowButton = ({right, left, className, onClick, style, size, color}:
                              right?: boolean,
                              left?: boolean,
                              className?: any,
-                             onClick: () => void,
+                             onClick: any,
                              style?: any,
                              size?: number,
                              color?: string
