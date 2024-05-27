@@ -90,6 +90,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
+    width: 100%;
     margin: 30px 10px 10px 10px;
 
     @media (max-width: 1030px) {

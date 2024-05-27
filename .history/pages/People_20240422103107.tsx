@@ -1,4 +1,4 @@
-import Layout from "../components/Layout";
+import Layout from "@/components/Layout";
 import styles from '@/styles/People/People.module.scss'
 import RoundButton from "@/components/molecules/RoundButton";
 import { useRouter } from "next/router";
@@ -10,42 +10,42 @@ const Board: BoardMemberProps[] = [
     {
         name: "Gustavo Nicoletti",
         role: "Recording Secretary",
-        imageSrc: "/People/Board/Gustavo Nicoletti Rosa.png",
+        imageSrc: "/People/members/gustavo_nicoletti_rosa.png",
         linkedIn: "https://www.linkedin.com/in/gustavo-nicoletti-rosa/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
         name: "Serena Canavero",
         role: "President",
-        imageSrc: "/People/Board/Serena Canavero.png",
+        imageSrc: "/People/members/serena_canavero.png",
         linkedIn: "https://www.linkedin.com/in/serenacanavero/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
         name: "Francesco Anzoino",
         role: "Treasurer",
-        imageSrc: "/People/Board/Francesco Anzoino.png",
+        imageSrc: "/People/members/francesco_anzoino.png",
         linkedIn: "",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
         name: "Claudio Fantasia",
         role: "Vice President",
-        imageSrc: "/People/Board/Claudio Fantasia.png",
+        imageSrc: "/People/members/claudio_fantasia.png",
         linkedIn: "https://www.linkedin.com/in/claudio-fantasia-120560224/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
         name: "Dario Gosmar",
         role: "Web Correspondent",
-        imageSrc: "/People/Board/Dario Gosmar.png",
+        imageSrc: "/People/members/dario_gosmar.png",
         linkedIn: "https://www.linkedin.com/in/dario-gosmar/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
         name: "Alberto Castrignanò",
         role: "Corresponding Secretary",
-        imageSrc: "/People/Board/Alberto Castrignano.png",
+        imageSrc: "/People/members/alberto_castrignano.png",
         linkedIn: "https://www.linkedin.com/in/albertocastrignano2/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
@@ -61,7 +61,7 @@ const Teams: TeamProps[] = [
         managers: [
             {
                 name: "Dario Gosmar",
-                imageSrc: "/People/Areas/Comms/Dario Gosmar.png",
+                imageSrc: "/People/Areas/Comms/dario_gosmar.png",
             }
         ],
         members: [

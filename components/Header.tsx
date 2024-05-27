@@ -66,14 +66,23 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
                         <div className={styles.arrowDown}></div>
                     </div>
                     <ul className={styles.dropdown}>
-                        <li className={isActive('/Activities/Events') ? styles.activeDropdown : ''} onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleNavigate(e, '/Activities/Events')}>Events</li>
+                        <li className={isActive('/Activities/Activities') ? styles.activeDropdown : ''}
+                            onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleNavigate(e, '/Activities/Activities')}>Activities
+                        </li>
+                        <li className={isActive('/Activities/Events') ? styles.activeDropdown : ''}
+                            onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleNavigate(e, '/Activities/Events')}>Events
+                        </li>
                         {/*<li className={isActive('/Activities/Masterclasses') ? styles.activeDropdown  : ''} onClick={() => router.push('/Activities/Masterclasses')}>Masterclasses</li>*/}
-                        <li className={isActive('/Activities/StudyGroups') ? styles.activeDropdown : ''} onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleNavigate(e, '/Activities/StudyGroups')}>Study Groups</li>
+                        <li className={isActive('/Activities/StudyGroups') ? styles.activeDropdown : ''}
+                            onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleNavigate(e, '/Activities/StudyGroups')}>Study
+                            Groups
+                        </li>
                     </ul>
                 </div>
 
-                <div className={isActive('/Publications/Recognitions') ? styles.active : styles.inactive} onClick={() => router.push('/Publications/Recognitions')}>
-                    Publications
+                <div className={isActive('/Publications/Recognitions') ? styles.active : styles.inactive}
+                     onClick={() => router.push('/Publications/Recognitions')}>
+                Publications
                 </div>
 
                 {/*<div className={`${isActive('/Publications/Recognitions') || isActive('/Publications/Blogs') ? styles.active : styles.inactive} onClick={() => router.push('/Publications/Recognitions') ${styles.menuItem}`}>

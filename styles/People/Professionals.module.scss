@@ -47,17 +47,17 @@
 
       &__mask {
         position: absolute;
-        top: -85px;
+        top: -70px;
         left: 0;
         width: 100%;
-        height: calc(100% + 100px);
-        border-radius: 0 0 20px 20px;
+        height: calc(100% + 70px);
+        border-radius: 20px;
         display: flex;
         overflow: hidden;
 
         @media (max-width: 920px) {
-          top: -70px;
-          height: calc(100% + 80px);
+          top: -60px;
+          height: calc(100% + 60px);
         }
       }
 
@@ -233,6 +233,7 @@
     overflow: hidden;
     border-radius: 20px;
     background: #B8BBBF;
+    position: relative;
 
     &__image {
       width: 100%;
@@ -240,12 +241,22 @@
       object-fit: cover;
       filter: grayscale(100%);
     }
+
+    &__placeholder {
+      position: absolute;
+      top: 150px;
+      transform: translateY(-50%);
+      width: 90%;
+      margin-left: 5%;
+      object-fit: cover;
+      filter: grayscale(100%) opacity(0.5);
+    }
   }
 
   &__name {
     color: #F2F2F2;
     font-family: Outfit;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 600;
     text-transform: capitalize;
     margin-top:6px;

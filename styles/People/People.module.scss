@@ -336,7 +336,7 @@ $member-margin: 30px;
 }
 
 .teamRow, .teamRowTwo {
-    transition: left 0.8s ease-in-out;
+    transition: left 0.7s cubic-bezier(0.39, 0.37, 0.07, 0.91);
     height: $member-height;
     overflow: hidden;
     display: flex;
@@ -412,6 +412,14 @@ $member-margin: 30px;
 .memberPopUpImage {
     display: inline;
     width: 100%;
+}
+
+.memberPlaceholderImage {
+    display: inline;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 50%;
+    transform: translateY(-55%);
 }
 
 .teamDescription {

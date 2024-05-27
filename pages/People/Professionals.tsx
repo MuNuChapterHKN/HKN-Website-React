@@ -1,42 +1,49 @@
 import Layout from "@/components/Layout";
 import styles from '@/styles/People/Professionals.module.scss'
-import { useRouter } from "next/router";
-import Image from 'next/image';
+import {useRouter} from "next/router";
+import {useEffect, useState} from "react";
 
 // Images should be in a 4:5 ratio
-const ProfessionalsData : ProfessionalProps[] = [
-    {
-        name: "Claudio Fantasia",
-        imageSrc: "/People/Board/Claudio Fantasia.png",
-    },
-    {
-        name: "Claudio Fantasia",
-        imageSrc: "/People/Board/Claudio Fantasia.png",
-    },
-    {
-        name: "Claudio Fantasia",
-        imageSrc: "/People/Board/Claudio Fantasia.png",
-    },
-    {
-        name: "Claudio Fantasia",
-        imageSrc: "/People/Board/Claudio Fantasia.png",
-    },
-    {
-        name: "Claudio Fantasia",
-        imageSrc: "/People/Board/Claudio Fantasia.png",
-    },
-    {
-        name: "Claudio Fantasia",
-        imageSrc: "/People/Board/Claudio Fantasia.png",
-    },
-    {
-        name: "Claudio Fantasia",
-        imageSrc: "/People/Board/Claudio Fantasia.png",
-    },
-    {
-        name: "Claudio Fantasia",
-        imageSrc: "/People/Board/Claudio Fantasia.png",
-    },
+const ProfessionalsData: ProfessionalProps[] = [
+    {name: "Adrien Merlini", imageSrc: "/People/professionals/adrien_merlini.png"},
+    {name: "Alberto Tenconi", imageSrc: "/People/professionals/alberto_tenconi.png"},
+    {name: "Alfredo Benso", imageSrc: "/People/professionals/alfredo_benso.png"},
+    {name: "Andrea Bianco", imageSrc: "/People/professionals/andrea_bianco.png"},
+    {name: "Carlo Cond", imageSrc: "/People/professionals/carlo_cond.png"},
+    {name: "Cataldo Basile", imageSrc: "/People/professionals/cataldo_basile.png"},
+    {name: "Cecilia Metra", imageSrc: "/People/professionals/cecilia_metra.png"},
+    {name: "Danilo Demarchi", imageSrc: "/People/professionals/danilo_demarchi.png"},
+    {name: "Dejan Milojicic", imageSrc: "/People/professionals/dejan_milojicic.jpeg"},
+    {name: "Eddie Custovic", imageSrc: "/People/professionals/eddie_custovic.png"},
+    {name: "Edmundo Tovar", imageSrc: "/People/professionals/edmundo_tovar.png"},
+    {name: "Elena Maria Baralis", imageSrc: "/People/professionals/elena_maria_baralis.png"},
+    {name: "Enrico Macii", imageSrc: "/People/professionals/enrico_macii.png"},
+    {name: "Enrico Venuto", imageSrc: "/People/professionals/enrico_venuto.png"},
+    {name: "Fabrizio Lamberti", imageSrc: "/People/professionals/fabrizio_lamberti.png"},
+    {name: "Flavio Canavero", imageSrc: "/People/professionals/flavio_canavero.png"},
+    {name: "Fulvio Corno", imageSrc: "/People/professionals/fulvio_corno.png"},
+    {name: "Fulvio Risso", imageSrc: "/People/professionals/fulvio_risso.png"},
+    {name: "Fulvio Valenza", imageSrc: "/People/professionals/fulvio_valenza.png"},
+    {name: "Gabriella Bosco", imageSrc: "/People/professionals/gabriella_bosco.png"},
+    {name: "Gabriella Olmo", imageSrc: "/People/professionals/gabriella_olmo.png"},
+    {name: "Guido Pagana", imageSrc: "/People/professionals/guido_pagana.png"},
+    {name: "Juan Carlos De Martin", imageSrc: "/People/professionals/juan_carlos_de_martin.png"},
+    {name: "Leila De Floriani", imageSrc: "/People/professionals/leila_de_floriani.png"},
+    {name: "Lia Morra", imageSrc: "/People/professionals/lia_morra.png"},
+    {name: "Lorenzo Galleani", imageSrc: "/People/professionals/lorenzo_galleani.png"},
+    {name: "Luca Nassi", imageSrc: "/People/professionals/luca_nassi.png"},
+    {name: "Luigi De Russis", imageSrc: "/People/professionals/luigi_de_russis.png"},
+    {name: "Marcello Maggiora", imageSrc: "/People/professionals/marcello_maggiora.png"},
+    {name: "Massimo Violante", imageSrc: "/People/professionals/massimo_violante.png"},
+    {name: "Matteo Sonza Reorda", imageSrc: "/People/professionals/matteo_sonza_reorda.png"},
+    {name: "Maurizio Martina", imageSrc: "/People/professionals/maurizio_martina.png"},
+    {name: "Maurizio Rebaudengo", imageSrc: "/People/professionals/maurizio_rebaudengo.png"},
+    {name: "Michele Goano", imageSrc: "/People/professionals/michele_goano.png"},
+    {name: "Paolo Garza", imageSrc: "/People/professionals/paolo_garza.png"},
+    {name: "Paolo Margara", imageSrc: "/People/professionals/paolo_margara.png"},
+    {name: "Paolo Montuschi", imageSrc: "/People/professionals/paolo_montuschi.png"},
+    {name: "Roberto Gaudino", imageSrc: "/People/professionals/roberto_gaudino.png"},
+    {name: "Valentina Agostini", imageSrc: "/People/professionals/valentina_agostini.png"}
 ];
 
 export default function Professionals() {
@@ -48,7 +55,8 @@ export default function Professionals() {
                 <div className={styles.faculty__left}>
                     <div className={styles.faculty__left__imageContainer}>
                         <div className={styles.faculty__left__imageContainer__mask}>
-                            <Image className={styles.faculty__left__imageContainer__image} src={'/People/Board/Francesco Anzoino.png'}
+                            <img className={styles.faculty__left__imageContainer__image}
+                                   src={'/People/professionals/paolo_montuschi.png'}
                                    alt="Faculty Advisor" width="0" height="0" sizes="100vw"/>
                         </div>
                     </div>
@@ -86,10 +94,27 @@ export default function Professionals() {
 function Professional({professional}: {
     professional: ProfessionalProps,
 }) {
+
+    const [imageExists, setImageExists] = useState(false);
+
+    useEffect(() => {
+        const img = new Image();
+        img.src = professional.imageSrc || "";
+        img.onload = () => setImageExists(true);
+    }, []);
+
     return (
-        <div className={styles.professional} onClick={() => {}}>
+        <div className={styles.professional} onClick={() => {
+        }}>
             <div className={styles.professional__imageContainer}>
-                <img className={styles.professional__imageContainer__image} src={professional.imageSrc} alt={professional.name} loading="lazy" />
+                {professional.imageSrc && imageExists ?
+                    <img className={styles.professional__imageContainer__image} src={professional.imageSrc}
+                         alt={professional.name} loading="lazy"/>
+                :
+                    <img className={styles.professional__imageContainer__placeholder} src="/Common/hkn_ideogramma_blu.svg"
+                        alt={professional.name} loading="lazy"/>
+                }
+
             </div>
             <text className={styles.professional__name}>{professional.name}</text>
         </div>

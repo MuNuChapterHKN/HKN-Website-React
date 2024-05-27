@@ -10,48 +10,47 @@ const Board: BoardMemberProps[] = [
     {
         name: "Gustavo Nicoletti",
         role: "Recording Secretary",
-        imageSrc: "/People/Board/Gustavo Nicoletti Rosa.png",
+        imageSrc: "/People/members/gustavo_nicoletti_rosa.png",
         linkedIn: "https://www.linkedin.com/in/gustavo-nicoletti-rosa/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
         name: "Serena Canavero",
         role: "President",
-        imageSrc: "/People/Board/Serena Canavero.png",
+        imageSrc: "/People/members/serena_canavero.png",
         linkedIn: "https://www.linkedin.com/in/serenacanavero/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
         name: "Francesco Anzoino",
         role: "Treasurer",
-        imageSrc: "/People/Board/Francesco Anzoino.png",
+        imageSrc: "/People/members/francesco_anzoino.png",
         linkedIn: "",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
         name: "Claudio Fantasia",
         role: "Vice President",
-        imageSrc: "/People/Board/Claudio Fantasia.png",
+        imageSrc: "/People/members/claudio_fantasia.png",
         linkedIn: "https://www.linkedin.com/in/claudio-fantasia-120560224/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
         name: "Dario Gosmar",
         role: "Web Correspondent",
-        imageSrc: "/People/Board/Dario Gosmar.png",
+        imageSrc: "/People/members/dario_gosmar.png",
         linkedIn: "https://www.linkedin.com/in/dario-gosmar/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
         name: "Alberto Castrignanò",
         role: "Corresponding Secretary",
-        imageSrc: "/People/Board/Alberto Castrignano.png",
+        imageSrc: "/People/members/alberto_castrignano.png",
         linkedIn: "https://www.linkedin.com/in/albertocastrignano2/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
 ];
 
-// Images work well in a 3:5 ratio
 const Teams: TeamProps[] = [
     {
         area: "Comms",
@@ -61,48 +60,49 @@ const Teams: TeamProps[] = [
         managers: [
             {
                 name: "Dario Gosmar",
-                imageSrc: "/People/Areas/Comms/Dario Gosmar.png",
+                imageSrc: "/people/members/dario_gosmar.png",
             }
         ],
         members: [
             {
                 name: "Alessia Scardi",
-                imageSrc: "/People/Areas/Comms/Alessia Scardi.png",
+                imageSrc: "/people/members/alessia_scardi.png",
             },
             {
                 name: "Riccardo Alfonso Cerrone",
-                imageSrc: "/People/Areas/Comms/Riccardo Alfonso Cerrone.png",
+                imageSrc: "/people/members/riccardo_alfonso_cerrone.png",
             },
             {
                 name: "Vittoria Drago",
-                imageSrc: "/People/Areas/Comms/Vittoria Drago.png",
+                imageSrc: "/people/members/vittoria_drago.png",
             },
             {
                 name: "Antonio Capece",
-                imageSrc: "/People/Areas/Comms/Antonio Capece.png",
+                imageSrc: "/people/members/antonio_capece.png",
             },
             {
                 name: "Francesco Di Stefano",
-                imageSrc: "/People/Areas/Comms/Francesco Di Stefano.png",
+                imageSrc: "/people/members/francesco_di_stefano.png",
             },
             {
                 name: "Lorenzo Fezza",
-                imageSrc: "/People/Areas/Comms/Lorenzo Fezza.png",
+                imageSrc: "/people/members/lorenzo_fezza.png",
             },
             {
                 name: "Marco Rosa Gobbo",
+                imageSrc: "/people/members/marco_rosa_gobbo.png",
             },
             {
                 name: "Lucrezia Marcovaldi",
             },
             {
                 name: "Alex Martinelli",
-                imageSrc: "/People/Areas/Comms/Alex Martinelli.png",
+                imageSrc: "/people/members/alex_martinelli.png",
             },
             {
                 name: "Andrea Minardi",
+                imageSrc: "/people/members/andrea_minardi.png",
             },
-
         ]
     },
     {
@@ -113,51 +113,53 @@ const Teams: TeamProps[] = [
         managers: [
             {
                 name: "Francesca Portadibasso",
-                imageSrc: "/People/Areas/HR/Francesca Portadibasso.png",
+                imageSrc: "/people/members/francesca_portadibasso.png",
             },
             {
                 name: "Luca Filippetti",
-                imageSrc: "/People/Areas/HR/Luca Filippetti.png",
+                imageSrc: "/people/members/luca_filippetti.png",
             }
         ],
         members: [
             {
                 name: "Edoardo Demichelis",
-                imageSrc: "/People/Areas/HR/Edoardo Demichelis.png",
+                imageSrc: "/people/members/edoardo_demichelis.png",
             },
             {
                 name: "Renata De Gennaro",
-                imageSrc: "/People/Areas/HR/Renata De Gennaro.png",
+                imageSrc: "/people/members/renata_de_gennaro.png",
             },
             {
                 name: "Giacomo Maino",
-                imageSrc: "/People/Areas/HR/Giacomo Maino.png",
+                imageSrc: "/people/members/giacomo_maino.png",
             },
             {
                 name: "Rosario Francesco Cavelli",
+                imageSrc: "/people/members/rosario_francesco_cavelli.png",
             },
             {
                 name: "Stefano Cerutti",
+                imageSrc: "/people/members/stefano_cerutti.png",
             },
             {
                 name: "Edoardo Colella",
-                imageSrc: "/People/Areas/HR/Edoardo Colella.png",
+                imageSrc: "/people/members/edoardo_colella.png",
             },
             {
                 name: "Marco Del Core",
-                imageSrc: "/People/Areas/HR/Marco Del Core.png",
+                imageSrc: "/people/members/marco_del_core.png",
             },
             {
                 name: "Alessandro Gasbarri",
-                imageSrc: "/People/Areas/HR/Alessandro Gasbarri.png",
+                imageSrc: "/people/members/alessandro_gasbarri.png",
             },
             {
                 name: "Kaliroi Mignone",
-                imageSrc: "/People/Areas/HR/Kaliroi Mignone.png",
+                imageSrc: "/people/members/kaliroi_mignone.png",
             },
             {
                 name: "Andrea Pignata",
-                imageSrc: "/People/Areas/HR/Andrea Pignata.png",
+                imageSrc: "/people/members/andrea_pignata.png",
             },
         ]
     },
@@ -169,37 +171,37 @@ const Teams: TeamProps[] = [
         managers: [
             {
                 name: "Elena Favero",
-                imageSrc: "/People/Areas/Corporate Training/Elena Favero.png",
+                imageSrc: "/people/members/elena_favero.png",
             }
         ],
         members: [
             {
                 name: "Benedetta Perrone",
-                imageSrc: "/People/Areas/Corporate Training/Benedetta Perrone.png",
+                imageSrc: "/people/members/benedetta_perrone.png",
             },
             {
                 name: "Lorenzo Barbati",
-                imageSrc: "/People/Areas/Corporate Training/Lorenzo Barbati.png",
+                imageSrc: "/people/members/lorenzo_barbati.png",
             },
             {
                 name: "Riccardo Bracciale",
-                imageSrc: "/People/Areas/Corporate Training/Riccardo Bracciale.png",
+                imageSrc: "/people/members/riccardo_bracciale.png",
             },
             {
                 name: "Ismaele Bahti",
-                imageSrc: "/People/Areas/Corporate Training/Ismaele Bahati.png",
+                imageSrc: "/people/members/ismaele_bahati.png",
             },
             {
                 name: "Marco Canavero",
-                imageSrc: "/People/Areas/Corporate Training/Marco Canavero.png",
+                imageSrc: "/people/members/marco_canavero.png",
             },
             {
                 name: "Marco D'Andria",
-                imageSrc: "/People/Areas/Corporate Training/Marco Dandria.png",
+                imageSrc: "/people/members/marco_dandria.png",
             },
             {
                 name: "Arber Kryeziu",
-                imageSrc: "/People/Areas/Corporate Training/Arber Kryeziu.png",
+                imageSrc: "/people/members/arber_kryeziu.png",
             },
             {
                 name: "Vittorio Macripò",
@@ -209,17 +211,16 @@ const Teams: TeamProps[] = [
             },
             {
                 name: "Gustavo Ramirez",
-                imageSrc: "/People/Areas/Corporate Training/Gustavo Ramirez.png",
+                imageSrc: "/people/members/gustavo_ramirez.png",
             },
             {
                 name: "Sofia Russo",
-                imageSrc: "/People/Areas/Corporate Training/Sofia Russo.png",
+                imageSrc: "/people/members/sofia_russo.png",
             },
             {
                 name: "Paolo Molino",
-                imageSrc: "/People/Areas/Corporate Training/Paolo Molino.png",
+                imageSrc: "/people/members/paolo_molino.png",
             },
-
         ]
     },
     {
@@ -230,45 +231,45 @@ const Teams: TeamProps[] = [
         managers: [
             {
                 name: "Orlando Zaccaria",
-                imageSrc: "/People/Areas/Tutoring/Orlando Zaccaria.png",
+                imageSrc: "/people/members/orlando_zaccaria.png",
             }
         ],
         members: [
             {
                 name: "Eduard Antonovic Occhipinti",
-                imageSrc: "/People/Areas/Tutoring/Eduard Antonovic Occhipinti.png",
+                imageSrc: "/people/members/eduard_antonovic_occhipinti.png",
             },
             {
                 name: "Erik Scolaro",
-                imageSrc: "/People/Areas/Tutoring/Erik Scolaro.png",
+                imageSrc: "/people/members/erik_scolaro.png",
             },
             {
                 name: "Jad Sarkis",
-                imageSrc: "/People/Areas/Tutoring/Jad Sarkis.png",
+                imageSrc: "/people/members/jad_sarkis.png",
             },
             {
                 name: "Sabina Sarcuni",
-                imageSrc: "/People/Areas/Tutoring/Sabina Sarcuni.png",
+                imageSrc: "/people/members/sabina_sarcuni.png",
             },
             {
                 name: "Lorenza Bonfanti Posta",
-                imageSrc: "/People/Areas/Tutoring/Lorenza Bonfanti Posta.png",
+                imageSrc: "/people/members/lorenza_bonfanti_posta.png",
             },
             {
                 name: "Alessia De Crescenzo",
-                imageSrc: "/People/Areas/Tutoring/Alessia De Crescenzo.png",
+                imageSrc: "/people/members/alessia_de_crescenzo.png",
             },
             {
                 name: "Leonardo Gallina",
-                imageSrc: "/People/Areas/Tutoring/Leonardo Gallina.png",
+                imageSrc: "/people/members/leonardo_gallina.png",
             },
             {
                 name: "Mattia Molinari",
-                imageSrc: "/People/Areas/Tutoring/Mattia Molinari.png",
+                imageSrc: "/people/members/mattia_molinari.png",
             },
             {
                 name: "Marco Donnarumma",
-                imageSrc: "/People/Areas/Tutoring/Marco Donnarumma.png",
+                imageSrc: "/people/members/marco_donnarumma.png",
             },
         ]
     },
@@ -280,51 +281,54 @@ const Teams: TeamProps[] = [
         managers: [
             {
                 name: "Sebastiano Guzzone",
-                imageSrc: "/People/Areas/Events/Sebastiano Guzzone.png",
+                imageSrc: "/people/members/sebastiano_guzzone.png",
             }
         ],
         members: [
             {
                 name: "Alessio Melone",
-                imageSrc: "/People/Areas/Events/Alessio Melone.png",
+                imageSrc: "/people/members/alessio_melone.png",
             },
             {
                 name: "Elisa Misuri",
-                imageSrc: "/People/Areas/Events/Elisa Misuri.png",
+                imageSrc: "/people/members/elisa_misuri.png",
             },
             {
                 name: "Nicolo Benso",
-                imageSrc: "/People/Areas/Events/Nicolo Benso.png",
+                imageSrc: "/people/members/nicolo_benso.png",
             },
             {
                 name: "Davide Arcolini",
             },
             {
                 name: "Daniele De Rossi",
-                imageSrc: "/People/Areas/Events/Daniele De Rossi.png",
+                imageSrc: "/people/members/daniele_de_rossi.png",
             },
             {
                 name: "Freddy Dongue Dongmo Yann",
             },
             {
                 name: "Francesca Fusco",
+                imageSrc: "/people/members/francesca_fusco.png",
             },
             {
                 name: "Gabriele Iurlaro",
+                imageSrc: "/people/members/gabriele_iurlaro.png",
             },
             {
                 name: "Raffaele Negri",
-                imageSrc: "/People/Areas/Events/Raffaele Negri.png",
+                imageSrc: "/people/members/raffaele_negri.png",
             },
             {
                 name: "Mina Nikolova",
             },
             {
                 name: "Marco Pascarella",
+                imageSrc: "/people/members/marco_pascarella.png",
             },
             {
                 name: "Stefano Ravera",
-                imageSrc: "/People/Areas/Events/Stefano Ravera.png",
+                imageSrc: "/people/members/stefano_ravera.png",
             },
         ]
     },
@@ -336,51 +340,52 @@ const Teams: TeamProps[] = [
         managers: [
             {
                 name: "Alberto Baroso",
-                imageSrc: "/People/Areas/IT/Alberto Baroso.png",
+                imageSrc: "/people/members/alberto_baroso.png",
             },
             {
                 name: "Francesco Baldini",
-                imageSrc: "/People/Areas/IT/Francesco Baldini.png",
+                imageSrc: "/people/members/francesco_baldini.png",
             }
         ],
         members: [
             {
                 name: "Alessio Menichinelli",
-                imageSrc: "/People/Areas/IT/Alessio Menichinelli.png",
+                imageSrc: "/people/members/alessio_menichinelli.png",
             },
             {
                 name: "Filippo Goffredo",
-                imageSrc: "/People/Areas/IT/Filippo Goffredo.png",
+                imageSrc: "/people/members/filippo_goffredo.png",
             },
             {
                 name: "Isabella Lombardi",
-                imageSrc: "/People/Areas/IT/Isabella Lombardi.png",
+                imageSrc: "/people/members/isabella_lombardi.png",
             },
             {
                 name: "Massimo Aresca",
-                imageSrc: "/People/Areas/IT/Massimo Aresca.png",
+                imageSrc: "/people/members/massimo_aresca.png",
             },
             {
                 name: "Pasquale Bianco",
-                imageSrc: "/People/Areas/IT/Pasquale Bianco.png",
+                imageSrc: "/people/members/pasquale_bianco.png",
             },
             {
                 name: "Damiano Bonaccorsi",
-                imageSrc: "/People/Areas/IT/Damiano Bonaccorsi.png",
+                imageSrc: "/people/members/damiano_bonaccorsi.png",
             },
             {
                 name: "Marco De Luca",
             },
             {
                 name: "Elti Gjiriti",
-                imageSrc: "/People/Areas/IT/Elti Gjiriti.png",
+                imageSrc: "/people/members/elti_gjiriti.png",
             },
             {
                 name: "Matteo Mugnai",
-                imageSrc: "/People/Areas/IT/Matteo Mugnai.png",
+                imageSrc: "/people/members/matteo_mugnai.png",
             },
             {
                 name: "Marco Pappalardo",
+                imageSrc: "/people/members/marco_pappalardo.png",
             }
         ]
     },
@@ -656,8 +661,12 @@ function TeamMember({member } : {member : TeamMemberProps}) {
     return (
         <div className={styles.teamMember}>
             <div className={styles.memberPopUpImageContainer}>
-                <img className={styles.memberPopUpImage} src={imageExists ? member.imageSrc : '/Icons/person.svg'}
-                     alt={member.name} loading="lazy"/>
+                {imageExists ?
+                    <img className={styles.memberPopUpImage} src={member.imageSrc}
+                         alt={member.name} loading="lazy"/>
+                    :
+                    <img className={styles.memberPlaceholderImage} src="/Common/hkn_ideogramma_blu.svg" alt={member.name} loading="lazy"/>
+                }
             </div>
             <text className={styles.memberName}>{member.name}</text>
             <div className={styles.memberRoleLink}>

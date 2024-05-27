@@ -14,6 +14,7 @@
   border-radius: 30px;
   margin: 30px 0;
   padding: 30px;
+  width: 80%;
 
   &__year {
     color: #0B3151;
@@ -25,7 +26,8 @@
   &__members {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 60px;
+    gap: 5px;
+    width: 100%;
     margin: 20px 0 0 0;
   }
 }
@@ -35,7 +37,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 40px 0 0 0;
+    margin: 60px 0 20px 0;
 
     &__imageContainer {
         width: 220px;
@@ -51,7 +53,7 @@
             width: 100%;
           height: calc(100% + 60px);
           overflow: hidden;
-          border-radius: 0 0 20px 20px;
+          border-radius: 20px;
         }
 
         &__image {
@@ -62,6 +64,17 @@
           height: 100%;
           object-fit: cover;
             filter: grayscale(100%);
+        }
+
+        &__placeholder {
+          position: absolute;
+          top: 175px;
+          transform: translateY(-50%);
+          width: 90%;
+          left: 0;
+          margin-left: 5%;
+          object-fit: cover;
+          filter: grayscale(100%) opacity(0.5);
         }
 
     }
