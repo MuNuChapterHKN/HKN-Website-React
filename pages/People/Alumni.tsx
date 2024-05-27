@@ -618,11 +618,6 @@ const AlumniData: AlumnoProps[] = [
         ]
     },
     {
-        name: "Marco D’Andria",
-        imageSrc: "/People/members/marco_dandria.png",
-        badges: [{ type: BadgeType.Inducted, year: 2020 }]
-    },
-    {
         name: "Marco Saracino",
         imageSrc: "/People/members/marco_saracino.png",
         badges: [
