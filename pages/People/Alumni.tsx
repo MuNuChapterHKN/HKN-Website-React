@@ -861,9 +861,7 @@ export default function Alumni() {
                 <div className={styles.descriptionContainer__right}>
                     <text className={styles.descriptionContainer__right__title}>Alumni</text>
                     <text className={styles.descriptionContainer__right__subtitle}>ETA KAPPA MENTORING</text>
-                    <text className={styles.descriptionContainer__right__text}>Since 2017 we are dedicated to
-                        encouraging excellence in the IEEE-designated fields of interest, continuing to reinvent
-                        ourselves to meet the needs of our members and society overall
+                    <text className={styles.descriptionContainer__right__text}>Paolo Montuschi (full professor, IEEE Fellow) is currently serving as Vice-Rector for 2030 Digitalization and IT Strategies. He is the editor-in-chief of the IEEE Transactions on Emerging Topics in Computing and a member of both the IEEE Awards Board and IEEE PSPB. In 2017 he mentored the installment of the Mu Nu HKN Chapter, the first to be activated in Europe.
                     </text>
                 </div>
             </div>

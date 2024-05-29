@@ -29,17 +29,17 @@ const Board: BoardMemberProps[] = [
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
-        name: "Claudio Fantasia",
-        role: "Vice President",
-        imageSrc: "/People/members/claudio_fantasia.png",
-        linkedIn: "https://www.linkedin.com/in/claudio-fantasia-120560224/",
-        roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
-    },
-    {
         name: "Dario Gosmar",
         role: "Web Correspondent",
         imageSrc: "/People/members/dario_gosmar.png",
         linkedIn: "https://www.linkedin.com/in/dario-gosmar/",
+        roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
+    },
+    {
+        name: "Claudio Fantasia",
+        role: "Vice President",
+        imageSrc: "/People/members/claudio_fantasia.png",
+        linkedIn: "https://www.linkedin.com/in/claudio-fantasia-120560224/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
@@ -443,11 +443,6 @@ export default function People() {
                 </div>
             </div>
 
-            <div className={styles.discover}>
-                <div className={styles.discover__coming}>coming soon</div>
-                <div className={styles.discover__title}>discover</div>
-                <div className={styles.discover__title}>past boards and alumni</div>
-            </div>
         </Layout>
     )
 }
