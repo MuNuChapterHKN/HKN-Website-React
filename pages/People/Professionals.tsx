@@ -43,8 +43,27 @@ const ProfessionalsData: ProfessionalProps[] = [
     {name: "Paolo Margara", imageSrc: "/People/professionals/paolo_margara.png"},
     {name: "Paolo Montuschi", imageSrc: "/People/professionals/paolo_montuschi.png"},
     {name: "Roberto Gaudino", imageSrc: "/People/professionals/roberto_gaudino.png"},
-    {name: "Valentina Agostini", imageSrc: "/People/professionals/valentina_agostini.png"}
+    {name: "Valentina Agostini", imageSrc: "/People/professionals/valentina_agostini.png"},
+    {name: "Aleksandar Mastilovic", imageSrc: "/People/professionals/aleksandar_mastilovic.png"},
+    {name: "Claudio Demartini", imageSrc: "/People/professionals/claudio_demartini.png"},
+    {name: "Gianluca Setti", imageSrc: "/People/professionals/gianluca_setti.png"},
+    {name: "Giovanni Ghione", imageSrc: "/People/professionals/giovanni_ghione.png"},
+    {name: "Letizia Bergamasco", imageSrc: "/People/professionals/letizia_bergamasco.png"},
+    {name: "Luca Sterpone", imageSrc: "/People/professionals/luca_sterpone.png"},
+    {name: "Roberto Graglia", imageSrc: "/People/professionals/roberto_graglia.png"},
+    {name: "Silvia Chiusano", imageSrc: "/People/professionals/silvia_chiusano.png"}
 ];
+
+function sortByLastName(professionals: ProfessionalProps[]): ProfessionalProps[] {
+    return professionals.sort((a, b) => {
+        const lastNameA = a.name.split(" ").pop()!.toLowerCase(); // Safely assume there's at least one name
+        const lastNameB = b.name.split(" ").pop()!.toLowerCase(); // Convert to lowercase for case-insensitive comparison
+        if (lastNameA < lastNameB) return -1;
+        if (lastNameA > lastNameB) return 1;
+        return 0;
+    });
+}
+
 
 export default function Professionals() {
 
@@ -77,7 +96,7 @@ export default function Professionals() {
                 <text className={styles.professionalsContainer__inducted}>Inducted Members</text>
 
                 <div className={styles.professionalsContainer__grid}>
-                    {ProfessionalsData.map((al, index) => (
+                    {sortByLastName(ProfessionalsData).map((al, index) => (
                         <Professional professional={al} key={index}/>
                     ))}
                 </div>
