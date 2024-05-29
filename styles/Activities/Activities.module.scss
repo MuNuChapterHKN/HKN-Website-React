@@ -288,12 +288,19 @@
         }
 
         &__button {
+            transition: background-color 0.2s ease-in-out, color 0.3s ease-in-out;
             font-family: Inter, sans-serif;
             font-size: 20px;
             font-weight: 600;
             text-transform: uppercase;
             background-color: #061E33;
+            color: #FFF;
             margin-top: 20px;
+
+            &:hover {
+                transition: background-color 0.2s ease-in-out, color 0.3s ease-in-out;
+                background-color: #4c6d95;
+            }
         }
     }
 

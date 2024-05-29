@@ -400,8 +400,8 @@ const AlumniData: AlumnoProps[] = [
         ]
     },
     {
-        name: "Antonio Definite",
-        imageSrc: "/People/members/antonio_definite.png",
+        name: "Antonio Defonte",
+        imageSrc: "/People/members/antonio_defonte.png",
         badges: [
             {type: BadgeType.Inducted, year: 2020}
         ]
