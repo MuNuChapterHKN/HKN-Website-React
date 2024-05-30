@@ -23,7 +23,6 @@ export default function Home() {
         };
     }, []);
 
-    // @ts-ignore
     return (
         <Layout triangles>
 
@@ -96,55 +95,6 @@ export default function Home() {
                         <RoundButton className={styles.readMeOriginsButton} onClick={() => router.push('/AboutUs#origin')}>
                             READ ME
                         </RoundButton>
-                        {/*TODO: add link*/}
-                    </div>
-                </div>
-            </div>
-
-            <div className={styles.projectsContainer}>
-                <text className={styles.projectsText}>NEWS</text>
-                <text className={styles.projectsTitle}>Our Latest Projects</text>
-                <text className={styles.projectsSubtitle}>COMING SOON</text>
-                <div className={styles.projectsCards}>
-                    <div className={styles.projectsLeft}>
-                        <div className={styles.projectsImageClip}>
-                            <img className={styles.projectsPicture} src="/Home/Projects/Sirius_vedere.jpg"
-                                 alt="project"/>
-                        </div>
-                        <text className={styles.projectTitle}>
-                            Sirius: Seeing the Future Through the Eyes of the Present
-                        </text>
-                        <text className={styles.project}>For the first time, it was the HKN students who paid a visit to
-                            a company: SIRIUS (Sirius | Home). For the new members, this was their first experience of
-                            internal training, but the real novelty involved the existing members: being able to
-                            personally visit a company turned out to be an...
-                        </text>
-                        {/*TODO: add link*/}
-                    </div>
-                    <div className={styles.projectsCenter}>
-                        <div className={styles.projectsImageClip}>
-                            <img className={styles.projectsPicture} src="/Home/Projects/Vivere_lassociazione.png"
-                                 alt="project"/>
-                        </div>
-                        <text className={styles.projectTitle}>Living the Association Online: A Beginner's Guide
-                        </text>
-                        <text className={styles.project}>Initially, the idea was born from loneliness. Staying locked at
-                            home and not seeing anyone due to the lockdown was a condition that, while it might have
-                            seemed exhilarating and almost heroic at first, had become devastating over time. The
-                            thought of becoming a part of an honor society...
-                        </text>
-                        {/*TODO: add link*/}
-                    </div>
-                    <div className={styles.projectsRight}>
-                        <div className={styles.projectsImageClip}>
-                            <img className={styles.projectsPicture} src="/Home/Projects/Poli_covid.png" alt="project"/>
-                        </div>
-                        <text className={styles.projectTitle}>POLITO, HKN, and Covid-19: A Reflection</text>
-                        <text className={styles.project}>Seventeen o'clock on a quiet Sunday in March. Silent because
-                            the streets are deserted, and only our thoughts resonate louder than ever. In these cases,
-                            all that's left is to give them shape by projecting them into much broader worlds than the
-                            walls that confine us in these...
-                        </text>
                         {/*TODO: add link*/}
                     </div>
                 </div>
