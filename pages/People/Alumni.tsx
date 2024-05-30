@@ -274,13 +274,6 @@ const AlumniData: AlumnoProps[] = [
         ]
     },
     {
-        name: "Matteo Dospina",
-        imageSrc: "/People/members/matteo_dospina.png",
-        badges: [
-            {type: BadgeType.Inducted, year: 2020}
-        ]
-    },
-    {
         name: "Matteo Guarrera",
         imageSrc: "/People/members/matteo_guarrera.png",
         badges: [
@@ -528,14 +521,6 @@ const AlumniData: AlumnoProps[] = [
         imageSrc: "/People/members/francesco_donato.png",
         badges: [
             {type: BadgeType.Inducted, year: 2022}
-        ]
-    },
-    {
-        name: "Francesco Pipitò",
-        imageSrc: "/People/members/francesco_pipito.png",
-        badges: [
-            {type: BadgeType.Inducted, year: 2017},
-            {type: BadgeType.Board, year: 2017, role: "Recording Secretary"}
         ]
     },
     {
