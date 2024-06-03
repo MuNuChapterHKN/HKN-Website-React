@@ -1,11 +1,11 @@
 import Image from 'next/image'
 import styles from '@/styles/Home/Home.module.css'
+import activities_styles from '@/styles/Activities/Activities.module.scss'
 import {useRouter} from "next/router";
 import Layout from "../components/Layout";
 import HomeLogo from "../components/Home/HomeLogo";
 import RoundButton from "../components/molecules/RoundButton";
 import {useEffect, useState} from "react";
-import activities_styles from '@/styles/Activities/Activities.module.scss'
 
 
 
@@ -103,8 +103,6 @@ export default function Home() {
                 </div>
             </div>
 
-<<<<<<< HEAD
-=======
             <div className={styles.projectsContainer}>
                 <text className={styles.projectsText}>NEWS</text>
                 <text className={styles.projectsTitle}>Our Latest Projects</text>
@@ -248,7 +246,7 @@ export default function Home() {
                 </div>
             </div>
 
->>>>>>> remove_activities
+
             <div className={styles.applyCard}>
                 <text className={styles.textAreYouReady}>ARE YOU READY?</text>
                 <text className={styles.textJoinOurChapter}>Join Our Chapter &</text>
