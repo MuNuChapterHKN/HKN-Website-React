@@ -5,6 +5,9 @@ import Layout from "../components/Layout";
 import HomeLogo from "../components/Home/HomeLogo";
 import RoundButton from "../components/molecules/RoundButton";
 import {useEffect, useState} from "react";
+import activities_styles from '@/styles/Activities/Activities.module.scss'
+
+
 
 export default function Home() {
     const router = useRouter();
@@ -100,6 +103,152 @@ export default function Home() {
                 </div>
             </div>
 
+<<<<<<< HEAD
+=======
+            <div className={styles.projectsContainer}>
+                <text className={styles.projectsText}>NEWS</text>
+                <text className={styles.projectsTitle}>Our Latest Projects</text>
+                <text className={styles.projectsSubtitle}>COMING SOON</text>
+                <div className={styles.projectsCards}>
+                    <div className={styles.projectsLeft}>
+                        <div className={styles.projectsImageClip}>
+                            <img className={styles.projectsPicture} src="/Home/Projects/Sirius_vedere.jpg"
+                                 alt="project"/>
+                        </div>
+                        <text className={styles.projectTitle}>
+                            Sirius: Seeing the Future Through the Eyes of the Present
+                        </text>
+                        <text className={styles.project}>For the first time, it was the HKN students who paid a visit to
+                            a company: SIRIUS (Sirius | Home). For the new members, this was their first experience of
+                            internal training, but the real novelty involved the existing members: being able to
+                            personally visit a company turned out to be an...
+                        </text>
+                        {/*TODO: add link*/}
+                    </div>
+                    <div className={styles.projectsCenter}>
+                        <div className={styles.projectsImageClip}>
+                            <img className={styles.projectsPicture} src="/Home/Projects/Vivere_lassociazione.png"
+                                 alt="project"/>
+                        </div>
+                        <text className={styles.projectTitle}>Living the Association Online: A Beginner's Guide
+                        </text>
+                        <text className={styles.project}>Initially, the idea was born from loneliness. Staying locked at
+                            home and not seeing anyone due to the lockdown was a condition that, while it might have
+                            seemed exhilarating and almost heroic at first, had become devastating over time. The
+                            thought of becoming a part of an honor society...
+                        </text>
+                        {/*TODO: add link*/}
+                    </div>
+                    <div className={styles.projectsRight}>
+                        <div className={styles.projectsImageClip}>
+                            <img className={styles.projectsPicture} src="/Home/Projects/Poli_covid.png" alt="project"/>
+                        </div>
+                        <text className={styles.projectTitle}>POLITO, HKN, and Covid-19: A Reflection</text>
+                        <text className={styles.project}>Seventeen o'clock on a quiet Sunday in March. Silent because
+                            the streets are deserted, and only our thoughts resonate louder than ever. In these cases,
+                            all that's left is to give them shape by projecting them into much broader worlds than the
+                            walls that confine us in these...
+                        </text>
+                        {/*TODO: add link*/}
+                    </div>
+                </div>
+            </div>
+
+
+            <div className={activities_styles.allActivities}>
+                <div className={activities_styles.allActivities__background}/>
+
+                <div className={activities_styles.allActivities__content}>
+                    <div className={activities_styles.allActivities__events}>
+                        events
+                    </div>
+                    <div className={activities_styles.allActivities__title}>
+                        Discover All Our Activities
+                    </div>
+
+                    <div className={activities_styles.allActivities__columns}>
+                        <div className={activities_styles.allActivities__columns__left}>
+                            <div className={activities_styles.allActivities__group1}>
+                                <div className={activities_styles.allActivities__group__events}>events</div>
+                                <div className={activities_styles.allActivities__group__title}>Events</div>
+                                <div className={activities_styles.allActivities__group__text}>Our events are thought for anyone who
+                                                                                   likes talking, debating, learning and
+                                                                                   discovering
+                                </div>
+
+                                <div className={activities_styles.allActivities__group1__imgcont1}>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Events/mentalWellnessDigitalWellBeing.png'} alt={'Event 3'}/>
+                                </div>
+                                <div className={activities_styles.allActivities__group1__imgcont2}>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Events/event_2022.png'} alt={'Event 2'} style={{objectPosition: "75% 100%"}}/>
+                                </div>
+                                <div className={activities_styles.allActivities__group1__imgcont3}>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Events/quantumQuest.png'} alt={'Event 1'}/>
+                                </div>
+
+                                <div className={activities_styles.allActivities__group1__discover}>
+                                    Discover
+                                    <RoundButton className={activities_styles.allActivities__group__button} onClick={() => router.push('/Activities/Events')}>events</RoundButton>
+                                </div>
+                            </div>
+                            <div className={activities_styles.allActivities__group2}>
+                                <div className={activities_styles.allActivities__group__events}>events</div>
+                                <div className={activities_styles.allActivities__group__title}>Masterclass</div>
+                                <div className={activities_styles.allActivities__group__text}>Our experts will provide you advices
+                                                                                   and tips that will help you improving
+                                                                                   your skills & enriching your CV
+                                </div>
+
+                                <div className={activities_styles.allActivities__group2__imgcont1}>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/MentalWellness.jpg'} alt={'discover1'}/>
+                                </div>
+                                <div className={activities_styles.allActivities__group2__imgcont2}>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/Hexakappathlon.jpg'} alt={'discover2'} style={{objectPosition: "75% 100%"}}/>
+                                </div>
+                                <div className={activities_styles.allActivities__group2__imgcont3}>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/FoundersDay.jpg'} alt={'discover1'}/>
+                                </div>
+
+                                <div className={activities_styles.allActivities__group2__discover}>
+                                    Discover
+                                    {/*<RoundButton className={activities_styles.allActivities__group__button} onClick={() => router.push('/Activities/Masterclasses')}>Masterclasses</RoundButton>*/}
+                                    <RoundButton className={activities_styles.allActivities__group__button} onClick={() => {}}>COMING SOON</RoundButton>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className={activities_styles.allActivities__columns__right}>
+
+                            <div className={activities_styles.allActivities__group3}>
+                                <div className={activities_styles.allActivities__group__events}>events</div>
+                                <div className={activities_styles.allActivities__group__title}>Study Groups</div>
+                                <div className={activities_styles.allActivities__group__text}>HKN members and PhD students will
+                                                                                   help you with whatever concept you
+                                                                                   might be struggling with
+                                </div>
+
+                                <div className={activities_styles.allActivities__group3__imgcont1}>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/Discover_2.jpeg'} alt={'discover1'}/>
+                                </div>
+                                <div className={activities_styles.allActivities__group3__imgcont2}>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/FormazioneInternaReply.jpeg'} alt={'discover2'} style={{objectPosition: "75% 100%"}}/>
+                                </div>
+                                <div className={activities_styles.allActivities__group3__imgcont3}>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/Discover_3.jpeg'} alt={'discover1'}/>
+                                </div>
+
+                                <div className={activities_styles.allActivities__group3__discover}>
+                                    Discover
+                                    <RoundButton className={activities_styles.allActivities__group__button} onClick={() => router.push('/Activities/StudyGroups')}>study
+                                                                                                                                                        groups</RoundButton>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+>>>>>>> remove_activities
             <div className={styles.applyCard}>
                 <text className={styles.textAreYouReady}>ARE YOU READY?</text>
                 <text className={styles.textJoinOurChapter}>Join Our Chapter &</text>
