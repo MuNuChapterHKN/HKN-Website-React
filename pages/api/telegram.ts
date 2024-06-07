@@ -16,8 +16,8 @@ export async function shareNewApply(name: string) {
     handleError(e, "Error retrieving count");
   }
   const counterMessage = counter ?? "Unknown";
-  const emoji1 = ["🔥", "✨", "👾"][Math.floor(Math.random() * 3)];
-  const emoji2 = ["🥳", "🤩", "😍"][Math.floor(Math.random() * 3)];
+  const emoji1 = getRandomEmoji(["🔥", "✨", "👾"]);
+  const emoji2 = getRandomEmoji(["🥳", "🤩", "😍"]);
   const message = `${emoji1} Nuova Candidatura! ${emoji2}\nNome: ${name}\nCount: ${counterMessage}`;
   await sendMessage(message);
 }
@@ -54,4 +54,8 @@ function isFileOlderThanNDays(filePath: string, days: number): boolean {
   const now = new Date().getTime();
   const thirtyDaysInMilliseconds = days * 24 * 60 * 60 * 1000; // days in ms
   return now - lastUpdated > thirtyDaysInMilliseconds;
+}
+
+function getRandomEmoji(emojis: string[]): string {
+  return emojis[Math.floor(Math.random() * emojis.length)];
 }
