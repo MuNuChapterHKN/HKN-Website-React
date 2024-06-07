@@ -1,5 +1,5 @@
-const TelegramBot = require("node-telegram-bot-api");
-const fs = require("fs");
+import TelegramBot from "node-telegram-bot-api";
+import fs from "fs";
 import { handleError } from "./application";
 
 const token = process.env.TELEGRAM_TOKEN;
