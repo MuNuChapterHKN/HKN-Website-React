@@ -28,8 +28,10 @@ export async function sendApplyFailedMessage(stage: string, applicant: string) {
 }
 
 export async function sendMessage(message: string) {
+  if (!token || !chatId) 
+    throw new Error("Telegram APIs not configured.");
   const bot = new TelegramBot(token, { polling: false });
-  await bot.sendMessage(chatId, message, { message_thread_id: threadId });
+  await bot.sendMessage(chatId, message, { message_thread_id: Number(threadId) });
 }
 
 function readCounter(): number {
