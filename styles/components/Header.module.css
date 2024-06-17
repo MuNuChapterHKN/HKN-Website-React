@@ -10,7 +10,7 @@
     width: 100%;
     /* Added styles for floating header */
     position: fixed;
-    top: 10; /* Position at the top of the viewport */
+    background-color:#061E33;
     left: 0; /* Position at the left of the viewport */
     z-index: 20;  /* Ensure it stays on top of other elements */
     margin-top: 0; /* Remove top margin as it's now fixed */
