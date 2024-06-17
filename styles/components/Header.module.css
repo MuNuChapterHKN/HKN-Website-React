@@ -1,3 +1,6 @@
+
+
+
 .header {
     display: flex;
     justify-content: flex-start;
@@ -5,10 +8,22 @@
     align-items: center;
     height: 130px;
     width: 100%;
-    z-index: 2;
-    margin-top: 20px;
-    margin-bottom: 30px;
+    /* Added styles for floating header */
+    position: fixed;
+    background-color:#061E33;
+    left: 0; /* Position at the left of the viewport */
+    z-index: 20;  /* Ensure it stays on top of other elements */
+    margin-top: 0; /* Remove top margin as it's now fixed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
 }
+  
+
+
+
+
+
+
+
 
 .logoTitle {
     display: flex;

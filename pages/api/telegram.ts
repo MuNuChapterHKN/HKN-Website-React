@@ -1,5 +1,5 @@
-const TelegramBot = require("node-telegram-bot-api");
-const fs = require("fs");
+import TelegramBot from "node-telegram-bot-api";
+import fs from "fs";
 import { handleError } from "./application";
 
 const token = process.env.TELEGRAM_TOKEN;
@@ -16,8 +16,8 @@ export async function shareNewApply(name: string) {
     handleError(e, "Error retrieving count");
   }
   const counterMessage = counter ?? "Unknown";
-  const emoji1 = ["🔥", "✨", "👾"][Math.floor(Math.random() * 3)];
-  const emoji2 = ["🥳", "🤩", "😍"][Math.floor(Math.random() * 3)];
+  const emoji1 = getRandomEmoji(["🔥", "✨", "👾"]);
+  const emoji2 = getRandomEmoji(["🥳", "🤩", "😍"]);
   const message = `${emoji1} Nuova Candidatura! ${emoji2}\nNome: ${name}\nCount: ${counterMessage}`;
   await sendMessage(message);
 }
@@ -28,8 +28,10 @@ export async function sendApplyFailedMessage(stage: string, applicant: string) {
 }
 
 export async function sendMessage(message: string) {
+  if (!token || !chatId) 
+    throw new Error("Telegram APIs not configured.");
   const bot = new TelegramBot(token, { polling: false });
-  await bot.sendMessage(chatId, message, { message_thread_id: threadId });
+  await bot.sendMessage(chatId, message, { message_thread_id: Number(threadId) });
 }
 
 function readCounter(): number {
@@ -52,4 +54,8 @@ function isFileOlderThanNDays(filePath: string, days: number): boolean {
   const now = new Date().getTime();
   const thirtyDaysInMilliseconds = days * 24 * 60 * 60 * 1000; // days in ms
   return now - lastUpdated > thirtyDaysInMilliseconds;
+}
+
+function getRandomEmoji(emojis: string[]): string {
+  return emojis[Math.floor(Math.random() * emojis.length)];
 }

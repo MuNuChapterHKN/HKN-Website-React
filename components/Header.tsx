@@ -66,9 +66,6 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
                         <div className={styles.arrowDown}></div>
                     </div>
                     <ul className={styles.dropdown}>
-                        <li className={isActive('/Activities/Activities') ? styles.activeDropdown : ''}
-                            onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleNavigate(e, '/Activities/Activities')}>Activities
-                        </li>
                         <li className={isActive('/Activities/Events') ? styles.activeDropdown : ''}
                             onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleNavigate(e, '/Activities/Events')}>Events
                         </li>
