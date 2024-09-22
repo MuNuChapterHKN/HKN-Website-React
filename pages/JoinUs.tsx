@@ -175,7 +175,7 @@ export default function JoinUs() {
                     :
                     <div className={styles.disabledJoinUs}>
                         <div className={styles.disabledJoinUs__text}>Applications are currently closed</div>
-                        <div className={styles.disabledJoinUs__text}>Come back at the beginning of the next semester!
+                        <div className={styles.disabledJoinUs__text}>The applications for Fall 2024 will reopen starting from October 1st
                         </div>
                     </div>
                 }
