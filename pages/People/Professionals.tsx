@@ -84,7 +84,7 @@ export default function Professionals() {
                 </div>
 
                 <div className={styles.faculty__right}>
-                    <text className={styles.faculty__right__subtitle}>SOMETHING</text>
+                    <text className={styles.faculty__right__subtitle}>PROFESSIONALS</text>
                     <text className={styles.faculty__right__title}>FACULTY ADVISOR</text>
                     <text className={styles.faculty__right__text}>Paolo Montuschi (full professor, IEEE Fellow) is currently serving as Vice-Rector for 2030 Digitalization and IT Strategies. He is the editor-in-chief of the IEEE Transactions on Emerging Topics in Computing and a member of both the IEEE Awards Board and IEEE PSPB. In 2017 he mentored the installment of the Mu Nu HKN Chapter, the first to be activated in Europe.
                     </text>
