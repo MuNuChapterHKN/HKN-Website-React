@@ -4,6 +4,17 @@ import {useEffect, useState} from "react";
 
 const PastBoardsData = [
     {
+        year: "2023/24",
+        members: [
+            { name: "Gustavo Nicoletti", role: "Recording Secretary", imageSrc: "/People/members/gustavo_nicoletti_rosa.png" },
+            { name: "Serena Canavero", role: "President", imageSrc: "/People/members/serena_canavero.png" },
+            { name: "Francesco Anzoino", role: "Treasurer", imageSrc: "/People/members/francesco_anzoino.png" },
+            { name: "Dario Gosmar", role: "Web Correspondent", imageSrc: "/People/members/dario_gosmar.png" },
+            { name: "Claudio Fantasia", role: "Vice-President", imageSrc: "/People/members/claudio_fantasia.png" },
+            { name: "Alberto Castrignanò", role: "Corresponding Secretary", imageSrc: "/People/members/alberto_castrignano.png" }
+        ]
+    },
+    {
         year: "2022/23",
         members: [
             { name: "Gabriele Iurlaro", role: "Recording Secretary", imageSrc: "/People/members/gabriele_iurlaro.png" },
