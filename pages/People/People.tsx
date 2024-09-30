@@ -8,47 +8,47 @@ import ArrowButton from "@/components/molecules/ArrowButton";
 // Images should be in a 4:5 ratio
 const Board: BoardMemberProps[] = [
     {
-        name: "Gustavo Nicoletti",
+        name: "Daniele De Rossi",
         role: "Recording Secretary",
-        imageSrc: "/People/members/gustavo_nicoletti_rosa.png",
-        linkedIn: "https://www.linkedin.com/in/gustavo-nicoletti-rosa/",
+        imageSrc: "/People/members/daniele_de_rossi.png",
+        linkedIn: "https://www.linkedin.com/in/daniele-de-rossi-2600bb209",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
-        name: "Serena Canavero",
+        name: "Andrea Pignata",
         role: "President",
-        imageSrc: "/People/members/serena_canavero.png",
-        linkedIn: "https://www.linkedin.com/in/serenacanavero/",
+        imageSrc: "/People/members/andrea_pignata.png",
+        linkedIn: "https://www.linkedin.com/in/andrea-pignata-244b9a231/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
-        name: "Francesco Anzoino",
+        name: "Alessia De Crescenzo",
         role: "Treasurer",
-        imageSrc: "/People/members/francesco_anzoino.png",
-        linkedIn: "",
+        imageSrc: "/People/members/alessia_de_crescenzo.png",
+        linkedIn: "https://www.linkedin.com/in/alessia-de-crescenzo-67bb7b1bb",
+        roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
+    },
+    {
+        name: "Mattia Molinari",
+        role: "Web Correspondent",
+        imageSrc: "/People/members/mattia_molinari.png",
+        linkedIn: "https://www.linkedin.com/in/mattia-molinari/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
         name: "Dario Gosmar",
-        role: "Web Correspondent",
+        role: "Vice President",
         imageSrc: "/People/members/dario_gosmar.png",
         linkedIn: "https://www.linkedin.com/in/dario-gosmar/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
-    {
-        name: "Claudio Fantasia",
-        role: "Vice President",
-        imageSrc: "/People/members/claudio_fantasia.png",
-        linkedIn: "https://www.linkedin.com/in/claudio-fantasia-120560224/",
-        roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
-    },
-    {
-        name: "Alberto Castrignanò",
-        role: "Corresponding Secretary",
-        imageSrc: "/People/members/alberto_castrignano.png",
-        linkedIn: "https://www.linkedin.com/in/albertocastrignano2/",
-        roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
-    },
+    //{
+    //    name: "Alberto Castrignanò",
+    //    role: "Corresponding Secretary",
+    //    imageSrc: "/People/members/alberto_castrignano.png",
+    //    linkedIn: "https://www.linkedin.com/in/albertocastrignano2/",
+    //    roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
+    //},
 ];
 
 const Teams: TeamProps[] = [
