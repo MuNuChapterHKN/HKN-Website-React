@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import styles from "@/styles/JoinUs/JoinUs.module.scss";
 import SubmissionForm from "@/components/JoinUs/SubmissionForm";
 
-const JoinUsEnabled = false;
+const JoinUsEnabled = true;
 
 export default function JoinUs() {
 
