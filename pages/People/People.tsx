@@ -29,17 +29,17 @@ const Board: BoardMemberProps[] = [
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     {
-        name: "Mattia Molinari",
-        role: "Web Correspondent",
-        imageSrc: "/People/members/mattia_molinari.png",
-        linkedIn: "https://www.linkedin.com/in/mattia-molinari/",
-        roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
-    },
-    {
         name: "Dario Gosmar",
         role: "Vice President",
         imageSrc: "/People/members/dario_gosmar.png",
         linkedIn: "https://www.linkedin.com/in/dario-gosmar/",
+        roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
+    },
+    {
+        name: "Mattia Molinari",
+        role: "Web Correspondent",
+        imageSrc: "/People/members/mattia_molinari.png",
+        linkedIn: "https://www.linkedin.com/in/mattia-molinari/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
     //{

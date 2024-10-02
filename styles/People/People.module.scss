@@ -32,11 +32,11 @@
 .boardGrid, .teamsGrid, .discoverContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .boardMember {
-    flex: 1 0 30%; /* Grow, Shrink, Basis */
+    flex: 0 0 30%; /* Grow, Shrink, Basis */
     margin: 1.5%;
     display: flex;
     position: relative;
