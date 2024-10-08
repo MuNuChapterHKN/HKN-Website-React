@@ -59,8 +59,8 @@ const Teams: TeamProps[] = [
         imageSrc: "/People/Resp/resp-comms.png",
         managers: [
             {
-                name: "Dario Gosmar",
-                imageSrc: "/People/members/dario_gosmar.png",
+                name: "Riccardo Cerrone",
+                imageSrc: "/People/members/riccardo_alfonso_cerrone.png",
             }
         ],
         members: [
@@ -112,12 +112,12 @@ const Teams: TeamProps[] = [
         imageSrc: "/People/Resp/resp-hr.png",
         managers: [
             {
-                name: "Francesca Portadibasso",
-                imageSrc: "/People/members/francesca_portadibasso.png",
+                name: "Edoardo Demichelis",
+                imageSrc: "/People/members/edoardo_demichelis.png",
             },
             {
-                name: "Luca Filippetti",
-                imageSrc: "/People/members/luca_filippetti.png",
+                name: "Giacomo Maino",
+                imageSrc: "/People/members/giacomo_maino.png",
             }
         ],
         members: [
@@ -170,8 +170,12 @@ const Teams: TeamProps[] = [
         imageSrc: "/People/Resp/resp-fi.png",
         managers: [
             {
-                name: "Elena Favero",
-                imageSrc: "/People/members/elena_favero.png",
+                name: "Lorenzo Barbati",
+                imageSrc: "/People/members/lorenzo_barbati.png",
+            },
+            {
+                name: "Riccardo Bracciale",
+                imageSrc: "/People/members/riccardo_bracciale.png",
             }
         ],
         members: [
@@ -230,8 +234,12 @@ const Teams: TeamProps[] = [
         imageSrc: "/People/Resp/resp-tutoring.png",
         managers: [
             {
-                name: "Orlando Zaccaria",
-                imageSrc: "/People/members/orlando_zaccaria.png",
+                name: "Sabina Sarcuni",
+                imageSrc: "/People/members/sabina_sarcuni.png",
+            },
+            {
+                name: "Erik Scolaro",
+                imageSrc: "/People/members/erik_scolaro.png",
             }
         ],
         members: [
@@ -280,8 +288,12 @@ const Teams: TeamProps[] = [
         imageSrc: "/People/Resp/resp-eventi.png",
         managers: [
             {
-                name: "Sebastiano Guzzone",
-                imageSrc: "/People/members/sebastiano_guzzone.png",
+                name: "Francesco Anzoino",
+                imageSrc: "/People/members/francesco_anzoino.png",
+            },
+            {
+                name: "Leonardo Gallina",
+                imageSrc: "/People/members/leonardo_gallina.png",
             }
         ],
         members: [
@@ -339,12 +351,8 @@ const Teams: TeamProps[] = [
         imageSrc: "/People/Resp/resp-it.png",
         managers: [
             {
-                name: "Alberto Baroso",
-                imageSrc: "/People/members/alberto_baroso.png",
-            },
-            {
-                name: "Francesco Baldini",
-                imageSrc: "/People/members/francesco_baldini.png",
+                name: "Antonio Capece",
+                imageSrc: "/People/members/antonio_capece.png",
             }
         ],
         members: [
