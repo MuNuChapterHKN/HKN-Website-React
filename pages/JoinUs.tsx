@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import styles from "@/styles/JoinUs/JoinUs.module.scss";
 import SubmissionForm from "@/components/JoinUs/SubmissionForm";
 
-const JoinUsEnabled = true;
+const JoinUsEnabled = false;
 
 export default function JoinUs() {
 
@@ -175,7 +175,7 @@ export default function JoinUs() {
                     :
                     <div className={styles.disabledJoinUs}>
                         <div className={styles.disabledJoinUs__text}>Applications are currently closed</div>
-                        <div className={styles.disabledJoinUs__text}>The applications for Fall 2024 will reopen starting from October 1st
+                        <div className={styles.disabledJoinUs__text}>Come back at the beginning of the next semester!
                         </div>
                     </div>
                 }
