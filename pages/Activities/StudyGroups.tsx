@@ -57,15 +57,6 @@ const studyGroups: StudyGroupProps[] = [
         "date": "Venerdì 18:00-19:00",
         "location": "Aula 5s"
     },
-    {
-        "name": "Analisi dei segnali",
-        "link": "https://t.me/+O0PGt_StS4Y2ZGJk",
-        "description": "Potevano chiamarla Analisi 3 e invece hanno deciso di intitolarla Analisi dei segnali, ma rimane comunque una materia di merda particolarmente difficile e che richiede parecchio impegno per essere capita. Se la mole di concetti e formule ti confonde, noi saremo la tua guida!",
-        "imageSrc": "/Activities/Activities/Activities.png",
-        "tutor": "Matta Molinari",
-        "date": "Martedì 18:00-19:00",
-        "location": "Sala C"
-    }
 ];
 
 export default function StudyGroups() {
