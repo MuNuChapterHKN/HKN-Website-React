@@ -42,13 +42,13 @@ const Board: BoardMemberProps[] = [
         linkedIn: "https://www.linkedin.com/in/mattia-molinari/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
-    //{
-    //    name: "Alberto Castrignanò",
-    //    role: "Corresponding Secretary",
-    //    imageSrc: "/People/members/alberto_castrignano.png",
-    //    linkedIn: "https://www.linkedin.com/in/albertocastrignano2/",
-    //    roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
-    //},
+    {
+        name: "Sebastiano Guzzone",
+        role: "Corresponding Secretary",
+        imageSrc: "/People/members/sebastiano_guzzone.png",
+        linkedIn: "https://www.linkedin.com/in/sebastiano-guzzone-961274179/",
+        roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
+    },
 ];
 
 const Teams: TeamProps[] = [
