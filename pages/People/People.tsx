@@ -10,7 +10,7 @@ const Board: BoardMemberProps[] = [
     {
         name: "Daniele De Rossi",
         role: "Recording Secretary",
-        imageSrc: "/People/members/daniele_de_rossi.png",
+        imageSrc: "/People/members/Daniele_De_Rossi - Modificata.png",
         linkedIn: "https://www.linkedin.com/in/daniele-de-rossi-2600bb209",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
@@ -38,7 +38,7 @@ const Board: BoardMemberProps[] = [
     {
         name: "Mattia Molinari",
         role: "Web Correspondent",
-        imageSrc: "/People/members/mattia_molinari.png",
+        imageSrc: "/People/members/Mattia_Molinari - Modificata.png",
         linkedIn: "https://www.linkedin.com/in/mattia-molinari/",
         roleDescription: "Edoardo is a 3rd year Computer Science student at the University of Bristol. He is the President of the Bristol University Italian Society and the founder of the Bristol U",
     },
@@ -65,43 +65,28 @@ const Teams: TeamProps[] = [
         ],
         members: [
             {
-                name: "Alessia Scardi",
-                imageSrc: "/People/members/alessia_scardi.png",
+                name: "Alessio Delli Colli",
+                imageSrc: "/People/members/Alessio_Delli_Colli - Modificata.png",
             },
             {
-                name: "Riccardo Alfonso Cerrone",
-                imageSrc: "/People/members/riccardo_alfonso_cerrone.png",
+                name: "David Shehu",
+                imageSrc: "/People/members/David_Shehu - Modificata.png",
             },
             {
-                name: "Vittoria Drago",
-                imageSrc: "/People/members/vittoria_drago.png",
+                name: "Joel Topulli",
+                imageSrc: "/People/members/Joel_Topulli - Modificata.png",
             },
             {
-                name: "Antonio Capece",
-                imageSrc: "/People/members/antonio_capece.png",
+                name: "Francesca Coriale",
+                imageSrc: "/People/members/Francesca_Coriale.jpg - Modificata.png",
             },
             {
-                name: "Francesco Di Stefano",
-                imageSrc: "/People/members/francesco_di_stefano.png",
+                name: "Irene Maria Izzo",
+                imageSrc: "/People/members/Irene_Maria_Izzo - Modificata.png",
             },
             {
                 name: "Lorenzo Fezza",
-                imageSrc: "/People/members/lorenzo_fezza.png",
-            },
-            {
-                name: "Marco Rosa Gobbo",
-                imageSrc: "/People/members/marco_rosa_gobbo.png",
-            },
-            {
-                name: "Lucrezia Marcovaldi",
-            },
-            {
-                name: "Alex Martinelli",
-                imageSrc: "/People/members/alex_martinelli.png",
-            },
-            {
-                name: "Andrea Minardi",
-                imageSrc: "/People/members/andrea_minardi.png",
+                imageSrc: "/People/members/Lorenzo_Fezza - Modificata.png",
             },
         ]
     },
@@ -112,7 +97,7 @@ const Teams: TeamProps[] = [
         imageSrc: "/People/Resp/resp-hr.png",
         managers: [
             {
-                name: "Edoardo Demichelis",
+                name: "Filippo Triassi",
                 imageSrc: "/People/members/edoardo_demichelis.png",
             },
             {
