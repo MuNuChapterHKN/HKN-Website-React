@@ -97,7 +97,7 @@ const Teams: TeamProps[] = [
         imageSrc: "/People/Resp/resp-hr.png",
         managers: [
             {
-                name: "Filippo Triassi",
+                name: "Edoardo Demichielis",
                 imageSrc: "/People/members/edoardo_demichelis.png",
             },
             {
@@ -107,44 +107,32 @@ const Teams: TeamProps[] = [
         ],
         members: [
             {
-                name: "Edoardo Demichelis",
-                imageSrc: "/People/members/edoardo_demichelis.png",
+                name: "Filippo Triassi",
+                imageSrc: "/People/members/Filippo_Triassi - Modificata.png",
             },
             {
-                name: "Renata De Gennaro",
-                imageSrc: "/People/members/renata_de_gennaro.png",
+                name: "Marc'Antonio Lopez",
+                imageSrc: "/People/members/Marc_Antonio_Lopenz - Modificata.png",
             },
             {
-                name: "Giacomo Maino",
-                imageSrc: "/People/members/giacomo_maino.png",
+                name: "Matteo Gerard Balestriere",
+                imageSrc: "/People/members/Matteo_Gerard_Balestriere - Modificata.png",
             },
             {
                 name: "Rosario Francesco Cavelli",
                 imageSrc: "/People/members/rosario_francesco_cavelli.png",
             },
             {
-                name: "Stefano Cerutti",
-                imageSrc: "/People/members/stefano_cerutti.png",
+                name: "Robjona Toska",
+                imageSrc: "/People/members/Robjona_Toska - Modificata.png",
             },
             {
-                name: "Edoardo Colella",
-                imageSrc: "/People/members/edoardo_colella.png",
+                name: "Giovanni Tirone",
+                imageSrc: "/People/members/Giovanni_Tirone - Modificata.png",
             },
             {
-                name: "Marco Del Core",
-                imageSrc: "/People/members/marco_del_core.png",
-            },
-            {
-                name: "Alessandro Gasbarri",
-                imageSrc: "/People/members/alessandro_gasbarri.png",
-            },
-            {
-                name: "Kaliroi Mignone",
-                imageSrc: "/People/members/kaliroi_mignone.png",
-            },
-            {
-                name: "Andrea Pignata",
-                imageSrc: "/People/members/andrea_pignata.png",
+                name: "Luca Filippetti",
+                imageSrc: "/People/members/luca_filippetti.png",
             },
         ]
     },
@@ -165,50 +153,32 @@ const Teams: TeamProps[] = [
         ],
         members: [
             {
-                name: "Benedetta Perrone",
-                imageSrc: "/People/members/benedetta_perrone.png",
+                name: "Fabio Lauro",
+                imageSrc: "/People/members/Fabio_Lauro - Modificata.png",
             },
             {
-                name: "Lorenzo Barbati",
-                imageSrc: "/People/members/lorenzo_barbati.png",
+                name: "Mateo Shehu",
+                imageSrc: "/People/members/Mateo_Shehu - Modificata.png",
             },
             {
-                name: "Riccardo Bracciale",
-                imageSrc: "/People/members/riccardo_bracciale.png",
+                name: "Paolo Allione",
+                imageSrc: "/People/members/Paolo_Allione - Modificata.png",
             },
             {
-                name: "Ismaele Bahti",
-                imageSrc: "/People/members/ismaele_bahati.png",
+                name: "Salvatore Lo Sardo",
+                imageSrc: "/People/members/Salvatore_Lo_Sardo - Modificata.png",
             },
             {
-                name: "Marco Canavero",
-                imageSrc: "/People/members/marco_canavero.png",
+                name: "Daniel Dimitrov",
+                imageSrc: "/People/members/Daniel_Dimitrov - Modificata.png",
             },
             {
-                name: "Marco D'Andria",
-                imageSrc: "/People/members/marco_dandria.png",
+                name: "Rubens Brraka",
+                imageSrc: "/People/members/Rubens_Brraka - Modificata.png",
             },
             {
-                name: "Arber Kryeziu",
-                imageSrc: "/People/members/arber_kryeziu.png",
-            },
-            {
-                name: "Vittorio Macripò",
-            },
-            {
-                name: "Stefano Negri Merlo",
-            },
-            {
-                name: "Gustavo Ramirez",
-                imageSrc: "/People/members/gustavo_ramirez.png",
-            },
-            {
-                name: "Sofia Russo",
-                imageSrc: "/People/members/sofia_russo.png",
-            },
-            {
-                name: "Paolo Molino",
-                imageSrc: "/People/members/paolo_molino.png",
+                name: "Elena Favero",
+                imageSrc: "/People/members/elena_favero.png",
             },
         ]
     },
@@ -229,40 +199,36 @@ const Teams: TeamProps[] = [
         ],
         members: [
             {
-                name: "Eduard Antonovic Occhipinti",
-                imageSrc: "/People/members/eduard_antonovic_occhipinti.png",
+                name: "Amir Reza Khatibi",
+                imageSrc: "/People/members/Amir_Reza_Khatibi - Modificata.png",
             },
             {
-                name: "Erik Scolaro",
-                imageSrc: "/People/members/erik_scolaro.png",
+                name: "Giacomo Gramaglia",
+                imageSrc: "/People/members/Giacomo_Gramaglia - Modificata.png",
             },
             {
-                name: "Jad Sarkis",
-                imageSrc: "/People/members/jad_sarkis.png",
+                name: "Lorenzo Di Muzio",
+                imageSrc: "/People/members/Lorenzo_Di_Muzio - Modificata.png",
             },
             {
-                name: "Sabina Sarcuni",
-                imageSrc: "/People/members/sabina_sarcuni.png",
+                name: "Matteo Tedde",
+                imageSrc: "/People/members/Matteo_Tedde - Modificata.png",
             },
             {
-                name: "Lorenza Bonfanti Posta",
-                imageSrc: "/People/members/lorenza_bonfanti_posta.png",
+                name: "Nunzio Licalzi",
+                imageSrc: "/People/members/Nunzio_Licalzi - Modificata.png",
             },
             {
-                name: "Alessia De Crescenzo",
-                imageSrc: "/People/members/alessia_de_crescenzo.png",
+                name: "Antonio Angelo Polignano",
+                imageSrc: "/People/members/Antonio_Angelo_Polignano - Modificata.png",
             },
             {
-                name: "Leonardo Gallina",
-                imageSrc: "/People/members/leonardo_gallina.png",
+                name: "Giulio Cosentino",
+                imageSrc: "/People/members/Giulio_Cosentino - Modificata.png",
             },
             {
-                name: "Mattia Molinari",
-                imageSrc: "/People/members/mattia_molinari.png",
-            },
-            {
-                name: "Marco Donnarumma",
-                imageSrc: "/People/members/marco_donnarumma.png",
+                name: "Tommaso Pignatelli",
+                imageSrc: "/People/members/Tommaso_Pignatelli - Modificata.png",
             },
         ]
     },
@@ -283,49 +249,28 @@ const Teams: TeamProps[] = [
         ],
         members: [
             {
-                name: "Alessio Melone",
-                imageSrc: "/People/members/alessio_melone.png",
+                name: "Alessia Parigi",
+                imageSrc: "/People/members/Alessia_Parigi - Modificata.png",
             },
             {
-                name: "Elisa Misuri",
-                imageSrc: "/People/members/elisa_misuri.png",
+                name: "Federico Mele",
+                imageSrc: "/People/members/Federico_Mele - Modificata.png",
             },
             {
-                name: "Nicolo Benso",
-                imageSrc: "/People/members/nicolo_benso.png",
+                name: "Romano Mancini",
+                imageSrc: "/People/members/Romano_Mancini - Modificata.png",
             },
             {
-                name: "Davide Arcolini",
+                name: "Alice Santoro",
+                imageSrc: "/People/members/Alice_Santoro - Modificata.png",
             },
             {
-                name: "Daniele De Rossi",
-                imageSrc: "/People/members/daniele_de_rossi.png",
+                name: "Elisabetta Della Porta",
+                imageSrc: "/People/members/Elisabetta_Della_Porta - Modificata.png",
             },
             {
-                name: "Freddy Dongue Dongmo Yann",
-            },
-            {
-                name: "Francesca Fusco",
-                imageSrc: "/People/members/francesca_fusco.png",
-            },
-            {
-                name: "Gabriele Iurlaro",
-                imageSrc: "/People/members/gabriele_iurlaro.png",
-            },
-            {
-                name: "Raffaele Negri",
-                imageSrc: "/People/members/raffaele_negri.png",
-            },
-            {
-                name: "Mina Nikolova",
-            },
-            {
-                name: "Marco Pascarella",
-                imageSrc: "/People/members/marco_pascarella.png",
-            },
-            {
-                name: "Stefano Ravera",
-                imageSrc: "/People/members/stefano_ravera.png",
+                name: "Enrico Junior Cunsolo",
+                imageSrc: "/People/members/Enrico_Junior_Cunsolo - Modificata.png",
             },
         ]
     },
@@ -346,39 +291,36 @@ const Teams: TeamProps[] = [
                 imageSrc: "/People/members/alessio_menichinelli.png",
             },
             {
-                name: "Filippo Goffredo",
-                imageSrc: "/People/members/filippo_goffredo.png",
+                name: "Francesco Liaci",
+                imageSrc: "/People/members/Francesco_Liaci - Modificata.png",
             },
             {
-                name: "Isabella Lombardi",
-                imageSrc: "/People/members/isabella_lombardi.png",
+                name: "Paolo La Manna",
+                imageSrc: "/People/members/Paolo_La_Manna - Modificata.png",
             },
             {
-                name: "Massimo Aresca",
-                imageSrc: "/People/members/massimo_aresca.png",
+                name: "Giovanni De Maria",
+                imageSrc: "/People/members/Giovanni_De_Maria - Modificata.png",
             },
             {
-                name: "Pasquale Bianco",
-                imageSrc: "/People/members/pasquale_bianco.png",
+                name: "Giuseppe Pascale",
+                imageSrc: "/People/members/Giuseppe_Pascale - Modificata.png",
             },
             {
-                name: "Damiano Bonaccorsi",
-                imageSrc: "/People/members/damiano_bonaccorsi.png",
+                name: "Virginia Ermondi",
+                imageSrc: "/People/members/Virginia_Ermondi - Modificata.png",
             },
             {
-                name: "Marco De Luca",
-            },
-            {
-                name: "Elti Gjiriti",
-                imageSrc: "/People/members/elti_gjiriti.png",
+                name: "Alberto Baroso",
+                imageSrc: "/People/members/alberto_baroso.png",
             },
             {
                 name: "Matteo Mugnai",
                 imageSrc: "/People/members/matteo_mugnai.png",
             },
             {
-                name: "Marco Pappalardo",
-                imageSrc: "/People/members/marco_pappalardo.png",
+                name: "Massimo Aresca",
+                imageSrc: "/People/members/massimo_aresca.png",
             }
         ]
     },
