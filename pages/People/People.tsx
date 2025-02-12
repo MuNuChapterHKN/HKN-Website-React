@@ -119,10 +119,6 @@ const Teams: TeamProps[] = [
                 imageSrc: "/People/members/Matteo_Gerard_Balestriere - Modificata.png",
             },
             {
-                name: "Rosario Francesco Cavelli",
-                imageSrc: "/People/members/rosario_francesco_cavelli.png",
-            },
-            {
                 name: "Robjona Toska",
                 imageSrc: "/People/members/Robjona_Toska - Modificata.png",
             },
@@ -313,6 +309,10 @@ const Teams: TeamProps[] = [
             {
                 name: "Alberto Baroso",
                 imageSrc: "/People/members/alberto_baroso.png",
+            },
+            {
+                name: "Isabella Lombardi",
+                imageSrc: "/People/members/isabella_lombardi.png",
             },
             {
                 name: "Matteo Mugnai",
