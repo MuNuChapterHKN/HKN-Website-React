@@ -497,6 +497,22 @@
   margin: 2rem;
 }
 
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  margin: 1em 0;
+}
+
+.checkboxLabel {
+  font-size: 1.1em;
+  color: #061E33;
+  margin-left: 1em;
+}
+
+.checkboxInput {
+  margin: 0;
+}
+
 .overlay {
   position: absolute;
   background: rgba(255, 255, 255, 0.4);
