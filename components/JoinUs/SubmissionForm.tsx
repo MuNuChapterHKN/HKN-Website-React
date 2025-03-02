@@ -1,6 +1,6 @@
 import styles from "@/styles/JoinUs/JoinUs.module.scss";
 import {courses} from "@/data/JoinUs/Courses";
-import React, {useState, FormEvent, useEffect} from "react";
+import React, {useState, FormEvent} from "react";
 
 type Degree = "Bachelor" | "Master" | "PhD";
 
