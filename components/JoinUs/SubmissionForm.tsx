@@ -14,6 +14,7 @@ interface Errors {
 
 export default function SubmissionForm() {
 
+    const [acceptGDPR, setAcceptGDPR] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [average, setAverage] = useState<number>();
@@ -34,6 +35,9 @@ export default function SubmissionForm() {
 
     const validateForm = () => {
         let errors: { [key: string]: string } = {};
+
+        if (!acceptGDPR)
+            errors.acceptGDPR = 'Please, accept GDPR terms';
 
         if (!name)
             errors.name = 'Please, provide your full name';
@@ -224,6 +228,14 @@ export default function SubmissionForm() {
                     </div>
                     {studyPlanFile && <span className={styles.fileName}>{studyPlanFile}</span>}
                     {errors.studyPlan && <p className={styles.errorMessage}>{errors.studyPlan}</p>}
+
+                    <div className={styles.checkboxContainer}>
+                        <input type="checkbox" id="acceptGDPR" name="acceptGDPR" className={styles.checkboxInput}
+                               onChange={() => setAcceptGDPR(!acceptGDPR)} required={true}/>
+                        <label htmlFor="acceptGDPR" className={styles.checkboxLabel}>
+                            I authorize the treatment of personal data contained in the documents according to the D.Lgs. 2018/101 and GDPR (EU Regulation 2016/679).
+                        </label>
+                    </div>
 
                     <input type="submit" className={styles.submitButton} value="SEND" disabled={isLoading}/>
                     <p className={styles.formText}>
