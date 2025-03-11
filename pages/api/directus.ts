@@ -1,4 +1,6 @@
 import StudyGroup, {StudyGroupProps} from "@/components/Events/StudyGroup";
+import { BadgeType, Badge } from "@/components/People/Alumno";
+import {AlumnoProps} from "@/pages/People/Alumni";
 import { createDirectus, rest, readAssetArrayBuffer, readItems, readFile, readProviders, staticToken } from '@directus/sdk';
 
 
@@ -63,3 +65,32 @@ export async function fetchActiveStudyGroups() {
 	return studyGroups as StudyGroupProps[];
 }
 
+
+export async function fetchAlumni() {
+	const directus = createDirectus('https://hknpolito.org/directus/').with(rest());
+	const alumni = await directus.request(
+		readItems('member', {
+			"filter": { "alumno": { _eq: true } },
+			"limit": 500,
+		})
+	);
+	const alumniProps: AlumnoProps[] = [];
+	for (const alumnus of alumni) {
+		console.log(alumnus);
+		let name = alumnus.name + " " + alumnus.lastname;
+		let imageSrc = "/People/members/"+alumnus.name.toLowerCase()+"_"+alumnus.lastname.toLowerCase()+".png";
+		let badges: Badge[] = [];
+		if (alumnus.board){
+			badges.push({type: BadgeType.Board, year: alumnus.board.split(" - ")[1], role: alumnus.board.split(" - ")[0]});
+		}
+		if (alumnus.resp){
+			badges.push({type: BadgeType.Head, year: alumnus.resp.split(" - ")[1], role: alumnus.resp.split(" - ")[0]});
+		}
+		if (alumnus.induction_date){
+			badges.push({type: BadgeType.Inducted, year: alumnus.induction_date.split("-")[0]});
+		}
+		//console.log({name: name, imageSrc: imageSrc, badges: badges});
+		alumniProps.push({name: name, imageSrc: imageSrc, badges: badges});
+	}
+	return alumniProps;
+}
