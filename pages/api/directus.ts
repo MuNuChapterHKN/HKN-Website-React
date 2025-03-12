@@ -74,23 +74,72 @@ export async function fetchAlumni() {
 			"limit": 500,
 		})
 	);
-	const alumniProps: AlumnoProps[] = [];
+	const boards = await directus.request(
+		readItems('board', {
+			"limit": 500,
+		})
+	);
+	const heads = await directus.request(
+		readItems('head', {
+			"limit": 500,
+		})
+	);
+	const teams = await directus.request(
+		readItems('team', {
+			"limit": 500,
+		})
+	);
+	const teamMap = new Map();
+	for (const team of teams) {
+		teamMap.set(team.id, team.longName);
+	}
+
+	const alumniMap = new Map();
 	for (const alumnus of alumni) {
-		console.log(alumnus);
 		let name = alumnus.name + " " + alumnus.lastname;
 		let imageSrc = "/People/members/"+alumnus.name.toLowerCase()+"_"+alumnus.lastname.toLowerCase()+".png";
-		let badges: Badge[] = [];
-		if (alumnus.board){
-			badges.push({type: BadgeType.Board, year: alumnus.board.split(" - ")[1], role: alumnus.board.split(" - ")[0]});
-		}
-		if (alumnus.resp){
-			badges.push({type: BadgeType.Head, year: alumnus.resp.split(" - ")[1], role: alumnus.resp.split(" - ")[0]});
-		}
+		let badges: Badge[] = []
 		if (alumnus.induction_date){
 			badges.push({type: BadgeType.Inducted, year: alumnus.induction_date.split("-")[0]});
 		}
-		//console.log({name: name, imageSrc: imageSrc, badges: badges});
-		alumniProps.push({name: name, imageSrc: imageSrc, badges: badges});
+		alumniMap.set(alumnus.id, {name: name, imageSrc: imageSrc, badges: badges});
+	}
+	for (const board of boards) {
+		let role = board.role;
+		let year = board.year;
+		let badge = {type: BadgeType.Board, year: year, role: role};
+		alumniMap.get(board.member).badges.push(badge);
+	}
+	for (const head of heads) {
+		let team = teamMap.get(head.team);
+		let year = head.year;
+		let badge = {type: BadgeType.Head, year: year, role: team};
+		alumniMap.get(head.member).badges.push(badge);
+	}
+
+	const alumniProps: AlumnoProps[] = [];
+	for (const [key, value] of alumniMap) {
+		alumniProps.push(value);
 	}
 	return alumniProps;
+
+
+	// for (const alumnus of alumni) {
+	// 	console.log(alumnus);
+	// 	let name = alumnus.name + " " + alumnus.lastname;
+	// 	let imageSrc = "/People/members/"+alumnus.name.toLowerCase()+"_"+alumnus.lastname.toLowerCase()+".png";
+	// 	let badges: Badge[] = [];
+	// 	if (alumnus.board){
+	// 		badges.push({type: BadgeType.Board, year: alumnus.board.split(" - ")[1], role: alumnus.board.split(" - ")[0]});
+	// 	}
+	// 	if (alumnus.resp){
+	// 		badges.push({type: BadgeType.Head, year: alumnus.resp.split(" - ")[1], role: alumnus.resp.split(" - ")[0]});
+	// 	}
+	// 	if (alumnus.induction_date){
+	// 		badges.push({type: BadgeType.Inducted, year: alumnus.induction_date.split("-")[0]});
+	// 	}
+	// 	//console.log({name: name, imageSrc: imageSrc, badges: badges});
+	// 	alumniProps.push({name: name, imageSrc: imageSrc, badges: badges});
+	// }
+	// return alumniProps;
 }
