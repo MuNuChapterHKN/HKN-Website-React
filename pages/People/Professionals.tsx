@@ -2,57 +2,8 @@ import Layout from "@/components/Layout";
 import styles from '@/styles/People/Professionals.module.scss'
 import {useRouter} from "next/router";
 import {useEffect, useState} from "react";
+import { fetchProfessionals } from "../api/directus";
 
-// Images should be in a 4:5 ratio
-const ProfessionalsData: ProfessionalProps[] = [
-    {name: "Adrien Merlini", imageSrc: "/People/professionals/adrien_merlini.png"},
-    {name: "Alberto Tenconi", imageSrc: "/People/professionals/alberto_tenconi.png"},
-    {name: "Alfredo Benso", imageSrc: "/People/professionals/alfredo_benso.png"},
-    {name: "Andrea Bianco", imageSrc: "/People/professionals/andrea_bianco.png"},
-    {name: "Carlo Cond", imageSrc: "/People/professionals/carlo_cond.png"},
-    {name: "Cataldo Basile", imageSrc: "/People/professionals/cataldo_basile.png"},
-    {name: "Cecilia Metra", imageSrc: "/People/professionals/cecilia_metra.png"},
-    {name: "Danilo Demarchi", imageSrc: "/People/professionals/danilo_demarchi.png"},
-    {name: "Dejan Milojicic", imageSrc: "/People/professionals/dejan_milojicic.jpeg"},
-    {name: "Eddie Custovic", imageSrc: "/People/professionals/eddie_custovic.png"},
-    {name: "Edmundo Tovar", imageSrc: "/People/professionals/edmundo_tovar.png"},
-    {name: "Elena Maria Baralis", imageSrc: "/People/professionals/elena_maria_baralis.png"},
-    {name: "Enrico Macii", imageSrc: "/People/professionals/enrico_macii.png"},
-    {name: "Enrico Venuto", imageSrc: "/People/professionals/enrico_venuto.png"},
-    {name: "Fabrizio Lamberti", imageSrc: "/People/professionals/fabrizio_lamberti.png"},
-    {name: "Flavio Canavero", imageSrc: "/People/professionals/flavio_canavero.png"},
-    {name: "Fulvio Corno", imageSrc: "/People/professionals/fulvio_corno.png"},
-    {name: "Fulvio Risso", imageSrc: "/People/professionals/fulvio_risso.png"},
-    {name: "Fulvio Valenza", imageSrc: "/People/professionals/fulvio_valenza.png"},
-    {name: "Gabriella Bosco", imageSrc: "/People/professionals/gabriella_bosco.png"},
-    {name: "Gabriella Olmo", imageSrc: "/People/professionals/gabriella_olmo.png"},
-    {name: "Guido Pagana", imageSrc: "/People/professionals/guido_pagana.png"},
-    {name: "Juan Carlos De Martin", imageSrc: "/People/professionals/juan_carlos_de_martin.png"},
-    {name: "Leila De Floriani", imageSrc: "/People/professionals/leila_de_floriani.png"},
-    {name: "Lia Morra", imageSrc: "/People/professionals/lia_morra.png"},
-    {name: "Lorenzo Galleani", imageSrc: "/People/professionals/lorenzo_galleani.png"},
-    {name: "Luca Nassi", imageSrc: "/People/professionals/luca_nassi.png"},
-    {name: "Luigi De Russis", imageSrc: "/People/professionals/luigi_de_russis.png"},
-    {name: "Marcello Maggiora", imageSrc: "/People/professionals/marcello_maggiora.png"},
-    {name: "Massimo Violante", imageSrc: "/People/professionals/massimo_violante.png"},
-    {name: "Matteo Sonza Reorda", imageSrc: "/People/professionals/matteo_sonza_reorda.png"},
-    {name: "Maurizio Martina", imageSrc: "/People/professionals/maurizio_martina.png"},
-    {name: "Maurizio Rebaudengo", imageSrc: "/People/professionals/maurizio_rebaudengo.png"},
-    {name: "Michele Goano", imageSrc: "/People/professionals/michele_goano.png"},
-    {name: "Paolo Garza", imageSrc: "/People/professionals/paolo_garza.png"},
-    {name: "Paolo Margara", imageSrc: "/People/professionals/paolo_margara.png"},
-    {name: "Paolo Montuschi", imageSrc: "/People/professionals/paolo_montuschi.png"},
-    {name: "Roberto Gaudino", imageSrc: "/People/professionals/roberto_gaudino.png"},
-    {name: "Valentina Agostini", imageSrc: "/People/professionals/valentina_agostini.png"},
-    {name: "Aleksandar Mastilovic", imageSrc: "/People/professionals/aleksandar_mastilovic.png"},
-    {name: "Claudio Demartini", imageSrc: "/People/professionals/claudio_demartini.png"},
-    {name: "Gianluca Setti", imageSrc: "/People/professionals/gianluca_setti.png"},
-    {name: "Giovanni Ghione", imageSrc: "/People/professionals/giovanni_ghione.png"},
-    {name: "Letizia Bergamasco", imageSrc: "/People/professionals/letizia_bergamasco.png"},
-    {name: "Luca Sterpone", imageSrc: "/People/professionals/luca_sterpone.png"},
-    {name: "Roberto Graglia", imageSrc: "/People/professionals/roberto_graglia.png"},
-    {name: "Silvia Chiusano", imageSrc: "/People/professionals/silvia_chiusano.png"}
-];
 
 function sortByLastName(professionals: ProfessionalProps[]): ProfessionalProps[] {
     return professionals.sort((a, b) => {
@@ -64,8 +15,18 @@ function sortByLastName(professionals: ProfessionalProps[]): ProfessionalProps[]
     });
 }
 
-
 export default function Professionals() {
+
+    const [ProfessionalsData, setProfessionals] = useState<ProfessionalProps[]>([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await fetchProfessionals();
+            setProfessionals(data);
+        };
+
+        fetchData();
+    }, []);
 
     return (
         <Layout triangles>

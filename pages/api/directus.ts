@@ -1,62 +1,16 @@
 import StudyGroup, {StudyGroupProps} from "@/components/Events/StudyGroup";
 import { BadgeType, Badge } from "@/components/People/Alumno";
-import {AlumnoProps} from "@/pages/People/Alumni";
+import { AlumnoProps } from "@/pages/People/Alumni";
 import { createDirectus, rest, readAssetArrayBuffer, readItems, readFile, readProviders, staticToken } from '@directus/sdk';
+import { TeamMemberProps, TeamProps, BoardMemberProps } from '@/pages/People/People';
+import { PastBoardProps, PastBoardMemberProps} from '@/pages/People/PastBoards';
+import { ProfessionalProps } from '@/pages/People/Professionals';
 
-
-// const getMemberImage = async (teamId: number = 1) => {
-// 	const client = createDirectus('https://hknpolito.org/directus/').with(rest());
-// 	//console.log(client);
-	
-// 	const told = await client.request(readItem('team', teamId, {
-// 		fields: ['*.*']
-// 	}));
-// 	const stream = await client.request(readAssetArrayBuffer(told.image.id));
-
-//     return new ImageData(stream, told.image.width, told.image.height);
-
-// 	//try{
-// 	//	const result = await client.request(readItems('team', {
-// 	//		fields: ['*.*'],
-// 	//		//deep: {
-// 	//		//	members: {
-// 	//		//		_filter: {
-// 	//		//			alumno: {
-// 	//		//				_eq: false
-// 	//		//			}
-// 	//		//		}
-// 	//		//	}
-// 	//		//}
-// 	//	}));
-// 	//	//console.log(result);
-// 	//	for (it of result) {
-// 	//		console.log(it);
-// 	//		it.members.forEach(async (it2)=> {
-// 	//			console.log(it2)
-// 	//			const stream = await client.request(readAssetArrayBuffer(it2.image));
-// 	//			console.log(stream);
-// 	//			//const img = Uint8Array.from(stream);
-// 	//			//console.log(img);
-
-// 	//		});
-// 	//	}
-// 	//} catch(e) {
-// 	//	console.log('Got exeptions at readItem')
-// 	//	console.log(e);
-// 	//}
-// 	//try{
-// 	//	const result = await client.request(readFile('bc90e3dd-ee54-453b-a602-61959dc63e8e'));
-// 	//	console.log(result);
-// 	//} catch(e) {
-// 	//	console.log('Got exeptions at readFile')
-// 	//	console.log(e);
-// 	//}
-// }
-
-
+const API_URL = 'https://hknpolito.org/directus/';
+const IMPORT_LIMIT = 500;
 
 export async function fetchActiveStudyGroups() {
-	const directus = createDirectus('https://hknpolito.org/directus/').with(rest());
+	const directus = createDirectus(API_URL).with(rest());
 	const studyGroups = await directus.request(
 		readItems('study_group', {
 			"filter": { "active": { _eq: true } },
@@ -65,28 +19,27 @@ export async function fetchActiveStudyGroups() {
 	return studyGroups as StudyGroupProps[];
 }
 
-
 export async function fetchAlumni() {
-	const directus = createDirectus('https://hknpolito.org/directus/').with(rest());
+	const directus = createDirectus(API_URL).with(rest());
 	const alumni = await directus.request(
 		readItems('member', {
 			"filter": { "alumno": { _eq: true } },
-			"limit": 500,
+			"limit": IMPORT_LIMIT,
 		})
 	);
 	const boards = await directus.request(
 		readItems('board', {
-			"limit": 500,
+			"limit": IMPORT_LIMIT,
 		})
 	);
 	const heads = await directus.request(
 		readItems('head', {
-			"limit": 500,
+			"limit": IMPORT_LIMIT,
 		})
 	);
 	const teams = await directus.request(
 		readItems('team', {
-			"limit": 500,
+			"limit": IMPORT_LIMIT,
 		})
 	);
 	const teamMap = new Map();
@@ -97,7 +50,7 @@ export async function fetchAlumni() {
 	const alumniMap = new Map();
 	for (const alumnus of alumni) {
 		let name = alumnus.name + " " + alumnus.lastname;
-		let imageSrc = "/People/members/"+alumnus.name.toLowerCase()+"_"+alumnus.lastname.toLowerCase()+".png";
+		let imageSrc = "/People/members/"+name.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
 		let badges: Badge[] = []
 		if (alumnus.induction_date){
 			badges.push({type: BadgeType.Inducted, year: alumnus.induction_date.split("-")[0]});
@@ -106,13 +59,13 @@ export async function fetchAlumni() {
 	}
 	for (const board of boards) {
 		let role = board.role;
-		let year = board.year;
+		let year = (parseInt(board.year, 10) - 1).toString() + "/" + board.year[2] + board.year[3];
 		let badge = {type: BadgeType.Board, year: year, role: role};
 		alumniMap.get(board.member).badges.push(badge);
 	}
 	for (const head of heads) {
 		let team = teamMap.get(head.team);
-		let year = head.year;
+		let year = (parseInt(head.year, 10) - 1).toString() + "/" + head.year[2] + head.year[3];
 		let badge = {type: BadgeType.Head, year: year, role: team};
 		alumniMap.get(head.member).badges.push(badge);
 	}
@@ -122,24 +75,171 @@ export async function fetchAlumni() {
 		alumniProps.push(value);
 	}
 	return alumniProps;
+}
 
+export async function fetchTeams() {
+	const directus = createDirectus(API_URL).with(rest());
+	const teams = await directus.request(
+		readItems('team', {
+			"limit": IMPORT_LIMIT,
+		})
+	);
+	const members = await directus.request(
+		readItems('member', {
+			"limit": IMPORT_LIMIT,
+		})
+	);
+	const last_head = await directus.request(
+		readItems('head', {
+			"limit": 1,
+			"sort": "-year",
+		})
+	);
+	const last_year = last_head[0].year;
+	const heads = await directus.request(
+		readItems('head', {
+			"limit": IMPORT_LIMIT,
+			"filter": { "year": { _eq: last_year } },
+		})
+	);
 
-	// for (const alumnus of alumni) {
-	// 	console.log(alumnus);
-	// 	let name = alumnus.name + " " + alumnus.lastname;
-	// 	let imageSrc = "/People/members/"+alumnus.name.toLowerCase()+"_"+alumnus.lastname.toLowerCase()+".png";
-	// 	let badges: Badge[] = [];
-	// 	if (alumnus.board){
-	// 		badges.push({type: BadgeType.Board, year: alumnus.board.split(" - ")[1], role: alumnus.board.split(" - ")[0]});
-	// 	}
-	// 	if (alumnus.resp){
-	// 		badges.push({type: BadgeType.Head, year: alumnus.resp.split(" - ")[1], role: alumnus.resp.split(" - ")[0]});
-	// 	}
-	// 	if (alumnus.induction_date){
-	// 		badges.push({type: BadgeType.Inducted, year: alumnus.induction_date.split("-")[0]});
-	// 	}
-	// 	//console.log({name: name, imageSrc: imageSrc, badges: badges});
-	// 	alumniProps.push({name: name, imageSrc: imageSrc, badges: badges});
-	// }
-	// return alumniProps;
+	const memberMap = new Map();
+	for (const member of members) {
+		memberMap.set(member.id, member);
+	}
+
+	const teamMap = new Map();
+	for (const team of teams) {
+		let area = team.area;
+		let longName = team.longName;
+		let description = team.description;
+		let managers: TeamMemberProps[] = [];
+		let members: TeamMemberProps[] = [];
+		let imageSrc = "/People/Resp/resp-"+area.toLowerCase()+".png";
+		for (const memberID of team.members){
+			let member = memberMap.get(memberID);
+			let memberName = member.name + " " + member.lastname;
+			let memberImageSrc = "/People/members/"+memberName.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
+			let memberProps: TeamMemberProps = {
+				name: memberName,
+				imageSrc: memberImageSrc,
+			}
+			members.push(memberProps);
+		}
+		teamMap.set(team.id, {area: area, longName: longName, description: description, managers: managers, members: members, imageSrc: imageSrc});
+	}
+
+	for (const head of heads) {
+		let member = memberMap.get(head.member);
+		let memberName = member.name + " " + member.lastname;
+		let memberImageSrc = "/People/members/"+memberName.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
+		let memberProps: TeamMemberProps = {
+			name: memberName,
+			imageSrc: memberImageSrc,
+		}
+		teamMap.get(head.team).managers.push(memberProps);
+	}
+
+	const teamProps: TeamProps[] = [];
+	for (const [key, value] of teamMap) {
+		teamProps.push(value);
+	}
+	return teamProps;
+}
+
+export async function fetchBoard() {
+	const directus = createDirectus(API_URL).with(rest());
+	const last_board = await directus.request(
+		readItems('board', {
+			"limit": 1,
+			"sort": "-year",
+		})
+	);
+	const last_year = last_board[0].year;
+	const boards = await directus.request(
+		readItems('board', {
+			"limit": IMPORT_LIMIT,
+			"filter": { "year": { _eq: last_year } },
+		})
+	);
+	const members = await directus.request(
+		readItems('member', {
+			"limit": IMPORT_LIMIT,
+		})
+	);
+
+	const memberMap = new Map();
+	for (const member of members) {
+		memberMap.set(member.id, member);
+	}
+
+	const boardProps: BoardMemberProps[] = [];
+	for (const board of boards) {
+		let member = memberMap.get(board.member);
+		let name = member.name + " " + member.lastname;
+		let role = board.role;
+		let imageSrc = "/People/members/"+name.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
+		boardProps.push({name: name, role: role, imageSrc: imageSrc, roleDescription:""});
+	}
+
+	return boardProps;
+}
+
+export async function fetchPastBoards() {
+	const directus = createDirectus(API_URL).with(rest());
+	const boards = await directus.request(
+		readItems('board', {
+			"limit": IMPORT_LIMIT,
+			"sort": "-year",
+		})
+	);
+	const members = await directus.request(
+		readItems('member', {
+			"limit": IMPORT_LIMIT,
+		})
+	);
+
+	const memberMap = new Map();
+	for (const member of members) {
+		memberMap.set(member.id, member);
+	}
+
+	const boardMap = new Map();
+	for (const board of boards) {
+		let year = (parseInt(board.year, 10) - 1).toString() + "/" + board.year[2] + board.year[3];
+		let member = memberMap.get(board.member);
+		let name = member.name + " " + member.lastname;
+		let role = board.role;
+		let imageSrc = "/People/members/"+name.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
+		if (!boardMap.has(year)) {
+			boardMap.set(year, []);
+		}
+		boardMap.get(year).push({name: name, role: role, imageSrc: imageSrc});
+	}
+
+	const boardProps: PastBoardProps[] = [];
+	for (const [key, value] of boardMap) {
+		boardProps.push({year: key, members: value});
+	}
+
+	return boardProps;
+}
+
+export async function fetchProfessionals() {
+	const directus = createDirectus(API_URL).with(rest());
+	const professionals = await directus.request(
+		readItems('professional', {
+			"limit": IMPORT_LIMIT,
+		})
+	);
+
+	const professionalProps: ProfessionalProps[] = [];
+	for (const professional of professionals) {
+		let name = professional.name + " " + professional.lastname;
+		let imageSrc = "/People/professionals/"+name.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
+		console.log(imageSrc);
+		professionalProps.push({name: name, imageSrc: imageSrc});
+	}
+
+	return professionalProps;
 }
