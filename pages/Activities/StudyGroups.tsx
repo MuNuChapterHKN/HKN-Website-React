@@ -18,6 +18,17 @@ export default function StudyGroups() {
         fetchData();
     }, []);
 
+    if (studyGroups.length === 0) {
+        return (
+            <Layout triangles>
+                <div className={styles.groupsContainer}>
+                    <h1>No active study groups.</h1>
+                    <h2>We are organizing study groups for the next semester. Stay tuned!</h2>
+                </div>
+            </Layout>
+        )
+    }
+
     // @ts-ignore
     return (
         <Layout triangles>

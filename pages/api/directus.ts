@@ -23,7 +23,7 @@ export async function fetchAlumni() {
 	const directus = createDirectus(API_URL).with(rest());
 	const alumni = await directus.request(
 		readItems('member', {
-			"filter": { "alumno": { _eq: true } },
+			"filter": { "is_alumno": { _eq: true } },
 			"limit": IMPORT_LIMIT,
 		})
 	);
@@ -49,7 +49,7 @@ export async function fetchAlumni() {
 
 	const alumniMap = new Map();
 	for (const alumnus of alumni) {
-		let name = alumnus.name + " " + alumnus.lastname;
+		let name = alumnus.name + " " + alumnus.last_name;
 		let imageSrc = "/People/members/"+name.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
 		let badges: Badge[] = []
 		if (alumnus.induction_date){
@@ -57,16 +57,24 @@ export async function fetchAlumni() {
 		}
 		alumniMap.set(alumnus.id, {name: name, imageSrc: imageSrc, badges: badges});
 	}
+	console.log(alumniMap)
 	for (const board of boards) {
 		let role = board.role;
-		let year = (parseInt(board.year, 10) - 1).toString() + "/" + board.year[2] + board.year[3];
+		let year = board.year;
 		let badge = {type: BadgeType.Board, year: year, role: role};
+		console.log(board.member)
+		if (!alumniMap.has(board.member)) {
+			continue;
+		}
 		alumniMap.get(board.member).badges.push(badge);
 	}
 	for (const head of heads) {
 		let team = teamMap.get(head.team);
-		let year = (parseInt(head.year, 10) - 1).toString() + "/" + head.year[2] + head.year[3];
+		let year = head.year;
 		let badge = {type: BadgeType.Head, year: year, role: team};
+		if (!alumniMap.has(head.member)) {
+			continue;
+		}
 		alumniMap.get(head.member).badges.push(badge);
 	}
 
@@ -82,6 +90,7 @@ export async function fetchTeams() {
 	const teams = await directus.request(
 		readItems('team', {
 			"limit": IMPORT_LIMIT,
+			"filter": { "is_active": { _eq: true } },
 		})
 	);
 	const members = await directus.request(
@@ -110,7 +119,7 @@ export async function fetchTeams() {
 
 	const teamMap = new Map();
 	for (const team of teams) {
-		let area = team.area;
+		let area = team.name;
 		let longName = team.longName;
 		let description = team.description;
 		let managers: TeamMemberProps[] = [];
@@ -118,7 +127,7 @@ export async function fetchTeams() {
 		let imageSrc = "/People/Resp/resp-"+area.toLowerCase()+".png";
 		for (const memberID of team.members){
 			let member = memberMap.get(memberID);
-			let memberName = member.name + " " + member.lastname;
+			let memberName = member.name + " " + member.last_name;
 			let memberImageSrc = "/People/members/"+memberName.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
 			let memberProps: TeamMemberProps = {
 				name: memberName,
@@ -131,12 +140,13 @@ export async function fetchTeams() {
 
 	for (const head of heads) {
 		let member = memberMap.get(head.member);
-		let memberName = member.name + " " + member.lastname;
+		let memberName = member.name + " " + member.last_name;
 		let memberImageSrc = "/People/members/"+memberName.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
 		let memberProps: TeamMemberProps = {
 			name: memberName,
 			imageSrc: memberImageSrc,
 		}
+		console.log(head.team)
 		teamMap.get(head.team).managers.push(memberProps);
 	}
 
@@ -174,9 +184,10 @@ export async function fetchBoard() {
 	}
 
 	const boardProps: BoardMemberProps[] = [];
-	for (const board of boards) {
+	for (let i = boards.length - 1; i >= 0; i--) {
+		const board = boards[i];
 		let member = memberMap.get(board.member);
-		let name = member.name + " " + member.lastname;
+		let name = member.name + " " + member.last_name;
 		let role = board.role;
 		let imageSrc = "/People/members/"+name.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
 		boardProps.push({name: name, role: role, imageSrc: imageSrc, roleDescription:""});
@@ -206,9 +217,9 @@ export async function fetchPastBoards() {
 
 	const boardMap = new Map();
 	for (const board of boards) {
-		let year = (parseInt(board.year, 10) - 1).toString() + "/" + board.year[2] + board.year[3];
+		let year = board.year;
 		let member = memberMap.get(board.member);
-		let name = member.name + " " + member.lastname;
+		let name = member.name + " " + member.last_name;
 		let role = board.role;
 		let imageSrc = "/People/members/"+name.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
 		if (!boardMap.has(year)) {
@@ -235,7 +246,7 @@ export async function fetchProfessionals() {
 
 	const professionalProps: ProfessionalProps[] = [];
 	for (const professional of professionals) {
-		let name = professional.name + " " + professional.lastname;
+		let name = professional.name + " " + professional.last_name;
 		let imageSrc = "/People/professionals/"+name.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
 		console.log(imageSrc);
 		professionalProps.push({name: name, imageSrc: imageSrc});
