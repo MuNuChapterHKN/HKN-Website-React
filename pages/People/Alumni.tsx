@@ -873,8 +873,8 @@ const AlumniData: AlumnoProps[] = [
         ]
     },
     {
-        name: "Vincenzo Pellegrini",
-        imageSrc: "/People/members/vincenzo_pellegrini.png",
+        name: "Alice Pellegrini",
+        imageSrc: "/People/members/alice_pellegrini.png",
         badges: [
             {type: BadgeType.Inducted, year: 2021}
         ]
