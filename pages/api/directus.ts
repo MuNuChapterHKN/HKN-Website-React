@@ -202,7 +202,7 @@ export async function fetchProfessionals() {
 	const directus = createDirectus(API_URL).with(rest());
 	const professionals = await directus.request(
 		readItems('professional', {
-			"limit": IMPORT_LIMIT,\
+			"limit": IMPORT_LIMIT,
 		})
 	);
 
