@@ -130,7 +130,6 @@ function TeamPopUp({ index, visible, disablePopUp, teams}: { index: number, visi
 
     const Teams = teams;
 
-    console.log(Teams); 
 
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRefFirst = useRef<HTMLDivElement>(null);
@@ -145,7 +144,6 @@ function TeamPopUp({ index, visible, disablePopUp, teams}: { index: number, visi
     useEffect(() => {
         if (Teams.length > 0){
             let newTeam = Teams[index];
-            console.log(newTeam);
             let fRow: TeamMemberProps[] = [];
             let sRow: TeamMemberProps[] = [];
             const memberswithpictures = newTeam.members.filter(member => member.imageSrc !== undefined);
