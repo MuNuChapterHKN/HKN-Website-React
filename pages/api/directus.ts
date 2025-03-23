@@ -104,7 +104,7 @@ export async function fetchTeams() {
 		let description = team.description;
 		let managers: TeamMemberProps[] = [];
 		let members: TeamMemberProps[] = [];
-		let imageSrc = "/People/Resp/resp-"+area.toLowerCase()+".png";
+		let imageSrc = "/People/Resp/resp-"+area.toLowerCase().replace(/ /g, "_")+".png";
 
 		for (const member of team.members){
 
