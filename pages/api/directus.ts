@@ -41,7 +41,8 @@ export async function fetchAlumni() {
 
 	const alumniMap = new Map();
 	for (const alumnus of alumni) {
-		let name = alumnus.name + " " + alumnus.last_name;
+		let memberName = alumnus.name.split(" ")[0];
+		let name = memberName + " " + alumnus.last_name;
 		let imageSrc = "/People/members/"+name.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
 		let badges: Badge[] = []
 		if (alumnus.induction_date){
@@ -120,9 +121,10 @@ export async function fetchTeams() {
 
 	for (const head of heads) {
 
-		let memberName = head.member.name + " " + head.member.last_name;
-		let memberImageSrc = "/People/members/" + memberName.replace(/ /g, "_").replace("'","").toLowerCase() + ".png";
-		let memberProps: TeamMemberProps = {name: memberName, imageSrc: memberImageSrc}
+		let memberName = head.member.name.split(" ")[0];
+		let name = memberName + " " + head.member.last_name;
+		let ImageSrc = "/People/members/" + memberName.replace(/ /g, "_").replace("'","").toLowerCase() + ".png";
+		let memberProps: TeamMemberProps = {name: name, imageSrc: ImageSrc}
 
 		teamMap.get(head.team).managers.push(memberProps);
 	}
@@ -151,7 +153,8 @@ export async function fetchBoard() {
 	for (const board of boards) {
 
 		let member = board.member
-		let name = member.name + " " + member.last_name;
+		let memberName = member.name.split(" ")[0];
+		let name = memberName + " " + member.last_name;
 		let role = board.role;
 		let imageSrc = "/People/members/" + name.replace(/ /g, "_").replace("'","").toLowerCase() + ".png";
 
@@ -166,7 +169,7 @@ export async function fetchPastBoards() {
 	const boards = await directus.request(
 		readItems('board', {
 			"limit": IMPORT_LIMIT,
-			"sort": "-year",
+			"sort": ["-year", "-id"],
 			"fields": ["id", "member.name", "member.last_name", "role", "year"]
 		})
 	);
@@ -175,7 +178,8 @@ export async function fetchPastBoards() {
 	for (const board of boards) {
 		let year = board.year;
 		let member = board.member
-		let name = member.name + " " + member.last_name;
+		let memberName = member.name.split(" ")[0];
+		let name = memberName + " " + member.last_name;
 		let role = board.role;
 		let imageSrc = "/People/members/"+name.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
 		if (!boardMap.has(year)) {
@@ -198,13 +202,14 @@ export async function fetchProfessionals() {
 	const directus = createDirectus(API_URL).with(rest());
 	const professionals = await directus.request(
 		readItems('professional', {
-			"limit": IMPORT_LIMIT,
+			"limit": IMPORT_LIMIT,\
 		})
 	);
 
 	const professionalProps: ProfessionalProps[] = [];
 	for (const professional of professionals) {
-		let name = professional.name + " " + professional.last_name;
+		let profName = professional.name.split(" ")[0];
+		let name = profName + " " + professional.last_name;
 		let imageSrc = "/People/professionals/"+name.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
 		professionalProps.push({name: name, imageSrc: imageSrc});
 	}
