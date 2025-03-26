@@ -1,0 +1,94 @@
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pageSubtitle {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.pageTitle {
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.noteLinks {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.noteCard {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 300px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.noteCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.noteCard h3 {
+  color: #061e33;
+  margin: 0 0 1rem 0;
+}
+
+.noteCard p {
+  color: #666;
+  margin: 0;
+}
+
+.programGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.programCard {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.programCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #0070f3;
+}
+
+.programCard h3 {
+  color: #061e33;
+  margin: 0 0 1rem 0;
+}
+
+.programCard p {
+  color: #666;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.htmlContent {
+  padding: 2rem;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.htmlContent img {
+  max-width: 100%;
+  height: auto;
+}

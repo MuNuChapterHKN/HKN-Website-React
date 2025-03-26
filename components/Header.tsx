@@ -93,6 +93,10 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
                     </ul>
                 </div>*/}
 
+                <div className={isActive('/Notes') ? styles.active : styles.inactive} onClick={() => router.push('/Notes')}>
+                    Notes
+                </div>
+
             </div>
 
             <div className={styles.headerSpace}>
