@@ -33,6 +33,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    gap: 1rem;
 }
 
 .boardMember {
@@ -157,6 +158,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    box-sizing: border-box;
 }
 
 .peopleOf {
@@ -425,6 +427,9 @@ $member-margin: 30px;
 .teamDescription {
     color: #061E33;
     font-size: 1.4rem;
+    word-wrap: break-word;        
+  overflow-wrap: break-word;   
+  white-space: normal;         
 }
 
 .managerName {
@@ -621,6 +626,21 @@ $member-margin: 30px;
 }
 
 @media (max-width: 600px) {
+    .team {
+        flex-direction: column;
+    }
+
+    .teamRespImage {
+        width: 100%;        
+        max-width: 100%;
+        left: 0;            
+    }
+
+    .teamTextBox {
+        width: 100%;
+        padding: 15px;
+    }
+
     .boardContainer {
         width: 75%;
     }
@@ -634,4 +654,24 @@ $member-margin: 30px;
         width: 90%;
     }
 
+    .managementArea, .joinOurTeams {
+        font-size: 32px;
+        width: 100%;
+    }
+    
+    .teamArea {
+    font-size: 24px;
+    }
+
+    .boardMemberName {
+    font-size: 20px;
+    }
+
+    .teamHeaderRight {
+    padding-left: 1rem;
+    }
+
 }
+
+
+
