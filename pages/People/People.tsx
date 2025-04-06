@@ -9,24 +9,20 @@ import { fetchBoard, fetchTeams } from "../api/directus";
 export default function People() {
 
     const [Teams, setTeams] = useState<TeamProps[]>([]);
-
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetchTeams();
             setTeams(data);
         };
-
         fetchData();
     }, []);
 
     const [Board, setBoard] = useState<BoardMemberProps[]>([]);
-
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetchBoard();
             setBoard(data);
         };
-
         fetchData();
     }, []);
 
@@ -64,8 +60,10 @@ export default function People() {
                 <text className={styles.managementArea}>Management Area</text>
                 <div className={styles.boardGrid}>
                     {Board.map((bmp, index) => (
-                        <BoardMember boardMemberProps={bmp} index={index} key={index}
-                            onClick={() => handleBoardMemberClick(index)} />
+                        <BoardMember boardMemberProps={bmp} 
+                                    index={index} 
+                                    key={index}
+                                    onClick={() => handleBoardMemberClick(index)} />
                     ))}
                 </div>
             </div>
@@ -129,7 +127,6 @@ function Team({ teamProps, onClick }: { teamProps: TeamProps, onClick: () => voi
 function TeamPopUp({ index, visible, disablePopUp, teams}: { index: number, visible: Boolean, disablePopUp: () => void, teams: TeamProps[] }) {
 
     const Teams = teams;
-
 
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRefFirst = useRef<HTMLDivElement>(null);
@@ -234,64 +231,110 @@ function TeamPopUp({ index, visible, disablePopUp, teams}: { index: number, visi
         disablePopUp();
     }
 
-    
     return !team ? null : (
-        <div className={styles.popUpBackground} onClick={handleClosePupUp} style={{ visibility: visible ? 'visible' : 'hidden' }}>
-            <div className={styles.teamPopUp}>
-                <div className={styles.teamHeader}>
-                    <div className={styles.teamHeaderLeft}>
-                        <div className={styles.managerPopUpImageContainer}>
-                            <img className={styles.managerImage} alt={`Coordinators of ${team.area} area`}
-                                 src={team.imageSrc} width={'100px'} height={'100px'}/>
-                        </div>
-                        <div className={styles.managerName}>{team.managers[0].name + (team.managers.length > 1 ? ' &' : '')}</div>
-                        {team.managers.length > 1 &&
-                            <div className={styles.managerName}>{team.managers[1].name + (team.managers.length > 2 ? ' &' : '')}</div>
-                        }
-                        {team.managers.length > 2 &&
-                            <>
-                                <div className={styles.managerName}>{team.managers[2].name}</div>
-                            </>
-                        }
-                        <div className={styles.managerTitleLink}>
-                            <div className={styles.managerTitle}>Area manager{team.managers.length > 1 ? 's' : ''}</div>
-                            <div className={styles.managersLinkedin}>
-                                {team.managers.map(manager => {
-                                        return (manager.linkedIn &&
-                                            <div className={styles.linkIcon}>
-                                                <a className={styles.linkIcon} href={manager.linkedIn}>
-                                                    <img className={styles.linkIcon__icon} src={"/Icons/linkedin_logo_blue.png"}
-                                                         alt="LinkedIn Icon"/>
-                                                </a>
-                                            </div>
-                                        )
-                                    }
-                                )}
+        <div
+          className={styles.popUpBackground}
+          onClick={handleClosePupUp}
+          style={{ visibility: visible ? 'visible' : 'hidden' }}
+        >
+          <div className={styles.teamPopUp} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.teamHeader}>
+              <div className={styles.teamHeaderLeft}>
+                <div className={styles.managerDetails}>
+                  <div className={styles.managerPopUpImageContainer}>
+                    <img
+                      className={styles.managerImage}
+                      alt={`Coordinators of ${team.area} area`}
+                      src={team.imageSrc}
+                      width={'100px'}
+                      height={'100px'}
+                    />
+                  </div>
+      
+                  {team.managers.map((m, i) => (
+                    <div key={i} className={styles.managerName}>
+                      {m.name}
+                      {i < team.managers.length - 1 ? ' &' : ''}
+                    </div>
+                  ))}
+      
+                  <div className={styles.managerTitleLink}>
+                    <div className={styles.managerTitle}>
+                      Area manager{team.managers.length > 1 ? 's' : ''}
+                    </div>
+                    <div className={styles.managersLinkedin}>
+                      {team.managers.map(
+                        (m, i) =>
+                          m.linkedIn && (
+                            <div key={i} className={styles.linkIcon}>
+                              <a className={styles.linkIcon} href={m.linkedIn}>
+                                <img
+                                  className={styles.linkIcon__icon}
+                                  src="/Icons/linkedin_logo_blue.png"
+                                  alt="LinkedIn Icon"
+                                />
+                              </a>
                             </div>
-                        </div>
+                          )
+                      )}
                     </div>
-                    <div className={styles.teamHeaderRight}>
-                        <h2 className={styles.teamPopUp__Title}>We are {team.area}</h2>
-                        <text className={styles.teamPopUp__Description}>{team.description}</text>
-                    </div>
+                  </div>
                 </div>
-                <div className={styles.teamContainer} ref={containerRef}>
-                    {pageIndex > 0  && <ArrowButton className={`${styles.teamContainer__button} ${styles.teamContainer__button__left}`} size={37} onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleLeftClick(e)} color={'#FFFFFF'} left/>}
-                    <div className={styles.teamRow} ref={contentRefFirst}>
-                        {firstRow.map((member: TeamMemberProps) =>
-                            <TeamMember key={member.name} member={member}/>
-                        )}
-                    </div>
-                    <div className={styles.teamRowTwo} ref={contentRefSecond}>
-                        {secondRow.map((member: TeamMemberProps) =>
-                            <TeamMember key={member.name} member={member}/>
-                        )}
-                    </div>
-                    {pageIndex < numPages-1 && <ArrowButton className={`${styles.teamContainer__button} ${styles.teamContainer__button__right}`} size={37} onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleRightClick(e)} color={'#FFFFFF'} right/>}
+      
+                {/* Arrow buttons aligned right */}
+                <div className={`${styles.arrowButtons} ${styles.blackArrowWhiteCircle}`}>
+                  {pageIndex > 0 && (
+                    <ArrowButton size={30} onClick={handleLeftClick} color="#061E33" left />
+                  )}
+                  {pageIndex < numPages - 1 && (
+                    <ArrowButton size={30} onClick={handleRightClick} color="#061E33" right />
+                  )}
                 </div>
+              </div>
+      
+              <div className={styles.teamHeaderRight}>
+                <h2 className={styles.teamPopUp__Title}>We are {team.area}</h2>
+                <text className={styles.teamPopUp__Description}>{team.description}</text>
+              </div>
             </div>
+      
+            <div className={styles.teamContainer} ref={containerRef}>
+              {pageIndex > 0 && (
+                <ArrowButton
+                  className={`${styles.teamContainer__button} ${styles.teamContainer__button__left} ${styles.whiteArrowBlackCircle}`}
+                  size={37}
+                  onClick={(e: React.MouseEvent) => handleLeftClick(e)}
+                  color={'#FFFFFF'}
+                  left
+                />
+              )}
+      
+              <div className={styles.teamRow} ref={contentRefFirst}>
+                {firstRow.map((member: TeamMemberProps) => (
+                  <TeamMember key={member.name} member={member} />
+                ))}
+              </div>
+      
+              <div className={styles.teamRowTwo} ref={contentRefSecond}>
+                {secondRow.map((member: TeamMemberProps) => (
+                  <TeamMember key={member.name} member={member} />
+                ))}
+              </div>
+      
+              {pageIndex < numPages - 1 && (
+                <ArrowButton
+                  className={`${styles.teamContainer__button} ${styles.teamContainer__button__right} ${styles.whiteArrowBlackCircle}`}
+                  size={37}
+                  onClick={(e: React.MouseEvent) => handleRightClick(e)}
+                  color={'#FFFFFF'}
+                  right
+                />
+              )}
+            </div>
+          </div>
         </div>
-    )
+      );
+      
 }
 
 function TeamMember({member } : {member : TeamMemberProps}) {

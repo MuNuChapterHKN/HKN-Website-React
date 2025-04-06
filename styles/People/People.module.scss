@@ -606,6 +606,22 @@ $member-margin: 30px;
     }
 }
 
+.blackArrowWhiteCircle {
+    display: none;
+
+    @media (max-width: 600px) {
+        display: flex;
+    }
+}
+  
+.whiteArrowBlackCircle {
+    display: none;
+  
+    @media (min-width: 601px) {
+      display: flex;
+    }
+}
+  
 
 @media (max-width: 900px) {
     .boardMember {
@@ -634,20 +650,90 @@ $member-margin: 30px;
       white-space: normal;         
     }
 }
-
+  
 @media (max-width: 600px) {
+    .arrowButtonLeft {
+        left: 5px !important;
+    }
+    
+    .arrowButtonRight {
+        right: 5px !important;
+    }
+    
+    .teamPopUp {
+        font-size: 0.9rem; /* o 14px */
+    
+        &__Title {
+          font-size: 2rem;
+        }
+    
+        &__Description {
+          font-size: 1rem;
+        }
+    
+        .description {
+          font-size: 0.9rem;
+        }
+    
+        .managerName,
+        .memberName {
+          font-size: 0.7rem;
+        }
+    
+        .managerTitle,
+        .memberTitle {
+          font-size: 0.6rem;
+        }
+
+        .managerPopUpImageContainer {
+            width: 100px;
+            height: 100px;
+        }
+
+        .teamHeaderLeft {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            min-width: 220px;
+            position: relative;
+            width: 100%;
+          }
+          
+          .managerDetails {
+            display: flex;
+            flex-direction: column;
+          }
+          
+          .arrowButtons {
+            display: flex;
+            flex-direction: row; 
+            gap: 10px;
+            position: absolute;
+            right: 0;
+          }
+          
+    }
+
+    body.people-page {
+        overflow-x: hidden;
+    }
+    
+    body.people-page * {
+        box-sizing: border-box;
+    }
+
     .team {
         flex-direction: column;
     }
 
     .teamRespImage {
         width: 100%;        
-        max-width: 100%;
         left: 0;            
     }
 
     .teamTextBox {
-        width: 100%;
+        width: 80%;
         padding: 15px;
         box-sizing: border-box;
     }
@@ -681,7 +767,7 @@ $member-margin: 30px;
     .teamHeaderRight {
     padding-left: 1rem;
     }
-    
+
     .boardGrid, .teamsGrid, .discoverContainer {
         display: flex;
         flex-wrap: wrap;
@@ -695,6 +781,42 @@ $member-margin: 30px;
       white-space: normal;         
     }
 
+    .teamContainer {
+        width: 100% !important;
+        height: auto;
+        overflow-x: hidden;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px 0;
+      }
+      
+    .teamRow,
+    .teamRowTwo {
+        position: static;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        left: auto;
+        top: auto;
+        transform: none;
+    }
+      
+    .teamMember {
+        min-width: 42%;
+        max-width: 45%;
+        margin: 0;
+        align-items: center;
+    }
+
+    .teamContainer__button {
+        transform: scale(0.8);
+    }
+      
 }
 
 
