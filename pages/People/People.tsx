@@ -282,14 +282,6 @@ function TeamPopUp({ index, visible, disablePopUp, teams}: { index: number, visi
                 </div>
       
                 {/* Arrow buttons aligned right */}
-                <div className={`${styles.arrowButtons} ${styles.blackArrowWhiteCircle}`}>
-                  {pageIndex > 0 && (
-                    <ArrowButton size={30} onClick={handleLeftClick} color="#061E33" left />
-                  )}
-                  {pageIndex < numPages - 1 && (
-                    <ArrowButton size={30} onClick={handleRightClick} color="#061E33" right />
-                  )}
-                </div>
               </div>
       
               <div className={styles.teamHeaderRight}>
@@ -301,7 +293,7 @@ function TeamPopUp({ index, visible, disablePopUp, teams}: { index: number, visi
             <div className={styles.teamContainer} ref={containerRef}>
               {pageIndex > 0 && (
                 <ArrowButton
-                  className={`${styles.teamContainer__button} ${styles.teamContainer__button__left} ${styles.whiteArrowBlackCircle}`}
+                  className={`${styles.teamContainer__button} ${styles.teamContainer__button__left} `}
                   size={37}
                   onClick={(e: React.MouseEvent) => handleLeftClick(e)}
                   color={'#FFFFFF'}
@@ -323,7 +315,7 @@ function TeamPopUp({ index, visible, disablePopUp, teams}: { index: number, visi
       
               {pageIndex < numPages - 1 && (
                 <ArrowButton
-                  className={`${styles.teamContainer__button} ${styles.teamContainer__button__right} ${styles.whiteArrowBlackCircle}`}
+                  className={`${styles.teamContainer__button} ${styles.teamContainer__button__right}`}
                   size={37}
                   onClick={(e: React.MouseEvent) => handleRightClick(e)}
                   color={'#FFFFFF'}

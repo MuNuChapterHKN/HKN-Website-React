@@ -652,12 +652,10 @@ $member-margin: 30px;
 }
   
 @media (max-width: 600px) {
-    .arrowButtonLeft {
-        left: 5px !important;
-    }
-    
-    .arrowButtonRight {
-        right: 5px !important;
+    .arrowButtonLeft,
+    .arrowButtonRight,
+    .teamContainer__button {
+        display: none !important;
     }
     
     .teamPopUp {
@@ -811,10 +809,6 @@ $member-margin: 30px;
         max-width: 45%;
         margin: 0;
         align-items: center;
-    }
-
-    .teamContainer__button {
-        transform: scale(0.8);
     }
       
 }
