@@ -726,7 +726,7 @@ $member-margin: 30px;
     }
 
     .teamRespImage {
-        width: 100%;        
+        width: 80%;        
         left: 0;            
     }
 
@@ -798,17 +798,17 @@ $member-margin: 30px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 20px;
+        gap: 5px;
         left: auto;
         top: auto;
         transform: none;
     }
       
     .teamMember {
-        min-width: 42%;
-        max-width: 45%;
-        margin: 0;
-        align-items: center;
+        overflow-y: scroll;
+        display: flex;
+        min-width: 32%;
+        max-width: 35%;
     }
       
 }
