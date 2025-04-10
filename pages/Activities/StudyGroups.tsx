@@ -4,7 +4,6 @@ import StudyGroup, {StudyGroupProps} from "@/components/Events/StudyGroup";
 import { fetchActiveStudyGroups } from "../api/directus";
 import { useEffect, useState } from "react";
 
-
 export default function StudyGroups() {
 
     const [studyGroups, setStudyGroups] = useState<StudyGroupProps[]>([]);

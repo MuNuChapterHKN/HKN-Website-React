@@ -246,7 +246,12 @@ function TeamPopUp({ index, visible, disablePopUp, teams}: { index: number, visi
                         </div>
                         <div className={styles.managerName}>{team.managers[0].name + (team.managers.length > 1 ? ' &' : '')}</div>
                         {team.managers.length > 1 &&
-                            <div className={styles.managerName}>{team.managers[1].name}</div>
+                            <div className={styles.managerName}>{team.managers[1].name + (team.managers.length > 2 ? ' &' : '')}</div>
+                        }
+                        {team.managers.length > 2 &&
+                            <>
+                                <div className={styles.managerName}>{team.managers[2].name}</div>
+                            </>
                         }
                         <div className={styles.managerTitleLink}>
                             <div className={styles.managerTitle}>Area manager{team.managers.length > 1 ? 's' : ''}</div>
