@@ -27,7 +27,7 @@ export async function fetchAlumni() {
 			"limit": IMPORT_LIMIT,
 		})
 	);
-	const boards = await directus.request(
+	const boards  = await directus.request(
 		readItems('board', {
 			"limit": IMPORT_LIMIT,
 		})
@@ -39,7 +39,7 @@ export async function fetchAlumni() {
 		})
 	);
 
-	const alumniMap = new Map();
+	const alumniMap = new Map<number, AlumnoProps>();
 	for (const alumnus of alumni) {
 		let memberName = alumnus.name.split(" ")[0];
 		let name = memberName + " " + alumnus.last_name;
@@ -54,25 +54,27 @@ export async function fetchAlumni() {
 		let role = board.role;
 		let year = board.year;
 		let badge = {type: BadgeType.Board, year: year, role: role};
-		if (!alumniMap.has(board.member)) {
+		const alumno: AlumnoProps|undefined = alumniMap.get(board.member);
+		if (!alumno) {
 			continue;
 		}
-		alumniMap.get(board.member).badges.push(badge);
+		alumno?.badges?.push(badge);
 	}
 	for (const head of heads) {
 		let team = head.team.name
 		let year = head.year;
 		let badge = {type: BadgeType.Head, year: year, role: team};
-		if (!alumniMap.has(head.member)) {
+		const alumno: AlumnoProps|undefined = alumniMap.get(head.member);
+		if (!alumno) {
 			continue;
 		}
-		alumniMap.get(head.member).badges.push(badge);
+		alumno?.badges?.push(badge);
 	}
 
 	const alumniProps: AlumnoProps[] = [];
-	for (const [key, value] of alumniMap) {
+	alumniMap.forEach((value, key) => {
 		alumniProps.push(value);
-	}
+	});
 	return alumniProps;
 }
 
@@ -131,9 +133,9 @@ export async function fetchTeams() {
 
 	const teamProps: TeamProps[] = [];
 
-	for (const [key, value] of teamMap) {
+	teamMap.forEach((value, key) => {
 		teamProps.push(value);
-	}
+	});
 
 	return teamProps;
 }
@@ -189,9 +191,9 @@ export async function fetchPastBoards() {
 	}
 
 	const boardProps: PastBoardProps[] = [];
-	for (const [key, value] of boardMap) {
+    boardMap.forEach((value, key) => {
 		boardProps.push({year: key, members: value});
-	}
+	});
 
 	boardProps.shift();
 
