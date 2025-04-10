@@ -425,6 +425,9 @@ $member-margin: 30px;
 .teamDescription {
     color: #061E33;
     font-size: 1.4rem;
+    word-wrap: break-word;        
+  overflow-wrap: break-word;   
+  white-space: normal;         
 }
 
 .managerName {
@@ -603,6 +606,22 @@ $member-margin: 30px;
     }
 }
 
+.blackArrowWhiteCircle {
+    display: none;
+
+    @media (max-width: 600px) {
+        display: flex;
+    }
+}
+  
+.whiteArrowBlackCircle {
+    display: none;
+  
+    @media (min-width: 601px) {
+      display: flex;
+    }
+}
+  
 
 @media (max-width: 900px) {
     .boardMember {
@@ -618,9 +637,105 @@ $member-margin: 30px;
     .discover__title {
         font-size: 34px;
     }
-}
+    .boardGrid, .teamsGrid, .discoverContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 1rem;
+    }
 
+    .teamDescription {
+        word-wrap: break-word;        
+      overflow-wrap: break-word;   
+      white-space: normal;         
+    }
+}
+  
 @media (max-width: 600px) {
+    .arrowButtonLeft,
+    .arrowButtonRight,
+    .teamContainer__button {
+        display: none !important;
+    }
+    
+    .teamPopUp {
+        font-size: 0.9rem; /* o 14px */
+    
+        &__Title {
+          font-size: 2rem;
+        }
+    
+        &__Description {
+          font-size: 1rem;
+        }
+    
+        .description {
+          font-size: 0.9rem;
+        }
+    
+        .managerName,
+        .memberName {
+          font-size: 0.7rem;
+        }
+    
+        .managerTitle,
+        .memberTitle {
+          font-size: 0.6rem;
+        }
+
+        .managerPopUpImageContainer {
+            width: 100px;
+            height: 100px;
+        }
+
+        .teamHeaderLeft {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            min-width: 220px;
+            position: relative;
+            width: 100%;
+          }
+          
+          .managerDetails {
+            display: flex;
+            flex-direction: column;
+          }
+          
+          .arrowButtons {
+            display: flex;
+            flex-direction: row; 
+            gap: 10px;
+            position: absolute;
+            right: 0;
+          }
+          
+    }
+
+    body.people-page {
+        overflow-x: hidden;
+    }
+    
+    body.people-page * {
+        box-sizing: border-box;
+    }
+
+    .team {
+        flex-direction: column;
+    }
+
+    .teamRespImage {
+        width: 80%;        
+        left: 0;            
+    }
+
+    .teamTextBox {
+        width: 80%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
     .boardContainer {
         width: 75%;
     }
@@ -634,4 +749,69 @@ $member-margin: 30px;
         width: 90%;
     }
 
+    .managementArea, .joinOurTeams {
+        font-size: 32px;
+        width: 100%;
+    }
+    
+    .teamArea {
+    font-size: 24px;
+    }
+
+    .boardMemberName {
+    font-size: 20px;
+    }
+
+    .teamHeaderRight {
+    padding-left: 1rem;
+    }
+
+    .boardGrid, .teamsGrid, .discoverContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 1rem;
+    }
+
+    .teamDescription {
+        word-wrap: break-word;        
+      overflow-wrap: break-word;   
+      white-space: normal;         
+    }
+
+    .teamContainer {
+        width: 100% !important;
+        height: auto;
+        overflow-x: hidden;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 10px 0;
+      }
+      
+    .teamRow,
+    .teamRowTwo {
+        position: static;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        left: auto;
+        top: auto;
+        transform: none;
+    }
+      
+    .teamMember {
+        overflow-y: scroll;
+        display: flex;
+        min-width: 32%;
+        max-width: 35%;
+    }
+      
 }
+
+
+
