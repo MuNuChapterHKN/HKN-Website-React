@@ -6,8 +6,8 @@ import ProfessionalCard, {Professional} from "@/components/Recognitions/Professi
 import {useEffect, useState} from "react";
 import MentionCard, {Mention} from "../../components/Recognitions/MentionCard";
 import ArrowButton from "@/components/molecules/ArrowButton";
-import {mentions, professionals} from "@/data/recognitions";
-import { fetchAwards } from "../api/directus";
+import { professionals} from "@/data/recognitions";
+import { fetchAwards, fetchMentions } from "../api/directus";
 
 
 export default function JoinUs() {
@@ -18,6 +18,17 @@ export default function JoinUs() {
             const fetchData = async () => {
                 const data = await fetchAwards();
                 setAwards(data);
+            };
+    
+            fetchData();
+        }, []);
+
+        const [mentions, setMentions] = useState<Mention[]>([]);
+    
+        useEffect(() => {
+            const fetchData = async () => {
+                const data = await fetchMentions();
+                setMentions(data);
             };
     
             fetchData();
@@ -74,6 +85,7 @@ export default function JoinUs() {
         }
     }
 
+    console.log(mentions.length);
 
     return (
         <Layout>
