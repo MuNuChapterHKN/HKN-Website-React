@@ -7,15 +7,22 @@ import {useEffect, useState} from "react";
 import MentionCard, {Mention} from "../../components/Recognitions/MentionCard";
 import ArrowButton from "@/components/molecules/ArrowButton";
 import {mentions, professionals} from "@/data/recognitions";
+import { fetchAwards } from "../api/directus";
 
-const awards: string[] = [
-    "/Home/outstanding-2022-color.png",
-    "/Home/outstanding-2021-color.png",
-    "/Home/outstanding-2020-color.png",
-    "/Home/outstanding-2019-color.png",
-];
 
 export default function JoinUs() {
+
+        const [awards, setAwards] = useState<string[]>([]);
+    
+        useEffect(() => {
+            const fetchData = async () => {
+                const data = await fetchAwards();
+                setAwards(data);
+            };
+    
+            fetchData();
+        }, []);
+
     const router = useRouter();
     const [awardIndex, setAwardIndex] = useState(0);
     const [mentionIndex, setMentionIndex] = useState(0);

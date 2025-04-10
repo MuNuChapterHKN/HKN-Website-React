@@ -216,3 +216,44 @@ export async function fetchProfessionals() {
 
 	return professionalProps;
 }
+
+export async function fetchAwards() {
+	const directus = createDirectus(API_URL).with(rest());
+	const awards = await directus.request(
+		readItems('award', {
+			"limit": IMPORT_LIMIT,
+			"sort": ["-year"],
+			"fields": ["image"]
+		})
+	);
+
+	const awardImages: string[] = [];
+	for (const award of awards) {
+		if (award.image) {
+			const imageUrl = `${API_URL}assets/${award.image}`;
+			awardImages.push(imageUrl);
+		}
+	}
+
+	return awardImages;
+}
+
+export async function fetchHomeAwards() {
+	const directus = createDirectus(API_URL).with(rest());
+	const awards = await directus.request(
+		readItems('award', {
+			"limit": 4,
+			"sort": ["-year"],
+			"fields": ["image_monochrome"]
+		})
+	);
+	const awardImages: string[] = [];
+	for (const award of awards) {
+		if (award.image_monochrome) {
+			const imageUrl = `${API_URL}assets/${award.image_monochrome}`;
+			awardImages.push(imageUrl);
+		}
+	}
+
+	return awardImages;
+}
