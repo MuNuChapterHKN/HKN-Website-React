@@ -6,12 +6,23 @@ import Layout from "../components/Layout";
 import HomeLogo from "../components/Home/HomeLogo";
 import RoundButton from "../components/molecules/RoundButton";
 import {useEffect, useState} from "react";
-
+import { fetchHomeAwards } from './api/directus';
 
 
 export default function Home() {
     const router = useRouter();
     const [windowWidth, setWindowWidth] = useState(0);
+
+    const [awards, setAwards] = useState<string[]>([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await fetchHomeAwards();
+            setAwards(data);
+        };
+
+        fetchData();
+    }, []);
 
     useEffect(() => {
         const handleResize = () => {
@@ -51,17 +62,16 @@ export default function Home() {
                     </div>
                 }
             </div>
-
             <div className={styles.awardsContainer}>
                 <div className={styles.awards}>
-                    <img className={styles.outstandingAward} src="/Home/outstanding-2019.png"
-                           alt="Outstanding Chapter Award 2019"/>
-                    <img className={styles.outstandingAward} src="/Home/outstanding-2020.png"
-                           alt="Outstanding Chapter Award 2020"/>
-                    <img className={styles.outstandingAward} src="/Home/outstanding-2021.png"
-                           alt="Outstanding Chapter Award 2021"/>
-                    <img className={styles.outstandingAward} src="/Home/outstanding-2022.png"
-                           alt="Outstanding Chapter Award 2022"/>
+                    {[...awards].reverse().map((award, index) => (
+                        <img
+                            key={index}
+                            className={styles.outstandingAward}
+                            src={award}
+                            alt={`Outstanding Chapter Award ${awards.length - index}`}
+                        />
+                    ))}
                 </div>
             </div>
 
