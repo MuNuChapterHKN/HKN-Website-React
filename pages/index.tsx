@@ -37,8 +37,6 @@ export default function Home() {
         };
     }, []);
 
-    console.log(awards)
-
     return (
         <Layout triangles>
 
