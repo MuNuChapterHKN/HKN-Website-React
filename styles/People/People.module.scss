@@ -673,19 +673,25 @@ $member-margin: 30px;
           font-size: 0.9rem;
         }
     
-        .managerName,
+        .managerName{
+          font-size: 1.5rem;
+        }
+
         .memberName {
-          font-size: 0.7rem;
+            font-size: 0.7rem;
         }
     
-        .managerTitle,
+        .managerTitle{
+          font-size: 1.4rem;
+        }
+
         .memberTitle {
-          font-size: 0.6rem;
+            font-size: 0.6rem;
         }
 
         .managerPopUpImageContainer {
-            width: 100px;
-            height: 100px;
+            width: 200px;
+            height: 200px;
         }
 
         .teamHeaderLeft {
@@ -782,13 +788,11 @@ $member-margin: 30px;
     .teamContainer {
         width: 100% !important;
         height: auto;
-        overflow-x: hidden;
         position: relative;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        padding: 10px 0;
+        gap: 8px;
+        padding: 5px 1;
       }
       
     .teamRow,
@@ -797,20 +801,26 @@ $member-margin: 30px;
         height: auto;
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 5px;
-        left: auto;
-        top: auto;
-        transform: none;
+        justify-content: space-evenly;
+        gap: 1px;
     }
       
     .teamMember {
-        overflow-y: scroll;
         display: flex;
-        min-width: 32%;
-        max-width: 35%;
+        min-width: 20%;
+        max-width: 23%;
+        min-height: 30%;
+        max-height: 35%;
     }
-      
+
+    .teamMember {
+        display: flex;
+        flex: 0 0 30%;
+        max-width: 30%;
+        margin: 2% 1%;
+        min-height: 90%;
+        max-height: 95%;
+      }
 }
 
 

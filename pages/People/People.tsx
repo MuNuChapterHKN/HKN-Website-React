@@ -7,6 +7,18 @@ import ArrowButton from "@/components/molecules/ArrowButton";
 import { fetchBoard, fetchTeams } from "../api/directus";
 
 export default function People() {
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+    const handleResize = () => {
+        setIsMobile(window.innerWidth <= 600); // o 768px, a seconda del tuo breakpoint
+    };
+
+    handleResize(); // inizializza al primo render
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
 
     const [Teams, setTeams] = useState<TeamProps[]>([]);
     useEffect(() => {
@@ -68,7 +80,7 @@ export default function People() {
                 </div>
             </div>
 
-            <TeamPopUp index={teamIndex} visible={teamPopUpVisible} disablePopUp={handleHideTeamPopUp} teams={Teams} />
+            <TeamPopUp index={teamIndex} visible={teamPopUpVisible} disablePopUp={handleHideTeamPopUp} teams={Teams} isMobile={isMobile} />
             <div className={styles.teamsContainer}>
                 <text className={styles.theTeams}>THE TEAMS</text>
                 <text className={styles.joinOurTeams}>Our Teams</text>
@@ -124,7 +136,7 @@ function Team({ teamProps, onClick }: { teamProps: TeamProps, onClick: () => voi
     )
 }
 
-function TeamPopUp({ index, visible, disablePopUp, teams}: { index: number, visible: Boolean, disablePopUp: () => void, teams: TeamProps[] }) {
+function TeamPopUp({ index, visible, disablePopUp, teams, isMobile}: { index: number, visible: Boolean, disablePopUp: () => void, teams: TeamProps[], isMobile: boolean }) {
 
     const Teams = teams;
 
@@ -186,11 +198,9 @@ function TeamPopUp({ index, visible, disablePopUp, teams}: { index: number, visi
         const handleResize = () => {
             if (window.innerWidth > 1050) {
                 setNumPeople(4);
-            } else if (window.innerWidth > 800) {
+            } else  {
                 setNumPeople(3);
-            } else {
-                setNumPeople(2);
-            }
+            } 
         };
 
         // Add event listener for window resize
@@ -291,43 +301,72 @@ function TeamPopUp({ index, visible, disablePopUp, teams}: { index: number, visi
             </div>
       
             <div className={styles.teamContainer} ref={containerRef}>
-              {pageIndex > 0 && (
-                <ArrowButton
-                  className={`${styles.teamContainer__button} ${styles.teamContainer__button__left} `}
-                  size={37}
-                  onClick={(e: React.MouseEvent) => handleLeftClick(e)}
-                  color={'#FFFFFF'}
-                  left
-                />
-              )}
+                {pageIndex > 0 && !isMobile &&(
+                    <ArrowButton
+                    className={`${styles.teamContainer__button} ${styles.teamContainer__button__left} `}
+                    size={37}
+                    onClick={(e: React.MouseEvent) => handleLeftClick(e)}
+                    color={'#FFFFFF'}
+                    left
+                    />
+                )}
       
-              <div className={styles.teamRow} ref={contentRefFirst}>
-                {firstRow.map((member: TeamMemberProps) => (
-                  <TeamMember key={member.name} member={member} />
+                {isMobile && chunkArray(firstRow, 3).map((group, i) => (
+                <div key={i} className={styles.teamRow}>
+                    {group.map((member: TeamMemberProps) => (
+                    <TeamMember key={member.name} member={member} />
+                    ))}
+                </div>
                 ))}
-              </div>
-      
-              <div className={styles.teamRowTwo} ref={contentRefSecond}>
-                {secondRow.map((member: TeamMemberProps) => (
-                  <TeamMember key={member.name} member={member} />
+
+                {isMobile && chunkArray(secondRow, 3).map((group, i) => (
+                <div key={i} className={styles.teamRowTwo}>
+                    {group.map((member: TeamMemberProps) => (
+                    <TeamMember key={member.name} member={member} />
+                    ))}
+                </div>
                 ))}
-              </div>
-      
-              {pageIndex < numPages - 1 && (
-                <ArrowButton
-                  className={`${styles.teamContainer__button} ${styles.teamContainer__button__right}`}
-                  size={37}
-                  onClick={(e: React.MouseEvent) => handleRightClick(e)}
-                  color={'#FFFFFF'}
-                  right
-                />
-              )}
+
+                {!isMobile && (
+                <>
+                    <div className={styles.teamRow} ref={contentRefFirst}>
+                    {firstRow.map((member: TeamMemberProps) => (
+                        <TeamMember key={member.name} member={member} />
+                    ))}
+                    </div>
+
+                    <div className={styles.teamRowTwo} ref={contentRefSecond}>
+                    {secondRow.map((member: TeamMemberProps) => (
+                        <TeamMember key={member.name} member={member} />
+                    ))}
+                    </div>
+                </>
+                )}
+
+
+                {pageIndex < numPages - 1 && !isMobile && (
+                    <ArrowButton
+                    className={`${styles.teamContainer__button} ${styles.teamContainer__button__right}`}
+                    size={37}
+                    onClick={(e: React.MouseEvent) => handleRightClick(e)}
+                    color={'#FFFFFF'}
+                    right
+                    />
+                )}
             </div>
           </div>
         </div>
-      );
-      
+      );   
 }
+
+function chunkArray<T>(array: T[], size: number): T[][] {
+    const result: T[][] = [];
+    for (let i = 0; i < array.length; i += size) {
+        result.push(array.slice(i, i + size));
+    }
+    return result;
+}
+
 
 function TeamMember({member } : {member : TeamMemberProps}) {
     const [imageExists, setImageExists] = useState(false);
