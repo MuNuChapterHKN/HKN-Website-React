@@ -199,7 +199,7 @@ function TeamPopUp({ index, visible, disablePopUp, teams, isMobile}: { index: nu
             if (window.innerWidth > 1050) {
                 setNumPeople(4);
             } else  {
-                setNumPeople(3);
+                setNumPeople(6);
             } 
         };
 

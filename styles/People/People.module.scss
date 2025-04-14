@@ -690,8 +690,8 @@ $member-margin: 30px;
         }
 
         .managerPopUpImageContainer {
-            width: 200px;
-            height: 200px;
+            width: 150px;
+            height: 150px;
         }
 
         .teamHeaderLeft {
@@ -790,6 +790,7 @@ $member-margin: 30px;
         height: auto;
         position: relative;
         display: flex;
+        overflow: visible;
         flex-wrap: wrap;
         gap: 8px;
         padding: 5px 1;
@@ -801,7 +802,7 @@ $member-margin: 30px;
         height: auto;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        justify-content: space-around;
         gap: 1px;
     }
       
