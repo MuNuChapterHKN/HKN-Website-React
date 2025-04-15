@@ -5,6 +5,7 @@ import { createDirectus, rest, readAssetArrayBuffer, readItems, readFile, readPr
 import { TeamMemberProps, TeamProps, BoardMemberProps } from '@/pages/People/People';
 import { PastBoardProps, PastBoardMemberProps} from '@/pages/People/PastBoards';
 import { ProfessionalProps } from '@/pages/People/Professionals';
+import { Mention } from "@/components/Recognitions/MentionCard";
 
 const API_URL = 'https://hknpolito.org/directus/';
 const IMPORT_LIMIT = 500;
@@ -217,4 +218,64 @@ export async function fetchProfessionals() {
 	}
 
 	return professionalProps;
+}
+
+export async function fetchAwards() {
+	const directus = createDirectus(API_URL).with(rest());
+	const awards = await directus.request(
+		readItems('award', {
+			"limit": IMPORT_LIMIT,
+			"sort": ["-year"],
+			"fields": ["image"]
+		})
+	);
+
+	const awardImages: string[] = [];
+	for (const award of awards) {
+		if (award.image) {
+			const imageUrl = `${API_URL}assets/${award.image}`;
+			awardImages.push(imageUrl);
+		}
+	}
+
+	return awardImages;
+}
+
+export async function fetchHomeAwards() {
+	const directus = createDirectus(API_URL).with(rest());
+	const awards = await directus.request(
+		readItems('award', {
+			"limit": 4,
+			"sort": ["-year"],
+			"fields": ["image_monochrome"]
+		})
+	);
+	const awardImages: string[] = [];
+	for (const award of awards) {
+		if (award.image_monochrome) {
+			const imageUrl = `${API_URL}assets/${award.image_monochrome}`;
+			awardImages.push(imageUrl);
+		}
+	}
+
+	return awardImages;
+}
+
+
+export async function fetchMentions() {
+	const directus = createDirectus(API_URL).with(rest());
+	const mentions = await directus.request(
+		readItems('mention', {
+			"limit": IMPORT_LIMIT,
+			"sort": ["-date"],
+			"fields": ["image", "title", "subtitle", "text", "link"]
+		})
+	);
+	const mentionProps: Mention[] = [];
+	for (const mention of mentions) {
+		let imageSrc = `${API_URL}assets/${mention.image}`;
+		mentionProps.push({imageSrc: imageSrc, title: mention.title, subtitle: mention.subtitle, text: mention.text, link: mention.link});
+	}
+
+	return mentionProps;
 }

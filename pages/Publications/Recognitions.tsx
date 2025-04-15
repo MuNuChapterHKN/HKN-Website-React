@@ -6,16 +6,34 @@ import ProfessionalCard, {Professional} from "@/components/Recognitions/Professi
 import {useEffect, useState} from "react";
 import MentionCard, {Mention} from "../../components/Recognitions/MentionCard";
 import ArrowButton from "@/components/molecules/ArrowButton";
-import {mentions, professionals} from "@/data/recognitions";
+import { professionals} from "@/data/recognitions";
+import { fetchAwards, fetchMentions } from "../api/directus";
 
-const awards: string[] = [
-    "/Home/outstanding-2022-color.png",
-    "/Home/outstanding-2021-color.png",
-    "/Home/outstanding-2020-color.png",
-    "/Home/outstanding-2019-color.png",
-];
 
 export default function JoinUs() {
+
+        const [awards, setAwards] = useState<string[]>([]);
+    
+        useEffect(() => {
+            const fetchData = async () => {
+                const data = await fetchAwards();
+                setAwards(data);
+            };
+    
+            fetchData();
+        }, []);
+
+        const [mentions, setMentions] = useState<Mention[]>([]);
+    
+        useEffect(() => {
+            const fetchData = async () => {
+                const data = await fetchMentions();
+                setMentions(data);
+            };
+    
+            fetchData();
+        }, []);
+
     const router = useRouter();
     const [awardIndex, setAwardIndex] = useState(0);
     const [mentionIndex, setMentionIndex] = useState(0);
@@ -67,6 +85,7 @@ export default function JoinUs() {
         }
     }
 
+    console.log(mentions.length);
 
     return (
         <Layout>
