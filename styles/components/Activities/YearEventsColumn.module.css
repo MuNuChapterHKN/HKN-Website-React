@@ -42,6 +42,7 @@
     object-fit: cover;
     height: 100%;
     width: 100%;
+    object-position: center; 
 }
 
 .divider {
@@ -118,4 +119,50 @@
     width: 5px;
     height: 20px;
     background-color: white;
+}
+@media (max-width: 768px) {
+
+
+    .year {
+        font-size: 35px;
+    }
+
+    .eventTitle {
+        font-size: 24px;
+    }
+
+    .eventLocation,
+    .eventDate {
+        font-size: 15px;
+    }
+
+
+    .horizontalDivider {
+        height: 3px;
+    }
+}
+
+@media (max-width: 480px) {
+
+
+    .year {
+        font-size: 28px;
+    }
+
+    .eventTitle {
+        font-size: 20px;
+    }
+
+    .eventLocation,
+    .eventDate {
+        font-size: 13px;
+    }
+
+    .eventCard {
+        padding: 10px;
+    }
+
+    .horizontalDivider {
+        height: 2px;
+    }
 }
