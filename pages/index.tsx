@@ -219,8 +219,7 @@ export default function Home() {
 
                                 <div className={activities_styles.allActivities__group2__discover}>
                                     Discover
-                                    {/*<RoundButton className={activities_styles.allActivities__group__button} onClick={() => router.push('/Activities/Masterclasses')}>Masterclasses</RoundButton>*/}
-                                    <RoundButton className={activities_styles.allActivities__group__button} onClick={() => {}}>COMING SOON</RoundButton>
+                                    <RoundButton className={activities_styles.allActivities__group__button} onClick={() => router.push('/Activities/Events')}>Masterclasses</RoundButton>
                                 </div>
                             </div>
                         </div>
