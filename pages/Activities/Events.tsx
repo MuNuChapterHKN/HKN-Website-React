@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import styles from '@/styles/Activities/Events.module.css'
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import RoundButton from "../../components/molecules/RoundButton";
-import { useState} from "react";
+import { useState } from "react";
 import YearEventsColumn from "@/components/Events/YearEventsColumn";
 import ArrowButton from "@/components/molecules/ArrowButton";
-import {latestEvent, pastEvents} from "@/data/Activities/events";
+import { latestEvent, pastEvents } from "@/data/Activities/events";
 
 export default function Events() {
     const router = useRouter();
@@ -23,11 +23,18 @@ export default function Events() {
     return (
         <Layout triangles>
             <div className={styles.latestEventContainer} id={latestEvent.id ? latestEvent.id : "latestEvent"}>
-                <Image className={styles.latestEventImage} src={latestEvent.imageSrc} alt={`${latestEvent.title} poster`} width="0" height="0" sizes="100vw"/>
+                <Image
+                    className={styles.latestEventImage}
+                    src={latestEvent.imageSrc}
+                    alt={`${latestEvent.title} poster`}
+                    layout="responsive"
+                    width={800}
+                    height={450}
+                />
                 <div className={styles.latestEventRight}>
                     <text className={styles.latestEventDate}>{latestEvent.date}</text>
                     <text className={styles.latestEventDate}>{latestEvent.time}</text>
-                    {/*<text className={styles.lateEventLocation}>{latestEvent.location}</text>*/}
+                    {/* <text className={styles.lateEventLocation}>{latestEvent.location}</text> */}
                     <text className={styles.latestEventTitle}>{latestEvent.title}</text>
                     {
                         latestEvent.description &&
@@ -47,7 +54,7 @@ export default function Events() {
                 <text className={styles.pastTitle}>Not Just</text>
                 <text className={styles.pastTitle}>Conferences</text>
                 <div className={styles.pastEvents}>
-                    <YearEventsColumn yearEvents={pastEvents[pastEventsIndex]}/>
+                <YearEventsColumn yearEvents={pastEvents[pastEventsIndex]}/>
                     {pastEventsIndex > 0 && <ArrowButton left className={styles.pastEventsButton_1} color="#F2F2F2" onClick={() => changeEventsPage(-1)}/>}
                     {pastEventsIndex < pastEvents.length-1 && <ArrowButton right className={styles.pastEventsButton_2} color="#F2F2F2" onClick={() => changeEventsPage(+1)}/>}
                 </div>
