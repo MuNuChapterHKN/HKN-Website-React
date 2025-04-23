@@ -140,6 +140,14 @@
     .horizontalDivider {
         height: 3px;
     }
+
+    .yearEventsColumn {
+        width: 100%;
+    }
+
+    .yearCard {
+        width:70%;
+    }
 }
 
 @media (max-width: 480px) {
@@ -160,9 +168,23 @@
 
     .eventCard {
         padding: 10px;
+        height: 175px
     }
 
     .horizontalDivider {
         height: 2px;
     }
+
+    .yearEventsColumn {
+        width: 100%;
+    }
+
+    .yearCard {
+        width:70%;
+    }
+
+    .eventLink {
+        height: 175px;
+    }
 }
+
