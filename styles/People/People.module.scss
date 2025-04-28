@@ -273,14 +273,14 @@
     &__Title {
         font-size: 3.5rem;
         font-weight: 600;
-        @media (max-width: 510px) {
+        @media (max-width: 800px) {
             display: none;
         }
     }
 
     &__Description {
         font-size: 1.4rem;
-        @media (max-width: 710px) {
+        @media (max-width: 800px) {
             display: none;
         }
     }
@@ -425,6 +425,9 @@ $member-margin: 30px;
 .teamDescription {
     color: #061E33;
     font-size: 1.4rem;
+    word-wrap: break-word;        
+  overflow-wrap: break-word;   
+  white-space: normal;         
 }
 
 .managerName {
@@ -603,24 +606,117 @@ $member-margin: 30px;
     }
 }
 
+.blackArrowWhiteCircle {
+    display: none;
 
-@media (max-width: 900px) {
-    .boardMember {
-        flex: 1 0 45%;
-        margin-top: 20px;
+    @media (max-width: 600px) {
+        display: flex;
     }
-    .teamsContainer {
-        width: 75%;
-    }
-    .team {
-        flex: 1 0 95%;
-    }
-    .discover__title {
-        font-size: 34px;
+}
+  
+.whiteArrowBlackCircle {
+    display: none;
+  
+    @media (min-width: 601px) {
+      display: flex;
     }
 }
 
-@media (max-width: 600px) {
+  
+@media (max-width: 800px) {
+    .arrowButtonLeft,
+    .arrowButtonRight,
+    .teamContainer__button {
+        display: none !important;
+    }
+    
+    .teamPopUp {
+        font-size: 0.9rem; /* o 14px */
+        padding: 20px;
+    
+        &__Title {
+          font-size: 2rem;
+        }
+    
+        &__Description {
+          font-size: 1rem;
+        }
+    
+        .description {
+          font-size: 0.9rem;
+        }
+    
+        .managerName{
+          font-size: 1.5rem;
+        }
+
+        .memberName {
+            font-size: 0.7rem;
+        }
+    
+        .managerTitle{
+          font-size: 1.4rem;
+        }
+
+        .memberTitle {
+            font-size: 0.6rem;
+        }
+
+        .managerPopUpImageContainer {
+            width: 150px;
+            height: 150px;
+        }
+
+        .teamHeaderLeft {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+            min-width: 220px;
+            position: relative;
+            width: 100%;
+          }
+          
+          .managerDetails {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          
+          .arrowButtons {
+            display: flex;
+            flex-direction: row; 
+            gap: 10px;
+            position: absolute;
+            right: 0;
+          }
+          
+    }
+
+    body.people-page {
+        overflow-x: hidden;
+    }
+    
+    body.people-page * {
+        box-sizing: border-box;
+    }
+
+    .team {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .teamRespImage {
+        width: 80%;        
+        left: 0;            
+    }
+
+    .teamTextBox {
+        width: 80%;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
     .boardContainer {
         width: 75%;
     }
@@ -634,4 +730,73 @@ $member-margin: 30px;
         width: 90%;
     }
 
+    .managementArea, .joinOurTeams {
+        font-size: 32px;
+        width: 100%;
+    }
+    
+    .teamArea {
+    font-size: 24px;
+    }
+
+    .boardMemberName {
+    font-size: 20px;
+    }
+
+    .teamHeaderRight {
+    padding-left: 1rem;
+    }
+
+    .boardGrid, .teamsGrid, .discoverContainer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        gap: 1rem;
+    }
+
+    .teamDescription {
+        word-wrap: break-word;        
+      overflow-wrap: break-word;   
+      white-space: normal;         
+    }
+
+    .teamContainer {
+        width: 100% !important;
+        height: auto;
+        position: relative;
+        display: flex;
+        overflow: visible;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 5px 1;
+      }
+      
+    .teamRow,
+    .teamRowTwo {
+        position: static;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 1px;
+        width: 100%;
+    }
+
+    .teamMember {
+        display: flex;
+        align-items: center;
+        flex: 0 0 30%;
+        min-width: 20%;
+        max-width: 30%;
+        margin: 2% 1%;
+        min-height: 90%;
+        max-height: 95%;
+    }
+
+    .memberRoleLink {
+        justify-content: center;
+    }
 }
+
+
+
