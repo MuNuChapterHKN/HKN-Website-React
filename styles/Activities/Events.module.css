@@ -11,7 +11,7 @@
 }
 
 .latestEventImage {
-    width: 50%; 
+    width: 80%; 
     max-width: 525px; 
     height: auto;
     object-fit: cover; 
