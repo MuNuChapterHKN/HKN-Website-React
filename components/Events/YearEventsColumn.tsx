@@ -16,8 +16,11 @@ export default function YearEventsColumn({yearEvents}: { yearEvents: YearEvents 
                         {index % 2 === 0 && (
                             <>
                                 <a href={event.link} className={styles.eventLink} rel="noopener" target="_blank">
-                                    <Image className={styles.eventImage} src={event.imageSrc} alt={`${event.title} poster`}
-                                           width="0" height="0" sizes="100vw"/>
+                                    {event.image ? (
+                                        <Image className={styles.eventImage} src={event.image} alt={`${event.title} poster`} width="0" height="0" sizes="100vw" />
+                                    ) : (
+                                        <Image className={styles.eventImage} src="/Common/hkn_ideogramma_white.svg" alt={`${event.title} placeholder`} width="0" height="0" sizes="100vw" loading="lazy" />
+                                    )}
                                 </a>
                                 <div className={styles.divider}/>
                                 <div className={styles.eventCard}>
@@ -38,8 +41,11 @@ export default function YearEventsColumn({yearEvents}: { yearEvents: YearEvents 
                                 <div className={styles.divider}/>
 
                                 <a href={event.link} className={styles.eventLink} rel="noopener" target="_blank">
-                                    <Image className={styles.eventImage} src={event.imageSrc} alt={`${event.title} poster`}
-                                           width="0" height="0" sizes="100vw"/>
+                                    {event.image ? (
+                                        <Image className={styles.eventImage} src={event.image} alt={`${event.title} poster`} width="0" height="0" sizes="100vw" />
+                                    ) : (
+                                        <Image className={styles.eventImage} src="/Common/hkn_ideogramma_white.svg" alt={`${event.title} placeholder`} width="0" height="0" sizes="100vw" loading="lazy" />
+                                    )}
                                 </a>
 
                             </>
@@ -64,6 +70,7 @@ export interface Event {
     title: string,
     date: string,
     location: string,
-    imageSrc: string,
+    description?: string,
+    image?: string,
     link?: string,
 }
