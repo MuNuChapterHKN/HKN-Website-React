@@ -85,8 +85,6 @@ export default function JoinUs() {
         }
     }
 
-    console.log(mentions.length);
-
     return (
         <Layout>
             <div className={styles.awardsCard}>

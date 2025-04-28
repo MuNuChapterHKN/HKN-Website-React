@@ -6,6 +6,7 @@ import { TeamMemberProps, TeamProps, BoardMemberProps } from '@/pages/People/Peo
 import { PastBoardProps, PastBoardMemberProps} from '@/pages/People/PastBoards';
 import { ProfessionalProps } from '@/pages/People/Professionals';
 import { Mention } from "@/components/Recognitions/MentionCard";
+import { Event, YearEvents } from "@/components/Events/YearEventsColumn";
 
 const API_URL = 'https://hknpolito.org/directus/';
 const IMPORT_LIMIT = 500;
@@ -278,4 +279,63 @@ export async function fetchMentions() {
 	}
 
 	return mentionProps;
+}
+
+export async function fetchEvents() {
+	const directus = createDirectus(API_URL).with(rest());
+	const events = await directus.request(
+		readItems('event', {
+			"limit": IMPORT_LIMIT,
+			"sort": ["-date"],
+			"fields": ["year", "title", "date", "location", "link", "description", "image"]
+		})
+	);
+
+	const eventMap = new Map<string, any[]>();
+	const lastEvent  = events[0];
+	const lastEventDate = new Date(lastEvent.date);
+	const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+	const lastEventFormattedDate = lastEventDate.toLocaleDateString('en-US', options);
+
+	events.shift();
+	const lastEventProps = {
+		title: lastEvent.title,
+		date: lastEventFormattedDate,
+		location: lastEvent.location,
+		image: lastEvent.image ? `${API_URL}assets/${lastEvent.image}` : undefined,
+		link: lastEvent.link || undefined,
+		description: lastEvent.description || undefined,
+	};
+
+
+	for (const event of events) {
+		const year = event.year;
+		const eventDate = new Date(event.date);
+		const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+		const formattedDate = eventDate.toLocaleDateString('en-US', options);
+
+		const eventDetails = {
+			location: event.location,
+			title: event.title,
+			date: formattedDate,
+			image: event.image ? `${API_URL}assets/${event.image}` : undefined,
+			link: event.link || undefined,
+			description: event.description || undefined,
+		};
+
+		if (!eventMap.has(year)) {
+			eventMap.set(year, []);
+		}
+		eventMap.get(year)?.push(eventDetails);
+	}
+
+	const pastEventsProps = Array.from(eventMap.entries()).map(([year, events]) => ({
+		year,
+		events,
+	}));
+
+	return {
+		pastEvents: pastEventsProps,
+		lastEvent: lastEventProps,
+	};
 }

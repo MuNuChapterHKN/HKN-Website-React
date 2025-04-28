@@ -53,8 +53,6 @@ export default function AboutUs() {
         };
     }, [sectionsRef]);
 
-
-    console.log(svgWidth)
     return (
         <Layout>
             <div className={styles.vision}  id="vision">
