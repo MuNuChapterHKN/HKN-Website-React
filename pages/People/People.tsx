@@ -10,7 +10,7 @@ export default function People() {
     const [isMobile, setIsMobile] = useState(false);
     useEffect(() => {
     const handleResize = () => {
-        setIsMobile(window.innerWidth <= 600); // o 768px, a seconda del tuo breakpoint
+        setIsMobile(window.innerWidth <= 800); // o 768px, a seconda del tuo breakpoint
     };
 
     handleResize(); // inizializza al primo render
@@ -148,7 +148,7 @@ function TeamPopUp({ index, visible, disablePopUp, teams, isMobile}: { index: nu
     const [firstRow, setFirstRow] = useState<TeamMemberProps[]>([]);
     const [secondRow, setSecondRow] = useState<TeamMemberProps[]>([]);
     const [team, setTeam] = useState(Teams[index]);
-    const [numPeople, setNumPeople] = useState(4);
+    const [numPeople, setNumPeople] = useState(6);
 
     useEffect(() => {
         if (Teams.length > 0){
@@ -196,13 +196,25 @@ function TeamPopUp({ index, visible, disablePopUp, teams, isMobile}: { index: nu
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth > 1050) {
-                setNumPeople(4);
-            } else  {
-                setNumPeople(6);
-            } 
-        };
+            const updateNumPeople = () => {
+                if (window.innerWidth > 1050) {
+                    setNumPeople(4);
+                } else if (window.innerWidth > 800) {
+                    setNumPeople(3);
+                } else {
+                    setNumPeople(6);
+                }
+            };
 
+            updateNumPeople(); // Call the function on initial load
+            window.addEventListener('resize', updateNumPeople); // Update on resize
+
+            return () => {
+                window.removeEventListener('resize', updateNumPeople); // Cleanup on unmount
+            };
+        };
+        handleResize(); // Call the function on initial load
+        
         // Add event listener for window resize
         window.addEventListener('resize', handleResize);
 

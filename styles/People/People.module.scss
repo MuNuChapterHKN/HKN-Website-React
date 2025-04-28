@@ -273,14 +273,14 @@
     &__Title {
         font-size: 3.5rem;
         font-weight: 600;
-        @media (max-width: 510px) {
+        @media (max-width: 800px) {
             display: none;
         }
     }
 
     &__Description {
         font-size: 1.4rem;
-        @media (max-width: 710px) {
+        @media (max-width: 800px) {
             display: none;
         }
     }
@@ -621,37 +621,9 @@ $member-margin: 30px;
       display: flex;
     }
 }
-  
 
-@media (max-width: 900px) {
-    .boardMember {
-        flex: 1 0 45%;
-        margin-top: 20px;
-    }
-    .teamsContainer {
-        width: 75%;
-    }
-    .team {
-        flex: 1 0 95%;
-    }
-    .discover__title {
-        font-size: 34px;
-    }
-    .boardGrid, .teamsGrid, .discoverContainer {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        gap: 1rem;
-    }
-
-    .teamDescription {
-        word-wrap: break-word;        
-      overflow-wrap: break-word;   
-      white-space: normal;         
-    }
-}
   
-@media (max-width: 480px) {
+@media (max-width: 800px) {
     .arrowButtonLeft,
     .arrowButtonRight,
     .teamContainer__button {
@@ -660,6 +632,7 @@ $member-margin: 30px;
     
     .teamPopUp {
         font-size: 0.9rem; /* o 14px */
+        padding: 20px;
     
         &__Title {
           font-size: 2rem;
@@ -707,6 +680,7 @@ $member-margin: 30px;
           .managerDetails {
             display: flex;
             flex-direction: column;
+            align-items: center;
           }
           
           .arrowButtons {
@@ -729,6 +703,7 @@ $member-margin: 30px;
 
     .team {
         flex-direction: column;
+        align-items: center;
     }
 
     .teamRespImage {
@@ -804,24 +779,23 @@ $member-margin: 30px;
         flex-wrap: wrap;
         justify-content: space-around;
         gap: 1px;
-    }
-      
-    .teamMember {
-        display: flex;
-        min-width: 20%;
-        max-width: 23%;
-        min-height: 30%;
-        max-height: 35%;
+        width: 100%;
     }
 
     .teamMember {
         display: flex;
+        align-items: center;
         flex: 0 0 30%;
+        min-width: 20%;
         max-width: 30%;
         margin: 2% 1%;
         min-height: 90%;
         max-height: 95%;
-      }
+    }
+
+    .memberRoleLink {
+        justify-content: center;
+    }
 }
 
 
