@@ -7,26 +7,34 @@ import ArrowButton from "@/components/molecules/ArrowButton";
 import { fetchBoard, fetchTeams } from "../api/directus";
 
 export default function People() {
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+    const handleResize = () => {
+        setIsMobile(window.innerWidth <= 800); // o 768px, a seconda del tuo breakpoint
+    };
+
+    handleResize(); // inizializza al primo render
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
 
     const [Teams, setTeams] = useState<TeamProps[]>([]);
-
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetchTeams();
             setTeams(data);
         };
-
         fetchData();
     }, []);
 
     const [Board, setBoard] = useState<BoardMemberProps[]>([]);
-
     useEffect(() => {
         const fetchData = async () => {
             const data = await fetchBoard();
             setBoard(data);
         };
-
         fetchData();
     }, []);
 
@@ -64,13 +72,15 @@ export default function People() {
                 <text className={styles.managementArea}>Management Area</text>
                 <div className={styles.boardGrid}>
                     {Board.map((bmp, index) => (
-                        <BoardMember boardMemberProps={bmp} index={index} key={index}
-                            onClick={() => handleBoardMemberClick(index)} />
+                        <BoardMember boardMemberProps={bmp} 
+                                    index={index} 
+                                    key={index}
+                                    onClick={() => handleBoardMemberClick(index)} />
                     ))}
                 </div>
             </div>
 
-            <TeamPopUp index={teamIndex} visible={teamPopUpVisible} disablePopUp={handleHideTeamPopUp} teams={Teams} />
+            <TeamPopUp index={teamIndex} visible={teamPopUpVisible} disablePopUp={handleHideTeamPopUp} teams={Teams} isMobile={isMobile} />
             <div className={styles.teamsContainer}>
                 <text className={styles.theTeams}>THE TEAMS</text>
                 <text className={styles.joinOurTeams}>Our Teams</text>
@@ -126,10 +136,9 @@ function Team({ teamProps, onClick }: { teamProps: TeamProps, onClick: () => voi
     )
 }
 
-function TeamPopUp({ index, visible, disablePopUp, teams}: { index: number, visible: Boolean, disablePopUp: () => void, teams: TeamProps[] }) {
+function TeamPopUp({ index, visible, disablePopUp, teams, isMobile}: { index: number, visible: Boolean, disablePopUp: () => void, teams: TeamProps[], isMobile: boolean }) {
 
     const Teams = teams;
-
 
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRefFirst = useRef<HTMLDivElement>(null);
@@ -139,7 +148,7 @@ function TeamPopUp({ index, visible, disablePopUp, teams}: { index: number, visi
     const [firstRow, setFirstRow] = useState<TeamMemberProps[]>([]);
     const [secondRow, setSecondRow] = useState<TeamMemberProps[]>([]);
     const [team, setTeam] = useState(Teams[index]);
-    const [numPeople, setNumPeople] = useState(4);
+    const [numPeople, setNumPeople] = useState(6);
 
     useEffect(() => {
         if (Teams.length > 0){
@@ -187,15 +196,25 @@ function TeamPopUp({ index, visible, disablePopUp, teams}: { index: number, visi
 
     useEffect(() => {
         const handleResize = () => {
-            if (window.innerWidth > 1050) {
-                setNumPeople(4);
-            } else if (window.innerWidth > 800) {
-                setNumPeople(3);
-            } else {
-                setNumPeople(2);
-            }
-        };
+            const updateNumPeople = () => {
+                if (window.innerWidth > 1050) {
+                    setNumPeople(4);
+                } else if (window.innerWidth > 800) {
+                    setNumPeople(3);
+                } else {
+                    setNumPeople(6);
+                }
+            };
 
+            updateNumPeople(); // Call the function on initial load
+            window.addEventListener('resize', updateNumPeople); // Update on resize
+
+            return () => {
+                window.removeEventListener('resize', updateNumPeople); // Cleanup on unmount
+            };
+        };
+        handleResize(); // Call the function on initial load
+        
         // Add event listener for window resize
         window.addEventListener('resize', handleResize);
 
@@ -234,65 +253,132 @@ function TeamPopUp({ index, visible, disablePopUp, teams}: { index: number, visi
         disablePopUp();
     }
 
-    
     return !team ? null : (
-        <div className={styles.popUpBackground} onClick={handleClosePupUp} style={{ visibility: visible ? 'visible' : 'hidden' }}>
-            <div className={styles.teamPopUp}>
-                <div className={styles.teamHeader}>
-                    <div className={styles.teamHeaderLeft}>
-                        <div className={styles.managerPopUpImageContainer}>
-                            <img className={styles.managerImage} alt={`Coordinators of ${team.area} area`}
-                                 src={team.imageSrc} width={'100px'} height={'100px'}/>
-                        </div>
-                        <div className={styles.managerName}>{team.managers[0].name + (team.managers.length > 1 ? ' &' : '')}</div>
-                        {team.managers.length > 1 &&
-                            <div className={styles.managerName}>{team.managers[1].name + (team.managers.length > 2 ? ' &' : '')}</div>
-                        }
-                        {team.managers.length > 2 &&
-                            <>
-                                <div className={styles.managerName}>{team.managers[2].name}</div>
-                            </>
-                        }
-                        <div className={styles.managerTitleLink}>
-                            <div className={styles.managerTitle}>Area manager{team.managers.length > 1 ? 's' : ''}</div>
-                            <div className={styles.managersLinkedin}>
-                                {team.managers.map(manager => {
-                                        return (manager.linkedIn &&
-                                            <div className={styles.linkIcon}>
-                                                <a className={styles.linkIcon} href={manager.linkedIn}>
-                                                    <img className={styles.linkIcon__icon} src={"/Icons/linkedin_logo_blue.png"}
-                                                         alt="LinkedIn Icon"/>
-                                                </a>
-                                            </div>
-                                        )
-                                    }
-                                )}
+        <div
+          className={styles.popUpBackground}
+          onClick={handleClosePupUp}
+          style={{ visibility: visible ? 'visible' : 'hidden' }}
+        >
+          <div className={styles.teamPopUp} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.teamHeader}>
+              <div className={styles.teamHeaderLeft}>
+                <div className={styles.managerDetails}>
+                  <div className={styles.managerPopUpImageContainer}>
+                    <img
+                      className={styles.managerImage}
+                      alt={`Coordinators of ${team.area} area`}
+                      src={team.imageSrc}
+                      width={'100px'}
+                      height={'100px'}
+                    />
+                  </div>
+      
+                  {team.managers.map((m, i) => (
+                    <div key={i} className={styles.managerName}>
+                      {m.name}
+                      {i < team.managers.length - 1 ? ' &' : ''}
+                    </div>
+                  ))}
+      
+                  <div className={styles.managerTitleLink}>
+                    <div className={styles.managerTitle}>
+                      Area manager{team.managers.length > 1 ? 's' : ''}
+                    </div>
+                    <div className={styles.managersLinkedin}>
+                      {team.managers.map(
+                        (m, i) =>
+                          m.linkedIn && (
+                            <div key={i} className={styles.linkIcon}>
+                              <a className={styles.linkIcon} href={m.linkedIn}>
+                                <img
+                                  className={styles.linkIcon__icon}
+                                  src="/Icons/linkedin_logo_blue.png"
+                                  alt="LinkedIn Icon"
+                                />
+                              </a>
                             </div>
-                        </div>
+                          )
+                      )}
                     </div>
-                    <div className={styles.teamHeaderRight}>
-                        <h2 className={styles.teamPopUp__Title}>We are {team.area}</h2>
-                        <text className={styles.teamPopUp__Description}>{team.description}</text>
-                    </div>
+                  </div>
                 </div>
-                <div className={styles.teamContainer} ref={containerRef}>
-                    {pageIndex > 0  && <ArrowButton className={`${styles.teamContainer__button} ${styles.teamContainer__button__left}`} size={37} onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleLeftClick(e)} color={'#FFFFFF'} left/>}
-                    <div className={styles.teamRow} ref={contentRefFirst}>
-                        {firstRow.map((member: TeamMemberProps) =>
-                            <TeamMember key={member.name} member={member}/>
-                        )}
-                    </div>
-                    <div className={styles.teamRowTwo} ref={contentRefSecond}>
-                        {secondRow.map((member: TeamMemberProps) =>
-                            <TeamMember key={member.name} member={member}/>
-                        )}
-                    </div>
-                    {pageIndex < numPages-1 && <ArrowButton className={`${styles.teamContainer__button} ${styles.teamContainer__button__right}`} size={37} onClick={(e: React.MouseEvent<Element, MouseEvent>) => handleRightClick(e)} color={'#FFFFFF'} right/>}
-                </div>
+      
+                {/* Arrow buttons aligned right */}
+              </div>
+      
+              <div className={styles.teamHeaderRight}>
+                <h2 className={styles.teamPopUp__Title}>We are {team.area}</h2>
+                <text className={styles.teamPopUp__Description}>{team.description}</text>
+              </div>
             </div>
+      
+            <div className={styles.teamContainer} ref={containerRef}>
+                {pageIndex > 0 && !isMobile &&(
+                    <ArrowButton
+                    className={`${styles.teamContainer__button} ${styles.teamContainer__button__left} `}
+                    size={37}
+                    onClick={(e: React.MouseEvent) => handleLeftClick(e)}
+                    color={'#FFFFFF'}
+                    left
+                    />
+                )}
+      
+                {isMobile && chunkArray(firstRow, 3).map((group, i) => (
+                <div key={i} className={styles.teamRow}>
+                    {group.map((member: TeamMemberProps) => (
+                    <TeamMember key={member.name} member={member} />
+                    ))}
+                </div>
+                ))}
+
+                {isMobile && chunkArray(secondRow, 3).map((group, i) => (
+                <div key={i} className={styles.teamRowTwo}>
+                    {group.map((member: TeamMemberProps) => (
+                    <TeamMember key={member.name} member={member} />
+                    ))}
+                </div>
+                ))}
+
+                {!isMobile && (
+                <>
+                    <div className={styles.teamRow} ref={contentRefFirst}>
+                    {firstRow.map((member: TeamMemberProps) => (
+                        <TeamMember key={member.name} member={member} />
+                    ))}
+                    </div>
+
+                    <div className={styles.teamRowTwo} ref={contentRefSecond}>
+                    {secondRow.map((member: TeamMemberProps) => (
+                        <TeamMember key={member.name} member={member} />
+                    ))}
+                    </div>
+                </>
+                )}
+
+
+                {pageIndex < numPages - 1 && !isMobile && (
+                    <ArrowButton
+                    className={`${styles.teamContainer__button} ${styles.teamContainer__button__right}`}
+                    size={37}
+                    onClick={(e: React.MouseEvent) => handleRightClick(e)}
+                    color={'#FFFFFF'}
+                    right
+                    />
+                )}
+            </div>
+          </div>
         </div>
-    )
+      );   
 }
+
+function chunkArray<T>(array: T[], size: number): T[][] {
+    const result: T[][] = [];
+    for (let i = 0; i < array.length; i += size) {
+        result.push(array.slice(i, i + size));
+    }
+    return result;
+}
+
 
 function TeamMember({member } : {member : TeamMemberProps}) {
     const [imageExists, setImageExists] = useState(false);
