@@ -113,7 +113,7 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className={styles.projectsContainer}>
+            {/* <div className={styles.projectsContainer}>
                 <text className={styles.projectsText}>NEWS</text>
                 <text className={styles.projectsTitle}>Our Latest Projects</text>
                 <text className={styles.projectsSubtitle}>COMING SOON</text>
@@ -131,7 +131,7 @@ export default function Home() {
                             internal training, but the real novelty involved the existing members: being able to
                             personally visit a company turned out to be an...
                         </text>
-                        {/*TODO: add link*/}
+                        {TODO: add link}
                     </div>
                     <div className={styles.projectsCenter}>
                         <div className={styles.projectsImageClip}>
@@ -145,7 +145,7 @@ export default function Home() {
                             seemed exhilarating and almost heroic at first, had become devastating over time. The
                             thought of becoming a part of an honor society...
                         </text>
-                        {/*TODO: add link*/}
+                        {TODO: add link}
                     </div>
                     <div className={styles.projectsRight}>
                         <div className={styles.projectsImageClip}>
@@ -157,10 +157,10 @@ export default function Home() {
                             all that's left is to give them shape by projecting them into much broader worlds than the
                             walls that confine us in these...
                         </text>
-                        {/*TODO: add link*/}
+                        {TODO: add link}
                     </div>
                 </div>
-            </div>
+            </div> */}
 
 
             <div className={activities_styles.allActivities}>

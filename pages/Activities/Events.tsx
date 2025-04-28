@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import styles from '@/styles/Activities/Events.module.css'
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import Layout from "../../components/Layout";
 import RoundButton from "../../components/molecules/RoundButton";
 import { useEffect, useState} from "react";
@@ -8,7 +8,6 @@ import YearEventsColumn from "@/components/Events/YearEventsColumn";
 import ArrowButton from "@/components/molecules/ArrowButton";
 import { fetchEvents } from '../api/directus';
 import { Event, YearEvents } from "@/components/Events/YearEventsColumn";
-
 
 export default function Events() {
     const router = useRouter();
@@ -72,7 +71,6 @@ export default function Events() {
                     </div>
                 </div>
             )}
-
         </Layout>
     )
 }
