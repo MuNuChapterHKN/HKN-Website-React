@@ -94,3 +94,13 @@
       text-transform: uppercase;
     }
 }
+
+@media (max-width: 960px) {
+
+  .pastboard {
+    &__members {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
+
