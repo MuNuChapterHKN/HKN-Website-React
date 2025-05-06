@@ -7,6 +7,7 @@ import { PastBoardProps, PastBoardMemberProps} from '@/pages/People/PastBoards';
 import { ProfessionalProps } from '@/pages/People/Professionals';
 import { Mention } from "@/components/Recognitions/MentionCard";
 import { Event, YearEvents } from "@/components/Events/YearEventsColumn";
+import exp from "constants";
 
 const API_URL = 'https://hknpolito.org/directus/';
 const IMPORT_LIMIT = 500;
@@ -338,4 +339,41 @@ export async function fetchEvents() {
 		pastEvents: pastEventsProps,
 		lastEvent: lastEventProps,
 	};
+}
+
+export async function fetchPhotogallery() {
+	const directus = createDirectus(API_URL).with(rest());
+	const photogallery = await directus.request(
+		readItems('photogallery', {
+			"limit": IMPORT_LIMIT,
+			"sort": ["-date"],
+			"fields": ["image", "title", "period", "date"]
+		})
+	);
+
+	const photogalleryProps = [];
+	for (const photo of photogallery) {
+		let imageSrc = `${API_URL}assets/${photo.image}`;
+		photogalleryProps.push({src: imageSrc, title: photo.title, date: photo.period});
+	}
+
+	return photogalleryProps;
+}
+
+export async function fetchRecruitment() {
+	const directus = createDirectus(API_URL).with(rest());
+	const recruitment = await directus.request(
+		readItems('recruitment', {
+			"limit": 1,
+			"sort": ["-id"],
+			"fields": ["open"]
+		})
+	);
+
+	for (const rec of recruitment) {
+		if (rec.open) {
+			return true;
+		}
+	}
+	return false;
 }

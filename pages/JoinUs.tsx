@@ -1,10 +1,24 @@
 import Layout from "../components/Layout";
 import styles from "@/styles/JoinUs/JoinUs.module.scss";
 import SubmissionForm from "@/components/JoinUs/SubmissionForm";
+import { useEffect, useState } from "react";
+import { fetchRecruitment } from "./api/directus";
 
 const JoinUsEnabled = false;
 
 export default function JoinUs() {
+
+    const [JoinUsEnabled, setJoinUsEnabled] = useState(false);
+
+    useEffect(() => {
+        const fetchStatus = async () => {
+            const data = await fetchRecruitment();
+            setJoinUsEnabled(data);
+        }
+        fetchStatus();
+    }, []);
+
+    
 
     return (
         <Layout triangles>
