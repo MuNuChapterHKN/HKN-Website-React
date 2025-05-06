@@ -1,29 +1,19 @@
 import styles from "@/styles/components/AboutUs/gallery.module.scss";
 import {useEffect, useState} from "react";
 import ArrowButton from "@/components/molecules/ArrowButton";
-
-const images = [
-    {title: "Chapter's Birthday", src: "/AboutUs/Gallery/Compleanno del Chapter - March 2023.JPG", date: "March 2023"},
-    {title: "Internal Training Reply", src: "/AboutUs/Gallery/Formazione Interna Reply - May 2023.jpeg", date: "May 2023"},
-    {title: "Founders'Day", src: "/AboutUs/Gallery/Founders' Day - October 2022.JPG", date: "October 2022"},
-    {title: "Hexakappathlon", src: "/AboutUs/Gallery/Hexakappathlon - June 2023.jpg", date: "June 2023"},
-    {title: "Mental Wellness & Digital Wellbeing", src: "/AboutUs/Gallery/Mental Wellness & Digital Wellbeing - June 2023.jpg", date: "June 2023"},
-]
-
-// get the following 3 images from the current index
-const getCurrentImages = (currentIndex: number) => {
-    const imagesToShow = 3;
-    const imagesLength = images.length;
-
-    const currentImages = [];
-    for (let i = 0; i < imagesToShow; i++) {
-        currentImages.push(images[(currentIndex + i) % imagesLength]);
-    }
-
-    return currentImages;
-}
+import { fetchPhotogallery } from "@/pages/api/directus";
 
 export default function Gallery({ className } : { className?: string }) {
+
+    const [images, setImages] = useState<{ src: string; title: any; date: any }[]>([]);
+    useEffect(() => {
+        const fetchImages = async () => {
+            const data = await fetchPhotogallery();
+            setImages(data);
+        };
+        fetchImages();
+    }, []);
+
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleNext = () => {
@@ -43,7 +33,31 @@ export default function Gallery({ className } : { className?: string }) {
         return styles.carousel__container__next;
     };
 
-
+    if (images.length === 0) {
+        return (
+            <div className={`${styles.gallery} ${className}`}>
+                <div className={styles.gallery__center}>
+                    <div className={styles.gallery__uptitle}>
+                        photogallery
+                    </div>
+                    <div className={styles.gallery__title}>
+                        Our best
+                        Shots
+                    </div>
+                    <div className={styles.carousel}>
+                        <div className={styles.carousel__container}>
+                            <img
+                                src="/Activities/StudyGroups/clock.png"
+                                alt="Loading..."
+                                className={styles.carousel__image}
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
     return (
         <div className={`${styles.gallery} ${className}`}>
             <ArrowButton className={styles.gallery__arrows} color="#061E33" onClick={handlePrev} left/>
