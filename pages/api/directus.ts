@@ -38,7 +38,7 @@ export async function fetchAlumni() {
 	const heads = await directus.request(
 		readItems('head', {
 			"limit": IMPORT_LIMIT,
-			"fields": ["member", "team.name", "year"]
+			"fields": ["member", "team.name", "year"],
 		})
 	);
 
@@ -46,7 +46,7 @@ export async function fetchAlumni() {
 	for (const alumnus of alumni) {
 		let memberName = alumnus.name.split(" ")[0];
 		let name = memberName + " " + alumnus.last_name;
-		let imageSrc = "/People/members/"+name.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
+		let imageSrc = `${API_URL}assets/${alumnus.image}`;
 		let badges: Badge[] = []
 		if (alumnus.induction_date){
 			badges.push({type: BadgeType.Inducted, year: alumnus.induction_date.split("-")[0]});
@@ -89,7 +89,7 @@ export async function fetchTeams() {
 		readItems('team', {
 			"limit": IMPORT_LIMIT,
 			"filter": { "is_active": { _eq: true } },
-			"fields": ["id", "name", "long_name", "description", "members.name", "members.last_name"],
+			"fields": ["id", "name", "long_name", "description", "members.name", "members.last_name", "members.image"],
 		})
 	);
 
@@ -97,7 +97,7 @@ export async function fetchTeams() {
 		readItems('head', {
 			"limit": IMPORT_LIMIT,
 			"sort": "-year",
-			"fields": ["member", "team", "year", "member.name", "member.last_name"],
+			"fields": ["member", "team", "year", "member.name", "member.last_name", "member.image"],
 		})
 	).then(heads => heads.filter(head => head.year === heads[0].year));
 
@@ -115,7 +115,7 @@ export async function fetchTeams() {
 		for (const member of team.members){
 
 			let memberName = member.name + " " + member.last_name;
-			let memberImageSrc = "/People/members/"+memberName.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
+			let memberImageSrc = `${API_URL}assets/${member.image}`;
 			let memberProps: TeamMemberProps = {name: memberName, imageSrc: memberImageSrc}
 			members.push(memberProps);
 
@@ -128,7 +128,7 @@ export async function fetchTeams() {
 
 		let memberName = head.member.name.split(" ")[0];
 		let name = memberName + " " + head.member.last_name;
-		let ImageSrc = "/People/members/" + memberName.replace(/ /g, "_").replace("'","").toLowerCase() + ".png";
+		let ImageSrc = `${API_URL}assets/${head.member.image}`;
 		let memberProps: TeamMemberProps = {name: name, imageSrc: ImageSrc}
 
 		teamMap.get(head.team).managers.push(memberProps);
@@ -149,7 +149,7 @@ export async function fetchBoard() {
 		readItems('board', {
 			"limit": IMPORT_LIMIT,
 			"sort": ["-year"],
-			"fields": ["id", "member.name", "member.last_name", "role", "year"]
+			"fields": ["id", "member.name", "member.last_name", "role", "year", "member.image"],
 		})
 	).then(boards => boards.filter(board => board.year === boards[0].year));
 
@@ -161,7 +161,7 @@ export async function fetchBoard() {
 		let memberName = member.name.split(" ")[0];
 		let name = memberName + " " + member.last_name;
 		let role = board.role;
-		let imageSrc = "/People/members/" + name.replace(/ /g, "_").replace("'","").toLowerCase() + ".png";
+		let imageSrc = `${API_URL}assets/${member.image}`;
 
 		boardProps.push({name: name, role: role, imageSrc: imageSrc, roleDescription:""});
 	}
@@ -175,7 +175,7 @@ export async function fetchPastBoards() {
 		readItems('board', {
 			"limit": IMPORT_LIMIT,
 			"sort": ["-year", "-id"],
-			"fields": ["id", "member.name", "member.last_name", "role", "year"]
+			"fields": ["id", "member.name", "member.last_name", "role", "year", "member.image"],
 		})
 	);
 
@@ -186,7 +186,7 @@ export async function fetchPastBoards() {
 		let memberName = member.name.split(" ")[0];
 		let name = memberName + " " + member.last_name;
 		let role = board.role;
-		let imageSrc = "/People/members/"+name.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
+		let imageSrc = `${API_URL}assets/${member.image}`;
 		if (!boardMap.has(year)) {
 			boardMap.set(year, []);
 		}
