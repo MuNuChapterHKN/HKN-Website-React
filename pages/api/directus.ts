@@ -215,7 +215,7 @@ export async function fetchProfessionals() {
 	for (const professional of professionals) {
 		let profName = professional.name.split(" ")[0];
 		let name = profName + " " + professional.last_name;
-		let imageSrc = "/People/professionals/"+name.replace(/ /g, "_").replace("'","").toLowerCase()+".png";
+		let imageSrc = `${API_URL}assets/${professional.image}`;
 		professionalProps.push({name: name, imageSrc: imageSrc});
 	}
 
