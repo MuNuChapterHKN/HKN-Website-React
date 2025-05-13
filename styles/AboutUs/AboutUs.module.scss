@@ -1,3 +1,36 @@
+// PATCH RESPONSIVE - Rimuove colonna blu a destra
+.vision__card {
+  @media (max-width: 1000px) {
+    padding: 2rem; 
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.vision {
+  @media (max-width: 1000px) {
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+}
+
+.stats {
+  @media (max-width: 1000px) {
+    width: 100%;
+    padding: 0 5vw;
+    box-sizing: border-box;
+  }
+}
+
+// Se usi un layout wrapper globale
+.layout, .wrapper, .main {
+  @media (max-width: 1000px) {
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+
 .vision {
   display: flex;
   flex-direction: column;
@@ -36,7 +69,7 @@
     &__title {
       font-size: 67px;
       font-weight: 700;
-      line-height: 100%; /* 67px */
+      line-height: 100%;
       text-transform: capitalize;
     }
 
@@ -65,6 +98,9 @@
       }
 
       &__col2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         grid-column: 2;
         font-family: Inter, sans-serif;
         font-size: 26px;
@@ -138,18 +174,87 @@
           background: linear-gradient(145deg, rgba(187, 187, 187, 0.00) 28.64%, rgba(187, 187, 187, 0.32) 79.41%);
         }
       }
+    }
+  }
 
-      @media(min-width: 2000px) {
-        width: 30%
+  @media (max-width: 1000px) {
+    width: 100%;
+    margin: 50px auto;
+
+    &__card {
+      padding: 2rem;
+      align-items: center;
+      text-align: center;
+
+      &__bull {
+        display: none !important;
       }
 
-      @media(max-width: 1000px) {
-        visibility: collapse;
+      &__title {
+        font-size: 40px;
+        padding: 0;
+      }
+
+      &__description {
+        font-size: 18px;
+        padding: 0;
+      }
+
+      &__visions {
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        &__col1 {
+          justify-content: center;
+
+          &__img {
+            width: 60px;
+          }
+        }
+
+        &__col2 {
+          font-size: 16px;
+          padding-left: 0;
+        }
       }
     }
+  }
 
-    @media(min-width: 2000px) {
-      padding: 3rem 30% 3rem 3rem;
+  @media (max-width: 480px) {
+    margin-top: 35px;
+    margin-bottom: 35px;
+
+    &__card {
+      &__title {
+        font-size: 32px;
+      }
+
+      &__description {
+        font-size: 15px;
+      }
+
+      &__visions {
+        &__col1__img {
+          width: 50px;
+        }
+
+        &__col2 {
+          font-size: 14px;
+        }
+      }
+
+      &__bull__citation {
+        &__text,
+        &__author {
+          font-size: 12px;
+        }
+
+        &__quotes {
+          top: -28px;
+          left: -40px;
+          width: 30px;
+        }
+      }
     }
   }
 }
@@ -167,15 +272,15 @@
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%);
   margin-bottom: 130px;
   padding: 0 13vw;
-  margin-top: 100px;
+  margin-top: 100px; 
 
   &__element {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 20vw;
-    padding: 40px 0;
+    width: 30vw;
+    padding: 40px 0; 
   }
 
   &__number {
@@ -189,12 +294,20 @@
 
   &__container_img {
     width: 6vw;
-    height: 6vw;
-  }
+    height: 6vw;  
+}
 
   &__img {
     object-fit: cover;
     height: 100%;
+  }
+
+  &__text {
+    font-family: Inter, sans-serif;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
   }
 }
 
@@ -211,15 +324,15 @@
 }
 
 .section1_image1 {
-    width: 270px;
+  width: 270px;
   top: 50px;
   filter: grayscale(100%);
   box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
 .section1_image2 {
-  top:0;
-  left:170px;
+  top: 0;
+  left: 170px;
   width: 250px;
   box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.25);
 }
@@ -232,8 +345,8 @@
 }
 
 .section2_image1 {
-  top:40px;
-  left:0;
+  top: 40px;
+  left: 0;
   width: 450px;
   height: 450px;
   box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.25);
@@ -246,10 +359,10 @@
 }
 
 .section3_image1 {
-top: 60px;
+  top: 60px;
   left: 0;
   width: 430px;
-    height: 430px;
+  height: 430px;
   box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
@@ -261,7 +374,7 @@ top: 60px;
 }
 
 .section3_image3 {
-  bottom:-30px;
+  bottom: -30px;
   left: -40px;
   width: 130px;
 }
