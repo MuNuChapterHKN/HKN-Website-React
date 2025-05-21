@@ -72,3 +72,18 @@ a {
 .button {
   cursor: pointer;
 }
+
+/* PATCH RESPONSIVE GLOBALE */
+html, body {
+  overflow-x: hidden; /* Previene banda blu e scroll laterale */
+}
+
+#root,
+#__next,
+main {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}
+
