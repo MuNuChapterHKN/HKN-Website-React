@@ -56,11 +56,9 @@ export default function Home() {
                         </RoundButton>
                     </div>
                 </div>
-                {(windowWidth == 0 || windowWidth > 1100) &&
-                    <div className={styles.logoContainer}>
-                        <HomeLogo/>
-                    </div>
-                }
+                <div className={styles.logoContainer}>
+                    <HomeLogo/>
+                </div>
             </div>
             <div className={styles.awardsContainer}>
                 <div className={styles.awards}>
@@ -95,8 +93,7 @@ export default function Home() {
             </div>
 
             <div className={styles.originsContainer}>
-                <Image className={styles.originsImage} src="/Home/origins.jpg" alt="Vision" width="0" height="0"
-                       sizes="100vw"/>
+                <Image className={styles.originsImage} src="/Home/origins.jpg" alt="Vision" width="0" height="0" sizes="100vw"/>
                 <div className={styles.originsRight}>
                     <text className={styles.originsText}>ORIGINS</text>
                     <text className={styles.originsTitle}>Eta Kappa Nu, IEEE Honor Society</text>
@@ -111,6 +108,7 @@ export default function Home() {
                         {/*TODO: add link*/}
                     </div>
                 </div>
+                <Image className={styles.originsImageMobile} src="/Home/origins.jpg" alt="Vision" width="0" height="0" sizes="100vw"/>
             </div>
 
             {/* <div className={styles.projectsContainer}>
