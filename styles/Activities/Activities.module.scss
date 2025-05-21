@@ -176,6 +176,10 @@
     background-color: #375171;
     padding:20px 0;
 
+    @media (max-width: 450px) {
+        display: none;
+    }
+
     &__background {
         position: absolute;
         top: 6%;

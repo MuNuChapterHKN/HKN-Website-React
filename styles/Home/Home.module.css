@@ -145,6 +145,15 @@
     margin: 0 0 0 3vw;
 }
 
+.originsImageMobile {
+    margin: 0 3vw;
+    object-fit: cover;
+    width: 45%;
+    height: auto;
+    border-radius: 20px;
+    display: none;
+}
+
 .originsButtons {
     display: flex;
     flex-direction: row;
@@ -157,6 +166,7 @@
 .readMeOriginsButton {
     /* background-color: white; */
     min-width: 230px;
+    margin-bottom: 3rem;
     /* border: none; */
     /* color: #061E33; */
 
@@ -318,7 +328,7 @@
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 780px) {
     .awardsContainer {
         visibility: hidden;
         height: 0;
@@ -347,6 +357,10 @@
     .visionImage {
         margin: 0;
         width: 100%;
+    }
+
+    .visionTitle{
+        margin: 0 0 1rem 0;
     }
 
     .peopleVisionButton, .galleryVisionButton,
@@ -379,8 +393,13 @@
         margin: 0;
     }
 
+    .originsImageMobile {
+        width: 100%;
+        margin: 0;
+    }
+
     .originsTitle {
-        margin: 1rem 0;
+        margin: 0 0 1rem 0;
     }
 
     .originsRight {
@@ -390,10 +409,54 @@
 }
 
 
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 780px) {
 
     .drivenByPassion {
         line-height: 35px;
         font-size: 30px;
     }
+
+    .titleContainer{
+        flex-direction: column;
+    }
+
+    .logoContainer {
+        max-width: 100%;
+        margin-left: 0;
+    }
+
+    .visionContainer {
+        margin-top: 50vh;
+        margin-bottom: 50px;
+        @media (max-width: 450px) {
+            margin-top: 250px;
+            
+        }
+    }
+
+    .joinUsTitleButton {
+        margin-bottom: 0;
+    }
+
+    .aboutUsTitleButton {
+        margin-bottom: 0;
+    }
+
+    .originsContainer {
+        margin-top: 0;
+        margin-bottom: 50px;
+    }
+
+    .originsImage {
+        display: none;
+    }
+
+    .originsImageMobile {
+        display: block;
+    }
+
+    .applyCard {
+        margin: 0 0 50px 0;
+    }
+
 }

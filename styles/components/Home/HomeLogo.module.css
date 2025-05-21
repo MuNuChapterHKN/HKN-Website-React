@@ -12,6 +12,10 @@
     width: 100%;
     height: 100%;
     transition: transform 0.5s ease-in-out; /* Add transition for smooth animation */
+
+    @media (max-width: 780px) {
+        height: auto;
+    }
 }
 
 .logoContainer2 {
