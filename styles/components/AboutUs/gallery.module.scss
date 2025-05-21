@@ -52,6 +52,27 @@
     justify-content: center;
     margin: 0 45px;
   }
+
+  @media (max-width: 768px) {
+
+
+    &__uptitle {
+      font-size: 16px;
+    }
+
+    &__title {
+      font-size: 28px;
+      max-width: 100%;
+    }
+
+    &__name,
+    &__date {
+      font-size: 18px;
+    }
+    &__center {
+      margin: 0 20px;
+    }
+  }
 }
 
 .carousel {
@@ -128,4 +149,11 @@
     object-fit: cover;
   }
 }
+
+@media (max-width: 768px) {
+
+    .carousel {
+      width: 60vw; // più stretto
+    }
+  }
 

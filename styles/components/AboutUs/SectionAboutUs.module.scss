@@ -21,6 +21,10 @@
       font-weight: 700;
       text-transform: capitalize;
       margin: 30px 0 30px 0;
+
+      @media (max-width: 768px) {
+        font-size: 23px;
+      }
     }
 
     &__description {
@@ -28,10 +32,18 @@
       font-style: normal;
       font-weight: 400;
       line-height: normal;
+
+      @media (max-width: 768px) {
+        font-size: 12px;
+      }
     }
+
 
     @media (max-width: 950px) {
       width: calc((100% - 240px));
+    }
+    @media (max-width: 768px) {
+      font-size: 15px;
     }
   }
 
