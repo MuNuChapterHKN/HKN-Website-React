@@ -107,7 +107,7 @@ export default function JoinUs() {
 
             <div className={styles.internationalCollective}>
                 {/*TODO: add link*/}
-                <img src="/Publications/hkn_ideogramma_collective.svg" alt="HKN Ideaogramma"/>
+                <img className={styles.internationalCollectiveImage} src="/Publications/hkn_ideogramma_collective.svg" alt="HKN Ideaogramma"/>
                 <text className={styles.internationalCollectiveText}>Discover the International Collective</text>
             </div>
 

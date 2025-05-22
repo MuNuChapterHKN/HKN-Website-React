@@ -90,6 +90,12 @@
     margin-top: 100px;
 }
 
+.internationalCollectiveImage {
+    width: 385px;
+    height: auto;
+    max-width: 100%;
+}
+
 .internationalCollectiveText {
     width: 550px;
     text-align: center;
@@ -161,4 +167,104 @@
 .professionalsButton {
     right: -5px;
 }
+
+
+/* === RESPONSIVE STYLES === */
+@media screen and (max-width: 1024px) {
+    .awardsCard,
+    .mentionsCard {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .awardsLeft,
+    .awardsRight,
+    .mentionsLeft {
+        margin: 20px 0;
+        align-items: center;
+        text-align: center;
+    }
+
+    .awardsLeftButton {
+        width: 2px;
+        height: 2px;
+        left: -80px;
+    }
+
+    .awardsRightButton {
+        width: 2px;
+        height: 2px;
+        right: -80px;
+    }
+
+    .awardsRight {
+        padding: 0;
+    }
+
+    .awardsTitle, .mentionsTitle {
+        font-size: 40px;
+    }
+
+    .awardsText, .mentionsText {
+        font-size: 22px;
+    }
+
+    .awards {
+        font-size: 22px;
+    }
+
+    .internationalCollective {
+        flex-direction: column;
+        margin-top: 60px;
+    }
+
+    .internationalCollectiveImage {
+        width: 300px;
+    }
+
+    .internationalCollectiveText {
+        font-size: 32px;
+        margin: 0 20px;
+        padding: 0 20px;
+        margin-bottom: 20px;
+    }
+
+    .mentionsButton {
+        top: 65%
+    }
+
+    .professionalsTitle {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .professionalsCards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .awardsTitle, .mentionsTitle {
+        font-size: 32px;
+    }
+
+    .awardsText, .mentionsText, .awards {
+        font-size: 20px;
+    }
+
+    .internationalCollectiveText {
+        font-size: 24px;
+    }
+
+    .professionalsTitle {
+        font-size: 24px;
+    }
+
+    .awardImage {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
 
