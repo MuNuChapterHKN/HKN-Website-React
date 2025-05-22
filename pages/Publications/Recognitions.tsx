@@ -106,8 +106,9 @@ export default function JoinUs() {
             {/* TODO: Outstanding Student Award */}
 
             <div className={styles.internationalCollective}>
-                {/*TODO: add link*/}
-                <img className={styles.internationalCollectiveImage} src="/Publications/hkn_ideogramma_collective.svg" alt="HKN Ideaogramma"/>
+                <a href="https://hkn.ieee.org/" target="_blank" rel="noopener noreferrer">
+                    <img className={styles.internationalCollectiveImage} src="/Publications/hkn_ideogramma_collective.svg" alt="HKN Ideaogramma" />
+                </a>
                 <text className={styles.internationalCollectiveText}>Discover the International Collective</text>
             </div>
 
