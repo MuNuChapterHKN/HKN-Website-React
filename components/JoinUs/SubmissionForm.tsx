@@ -1,6 +1,6 @@
+import { coursesByDegree } from "@/data/JoinUs/Courses";
 import styles from "@/styles/JoinUs/JoinUs.module.scss";
-import {courses} from "@/data/JoinUs/Courses";
-import React, {useState, FormEvent} from "react";
+import React, { useState, FormEvent, useMemo } from "react";
 
 type Degree = "Bachelor" | "Master" | "PhD";
 
@@ -13,12 +13,12 @@ interface Errors {
 }
 
 export default function SubmissionForm() {
-
     const [acceptGDPR, setAcceptGDPR] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [average, setAverage] = useState<number>();
     const [degree, setDegree] = useState<Degree>('Bachelor');
+    const courses = useMemo(() => coursesByDegree[degree] as string[], [degree])
     const [course, setCourse] = useState(courses[0]);
     const [area, setArea] = useState('');
     const [studyPlanFile, setStudyPlanFile] = useState(null);
@@ -112,7 +112,7 @@ export default function SubmissionForm() {
                         break;
                     default:
                         setSubmissionError("An error occurred, please try again later or send an email");
-                }   
+                }
             }
         } catch (error: any) {
             console.error(error)
@@ -124,7 +124,7 @@ export default function SubmissionForm() {
 
     const resetError = (field: keyof Errors) => {
         setErrors((errors) => {
-            let e = {...errors};
+            let e = { ...errors };
             delete e[`${field}`];
             return e
         })
@@ -140,10 +140,10 @@ export default function SubmissionForm() {
     return (
         submitted ?
             <section>
-                    <img src="/JoinUs/successfulSubmission.png" alt={"Submission sent!"} width={'100%'}
-                         height={'auto'} className={styles.submissionImage}/>
+                <img src="/JoinUs/successfulSubmission.png" alt={"Submission sent!"} width={'100%'}
+                    height={'auto'} className={styles.submissionImage} />
                 <div className={`${styles.submissionText}`}>
-                {/*<div className={styles.successfulSubmission}>*/}
+                    {/*<div className={styles.successfulSubmission}>*/}
                     <div className={styles.disabledJoinUs__text}>
                         Thank you! Your application has been sent, we'll evaluate it and contact you as soon as possible
                     </div>
@@ -156,23 +156,23 @@ export default function SubmissionForm() {
 
                     <label htmlFor="name" className={styles.formLabel}>Name & Surname</label>
                     <input type="text" id="name" name="name" className={styles.formInput} value={name} maxLength={100}
-                           onChange={(e) => updateField(e, "name", setName)} required={true}/>
+                        onChange={(e) => updateField(e, "name", setName)} required={true} />
                     {errors.name && <p className={styles.errorMessage}>{errors.name}</p>}
 
                     <div className={`${styles.halfWidth} ${styles.paddingRight}`}>
                         <label htmlFor="average" className={styles.formLabel}>Weighted Average</label>
                         <input type="number" id="average" name="average" className={styles.formInput} min={18} max={30}
-                               step={0.1}
-                               value={average} onChange={(e) => {
-                            resetError('average');
-                            setAverage(Number(e.target.value));
-                        }} required={true}/>
+                            step={0.1}
+                            value={average} onChange={(e) => {
+                                resetError('average');
+                                setAverage(Number(e.target.value));
+                            }} required={true} />
                         {errors.average && <p className={styles.errorMessage}>{errors.average}</p>}
                     </div>
                     <div className={`${styles.halfWidth} ${styles.paddingLeft}`}>
                         <label htmlFor="degree" className={styles.formLabel}>Type of Degree</label>
                         <select name="degree" id="degree" className={styles.formInput} value={degree} required={true}
-                                onChange={(e) => setDegree(e.target.value as Degree)}>
+                            onChange={(e) => setDegree(e.target.value as Degree)}>
                             <option value="Bachelor">Bachelor</option>
                             <option value="Master">Master</option>
                             <option value="PhD">PhD</option>
@@ -181,35 +181,42 @@ export default function SubmissionForm() {
 
                     <label htmlFor="email" className={styles.formLabel}>University Email Address</label>
                     <input type="email" id="email" name="email" className={styles.formInput} value={email}
-                           maxLength={255}
-                           onChange={(e) => updateField(e, "email", setEmail)} required={true}/>
+                        maxLength={255}
+                        onChange={(e) => updateField(e, "email", setEmail)} required={true} />
                     {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
 
-                    <label htmlFor="course" className={styles.formLabel}>Degree Course</label>
-                    <select name="course" id="course" className={styles.formInput} value={course} required={true}
-                            onChange={(e) => setCourse(e.target.value)}>
-                        {
-                            ...courses.map(
-                                (course) => <option key={course} value={course}>{course}</option>
-                            )
-                        }
-                    </select>
+
+                    {degree != 'PhD' ? (
+                        <>
+                            <label htmlFor="course" className={styles.formLabel}>Degree Course</label>
+                            <select name="course" id="course" className={styles.formInput} value={course} required={true}
+                                onChange={(e) => setCourse(e.target.value)}>
+                                {
+                                    ...courses.map(
+                                        (course) => <option key={course} value={course}>{course}</option>
+                                    )
+                                }
+                            </select>
+                        </>
+                    ) : (
+                        <select id="course" name="course" value="PhD" hidden />
+                    )}
 
                     <label htmlFor="area" className={styles.formLabel}>Degree Area</label>
-                    <input type="area" id="area" name="area" className={styles.formInput} value={area} maxLength={400}
-                           onChange={(e) => setArea(e.target.value)}
-                           placeholder={'e.g. AI, Quantum Engineering, Nanotechnologies for ICTs...'}/>
+                    <input id="area" name="area" className={styles.formInput} value={area} maxLength={400}
+                        onChange={(e) => setArea(e.target.value)}
+                        placeholder={'e.g. AI, Quantum Engineering, Nanotechnologies for ICTs...'} />
 
                     <div className={styles.fileInputContainer}>
                         <label htmlFor="cv" className={`${styles.formLabel} ${styles.noWidth}`}>
                             Attach Your CV:
                         </label>
                         <input type="file" className={styles.fileInput} name="cv" id="cv" accept={'application/pdf'}
-                               required={true}
-                               onChange={(e) => {
-                                   resetError('cv');
-                                   setFileName(setCvFile, e.currentTarget.files)
-                               }}/>
+                            required={true}
+                            onChange={(e) => {
+                                resetError('cv');
+                                setFileName(setCvFile, e.currentTarget.files)
+                            }} />
                         <label htmlFor="cv" className={styles.fileButton}>ATTACH A FILE</label>
                     </div>
                     {cvFile && <span className={styles.fileName}>{cvFile}</span>}
@@ -219,11 +226,11 @@ export default function SubmissionForm() {
                             Attach Your Study Plan:
                         </label>
                         <input type="file" className={styles.fileInput} name="studyPlan" id="studyPlan"
-                               accept={'application/pdf'} required={true}
-                               onChange={(e) => {
-                                   resetError('studyPlan');
-                                   setFileName(setStudyPlanFile, e.currentTarget.files)
-                               }}/>
+                            accept={'application/pdf'} required={true}
+                            onChange={(e) => {
+                                resetError('studyPlan');
+                                setFileName(setStudyPlanFile, e.currentTarget.files)
+                            }} />
                         <label htmlFor="studyPlan" className={styles.fileButton}>ATTACH A FILE</label>
                     </div>
                     {studyPlanFile && <span className={styles.fileName}>{studyPlanFile}</span>}
@@ -231,13 +238,13 @@ export default function SubmissionForm() {
 
                     <div className={styles.checkboxContainer}>
                         <input type="checkbox" id="acceptGDPR" name="acceptGDPR" className={styles.checkboxInput}
-                               onChange={() => setAcceptGDPR(!acceptGDPR)} required={true}/>
+                            onChange={() => setAcceptGDPR(!acceptGDPR)} required={true} />
                         <label htmlFor="acceptGDPR" className={styles.checkboxLabel}>
                             I authorize the treatment of personal data contained in the documents according to the D.Lgs. 2018/101 and GDPR (EU Regulation 2016/679).
                         </label>
                     </div>
 
-                    <input type="submit" className={styles.submitButton} value="SEND" disabled={isLoading}/>
+                    <input type="submit" className={styles.submitButton} value="SEND" disabled={isLoading} />
                     <p className={styles.formText}>
                         *You can contact us using the form above or sending an email to
                         <a href="mailto:info@hknpolito.org"> info@hknpolito.org</a>

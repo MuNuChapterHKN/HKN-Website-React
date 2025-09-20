@@ -1,11 +1,32 @@
-export const courses = [
-    "COMPUTER TECHNOLOGY",
-    "ELECTRICAL",
-    "ELECTRONIC",
-    "BIOMEDICAL",
-    "PHYSICS",
-    "MATHEMATICS",
-    "ENERGY",
-    "CINEMA AND MEDIA",
-    "OTHER"
-]
+export const coursesByDegree = {
+    'Bachelor': [
+        "Electronic and Communications Engineering (Ingegneria Elettronica e delle Comunicazioni)",
+        "Ingegneria Biomedica",
+        "Ingegneria del Cinema e dei Media Digitali",
+        "Ingegneria Elettrica",
+        "Ingegneria Elettronica",
+        "Ingegneria Fisica",
+        "Ingegneria Gestionale",
+        "Ingegneria Informatica (Computer Engineering)",
+        "Matematica per l’Ingegneria",
+    ],
+    'Master': [
+        "Communications Engineering",
+        "Cybersecurity Engineering",
+        "Data Science and Engineering",
+        "ICT Engineering for Smart Societies",
+        "Ingegneria Biomedica",
+        "Ingegneria del Cinema e dei Media Digitali",
+        "Ingegneria Matematica",
+        "Ingegneria Informatica (Computer Engineering)",
+        "Ingegneria Elettrica",
+        "Ingegneria Elettronica",
+        "Ingegneria Gestionale",
+        "Nanotechnologies for ICTs (Nanotecnologie per le ICT)",
+        "Quantum Engineering",
+        "Physics of Complex Systems (Fisica dei Sistemi Complessi)",
+        "Agritech Engineering",
+        "Mechatronic Engineering (Ingegneria Meccatronica)",
+    ],
+    'PhD': [],
+};
