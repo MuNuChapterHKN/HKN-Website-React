@@ -17,6 +17,7 @@
   gap: 0.5em;
 
   .coursesPill {
+    cursor: pointer;
     padding-block: 10px;
     padding-inline: 20px;
     border-radius: 10px;
