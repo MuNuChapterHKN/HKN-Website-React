@@ -9,9 +9,9 @@ import { z } from 'zod';
 const schema = z.object({
     name: z.string().min(1).max(200),
     average: z.number().min(25.6).max(30),
-    email: z.string().email(), //.toLowerCase().endsWith('polito.it'),
+    email: z.string().email(),
     degree: z.enum(["Bachelor", "Master", "PhD"]),
-    course: z.enum(["COMPUTER TECHNOLOGY", "ELECTRICAL", "ELECTRONIC", "BIOMEDICAL", "PHYSICS", "MATHEMATICS", "ENERGY", "CINEMA AND MEDIA", "OTHER"]),
+    course: z.string(),
     area: z.optional(z.string())
 });
 
@@ -61,14 +61,14 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
             const options = {
                 maxFiles: 2,
                 maxFileSize: 1048576 * 5, // 5MB
-                filter: function ({ mimetype }: { mimetype: string }) {
+                filter: function({ mimetype }: { mimetype: string }) {
                     return mimetype && mimetype === 'application/pdf';
                 },
             };
 
             let fieldsSingle, parsedFields;
             let form, fields, files;
-            
+
             try {
                 // @ts-ignore
                 form = formidable(options);
@@ -117,7 +117,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                 logger.info('Apply Email sent to HR');
                 await sendEmail(mailSubjectApplicant, mailBodyApplicant, parsedFields.email, attachments);
                 logger.info('Confirmation Email sent to applicant');
-                
+
                 try {
                     await shareNewApply(parsedFields.name);
                     logger.info('Telegram notification sent');
