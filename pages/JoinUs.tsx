@@ -1,24 +1,12 @@
 import Layout from "../components/Layout";
 import styles from "@/styles/JoinUs/JoinUs.module.scss";
 import SubmissionForm from "@/components/JoinUs/SubmissionForm";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { fetchRecruitment } from "./api/directus";
-
-const JoinUsEnabled = false;
+import { FeatureFlagsContext, Feature } from './_app';
 
 export default function JoinUs() {
-
-    const [JoinUsEnabled, setJoinUsEnabled] = useState(false);
-
-    useEffect(() => {
-        const fetchStatus = async () => {
-            const data = await fetchRecruitment();
-            setJoinUsEnabled(data);
-        }
-        fetchStatus();
-    }, []);
-
-    
+    const featureFlags = useContext(FeatureFlagsContext);
 
     return (
         <Layout triangles>
@@ -184,7 +172,7 @@ export default function JoinUs() {
                 </section>
 
                 {/* Submission form */}
-                {JoinUsEnabled ?
+                {featureFlags[Feature.IsRecruitmentOpen] ?
                     <SubmissionForm/>
                     :
                     <div className={styles.disabledJoinUs}>
