@@ -2,7 +2,7 @@ import { coursesByDegree } from "@/data/JoinUs/Courses";
 import styles from "@/styles/JoinUs/JoinUs.module.scss";
 import React, { useState, FormEvent, useMemo } from "react";
 
-type Degree = "Bachelor" | "Master" | "PhD";
+export type Degree = "Bachelor" | "Master" | "PhD";
 
 interface Errors {
     name?: string
