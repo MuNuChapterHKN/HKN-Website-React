@@ -19,7 +19,7 @@ export function CoursesModal({ visible, disablePopUp }: { visible: Boolean, disa
       <div className={styles.teamPopUp} onClick={(e) => e.stopPropagation()}>
         <div className={styles2.coursesHeader}>
           <h2 className={styles.teamPopUp__Title}>Eligible Courses</h2>
-          <text className={styles.teamPopUp__Description}>The following bachelor's degree programs are eligible for applying to join our chapter:</text>
+          <text className={styles.teamPopUp__Description}>The following degrees programs are eligible for applying to join our chapter:</text>
         </div>
 
         <div className={styles2.coursesContainer}>
