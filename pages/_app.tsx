@@ -17,6 +17,7 @@ const DEFAULT_FEATURE_FLAGS = {
 export enum Feature {
     ShowTeams = "show_teams",
     ShowTeamsPopups = "show_teams_popups",
+    ShowTeamsRespPics = "show_teams_resp_pic",
     IsRecruitmentOpen = "is_recruitment_open"
 }
 

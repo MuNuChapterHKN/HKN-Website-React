@@ -129,9 +129,13 @@ function BoardMember({ boardMemberProps, index, onClick }: {
 }
 
 function Team({ teamProps, onClick }: { teamProps: TeamProps, onClick: () => void }) {
+    const featureFlags = useContext(FeatureFlagsContext);
+
     return (
         <div className={styles.team} onClick={onClick}>
-            <img className={styles.teamRespImage} src={teamProps.imageSrc} alt={teamProps.imageSrc} />
+            {featureFlags[Feature.ShowTeamsRespPics] && (
+                <img className={styles.teamRespImage} src={teamProps.imageSrc} alt={teamProps.imageSrc} />
+            )}
             <div className={styles.teamTextBox}>
                 <text className={styles.peopleOf}>people of</text>
                 <text className={styles.teamArea}>{teamProps.area}</text>
