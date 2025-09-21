@@ -1,0 +1,45 @@
+.coursesHeader {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.coursesContainer {
+  width: 100%;
+  font-size: 1.5rem;
+  margin-bottom: 1em;
+}
+
+.coursesPills {
+  display: flex;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  gap: 0.5em;
+
+  .coursesPill {
+    cursor: pointer;
+    padding-block: 10px;
+    padding-inline: 20px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 0 10px #00000008;
+
+    &.selected {
+      background: #1A334C;
+      color: white !important;
+    }
+  }
+}
+
+.popUpBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

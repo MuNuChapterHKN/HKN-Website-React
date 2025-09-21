@@ -1,9 +1,9 @@
-import StudyGroup, {StudyGroupProps} from "@/components/Events/StudyGroup";
+import StudyGroup, { StudyGroupProps } from "@/components/Events/StudyGroup";
 import { BadgeType, Badge } from "@/components/People/Alumno";
 import { AlumnoProps } from "@/pages/People/Alumni";
 import { createDirectus, rest, readAssetArrayBuffer, readItems, readFile, readProviders, staticToken } from '@directus/sdk';
 import { TeamMemberProps, TeamProps, BoardMemberProps } from '@/pages/People/People';
-import { PastBoardProps, PastBoardMemberProps} from '@/pages/People/PastBoards';
+import { PastBoardProps, PastBoardMemberProps } from '@/pages/People/PastBoards';
 import { ProfessionalProps } from '@/pages/People/Professionals';
 import { Mention } from "@/components/Recognitions/MentionCard";
 import { Event, YearEvents } from "@/components/Events/YearEventsColumn";
@@ -11,6 +11,19 @@ import exp from "constants";
 
 const API_URL = 'https://hknpolito.org/directus/';
 const IMPORT_LIMIT = 500;
+
+export type FeatureFlag = {
+	name: string;
+	status: boolean;
+}
+
+export async function fetchFeatureFlags() {
+	const directus = createDirectus(API_URL).with(rest());
+	const featureFlags = await directus.request(
+		readItems('feature_flags')
+	);
+	return featureFlags as FeatureFlag[];
+}
 
 export async function fetchActiveStudyGroups() {
 	const directus = createDirectus(API_URL).with(rest());
@@ -30,7 +43,7 @@ export async function fetchAlumni() {
 			"limit": IMPORT_LIMIT,
 		})
 	);
-	const boards  = await directus.request(
+	const boards = await directus.request(
 		readItems('board', {
 			"limit": IMPORT_LIMIT,
 		})
@@ -48,16 +61,16 @@ export async function fetchAlumni() {
 		let name = memberName + " " + alumnus.last_name;
 		let imageSrc = `${API_URL}assets/${alumnus.image}`;
 		let badges: Badge[] = []
-		if (alumnus.induction_date){
-			badges.push({type: BadgeType.Inducted, year: alumnus.induction_date.split("-")[0]});
+		if (alumnus.induction_date) {
+			badges.push({ type: BadgeType.Inducted, year: alumnus.induction_date.split("-")[0] });
 		}
-		alumniMap.set(alumnus.id, {name: name, imageSrc: imageSrc, badges: badges});
+		alumniMap.set(alumnus.id, { name: name, imageSrc: imageSrc, badges: badges });
 	}
 	for (const board of boards) {
 		let role = board.role;
 		let year = board.year;
-		let badge = {type: BadgeType.Board, year: year, role: role};
-		const alumno: AlumnoProps|undefined = alumniMap.get(board.member);
+		let badge = { type: BadgeType.Board, year: year, role: role };
+		const alumno: AlumnoProps | undefined = alumniMap.get(board.member);
 		if (!alumno) {
 			continue;
 		}
@@ -66,8 +79,8 @@ export async function fetchAlumni() {
 	for (const head of heads) {
 		let team = head.team.name
 		let year = head.year;
-		let badge = {type: BadgeType.Head, year: year, role: team};
-		const alumno: AlumnoProps|undefined = alumniMap.get(head.member);
+		let badge = { type: BadgeType.Head, year: year, role: team };
+		const alumno: AlumnoProps | undefined = alumniMap.get(head.member);
 		if (!alumno) {
 			continue;
 		}
@@ -110,18 +123,18 @@ export async function fetchTeams() {
 		let description = team.description;
 		let managers: TeamMemberProps[] = [];
 		let members: TeamMemberProps[] = [];
-		let imageSrc = "/People/Resp/resp-"+area.toLowerCase().replace(/ /g, "_")+".png";
+		let imageSrc = "/People/Resp/resp-" + area.toLowerCase().replace(/ /g, "_") + ".png";
 
-		for (const member of team.members){
+		for (const member of team.members) {
 
 			let memberName = member.name + " " + member.last_name;
 			let memberImageSrc = `${API_URL}assets/${member.image}`;
-			let memberProps: TeamMemberProps = {name: memberName, imageSrc: memberImageSrc}
+			let memberProps: TeamMemberProps = { name: memberName, imageSrc: memberImageSrc }
 			members.push(memberProps);
 
 		}
 
-		teamMap.set(team.id, {area: area, long_name: long_name, description: description, managers: managers, members: members, imageSrc: imageSrc});
+		teamMap.set(team.id, { area: area, long_name: long_name, description: description, managers: managers, members: members, imageSrc: imageSrc });
 	}
 
 	for (const head of heads) {
@@ -129,7 +142,7 @@ export async function fetchTeams() {
 		let memberName = head.member.name.split(" ")[0];
 		let name = memberName + " " + head.member.last_name;
 		let ImageSrc = `${API_URL}assets/${head.member.image}`;
-		let memberProps: TeamMemberProps = {name: name, imageSrc: ImageSrc}
+		let memberProps: TeamMemberProps = { name: name, imageSrc: ImageSrc }
 
 		teamMap.get(head.team).managers.push(memberProps);
 	}
@@ -163,7 +176,7 @@ export async function fetchBoard() {
 		let role = board.role;
 		let imageSrc = `${API_URL}assets/${member.image}`;
 
-		boardProps.push({name: name, role: role, imageSrc: imageSrc, roleDescription:""});
+		boardProps.push({ name: name, role: role, imageSrc: imageSrc, roleDescription: "" });
 	}
 
 	return boardProps;
@@ -190,12 +203,12 @@ export async function fetchPastBoards() {
 		if (!boardMap.has(year)) {
 			boardMap.set(year, []);
 		}
-		boardMap.get(year).push({name: name, role: role, imageSrc: imageSrc});
+		boardMap.get(year).push({ name: name, role: role, imageSrc: imageSrc });
 	}
 
 	const boardProps: PastBoardProps[] = [];
-    boardMap.forEach((value, key) => {
-		boardProps.push({year: key, members: value});
+	boardMap.forEach((value, key) => {
+		boardProps.push({ year: key, members: value });
 	});
 
 	boardProps.shift();
@@ -216,7 +229,7 @@ export async function fetchProfessionals() {
 		let profName = professional.name.split(" ")[0];
 		let name = profName + " " + professional.last_name;
 		let imageSrc = `${API_URL}assets/${professional.image}`;
-		professionalProps.push({name: name, imageSrc: imageSrc});
+		professionalProps.push({ name: name, imageSrc: imageSrc });
 	}
 
 	return professionalProps;
@@ -276,7 +289,7 @@ export async function fetchMentions() {
 	const mentionProps: Mention[] = [];
 	for (const mention of mentions) {
 		let imageSrc = `${API_URL}assets/${mention.image}`;
-		mentionProps.push({imageSrc: imageSrc, title: mention.title, subtitle: mention.subtitle, text: mention.text, link: mention.link});
+		mentionProps.push({ imageSrc: imageSrc, title: mention.title, subtitle: mention.subtitle, text: mention.text, link: mention.link });
 	}
 
 	return mentionProps;
@@ -293,7 +306,7 @@ export async function fetchEvents() {
 	);
 
 	const eventMap = new Map<string, any[]>();
-	const lastEvent  = events[0];
+	const lastEvent = events[0];
 	const lastEventDate = new Date(lastEvent.date);
 	const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
 	const lastEventFormattedDate = lastEventDate.toLocaleDateString('en-US', options);
@@ -354,7 +367,7 @@ export async function fetchPhotogallery() {
 	const photogalleryProps = [];
 	for (const photo of photogallery) {
 		let imageSrc = `${API_URL}assets/${photo.image}`;
-		photogalleryProps.push({src: imageSrc, title: photo.title, date: photo.period});
+		photogalleryProps.push({ src: imageSrc, title: photo.title, date: photo.period });
 	}
 
 	return photogalleryProps;

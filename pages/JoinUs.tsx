@@ -1,27 +1,22 @@
 import Layout from "../components/Layout";
 import styles from "@/styles/JoinUs/JoinUs.module.scss";
-import SubmissionForm from "@/components/JoinUs/SubmissionForm";
-import { useEffect, useState } from "react";
+import SubmissionForm, { Degree } from "@/components/JoinUs/SubmissionForm";
+import { useEffect, useState, useContext } from "react";
 import { fetchRecruitment } from "./api/directus";
-
-const JoinUsEnabled = false;
+import { FeatureFlagsContext, Feature } from './_app';
+import { CoursesModal } from '../components/JoinUs/CoursesModal';
 
 export default function JoinUs() {
+    const featureFlags = useContext(FeatureFlagsContext);
+    const [modalVisible, setModalVisible] = useState(false);
 
-    const [JoinUsEnabled, setJoinUsEnabled] = useState(false);
-
-    useEffect(() => {
-        const fetchStatus = async () => {
-            const data = await fetchRecruitment();
-            setJoinUsEnabled(data);
-        }
-        fetchStatus();
-    }, []);
-
-    
+    const openCoursesModal = () => setModalVisible(true); 
+    const closeCoursesModal = () => setModalVisible(false);
 
     return (
         <Layout triangles>
+            <CoursesModal visible={modalVisible} disablePopUp={closeCoursesModal} />
+
             <main className={styles.container}>
                 <section>
                     <h2 className={styles.pageSubtitle}>DISCOVER HOW TO JOIN US</h2>
@@ -118,7 +113,7 @@ export default function JoinUs() {
                             <li className={styles.requirementPoint}>Weighted average ≥ 27</li>
                         </ul>
                         <p className={styles.additionalRequirement}>Fluency in the Italian language is a prerequisite
-                            for admission to the chapter</p>
+                            for admission to the chapter. Unfortunately only a selection of courses can apply to join, click <span onClick={openCoursesModal} style={{ cursor: 'pointer', color: '#AEB3B9'}}>here</span> to see the list.</p>
                     </div>
                 </section>
 
@@ -184,7 +179,7 @@ export default function JoinUs() {
                 </section>
 
                 {/* Submission form */}
-                {JoinUsEnabled ?
+                {featureFlags[Feature.IsRecruitmentOpen] ?
                     <SubmissionForm/>
                     :
                     <div className={styles.disabledJoinUs}>

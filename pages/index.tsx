@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import styles from '@/styles/Home/Home.module.css'
 import activities_styles from '@/styles/Activities/Activities.module.scss'
-import {useRouter} from "next/router";
+import { useRouter } from "next/router";
 import Layout from "../components/Layout";
 import HomeLogo from "../components/Home/HomeLogo";
 import RoundButton from "../components/molecules/RoundButton";
-import {useEffect, useState} from "react";
-import { fetchHomeAwards } from './api/directus';
+import { useEffect, useState } from "react";
+import { FeatureFlag, fetchFeatureFlags, fetchHomeAwards } from './api/directus';
 
 
 export default function Home() {
@@ -57,7 +57,7 @@ export default function Home() {
                     </div>
                 </div>
                 <div className={styles.logoContainer}>
-                    <HomeLogo/>
+                    <HomeLogo />
                 </div>
             </div>
             <div className={styles.awardsContainer}>
@@ -83,17 +83,17 @@ export default function Home() {
                     </text>
                     <div className={styles.visionButtons}>
                         <RoundButton className={styles.peopleVisionButton}
-                                     onClick={() => router.push('/AboutUs#vision')}>READ ME</RoundButton>
+                            onClick={() => router.push('/AboutUs#vision')}>READ ME</RoundButton>
                         {/*TODO: add link*/}
                         <RoundButton className={styles.galleryVisionButton} onClick={() => router.push('/AboutUs#gallery')}>PHOTO
                             GALLERY</RoundButton>
                     </div>
                 </div>
-                <img className={styles.visionImage} src="/Home/vision.jpg" alt="Vision"/>
+                <img className={styles.visionImage} src="/Home/vision.jpg" alt="Vision" />
             </div>
 
             <div className={styles.originsContainer}>
-                <Image className={styles.originsImage} src="/Home/origins.jpg" alt="Vision" width="0" height="0" sizes="100vw"/>
+                <Image className={styles.originsImage} src="/Home/origins.jpg" alt="Vision" width="0" height="0" sizes="100vw" />
                 <div className={styles.originsRight}>
                     <text className={styles.originsText}>ORIGINS</text>
                     <text className={styles.originsTitle}>Eta Kappa Nu, IEEE Honor Society</text>
@@ -108,7 +108,7 @@ export default function Home() {
                         {/*TODO: add link*/}
                     </div>
                 </div>
-                <Image className={styles.originsImageMobile} src="/Home/origins.jpg" alt="Vision" width="0" height="0" sizes="100vw"/>
+                <Image className={styles.originsImageMobile} src="/Home/origins.jpg" alt="Vision" width="0" height="0" sizes="100vw" />
             </div>
 
             {/* <div className={styles.projectsContainer}>
@@ -162,7 +162,7 @@ export default function Home() {
 
 
             <div className={activities_styles.allActivities}>
-                <div className={activities_styles.allActivities__background}/>
+                <div className={activities_styles.allActivities__background} />
 
                 <div className={activities_styles.allActivities__content}>
                     <div className={activities_styles.allActivities__events}>
@@ -178,18 +178,18 @@ export default function Home() {
                                 <div className={activities_styles.allActivities__group__events}>events</div>
                                 <div className={activities_styles.allActivities__group__title}>Events</div>
                                 <div className={activities_styles.allActivities__group__text}>Our events are thought for anyone who
-                                                                                   likes talking, debating, learning and
-                                                                                   discovering
+                                    likes talking, debating, learning and
+                                    discovering
                                 </div>
 
                                 <div className={activities_styles.allActivities__group1__imgcont1}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Events/mentalWellnessDigitalWellBeing.png'} alt={'Event 3'}/>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Events/mentalWellnessDigitalWellBeing.png'} alt={'Event 3'} />
                                 </div>
                                 <div className={activities_styles.allActivities__group1__imgcont2}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Events/event_2022.png'} alt={'Event 2'} style={{objectPosition: "75% 100%"}}/>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Events/event_2022.png'} alt={'Event 2'} style={{ objectPosition: "75% 100%" }} />
                                 </div>
                                 <div className={activities_styles.allActivities__group1__imgcont3}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Events/quantumQuest.png'} alt={'Event 1'}/>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Events/quantumQuest.png'} alt={'Event 1'} />
                                 </div>
 
                                 <div className={activities_styles.allActivities__group1__discover}>
@@ -201,24 +201,24 @@ export default function Home() {
                                 <div className={activities_styles.allActivities__group__events}>events</div>
                                 <div className={activities_styles.allActivities__group__title}>Masterclass</div>
                                 <div className={activities_styles.allActivities__group__text}>Our experts will provide you advices
-                                                                                   and tips that will help you improving
-                                                                                   your skills & enriching your CV
+                                    and tips that will help you improving
+                                    your skills & enriching your CV
                                 </div>
 
                                 <div className={activities_styles.allActivities__group2__imgcont1}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/MentalWellness.jpg'} alt={'discover1'}/>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/MentalWellness.jpg'} alt={'discover1'} />
                                 </div>
                                 <div className={activities_styles.allActivities__group2__imgcont2}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/Hexakappathlon.jpg'} alt={'discover2'} style={{objectPosition: "75% 100%"}}/>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/Hexakappathlon.jpg'} alt={'discover2'} style={{ objectPosition: "75% 100%" }} />
                                 </div>
                                 <div className={activities_styles.allActivities__group2__imgcont3}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/FoundersDay.jpg'} alt={'discover1'}/>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/FoundersDay.jpg'} alt={'discover1'} />
                                 </div>
 
                                 <div className={activities_styles.allActivities__group2__discover}>
                                     Discover
                                     {/*<RoundButton className={activities_styles.allActivities__group__button} onClick={() => router.push('/Activities/Masterclasses')}>Masterclasses</RoundButton>*/}
-                                    <RoundButton className={activities_styles.allActivities__group__button} onClick={() => {}}>COMING SOON</RoundButton>
+                                    <RoundButton className={activities_styles.allActivities__group__button} onClick={() => { }}>COMING SOON</RoundButton>
                                 </div>
                             </div>
                         </div>
@@ -229,24 +229,24 @@ export default function Home() {
                                 <div className={activities_styles.allActivities__group__events}>events</div>
                                 <div className={activities_styles.allActivities__group__title}>Study Groups</div>
                                 <div className={activities_styles.allActivities__group__text}>HKN members and PhD students will
-                                                                                   help you with whatever concept you
-                                                                                   might be struggling with
+                                    help you with whatever concept you
+                                    might be struggling with
                                 </div>
 
                                 <div className={activities_styles.allActivities__group3__imgcont1}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/Discover_2.jpeg'} alt={'discover1'}/>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/Discover_2.jpeg'} alt={'discover1'} />
                                 </div>
                                 <div className={activities_styles.allActivities__group3__imgcont2}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/FormazioneInternaReply.jpeg'} alt={'discover2'} style={{objectPosition: "75% 100%"}}/>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/FormazioneInternaReply.jpeg'} alt={'discover2'} style={{ objectPosition: "75% 100%" }} />
                                 </div>
                                 <div className={activities_styles.allActivities__group3__imgcont3}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/Discover_3.jpeg'} alt={'discover1'}/>
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/Discover_3.jpeg'} alt={'discover1'} />
                                 </div>
 
                                 <div className={activities_styles.allActivities__group3__discover}>
                                     Discover
                                     <RoundButton className={activities_styles.allActivities__group__button} onClick={() => router.push('/Activities/StudyGroups')}>study
-                                                                                                                                                        groups</RoundButton>
+                                        groups</RoundButton>
                                 </div>
                             </div>
                         </div>
