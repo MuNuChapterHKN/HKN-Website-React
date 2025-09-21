@@ -199,7 +199,7 @@ export default function SubmissionForm() {
                             </select>
                         </>
                     ) : (
-                        <select id="course" name="course" value="PhD" hidden />
+                        <input id="course" name="course" value="PhD" hidden />
                     )}
 
                     <label htmlFor="area" className={styles.formLabel}>Degree Area</label>
