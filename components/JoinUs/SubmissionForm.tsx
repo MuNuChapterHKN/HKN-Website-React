@@ -140,7 +140,7 @@ export default function SubmissionForm() {
     }
 
     return (
-        !submitted ?
+        submitted ?
             <section>
                 {featureFlags[Feature.ShowImageAfterApply] &&
                     (<img src="/JoinUs/successfulSubmission.png" alt={"Submission sent!"} width={'100%'}
