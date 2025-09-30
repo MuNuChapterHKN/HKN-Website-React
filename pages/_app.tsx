@@ -18,7 +18,8 @@ export enum Feature {
     ShowTeams = "show_teams",
     ShowTeamsPopups = "show_teams_popups",
     ShowTeamsRespPics = "show_teams_resp_pic",
-    IsRecruitmentOpen = "is_recruitment_open"
+    IsRecruitmentOpen = "is_recruitment_open",
+    ShowImageAfterApply = "show_image_after_apply",
 }
 
 const parseFeatureFlags =
