@@ -1,6 +1,7 @@
 import { coursesByDegree } from "@/data/JoinUs/Courses";
+import { Feature, FeatureFlagsContext } from "@/pages/_app";
 import styles from "@/styles/JoinUs/JoinUs.module.scss";
-import React, { useState, FormEvent, useMemo } from "react";
+import React, { useState, FormEvent, useMemo, useContext } from "react";
 
 export type Degree = "Bachelor" | "Master" | "PhD";
 
@@ -13,6 +14,7 @@ interface Errors {
 }
 
 export default function SubmissionForm() {
+    const featureFlags = useContext(FeatureFlagsContext);
     const [acceptGDPR, setAcceptGDPR] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -138,10 +140,12 @@ export default function SubmissionForm() {
     }
 
     return (
-        submitted ?
+        !submitted ?
             <section>
-                <img src="/JoinUs/successfulSubmission.png" alt={"Submission sent!"} width={'100%'}
-                    height={'auto'} className={styles.submissionImage} />
+                {featureFlags[Feature.ShowImageAfterApply] &&
+                    (<img src="/JoinUs/successfulSubmission.png" alt={"Submission sent!"} width={'100%'}
+                        height={'auto'} className={styles.submissionImage} />)
+                }
                 <div className={`${styles.submissionText}`}>
                     {/*<div className={styles.successfulSubmission}>*/}
                     <div className={styles.disabledJoinUs__text}>
