@@ -50,10 +50,17 @@ export default function Events() {
                         <text className={styles.latestEventDesc}>{latestEvent.description}</text>
                     }
                     {
-                        latestEvent.link &&
-                        <RoundButton className={styles.latestEventButton} onClick={() => latestEvent.link && router.push(latestEvent.link)}>
-                            DISCOVER MORE
-                        </RoundButton>
+                        latestEvent.link && new Date() < new Date(latestEvent.date) ? (
+                            latestEvent.booking_link && (
+                                <RoundButton className={styles.latestEventButton} onClick={() => latestEvent.booking_link && router.push(latestEvent.booking_link)}>
+                                    BOOK NOW
+                                </RoundButton>
+                            )
+                        ) : (
+                            <RoundButton className={styles.latestEventButton} onClick={() => latestEvent.link && router.push(latestEvent.link)}>
+                                WATCH NOW
+                            </RoundButton>
+                        )
                     }
                 </div>
             </div>
