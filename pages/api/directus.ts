@@ -288,7 +288,7 @@ export async function fetchEvents() {
 		readItems('event', {
 			"limit": IMPORT_LIMIT,
 			"sort": ["-date"],
-			"fields": ["year", "title", "date", "location", "link", "description", "image"]
+			"fields": ["year", "title", "date", "location", "link", "booking_link", "description", "image"]
 		})
 	);
 
@@ -305,6 +305,7 @@ export async function fetchEvents() {
 		location: lastEvent.location,
 		image: lastEvent.image ? `${API_URL}assets/${lastEvent.image}` : undefined,
 		link: lastEvent.link || undefined,
+		booking_link: lastEvent.booking_link || undefined,
 		description: lastEvent.description || undefined,
 	};
 
@@ -321,6 +322,7 @@ export async function fetchEvents() {
 			date: formattedDate,
 			image: event.image ? `${API_URL}assets/${event.image}` : undefined,
 			link: event.link || undefined,
+			booking_link: event.booking_link || undefined,
 			description: event.description || undefined,
 		};
 
