@@ -3,6 +3,7 @@ import Image from "next/image";
 import {useRouter} from "next/router";
 import RoundButton from "./molecules/RoundButton";
 import React, { useState } from "react";
+import { Navbar } from '../components/components_toolge/NavBar';
 
 
 const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
@@ -104,7 +105,10 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
                 </div>*/}
 
             </div>
-
+            <div className={styles.headerSpace}>
+                <Navbar>
+                </Navbar>
+            </div>
             <div className={styles.headerSpace}>
                 <RoundButton className={styles.joinUsButton} onClick={() => router.push('/JoinUs')}>Join Us</RoundButton>
             </div>

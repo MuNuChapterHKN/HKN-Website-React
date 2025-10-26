@@ -1,40 +1,28 @@
 {
-  "name": "next_poc",
-  "version": "0.1.0",
+  "name": "@tolgee/next-testapp",
+  "version": "6.2.7",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "develop": "next dev",
     "build": "next build",
+    "build:e2e": "NEXT_BUILD_DIR=dist-e2e next build",
+    "clean": "rm -rf build build-e2e dist dist-e2e lib .next",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@directus/sdk": "^18.0.3",
-    "@directus/types": "^13.0.0",
-    "@types/node": "18.14.6",
-    "@types/react": "18.0.28",
-    "@types/react-dom": "18.0.11",
-    "@vercel/analytics": "^1.1.0",
-    "@vercel/kv": "^0.2.4",
-    "dotenv": "^16.3.1",
-    "formidable": "^3.5.1",
-    "googleapis": "^126.0.1",
-    "next": "^13.5.9",
-    "next_poc": "file:",
-    "node-telegram-bot-api": "^0.63.0",
-    "nodemailer": "^6.9.5",
-    "pino": "^8.15.6",
-    "prisma": "^4.11.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "sass": "^1.68.0",
-    "sharp": "^0.32.1",
-    "typescript": "^5.8.2",
-    "zod": "^3.22.4"
+    "@tolgee/format-icu": "6.2.7",
+    "@tolgee/react": "6.2.7",
+    "next": "15.3.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
   },
   "devDependencies": {
-    "@types/formidable": "^3.4.3",
-    "@types/node-telegram-bot-api": "^0.61.8",
-    "@types/nodemailer": "^6.4.11"
+    "@types/node": "^20",
+    "@types/react": "18.3.16",
+    "eslint": "8.57.0",
+    "eslint-config-next": "13.2.3",
+    "typescript": "4.9.5"
   }
 }

@@ -7,6 +7,7 @@ import HomeLogo from "../components/Home/HomeLogo";
 import RoundButton from "../components/molecules/RoundButton";
 import { useEffect, useState } from "react";
 import { FeatureFlag, fetchFeatureFlags, fetchHomeAwards } from './api/directus';
+import { T } from '@tolgee/react';
 
 
 export default function Home() {
@@ -42,7 +43,7 @@ export default function Home() {
 
             <div className={styles.titleContainer}>
                 <div className={styles.titleColumn}>
-                    <text className={styles.drivenByPassion}>Driven By Passion</text>
+                    <text className={styles.drivenByPassion}><T keyName="DBP" /></text>
                     <text className={styles.drivenByPassion}>Guided By Values</text>
                     <text className={styles.welcomeTo}>Welcome to our world, we are the Mu Nu Chapter of IEEE-HKN at
                         the Polytechnic University of Turin.
