@@ -1,3 +1,68 @@
 {
-  "DBP": "Guidati Dalla Passione"
+  "common": {
+    "join_us": "UNISCITI A NOI",
+    "about_us": "CHI SIAMO",
+    "read_me": "LEGGI DI PIÙ",
+    "coming_soon": "PROSSIMAMENTE",
+    "discover": "Scopri"
+  },
+  "home": {
+    "title": {
+      "dbp": "Guidati dalla Passione",
+      "gbv": "Guidati dai Valori",
+      "welcome": "Benvenuti nel nostro mondo, siamo il Mu Nu Chapter di IEEE-HKN del Politecnico di Torino."
+    },
+    "awards": {
+      "alt_prefix": "Premio Capitolo Eccezionale {number}"
+    },
+    "vision": {
+      "kicker": "VISIONE",
+      "title": "Scopri il Capitolo Mu Nu",
+      "description": "Dal 2017 ci dedichiamo a un percorso complementare ai nostri studi accademici che incoraggia l'eccellenza nei campi di interesse designati dall'IEEE.",
+      "photo_gallery_button": "GALLERIA FOTOGRAFICA",
+      "alt": "Visione"
+    },
+    "origins": {
+      "kicker": "ORIGINI",
+      "title": "Eta Kappa Nu, IEEE Honor Society",
+      "description": "Fondata nel 1904, Eta Kappa Nu (IEEE-HKN), la IEEE Honor Society, promuove gli ideali di Studio, Carattere e Attitudine. Dai uno sguardo alle nostre origini.",
+      "alt": "Origini"
+    },
+    "projects": {
+      "kicker": "NOVITÀ",
+      "title": "I nostri ultimi progetti",
+      "alt": "Progetto",
+      "project_1_title": "Sirius: Vedere il Futuro attraverso gli Occhi del Presente",
+      "project_1_description": "Per la prima volta, sono stati gli studenti HKN a fare visita a un'azienda: SIRIUS (Sirius | Home). Per i nuovi membri, questa è stata la loro prima esperienza di formazione interna, ma la vera novità ha coinvolto i membri esistenti: poter visitare personalmente un'azienda si è rivelato un...",
+      "project_2_title": "Vivere l'Associazione Online: Guida per Principianti",
+      "project_2_description": "Inizialmente, l'idea è nata dalla solitudine. Restare chiusi in casa e non vedere nessuno a causa del lockdown era una condizione che, sebbene all'inizio potesse sembrare esaltante e quasi eroica, col tempo era diventata devastante. Il pensiero di entrare a far parte di una società d'onore...",
+      "project_3_title": "POLITO, HKN e Covid-19: Una Riflessione",
+      "project_3_description": "Le diciassette di una tranquilla domenica di marzo. Silenziosa perché le strade sono deserte e solo i nostri pensieri risuonano più forti che mai. In questi casi, non resta che dare loro forma proiettandoli in mondi molto più ampi delle mura che ci confinano in questi..."
+    },
+    "activities": {
+      "placeholder": "eventi",
+      "title": "Scopri tutte le nostre Attività",
+      "group1_kicker": "eventi",
+      "group1_title": "Eventi",
+      "group1_description": "I nostri eventi sono pensati per chiunque ami parlare, dibattere, imparare e scoprire",
+      "group1_button": "eventi",
+      "event_1_alt": "Evento 1",
+      "event_2_alt": "Evento 2",
+      "event_3_alt": "Evento 3",
+      "group2_kicker": "eventi",
+      "group2_title": "Masterclass",
+      "group2_description": "I nostri esperti ti forniranno consigli e suggerimenti che ti aiuteranno a migliorare le tue competenze e ad arricchire il tuo CV",
+      "discover_1_alt": "Scopri 1",
+      "discover_2_alt": "Scopri 2",
+      "group3_kicker": "eventi",
+      "group3_title": "Gruppi di Studio",
+      "group3_description": "Membri HKN e dottorandi ti aiuteranno con qualsiasi concetto con cui potresti avere difficoltà",
+      "group3_button": "gruppi di studio"
+    },
+    "apply": {
+      "kicker": "SEI PRONTO?",
+      "title_1": "Unisciti al nostro Chapter e",
+      "title_2": "Diventa il prossimo HKNuer"
+    }
+  }
 }
