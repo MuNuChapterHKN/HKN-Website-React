@@ -36,6 +36,9 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
                     About
                 </div>
 
+                <Navbar>
+                </Navbar>
+
                 <div className={`${isActive('/People/People') || isActive('/People/Alumni') || isActive('/People/Professionals') || isActive('People/PastBoards') ? styles.active : styles.inactive} ${styles.menuItem}`}
                      onClick={() => router.push('/People/People')}>
                     <div className={styles.itemWrapper}>
@@ -103,11 +106,6 @@ const Header = ({darkHeader = false} : {darkHeader? :boolean}) => {
                         <li className={isActive('/Publications/Blogs') ? styles.activeDropdown : ''} onClick={() => router.push('/Publications/Blogs')}>Blogs</li>
                     </ul>
                 </div>*/}
-
-            </div>
-            <div className={styles.headerSpace}>
-                <Navbar>
-                </Navbar>
             </div>
             <div className={styles.headerSpace}>
                 <RoundButton className={styles.joinUsButton} onClick={() => router.push('/JoinUs')}>Join Us</RoundButton>

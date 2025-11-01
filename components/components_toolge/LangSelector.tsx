@@ -11,6 +11,7 @@ export const LangSelector: React.FC = () => {
   return (
     <div>
     <select
+      className={styles.langSelector}
       onChange={(e) => setLanguage(e.target.value)}
       value={router.locale}
     >
