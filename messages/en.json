@@ -64,5 +64,63 @@
       "title_1": "Join Our Chapter &",
       "title_2": "Become The Next HKNuer"
     }
+  },
+  "about_us": {
+    "vision": {
+      "alt_bull": "Bull",
+      "quote_text": "HKN IS THE PLACE WHERE I WAS ABLE TO IMPROVE MYSELF, ALLOWING ME TO GET INVOLVED AND BELIEVE IN MY POTENTIAL",
+      "quote_author": "Matteo Alasio - Student Governor 2023",
+      "alt_quotes": "Quotes",
+      "kicker": "about us",
+      "title": "We Are HKN",
+      "description": "IEEE-HKN recognizes excellence among peers, encourages individual growth through education, and professional commitment in associative activities. The pillars on which our activities are based are:",
+      "alt_vision1": "AboutUs1",
+      "pillar1": "Our skills are put to the service of the student community through the organization of study groups and masterclasses.",
+      "alt_vision2": "AboutUs2",
+      "pillar2": "The personal and professional growth we aim for with our activities is achieved through meetings with industry professionals and our network of alumni.",
+      "alt_vision3": "AboutUs3",
+      "pillar3": "Within the community, members manage various team-building activities aimed at ensuring a respectful, inclusive, and motivating atmosphere.",
+      "alt_vision4": "AboutUs4",
+      "pillar4": "Our chapter is part of an international network that brings together over 200 IEEE-HKN chapters, allowing members to network."
+    },
+    "history": {
+      "section1": {
+        "title": "HKN - the Founders",
+        "description": "Eta Kappa Nu was founded on October 28, 1904, as a national honor society for electrical engineering students at the University of Illinois at Urbana-Champaign. Maurice L. Carr and nine other college students formed the first chapter and developed a national structure. Their vision for the honor society combined collegiate commitment with a professional community to assist students and alumni, and to support such professions in general."
+      },
+      "section2": {
+        "title": "IEEE-HKN - The Merge",
+        "description": "Starting from 2010, Eta Kappa Nu officially affiliated with IEEE as an organizational unit under the name IEEE-HKN. As a result of the merger, chapters are established internationally, and eligibility for membership is extended to all fields of interest within IEEE."
+      },
+      "section3": {
+        "title": "Mu Nu Chapter - Installation",
+        "description": "In 2017, our chapter was founded thanks to the initiative of a brilliant student who quickly transformed an idea of a community into a real fraternity at the Polytechnic University of Turin. Right from the start, the association was established with the goal of providing internal training for members, free tutoring, and public events."
+      },
+      "section4": {
+        "title": "Mu Nu Chapter - Today",
+        "description": "Today, the Mu Nu chapter of IEEE-HKN at the Polytechnic University of Turin is a vibrant reality carried forward by an ever-growing group of students passionate about computer science, electronics, and much more. For us, HKN represents a new way to acquire skills and knowledge while at the same time nurturing our passions in an inspiring and stimulating environment."
+      },
+      "alt": {
+        "section1_img1": "Founders old photo 1",
+        "section1_img2": "Founders old photo 2",
+        "hkn_simple_logo": "HKN simple logo",
+        "section2_img1": "IEEE HKN merge photo",
+        "ieee_logo": "IEEE logo",
+        "section3_img1": "Mu Nu Chapter installation photo 1",
+        "section3_img2": "Mu Nu Chapter installation photo 2",
+        "hkn_logo_vector": "HKN vector logo",
+        "section4_img1": "Mu Nu Chapter today photo",
+        "hkn_ideogram": "HKN ideogram"
+      }
+    },
+    "stats": {
+      "stat1_number": "+4000",
+      "stat1_text": "International members",
+      "stat2_number": "+200",
+      "stat2_text": "Different Chapters",
+      "stat3_number": "+200",
+      "stat3_text": "Mu Nu chapter members"
+    }
   }
 }
+  

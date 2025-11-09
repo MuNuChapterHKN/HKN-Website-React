@@ -64,5 +64,62 @@
       "title_1": "Unisciti al nostro Chapter e",
       "title_2": "Diventa il prossimo HKNuer"
     }
+  },
+  "about_us": {
+    "vision": {
+      "alt_bull": "Toro",
+      "quote_text": "HKN È IL POSTO DOVE HO POTUTO MIGLIORARE ME STESSO, PERMETTENDOMI DI METTERMI IN GIOCO E CREDERE NELLE MIE POTENZIALITÀ",
+      "quote_author": "Matteo Alasio - Rappresentante degli Studenti 2023",
+      "alt_quotes": "Virgolette",
+      "kicker": "chi siamo",
+      "title": "Noi Siamo HKN",
+      "description": "IEEE-HKN riconosce l'eccellenza tra pari, incoraggia la crescita individuale attraverso l'istruzione e l'impegno professionale nelle attività associative. I pilastri su cui si basano le nostre attività sono:",
+      "alt_vision1": "ChiSiamo1",
+      "pillar1": "Le nostre competenze sono messe al servizio della comunità studentesca attraverso l'organizzazione di gruppi di studio e masterclass.",
+      "alt_vision2": "ChiSiamo2",
+      "pillar2": "La crescita personale e professionale a cui miriamo con le nostre attività si realizza attraverso incontri con professionisti del settore e la nostra rete di alumni.",
+      "alt_vision3": "ChiSiamo3",
+      "pillar3": "All'interno della comunità, i membri gestiscono varie attività di team-building volte a garantire un'atmosfera rispettosa, inclusiva e motivante.",
+      "alt_vision4": "ChiSiamo4",
+      "pillar4": "Il nostro capitolo fa parte di una rete internazionale che riunisce oltre 200 capitoli IEEE-HKN, permettendo ai membri di fare network."
+    },
+    "history": {
+      "section1": {
+        "title": "HKN - I Fondatori",
+        "description": "Eta Kappa Nu è stata fondata il 28 ottobre 1904, come società d'onore nazionale per gli studenti di ingegneria elettrica presso l'Università dell'Illinois a Urbana-Champaign. Maurice L. Carr e altri nove studenti universitari formarono il primo capitolo e svilupparono una struttura nazionale. La loro visione per la società d'onore combinava l'impegno collegiale con una comunità professionale per assistere studenti e alumni, e per sostenere tali professioni in generale."
+      },
+      "section2": {
+        "title": "IEEE-HKN - La Fusione",
+        "description": "A partire dal 2010, Eta Kappa Nu si è ufficialmente affiliata a IEEE come unità organizzativa con il nome IEEE-HKN. Come risultato della fusione, i capitoli vengono stabiliti a livello internazionale e l'idoneità all'adesione è estesa a tutti i campi di interesse all'interno di IEEE."
+      },
+      "section3": {
+        "title": "Capitolo Mu Nu - Installazione",
+        "description": "Nel 2017, il nostro capitolo è stato fondato grazie all'iniziativa di uno studente brillante che ha rapidamente trasformato un'idea di comunità in una vera e propria confraternita al Politecnico di Torino. Fin dall'inizio, l'associazione è stata istituita con l'obiettivo di fornire formazione interna ai membri, tutorato gratuito ed eventi pubblici."
+      },
+      "section4": {
+        "title": "Capitolo Mu Nu - Oggi",
+        "description": "Oggi, il capitolo Mu Nu di IEEE-HKN al Politecnico di Torino è una realtà vibrante portata avanti da un gruppo sempre crescente di studenti appassionati di informatica, elettronica e molto altro. Per noi, HKN rappresenta un nuovo modo di acquisire competenze e conoscenze, coltivando al contempo le nostre passioni in un ambiente stimolante e motivante."
+      },
+      "alt": {
+        "section1_img1": "Vecchia foto fondatori 1",
+        "section1_img2": "Vecchia foto fondatori 2",
+        "hkn_simple_logo": "Logo HKN semplice",
+        "section2_img1": "Foto fusione IEEE HKN",
+        "ieee_logo": "Logo IEEE",
+        "section3_img1": "Foto installazione Capitolo Mu Nu 1",
+        "section3_img2": "Foto installazione Capitolo Mu Nu 2",
+        "hkn_logo_vector": "Logo HKN vettoriale",
+        "section4_img1": "Foto Capitolo Mu Nu oggi",
+        "hkn_ideogram": "Ideogramma HKN"
+      }
+    },
+    "stats": {
+      "stat1_number": "+4000",
+      "stat1_text": "Membri internazionali",
+      "stat2_number": "+200",
+      "stat2_text": "Capitoli differenti",
+      "stat3_number": "+200",
+      "stat3_text": "Membri capitolo Mu Nu"
+    }
   }
 }
