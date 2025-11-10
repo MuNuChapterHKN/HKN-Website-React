@@ -121,5 +121,45 @@
       "stat3_number": "+200",
       "stat3_text": "Membri capitolo Mu Nu"
     }
+  },
+  "common_2": {
+    "linkedin_alt": "Icona LinkedIn"
+  },
+  "people": {
+    "board": {
+      "kicker": "IL BOARD",
+      "title": "Area Management"
+    },
+    "teams": {
+      "kicker": "I TEAM",
+      "title": "I nostri Team",
+      "card": {
+        "kicker": "membri di"
+      }
+    },
+    "popup": {
+      "manager_alt": "Coordinatori dell'area {area}",
+      "manager_role": "{count, plural, one {Responsabile d'area} other {Responsabili d'area}}",
+      "title": "Siamo {area}",
+      "member_role": "MEMBRO"
+    }
+  },
+  "header": {
+    "logo_alt": "Logo HKN PoliTO",
+    "menu_alt": "Menu",
+    "nav": {
+      "home": "Home",
+      "about": "Chi Siamo",
+      "people": {
+        "main": "Persone",
+        "people": "Membri",
+        "alumni": "Alumni",
+        "professionals": "Professionisti",
+        "past_boards": "Board Passati"
+      },
+      "events": "Eventi",
+      "study_groups": "Gruppi di Studio",
+      "publications": "Pubblicazioni"
+    }
   }
 }

@@ -121,6 +121,46 @@
       "stat3_number": "+200",
       "stat3_text": "Mu Nu chapter members"
     }
+  },
+  "common_2": {
+    "linkedin_alt": "LinkedIn Icon"
+  },
+  "people": {
+    "board": {
+      "kicker": "THE BOARD",
+      "title": "Management Area"
+    },
+    "teams": {
+      "kicker": "THE TEAMS",
+      "title": "Our Teams",
+      "card": {
+        "kicker": "people of"
+      }
+    },
+    "popup": {
+      "manager_alt": "Coordinators of {area} area",
+      "manager_role": "{count, plural, one {Area manager} other {Area managers}}",
+      "title": "We are {area}",
+      "member_role": "MEMBER"
+    }
+  },
+  "header": {
+    "logo_alt": "HKN PoliTO Logo",
+    "menu_alt": "Menu",
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "people": {
+        "main": "People",
+        "people": "People",
+        "alumni": "Alumni",
+        "professionals": "Professionals",
+        "past_boards": "Past Boards"
+      },
+      "events": "Events",
+      "study_groups": "Study Groups",
+      "publications": "Publications"
+    }
   }
 }
   
