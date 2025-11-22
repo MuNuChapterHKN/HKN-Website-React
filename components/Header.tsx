@@ -74,13 +74,12 @@ const Header = ({ darkHeader = false }: { darkHeader?: boolean }) => {
                     onClick={() => router.push('/Publications/Recognitions')}>
                     <T keyName="header.nav.publications" />
                 </div>
-
+    
+                    <Navbar>
+                    </Navbar>
             </div>
 
-            <div className={styles.headerSpace}>    
-                <Navbar>
-                </Navbar>
-            </div>
+            
 
             <div className={styles.headerSpace}>
                 <RoundButton className={styles.joinUsButton} onClick={() => router.push('/JoinUs')}>

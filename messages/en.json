@@ -120,6 +120,15 @@
       "stat2_text": "Different Chapters",
       "stat3_number": "+200",
       "stat3_text": "Mu Nu chapter members"
+    },
+    "gallery": {
+      "uptitle": "photogallery",
+      "title": {
+        "line1": "Our best",
+        "line2": "Shots"
+      },
+      "loading_alt": "Loading...",
+      "image_alt": "Image {index}"
     }
   },
   "common_2": {
@@ -160,6 +169,143 @@
       "events": "Events",
       "study_groups": "Study Groups",
       "publications": "Publications"
+    }
+  },
+  "alumni": {
+    "banner": {
+      "alt": "Alumni group photo",
+      "title": "Alumni",
+      "subtitle": "ETA KAPPA MENTORING",
+      "text": "Since 2017 we are dedicated to encouraging excellence in the IEEE-designated fields of interest, continuing to reinvent ourselves to meet the needs of our members and society overall"
+    },
+    "directory": {
+      "kicker": "Directory",
+      "title": "Alumni"
+    }
+  },
+  "professionals": {
+    "advisor": {
+      "alt": "Faculty Advisor",
+      "role": "Associate professor",
+      "kicker": "PROFESSIONALS",
+      "title": "FACULTY ADVISOR",
+      "bio": "Paolo Montuschi (full professor, IEEE Fellow) is currently serving as Vice-Rector for 2030 Digitalization and IT Strategies. He is the editor-in-chief of the IEEE Transactions on Emerging Topics in Computing and a member of both the IEEE Awards Board and IEEE PSPB. In 2017 he mentored the installment of the Mu Nu HKN Chapter, the first to be activated in Europe."
+    },
+    "list": {
+      "kicker": "professionals",
+      "title": "Inducted Members",
+      "placeholder_alt": "{name} placeholder"
+    }
+  },
+  "past_boards": {
+    "title": "Past Boards"
+  },
+  "activities": {
+    "events": {
+      "latest": {
+        "poster_alt": "{title} poster",
+        "book_now": "BOOK NOW",
+        "watch_now": "WATCH NOW"
+      },
+      "past": {
+        "kicker": "PAST YEARS",
+        "title_line1": "Not Just",
+        "title_line2": "Conferences"
+      }
+    },
+    "study_groups": {
+      "no_active_title": "No active study groups.",
+      "no_active_desc": "We are organizing study groups for the next semester. Stay tuned!"
+    }
+  },
+  "publications": {
+    "recognitions": {
+      "awards": {
+        "image_alt": "Award",
+        "kicker": "AWARDS",
+        "title": "Outstanding Chapter Award",
+        "description": "The IEEE-Eta Kappa Nu HKN PoliTo chapter was awarded among 253 selected chapters around the world. This award recognizes excellence in IEEE-HKN chapters for their activities."
+      },
+      "international_collective": "Discover the International Collective",
+      "mentions": {
+        "kicker": "MENTIONS",
+        "title_line1": "What They",
+        "title_line2": "Say About Us"
+      }
+    }
+  },
+  "join_us": {
+    "header": {
+      "subtitle": "DISCOVER HOW TO JOIN US",
+      "title": "What We Look For"
+    },
+    "build_future": {
+      "title": "Build your future with us",
+      "description": "Being an HKN member means not only you're part of an international network of students who will be tomorrow's leaders in the STEM fields, but also to increase your knowledge and skills.",
+      "image_alt": "Person applying at Mu Nu Chapter of HKN"
+    },
+    "timeline": {
+      "title": "Recruitment timeline",
+      "step1": {
+        "title": "Submission",
+        "text": "Initially, we will collect your information and your CV through the form at the bottom of the page"
+      },
+      "step2": {
+        "title": "General Interview",
+        "text": "The selected candidates participate in an introductory interview"
+      },
+      "step3": {
+        "title": "Trial Period",
+        "text": "We will welcome you to the association and will evaluate your participation in the activities"
+      },
+      "step4": {
+        "title": "Inducted member",
+        "text": "At the end of the trial period you will receive your induction certificate and become an inducted member of HKN!"
+      }
+    },
+    "requirements": {
+      "bachelor": {
+        "title": "Bachelor Students",
+        "point1": "At least 52 CFU",
+        "point2": "Weighted average ≥ 26"
+      },
+      "master": {
+        "title": "Master of Science",
+        "less_20": "Less than 20 CFU",
+        "avg_26": "Weighted average ≥ 26",
+        "note": "The grades of bachelor degree course are considered",
+        "more_20": "20 CFU or more",
+        "avg_27": "Weighted average ≥ 27"
+      },
+      "fluency_note_pre": "Fluency in the Italian language is a prerequisite for admission to the chapter. Unfortunately only a selection of courses can apply to join, click",
+      "fluency_note_link": "here",
+      "fluency_note_post": "to see the list."
+    },
+    "fees": {
+      "title": "Induction Fees",
+      "text": "Furthermore to become a fully inducted HKN member you have to pay a lump sum membership fee of 78.00$ (IEEE+HKN)."
+    },
+    "form": {
+      "title": "Form Instructions",
+      "intro": "To complete the application form you must enter:",
+      "list": {
+        "name": "First name",
+        "surname": "Surname",
+        "email": "Email address",
+        "average": "Weighted average of your grades",
+        "degree": "Type of degree you're attending"
+      },
+      "upload_note_pre": "Finally, it is necessary to upload a PDF file with your CV and the extract of grades (obtainable from the personal university page under the heading:",
+      "upload_note_bold": "General Secretariat/Self-certifications"
+    },
+    "exceptions": {
+      "title": "Exceptions",
+      "timely_exams": "If the student has taken the exams within the required period, the required average threshold is reduced to:",
+      "awards": "If the student has won some national or international awards related to the IEEE's areas of interest, the weighted average required is further reduced to:"
+    },
+    "closed": {
+      "line1": "Applications are currently closed",
+      "line2": "Come back at the beginning of the next semester!"
     }
   }
 }

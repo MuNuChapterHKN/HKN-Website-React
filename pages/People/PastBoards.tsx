@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import styles from '@/styles/People/PastBoards.module.scss'
 import {useEffect, useState} from "react";
 import { fetchPastBoards } from "../api/directus";
+import { T, useTranslate } from "@tolgee/react";
 
 export default function PastBoards() {
 
@@ -18,7 +19,7 @@ export default function PastBoards() {
 
     return (
         <Layout triangles>
-            <text className={styles.title}>Past Boards</text>
+            <text className={styles.title}><T keyName="past_boards.title" /></text>
             {PastBoardsData.map((pastBoard, index) => (
                 <PastBoard year={pastBoard.year} members={pastBoard.members} key={index}/>
             ))}
