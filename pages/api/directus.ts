@@ -102,7 +102,7 @@ export async function fetchTeams() {
 		readItems('team', {
 			"limit": IMPORT_LIMIT,
 			"filter": { "is_active": { _eq: true } },
-			"fields": ["id", "name", "long_name", "description", "members.name", "members.last_name", "members.image"],
+			"fields": ["id", "name", "long_name", "description", "members.name", "members.last_name", "members.image", "image"],
 		})
 	);
 
@@ -123,7 +123,7 @@ export async function fetchTeams() {
 		let description = team.description;
 		let managers: TeamMemberProps[] = [];
 		let members: TeamMemberProps[] = [];
-		let imageSrc = "/People/Resp/resp-" + area.toLowerCase().replace(/ /g, "_") + ".png";
+		let imageSrc = `${API_URL}assets/${team.image}`;
 
 		for (const member of team.members) {
 
@@ -306,7 +306,7 @@ export async function fetchEvents() {
 	);
 
 	const eventMap = new Map<string, any[]>();
-	const lastEvent  = events[0];
+	const lastEvent = events[0];
 	const lastEventDate = new Date(lastEvent.date);
 	const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
 	const lastEventFormattedDate = lastEventDate.toLocaleDateString('en-US', options);
