@@ -3,6 +3,7 @@ import Layout from "../../components/Layout";
 import StudyGroup, {StudyGroupProps} from "@/components/Events/StudyGroup";
 import { fetchActiveStudyGroups } from "../api/directus";
 import { useEffect, useState } from "react";
+import { T } from "@tolgee/react";
 
 export default function StudyGroups() {
 
@@ -21,8 +22,8 @@ export default function StudyGroups() {
         return (
             <Layout triangles>
                 <div className={styles.groupsContainer}>
-                    <h1>No active study groups.</h1>
-                    <h2>We are organizing study groups for the next semester. Stay tuned!</h2>
+                    <h1><T keyName="activities.study_groups.no_active_title" /></h1>
+                    <h2><T keyName="activities.study_groups.no_active_desc" /></h2>
                 </div>
             </Layout>
         )

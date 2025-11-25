@@ -8,10 +8,11 @@ import MentionCard, {Mention} from "../../components/Recognitions/MentionCard";
 import ArrowButton from "@/components/molecules/ArrowButton";
 import { professionals} from "@/data/recognitions";
 import { fetchAwards, fetchMentions } from "../api/directus";
+import { T, useTranslate } from "@tolgee/react";
 
 
-export default function JoinUs() {
-
+export default function Recognitions() {
+        const { t } = useTranslate();
         const [awards, setAwards] = useState<string[]>([]);
     
         useEffect(() => {
@@ -90,16 +91,15 @@ export default function JoinUs() {
             <div className={styles.awardsCard}>
                 {/*TODO: image carousel*/}
                 <div className={styles.awardsLeft}>
-                    <Image className={styles.awardImage} src={awards[awardIndex % awards.length]} alt="Award" width="0" height="0" sizes="100vw"/>
+                    <Image className={styles.awardImage} src={awards[awardIndex % awards.length]} alt={t('publications.recognitions.awards.image_alt')} width="0" height="0" sizes="100vw"/>
                     <ArrowButton left className={styles.awardsLeftButton} color="#F2F2F2" onClick={handleLeftArrowAwards}/>
                     <ArrowButton right className={styles.awardsRightButton} color="#F2F2F2" onClick={handleRightArrowAwards}/>
                 </div>
                 <div className={styles.awardsRight}>
-                    <text className={styles.awardsText}>AWARDS</text>
-                    <text className={styles.awardsTitle}>Outstanding Chapter Award</text>
-                    <text className={styles.awards}>The IEEE-Eta Kappa Nu HKN PoliTo chapter was awarded among 253
-                                                    selected chapters around the world. This award recognizes excellence
-                                                    in IEEE-HKN chapters for their activities.
+                    <text className={styles.awardsText}><T keyName="publications.recognitions.awards.kicker" /></text>
+                    <text className={styles.awardsTitle}><T keyName="publications.recognitions.awards.title" /></text>
+                    <text className={styles.awards}>
+                        <T keyName="publications.recognitions.awards.description" />
                     </text>
                 </div>
             </div>
@@ -109,14 +109,14 @@ export default function JoinUs() {
                 <a href="https://hkn.ieee.org/" target="_blank" rel="noopener noreferrer">
                     <img className={styles.internationalCollectiveImage} src="/Publications/hkn_ideogramma_collective.svg" alt="HKN Ideaogramma" />
                 </a>
-                <text className={styles.internationalCollectiveText}>Discover the International Collective</text>
+                <text className={styles.internationalCollectiveText}><T keyName="publications.recognitions.international_collective" /></text>
             </div>
 
             <div className={styles.mentionsCard}>
                 <div className={styles.mentionsLeft}>
-                    <text className={styles.mentionsText}>MENTIONS</text>
-                    <text className={styles.mentionsTitle}>What They</text>
-                    <text className={styles.mentionsTitle}>Say About Us</text>
+                    <text className={styles.mentionsText}><T keyName="publications.recognitions.mentions.kicker" /></text>
+                    <text className={styles.mentionsTitle}><T keyName="publications.recognitions.mentions.title_line1" /></text>
+                    <text className={styles.mentionsTitle}><T keyName="publications.recognitions.mentions.title_line2" /></text>
                 </div>
                 <MentionCard mention={mentions[mentionIndex % mentions.length]}/>
                 {mentions.length > 1 &&

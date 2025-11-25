@@ -3,12 +3,13 @@ import styles from '@/styles/People/Professionals.module.scss'
 import {useRouter} from "next/router";
 import {useEffect, useState} from "react";
 import { fetchProfessionals } from "../api/directus";
+import { T, useTranslate } from "@tolgee/react";
 
 
 function sortByLastName(professionals: ProfessionalProps[]): ProfessionalProps[] {
     return professionals.sort((a, b) => {
-        const lastNameA = a.name.split(" ").pop()!.toLowerCase(); // Safely assume there's at least one name
-        const lastNameB = b.name.split(" ").pop()!.toLowerCase(); // Convert to lowercase for case-insensitive comparison
+        const lastNameA = a.name.split(" ").pop()!.toLowerCase();
+        const lastNameB = b.name.split(" ").pop()!.toLowerCase(); 
         if (lastNameA < lastNameB) return -1;
         if (lastNameA > lastNameB) return 1;
         return 0;
@@ -16,7 +17,7 @@ function sortByLastName(professionals: ProfessionalProps[]): ProfessionalProps[]
 }
 
 export default function Professionals() {
-
+    const { t } = useTranslate();
     const [ProfessionalsData, setProfessionals] = useState<ProfessionalProps[]>([]);
 
     useEffect(() => {
@@ -37,24 +38,25 @@ export default function Professionals() {
                         <div className={styles.faculty__left__imageContainer__mask}>
                             <img className={styles.faculty__left__imageContainer__image}
                                    src={'/People/professionals/paolo_montuschi.png'}
-                                   alt="Faculty Advisor" width="0" height="0" sizes="100vw"/>
+                                   alt={t('professionals.advisor.alt')} width="0" height="0" sizes="100vw"/>
                         </div>
                     </div>
                     <text className={styles.faculty__left__name}>Paolo Montuschi</text>
-                    <text className={styles.faculty__left__role}>Associate professor</text>
+                    <text className={styles.faculty__left__role}><T keyName="professionals.advisor.role" /></text>
                 </div>
 
                 <div className={styles.faculty__right}>
-                    <text className={styles.faculty__right__subtitle}>PROFESSIONALS</text>
-                    <text className={styles.faculty__right__title}>FACULTY ADVISOR</text>
-                    <text className={styles.faculty__right__text}>Paolo Montuschi (full professor, IEEE Fellow) is currently serving as Vice-Rector for 2030 Digitalization and IT Strategies. He is the editor-in-chief of the IEEE Transactions on Emerging Topics in Computing and a member of both the IEEE Awards Board and IEEE PSPB. In 2017 he mentored the installment of the Mu Nu HKN Chapter, the first to be activated in Europe.
+                    <text className={styles.faculty__right__subtitle}><T keyName="professionals.advisor.kicker" /></text>
+                    <text className={styles.faculty__right__title}><T keyName="professionals.advisor.title" /></text>
+                    <text className={styles.faculty__right__text}>
+                        <T keyName="professionals.advisor.bio" />
                     </text>
                 </div>
             </div>
 
             <div className={styles.professionalsContainer}>
-                <text className={styles.professionalsContainer__professionals}>professionals</text>
-                <text className={styles.professionalsContainer__inducted}>Inducted Members</text>
+                <text className={styles.professionalsContainer__professionals}><T keyName="professionals.list.kicker" /></text>
+                <text className={styles.professionalsContainer__inducted}><T keyName="professionals.list.title" /></text>
 
                 <div className={styles.professionalsContainer__grid}>
                     {sortByLastName(ProfessionalsData).map((al, index) => (
@@ -72,6 +74,7 @@ function Professional({professional}: {
 }) {
 
     const [imageExists, setImageExists] = useState(false);
+    const { t } = useTranslate();
 
     useEffect(() => {
         const img = new Image();
@@ -85,10 +88,10 @@ function Professional({professional}: {
             <div className={styles.professional__imageContainer}>
                 {professional.imageSrc && imageExists ?
                     <img className={styles.professional__imageContainer__image} src={professional.imageSrc}
-                         alt={professional.name} loading="lazy"/>
+                          alt={professional.name} loading="lazy"/>
                 :
                     <img className={styles.professional__imageContainer__placeholder} src="/Common/hkn_ideogramma_blu.svg"
-                        alt={professional.name} loading="lazy"/>
+                         alt={t('professionals.list.placeholder_alt', { name: professional.name })} loading="lazy"/>
                 }
 
             </div>
@@ -101,5 +104,3 @@ export interface ProfessionalProps {
     name: string,
     imageSrc?: string,
 }
-
-

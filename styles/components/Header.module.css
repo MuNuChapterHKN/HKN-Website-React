@@ -14,14 +14,6 @@
     margin-bottom: 30px;
 }
   
-
-
-
-
-
-
-
-
 .logoTitle {
     display: flex;
     flex-direction: row;
@@ -45,7 +37,7 @@
 
 .menu {
     display: flex;
-    width: 45%;
+    width: 55%;
     justify-content: space-between;
     font-size: 1.3em;
     flex-direction: row;
@@ -148,46 +140,102 @@
     display: none;
 }
 
+.navbar {
+  align-items: center;
+  margin-left: 1rem;
+  position: relative;
+  z-index: 30;
+}
+
+.langContainer {
+  display: flex;
+  align-items: baseline;
+  font-size: 1em;
+  color: white;
+}
+
+.langButton {
+  background: none;
+  margin: 0%;
+  border: none;
+  padding: 0;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  padding-bottom: 1px;
+  border-bottom: 2px solid transparent;
+}
+
+.separator {
+  font-weight: bold;
+  color: inherit;
+  margin: 0 0.4rem;
+}
+
 @media screen and (max-width: 960px) {
-    .showMenu {
-        fill: white;
-        display: block;
-        margin-right: auto;
-        position: absolute;
-        top: 3.5rem;
-        right: 50px;
-    }
+  .showMenu {
+    fill: white;
+    display: block;
+    margin-right: auto;
+    position: absolute;
+    top: 3.5rem;
+    right: 50px;
+  }
 
-    .headerSpace,
-    .menu {
-        display: none;
-        flex: 1;
-        text-align: center;
-    }
+  .headerSpace,
+  .menu {
+    display: none;
+    flex: 1;
+    text-align: center;
+  }
 
-    .menu {
-        padding-right: 3rem;
-        padding-top: 2rem;
-    }
+  .menu {
+    padding-right: 3rem;
+    padding-top: 2rem;
+    width: 100%;
+  }
 
-    .header.open {
-        height: 11rem;
-        align-items: flex-start;
-    }
+  .header.open {
+    height: auto;
+    align-items: flex-start;
+    margin-bottom: 80px;
+  }
 
-    .dropdown {
-        left: auto;
-        right: auto;
-        z-index: 10;
-    }
+  .dropdown {
+    left: auto;
+    right: auto;
+    z-index: 10;
+  }
 
-    .menuItem {
-        justify-content: center;
-        display: flex;
-    }
+  .menuItem {
+    justify-content: center;
+    display: flex;
+  }
 
-    .headerSpace.open,
-    .menu.open {
-        display: block;
-    }
+  .headerSpace.open,
+  .menu.open {
+    display: block;
+  }
+
+   .header.open .logo {
+    display: none;
+  }
+
+  .langSelector {
+    text-align: center;
+    font-size: 0.9em;  
+    padding: 4px ;
+  }
+
+  .navbar {
+    margin-left: 0; 
+    display: flex;
+    justify-content: center;
+  }
+
+  .header option {
+    font-size: 0.6em;
+  }
 }
