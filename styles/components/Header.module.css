@@ -1,241 +1,209 @@
-
-
+/* =========================
+   HEADER BASE (DESKTOP)
+========================= */
 
 .header {
     display: flex;
     justify-content: flex-start;
-    flex-direction: row;
     align-items: center;
     height: 130px;
     width: 100%;
-    background-color:#061E33;
-    z-index: 20;  /* Ensure it stays on top of other elements */
+    background-color: #061E33;
     margin-top: 10px;
     margin-bottom: 30px;
-}
+    position: relative;
+    z-index: 20;
+  }
   
-.logoTitle {
+  .logoTitle {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
-    padding-left: 7%
-}
-
-.logo {
+    padding-left: 7%;
     cursor: pointer;
-}
-
-.title {
-    display:flex;
-    flex-direction: column;
-    height: 51px;
-    justify-content: center;
-    margin-bottom: 8px;
-    margin-left: 12px;
-}
-
-.menu {
+  }
+  
+  .logo {
+    cursor: pointer;
+  }
+  
+  .menu {
     display: flex;
     width: 55%;
     justify-content: space-between;
     font-size: 1.3em;
-    flex-direction: row;
     padding-left: 5%;
-}
-
-.active, .inactive {
+  }
+  
+  .active,
+  .inactive {
     font-family: "Outfit", sans-serif;
     margin: 0 10px;
-}
-
-.active {
+  }
+  
+  .active {
     text-decoration: underline;
     text-underline-position: under;
     text-decoration-thickness: 2px;
-}
-
-.inactive {
-    background: rgba(0,0,0,0);
-    border-width: 0;
+  }
+  
+  .inactive {
+    background: transparent;
+    border: none;
     color: white;
-    text-decoration: none;
     cursor: pointer;
-}
-
-.headerSpace {
-    display: flex;
-    justify-content: flex-end;
-    justify-self: flex-end;
-    padding-right: 5%;
-    flex:1;
-}
-
-
-.joinUsButton {
-    padding: 10px 25px;
-    /* background-color: white; */
-    /* color: #061E33; */
-    font-family: Inter, sans-serif;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-transform: capitalize;
-    border-width: 4px;
-}
-
-.menuItem {
+  }
+  
+  /* =========================
+     DROPDOWN (DESKTOP)
+  ========================= */
+  
+  .menuItem {
     position: relative;
-}
-
-.dropdown {
-    list-style-type: none;
-    position: absolute;
-    display: none;
-    left: -50%;
-    right: -50%;
-    top: 1.4em;
-    margin: auto;
-}
-
-.dropdown > li {
-    cursor: pointer;
-    text-align: center;
-    padding: .1em .5em;
-    transition: .1s ease-out background-color, .1s ease-out color;
-    background: #f2f2f2;
-    color: #061E33;
-    width: 160px;
-}
-
-.dropdown > li:hover,
-.dropdown > li.activeDropdown {
-    background: #061E33;
-    color: #f2f2f2;
-}
-
-.menu > .menuItem:hover > .dropdown,
-.dropdown:hover {
-    display: block;
-}
-
-.arrowDown {
+  }
+  
+  .itemWrapper {
+    display: flex;
+    align-items: center;
+  }
+  
+  .arrowDown {
     width: 0;
     height: 0;
-    display: inline-block;
     margin-left: 6px;
-    vertical-align: middle;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
     border-top: 6px solid #f2f2f2;
-}
-
-.itemWrapper {
-    display: flex;
-    align-items: center;
-}
-
-.showMenu {
-    display: none;
-}
-
-.navbar {
-  align-items: center;
-  margin-left: 1rem;
-  position: relative;
-  z-index: 30;
-}
-
-.langContainer {
-  display: flex;
-  align-items: baseline;
-  font-size: 1em;
-  color: white;
-}
-
-.langButton {
-  background: none;
-  margin: 0%;
-  border: none;
-  padding: 0;
-  font-weight: bold;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: inherit;
-  color: inherit;
-  padding-bottom: 1px;
-  border-bottom: 2px solid transparent;
-}
-
-.separator {
-  font-weight: bold;
-  color: inherit;
-  margin: 0 0.4rem;
-}
-
-@media screen and (max-width: 960px) {
-  .showMenu {
-    fill: white;
-    display: block;
-    margin-right: auto;
-    position: absolute;
-    top: 3.5rem;
-    right: 50px;
   }
-
-  .headerSpace,
-  .menu {
-    display: none;
-    flex: 1;
-    text-align: center;
-  }
-
-  .menu {
-    padding-right: 3rem;
-    padding-top: 2rem;
-    width: 100%;
-  }
-
-  .header.open {
-    height: auto;
-    align-items: flex-start;
-    margin-bottom: 80px;
-  }
-
+  
   .dropdown {
-    left: auto;
-    right: auto;
-    z-index: 10;
+    list-style: none;
+    position: absolute;
+    display: none;
+    top: 1.4em;
+    left: -50%;
+    right: -50%;
+    margin: auto;
   }
-
-  .menuItem {
-    justify-content: center;
-    display: flex;
+  
+  .dropdown li {
+    cursor: pointer;
+    text-align: center;
+    padding: 0.3em 0.5em;
+    background: #f2f2f2;
+    color: #061E33;
+    width: 160px;
+    transition: background 0.2s ease, color 0.2s ease;
   }
-
-  .headerSpace.open,
-  .menu.open {
+  
+  .dropdown li:hover,
+  .dropdown li.activeDropdown {
+    background: #061E33;
+    color: #f2f2f2;
+  }
+  
+  .menu > .menuItem:hover > .dropdown,
+  .dropdown:hover {
     display: block;
   }
-
-   .header.open .logo {
-    display: none;
-  }
-
-  .langSelector {
-    text-align: center;
-    font-size: 0.9em;  
-    padding: 4px ;
-  }
-
-  .navbar {
-    margin-left: 0; 
+  
+  /* =========================
+     RIGHT SIDE (DESKTOP)
+  ========================= */
+  
+  .headerSpace {
     display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    padding-right: 5%;
+  }
+  
+  .joinUsButton {
+    padding: 10px 25px;
+    font-family: Inter, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    border-width: 4px;
+  }
+  
+  /* =========================
+     HAMBURGER
+  ========================= */
+  
+  .showMenu {
+    display: none;
+    cursor: pointer;
+  }
+  
+  /* =========================
+     MOBILE FULLSCREEN OVERLAY
+  ========================= */
+  
+  .mobileOverlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    background-color: #061E33;
+    z-index: 9999;
+  
     justify-content: center;
+    align-items: center;
+  
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+  
+    pointer-events: none;
   }
-
-  .header option {
-    font-size: 0.6em;
+  
+  .mobileOverlay.open {
+    transform: translateX(0);
+    pointer-events: all;
   }
-}
+  
+  .mobileNav {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  
+  .mobileNav div {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    font-family: "Outfit", sans-serif;
+    transition: opacity 0.2s ease;
+  }
+  
+  .mobileNav div:hover {
+    opacity: 0.7;
+  }
+  
+  /* =========================
+     MOBILE BREAKPOINT
+  ========================= */
+  
+  @media screen and (max-width: 960px) {
+  
+    .menu {
+      display: none !important;
+    }
+  
+    .headerSpace {
+      display: none !important;
+    }
+  
+    .showMenu {
+      display: block;
+      position: absolute;
+      top: 3.5rem;
+      right: 50px;
+    }
+  
+    .mobileOverlay {
+      display: flex;
+    }
+  
+  }
+  
