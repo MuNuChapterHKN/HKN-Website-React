@@ -2,9 +2,10 @@ import styles from "@/styles/components/AboutUs/gallery.module.scss";
 import {useEffect, useState} from "react";
 import ArrowButton from "@/components/molecules/ArrowButton";
 import { fetchPhotogallery } from "@/pages/api/directus";
+import { T, useTranslate } from "@tolgee/react";
 
 export default function Gallery({ className } : { className?: string }) {
-
+    const { t } = useTranslate();
     const [images, setImages] = useState<{ src: string; title: any; date: any }[]>([]);
     useEffect(() => {
         const fetchImages = async () => {
@@ -38,17 +39,18 @@ export default function Gallery({ className } : { className?: string }) {
             <div className={`${styles.gallery} ${className}`}>
                 <div className={styles.gallery__center}>
                     <div className={styles.gallery__uptitle}>
-                        photogallery
+                        <T keyName="about_us.gallery.uptitle" />
                     </div>
                     <div className={styles.gallery__title}>
-                        Our best
-                        Shots
+                        <T keyName="about_us.gallery.title.line1" />
+                        <br />
+                        <T keyName="about_us.gallery.title.line2" />
                     </div>
                     <div className={styles.carousel}>
                         <div className={styles.carousel__container}>
                             <img
                                 src="/Activities/StudyGroups/clock.png"
-                                alt="Loading..."
+                                alt={t('about_us.gallery.loading_alt')}
                                 className={styles.carousel__image}
                                 loading="lazy"
                             />
@@ -64,11 +66,12 @@ export default function Gallery({ className } : { className?: string }) {
 
             <div className={styles.gallery__center}>
                 <div className={styles.gallery__uptitle}>
-                    photogallery
+                    <T keyName="about_us.gallery.uptitle" />
                 </div>
                 <div className={styles.gallery__title}>
-                    Our best
-                    Shots
+                    <T keyName="about_us.gallery.title.line1" />
+                    <br />
+                    <T keyName="about_us.gallery.title.line2" />
                 </div>
 
                 <div className={styles.carousel}>
@@ -76,7 +79,7 @@ export default function Gallery({ className } : { className?: string }) {
                         <div key={index} className={`${styles.carousel__container} ${getCurrentClassNames(index)}`}>
                             <img
                                 src={image.src}
-                                alt={`Image ${index}`}
+                                alt={t('about_us.gallery.image_alt', { index: index + 1 })}
                                 className={styles.carousel__image}
                                 loading="lazy"
                             />

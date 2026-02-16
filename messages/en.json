@@ -1,0 +1,312 @@
+{
+  "common": {
+    "join_us": "JOIN US",
+    "about_us": "ABOUT US",
+    "read_me": "READ ME",
+    "coming_soon": "COMING SOON",
+    "discover": "Discover"
+  },
+  "home": {
+    "title": {
+      "dbp": "Driven By Passion",
+      "gbv": "Guided By Values",
+      "welcome": "Welcome to our world, we are the Mu Nu Chapter of IEEE-HKN at the Polytechnic University of Turin."
+    },
+    "awards": {
+      "alt_prefix": "Outstanding Chapter Award {number}"
+    },
+    "vision": {
+      "kicker": "VISION",
+      "title": "Discover Mu Nu Chapter",
+      "description": "Since 2017 we are dedicated to the pursuit of a complementary path to our academic studies which encourages the excellence in the IEEE-designated fields of interest.",
+      "photo_gallery_button": "PHOTO GALLERY",
+      "alt": "Vision"
+    },
+    "origins": {
+      "kicker": "ORIGINS",
+      "title": "Eta Kappa Nu, IEEE Honor Society",
+      "description": "Founded in 1904, Eta Kappa Nu (IEEE-HKN), the honor society of IEEE, promotes the ideals of Scholarship, Character, and Attitude. Catch a glimpse of our origins.",
+      "alt": "Origins"
+    },
+    "projects": {
+      "kicker": "NEWS",
+      "title": "Our Latest Projects",
+      "alt": "Project",
+      "project_1_title": "Sirius: Seeing the Future Through the Eyes of the Present",
+      "project_1_description": "For the first time, it was the HKN students who paid a visit to a company: SIRIUS (Sirius | Home). For the new members, this was their first experience of internal training, but the real novelty involved the existing members: being able to personally visit a company turned out to be an...",
+      "project_2_title": "Living the Association Online: A Beginner's Guide",
+      "project_2_description": "Initially, the idea was born from loneliness. Staying locked at home and not seeing anyone due to the lockdown was a condition that, while it might have seemed exhilarating and almost heroic at first, had become devastating over time. The thought of becoming a part of an honor society...",
+      "project_3_title": "POLITO, HKN, and Covid-19: A Reflection",
+      "project_3_description": "Seventeen o'clock on a quiet Sunday in March. Silent because the streets are deserted, and only our thoughts resonate louder than ever. In these cases, all that's left is to give them shape by projecting them into much broader worlds than the walls that confine us in these..."
+    },
+    "activities": {
+      "placeholder": "events",
+      "title": "Discover All Our Activities",
+      "group1_kicker": "events",
+      "group1_title": "Events",
+      "group1_description": "Our events are thought for anyone who likes talking, debating, learning and discovering",
+      "group1_button": "events",
+      "event_1_alt": "Event 1",
+      "event_2_alt": "Event 2",
+      "event_3_alt": "Event 3",
+      "group2_kicker": "events",
+      "group2_title": "Masterclass",
+      "group2_description": "Our experts will provide you advices and tips that will help you improving your skills & enriching your CV",
+      "discover_1_alt": "Discover 1",
+      "discover_2_alt": "Discover 2",
+      "group3_kicker": "events",
+      "group3_title": "Study Groups",
+      "group3_description": "HKN members and PhD students will help you with whatever concept you might be struggling with",
+      "group3_button": "study groups"
+    },
+    "apply": {
+      "kicker": "ARE YOU READY?",
+      "title_1": "Join Our Chapter &",
+      "title_2": "Become The Next HKNuer"
+    }
+  },
+  "about_us": {
+    "vision": {
+      "alt_bull": "Bull",
+      "quote_text": "HKN IS THE PLACE WHERE I WAS ABLE TO IMPROVE MYSELF, ALLOWING ME TO GET INVOLVED AND BELIEVE IN MY POTENTIAL",
+      "quote_author": "Matteo Alasio - Student Governor 2023",
+      "alt_quotes": "Quotes",
+      "kicker": "about us",
+      "title": "We Are HKN",
+      "description": "IEEE-HKN recognizes excellence among peers, encourages individual growth through education, and professional commitment in associative activities. The pillars on which our activities are based are:",
+      "alt_vision1": "AboutUs1",
+      "pillar1": "Our skills are put to the service of the student community through the organization of study groups and masterclasses.",
+      "alt_vision2": "AboutUs2",
+      "pillar2": "The personal and professional growth we aim for with our activities is achieved through meetings with industry professionals and our network of alumni.",
+      "alt_vision3": "AboutUs3",
+      "pillar3": "Within the community, members manage various team-building activities aimed at ensuring a respectful, inclusive, and motivating atmosphere.",
+      "alt_vision4": "AboutUs4",
+      "pillar4": "Our chapter is part of an international network that brings together over 200 IEEE-HKN chapters, allowing members to network."
+    },
+    "history": {
+      "section1": {
+        "title": "HKN - the Founders",
+        "description": "Eta Kappa Nu was founded on October 28, 1904, as a national honor society for electrical engineering students at the University of Illinois at Urbana-Champaign. Maurice L. Carr and nine other college students formed the first chapter and developed a national structure. Their vision for the honor society combined collegiate commitment with a professional community to assist students and alumni, and to support such professions in general."
+      },
+      "section2": {
+        "title": "IEEE-HKN - The Merge",
+        "description": "Starting from 2010, Eta Kappa Nu officially affiliated with IEEE as an organizational unit under the name IEEE-HKN. As a result of the merger, chapters are established internationally, and eligibility for membership is extended to all fields of interest within IEEE."
+      },
+      "section3": {
+        "title": "Mu Nu Chapter - Installation",
+        "description": "In 2017, our chapter was founded thanks to the initiative of a brilliant student who quickly transformed an idea of a community into a real fraternity at the Polytechnic University of Turin. Right from the start, the association was established with the goal of providing internal training for members, free tutoring, and public events."
+      },
+      "section4": {
+        "title": "Mu Nu Chapter - Today",
+        "description": "Today, the Mu Nu chapter of IEEE-HKN at the Polytechnic University of Turin is a vibrant reality carried forward by an ever-growing group of students passionate about computer science, electronics, and much more. For us, HKN represents a new way to acquire skills and knowledge while at the same time nurturing our passions in an inspiring and stimulating environment."
+      },
+      "alt": {
+        "section1_img1": "Founders old photo 1",
+        "section1_img2": "Founders old photo 2",
+        "hkn_simple_logo": "HKN simple logo",
+        "section2_img1": "IEEE HKN merge photo",
+        "ieee_logo": "IEEE logo",
+        "section3_img1": "Mu Nu Chapter installation photo 1",
+        "section3_img2": "Mu Nu Chapter installation photo 2",
+        "hkn_logo_vector": "HKN vector logo",
+        "section4_img1": "Mu Nu Chapter today photo",
+        "hkn_ideogram": "HKN ideogram"
+      }
+    },
+    "stats": {
+      "stat1_number": "+4000",
+      "stat1_text": "International members",
+      "stat2_number": "+200",
+      "stat2_text": "Different Chapters",
+      "stat3_number": "+200",
+      "stat3_text": "Mu Nu chapter members"
+    },
+    "gallery": {
+      "uptitle": "photogallery",
+      "title": {
+        "line1": "Our best",
+        "line2": "Shots"
+      },
+      "loading_alt": "Loading...",
+      "image_alt": "Image {index}"
+    }
+  },
+  "common_2": {
+    "linkedin_alt": "LinkedIn Icon"
+  },
+  "people": {
+    "board": {
+      "kicker": "THE BOARD",
+      "title": "Management Area"
+    },
+    "teams": {
+      "kicker": "THE TEAMS",
+      "title": "Our Teams",
+      "card": {
+        "kicker": "people of"
+      }
+    },
+    "popup": {
+      "manager_alt": "Coordinators of {area} area",
+      "manager_role": "{count, plural, one {Area manager} other {Area managers}}",
+      "title": "We are {area}",
+      "member_role": "MEMBER"
+    }
+  },
+  "header": {
+    "logo_alt": "HKN PoliTO Logo",
+    "menu_alt": "Menu",
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "people": {
+        "main": "People",
+        "people": "People",
+        "alumni": "Alumni",
+        "professionals": "Professionals",
+        "past_boards": "Past Boards"
+      },
+      "events": "Events",
+      "study_groups": "Study Groups",
+      "publications": "Publications"
+    }
+  },
+  "alumni": {
+    "banner": {
+      "alt": "Alumni group photo",
+      "title": "Alumni",
+      "subtitle": "ETA KAPPA MENTORING",
+      "text": "Since 2017 we are dedicated to encouraging excellence in the IEEE-designated fields of interest, continuing to reinvent ourselves to meet the needs of our members and society overall"
+    },
+    "directory": {
+      "kicker": "Directory",
+      "title": "Alumni"
+    }
+  },
+  "professionals": {
+    "advisor": {
+      "alt": "Faculty Advisor",
+      "role": "Associate professor",
+      "kicker": "PROFESSIONALS",
+      "title": "FACULTY ADVISOR",
+      "bio": "Paolo Montuschi (full professor, IEEE Fellow) is currently serving as Vice-Rector for 2030 Digitalization and IT Strategies. He is the editor-in-chief of the IEEE Transactions on Emerging Topics in Computing and a member of both the IEEE Awards Board and IEEE PSPB. In 2017 he mentored the installment of the Mu Nu HKN Chapter, the first to be activated in Europe."
+    },
+    "list": {
+      "kicker": "professionals",
+      "title": "Inducted Members",
+      "placeholder_alt": "{name} placeholder"
+    }
+  },
+  "past_boards": {
+    "title": "Past Boards"
+  },
+  "activities": {
+    "events": {
+      "latest": {
+        "poster_alt": "{title} poster",
+        "book_now": "BOOK NOW",
+        "watch_now": "WATCH NOW"
+      },
+      "past": {
+        "kicker": "PAST YEARS",
+        "title_line1": "Not Just",
+        "title_line2": "Conferences"
+      }
+    },
+    "study_groups": {
+      "no_active_title": "No active study groups.",
+      "no_active_desc": "We are organizing study groups for the next semester. Stay tuned!"
+    }
+  },
+  "publications": {
+    "recognitions": {
+      "awards": {
+        "image_alt": "Award",
+        "kicker": "AWARDS",
+        "title": "Outstanding Chapter Award",
+        "description": "The IEEE-Eta Kappa Nu HKN PoliTo chapter was awarded among 253 selected chapters around the world. This award recognizes excellence in IEEE-HKN chapters for their activities."
+      },
+      "international_collective": "Discover the International Collective",
+      "mentions": {
+        "kicker": "MENTIONS",
+        "title_line1": "What They",
+        "title_line2": "Say About Us"
+      }
+    }
+  },
+  "join_us": {
+    "header": {
+      "subtitle": "DISCOVER HOW TO JOIN US",
+      "title": "What We Look For"
+    },
+    "build_future": {
+      "title": "Build your future with us",
+      "description": "Being an HKN member means not only you're part of an international network of students who will be tomorrow's leaders in the STEM fields, but also to increase your knowledge and skills.",
+      "image_alt": "Person applying at Mu Nu Chapter of HKN"
+    },
+    "timeline": {
+      "title": "Recruitment timeline",
+      "step1": {
+        "title": "Submission",
+        "text": "Initially, we will collect your information and your CV through the form at the bottom of the page"
+      },
+      "step2": {
+        "title": "General Interview",
+        "text": "The selected candidates participate in an introductory interview"
+      },
+      "step3": {
+        "title": "Trial Period",
+        "text": "We will welcome you to the association and will evaluate your participation in the activities"
+      },
+      "step4": {
+        "title": "Inducted member",
+        "text": "At the end of the trial period you will receive your induction certificate and become an inducted member of HKN!"
+      }
+    },
+    "requirements": {
+      "bachelor": {
+        "title": "Bachelor Students",
+        "point1": "At least 52 CFU",
+        "point2": "Weighted average ≥ 26"
+      },
+      "master": {
+        "title": "Master of Science",
+        "less_20": "Less than 20 CFU",
+        "avg_26": "Weighted average ≥ 26",
+        "note": "The grades of bachelor degree course are considered",
+        "more_20": "20 CFU or more",
+        "avg_27": "Weighted average ≥ 27"
+      },
+      "fluency_note_pre": "Fluency in the Italian language is a prerequisite for admission to the chapter. Unfortunately only a selection of courses can apply to join, click",
+      "fluency_note_link": "here",
+      "fluency_note_post": "to see the list."
+    },
+    "fees": {
+      "title": "Induction Fees",
+      "text": "Furthermore to become a fully inducted HKN member you have to pay a lump sum membership fee of 78.00$ (IEEE+HKN)."
+    },
+    "form": {
+      "title": "Form Instructions",
+      "intro": "To complete the application form you must enter:",
+      "list": {
+        "name": "First name",
+        "surname": "Surname",
+        "email": "Email address",
+        "average": "Weighted average of your grades",
+        "degree": "Type of degree you're attending"
+      },
+      "upload_note_pre": "Finally, it is necessary to upload a PDF file with your CV and the extract of grades (obtainable from the personal university page under the heading:",
+      "upload_note_bold": "General Secretariat/Self-certifications"
+    },
+    "exceptions": {
+      "title": "Exceptions",
+      "timely_exams": "If the student has taken the exams within the required period, the required average threshold is reduced to:",
+      "awards": "If the student has won some national or international awards related to the IEEE's areas of interest, the weighted average required is further reduced to:"
+    },
+    "closed": {
+      "line1": "Applications are currently closed",
+      "line2": "Come back at the beginning of the next semester!"
+    }
+  }
+}
+  

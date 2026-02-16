@@ -3,14 +3,16 @@ import styles from "@/styles/JoinUs/JoinUs.module.scss";
 import SubmissionForm, { Degree } from "@/components/JoinUs/SubmissionForm";
 import { useEffect, useState, useContext } from "react";
 import { fetchRecruitment } from "./api/directus";
-import { FeatureFlagsContext, Feature } from './_app';
-import { CoursesModal } from '../components/JoinUs/CoursesModal';
+import { FeatureFlagsContext, Feature } from './_app';
+import { CoursesModal } from '../components/JoinUs/CoursesModal';
+import { T, useTranslate } from "@tolgee/react";
 
 export default function JoinUs() {
     const featureFlags = useContext(FeatureFlagsContext);
     const [modalVisible, setModalVisible] = useState(false);
+    const { t } = useTranslate();
 
-    const openCoursesModal = () => setModalVisible(true); 
+    const openCoursesModal = () => setModalVisible(true);
     const closeCoursesModal = () => setModalVisible(false);
 
     return (
@@ -19,22 +21,20 @@ export default function JoinUs() {
 
             <main className={styles.container}>
                 <section>
-                    <h2 className={styles.pageSubtitle}>DISCOVER HOW TO JOIN US</h2>
-                    <h1 className={styles.pageTitle}>What We Look For</h1>
+                    <h2 className={styles.pageSubtitle}><T keyName="join_us.header.subtitle" /></h2>
+                    <h1 className={styles.pageTitle}><T keyName="join_us.header.title" /></h1>
                 </section>
 
                 {/* Build your future with us */}
                 <section className={styles.heading}>
                     <div className={styles.halfWidth}>
-                        <h1 className={styles.headingTitle}>Build your future with us</h1>
+                        <h1 className={styles.headingTitle}><T keyName="join_us.build_future.title" /></h1>
                         <p className={styles.headingDescription}>
-                            Being an HKN member means not only you're part of an international network of students who
-                            will be tomorrow's leaders in the STEM fields, but also to increase your
-                            knowledge and skills.
+                            <T keyName="join_us.build_future.description" />
                         </p>
                     </div>
                     <div className={styles.halfWidth}>
-                        <img alt="Person applying at Mu Nu Chapter of HKN" src="/JoinUs/hiring.png"
+                        <img alt={t('join_us.build_future.image_alt')} src="/JoinUs/hiring.png"
                              width={"80%"} height={"auto"} loading="lazy" className={styles.headingImage}/>
                     </div>
                 </section>
@@ -43,49 +43,46 @@ export default function JoinUs() {
                     {/* Recruitment timeline */}
                     <div className={styles.halfWidth}>
                         <div className={`${styles.recruitmentContainer} ${styles.gradientBackground}`}>
-                            <h4 className={styles.recruitmentTitle}>Recruitment timeline</h4>
+                            <h4 className={styles.recruitmentTitle}><T keyName="join_us.timeline.title" /></h4>
                             <div className={styles.recruitmentStep}>
-                                <h5 className={styles.recruitmentStepTitle}>Submission</h5>
+                                <h5 className={styles.recruitmentStepTitle}><T keyName="join_us.timeline.step1.title" /></h5>
                                 <p className={styles.recruitmentStepText}>
-                                    Initially, we will collect your information and your CV through the form at the
-                                    bottom of the page
+                                    <T keyName="join_us.timeline.step1.text" />
                                 </p>
                             </div>
                             <div className={styles.recruitmentStep}>
-                                <h5 className={styles.recruitmentStepTitle}>General Interview</h5>
+                                <h5 className={styles.recruitmentStepTitle}><T keyName="join_us.timeline.step2.title" /></h5>
                                 <p className={styles.recruitmentStepText}>
-                                    The selected candidates participate in an introductory interview
+                                    <T keyName="join_us.timeline.step2.text" />
                                 </p>
                             </div>
                             <div className={styles.recruitmentStep}>
-                                <h5 className={styles.recruitmentStepTitle}>Trial Period</h5>
+                                <h5 className={styles.recruitmentStepTitle}><T keyName="join_us.timeline.step3.title" /></h5>
                                 <p className={styles.recruitmentStepText}>
-                                    We will welcome you to the association and will evaluate your participation in the
-                                    activities
+                                    <T keyName="join_us.timeline.step3.text" />
                                 </p>
                             </div>
                             <div className={styles.recruitmentStep}>
-                                <h5 className={styles.recruitmentStepTitle}>Inducted member</h5>
+                                <h5 className={styles.recruitmentStepTitle}><T keyName="join_us.timeline.step4.title" /></h5>
                                 <p className={styles.recruitmentStepText}>
-                                    At the end of the trial period you will receive your induction certificate and
-                                    become an inducted member of HKN!
+                                    <T keyName="join_us.timeline.step4.text" />
                                 </p>
                             </div>
                         </div>
                     </div>
                     {/* Requirements */}
                     <div className={`${styles.halfWidth} ${styles.requiredGrades}`}>
-                        <h4 className={`${styles.requirementTitle} ${styles.boxedText}`}>Bachelor Students</h4>
+                        <h4 className={`${styles.requirementTitle} ${styles.boxedText}`}><T keyName="join_us.requirements.bachelor.title" /></h4>
                         <ul className={styles.requirementPointList}>
-                            <li className={styles.requirementPoint}>At least 52 CFU</li>
-                            <li className={styles.requirementPoint}>Weighted average ≥ 26</li>
+                            <li className={styles.requirementPoint}><T keyName="join_us.requirements.bachelor.point1" /></li>
+                            <li className={styles.requirementPoint}><T keyName="join_us.requirements.bachelor.point2" /></li>
                         </ul>
                         <h4 className={`${styles["requirementTitle--shadow"]} ${styles.boxedText} ${styles.requirementTitle}`}>
-                            Master of Science
+                            <T keyName="join_us.requirements.master.title" />
                         </h4>
                         <div className={styles.requiredGradesContainerWhite}>
                             <h5 className={`${styles.requirementSubtitle} ${styles.boxedText} ${styles.requirementColumn}`}>
-                                Less than 20 CFU
+                                <T keyName="join_us.requirements.master.less_20" />
                             </h5>
                             <div className={styles.requirementColumn}>
                                 <span className={`${styles.cfuSliderLeft} ${styles.bgWhite}`}></span>
@@ -94,14 +91,14 @@ export default function JoinUs() {
                             </div>
                         </div>
                         <ul className={styles.requirementPointList}>
-                            <li className={styles.requirementPoint}>Weighted average ≥ 26</li>
+                            <li className={styles.requirementPoint}><T keyName="join_us.requirements.master.avg_26" /></li>
                             <li className={styles.requirementPoint}>
-                                The grades of bachelor degree course are considered
+                                <T keyName="join_us.requirements.master.note" />
                             </li>
                         </ul>
                         <div className={styles.requiredGradesContainerGray}>
                             <h5 className={`${styles.requirementSubtitle} ${styles.boxedText} ${styles.requirementColumn}`}>
-                                20 CFU or more
+                                <T keyName="join_us.requirements.master.more_20" />
                             </h5>
                             <div className={styles.requirementColumn}>
                                 <span className={`${styles.cfuSliderLeft} ${styles.bgBlue}`}></span>
@@ -110,10 +107,11 @@ export default function JoinUs() {
                             </div>
                         </div>
                         <ul className={styles.requirementPointList}>
-                            <li className={styles.requirementPoint}>Weighted average ≥ 27</li>
+                            <li className={styles.requirementPoint}><T keyName="join_us.requirements.master.avg_27" /></li>
                         </ul>
-                        <p className={styles.additionalRequirement}>Fluency in the Italian language is a prerequisite
-                            for admission to the chapter. Unfortunately only a selection of courses can apply to join, click <span onClick={openCoursesModal} style={{ cursor: 'pointer', color: '#AEB3B9'}}>here</span> to see the list.</p>
+                        <p className={styles.additionalRequirement}>
+                            <T keyName="join_us.requirements.fluency_note_pre" /> <span onClick={openCoursesModal} style={{ cursor: 'pointer', color: '#AEB3B9'}}><T keyName="join_us.requirements.fluency_note_link" /></span> <T keyName="join_us.requirements.fluency_note_post" />
+                        </p>
                     </div>
                 </section>
 
@@ -121,56 +119,51 @@ export default function JoinUs() {
                     {/* Fees & Instructions */}
                     <div className={styles.halfWidth}>
                         <h4 className={`${styles.requirementTitle} ${styles.noHat} ${styles.boxedText}`}>
-                            Induction Fees
+                            <T keyName="join_us.fees.title" />
                         </h4>
                         <p className={styles.shortRecruitmentStepText}>
-                            Furthermore to become a fully inducted HKN member you have to pay a lump sum membership fee
-                            of 78.00$ (IEEE+HKN).
+                            <T keyName="join_us.fees.text" />
                         </p>
                         <h4 className={`${styles.requirementTitle} ${styles.noHat} ${styles.boxedText}`}>
-                            Form Instructions
+                            <T keyName="join_us.form.title" />
                         </h4>
                         <p className={styles.shortRecruitmentStepText}>
-                            To complete the application form you must enter:
+                            <T keyName="join_us.form.intro" />
                         </p>
                         <ul className={styles.shortRecruitmentStepText}>
-                            <li>First name</li>
-                            <li>Surname</li>
-                            <li>Email address</li>
-                            <li>Weighted average of your grades</li>
-                            <li>Type of degree you're attending</li>
+                            <li><T keyName="join_us.form.list.name" /></li>
+                            <li><T keyName="join_us.form.list.surname" /></li>
+                            <li><T keyName="join_us.form.list.email" /></li>
+                            <li><T keyName="join_us.form.list.average" /></li>
+                            <li><T keyName="join_us.form.list.degree" /></li>
                         </ul>
                         <p className={styles.shortRecruitmentStepText}>
-                            Finally, it is necessary to upload a PDF file with your CV and the extract of grades
-                            (obtainable from the personal university page under the heading:
-                            <strong> General Secretariat/Self-certifications</strong>)
+                            <T keyName="join_us.form.upload_note_pre" /> <strong> <T keyName="join_us.form.upload_note_bold" /></strong>)
                         </p>
                     </div>
                     {/* Exceptions */}
                     <div className={styles.halfWidth}>
                         <div className={`${styles.recruitmentContainer} ${styles.gradientBackground}`}>
-                            <h4 className={styles.recruitmentTitle}>Exceptions</h4>
+                            <h4 className={styles.recruitmentTitle}><T keyName="join_us.exceptions.title" /></h4>
                             <div className={styles.recruitmentStepText}>
-                                If the student has taken the exams within the required period, the required average
-                                threshold is reduced to:
+                                <T keyName="join_us.exceptions.timely_exams" />
                                 <div className={styles.exceptionContainer}>
-                                    <h5 className={styles.recruitmentStepTitle}> Bachelor </h5>
+                                    <h5 className={styles.recruitmentStepTitle}> <T keyName="join_us.requirements.bachelor.title" /> </h5>
                                     <p>25.8/30</p>
                                 </div>
                                 <div className={styles.exceptionContainer}>
-                                    <h5 className={styles.recruitmentStepTitle}> Master Of Science </h5>
+                                    <h5 className={styles.recruitmentStepTitle}> <T keyName="join_us.requirements.master.title" /> </h5>
                                     <p>26.8/30</p>
                                 </div>
                             </div>
                             <div className={styles.recruitmentStepText}>
-                                If the student has won some national or international awards related to the IEEE's areas
-                                of interest, the weighted average required is further reduced to:
+                                <T keyName="join_us.exceptions.awards" />
                                 <div className={styles.exceptionContainer}>
-                                    <h5 className={styles.recruitmentStepTitle}> Bachelor </h5>
+                                    <h5 className={styles.recruitmentStepTitle}> <T keyName="join_us.requirements.bachelor.title" /> </h5>
                                     <p>25.6/30</p>
                                 </div>
                                 <div className={styles.exceptionContainer}>
-                                    <h5 className={styles.recruitmentStepTitle}> Master Of Science </h5>
+                                    <h5 className={styles.recruitmentStepTitle}> <T keyName="join_us.requirements.master.title" /> </h5>
                                     <p>26.6/30</p>
                                 </div>
                             </div>
@@ -183,9 +176,8 @@ export default function JoinUs() {
                     <SubmissionForm/>
                     :
                     <div className={styles.disabledJoinUs}>
-                        <div className={styles.disabledJoinUs__text}>Applications are currently closed</div>
-                        <div className={styles.disabledJoinUs__text}>Come back at the beginning of the next semester!
-                        </div>
+                        <div className={styles.disabledJoinUs__text}><T keyName="join_us.closed.line1" /></div>
+                        <div className={styles.disabledJoinUs__text}><T keyName="join_us.closed.line2" /></div>
                     </div>
                 }
             </main>

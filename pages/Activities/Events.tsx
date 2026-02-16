@@ -8,9 +8,11 @@ import YearEventsColumn from "@/components/Events/YearEventsColumn";
 import ArrowButton from "@/components/molecules/ArrowButton";
 import { fetchEvents } from '../api/directus';
 import { Event, YearEvents } from "@/components/Events/YearEventsColumn";
+import { T, useTranslate } from "@tolgee/react";
 
 export default function Events() {
     const router = useRouter();
+    const { t } = useTranslate();
 
     const [pastEvents, setPastEvents] = useState<{ year: string; events: any[] }[]>([]);
     const [latestEvent, setLatestEvent] = useState<Event>();
@@ -39,7 +41,7 @@ export default function Events() {
         <Layout triangles>
             {latestEvent && (
             <div className={styles.latestEventContainer} id="latestEvent">
-                <Image className={styles.latestEventImage} src={latestEvent.image || '/Common/hkn_ideogramma_white.svg'} alt={`${latestEvent.title} poster`} width="0" height="0" sizes="100vw"/>
+                <Image className={styles.latestEventImage} src={latestEvent.image || '/Common/hkn_ideogramma_white.svg'} alt={t('activities.events.latest.poster_alt', { title: latestEvent.title })} width="0" height="0" sizes="100vw"/>
                 <div className={styles.latestEventRight}>
                     <text className={styles.latestEventDate}>{latestEvent.date}</text>
                     {/* <text className={styles.latestEventDate}>{latestEvent.time}</text> */}
@@ -53,12 +55,12 @@ export default function Events() {
                         latestEvent.link && new Date() < new Date(latestEvent.date) ? (
                             latestEvent.booking_link && (
                                 <RoundButton className={styles.latestEventButton} onClick={() => latestEvent.booking_link && router.push(latestEvent.booking_link)}>
-                                    BOOK NOW
+                                    <T keyName="activities.events.latest.book_now" />
                                 </RoundButton>
                             )
                         ) : (
                             <RoundButton className={styles.latestEventButton} onClick={() => latestEvent.link && router.push(latestEvent.link)}>
-                                WATCH NOW
+                                <T keyName="activities.events.latest.watch_now" />
                             </RoundButton>
                         )
                     }
@@ -68,9 +70,9 @@ export default function Events() {
 
             {pastEvents.length > 0 && (
                 <div className={styles.pastContainer}>
-                    <text className={styles.pastText}>PAST YEARS</text>
-                    <text className={styles.pastTitle}>Not Just</text>
-                    <text className={styles.pastTitle}>Conferences</text>
+                    <text className={styles.pastText}><T keyName="activities.events.past.kicker" /></text>
+                    <text className={styles.pastTitle}><T keyName="activities.events.past.title_line1" /></text>
+                    <text className={styles.pastTitle}><T keyName="activities.events.past.title_line2" /></text>
                     <div className={styles.pastEvents}>
                         <YearEventsColumn yearEvents={pastEvents[pastEventsIndex]}/>
                         {pastEventsIndex > 0 && <ArrowButton left className={styles.pastEventsButton_1} color="#F2F2F2" onClick={() => changeEventsPage(-1)}/>}
