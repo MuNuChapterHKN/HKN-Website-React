@@ -8,7 +8,8 @@ import { CoursesModal } from '../components/JoinUs/CoursesModal';
 import { T, useTranslate } from "@tolgee/react";
 
 export default function JoinUs() {
-    const featureFlags = useContext(FeatureFlagsContext);
+    // Directus recruitment flag disabled for this page.
+    const isRecruitmentOpen = true;
     const [modalVisible, setModalVisible] = useState(false);
     const { t } = useTranslate();
 
@@ -172,14 +173,21 @@ export default function JoinUs() {
                 </section>
 
                 {/* Submission form */}
-                {featureFlags[Feature.IsRecruitmentOpen] ?
-                    <SubmissionForm/>
-                    :
+                {isRecruitmentOpen ? (
+                    <>
+                        <p className={styles.formPreamble}>IF WE CONVINCED YOU...</p>
+                        <div className={styles.applyCta}>
+                            <a className={styles.applyButton} href="https://recruitment.hknpolito.org/apply">
+                                Apply
+                            </a>
+                        </div>
+                    </>
+                ) : (
                     <div className={styles.disabledJoinUs}>
                         <div className={styles.disabledJoinUs__text}><T keyName="join_us.closed.line1" /></div>
                         <div className={styles.disabledJoinUs__text}><T keyName="join_us.closed.line2" /></div>
                     </div>
-                }
+                )}
             </main>
         </Layout>
     )
