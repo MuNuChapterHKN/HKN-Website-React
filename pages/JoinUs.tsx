@@ -177,7 +177,7 @@ export default function JoinUs() {
                     <>
                         <p className={styles.formPreamble}>IF WE CONVINCED YOU...</p>
                         <div className={styles.applyCta}>
-                            <a className={styles.applyButton} href="https://recruitment.hknpolito.org/apply">
+                            <a className={styles.applyButton} href="https://recruitment.hknpolito.org/recruitment/apply" target="_blank" rel="noopener noreferrer">
                                 Apply
                             </a>
                         </div>
