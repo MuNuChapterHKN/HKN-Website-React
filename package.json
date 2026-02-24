@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@directus/sdk": "^18.0.3",
-    "@directus/types": "^13.0.0",
+    "@directus/sdk": "18.0.3",
+    "@directus/types": "13.0.0",
     "@tolgee/format-icu": "6.2.7",
     "@tolgee/react": "6.2.7",
     "@types/node": "18.14.6",
