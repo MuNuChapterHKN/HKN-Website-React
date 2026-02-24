@@ -6,15 +6,16 @@ import React, { MouseEventHandler, useContext, useEffect, useRef, useState } fro
 import ArrowButton from "@/components/molecules/ArrowButton";
 import { fetchBoard, fetchTeams } from "../api/directus";
 import { Feature, FeatureFlagsContext } from "../_app";
+import { T, useTranslate } from "@tolgee/react";
 
 export default function People() {
     const [isMobile, setIsMobile] = useState(false);
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 800); // o 768px, a seconda del tuo breakpoint
+            setIsMobile(window.innerWidth <= 800);
         };
 
-        handleResize(); // inizializza al primo render
+        handleResize();
         window.addEventListener('resize', handleResize);
 
         return () => window.removeEventListener('resize', handleResize);
@@ -68,10 +69,9 @@ export default function People() {
 
     return (
         <Layout triangles>
-            {/*<BoardPopUp index={boardIndex} visible={false} disablePopUp={handleHideBoardPopUp}/>*/}
             <div className={styles.boardContainer}>
-                <text className={styles.theBoard}>THE BOARD</text>
-                <text className={styles.managementArea}>Management Area</text>
+                <text className={styles.theBoard}><T keyName="people.board.kicker" /></text>
+                <text className={styles.managementArea}><T keyName="people.board.title" /></text>
                 <div className={styles.boardGrid}>
                     {Board.map((bmp, index) => (
                         <BoardMember boardMemberProps={bmp}
@@ -86,8 +86,8 @@ export default function People() {
                 <>
                     <TeamPopUp index={teamIndex} visible={teamPopUpVisible} disablePopUp={handleHideTeamPopUp} teams={Teams} isMobile={isMobile} />
                     <div className={styles.teamsContainer}>
-                        <text className={styles.theTeams}>THE TEAMS</text>
-                        <text className={styles.joinOurTeams}>Our Teams</text>
+                        <text className={styles.theTeams}><T keyName="people.teams.kicker" /></text>
+                        <text className={styles.joinOurTeams}><T keyName="people.teams.title" /></text>
                         <div className={styles.teamsGrid}>
                             {Teams.map((team, index) => (
                                 <Team teamProps={team} key={team.area} onClick={() => featureFlags[Feature.ShowTeamsPopups] && handleTeamMemberClick(index)} />
@@ -137,7 +137,7 @@ function Team({ teamProps, onClick }: { teamProps: TeamProps, onClick: () => voi
                 <img className={styles.teamRespImage} src={teamProps.imageSrc} alt={teamProps.imageSrc} />
             )}
             <div className={styles.teamTextBox}>
-                <text className={styles.peopleOf}>people of</text>
+                <text className={styles.peopleOf}><T keyName="people.teams.card.kicker" /></text>
                 <text className={styles.teamArea}>{teamProps.area}</text>
                 <text className={styles.teamDescription}>{teamProps.description}</text>
             </div>
@@ -148,6 +148,7 @@ function Team({ teamProps, onClick }: { teamProps: TeamProps, onClick: () => voi
 function TeamPopUp({ index, visible, disablePopUp, teams, isMobile }: { index: number, visible: Boolean, disablePopUp: () => void, teams: TeamProps[], isMobile: boolean }) {
 
     const Teams = teams;
+    const { t } = useTranslate();
 
     const containerRef = useRef<HTMLDivElement>(null);
     const contentRefFirst = useRef<HTMLDivElement>(null);
@@ -215,19 +216,17 @@ function TeamPopUp({ index, visible, disablePopUp, teams, isMobile }: { index: n
                 }
             };
 
-            updateNumPeople(); // Call the function on initial load
-            window.addEventListener('resize', updateNumPeople); // Update on resize
+            updateNumPeople();
+            window.addEventListener('resize', updateNumPeople);
 
             return () => {
-                window.removeEventListener('resize', updateNumPeople); // Cleanup on unmount
+                window.removeEventListener('resize', updateNumPeople);
             };
         };
-        handleResize(); // Call the function on initial load
+        handleResize();
 
-        // Add event listener for window resize
         window.addEventListener('resize', handleResize);
 
-        // Clean up the event listener on component unmount
         return () => {
             window.removeEventListener('resize', handleResize);
         };
@@ -275,7 +274,7 @@ function TeamPopUp({ index, visible, disablePopUp, teams, isMobile }: { index: n
                             <div className={styles.managerPopUpImageContainer}>
                                 <img
                                     className={styles.managerImage}
-                                    alt={`Coordinators of ${team.area} area`}
+                                    alt={t('people.popup.manager_alt', { area: team.area })}
                                     src={team.imageSrc}
                                     width={'100px'}
                                     height={'100px'}
@@ -291,7 +290,7 @@ function TeamPopUp({ index, visible, disablePopUp, teams, isMobile }: { index: n
 
                             <div className={styles.managerTitleLink}>
                                 <div className={styles.managerTitle}>
-                                    Area manager{team.managers.length > 1 ? 's' : ''}
+                                    <T keyName="people.popup.manager_role" params={{ count: team.managers.length }} />
                                 </div>
                                 <div className={styles.managersLinkedin}>
                                     {team.managers.map(
@@ -302,7 +301,7 @@ function TeamPopUp({ index, visible, disablePopUp, teams, isMobile }: { index: n
                                                         <img
                                                             className={styles.linkIcon__icon}
                                                             src="/Icons/linkedin_logo_blue.png"
-                                                            alt="LinkedIn Icon"
+                                                            alt={t('common_2.linkedin_alt')}
                                                         />
                                                     </a>
                                                 </div>
@@ -312,11 +311,10 @@ function TeamPopUp({ index, visible, disablePopUp, teams, isMobile }: { index: n
                             </div>
                         </div>
 
-                        {/* Arrow buttons aligned right */}
                     </div>
 
                     <div className={styles.teamHeaderRight}>
-                        <h2 className={styles.teamPopUp__Title}>We are {team.area}</h2>
+                        <h2 className={styles.teamPopUp__Title}><T keyName="people.popup.title" params={{ area: team.area }} /></h2>
                         <text className={styles.teamPopUp__Description}>{team.description}</text>
                     </div>
                 </div>
@@ -391,6 +389,7 @@ function chunkArray<T>(array: T[], size: number): T[][] {
 
 function TeamMember({ member }: { member: TeamMemberProps }) {
     const [imageExists, setImageExists] = useState(false);
+    const { t } = useTranslate();
 
     useEffect(() => {
         const img = new Image();
@@ -410,12 +409,12 @@ function TeamMember({ member }: { member: TeamMemberProps }) {
             </div>
             <text className={styles.memberName}>{member.name}</text>
             <div className={styles.memberRoleLink}>
-                <text className={styles.memberTitle}>MEMBER</text>
+                <text className={styles.memberTitle}><T keyName="people.popup.member_role" /></text>
                 {member.linkedIn &&
                     <div className={styles.memberRoleLink__linkIcon}>
                         <a className={styles.memberRoleLink__linkIcon} href={member.linkedIn}>
                             <img className={styles.linkIcon__icon} src={"/Icons/linkedin_logo_blue.png"}
-                                alt="LinkedIn Icon" />
+                                alt={t('common_2.linkedin_alt')} />
                         </a>
                     </div>
                 }

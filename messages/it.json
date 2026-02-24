@@ -1,0 +1,313 @@
+{
+  "common": {
+    "join_us": "UNISCITI A NOI",
+    "about_us": "CHI SIAMO",
+    "read_me": "LEGGI DI PIÙ",
+    "coming_soon": "PROSSIMAMENTE",
+    "discover": "Scopri",
+    "apply": "Candidati"
+  },
+  "home": {
+    "title": {
+      "dbp": "Guidati dalla Passione",
+      "gbv": "Guidati dai Valori",
+      "welcome": "Benvenuti nel nostro mondo, siamo il Mu Nu Chapter di IEEE-HKN del Politecnico di Torino."
+    },
+    "awards": {
+      "alt_prefix": "Premio Chapter Eccezionale {number}"
+    },
+    "vision": {
+      "kicker": "VISIONE",
+      "title": "Scopri il Chapter Mu Nu",
+      "description": "Dal 2017 ci dedichiamo a un percorso complementare ai nostri studi accademici che incoraggia l'eccellenza nei campi di interesse designati dall'IEEE.",
+      "photo_gallery_button": "GALLERIA FOTOGRAFICA",
+      "alt": "Visione"
+    },
+    "origins": {
+      "kicker": "ORIGINI",
+      "title": "Eta Kappa Nu, IEEE Honor Society",
+      "description": "Fondata nel 1904, Eta Kappa Nu (IEEE-HKN), la IEEE Honor Society, promuove gli ideali di Studio, Carattere e Attitudine. Dai uno sguardo alle nostre origini.",
+      "alt": "Origini"
+    },
+    "projects": {
+      "kicker": "NOVITÀ",
+      "title": "I nostri ultimi progetti",
+      "alt": "Progetto",
+      "project_1_title": "Sirius: Vedere il Futuro attraverso gli Occhi del Presente",
+      "project_1_description": "Per la prima volta, sono stati gli studenti HKN a fare visita a un'azienda: SIRIUS (Sirius | Home). Per i nuovi membri, questa è stata la loro prima esperienza di formazione interna, ma la vera novità ha coinvolto i membri esistenti: poter visitare personalmente un'azienda si è rivelato un...",
+      "project_2_title": "Vivere l'Associazione Online: Guida per Principianti",
+      "project_2_description": "Inizialmente, l'idea è nata dalla solitudine. Restare chiusi in casa e non vedere nessuno a causa del lockdown era una condizione che, sebbene all'inizio potesse sembrare esaltante e quasi eroica, col tempo era diventata devastante. Il pensiero di entrare a far parte di una società d'onore...",
+      "project_3_title": "POLITO, HKN e Covid-19: Una Riflessione",
+      "project_3_description": "Le diciassette di una tranquilla domenica di marzo. Silenziosa perché le strade sono deserte e solo i nostri pensieri risuonano più forti che mai. In questi casi, non resta che dare loro forma proiettandoli in mondi molto più ampi delle mura che ci confinano in questi..."
+    },
+    "activities": {
+      "placeholder": "eventi",
+      "title": "Scopri tutte le nostre Attività",
+      "group1_kicker": "eventi",
+      "group1_title": "Eventi",
+      "group1_description": "I nostri eventi sono pensati per chiunque ami parlare, dibattere, imparare e scoprire",
+      "group1_button": "eventi",
+      "event_1_alt": "Evento 1",
+      "event_2_alt": "Evento 2",
+      "event_3_alt": "Evento 3",
+      "group2_kicker": "eventi",
+      "group2_title": "Masterclass",
+      "group2_description": "I nostri esperti ti forniranno consigli e suggerimenti che ti aiuteranno a migliorare le tue competenze e ad arricchire il tuo CV",
+      "discover_1_alt": "Scopri 1",
+      "discover_2_alt": "Scopri 2",
+      "group3_kicker": "eventi",
+      "group3_title": "Gruppi di Studio",
+      "group3_description": "Membri HKN e dottorandi ti aiuteranno con qualsiasi concetto con cui potresti avere difficoltà",
+      "group3_button": "gruppi di studio"
+    },
+    "apply": {
+      "kicker": "SEI PRONTO?",
+      "title_1": "Unisciti al nostro Chapter e",
+      "title_2": "Diventa il prossimo HKNuer"
+    }
+  },
+  "about_us": 
+  {
+    "vision": {
+      "alt_bull": "Toro",
+      "quote_text": "HKN È IL POSTO DOVE HO POTUTO MIGLIORARE ME STESSO, PERMETTENDOMI DI METTERMI IN GIOCO E CREDERE NELLE MIE POTENZIALITÀ",
+      "quote_author": "Matteo Alasio - Rappresentante degli Studenti 2023",
+      "alt_quotes": "Virgolette",
+      "kicker": "chi siamo",
+      "title": "Noi Siamo HKN",
+      "description": "IEEE-HKN riconosce l'eccellenza tra pari, incoraggia la crescita individuale attraverso l'istruzione e l'impegno professionale nelle attività associative. I pilastri su cui si basano le nostre attività sono:",
+      "alt_vision1": "ChiSiamo1",
+      "pillar1": "Le nostre competenze sono messe al servizio della comunità studentesca attraverso l'organizzazione di gruppi di studio e masterclass.",
+      "alt_vision2": "ChiSiamo2",
+      "pillar2": "La crescita personale e professionale a cui miriamo con le nostre attività si realizza attraverso incontri con professionisti del settore e la nostra rete di alumni.",
+      "alt_vision3": "ChiSiamo3",
+      "pillar3": "All'interno della comunità, i membri gestiscono varie attività di team-building volte a garantire un'atmosfera rispettosa, inclusiva e motivante.",
+      "alt_vision4": "ChiSiamo4",
+      "pillar4": "Il nostro Chapter fa parte di una rete internazionale che riunisce oltre 200 Chapter IEEE-HKN, permettendo ai membri di fare network."
+    },
+    "history": {
+      "section1": {
+        "title": "HKN - I Fondatori",
+        "description": "Eta Kappa Nu è stata fondata il 28 ottobre 1904, come società d'onore nazionale per gli studenti di ingegneria elettrica presso l'Università dell'Illinois a Urbana-Champaign. Maurice L. Carr e altri nove studenti universitari formarono il primo Chapter e svilupparono una struttura nazionale. La loro visione per la società d'onore combinava l'impegno collegiale con una comunità professionale per assistere studenti e alumni, e per sostenere tali professioni in generale."
+      },
+      "section2": {
+        "title": "IEEE-HKN - La Fusione",
+        "description": "A partire dal 2010, Eta Kappa Nu si è ufficialmente affiliata a IEEE come unità organizzativa con il nome IEEE-HKN. Come risultato della fusione, i Chapter vengono stabiliti a livello internazionale e l'idoneità all'adesione è estesa a tutti i campi di interesse all'interno di IEEE."
+      },
+      "section3": {
+        "title": "Chapter Mu Nu - Installazione",
+        "description": "Nel 2017, il nostro Chapter è stato fondato grazie all'iniziativa di uno studente brillante che ha rapidamente trasformato un'idea di comunità in una vera e propria confraternita al Politecnico di Torino. Fin dall'inizio, l'associazione è stata istituita con l'obiettivo di fornire formazione interna ai membri, tutorato gratuito ed eventi pubblici."
+      },
+      "section4": {
+        "title": "Chapter Mu Nu - Oggi",
+        "description": "Oggi, il Chapter Mu Nu di IEEE-HKN al Politecnico di Torino è una realtà vibrante portata avanti da un gruppo sempre crescente di studenti appassionati di informatica, elettronica e molto altro. Per noi, HKN rappresenta un nuovo modo di acquisire competenze e conoscenze, coltivando al contempo le nostre passioni in un ambiente stimolante e motivante."
+      },
+      "alt": {
+        "section1_img1": "Vecchia foto fondatori 1",
+        "section1_img2": "Vecchia foto fondatori 2",
+        "hkn_simple_logo": "Logo HKN semplice",
+        "section2_img1": "Foto fusione IEEE HKN",
+        "ieee_logo": "Logo IEEE",
+        "section3_img1": "Foto installazione Chapter Mu Nu 1",
+        "section3_img2": "Foto installazione Chapter Mu Nu 2",
+        "hkn_logo_vector": "Logo HKN vettoriale",
+        "section4_img1": "Foto Chapter Mu Nu oggi",
+        "hkn_ideogram": "Ideogramma HKN"
+      }
+    },
+    "stats": {
+      "stat1_number": "+4000",
+      "stat1_text": "Membri internazionali",
+      "stat2_number": "+200",
+      "stat2_text": "Chapter differenti",
+      "stat3_number": "+200",
+      "stat3_text": "Membri Chapter Mu Nu"
+    },
+    "gallery": {
+      "uptitle": "galleria fotografica",
+      "title": {
+        "line1": "I nostri",
+        "line2": "Scatti migliori"
+      },
+      "loading_alt": "Caricamento...",
+      "image_alt": "Immagine {index}"
+    }
+  },
+  "common_2": {
+    "linkedin_alt": "Icona LinkedIn"
+  },
+  "people": {
+    "board": {
+      "kicker": "IL BOARD",
+      "title": "Area Management"
+    },
+    "teams": {
+      "kicker": "I TEAM",
+      "title": "I nostri Team",
+      "card": {
+        "kicker": "membri di"
+      }
+    },
+    "popup": {
+      "manager_alt": "Coordinatori dell'area {area}",
+      "manager_role": "{count, plural, one {Responsabile d'area} other {Responsabili d'area}}",
+      "title": "Siamo {area}",
+      "member_role": "MEMBRO"
+    }
+  },
+  "header": {
+    "logo_alt": "Logo HKN PoliTO",
+    "menu_alt": "Menu",
+    "nav": {
+      "home": "Home",
+      "about": "Chi Siamo",
+      "people": {
+        "main": "Persone",
+        "people": "Membri",
+        "alumni": "Alumni",
+        "professionals": "Professionisti",
+        "past_boards": "Board Passati"
+      },
+      "events": "Eventi",
+      "study_groups": "Gruppi di Studio",
+      "publications": "Pubblicazioni"
+    }
+  },
+  "alumni": {
+    "banner": {
+      "alt": "Foto di gruppo Alumni",
+      "title": "Alumni",
+      "subtitle": "MENTORING ETA KAPPA",
+      "text": "Dal 2017 ci dedichiamo a incoraggiare l'eccellenza nei campi di interesse designati dall'IEEE, continuando a reinventarci per soddisfare le esigenze dei nostri membri e della società in generale"
+    },
+    "directory": {
+      "kicker": "Elenco",
+      "title": "Alumni"
+    }
+  },
+  "professionals": {
+    "advisor": {
+      "alt": "Faculty Advisor",
+      "role": "Professore associato",
+      "kicker": "PROFESSIONISTI",
+      "title": "FACULTY ADVISOR",
+      "bio": "Paolo Montuschi (professore ordinario, IEEE Fellow) ricopre attualmente la carica di Vice-Rettore per la Digitalizzazione 2030 e le Strategie IT. È caporedattore delle IEEE Transactions on Emerging Topics in Computing e membro sia dell'IEEE Awards Board che dell'IEEE PSPB. Nel 2017 ha supervisionato l'insediamento del Chapter Mu Nu HKN, il primo ad essere attivato in Europa."
+    },
+    "list": {
+      "kicker": "professionisti",
+      "title": "Membri Onorari",
+      "placeholder_alt": "segnaposto per {name}"
+    }
+  },
+   "past_boards": {
+    "title": "Board Passati"
+  },
+  "activities": {
+    "events": {
+      "latest": {
+        "poster_alt": "Locandina {title}",
+        "book_now": "PRENOTA ORA",
+        "watch_now": "GUARDA ORA"
+      },
+      "past": {
+        "kicker": "ANNI PASSATI",
+        "title_line1": "Non Solo",
+        "title_line2": "Conferenze"
+      }
+    },
+    "study_groups": {
+      "no_active_title": "Nessun gruppo di studio attivo.",
+      "no_active_desc": "Stiamo organizzando i gruppi di studio per il prossimo semestre. Rimanete sintonizzati!"
+    }
+  },
+  "publications": {
+    "recognitions": {
+      "awards": {
+        "image_alt": "Premio",
+        "kicker": "PREMI",
+        "title": "Outstanding Chapter Award",
+        "description": "Il Chapter IEEE-Eta Kappa Nu HKN PoliTo è stato premiato tra 253 Chapter selezionati in tutto il mondo. Questo premio riconosce l'eccellenza dei Chapter IEEE-HKN per le loro attività."
+      },
+      "international_collective": "Scopri il Collettivo Internazionale",
+      "mentions": {
+        "kicker": "MENZIONI",
+        "title_line1": "Cosa dicono",
+        "title_line2": "di noi"
+      }
+    }
+  },
+  "join_us": {
+    "header": {
+      "subtitle": "SCOPRI COME UNIRTI A NOI",
+      "title": "Cosa Cerchiamo"
+    },
+    "build_future": {
+      "title": "Costruisci il tuo futuro con noi",
+      "description": "Essere un membro HKN non significa solo far parte di una rete internazionale di studenti che saranno i leader di domani nei campi STEM, ma anche accrescere le tue conoscenze e competenze.",
+      "image_alt": "Persona che fa domanda al Chapter Mu Nu di HKN"
+    },
+    "timeline": {
+      "title": "Timeline del reclutamento",
+      "step1": {
+        "title": "Presentazione",
+        "text": "Inizialmente raccoglieremo le tue informazioni e il tuo CV attraverso il modulo in fondo alla pagina"
+      },
+      "step2": {
+        "title": "Colloquio Generale",
+        "text": "I candidati selezionati partecipano a un colloquio introduttivo"
+      },
+      "step3": {
+        "title": "Periodo di Prova",
+        "text": "Ti accoglieremo nell'associazione e valuteremo la tua partecipazione alle attività"
+      },
+      "step4": {
+        "title": "Membro Effettivo",
+        "text": "Alla fine del periodo di prova riceverai il certificato di iniziazione e diventerai un membro effettivo di HKN!"
+      }
+    },
+    "requirements": {
+      "bachelor": {
+        "title": "Studenti Triennali",
+        "point1": "Almeno 52 CFU",
+        "point2": "Media ponderata ≥ 26"
+      },
+      "master": {
+        "title": "Laurea Magistrale",
+        "less_20": "Meno di 20 CFU",
+        "avg_26": "Media ponderata ≥ 26",
+        "note": "Vengono considerati i voti del corso di laurea triennale",
+        "more_20": "20 CFU o più",
+        "avg_27": "Media ponderata ≥ 27"
+      },
+      "fluency_note_pre": "La conoscenza della lingua italiana è un prerequisito per l'ammissione al Chapter. Purtroppo solo una selezione di corsi può fare domanda per unirsi, clicca",
+      "fluency_note_link": "qui",
+      "fluency_note_post": "per vedere la lista."
+    },
+    "fees": {
+      "title": "Quota di Iscrizione",
+      "text": "Inoltre, per diventare un membro HKN a tutti gli effetti devi pagare una quota associativa una tantum di 78,00$ (IEEE+HKN)."
+    },
+    "form": {
+      "title": "Istruzioni per il Modulo",
+      "intro": "Per completare il modulo di domanda devi inserire:",
+      "list": {
+        "name": "Nome",
+        "surname": "Cognome",
+        "email": "Indirizzo email",
+        "average": "Media ponderata dei voti",
+        "degree": "Tipo di laurea che stai frequentando"
+      },
+      "upload_note_pre": "Infine, è necessario caricare un file PDF con il tuo CV e l'estratto dei voti (ottenibile dalla pagina personale dell'università alla voce:",
+      "upload_note_bold": "Segreteria Generale/Autocertificazioni"
+    },
+    "exceptions": {
+      "title": "Eccezioni",
+      "timely_exams": "Se lo studente ha sostenuto gli esami entro il periodo richiesto, la soglia media richiesta è ridotta a:",
+      "awards": "Se lo studente ha vinto premi nazionali o internazionali relativi alle aree di interesse IEEE, la media ponderata richiesta è ulteriormente ridotta a:"
+    },
+    "closed": {
+      "line1": "Le candidature sono attualmente chiuse",
+      "line2": "Torna all'inizio del prossimo semestre!"
+    }
+  }
+}

@@ -6,11 +6,10 @@ import {useState, useEffect} from "react";
 import ArrowButton from "@/components/molecules/ArrowButton";
 import Alumno, {Badge, BadgeType} from "@/components/People/Alumno";
 import { fetchAlumni } from "../api/directus";
-
-// Images should be in a 4:5 ratio
+import { T, useTranslate } from "@tolgee/react";
 
 export default function Alumni() {
-
+    const { t } = useTranslate();
     const [AlumniData, setAlumni] = useState<AlumnoProps[]>([]);
 
     useEffect(() => {
@@ -49,20 +48,19 @@ export default function Alumni() {
         <Layout triangles>
 
             <div className={styles.descriptionContainer}>
-                <img className={styles.descriptionContainer__image} src="/AboutUs/Gallery/Compleanno%20del%20Chapter%20-%20March%202023.JPG" alt="Vision"/>
+                <img className={styles.descriptionContainer__image} src="/AboutUs/Gallery/Compleanno%20del%20Chapter%20-%20March%202023.JPG" alt={t('alumni.banner.alt')}/>
                 <div className={styles.descriptionContainer__right}>
-                    <text className={styles.descriptionContainer__right__title}>Alumni</text>
-                    <text className={styles.descriptionContainer__right__subtitle}>ETA KAPPA MENTORING</text>
-                    <text className={styles.descriptionContainer__right__text}>Since 2017 we are dedicated to
-                        encouraging excellence in the IEEE-designated fields of interest, continuing to reinvent
-                        ourselves to meet the needs of our members and society overall
+                    <text className={styles.descriptionContainer__right__title}><T keyName="alumni.banner.title" /></text>
+                    <text className={styles.descriptionContainer__right__subtitle}><T keyName="alumni.banner.subtitle" /></text>
+                    <text className={styles.descriptionContainer__right__text}>
+                        <T keyName="alumni.banner.text" />
                     </text>
                 </div>
             </div>
 
             <div className={styles.alumniContainer}>
-                <text className={styles.alumniContainer__directory}>Directory</text>
-                <text className={styles.alumniContainer__alumni}>Alumni</text>
+                <text className={styles.alumniContainer__directory}><T keyName="alumni.directory.kicker" /></text>
+                <text className={styles.alumniContainer__alumni}><T keyName="alumni.directory.title" /></text>
                 <div className={styles.alumniContainer__grid}>
                     {AlumniData.map((al, index) => (
                         <Alumno alumno={al} key={index} index={index} onClick={() => handleAlumnoClick(index)}

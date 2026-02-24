@@ -7,6 +7,7 @@ import HomeLogo from "../components/Home/HomeLogo";
 import RoundButton from "../components/molecules/RoundButton";
 import { useEffect, useState } from "react";
 import { FeatureFlag, fetchFeatureFlags, fetchHomeAwards } from './api/directus';
+import { T, useTranslate } from '@tolgee/react';
 
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
     const [windowWidth, setWindowWidth] = useState(0);
 
     const [awards, setAwards] = useState<string[]>([]);
+    const { t } = useTranslate(); 
 
     useEffect(() => {
         const fetchData = async () => {
@@ -42,17 +44,17 @@ export default function Home() {
 
             <div className={styles.titleContainer}>
                 <div className={styles.titleColumn}>
-                    <text className={styles.drivenByPassion}>Driven By Passion</text>
-                    <text className={styles.drivenByPassion}>Guided By Values</text>
-                    <text className={styles.welcomeTo}>Welcome to our world, we are the Mu Nu Chapter of IEEE-HKN at
-                        the Polytechnic University of Turin.
+                    <text className={styles.drivenByPassion}><T keyName="home.title.dbp" /></text>
+                    <text className={styles.drivenByPassion}><T keyName="home.title.gbv" /></text>
+                    <text className={styles.welcomeTo}>
+                        <T keyName="home.title.welcome" />
                     </text>
                     <div className={styles.titleButtons}>
                         <RoundButton className={styles.joinUsTitleButton} onClick={() => router.push('/JoinUs')}>
-                            JOIN US
+                            <T keyName="common.join_us" />
                         </RoundButton>
                         <RoundButton className={styles.aboutUsTitleButton} onClick={() => router.push('/AboutUs')}>
-                            ABOUT US
+                            <T keyName="common.about_us" />
                         </RoundButton>
                     </div>
                 </div>
@@ -67,7 +69,7 @@ export default function Home() {
                             key={index}
                             className={styles.outstandingAward}
                             src={award}
-                            alt={`Outstanding Chapter Award ${awards.length - index}`}
+                            alt={t('home.awards.alt_prefix', { number: awards.length - index })}
                         />
                     ))}
                 </div>
@@ -75,85 +77,83 @@ export default function Home() {
 
             <div className={styles.visionContainer}>
                 <div className={styles.visionLeft}>
-                    <text className={styles.visionText}>VISION</text>
-                    <text className={styles.visionTitle}>Discover Mu Nu Chapter</text>
-                    <text className={styles.vision}>Since 2017 we are dedicated to the pursuit of a complementary path
-                        to our academic studies which encourages the excellence in the
-                        IEEE-designated fields of interest.
+                    <text className={styles.visionText}><T keyName="home.vision.kicker" /></text>
+                    <text className={styles.visionTitle}><T keyName="home.vision.title" /></text>
+                    <text className={styles.vision}>
+                        <T keyName="home.vision.description" />
                     </text>
                     <div className={styles.visionButtons}>
                         <RoundButton className={styles.peopleVisionButton}
-                            onClick={() => router.push('/AboutUs#vision')}>READ ME</RoundButton>
+                            onClick={() => router.push('/AboutUs#vision')}>
+                            <T keyName="common.read_me" />
+                        </RoundButton>
                         {/*TODO: add link*/}
-                        <RoundButton className={styles.galleryVisionButton} onClick={() => router.push('/AboutUs#gallery')}>PHOTO
-                            GALLERY</RoundButton>
+                        <RoundButton className={styles.galleryVisionButton} onClick={() => router.push('/AboutUs#gallery')}>
+                            <T keyName="home.vision.photo_gallery_button" />
+                        </RoundButton>
                     </div>
                 </div>
-                <img className={styles.visionImage} src="/Home/vision.jpg" alt="Vision" />
+                <img className={styles.visionImage} src="/Home/vision.jpg" alt={t('home.vision.alt')} />
             </div>
 
             <div className={styles.originsContainer}>
-                <Image className={styles.originsImage} src="/Home/origins.jpg" alt="Vision" width="0" height="0" sizes="100vw" />
+                <Image className={styles.originsImage} src="/Home/origins.jpg" alt={t('home.origins.alt')} width="0" height="0" sizes="100vw" />
                 <div className={styles.originsRight}>
-                    <text className={styles.originsText}>ORIGINS</text>
-                    <text className={styles.originsTitle}>Eta Kappa Nu, IEEE Honor Society</text>
-                    <text className={styles.origins}>Founded in 1904, Eta Kappa Nu (IEEE-HKN), the honor society of
-                        IEEE, promotes the ideals of Scholarship, Character, and Attitude.
-                        Catch a glimpse of our origins.
+                    <text className={styles.originsText}><T keyName="home.origins.kicker" /></text>
+                    <text className={styles.originsTitle}><T keyName="home.origins.title" /></text>
+                    <text className={styles.origins}>
+                        <T keyName="home.origins.description" />
                     </text>
                     <div className={styles.originsButtons}>
                         <RoundButton className={styles.readMeOriginsButton} onClick={() => router.push('/AboutUs#origin')}>
-                            READ ME
+                            <T keyName="common.read_me" />
                         </RoundButton>
                         {/*TODO: add link*/}
                     </div>
                 </div>
-                <Image className={styles.originsImageMobile} src="/Home/origins.jpg" alt="Vision" width="0" height="0" sizes="100vw" />
+                <Image className={styles.originsImageMobile} src="/Home/origins.jpg" alt={t('home.origins.alt')} width="0" height="0" sizes="100vw" />
             </div>
 
             {/* <div className={styles.projectsContainer}>
-                <text className={styles.projectsText}>NEWS</text>
-                <text className={styles.projectsTitle}>Our Latest Projects</text>
-                <text className={styles.projectsSubtitle}>COMING SOON</text>
+                <text className={styles.projectsText}><T keyName="home.projects.kicker" /></text>
+                <text className={styles.projectsTitle}><T keyName="home.projects.title" /></text>
+                <text className={styles.projectsSubtitle}><T keyName="common.coming_soon" /></text>
                 <div className={styles.projectsCards}>
                     <div className={styles.projectsLeft}>
                         <div className={styles.projectsImageClip}>
                             <img className={styles.projectsPicture} src="/Home/Projects/Sirius_vedere.jpg"
-                                 alt="project"/>
+                                alt={t('home.projects.alt')} />
                         </div>
                         <text className={styles.projectTitle}>
-                            Sirius: Seeing the Future Through the Eyes of the Present
+                            <T keyName="home.projects.project_1_title" />
                         </text>
-                        <text className={styles.project}>For the first time, it was the HKN students who paid a visit to
-                            a company: SIRIUS (Sirius | Home). For the new members, this was their first experience of
-                            internal training, but the real novelty involved the existing members: being able to
-                            personally visit a company turned out to be an...
+                        <text className={styles.project}>
+                            <T keyName="home.projects.project_1_description" />
                         </text>
                         {TODO: add link}
                     </div>
                     <div className={styles.projectsCenter}>
                         <div className={styles.projectsImageClip}>
                             <img className={styles.projectsPicture} src="/Home/Projects/Vivere_lassociazione.png"
-                                 alt="project"/>
+                                alt={t('home.projects.alt')} />
                         </div>
-                        <text className={styles.projectTitle}>Living the Association Online: A Beginner's Guide
+                        <text className={styles.projectTitle}>
+                            <T keyName="home.projects.project_2_title" />
                         </text>
-                        <text className={styles.project}>Initially, the idea was born from loneliness. Staying locked at
-                            home and not seeing anyone due to the lockdown was a condition that, while it might have
-                            seemed exhilarating and almost heroic at first, had become devastating over time. The
-                            thought of becoming a part of an honor society...
+                        <text className={styles.project}>
+                            <T keyName="home.projects.project_2_description" />
                         </text>
                         {TODO: add link}
                     </div>
                     <div className={styles.projectsRight}>
                         <div className={styles.projectsImageClip}>
-                            <img className={styles.projectsPicture} src="/Home/Projects/Poli_covid.png" alt="project"/>
+                            <img className={styles.projectsPicture} src="/Home/Projects/Poli_covid.png" alt={t('home.projects.alt')} />
                         </div>
-                        <text className={styles.projectTitle}>POLITO, HKN, and Covid-19: A Reflection</text>
-                        <text className={styles.project}>Seventeen o'clock on a quiet Sunday in March. Silent because
-                            the streets are deserted, and only our thoughts resonate louder than ever. In these cases,
-                            all that's left is to give them shape by projecting them into much broader worlds than the
-                            walls that confine us in these...
+                        <text className={styles.projectTitle}>
+                            <T keyName="home.projects.project_3_title" />
+                        </text>
+                        <text className={styles.project}>
+                            <T keyName="home.projects.project_3_description" />
                         </text>
                         {TODO: add link}
                     </div>
@@ -166,59 +166,61 @@ export default function Home() {
 
                 <div className={activities_styles.allActivities__content}>
                     <div className={activities_styles.allActivities__events}>
-                        events
+                        <T keyName="home.activities.placeholder" />
                     </div>
                     <div className={activities_styles.allActivities__title}>
-                        Discover All Our Activities
+                        <T keyName="home.activities.title" />
                     </div>
 
                     <div className={activities_styles.allActivities__columns}>
                         <div className={activities_styles.allActivities__columns__left}>
                             <div className={activities_styles.allActivities__group1}>
-                                <div className={activities_styles.allActivities__group__events}>events</div>
-                                <div className={activities_styles.allActivities__group__title}>Events</div>
-                                <div className={activities_styles.allActivities__group__text}>Our events are thought for anyone who
-                                    likes talking, debating, learning and
-                                    discovering
+                                <div className={activities_styles.allActivities__group__events}><T keyName="home.activities.group1_kicker" /></div>
+                                <div className={activities_styles.allActivities__group__title}><T keyName="home.activities.group1_title" /></div>
+                                <div className={activities_styles.allActivities__group__text}>
+                                    <T keyName="home.activities.group1_description" />
                                 </div>
 
                                 <div className={activities_styles.allActivities__group1__imgcont1}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Events/mentalWellnessDigitalWellBeing.png'} alt={'Event 3'} />
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Events/mentalWellnessDigitalWellBeing.png'} alt={t('home.activities.event_3_alt')} />
                                 </div>
                                 <div className={activities_styles.allActivities__group1__imgcont2}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Events/event_2022.png'} alt={'Event 2'} style={{ objectPosition: "75% 100%" }} />
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Events/event_2022.png'} alt={t('home.activities.event_2_alt')} style={{ objectPosition: "75% 100%" }} />
                                 </div>
                                 <div className={activities_styles.allActivities__group1__imgcont3}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Events/quantumQuest.png'} alt={'Event 1'} />
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Events/quantumQuest.png'} alt={t('home.activities.event_1_alt')} />
                                 </div>
 
                                 <div className={activities_styles.allActivities__group1__discover}>
-                                    Discover
-                                    <RoundButton className={activities_styles.allActivities__group__button} onClick={() => router.push('/Activities/Events')}>events</RoundButton>
+                                    <T keyName="common.discover" />
+                                    <RoundButton className={activities_styles.allActivities__group__button} onClick={() => router.push('/Activities/Events')}>
+                                        <T keyName="home.activities.group1_button" />
+                                    </RoundButton>
                                 </div>
                             </div>
                             <div className={activities_styles.allActivities__group2}>
-                                <div className={activities_styles.allActivities__group__events}>events</div>
-                                <div className={activities_styles.allActivities__group__title}>Masterclass</div>
-                                <div className={activities_styles.allActivities__group__text}>Our experts will provide you advices
-                                    and tips that will help you improving
-                                    your skills & enriching your CV
+                                <div className={activities_styles.allActivities__group__events}><T keyName="home.activities.group2_kicker" /></div>
+                                <div className={activities_styles.allActivities__group__title}><T keyName="home.activities.group2_title" /></div>
+                                <div className={activities_styles.allActivities__group__text}>
+                                    <T keyName="home.activities.group2_description" />
                                 </div>
 
                                 <div className={activities_styles.allActivities__group2__imgcont1}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/MentalWellness.jpg'} alt={'discover1'} />
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/MentalWellness.jpg'} alt={t('home.activities.discover_1_alt')} />
                                 </div>
                                 <div className={activities_styles.allActivities__group2__imgcont2}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/Hexakappathlon.jpg'} alt={'discover2'} style={{ objectPosition: "75% 100%" }} />
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/Hexakappathlon.jpg'} alt={t('home.activities.discover_2_alt')} style={{ objectPosition: "75% 100%" }} />
                                 </div>
                                 <div className={activities_styles.allActivities__group2__imgcont3}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/FoundersDay.jpg'} alt={'discover1'} />
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/FoundersDay.jpg'} alt={t('home.activities.discover_1_alt')} />
                                 </div>
 
                                 <div className={activities_styles.allActivities__group2__discover}>
-                                    Discover
+                                    <T keyName="common.discover" />
                                     {/*<RoundButton className={activities_styles.allActivities__group__button} onClick={() => router.push('/Activities/Masterclasses')}>Masterclasses</RoundButton>*/}
-                                    <RoundButton className={activities_styles.allActivities__group__button} onClick={() => { }}>COMING SOON</RoundButton>
+                                    <RoundButton className={activities_styles.allActivities__group__button} onClick={() => { }}>
+                                        <T keyName="common.coming_soon" />
+                                    </RoundButton>
                                 </div>
                             </div>
                         </div>
@@ -226,27 +228,27 @@ export default function Home() {
                         <div className={activities_styles.allActivities__columns__right}>
 
                             <div className={activities_styles.allActivities__group3}>
-                                <div className={activities_styles.allActivities__group__events}>events</div>
-                                <div className={activities_styles.allActivities__group__title}>Study Groups</div>
-                                <div className={activities_styles.allActivities__group__text}>HKN members and PhD students will
-                                    help you with whatever concept you
-                                    might be struggling with
+                                <div className={activities_styles.allActivities__group__events}><T keyName="home.activities.group3_kicker" /></div>
+                                <div className={activities_styles.allActivities__group__title}><T keyName="home.activities.group3_title" /></div>
+                                <div className={activities_styles.allActivities__group__text}>
+                                    <T keyName="home.activities.group3_description" />
                                 </div>
 
                                 <div className={activities_styles.allActivities__group3__imgcont1}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/Discover_2.jpeg'} alt={'discover1'} />
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/Discover_2.jpeg'} alt={t('home.activities.discover_1_alt')} />
                                 </div>
                                 <div className={activities_styles.allActivities__group3__imgcont2}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/FormazioneInternaReply.jpeg'} alt={'discover2'} style={{ objectPosition: "75% 100%" }} />
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/FormazioneInternaReply.jpeg'} alt={t('home.activities.discover_2_alt')} style={{ objectPosition: "75% 100%" }} />
                                 </div>
                                 <div className={activities_styles.allActivities__group3__imgcont3}>
-                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/Discover_3.jpeg'} alt={'discover1'} />
+                                    <img className={activities_styles.allActivities__group__img} src={'/Activities/Activities/Discover_3.jpeg'} alt={t('home.activities.discover_1_alt')} />
                                 </div>
 
                                 <div className={activities_styles.allActivities__group3__discover}>
-                                    Discover
-                                    <RoundButton className={activities_styles.allActivities__group__button} onClick={() => router.push('/Activities/StudyGroups')}>study
-                                        groups</RoundButton>
+                                    <T keyName="common.discover" />
+                                    <RoundButton className={activities_styles.allActivities__group__button} onClick={() => router.push('/Activities/StudyGroups')}>
+                                        <T keyName="home.activities.group3_button" />
+                                    </RoundButton>
                                 </div>
                             </div>
                         </div>
@@ -256,11 +258,12 @@ export default function Home() {
 
 
             <div className={styles.applyCard}>
-                <text className={styles.textAreYouReady}>ARE YOU READY?</text>
-                <text className={styles.textJoinOurChapter}>Join Our Chapter &</text>
-                <text className={styles.textJoinOurChapter}>Become The Next HKNuer</text>
-                <RoundButton className={`darkButton ${styles.buttonJoinUs}`} onClick={() => router.push('/JoinUs')}>JOIN
-                    US</RoundButton>
+                <text className={styles.textAreYouReady}><T keyName="home.apply.kicker" /></text>
+                <text className={styles.textJoinOurChapter}><T keyName="home.apply.title_1" /></text>
+                <text className={styles.textJoinOurChapter}><T keyName="home.apply.title_2" /></text>
+                <RoundButton className={`darkButton ${styles.buttonJoinUs}`} onClick={() => router.push('/JoinUs')}>
+                    <T keyName="common.join_us" />
+                </RoundButton>
             </div>
 
         </Layout>

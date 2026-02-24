@@ -10,6 +10,13 @@ const nextConfig = {
       },
     ],
   },
+  
+  i18n: {
+    locales: ['en', 'it'],
+    localeDetection: false,
+    defaultLocale: 'en',
+  },
+  distDir: process.env.NEXT_BUILD_DIR || '.next',
 }
 
 module.exports = nextConfig
