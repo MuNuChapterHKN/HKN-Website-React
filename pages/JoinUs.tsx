@@ -35,7 +35,7 @@ export default function JoinUs() {
                     </div>
                     <div className={styles.halfWidth}>
                         <img alt={t('join_us.build_future.image_alt')} src="/JoinUs/hiring.png"
-                             width={"80%"} height={"auto"} loading="lazy" className={styles.headingImage}/>
+                            width={"80%"} height={"auto"} loading="lazy" className={styles.headingImage} />
                     </div>
                 </section>
 
@@ -110,7 +110,7 @@ export default function JoinUs() {
                             <li className={styles.requirementPoint}><T keyName="join_us.requirements.master.avg_27" /></li>
                         </ul>
                         <p className={styles.additionalRequirement}>
-                            <T keyName="join_us.requirements.fluency_note_pre" /> <span onClick={openCoursesModal} style={{ cursor: 'pointer', color: '#AEB3B9'}}><T keyName="join_us.requirements.fluency_note_link" /></span> <T keyName="join_us.requirements.fluency_note_post" />
+                            <T keyName="join_us.requirements.fluency_note_pre" /> <span onClick={openCoursesModal} style={{ cursor: 'pointer', color: '#AEB3B9' }}><T keyName="join_us.requirements.fluency_note_link" /></span> <T keyName="join_us.requirements.fluency_note_post" />
                         </p>
                     </div>
                 </section>
@@ -172,14 +172,21 @@ export default function JoinUs() {
                 </section>
 
                 {/* Submission form */}
-                {featureFlags[Feature.IsRecruitmentOpen] ?
-                    <SubmissionForm/>
-                    :
+                {featureFlags[Feature.IsRecruitmentOpen] ? (
+                    <>
+                        <p className={styles.formPreamble}>IF WE CONVINCED YOU...</p>
+                        <div className={styles.applyCta}>
+                            <a className={styles.applyButton} href={process.env.NEXT_PUBLIC_HKRECRUITMENT_APPLY_URL} target="_blank" rel="noopener noreferrer">
+                                <T keyName="common.apply" />
+                            </a>
+                        </div>
+                    </>
+                ) : (
                     <div className={styles.disabledJoinUs}>
                         <div className={styles.disabledJoinUs__text}><T keyName="join_us.closed.line1" /></div>
                         <div className={styles.disabledJoinUs__text}><T keyName="join_us.closed.line2" /></div>
                     </div>
-                }
+                )}
             </main>
         </Layout>
     )

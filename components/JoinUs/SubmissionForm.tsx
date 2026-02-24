@@ -7,19 +7,23 @@ export type Degree = "Bachelor" | "Master" | "PhD";
 
 interface Errors {
     name?: string
+    surname?: string
     email?: string
     average?: string
     cv?: string
     studyPlan?: string
+    italianLevel?: string
 }
 
 export default function SubmissionForm() {
     const featureFlags = useContext(FeatureFlagsContext);
     const [acceptGDPR, setAcceptGDPR] = useState(false);
     const [name, setName] = useState('');
+    const [surname, setSurname] = useState('');
     const [email, setEmail] = useState('');
     const [average, setAverage] = useState<number>();
     const [degree, setDegree] = useState<Degree>('Bachelor');
+    const [italianLevel, setItalianLevel] = useState('');
     const courses = useMemo(() => coursesByDegree[degree] as string[], [degree])
     const [course, setCourse] = useState(courses[0]);
     const [area, setArea] = useState('');
@@ -42,7 +46,13 @@ export default function SubmissionForm() {
             errors.acceptGDPR = 'Please, accept GDPR terms';
 
         if (!name)
-            errors.name = 'Please, provide your full name';
+            errors.name = 'Please, provide your name';
+
+        if (!surname)
+            errors.surname = 'Please, provide your surname';
+
+        if (!italianLevel)
+            errors.italianLevel = 'Please, select your Italian level';
 
         if (!average)
             errors.average = 'Provide your average';
@@ -89,12 +99,29 @@ export default function SubmissionForm() {
         setSubmissionError(null);
 
         try {
-            const formData = new FormData(event.currentTarget);
+            const formData = new FormData();
             const cv = (document.getElementById('cv') as HTMLInputElement).files?.[0] as File;
             const studyPlan = (document.getElementById('studyPlan') as HTMLInputElement).files?.[0] as File;
-            formData.set('cv', cv);
-            formData.set('studyPlan', studyPlan);
-            const response = await fetch('/api/application', {
+            
+            // Mappo i campi per il nuovo endpoint /api/applicants
+            formData.append('name', name);
+            formData.append('surname', surname);
+            formData.append('email', email);
+            formData.append('gpa', average?.toString() || '');
+            // Converto degree da Bachelor/Master/PhD a bsc/msc/phd
+            const degreeMapping: Record<Degree, string> = {
+                'Bachelor': 'bsc',
+                'Master': 'msc',
+                'PhD': 'phd'
+            };
+            formData.append('degreeLevel', degreeMapping[degree]);
+            formData.append('course', course);
+            formData.append('courseArea', area);
+            formData.append('italianLevel', italianLevel);
+            formData.append('cvFile', cv);
+            formData.append('spFile', studyPlan);
+            
+            const response = await fetch('/api/applicants', {
                 method: 'POST',
                 body: formData,
             });
@@ -158,10 +185,18 @@ export default function SubmissionForm() {
                 <p className={styles.formPreamble}>IF WE CONVINCED YOU...</p>
                 <form className={`${styles.submissionForm} ${styles.gradientBackground}`} onSubmit={onSubmit}>
 
-                    <label htmlFor="name" className={styles.formLabel}>Name & Surname</label>
-                    <input type="text" id="name" name="name" className={styles.formInput} value={name} maxLength={100}
-                        onChange={(e) => updateField(e, "name", setName)} required={true} />
-                    {errors.name && <p className={styles.errorMessage}>{errors.name}</p>}
+                    <div className={`${styles.halfWidth} ${styles.paddingRight}`}>
+                        <label htmlFor="name" className={styles.formLabel}>Name</label>
+                        <input type="text" id="name" name="name" className={styles.formInput} value={name} maxLength={100}
+                            onChange={(e) => updateField(e, "name", setName)} required={true} />
+                        {errors.name && <p className={styles.errorMessage}>{errors.name}</p>}
+                    </div>
+                    <div className={`${styles.halfWidth} ${styles.paddingLeft}`}>
+                        <label htmlFor="surname" className={styles.formLabel}>Surname</label>
+                        <input type="text" id="surname" name="surname" className={styles.formInput} value={surname} maxLength={100}
+                            onChange={(e) => updateField(e, "surname", setSurname)} required={true} />
+                        {errors.surname && <p className={styles.errorMessage}>{errors.surname}</p>}
+                    </div>
 
                     <div className={`${styles.halfWidth} ${styles.paddingRight}`}>
                         <label htmlFor="average" className={styles.formLabel}>Weighted Average</label>
@@ -210,6 +245,23 @@ export default function SubmissionForm() {
                     <input id="area" name="area" className={styles.formInput} value={area} maxLength={400}
                         onChange={(e) => setArea(e.target.value)}
                         placeholder={'e.g. AI, Quantum Engineering, Nanotechnologies for ICTs...'} />
+
+                    <label htmlFor="italianLevel" className={styles.formLabel}>Italian Language Level</label>
+                    <select name="italianLevel" id="italianLevel" className={styles.formInput} value={italianLevel} required={true}
+                        onChange={(e) => {
+                            resetError('italianLevel');
+                            setItalianLevel(e.target.value);
+                        }}>
+                        <option value="">Select your level...</option>
+                        <option value="a1">A1</option>
+                        <option value="a2">A2</option>
+                        <option value="b1">B1</option>
+                        <option value="b2">B2</option>
+                        <option value="c1">C1</option>
+                        <option value="c2">C2</option>
+                        <option value="native">Native</option>
+                    </select>
+                    {errors.italianLevel && <p className={styles.errorMessage}>{errors.italianLevel}</p>}
 
                     <div className={styles.fileInputContainer}>
                         <label htmlFor="cv" className={`${styles.formLabel} ${styles.noWidth}`}>

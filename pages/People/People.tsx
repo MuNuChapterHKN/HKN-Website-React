@@ -12,10 +12,10 @@ export default function People() {
     const [isMobile, setIsMobile] = useState(false);
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 800); 
+            setIsMobile(window.innerWidth <= 800);
         };
 
-        handleResize(); 
+        handleResize();
         window.addEventListener('resize', handleResize);
 
         return () => window.removeEventListener('resize', handleResize);
@@ -216,14 +216,14 @@ function TeamPopUp({ index, visible, disablePopUp, teams, isMobile }: { index: n
                 }
             };
 
-            updateNumPeople(); 
-            window.addEventListener('resize', updateNumPeople); 
+            updateNumPeople();
+            window.addEventListener('resize', updateNumPeople);
 
             return () => {
-                window.removeEventListener('resize', updateNumPeople); 
+                window.removeEventListener('resize', updateNumPeople);
             };
         };
-        handleResize(); 
+        handleResize();
 
         window.addEventListener('resize', handleResize);
 
@@ -290,7 +290,7 @@ function TeamPopUp({ index, visible, disablePopUp, teams, isMobile }: { index: n
 
                             <div className={styles.managerTitleLink}>
                                 <div className={styles.managerTitle}>
-                                    <T keyName="people.popup.manager_role"/>{team.managers.length}
+                                    <T keyName="people.popup.manager_role" params={{ count: team.managers.length }} />
                                 </div>
                                 <div className={styles.managersLinkedin}>
                                     {team.managers.map(
@@ -314,7 +314,7 @@ function TeamPopUp({ index, visible, disablePopUp, teams, isMobile }: { index: n
                     </div>
 
                     <div className={styles.teamHeaderRight}>
-                        <h2 className={styles.teamPopUp__Title}><T keyName="people.popup.title"/>{team.area}</h2>
+                        <h2 className={styles.teamPopUp__Title}><T keyName="people.popup.title" params={{ area: team.area }} /></h2>
                         <text className={styles.teamPopUp__Description}>{team.description}</text>
                     </div>
                 </div>
