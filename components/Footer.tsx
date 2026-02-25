@@ -15,7 +15,7 @@ const Footer = () => {
 
             <div className={styles.column}>
                 <div className={styles.column__title}>Powered By  Mu Nu Chapter of IEEE-Eta Kappa Nu</div>
-                <div className={styles.column__subtitle}>Copyright © 2025 All rights reserved</div>
+                <div className={styles.column__subtitle}>Copyright © {new Date().getFullYear()}  All rights reserved</div>
 
                 <div className={styles.column__contact}>
                     <a className={styles.column__contact__item} href="https://www.polito.it/">
