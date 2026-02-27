@@ -7,6 +7,8 @@ import { FeatureFlagsContext, Feature } from './_app';
 import { CoursesModal } from '../components/JoinUs/CoursesModal';
 import { T, useTranslate } from "@tolgee/react";
 
+const APPLY_URL = process?.env?.NEXT_PUBLIC_HKRECRUITMENT_APPLY_URL ?? 'https://recruitment.hknpolito.org/recruitment/apply';
+
 export default function JoinUs() {
     const featureFlags = useContext(FeatureFlagsContext);
     const [modalVisible, setModalVisible] = useState(false);
@@ -176,7 +178,7 @@ export default function JoinUs() {
                     <>
                         <p className={styles.formPreamble}>IF WE CONVINCED YOU...</p>
                         <div className={styles.applyCta}>
-                            <a className={styles.applyButton} href={process.env.NEXT_PUBLIC_HKRECRUITMENT_APPLY_URL} target="_blank" rel="noopener noreferrer">
+                            <a className={styles.applyButton} href={APPLY_URL} target="_blank" rel="noopener noreferrer">
                                 <T keyName="common.apply" />
                             </a>
                         </div>
