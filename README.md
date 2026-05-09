@@ -10,13 +10,14 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-
 ## Docker build
 
 ```bash
 docker build -t nextjs-docker .
 ```
- Than run the docker image:
+
+Than run the docker image:
+
 ```bash
 docker run -p 3000:3000 nextjs-docker
 ```

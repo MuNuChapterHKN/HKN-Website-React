@@ -1,14 +1,14 @@
-import nodemailer from "nodemailer";
+import nodemailer from 'nodemailer';
 
 export async function sendEmail(
   subject: string,
   text: string,
-  to: string = "recruitment@hknpolito.org",
+  to: string = 'recruitment@hknpolito.org',
   attachments: { filename: string; path: string }[] = []
 ): Promise<void> {
   const transporter = nodemailer.createTransport({
     // @ts-ignore
-    service: "gmail",
+    service: 'gmail',
     port: 465,
     secure: true,
     auth: {
@@ -20,8 +20,8 @@ export async function sendEmail(
       accessToken: process.env.ACCESS_TOKEN,
     },
     tls: {
-        rejectUnauthorized: false
-    }
+      rejectUnauthorized: false,
+    },
   });
 
   const mailOptions = {

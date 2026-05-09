@@ -1,0 +1,5 @@
+allowBuilds:
+  '@parcel/watcher': false
+  '@prisma/engines': false
+  prisma: false
+  sharp: false

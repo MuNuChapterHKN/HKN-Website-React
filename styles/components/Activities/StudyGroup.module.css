@@ -1,193 +1,189 @@
 .card {
-    width: 100%;
-    border-radius: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px 40px 40px 40px ;
-    margin: 25px 0;
-    background: linear-gradient(180deg, #F2F2F2 7.14%, #B8BBBF 55.05%, #929AA6 101.93%);
-    color: #061E33;
+  width: 100%;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 40px 40px 40px;
+  margin: 25px 0;
+  background: linear-gradient(180deg, #f2f2f2 7.14%, #b8bbbf 55.05%, #929aa6 101.93%);
+  color: #061e33;
 }
 
 .card-body {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .left {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 33%;
-    height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 33%;
+  height: fit-content;
 }
 
 .name {
-    font-size: 3em;
-    margin-top: 20px;
-    margin-bottom: 0px;
-    font-weight: 700;
-    line-height: 100%; /* 67px */
-    white-space: wrap;
+  font-size: 3em;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-weight: 700;
+  line-height: 100%; /* 67px */
+  white-space: wrap;
 }
 
 .image {
-    width: 100%;
-    height: auto;
-    border-radius: 20px;
-    object-fit: cover;
-    min-height: 18vw;
-    max-height: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  min-height: 18vw;
+  max-height: 300px;
 }
 
 .center {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 64%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 64%;
 }
 
 .location {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: 5px;
-    margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .iconLocation {
-    height: 55px;
+  height: 55px;
 }
 
 .textLocation {
-    color: #F2F2F2;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Outfit, sans-serif;
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 100%;
-    text-transform: capitalize;
-    margin-bottom: 5px;
+  color: #f2f2f2;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Outfit, sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: capitalize;
+  margin-bottom: 5px;
 }
 
 .buttonTelegram {
-    padding: 20px 35px;
-    background: #061E33;
-    margin-top: 20px;
-    margin-left: 22px;
-    color: #F2F2F2;
-    font-family: Inter, sans-serif;
-    font-size: 24px;
-    font-weight: 600;
-    text-transform: uppercase;
-    /* border: none; */
+  padding: 20px 35px;
+  background: #061e33;
+  margin-top: 20px;
+  margin-left: 22px;
+  color: #f2f2f2;
+  font-family: Inter, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  /* border: none; */
 }
 
-
 .right {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 34%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 34%;
 }
 
 .description {
-    /*font-family: Outfit, sans-serif;*/
-    /*font-size: 60px;*/
-    /*font-weight: 900;*/
-    text-align: center;
-    font-family: Inter, sans-serif;
-    font-size: 1.5em;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  /*font-family: Outfit, sans-serif;*/
+  /*font-size: 60px;*/
+  /*font-weight: 900;*/
+  text-align: center;
+  font-family: Inter, sans-serif;
+  font-size: 1.5em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .right,
 .center {
-    margin-top: 70px;
-    vertical-align: bottom;
+  margin-top: 70px;
+  vertical-align: bottom;
 }
 
 @media screen and (max-width: 768px) {
-    .card {
-        padding: 20px 20px 40px 20px;
-    }
+  .card {
+    padding: 20px 20px 40px 20px;
+  }
 
-    .card-body {
-        flex-direction: column;
-    }
+  .card-body {
+    flex-direction: column;
+  }
 
-    .left {
-        width: 100%;
-    }
+  .left {
+    width: 100%;
+  }
 
-    .center {
-        width: 100%;
-    }
+  .center {
+    width: 100%;
+  }
 
-    .right {
-        width: 100%;
-    }
+  .right {
+    width: 100%;
+  }
 
-    .name {
-        font-size: 2em;
-        text-align: center;
-    }
+  .name {
+    font-size: 2em;
+    text-align: center;
+  }
 
-    .image {
-        min-height: 30vw;
-    }
+  .image {
+    min-height: 30vw;
+  }
 
-    .description {
-        font-size: 1.25em;
-    }
+  .description {
+    font-size: 1.25em;
+  }
 
-    .buttonTelegram {
-        padding: 15px 25px;
-        font-size: 1.25em;
-    }
+  .buttonTelegram {
+    padding: 15px 25px;
+    font-size: 1.25em;
+  }
 
-    .textLocation {
-        font-size: 1.6em;
-    }
+  .textLocation {
+    font-size: 1.6em;
+  }
 
-    .iconLocation {
-        height: 40px;
-    }
-
+  .iconLocation {
+    height: 40px;
+  }
 }
 
-
 @media screen and (max-width: 480px) {
-    .name {
-        font-size: 2em;
-    }
+  .name {
+    font-size: 2em;
+  }
 
-    .image {
-        min-height: 40vw;
-    }
+  .image {
+    min-height: 40vw;
+  }
 
-    .description {
-        font-size: 1em;
-    }
+  .description {
+    font-size: 1em;
+  }
 
-    .buttonTelegram {
-        padding: 10px 20px;
-        font-size: 16px;
-    }
+  .buttonTelegram {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
 
-    .textLocation {
-        font-size: 1.3em;
-    }
+  .textLocation {
+    font-size: 1.3em;
+  }
 
-    .iconLocation {
-        height: 30px;
-    }
-
+  .iconLocation {
+    height: 30px;
+  }
 }

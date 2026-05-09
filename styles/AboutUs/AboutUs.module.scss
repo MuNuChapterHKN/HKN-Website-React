@@ -1,7 +1,7 @@
 // PATCH RESPONSIVE - Rimuove colonna blu a destra
 .vision__card {
   @media (max-width: 1000px) {
-    padding: 2rem; 
+    padding: 2rem;
     width: 100%;
     box-sizing: border-box;
   }
@@ -24,7 +24,9 @@
 }
 
 // Se usi un layout wrapper globale
-.layout, .wrapper, .main {
+.layout,
+.wrapper,
+.main {
   @media (max-width: 1000px) {
     width: 100%;
     overflow-x: hidden;
@@ -38,7 +40,7 @@
   margin-top: 70px;
 
   &__title {
-    color: #FFF;
+    color: #fff;
     font-size: 40px;
     font-weight: 700;
     text-transform: capitalize;
@@ -53,9 +55,9 @@
     align-items: flex-start;
     position: relative;
     width: 100%;
-    background: linear-gradient(238deg, #FFF 55.73%, rgba(187, 187, 187, 0.73) 135.34%);
+    background: linear-gradient(238deg, #fff 55.73%, rgba(187, 187, 187, 0.73) 135.34%);
     border-radius: 40px;
-    color: #061E33;
+    color: #061e33;
     padding: 3rem 45% 3rem 3rem;
     overflow: hidden;
 
@@ -171,7 +173,11 @@
           width: 150%;
           height: 33vw;
           border-radius: 100%;
-          background: linear-gradient(145deg, rgba(187, 187, 187, 0.00) 28.64%, rgba(187, 187, 187, 0.32) 79.41%);
+          background: linear-gradient(
+            145deg,
+            rgba(187, 187, 187, 0) 28.64%,
+            rgba(187, 187, 187, 0.32) 79.41%
+          );
         }
       }
     }
@@ -268,7 +274,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100vw;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 255, 255, 0.50) 100%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.5) 100%);
   margin: 100px 0;
   @media (max-width: 1000px) {
     margin: 50px 0;
@@ -283,7 +289,7 @@
     justify-content: center;
     align-items: center;
     width: 30vw;
-    padding: 40px 0; 
+    padding: 40px 0;
   }
 
   &__number {
@@ -300,8 +306,8 @@
 
   &__container_img {
     width: 6vw;
-    height: 6vw;  
-}
+    height: 6vw;
+  }
 
   &__img {
     object-fit: cover;
@@ -349,7 +355,6 @@
   width: 250px;
   box-shadow: 0 10px 4px 0 rgba(0, 0, 0, 0.25);
 }
-
 
 .section1_image3 {
   top: 320px;

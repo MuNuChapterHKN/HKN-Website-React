@@ -1,10 +1,10 @@
-import TelegramBot from "node-telegram-bot-api";
-import fs from "fs";
-import { handleError } from "./application";
+import TelegramBot from 'node-telegram-bot-api';
+import fs from 'fs';
+import { handleError } from './application';
 
 const token = process.env.TELEGRAM_TOKEN;
 const chatId = process.env.TELEGRAM_CHAT_ID;
-const filePath = process.env.COUNTER_FILE_PATH ?? "HKN_APPLY_COUNTER.txt";
+const filePath = process.env.COUNTER_FILE_PATH ?? 'HKN_APPLY_COUNTER.txt';
 const threadId = process.env.TELEGRAM_THREAD_ID ?? 1;
 
 export async function shareNewApply(name: string) {
@@ -13,11 +13,11 @@ export async function shareNewApply(name: string) {
     counter = readCounter() + 1;
     updateCounter(counter);
   } catch (e) {
-    handleError(e, "Error retrieving count");
+    handleError(e, 'Error retrieving count');
   }
-  const counterMessage = counter ?? "Unknown";
-  const emoji1 = getRandomEmoji(["🔥", "✨", "👾"]);
-  const emoji2 = getRandomEmoji(["🥳", "🤩", "😍"]);
+  const counterMessage = counter ?? 'Unknown';
+  const emoji1 = getRandomEmoji(['🔥', '✨', '👾']);
+  const emoji2 = getRandomEmoji(['🥳', '🤩', '😍']);
   const message = `${emoji1} Nuova Candidatura! ${emoji2}\nNome: ${name}\nCount: ${counterMessage}`;
   await sendMessage(message);
 }
@@ -28,8 +28,7 @@ export async function sendApplyFailedMessage(stage: string, applicant: string) {
 }
 
 export async function sendMessage(message: string) {
-  if (!token || !chatId) 
-    throw new Error("Telegram APIs not configured.");
+  if (!token || !chatId) throw new Error('Telegram APIs not configured.');
   const bot = new TelegramBot(token, { polling: false });
   await bot.sendMessage(chatId, message, { message_thread_id: Number(threadId) });
 }
@@ -37,7 +36,7 @@ export async function sendMessage(message: string) {
 function readCounter(): number {
   try {
     if (isFileOlderThanNDays(filePath, 30)) return 0;
-    const data = parseInt(fs.readFileSync(filePath, "utf-8"));
+    const data = parseInt(fs.readFileSync(filePath, 'utf-8'));
     return isNaN(data) ? 0 : data;
   } catch (error) {
     return 0; // File doesn't exist or couldn't be read

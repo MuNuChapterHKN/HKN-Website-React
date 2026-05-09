@@ -1,5 +1,5 @@
 .title {
-  color: #F2F2F2;
+  color: #f2f2f2;
   font-weight: 600;
   font-size: 60px;
   line-height: 60px;
@@ -10,14 +10,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(120deg, #FFFFFF 0%, #E4E4E4 60%, #D1D1D1 100%);
+  background: linear-gradient(120deg, #ffffff 0%, #e4e4e4 60%, #d1d1d1 100%);
   border-radius: 30px;
   margin: 30px 0;
   padding: 30px;
   width: 80%;
 
   &__year {
-    color: #0B3151;
+    color: #0b3151;
     font-weight: 700;
     font-size: 45px;
     line-height: 52px;
@@ -32,75 +32,71 @@
   }
 }
 
-
 .boardMember {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 60px 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 60px 0 20px 0;
 
-    &__imageContainer {
-        width: 220px;
-        height: 230px;
-        border-radius: 20px;
-        background: #B8BBBF;
-        position: relative;
+  &__imageContainer {
+    width: 220px;
+    height: 230px;
+    border-radius: 20px;
+    background: #b8bbbf;
+    position: relative;
 
-        &__mask {
-          position:absolute;
-            top: -60px;
-            left: 0;
-            width: 100%;
-          height: calc(100% + 60px);
-          overflow: hidden;
-          border-radius: 20px;
-        }
-
-        &__image {
-          position: absolute;
-            top: 0;
-            left: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-            filter: grayscale(100%);
-        }
-
-        &__placeholder {
-          position: absolute;
-          top: 175px;
-          transform: translateY(-50%);
-          width: 90%;
-          left: 0;
-          margin-left: 5%;
-          object-fit: cover;
-          filter: grayscale(100%) opacity(0.5);
-        }
-
+    &__mask {
+      position: absolute;
+      top: -60px;
+      left: 0;
+      width: 100%;
+      height: calc(100% + 60px);
+      overflow: hidden;
+      border-radius: 20px;
     }
 
-    &__name {
-        color: #0B3151;
-        font-weight: 600;
-        font-size: 25px;
-        margin: 10px 0 0 0;
+    &__image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(100%);
     }
 
-    &__role {
-        color: #0B3151;
-        font-weight: 500;
-        font-size: 15px;
-      line-height: 15px;
-      text-transform: uppercase;
+    &__placeholder {
+      position: absolute;
+      top: 175px;
+      transform: translateY(-50%);
+      width: 90%;
+      left: 0;
+      margin-left: 5%;
+      object-fit: cover;
+      filter: grayscale(100%) opacity(0.5);
     }
+  }
+
+  &__name {
+    color: #0b3151;
+    font-weight: 600;
+    font-size: 25px;
+    margin: 10px 0 0 0;
+  }
+
+  &__role {
+    color: #0b3151;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 15px;
+    text-transform: uppercase;
+  }
 }
 
 @media (max-width: 960px) {
-
   .pastboard {
     &__members {
       grid-template-columns: repeat(1, 1fr);
     }
   }
 }
-

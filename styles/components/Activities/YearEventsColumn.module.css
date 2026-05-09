@@ -1,194 +1,188 @@
 .yearEventsColumn {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 70%;
-    margin: 0 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 70%;
+  margin: 0 10px;
 }
 
 .yearCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    border-radius: 25px;
-    background: linear-gradient(268deg, #FFF 71.01%, #B8BBBF 145.39%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border-radius: 25px;
+  background: linear-gradient(268deg, #fff 71.01%, #b8bbbf 145.39%);
 }
 
 .year {
-    color: black;
-    font-weight: 600;
-    font-size: 45px;
+  color: black;
+  font-weight: 600;
+  font-size: 45px;
 }
 
 .eventRow {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .eventLink {
-    width: 30%;
-    margin: 1rem 0;
+  width: 30%;
+  margin: 1rem 0;
 }
 
 .eventImage {
-    border-radius: 20px;
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-    object-position: center; 
+  border-radius: 20px;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  object-position: center;
 }
 
 .divider {
-    width: 5px;
-    margin: 0 15px;
+  width: 5px;
+  margin: 0 15px;
 }
 
 .eventCard {
-    border-radius: 20px;
-    background: linear-gradient(to left, #061E33 35%, #124877);
-    width: calc(70% - 35px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 15px 0;
-    padding: 25px;
-    position: relative;
+  border-radius: 20px;
+  background: linear-gradient(to left, #061e33 35%, #124877);
+  width: calc(70% - 35px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 15px 0;
+  padding: 25px;
+  position: relative;
 }
 
 .eventCard:nth-child(1):after {
-    content: '';
-    width: 5px;
-    right: -20px;
-    position: absolute;
-    height: calc(100% + 30px);
-    background-color: white;
+  content: '';
+  width: 5px;
+  right: -20px;
+  position: absolute;
+  height: calc(100% + 30px);
+  background-color: white;
 }
 
 .eventCard:nth-child(3)::before {
-    content: '';
-    width: 5px;
-    left: -20px;
-    position: absolute;
-    height: calc(100% + 30px);
-    background-color: white;
+  content: '';
+  width: 5px;
+  left: -20px;
+  position: absolute;
+  height: calc(100% + 30px);
+  background-color: white;
 }
 
 .eventLocation,
 .eventDate {
-    font-weight: 400;
-    font-size: 17px;
-    margin-bottom: 8px;
-    width: 100%;
+  font-weight: 400;
+  font-size: 17px;
+  margin-bottom: 8px;
+  width: 100%;
 }
 
 .eventLocation {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .eventTitle {
-    font-weight: 600;
-    font-size: 30px;
-    margin: 0 0 20px 0;
-    width: 100%;
+  font-weight: 600;
+  font-size: 30px;
+  margin: 0 0 20px 0;
+  width: 100%;
 }
 
 .dividerContainer {
-    width: 100%;
-    padding: 0 calc(30% + 15px);
+  width: 100%;
+  padding: 0 calc(30% + 15px);
 }
 
 .horizontalDivider {
-    width: 100%;
-    align-self: center;
-    justify-self: center;
-    height: 5px;
-    background-color: white;
+  width: 100%;
+  align-self: center;
+  justify-self: center;
+  height: 5px;
+  background-color: white;
 }
 
 .dividerEnd {
-    bottom: 0;
-    position: absolute;
-    width: 5px;
-    height: 20px;
-    background-color: white;
+  bottom: 0;
+  position: absolute;
+  width: 5px;
+  height: 20px;
+  background-color: white;
 }
 @media (max-width: 768px) {
+  .year {
+    font-size: 35px;
+  }
 
+  .eventTitle {
+    font-size: 24px;
+  }
 
-    .year {
-        font-size: 35px;
-    }
+  .eventLocation,
+  .eventDate {
+    font-size: 15px;
+  }
 
-    .eventTitle {
-        font-size: 24px;
-    }
+  .horizontalDivider {
+    height: 3px;
+  }
 
-    .eventLocation,
-    .eventDate {
-        font-size: 15px;
-    }
+  .yearEventsColumn {
+    width: 100%;
+  }
 
+  .yearCard {
+    width: 70%;
+  }
 
-    .horizontalDivider {
-        height: 3px;
-    }
+  .eventImage {
+    height: auto;
+  }
 
-    .yearEventsColumn {
-        width: 100%;
-    }
-
-    .yearCard {
-        width:70%;
-    }
-
-    .eventImage {
-        height: auto;
-    }
-
-    .eventLink {
-        display: flex;
-        align-items: center;
-    }
+  .eventLink {
+    display: flex;
+    align-items: center;
+  }
 }
 
 @media (max-width: 480px) {
+  .year {
+    font-size: 28px;
+  }
 
+  .eventTitle {
+    font-size: 20px;
+  }
 
-    .year {
-        font-size: 28px;
-    }
+  .eventLocation,
+  .eventDate {
+    font-size: 13px;
+  }
 
-    .eventTitle {
-        font-size: 20px;
-    }
+  .eventCard {
+    padding: 10px;
+    min-height: 175px;
+  }
 
-    .eventLocation,
-    .eventDate {
-        font-size: 13px;
-    }
+  .horizontalDivider {
+    height: 5px;
+  }
 
-    .eventCard {
-        padding: 10px;
-        min-height: 175px
-    }
+  .yearEventsColumn {
+    width: 100%;
+  }
 
-    .horizontalDivider {
-        height: 5px;
-    }
-
-    .yearEventsColumn {
-        width: 100%;
-    }
-
-    .yearCard {
-        width:70%;
-    }
+  .yearCard {
+    width: 70%;
+  }
 }
-
