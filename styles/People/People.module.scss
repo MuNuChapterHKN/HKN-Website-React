@@ -20,13 +20,22 @@
 }
 
 .managementArea, .joinOurTeams {
-    width: 400px;
+    width: min(100%, 700px);
     color: #F2F2F2;
     text-align: center;
     font-family: Outfit;
     font-size: 60px;
     font-weight: 700;
     text-transform: capitalize;
+}
+
+.managementArea {
+    line-height: 1.1;
+}
+
+.boardGrid,
+.teamsGrid {
+    gap: 2rem;
 }
 
 .boardGrid, .teamsGrid, .discoverContainer {
@@ -42,7 +51,7 @@
     position: relative;
     flex-direction: column;
     align-items: center;
-
+    max-width: 320px;
 }
 
 .overlayContainer {
@@ -731,7 +740,7 @@ $member-margin: 30px;
     }
 
     .managementArea, .joinOurTeams {
-        font-size: 32px;
+        font-size: clamp(2rem, 7vw, 32px);
         width: 100%;
     }
     
@@ -768,7 +777,7 @@ $member-margin: 30px;
         overflow: visible;
         flex-wrap: wrap;
         gap: 8px;
-        padding: 5px 1;
+        padding: 5px 0;
       }
       
     .teamRow,
@@ -798,5 +807,131 @@ $member-margin: 30px;
     }
 }
 
+@media (max-width: 800px) {
+  .boardContainer,
+  .teamsContainer {
+    width: 100%;
+    padding-inline: 20px;
+  }
 
+  .boardGrid,
+  .teamsGrid {
+    width: 100%;
+  }
 
+  .boardMember {
+    flex: 1 1 100%;
+    max-width: 320px;
+  }
+
+  .boardImageContainer {
+    height: auto;
+  }
+
+  .boardCard {
+    bottom: 72px;
+  }
+
+  .team {
+    width: 100%;
+    max-width: 420px;
+    margin: 1rem 0;
+    overflow: hidden;
+  }
+
+  .teamRespImage {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    left: 0;
+  }
+
+  .teamTextBox {
+    width: 100%;
+  }
+
+  .teamPopUp {
+    width: calc(100vw - 32px);
+    max-height: calc(100dvh - 32px);
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .teamHeader {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .teamHeaderLeft {
+    min-width: 0;
+  }
+
+  .teamHeaderRight {
+    padding-left: 0;
+  }
+
+  .managerName {
+    white-space: normal;
+    text-align: center;
+  }
+
+  .managerTitleLink {
+    justify-content: center;
+  }
+
+  .teamContainer {
+    width: 100% !important;
+    padding: 0;
+  }
+
+  .teamMember {
+    flex: 1 1 30%;
+    min-width: 90px;
+    max-width: 120px;
+    margin: 8px 4px;
+  }
+
+  .memberName {
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+
+  .memberRoleLink {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 430px) {
+  .theBoard,
+  .theTeams {
+    font-size: 22px;
+  }
+
+  .managementArea,
+  .joinOurTeams {
+    font-size: 30px;
+  }
+
+  .teamPopUp {
+    width: calc(100vw - 20px);
+    padding: 16px;
+  }
+
+  .managerPopUpImageContainer {
+    width: 110px;
+    height: 110px;
+  }
+
+  .teamMember {
+    min-width: 82px;
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 800px) {
+    .boardContainer,
+    .teamsContainer {
+        margin-top: 0;
+    }
+}

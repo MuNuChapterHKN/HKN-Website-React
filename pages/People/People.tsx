@@ -40,6 +40,12 @@ export default function People() {
         fetchData();
     }, []);
 
+    useEffect(() => {
+        return () => {
+            document.body.style.overflow = 'auto';
+        };
+    }, []);
+
     const router = useRouter();
     const [boardIndex, setBoardIndex] = useState(0);
     const [teamIndex, setTeamIndex] = useState(0);
