@@ -1,24 +1,26 @@
 .logoContContainer {
-    width: 550px;
-    height: 550px;
+    width: min(550px, 42vw);
+    aspect-ratio: 1 / 1;
     perspective: 1000px;
     position: relative;
 }
 
-.logoContainer, .logoContainer2 {
+.logoContainer,
+.logoContainer2 {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
     height: 100%;
-    transition: transform 0.5s ease-in-out; /* Add transition for smooth animation */
-
-    @media (max-width: 780px) {
-        height: auto;
-    }
+    transition: transform 0.5s ease-in-out;
 }
 
 .logoContainer2 {
     top: 4px;
-    left: 0px;
+    left: 0;
+}
+
+@media screen and (max-width: 780px) {
+    .logoContContainer {
+        width: min(420px, 90vw);
+    }
 }

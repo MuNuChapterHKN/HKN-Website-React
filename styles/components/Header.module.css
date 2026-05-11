@@ -8,9 +8,12 @@
 }
 
 .topbarInner {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 4px 7%;
+    padding-inline: clamp(20px, 5vw, 72px);
+    padding-top: 4px;
+    padding-bottom: 4px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -44,31 +47,33 @@
 }
 
 .header {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: row;
-    align-items: center;
-    height: 84px;
     width: 100%;
-    background-color:#061E33;
+    height: 84px;
+    background-color: #061E33;
     z-index: 20;
     margin-top: 30px;
     margin-bottom: 16px;
 }
 
+.headerInner {
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding-inline: clamp(20px, 5vw, 72px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
 
 .logoTitle {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    padding-left: clamp(4vw, 8vw, 18vw);
-}
-
-@media (min-width: 1800px) {
-    .logoTitle {
-        padding-left: clamp(12vw, 16vw, 22vw);
-    }
+    padding-left: 0;
+    flex-shrink: 0;
 }
 
 .logo {
@@ -76,7 +81,7 @@
 }
 
 .title {
-    display:flex;
+    display: flex;
     flex-direction: column;
     height: 51px;
     justify-content: center;
@@ -86,16 +91,21 @@
 
 .menu {
     display: flex;
-    width: 55%;
-    justify-content: space-between;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(20px, 2vw, 40px);
     font-size: 1.08em;
     flex-direction: row;
-    padding-left: 5%;
+    padding-left: 0;
+    min-width: 0;
 }
 
-.active, .inactive {
+.active,
+.inactive {
     font-family: "Outfit", sans-serif;
-    margin: 0 10px;
+    margin: 0;
+    white-space: nowrap;
 }
 
 .active {
@@ -115,9 +125,9 @@
 .headerSpace {
     display: flex;
     justify-content: flex-end;
-    justify-self: flex-end;
-    padding-right: 5%;
-    flex:1;
+    align-items: center;
+    flex-shrink: 0;
+    padding-right: 0;
 }
 
 .joinUsButton {
@@ -129,6 +139,7 @@
     line-height: normal;
     text-transform: capitalize;
     border-width: 3px;
+    white-space: nowrap;
 }
 
 .menuItem {
@@ -148,6 +159,7 @@
     box-shadow: 0 8px 24px rgba(0,0,0,0.3);
     background: #f2f2f2;
     min-width: 180px;
+    z-index: 40;
 }
 
 .dropdown > li {
@@ -170,7 +182,6 @@
     background: #061E33;
     color: #f2f2f2;
 }
-
 
 .menu > .menuItem:hover > .dropdown,
 .dropdown:hover {
@@ -198,47 +209,67 @@
 }
 
 @media screen and (max-width: 960px) {
+    .header {
+        height: auto;
+        min-height: 84px;
+    }
+
+    .headerInner {
+        min-height: 84px;
+        height: auto;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
     .showMenu {
         fill: white;
         display: block;
-        margin-right: auto;
-        position: absolute;
-        top: 3.5rem;
-        right: 50px;
+        margin-left: auto;
+        cursor: pointer;
     }
 
-    .headerSpace,
+    .headerSpace {
+        display: none;
+    }
+
     .menu {
         display: none;
-        flex: 1;
+        order: 3;
+        flex-basis: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 14px;
+        padding: 16px 0 8px;
         text-align: center;
     }
 
-    .menu {
-        padding-right: 3rem;
-        padding-top: 2rem;
-    }
-
-    .header.open {
-        height: 11rem;
-        align-items: flex-start;
-    }
-
-    .dropdown {
-        left: auto;
-        right: auto;
-        top: auto;
-        margin-top: 4px;
-        box-shadow: none;
+    .menu.open {
+        display: flex;
     }
 
     .menuItem {
         justify-content: center;
         display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .headerSpace.open,
-    .menu.open {
+    .dropdown {
+        position: static;
+        display: none;
+        margin-top: 8px;
+        box-shadow: none;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 220px;
+    }
+
+    .dropdownOpen {
         display: block;
+    }
+
+    .dropdown > li {
+        text-align: center;
     }
 }
