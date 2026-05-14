@@ -392,3 +392,94 @@ export async function fetchRecruitment() {
 	}
 	return false;
 }
+
+export interface NotebookTranslation {
+    languages_code: string | { code: string };
+    program: string;
+}
+
+export interface NoteVersion {
+    id: number;
+    version: string;
+    href: string;
+    completed: boolean;
+    date_created: string;
+    date_updated: string;
+}
+
+export interface Notebook {
+    code: string;
+    name: string;
+    teacher: string;
+    program_level: string;
+    start_academic_year: string;
+    semester: number;
+    translations: NotebookTranslation[];
+    notes: NoteVersion[];
+}
+
+export async function fetchNotebooks() {
+    const directus = createDirectus(API_URL).with(rest());
+    
+    // Recuperiamo i notebook. Nota: potresti voler filtrare solo quelli 
+    // che hanno almeno una 'note' completata se non vuoi mostrare notebook vuoti.
+    const notebooks = await directus.request(
+        readItems('notebook', {
+            limit: IMPORT_LIMIT,
+            fields: [
+                "code", 
+                "name", 
+                "teacher", 
+                "program_level", 
+                "start_academic_year", 
+                "semester",
+                "translations.languages_code",
+                "translations.program"
+            ]
+        })
+    );
+
+    return notebooks as Notebook[];
+}
+
+export async function fetchNotebookByCode(code: string) {
+    const directus = createDirectus(API_URL).with(rest());
+    
+    const notebooks = await directus.request(
+        readItems('notebook', {
+            filter: { code: { _eq: code } },
+            limit: 1,
+            fields: [
+                "code", 
+                "name", 
+                "teacher", 
+                "program_level", 
+                "start_academic_year", 
+                "semester",
+                "translations.languages_code",
+                "translations.program"
+            ]
+        })
+    );
+
+    if (!notebooks || notebooks.length === 0) {
+        return null;
+    }
+
+    const notebook = notebooks[0] as Notebook;
+
+    const notes = await directus.request(
+        readItems('note', {
+            filter: {
+                notebook: { _eq: code },
+                completed: { _eq: true }
+            },
+            sort: ["-date_created"],
+            fields: ["id", "version", "href", "completed", "date_created", "date_updated"]
+        })
+    );
+
+    notebook.notes = notes as NoteVersion[];
+
+    return notebook;
+}
