@@ -66,8 +66,7 @@
       "title_2": "Diventa il prossimo HKNuer"
     }
   },
-  "about_us": 
-  {
+  "about_us": {
     "vision": {
       "alt_bull": "Toro",
       "quote_text": "HKN È IL POSTO DOVE HO POTUTO MIGLIORARE ME STESSO, PERMETTENDOMI DI METTERMI IN GIOCO E CREDERE NELLE MIE POTENZIALITÀ",
@@ -199,7 +198,7 @@
       "placeholder_alt": "segnaposto per {name}"
     }
   },
-   "past_boards": {
+  "past_boards": {
     "title": "Board Passati"
   },
   "activities": {

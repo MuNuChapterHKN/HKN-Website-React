@@ -1,38 +1,47 @@
 .alumno {
-    transition: background 0.3s ease-in-out, max-height 0.4s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    margin-bottom: 1rem;
-    padding: 1rem 0.7rem 0.7rem 0.7rem;
-    border-radius: 40px;
-    background: #DDDDDD;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-height: 301px;
-    max-width: 270px;
-    cursor: pointer;
+  transition:
+    background 0.3s ease-in-out,
+    max-height 0.4s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+  padding: 1rem 0.7rem 0.7rem 0.7rem;
+  border-radius: 40px;
+  background: #dddddd;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-height: 301px;
+  max-width: 270px;
+  cursor: pointer;
 
   &:hover {
-    background: #F7F7F7;
+    background: #f7f7f7;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
 
   &__active {
-    transition: background 0.3s ease-in-out, max-height 0.4s ease-in-out;
+    transition:
+      background 0.3s ease-in-out,
+      max-height 0.4s ease-in-out;
     max-height: 520px;
-    background: #F0F0F0;
+    background: #f0f0f0;
   }
 
   &__linkedin {
-    transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+    transition:
+      height 0.3s ease-in-out,
+      width 0.3s ease-in-out;
     width: 0px;
     height: 0px;
     visibility: hidden;
 
     &__active {
-      transition: height 0.3s ease-in-out, width 0.3s ease-in-out, transform 0.3s;
+      transition:
+        height 0.3s ease-in-out,
+        width 0.3s ease-in-out,
+        transform 0.3s;
       width: 26px;
       height: 26px;
       visibility: visible;
@@ -45,12 +54,16 @@
     }
 
     &__icon {
-      transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+      transition:
+        height 0.3s ease-in-out,
+        width 0.3s ease-in-out;
       width: 0px;
       height: 0px;
 
       &__active {
-        transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+        transition:
+          height 0.3s ease-in-out,
+          width 0.3s ease-in-out;
         width: 26px;
         height: 26px;
       }
@@ -71,7 +84,7 @@
 
     &__active {
       transition: background-color 0.4s ease-in-out;
-      background: #0B3151;
+      background: #0b3151;
     }
 
     &__mask {
@@ -85,7 +98,9 @@
     }
 
     &__image {
-      transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+      transition:
+        filter 0.3s ease-in-out,
+        transform 0.3s ease-in-out;
       width: 100%;
       object-fit: cover;
       position: absolute;
@@ -94,7 +109,9 @@
       filter: grayscale(100%);
 
       &__active {
-        transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out;
+        transition:
+          filter 0.3s ease-in-out,
+          transform 0.3s ease-in-out;
         transform: scale(1.07);
         filter: grayscale(0%);
       }
@@ -118,13 +135,17 @@
 
   &__name {
     margin-top: 0.7rem;
-    color: #061E33;
+    color: #061e33;
     font-size: 18.6px;
     font-weight: 600;
   }
 
   &__badges {
-    transition: width 0.4s ease-in-out, background 0.4s ease-in-out, max-height 1s ease-in-out, height 0.4s ease-in-out;
+    transition:
+      width 0.4s ease-in-out,
+      background 0.4s ease-in-out,
+      max-height 1s ease-in-out,
+      height 0.4s ease-in-out;
     display: flex;
     max-height: 40px;
     height: 40px;
@@ -132,7 +153,7 @@
     align-items: center;
     margin-top: 0.5rem;
     flex-direction: row;
-    background:  #C0C0C0;
+    background: #c0c0c0;
     border-radius: 40px;
     padding: 0 8px;
     width: 50%;
@@ -140,14 +161,18 @@
     overflow: hidden;
 
     &__active {
-      transition: background 0.4s ease-in-out, width 0.4s ease-in-out, max-height 0.4s ease-in-out, height 0.4s ease-in-out;
+      transition:
+        background 0.4s ease-in-out,
+        width 0.4s ease-in-out,
+        max-height 0.4s ease-in-out,
+        height 0.4s ease-in-out;
       display: flex;
       max-height: 1000px;
       width: 100%;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background:  #D9D9D9;
+      background: #d9d9d9;
       border-radius: 30px;
       padding: 7px 13px;
       margin-top: 0.5rem;
@@ -190,26 +215,25 @@
 
       &__board {
         background: #124877;
-        color: #F2F2F2;
+        color: #f2f2f2;
       }
 
       &__head {
         background: #375171;
-        color: #F2F2F2;
+        color: #f2f2f2;
       }
 
       &__inducted {
-        background: #4986BB;
-        color: #F2F2F2;
-
+        background: #4986bb;
+        color: #f2f2f2;
       }
     }
 
     &__textcol {
       display: flex;
       flex-direction: column;
-      flex:1;
-      color: #061E33;
+      flex: 1;
+      color: #061e33;
       margin: 0 0 0 10px;
     }
 
@@ -227,7 +251,7 @@
     &__year {
       font-size: 14px;
       align-self: end;
-      color: #061E33;
+      color: #061e33;
       font-weight: 700;
 
       &__centered {

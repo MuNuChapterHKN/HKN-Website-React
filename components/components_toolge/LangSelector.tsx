@@ -1,10 +1,10 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import styles from "@/styles/components/Header.module.css";
+import styles from '@/styles/components/Header.module.css';
 
 export const LangSelector: React.FC = () => {
   const router = useRouter();
-  const { locale } = router; 
+  const { locale } = router;
 
   const setLanguage = (lang: string) => {
     if (lang === locale) return;
@@ -19,7 +19,7 @@ export const LangSelector: React.FC = () => {
       >
         IT
       </button>
-      
+
       <span className={styles.separator}>|</span>
 
       <button

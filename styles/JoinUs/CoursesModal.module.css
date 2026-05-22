@@ -25,21 +25,21 @@
     box-shadow: 0 0 10px #00000008;
 
     &.selected {
-      background: #1A334C;
+      background: #1a334c;
       color: white !important;
     }
   }
 }
 
 .popUpBackground {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

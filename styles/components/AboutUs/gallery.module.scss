@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  color: #FFF;
+  color: #fff;
 
   &__arrows {
     margin-top: 120px;
@@ -54,8 +54,6 @@
   }
 
   @media (max-width: 768px) {
-
-
     &__uptitle {
       font-size: 16px;
     }
@@ -151,9 +149,7 @@
 }
 
 @media (max-width: 768px) {
-
-    .carousel {
-      width: 60vw; // più stretto
-    }
+  .carousel {
+    width: 60vw; // più stretto
   }
-
+}
