@@ -1,24 +1,16 @@
-import StudyGroup, { StudyGroupProps } from '@/components/Events/StudyGroup';
+import { StudyGroupProps } from '@/components/Events/StudyGroup';
 import { BadgeType, Badge } from '@/components/People/Alumno';
 import { AlumnoProps } from '@/pages/People/Alumni';
-import {
-  createDirectus,
-  rest,
-  readAssetArrayBuffer,
-  readItems,
-  readFile,
-  readProviders,
-  staticToken,
-} from '@directus/sdk';
+import { createDirectus, rest, readItems } from '@directus/sdk';
 import { TeamMemberProps, TeamProps, BoardMemberProps } from '@/pages/People/People';
-import { PastBoardProps, PastBoardMemberProps } from '@/pages/People/PastBoards';
+import { PastBoardProps } from '@/pages/People/PastBoards';
 import { ProfessionalProps } from '@/pages/People/Professionals';
 import { Mention } from '@/components/Recognitions/MentionCard';
-import { Event, YearEvents } from '@/components/Events/YearEventsColumn';
-import exp from 'constants';
 
 const API_URL = 'https://hknpolito.org/directus/';
 const IMPORT_LIMIT = 500;
+
+const directus = createDirectus(API_URL).with(rest());
 
 export type FeatureFlag = {
   name: string;
@@ -26,13 +18,11 @@ export type FeatureFlag = {
 };
 
 export async function fetchFeatureFlags() {
-  const directus = createDirectus(API_URL).with(rest());
   const featureFlags = await directus.request(readItems('feature_flags'));
   return featureFlags as FeatureFlag[];
 }
 
 export async function fetchActiveStudyGroups() {
-  const directus = createDirectus(API_URL).with(rest());
   const studyGroups = await directus.request(
     readItems('study_group', {
       filter: { active: { _eq: true } },
@@ -42,7 +32,6 @@ export async function fetchActiveStudyGroups() {
 }
 
 export async function fetchAlumni() {
-  const directus = createDirectus(API_URL).with(rest());
   const alumni = await directus.request(
     readItems('member', {
       filter: { is_alumno: { _eq: true } },
@@ -94,15 +83,13 @@ export async function fetchAlumni() {
   }
 
   const alumniProps: AlumnoProps[] = [];
-  alumniMap.forEach((value, key) => {
+  alumniMap.forEach((value) => {
     alumniProps.push(value);
   });
   return alumniProps;
 }
 
 export async function fetchTeams() {
-  const directus = createDirectus(API_URL).with(rest());
-
   const teams = await directus.request(
     readItems('team', {
       limit: IMPORT_LIMIT,
@@ -168,7 +155,7 @@ export async function fetchTeams() {
 
   const teamProps: TeamProps[] = [];
 
-  teamMap.forEach((value, key) => {
+  teamMap.forEach((value) => {
     teamProps.push(value);
   });
 
@@ -176,7 +163,6 @@ export async function fetchTeams() {
 }
 
 export async function fetchBoard() {
-  const directus = createDirectus(API_URL).with(rest());
   const boards = await directus
     .request(
       readItems('board', {
@@ -203,7 +189,6 @@ export async function fetchBoard() {
 }
 
 export async function fetchPastBoards() {
-  const directus = createDirectus(API_URL).with(rest());
   const boards = await directus.request(
     readItems('board', {
       limit: IMPORT_LIMIT,
@@ -237,7 +222,6 @@ export async function fetchPastBoards() {
 }
 
 export async function fetchProfessionals() {
-  const directus = createDirectus(API_URL).with(rest());
   const professionals = await directus.request(
     readItems('professional', {
       limit: IMPORT_LIMIT,
@@ -256,7 +240,6 @@ export async function fetchProfessionals() {
 }
 
 export async function fetchAwards() {
-  const directus = createDirectus(API_URL).with(rest());
   const awards = await directus.request(
     readItems('award', {
       limit: IMPORT_LIMIT,
@@ -277,7 +260,6 @@ export async function fetchAwards() {
 }
 
 export async function fetchHomeAwards() {
-  const directus = createDirectus(API_URL).with(rest());
   const awards = await directus.request(
     readItems('award', {
       limit: 4,
@@ -297,7 +279,6 @@ export async function fetchHomeAwards() {
 }
 
 export async function fetchMentions() {
-  const directus = createDirectus(API_URL).with(rest());
   const mentions = await directus.request(
     readItems('mention', {
       limit: IMPORT_LIMIT,
@@ -321,7 +302,6 @@ export async function fetchMentions() {
 }
 
 export async function fetchEvents() {
-  const directus = createDirectus(API_URL).with(rest());
   const events = await directus.request(
     readItems('event', {
       limit: IMPORT_LIMIT,
@@ -391,7 +371,6 @@ export async function fetchEvents() {
 }
 
 export async function fetchPhotogallery() {
-  const directus = createDirectus(API_URL).with(rest());
   const photogallery = await directus.request(
     readItems('photogallery', {
       limit: IMPORT_LIMIT,
@@ -410,7 +389,6 @@ export async function fetchPhotogallery() {
 }
 
 export async function fetchRecruitment() {
-  const directus = createDirectus(API_URL).with(rest());
   const recruitment = await directus.request(
     readItems('recruitment', {
       limit: 1,

@@ -1,6 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { sendEmail } from '@/service/mailService';
-import { shareNewApply, sendApplyFailedMessage } from './telegram';
+import { shareNewApply } from './telegram';
 import formidable from 'formidable';
 
 const logger = require('pino')();
@@ -14,13 +13,6 @@ const schema = z.object({
   course: z.string(),
   area: z.optional(z.string()),
 });
-
-function formatData(data: { [key: string]: string | number }) {
-  return (
-    `Name: ${data.name}\nEmail: ${data.email}\nGrades average: ${data.average}\n` +
-    `Degree: ${data.degree}\nCourse: ${data.course}\nArea: ${data.area ?? '-'}\nData: ${formatDate()}`
-  );
-}
 
 export function handleError(error: unknown, message: string) {
   // TODO: NOTIFY IT SUPPORT
@@ -41,17 +33,6 @@ export const config = {
   },
 };
 
-function formatDate() {
-  const date = new Date();
-  const hours = String(date.getHours()).padStart(2, '0');
-  const minutes = String(date.getMinutes()).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  const month = String(date.getMonth() + 1).padStart(2, '0'); // Month is 0-indexed
-  const year = date.getFullYear();
-
-  return `${hours}:${minutes} ${day}/${month}/${year}`;
-}
-
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
     logger.info('New application received');
@@ -68,12 +49,12 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       };
 
       let fieldsSingle, parsedFields;
-      let form, fields, files;
+      let form, fields;
 
       try {
         // @ts-ignore
         form = formidable(options);
-        [fields, files] = await form.parse(req);
+        [fields] = await form.parse(req);
       } catch (e) {
         handleError('Files validatation', 'Files too large or incorrect');
         return res.status(413).json({
@@ -96,39 +77,11 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         });
       }
 
-      // Send email to HR
       try {
-        const mailSubjectHR = `RECRUITMENT - ${parsedFields.name} SUBMISSION`;
-        const mailSubjectApplicant = `Your application was successful!`;
-        const mailBodyHR = `Nuova apply ricevuta alle ${formatDate()}\n\n${formatData(parsedFields)}`;
-        const mailBodyApplicant = `Thank you for applying to the Mu Nu Chapter of IEEE-Eta Kappa Nu!\nExpect to hear from us shortly. In the meanwhile here's the data we've received. If there is any error feel free to re-submit the application form.\n\n${formatData(parsedFields)}`;
-        const attachments = [
-          {
-            filename: 'Curriculum.pdf',
-            // @ts-ignore
-            path: files.cv[0].filepath,
-          },
-          {
-            filename: 'StudyPath.pdf',
-            // @ts-ignore
-            path: files.studyPlan[0].filepath,
-          },
-        ];
-        await sendEmail(mailSubjectHR, mailBodyHR, process.env.HKN_RECRUITMENT_EMAIL, attachments);
-        logger.info('Apply Email sent to HR');
-        await sendEmail(mailSubjectApplicant, mailBodyApplicant, parsedFields.email, attachments);
-        logger.info('Confirmation Email sent to applicant');
-
-        try {
-          await shareNewApply(parsedFields.name);
-          logger.info('Telegram notification sent');
-        } catch (e) {
-          handleError(e, 'Telegram notification');
-        }
+        await shareNewApply(parsedFields.name);
+        logger.info('Telegram notification sent');
       } catch (e) {
-        const stage = 'Confirmation Emails';
-        await sendApplyFailedMessage(stage, parsedFields.name);
-        handleError(e, stage);
+        handleError(e, 'Telegram notification');
       }
 
       res.status(200).send('');
