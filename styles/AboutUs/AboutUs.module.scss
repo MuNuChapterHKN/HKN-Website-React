@@ -414,3 +414,71 @@
 .divider1 {
   height: 40px;
 }
+
+@media (max-width: 780px) {
+  .sections {
+    width: 100%;
+    padding-inline: 20px;
+  }
+
+  .section__container_img {
+    width: min(100%, 450px);
+    height: 420px;
+    margin-inline: auto;
+    overflow: hidden;
+  }
+
+  .section_image {
+    max-width: 100%;
+  }
+
+  .section1_image1,
+  .section1_image2,
+  .section2_image1,
+  .section3_image1,
+  .section4_image1 {
+    width: 80%;
+    height: auto;
+  }
+
+  .section1_image2 {
+    left: 20%;
+  }
+
+  .section2_image2,
+  .section4_image2 {
+    right: 0;
+  }
+
+  .section3_image3 {
+    left: 0;
+  }
+
+  .stats {
+    flex-direction: column;
+
+    &__element {
+      width: 100%;
+    }
+
+    &__container_img {
+      width: 70px;
+      height: 70px;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+    .menu {
+        gap: 10px;
+        padding: 10px 0 6px;
+    }
+
+    .dropdown {
+        margin-top: 4px;
+    }
+
+    .dropdown > li {
+        padding: 0.4em 0.8em;
+    }
+}

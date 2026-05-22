@@ -36,8 +36,12 @@ export default function JoinUs() {
                         </p>
                     </div>
                     <div className={styles.halfWidth}>
-                        <img alt={t('join_us.build_future.image_alt')} src="/JoinUs/hiring.png"
-                            width={"80%"} height={"auto"} loading="lazy" className={styles.headingImage} />
+                        <img
+                            alt={t('join_us.build_future.image_alt')}
+                            src="/JoinUs/hiring.png"
+                            loading="lazy"
+                            className={styles.headingImage}
+                        />
                     </div>
                 </section>
 

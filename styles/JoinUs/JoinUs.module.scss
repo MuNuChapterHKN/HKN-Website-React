@@ -71,8 +71,8 @@
 }
 
 .headingTitle {
-  font-size: 4.8em;
-  line-height: 1.1em;
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  line-height: 1.05;
   margin-bottom: 30px;
 }
 
@@ -820,4 +820,152 @@
     background-size: 54px 60px;
   }
 
+}
+
+.heading,
+.spacing,
+.container > section:nth-of-type(3) {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: clamp(24px, 4vw, 64px);
+}
+
+.halfWidth {
+  min-width: 0;
+}
+
+.headingImage {
+  width: min(80%, 420px);
+  max-width: 100%;
+  height: auto;
+}
+
+.gradientBackground,
+.disabledJoinUs,
+.submissionText,
+.applyCta,
+.submissionForm {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.requirementTitle,
+.requirementSubtitle,
+.recruitmentTitle,
+.recruitmentStepTitle,
+.shortRecruitmentStepText,
+.recruitmentStepText,
+.additionalRequirement {
+  overflow-wrap: anywhere;
+}
+
+@media screen and (max-width: 868px) {
+  .heading,
+  .spacing,
+  .container > section:nth-of-type(3) {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .headingImage {
+    width: min(85%, 320px);
+    min-width: 0;
+  }
+
+  .shortRecruitmentStepText {
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+
+  .requirementPointList:nth-last-child(4) {
+    height: auto;
+    padding-left: 1.5rem;
+  }
+
+  .requiredGradesContainerWhite,
+  .requiredGradesContainerGray {
+    height: auto;
+  }
+
+  .requiredGradesContainerWhite::before,
+  .requiredGradesContainerGray::before {
+    display: none;
+  }
+
+  .fileInputContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .fileInputContainer > .formLabel {
+    max-width: 100%;
+  }
+
+  .fileName {
+    max-width: 100%;
+  }
+
+  .applyCta {
+    width: 100%;
+    padding: 28px 20px;
+  }
+
+  .applyButton {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .disabledJoinUs,
+  .submissionText {
+    width: 100%;
+    padding: 32px 20px;
+
+    &__text {
+      font-size: clamp(20px, 6vw, 28px);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    padding-inline: 20px;
+  }
+
+  .pageTitle {
+    font-size: 2rem;
+    padding-bottom: 1.2em;
+  }
+
+  .pageSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .headingTitle {
+    font-size: clamp(2.2rem, 11vw, 2.8rem);
+  }
+
+  .headingDescription {
+    font-size: 1.25rem;
+  }
+
+  .gradientBackground {
+    padding: 1.5rem;
+  }
+
+  .requirementTitle {
+    font-size: 1.45rem;
+  }
+
+  .recruitmentTitle {
+    font-size: 1.7rem;
+  }
+
+  .recruitmentStepText,
+  .shortRecruitmentStepText,
+  .additionalRequirement {
+    font-size: 1.15rem;
+  }
 }
