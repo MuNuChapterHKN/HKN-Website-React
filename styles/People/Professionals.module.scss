@@ -1,6 +1,5 @@
-
 .faculty {
-  background: linear-gradient(180deg, #FFF 0%, #FFF 0.01%, #E4E4E4 60.42%, #D1D1D1 100%);
+  background: linear-gradient(180deg, #fff 0%, #fff 0.01%, #e4e4e4 60.42%, #d1d1d1 100%);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -10,7 +9,7 @@
   border-radius: 40px;
   padding: 70px 3vw;
   margin-top: 100px;
-  color: #061E33;
+  color: #061e33;
   overflow: hidden;
 
   @media (max-width: 630px) {
@@ -31,7 +30,7 @@
       width: 350px;
       height: 380px;
       border-radius: 20px;
-      background: #B8BBBF;
+      background: #b8bbbf;
       position: relative;
       margin: 15px 0 25px 0;
 
@@ -102,14 +101,12 @@
         visibility: collapse;
       }
     }
-
   }
 
   &__right {
     display: flex;
     flex-direction: column;
     margin: 0 2vw 0 4vw;
-
 
     @media (max-width: 630px) {
       margin: 20px 0 0 0;
@@ -164,7 +161,6 @@
         visibility: collapse;
       }
     }
-
   }
 }
 
@@ -178,7 +174,7 @@
   margin: 100px 0;
 
   &__professionals {
-    color: #F2F2F2;
+    color: #f2f2f2;
     text-align: center;
     font-family: Outfit;
     font-size: 25px;
@@ -188,7 +184,7 @@
   }
 
   &__inducted {
-    color: #F2F2F2;
+    color: #f2f2f2;
     text-align: center;
     font-family: Outfit;
     font-size: 58px;
@@ -232,7 +228,7 @@
     height: 100%;
     overflow: hidden;
     border-radius: 20px;
-    background: #B8BBBF;
+    background: #b8bbbf;
     position: relative;
 
     &__image {
@@ -254,11 +250,11 @@
   }
 
   &__name {
-    color: #F2F2F2;
+    color: #f2f2f2;
     font-family: Outfit;
     font-size: 22px;
     font-weight: 600;
     text-transform: capitalize;
-    margin-top:6px;
+    margin-top: 6px;
   }
 }

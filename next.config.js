@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: "standalone",
+  output: 'standalone',
   images: {
     remotePatterns: [
       {
@@ -10,13 +10,13 @@ const nextConfig = {
       },
     ],
   },
-  
+
   i18n: {
     locales: ['en', 'it'],
     localeDetection: false,
     defaultLocale: 'en',
   },
   distDir: process.env.NEXT_BUILD_DIR || '.next',
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

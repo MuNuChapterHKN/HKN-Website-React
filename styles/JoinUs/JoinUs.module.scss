@@ -22,10 +22,15 @@
 
 .gradientBackground {
   background: rgb(242, 242, 242);
-  background: linear-gradient(0deg, rgba(146, 154, 166, 1) 0%, rgba(184, 187, 191, 1) 50%, rgba(242, 242, 242, 1) 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(146, 154, 166, 1) 0%,
+    rgba(184, 187, 191, 1) 50%,
+    rgba(242, 242, 242, 1) 100%
+  );
   border-radius: 30px;
   padding: 2em;
-  color: #061E33;
+  color: #061e33;
 }
 
 .bgWhite {
@@ -33,7 +38,7 @@
 }
 
 .bgBlue {
-  background: #061E33;
+  background: #061e33;
 }
 
 .spacing {
@@ -54,11 +59,11 @@
 }
 
 .paddingRight {
-  padding-right: .5em;
+  padding-right: 0.5em;
 }
 
 .paddingLeft {
-  padding-left: .5em;
+  padding-left: 0.5em;
 }
 
 .requirementColumn {
@@ -109,7 +114,6 @@
     top: -60px;
     left: 60px;
   }
-
 }
 
 .requirementPointList:nth-last-child(4) {
@@ -134,7 +138,6 @@
     top: -310px;
     left: 26px;
   }
-
 }
 
 .recruitmentStep {
@@ -143,7 +146,6 @@
   position: relative;
 
   &:not(:last-of-type) {
-
     margin-bottom: 1rem;
 
     &::before {
@@ -154,10 +156,9 @@
       top: 1em;
       left: 10px;
       bottom: -2rem;
-      background-color: #061E33;
+      background-color: #061e33;
     }
   }
-
 }
 
 .recruitmentStepTitle {
@@ -173,7 +174,7 @@
     left: 0;
     top: 14px;
     border-radius: 50%;
-    background-color: #061E33;
+    background-color: #061e33;
   }
 }
 
@@ -192,14 +193,13 @@
   &:nth-last-child(3)::after {
     content: '';
     background-size: 90px 100px;
-    background-image: url("/JoinUs/form.png");
+    background-image: url('/JoinUs/form.png');
     position: absolute;
     right: 20px;
     top: 55px;
     height: 100px;
     width: 90px;
   }
-
 }
 
 .exceptionContainer {
@@ -240,7 +240,7 @@
   background: #f2f2f2;
   background: linear-gradient(90deg, #fff 0%, #f2f2f2 100%);
   display: inline-block;
-  color: #061E33;
+  color: #061e33;
 }
 
 .requirementTitle {
@@ -249,7 +249,9 @@
   position: relative;
 
   &--shadow {
-    box-shadow: -6px 7px 0 0 #bbb, -6px 7px 0 0 #f2f2f2;
+    box-shadow:
+      -6px 7px 0 0 #bbb,
+      -6px 7px 0 0 #f2f2f2;
   }
 
   &::after {
@@ -274,7 +276,7 @@
 
 .requirementPoint {
   font-size: 1.6em;
-  padding: .3em;
+  padding: 0.3em;
 }
 
 .requirementRow {
@@ -300,7 +302,7 @@
 }
 
 .requirementSubtitle {
-  padding: .4em 1.2em;
+  padding: 0.4em 1.2em;
   font-size: 1.5em;
   text-align: center;
   vertical-align: middle;
@@ -342,7 +344,7 @@
   min-width: 190px;
   padding: 0.9em 2.8em;
   border-radius: 999px;
-  background-color: #061E33;
+  background-color: #061e33;
   color: #fff;
   font-size: 1.2em;
   font-weight: 700;
@@ -350,7 +352,10 @@
   text-transform: uppercase;
   text-decoration: none;
   box-shadow: 0 10px 22px rgba(6, 30, 51, 0.35);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
 
   &:hover {
     transform: translateY(-2px);
@@ -359,7 +364,7 @@
   }
 
   &:focus {
-    outline: #061E3388 4px solid;
+    outline: #061e3388 4px solid;
     outline-offset: 3px;
   }
 }
@@ -373,7 +378,7 @@
 }
 
 .formLabel {
-  color: #061E33;
+  color: #061e33;
   display: inline-block;
   text-align: left;
   font-size: 1.6em;
@@ -400,7 +405,7 @@
 .formInput {
   font-family: Inter, sans-serif;
   font-weight: 500;
-  background-color: #061E33;
+  background-color: #061e33;
   text-transform: uppercase;
   width: 100%;
   display: block;
@@ -410,7 +415,7 @@
   padding: 1em;
   margin-bottom: 1.4em;
   border: none;
-  transition: .25s ease-out outline;
+  transition: 0.25s ease-out outline;
   color: #bbb;
 
   overflow: hidden;
@@ -418,7 +423,7 @@
   text-overflow: ellipsis;
 
   &:focus {
-    outline: #061E3388 4px solid;
+    outline: #061e3388 4px solid;
   }
 }
 
@@ -426,17 +431,17 @@
   width: 100%;
   flex-basis: 100%;
   display: block;
-  color: #061E33;
+  color: #061e33;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  font-size: .9em;
-  margin-top: -.6em;
+  font-size: 0.9em;
+  margin-top: -0.6em;
   max-width: 260px;
 }
 
 .formText {
-  color: #061E33;
+  color: #061e33;
   font-size: 1.1em;
   text-align: center;
   text-transform: uppercase;
@@ -458,21 +463,21 @@
 .fileButton {
   border-radius: 50px;
   display: inline-block;
-  border: 2px solid #061E33;
-  padding: .7em .85em;
+  border: 2px solid #061e33;
+  padding: 0.7em 0.85em;
   background-color: transparent;
-  color: #061E33;
+  color: #061e33;
   cursor: pointer;
   font-family: Inter, sans-serif;
   font-weight: 600;
-  transition: background-color .2s ease-out;
+  transition: background-color 0.2s ease-out;
 
   &:hover {
-    background-color: #061E3322;
+    background-color: #061e3322;
   }
 
   &:focus {
-    outline: #061E3388 4px solid;
+    outline: #061e3388 4px solid;
   }
 }
 
@@ -489,7 +494,7 @@
 }
 
 .fileInput:focus + .fileButton {
-  outline: #061E3388 4px solid;
+  outline: #061e3388 4px solid;
 }
 
 .noWidth {
@@ -499,23 +504,23 @@
 .submitButton {
   border-radius: 50px;
   display: block;
-  padding: .85em;
+  padding: 0.85em;
   width: 130px;
   font-size: 1.1em;
   margin: 2em auto;
-  background-color: #061E33;
+  background-color: #061e33;
   border: none;
   color: #fff;
   cursor: pointer;
   font-family: Inter, sans-serif;
   font-weight: 600;
-  transition: background-color .25s ease-out;
+  transition: background-color 0.25s ease-out;
 
   &:hover {
-    background-color: #061E33cc;
+    background-color: #061e33cc;
   }
   &:focus {
-    outline: #061E3388 4px solid;
+    outline: #061e3388 4px solid;
   }
 }
 
@@ -547,7 +552,7 @@
 
 .checkboxLabel {
   font-size: 1.1em;
-  color: #061E33;
+  color: #061e33;
   margin-left: 1em;
 }
 
@@ -569,7 +574,7 @@
 }
 
 .loader {
-  --color: #061E33;
+  --color: #061e33;
   --size-mid: 6vmin;
   --size-dot: 1.5vmin;
   --size-bar: 0.4vmin;
@@ -605,7 +610,8 @@
 }
 
 @keyframes loader1 {
-  0%, 100% {
+  0%,
+  100% {
     transform: none;
   }
 
@@ -623,7 +629,8 @@
 }
 
 @keyframes loader2 {
-  0%, 100% {
+  0%,
+  100% {
     transform: none;
   }
 
@@ -648,10 +655,10 @@
   width: 90%;
   max-width: 1300px;
   border-radius: 40px;
-  background-color: #F2F2F2;
-  color: #061E33;
+  background-color: #f2f2f2;
+  color: #061e33;
   margin-top: 50px;
-  margin-bottom:50px;
+  margin-bottom: 50px;
 
   &__text {
     text-align: center;
@@ -696,11 +703,11 @@
   }
   .requirementTitle {
     font-size: 2rem;
-    padding: 0.3em .6em;
+    padding: 0.3em 0.6em;
   }
   .requirementSubtitle {
     font-size: 1.16rem;
-    padding: 0.3em .6em;
+    padding: 0.3em 0.6em;
   }
   .recruitmentContainer {
     margin-right: 1.5rem;
@@ -760,7 +767,6 @@
 }
 
 @media screen and (max-width: 600px) {
-
   .headingTitle {
     font-size: 2.8rem;
   }
@@ -782,8 +788,8 @@
   }
 
   .requiredGradesContainerGray:before {
-      height: 330px;
-      top: -330px;
+    height: 330px;
+    top: -330px;
   }
 
   .requirementColumn {
@@ -796,7 +802,7 @@
 
   .requirementSubtitle {
     font-size: 1.3rem;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
   }
 
   .requirementPointList {
@@ -819,5 +825,4 @@
     top: 80px;
     background-size: 54px 60px;
   }
-
 }

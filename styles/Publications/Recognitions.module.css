@@ -1,294 +1,307 @@
 /* 1st section: AWARDS */
 .awardsCard {
-    background: linear-gradient(180deg, #FFF 0%, #FFF 0.01%, #E4E4E4 60.42%, #D1D1D1 100%);    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    max-width: 1350px;
-    border-radius: 40px;
-    padding: 70px 3vw;
-    margin-top: 100px;
-    box-shadow: 0 0 15px 0 rgba(0,0,0,0.5);
+  background: linear-gradient(180deg, #fff 0%, #fff 0.01%, #e4e4e4 60.42%, #d1d1d1 100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1350px;
+  border-radius: 40px;
+  padding: 70px 3vw;
+  margin-top: 100px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.5);
 }
 
 .awardsLeft {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 40%;
-    margin: 0 70px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 40%;
+  margin: 0 70px;
 }
 
 .awardImage {
-    align-self: center;
-    justify-self: center;
-    width: 100%;
-    height: auto;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  height: auto;
 }
 
 .awardsRight {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    height: 100%;
-    width: 60%;
-    padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 100%;
+  width: 60%;
+  padding: 0 40px;
 }
 
-.awardsText, .mentionsText {
-    color: #061E33;
-    font-weight: 500;
-    font-size: 20px;
+.awardsText,
+.mentionsText {
+  color: #061e33;
+  font-weight: 500;
+  font-size: 20px;
 }
 
-.awardsTitle, .mentionsTitle  {
-    font-weight: 600;
-    font-size: 65px;
-    color: #061E33;
+.awardsTitle,
+.mentionsTitle {
+  font-weight: 600;
+  font-size: 65px;
+  color: #061e33;
 }
 
-.awards, .professionalsText {
-    font-weight: 400;
-    font-size: 21px;
+.awards,
+.professionalsText {
+  font-weight: 400;
+  font-size: 21px;
 }
 
 .awards {
-    color: #11283b;
-    margin: 15px 0 35px 0;
+  color: #11283b;
+  margin: 15px 0 35px 0;
 }
 
-.awardsLeftButton, .awardsRightButton, .mentionsButton, .professionalsButton {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #1A3247;
+.awardsLeftButton,
+.awardsRightButton,
+.mentionsButton,
+.professionalsButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1a3247;
 }
 
 .awardsLeftButton {
-    background: #061E33;
-    left: -45px;
+  background: #061e33;
+  left: -45px;
 }
 
 .awardsRightButton {
-    background: #061E33;
-    right: -45px;
+  background: #061e33;
+  right: -45px;
 }
-
 
 /* 2nd section: INTERNATIONAL COLLECTIVE */
 .internationalCollective {
-    background: linear-gradient(266deg, rgba(242, 242, 242, 0.50) 21.13%, rgba(184, 191, 191, 0.37) 61.16%, rgba(146, 154, 166, 0.37) 97.8%, rgba(100, 117, 140, 0.37) 127.65%);    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    margin-top: 100px;
+  background: linear-gradient(
+    266deg,
+    rgba(242, 242, 242, 0.5) 21.13%,
+    rgba(184, 191, 191, 0.37) 61.16%,
+    rgba(146, 154, 166, 0.37) 97.8%,
+    rgba(100, 117, 140, 0.37) 127.65%
+  );
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  margin-top: 100px;
 }
 
 .internationalCollectiveImage {
-    width: 385px;
-    height: auto;
-    max-width: 100%;
+  width: 385px;
+  height: auto;
+  max-width: 100%;
 }
 
 .internationalCollectiveText {
-    width: 550px;
-    text-align: center;
-    margin-left: 100px;
-    color: #FFF;
-    font-family: Outfit, sans-serif;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 100%;
+  width: 550px;
+  text-align: center;
+  margin-left: 100px;
+  color: #fff;
+  font-family: Outfit, sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
 }
 
 /* 3rd section: MENTIONS */
 .mentionsCard {
-    position: relative;
-    background: linear-gradient(90deg, #F2F2F2 0%, #DADADA 26.62%, #BBB 100%);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    width: 90%;
-    max-width: 1350px;
-    border-radius: 40px;
-    padding: 40px;
-    margin: 100px 0;
+  position: relative;
+  background: linear-gradient(90deg, #f2f2f2 0%, #dadada 26.62%, #bbb 100%);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  max-width: 1350px;
+  border-radius: 40px;
+  padding: 40px;
+  margin: 100px 0;
 }
 
 .mentionsLeft {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    height: 100%;
-    width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  width: 65%;
 }
 
 .mentionsButton {
-    right: 14px;
+  right: 14px;
 }
-
 
 /* 4th section: PROFESSIONALS */
 .professionalsContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 90%;
-    max-width: 1200px;
-    margin: 100px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin: 100px 0;
 }
 
 .professionalsTitle {
-    font-weight: 600;
-    font-size: 45px;
+  font-weight: 600;
+  font-size: 45px;
 }
 
 .professionalsCards {
-    position:relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 100%;
-    margin-top: 40px;
-    padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 40px;
+  padding: 0;
 }
 
 .professionalsButton {
-    right: -5px;
+  right: -5px;
 }
-
 
 /* === RESPONSIVE STYLES === */
 @media screen and (max-width: 1024px) {
-    .awardsCard,
-    .mentionsCard {
-        flex-direction: column;
-        align-items: center;
-    }
+  .awardsCard,
+  .mentionsCard {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .awardsLeft,
-    .awardsRight,
-    .mentionsLeft {
-        margin: 20px 0;
-        align-items: center;
-        text-align: center;
-    }
+  .awardsLeft,
+  .awardsRight,
+  .mentionsLeft {
+    margin: 20px 0;
+    align-items: center;
+    text-align: center;
+  }
 
-    .awardsLeftButton {
-        width: 2px;
-        height: 2px;
-        left: -80px;
-    }
+  .awardsLeftButton {
+    width: 2px;
+    height: 2px;
+    left: -80px;
+  }
 
-    .awardsRightButton {
-        width: 2px;
-        height: 2px;
-        right: -80px;
-    }
+  .awardsRightButton {
+    width: 2px;
+    height: 2px;
+    right: -80px;
+  }
 
-    .awardsRight {
-        padding: 0;
-    }
+  .awardsRight {
+    padding: 0;
+  }
 
-    .awardsTitle, .mentionsTitle {
-        font-size: 40px;
-    }
+  .awardsTitle,
+  .mentionsTitle {
+    font-size: 40px;
+  }
 
-    .awardsText, .mentionsText {
-        font-size: 22px;
-    }
+  .awardsText,
+  .mentionsText {
+    font-size: 22px;
+  }
 
-    .awards {
-        font-size: 22px;
-    }
+  .awards {
+    font-size: 22px;
+  }
 
-    .internationalCollective {
-        flex-direction: column;
-        margin-top: 60px;
-    }
+  .internationalCollective {
+    flex-direction: column;
+    margin-top: 60px;
+  }
 
-    .internationalCollectiveImage {
-        width: 300px;
-    }
+  .internationalCollectiveImage {
+    width: 300px;
+  }
 
-    .internationalCollectiveText {
-        font-size: 32px;
-        margin: 0 20px;
-        padding: 0 20px;
-        margin-bottom: 20px;
-    }
+  .internationalCollectiveText {
+    font-size: 32px;
+    margin: 0 20px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+  }
 
-    .mentionsButton {
-        top: 65%
-    }
+  .mentionsButton {
+    top: 65%;
+  }
 
-    .professionalsTitle {
-        font-size: 32px;
-        text-align: center;
-    }
+  .professionalsTitle {
+    font-size: 32px;
+    text-align: center;
+  }
 
-    .professionalsCards {
-        flex-direction: column;
-        align-items: center;
-    }
+  .professionalsCards {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .awardsTitle, .mentionsTitle {
-        font-size: 32px;
-    }
+  .awardsTitle,
+  .mentionsTitle {
+    font-size: 32px;
+  }
 
-    .awardsText, .mentionsText, .awards {
-        font-size: 20px;
-    }
+  .awardsText,
+  .mentionsText,
+  .awards {
+    font-size: 20px;
+  }
 
-    .internationalCollectiveText {
-        font-size: 24px;
-        text-wrap: balance;
-        max-width: 100%;
-    }
+  .internationalCollectiveText {
+    font-size: 24px;
+    text-wrap: balance;
+    max-width: 100%;
+  }
 
-    .professionalsTitle {
-        font-size: 24px;
-    }
+  .professionalsTitle {
+    font-size: 24px;
+  }
 
-    .awardImage {
-        width: 100%;
-        max-width: 300px;
-    }
+  .awardImage {
+    width: 100%;
+    max-width: 300px;
+  }
 
-    .awards {
-        margin: 0;
-    }
+  .awards {
+    margin: 0;
+  }
 
-    .awardsLeft {
-        margin: 0;
-        margin-bottom: 20px;
-    }
+  .awardsLeft {
+    margin: 0;
+    margin-bottom: 20px;
+  }
 
-    .awardsRight {
-        margin: 0;
-    }
+  .awardsRight {
+    margin: 0;
+  }
 
-    .awardsCard {
-        margin-top: 30px;
-    }
+  .awardsCard {
+    margin-top: 30px;
+  }
 
-    .mentionsCard {
-        margin: 60px 0;
-    }
-
+  .mentionsCard {
+    margin: 60px 0;
+  }
 }
-
-

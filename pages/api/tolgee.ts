@@ -10,9 +10,9 @@ export const tolgee = Tolgee()
     apiKey: process.env.NEXT_PUBLIC_TOLGEE_API_KEY,
     apiUrl: process.env.NEXT_PUBLIC_TOLGEE_API_URL,
     staticData: {
-        en: () => import('../../messages/en.json'),
-        it: () => import('../../messages/it.json'),
-        'en:namespaced': () => import('../../messages/en.json'),
-        'it:namespaced': () => import('../../messages/it.json'),
+      en: () => import('../../messages/en.json'),
+      it: () => import('../../messages/it.json'),
+      'en:namespaced': () => import('../../messages/en.json'),
+      'it:namespaced': () => import('../../messages/it.json'),
     },
   });

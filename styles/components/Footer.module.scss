@@ -1,146 +1,145 @@
 .footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 0;
-    background: linear-gradient(0deg, #061E33 0%, #061E33 100%);
-    width: 100%;
-    padding: 20px 8vw;
-    border-top: solid 5px white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 0;
+  background: linear-gradient(0deg, #061e33 0%, #061e33 100%);
+  width: 100%;
+  padding: 20px 8vw;
+  border-top: solid 5px white;
 
-    @media (min-width: 1400px) {
-        padding-left: 300px;
-        padding-right: 300px;
-    }
+  @media (min-width: 1400px) {
+    padding-left: 300px;
+    padding-right: 300px;
+  }
 }
 
 .column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    color: #fff;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  &__subtitle {
+    color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  &__contact {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+    margin-top: 5px;
 
-    &__title {
-        color: #FFF;
-        text-align: center;
-        font-size: 25px;
-        font-weight: 700;
-        text-transform: capitalize;
+    &__item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 600;
     }
 
-    &__subtitle {
-        color: #FFF;
-        text-align: center;
-        font-size: 20px;
-        font-weight: 700;
-        text-transform: capitalize;
+    &__item:hover {
+      text-decoration: underline;
     }
-
-    &__contact {
-        display: flex;
-        flex-direction: row;
-        width: 90%;
-        justify-content: space-between;
-        margin-top: 5px;
-
-        &__item {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        &__item:hover {
-            text-decoration: underline;
-        }
-    }
-    @media (min-width: 1400px) {
-    
-    }
+  }
+  @media (min-width: 1400px) {
+  }
 }
 
 .links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 18px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 18px 0;
 }
 
 .contactIcon {
-    width: 25px;
-    height: 25px;
-    margin-right: 8px;
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
 
-    &__icon {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+  &__icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .linkIcon {
-    width: 45px;
-    height: 35px;
-    margin: 0 10px;
-    cursor: pointer;
+  width: 45px;
+  height: 35px;
+  margin: 0 10px;
+  cursor: pointer;
 
-    &__icon {
-        width: auto;
-        height: 100%;
-        object-fit: cover;
-    }
+  &__icon {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .linkIcon:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .columnLogo {
-    height: 100%;
-    margin: 0;
+  height: 100%;
+  margin: 0;
 
-    &__logopolito {
-        object-fit: cover;
-        width: 125px;
-        height: auto;
-    }
+  &__logopolito {
+    object-fit: cover;
+    width: 125px;
+    height: auto;
+  }
 
-    &__logokhn {
-        object-fit: cover;
-        width: 100px;
-        height: auto;
-    }
+  &__logokhn {
+    object-fit: cover;
+    width: 100px;
+    height: auto;
+  }
 }
 
 @media screen and (max-width: 885px) {
-    .column__contact {
-        flex-direction: column;
-    }
+  .column__contact {
+    flex-direction: column;
+  }
 
-    .column {
-        min-width: 100%;
-        margin-top: 2rem;
-        order: 2;
-    }
+  .column {
+    min-width: 100%;
+    margin-top: 2rem;
+    order: 2;
+  }
 
-    .footer {
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-    }
+  .footer {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
 
-    .columnLogo {
-        order: 1;
-    }
+  .columnLogo {
+    order: 1;
+  }
 }
 
 @media screen and (max-width: 620px) {
-    .linkIcon {
-        width: 36px;
-        height: 27px;
-        margin: 0 4px;
-    }
+  .linkIcon {
+    width: 36px;
+    height: 27px;
+    margin: 0 4px;
+  }
 }

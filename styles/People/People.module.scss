@@ -1,302 +1,305 @@
 /* SECTION: BOARD */
-.boardContainer, .teamsContainer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 92%;
-    max-width: 1100px;
-    margin-bottom: 70px;
-    margin-top: 20px;
+.boardContainer,
+.teamsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 92%;
+  max-width: 1100px;
+  margin-bottom: 70px;
+  margin-top: 20px;
 }
 
-.theBoard, .theTeams {
-    color: #F2F2F2;
-    text-align: center;
-    font-family: Outfit;
-    font-size: 30px;
-    font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+.theBoard,
+.theTeams {
+  color: #f2f2f2;
+  text-align: center;
+  font-family: Outfit;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
 }
 
-.managementArea, .joinOurTeams {
-    width: 400px;
-    color: #F2F2F2;
-    text-align: center;
-    font-family: Outfit;
-    font-size: 60px;
-    font-weight: 700;
-    text-transform: capitalize;
+.managementArea,
+.joinOurTeams {
+  width: 400px;
+  color: #f2f2f2;
+  text-align: center;
+  font-family: Outfit;
+  font-size: 60px;
+  font-weight: 700;
+  text-transform: capitalize;
 }
 
-.boardGrid, .teamsGrid, .discoverContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.boardGrid,
+.teamsGrid,
+.discoverContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .boardMember {
-    flex: 0 0 30%; /* Grow, Shrink, Basis */
-    margin: 1.5%;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    align-items: center;
-
+  flex: 0 0 30%; /* Grow, Shrink, Basis */
+  margin: 1.5%;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
 }
 
 .overlayContainer {
-    position: absolute;
-    overflow: hidden;
-    top: -7%;
-    left: 7%;
-    height:70%;
-    width: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: -7%;
+  left: 7%;
+  height: 70%;
+  width: 100%;
 }
 
 .boardOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    transition: all 0.3s ease;
-    transform: translateY(100%) translateX(-30%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all 0.3s ease;
+  transform: translateY(100%) translateX(-30%);
 }
 
-
 .slideIn {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .slideOut {
-    transform: translateY(100%) translateX(-30%);
+  transform: translateY(100%) translateX(-30%);
 }
 
 .boardImageContainer {
-    width: 100%;
-    height: 120%;
-    overflow: hidden;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    border-radius: 25px;
+  width: 100%;
+  height: 120%;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  border-radius: 25px;
 }
 
 .boardCard {
-    position: absolute;
-    border-radius: 26px;
-    width: 100%;
-    height: 70%;
-    bottom: 83px;
-    background: #B8BBBF;
+  position: absolute;
+  border-radius: 26px;
+  width: 100%;
+  height: 70%;
+  bottom: 83px;
+  background: #b8bbbf;
 }
 
 .boardMemberImage {
-    position: relative;
-    width: 100%;
-    filter: grayscale(100%);
-    transition: all 0.2s ease;
+  position: relative;
+  width: 100%;
+  filter: grayscale(100%);
+  transition: all 0.2s ease;
 
-    &:hover {
-        filter: grayscale(0%);
-        transform: scale(1.1);
-    }
+  &:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+  }
 }
 
 .boardMemberName {
-    font-size: 30px;
-    font-weight: 700;
-    line-height: 100%; /* 40px */
-    text-transform: capitalize;
-    text-wrap: nowrap;
-    margin: 10px 0 0 0;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 100%; /* 40px */
+  text-transform: capitalize;
+  text-wrap: nowrap;
+  margin: 10px 0 0 0;
 }
 
 .boardMemberRole {
-    font-size: 15px;
-    font-weight: 400;
-    margin: 10px 0 10px 0;
-    text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 10px 0 10px 0;
+  text-transform: uppercase;
 }
 
 /* SECTION: TEAMS */
 
 .team {
-    position: relative;
-    flex: 1 0 45%; /* Grow, Shrink, Basis */
-    margin: 2.5%;
-    display: flex;
-    flex-direction: row;
-    background: #F2F2F2;
-    border-radius: 25px;
-    align-items: flex-end;
-    color: #061E33;
-    cursor: pointer;
+  position: relative;
+  flex: 1 0 45%; /* Grow, Shrink, Basis */
+  margin: 2.5%;
+  display: flex;
+  flex-direction: row;
+  background: #f2f2f2;
+  border-radius: 25px;
+  align-items: flex-end;
+  color: #061e33;
+  cursor: pointer;
 }
 
 .teamRespImage {
-    position: relative;
-    height: 300px;
-    left: -5%;
-    filter: grayscale(100%);
-    transition: all 0.2s ease;
+  position: relative;
+  height: 300px;
+  left: -5%;
+  filter: grayscale(100%);
+  transition: all 0.2s ease;
 
-    &:hover {
-        filter: grayscale(0%);
-    }
+  &:hover {
+    filter: grayscale(0%);
+  }
 }
 
 .team:hover > .teamRespImage {
-    filter: grayscale(0);
+  filter: grayscale(0);
 }
 
 .teamTextBox {
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .peopleOf {
-    font-size: 16px;
-    font-weight: 400;
-    text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .teamArea {
-    font-size: 32px;
-    font-weight: 600;
-    margin: 0 0 10px 0;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
 }
 
 /* SECTION DISCOVER */
 .discoverContainer {
-    flex-direction: row;
-    width: 92%;
-    max-width: 1100px;
-    margin-bottom: 70px;
+  flex-direction: row;
+  width: 92%;
+  max-width: 1100px;
+  margin-bottom: 70px;
 }
 
 .discoverCard {
-    flex: 1 0 30%; /* Grow, Shrink, Basis */
-    margin: 1.5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: #061E33;
-    border-radius: 20px;
-    padding: 25px;
-    background: linear-gradient(135deg, #FCA702 30%, #FF0000);
+  flex: 1 0 30%; /* Grow, Shrink, Basis */
+  margin: 1.5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #061e33;
+  border-radius: 20px;
+  padding: 25px;
+  background: linear-gradient(135deg, #fca702 30%, #ff0000);
 }
 
 .discoverTextContainer {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 
 .discoverText {
-    font-size: 17px;
-    font-weight: 500;
-    text-transform: uppercase;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .discoverTitle {
-    font-size: 34px;
-    font-weight: 600;
-    margin:  0 0 5px 0;
+  font-size: 34px;
+  font-weight: 600;
+  margin: 0 0 5px 0;
 }
 
 .discoverDescription {
-    font-size: 20px;
-    font-weight: 400;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .discoverButton {
-    justify-self: flex-end;
-    margin-top: 50px;
-    background: #061E33;
-    padding: 17px 0;
-    text-transform: uppercase;
+  justify-self: flex-end;
+  margin-top: 50px;
+  background: #061e33;
+  padding: 17px 0;
+  text-transform: uppercase;
 }
 
 /* BOARD POP UP */
 .popUpBackground {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .boardPopUp {
-    position: fixed;
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    background: #FCA702;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 30px;
-    padding: 40px;
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  background: #fca702;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 30px;
+  padding: 40px;
 }
 
 .teamPopUp {
-    position: fixed;
-    top: 50vh;
-    left: 50vw;
-    transform: translate(-50%, -50%);
-    width: 90vw;
-    max-height: 97vh;
-    max-width: 1100px;
-    color: #061E33;
-    background: #E4E4E4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: scroll;
-    justify-content: space-between;
-    border-radius: 30px;
-    padding: 30px 40px;
-    z-index: 1000;
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  max-height: 97vh;
+  max-width: 1100px;
+  color: #061e33;
+  background: #e4e4e4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  justify-content: space-between;
+  border-radius: 30px;
+  padding: 30px 40px;
+  z-index: 1000;
 
-    &__Title {
-        font-size: 3.5rem;
-        font-weight: 600;
-        @media (max-width: 800px) {
-            display: none;
-        }
+  &__Title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    @media (max-width: 800px) {
+      display: none;
     }
+  }
 
-    &__Description {
-        font-size: 1.4rem;
-        @media (max-width: 800px) {
-            display: none;
-        }
+  &__Description {
+    font-size: 1.4rem;
+    @media (max-width: 800px) {
+      display: none;
     }
+  }
 }
 
 .teamHeader {
-    display: flex;
+  display: flex;
 }
 
 .teamHeaderLeft {
-    display: inline-block;
-    min-width: 220px;
+  display: inline-block;
+  min-width: 220px;
 }
 
 .teamHeaderRight {
-    padding-left: 2rem;
+  padding-left: 2rem;
 }
 
 $member-width: 160px;
@@ -304,499 +307,499 @@ $member-height: 215px;
 $member-margin: 30px;
 
 .teamContainer {
-    position: relative;
-    margin: 20px 0 0 0;
-    width: calc(((($member-margin * 2) + $member-width) * 4) + 30px);
-    height: calc(2 * $member-height);
-    overflow: hidden;
+  position: relative;
+  margin: 20px 0 0 0;
+  width: calc(((($member-margin * 2) + $member-width) * 4) + 30px);
+  height: calc(2 * $member-height);
+  overflow: hidden;
 
-    &__button {
-        position: absolute;
-        top: 45%;
-        z-index: 100;
-        background: #061E33;
+  &__button {
+    position: absolute;
+    top: 45%;
+    z-index: 100;
+    background: #061e33;
 
-        &__left {
-            left: 0;
-            transform: translate(0, -50%);
-        }
-
-        &__right {
-            right: 0;
-            transform: translate(-10px, -50%);
-        }
+    &__left {
+      left: 0;
+      transform: translate(0, -50%);
     }
 
-    @media (max-width: 1050px) {
-        width: calc(((($member-margin * 2) + $member-width) * 3) + 30px);
+    &__right {
+      right: 0;
+      transform: translate(-10px, -50%);
     }
-    @media (max-width: 800px) {
-        width: calc(((($member-margin * 2) + $member-width) * 2) + 30px);
-    }
+  }
+
+  @media (max-width: 1050px) {
+    width: calc(((($member-margin * 2) + $member-width) * 3) + 30px);
+  }
+  @media (max-width: 800px) {
+    width: calc(((($member-margin * 2) + $member-width) * 2) + 30px);
+  }
 }
 
-.teamRow, .teamRowTwo {
-    transition: left 0.7s cubic-bezier(0.39, 0.37, 0.07, 0.91);
-    height: $member-height;
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    top: 0;
-    left: 30px;
+.teamRow,
+.teamRowTwo {
+  transition: left 0.7s cubic-bezier(0.39, 0.37, 0.07, 0.91);
+  height: $member-height;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 0;
+  left: 30px;
 }
 
 .teamRowTwo {
-    top: $member-height;
+  top: $member-height;
 }
 
 .managerTitleLink {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .teamTitle {
-    font-size: 3.5rem;
-    font-weight: 600;
-    color: #061E33;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #061e33;
 }
 
 .teamMember {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    max-width: $member-width;
-    min-width: $member-width;
-    min-height: $member-height;
-    margin: 0 $member-margin;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: $member-width;
+  min-width: $member-width;
+  min-height: $member-height;
+  margin: 0 $member-margin;
 }
 
 .managerPopUpImageContainer,
 .memberPopUpImageContainer {
-    background: linear-gradient(135deg, #124877, #061E33 65%, #061E33);
-    border-radius: 100%;
-    overflow: hidden;
-    width: 115px;
-    height: 115px;
-    margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #124877, #061e33 65%, #061e33);
+  border-radius: 100%;
+  overflow: hidden;
+  width: 115px;
+  height: 115px;
+  margin-bottom: 0.5rem;
 
-    @media (max-width: 500px) {
-        width: 110px;
-        height: 110px;
-    }
+  @media (max-width: 500px) {
+    width: 110px;
+    height: 110px;
+  }
 
-    @media (max-width: 450px) {
-        width: 90px;
-        height: 90px;
-    }
+  @media (max-width: 450px) {
+    width: 90px;
+    height: 90px;
+  }
 
-    @media (max-width: 350px) {
-        width: 60px;
-        height: 60px;
-    }
+  @media (max-width: 350px) {
+    width: 60px;
+    height: 60px;
+  }
 }
 
 .managerPopUpImageContainer {
-    width: 170px;
-    height: 170px;
+  width: 170px;
+  height: 170px;
 }
 
 .managerImage {
-    width: 70%;
-    margin: 0 15%;
-    height: 100%;
+  width: 70%;
+  margin: 0 15%;
+  height: 100%;
 }
 
 .memberPopUpImage {
-    display: inline;
-    width: 100%;
+  display: inline;
+  width: 100%;
 }
 
 .memberPlaceholderImage {
-    display: inline;
-    width: 90%;
-    margin-left: 5%;
-    margin-top: 50%;
-    transform: translateY(-55%);
+  display: inline;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 50%;
+  transform: translateY(-55%);
 }
 
 .teamDescription {
-    color: #061E33;
-    font-size: 1.4rem;
-    word-wrap: break-word;        
-  overflow-wrap: break-word;   
-  white-space: normal;         
+  color: #061e33;
+  font-size: 1.4rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .managerName {
-    white-space: nowrap;
-    font-weight: 700;
-    font-size: 1.5rem;
+  white-space: nowrap;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .managerTitle {
-    font-size: 1.05rem;
-    text-transform: uppercase;
-    font-weight: 300;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  font-weight: 300;
 }
 
 .managersLinkedin {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    margin: 0 0 0 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0 0 0 12px;
 }
 
 .linkIcon {
-    width: 23px;
-    height: 23px;
-    cursor: pointer;
-    margin: 0 7px 0 0;
+  width: 23px;
+  height: 23px;
+  cursor: pointer;
+  margin: 0 7px 0 0;
 
-    &__icon {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+  &__icon {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .linkIcon:hover {
-    transform: scale(1.07);
+  transform: scale(1.07);
 }
 
 .memberTitle {
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 1rem;
 
-    @media (max-width: 400px) {
-        font-size: 0.7rem;
-    }
+  @media (max-width: 400px) {
+    font-size: 0.7rem;
+  }
 }
 
 .memberRoleLink {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
 
-    &__linkIcon {
-        margin: 0 0 0 6px;
-        width: 18px;
-        height: 18px;
-        cursor: pointer;
+  &__linkIcon {
+    margin: 0 0 0 6px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
 
-        :hover {
-            transform: scale(1.1);
-        }
+    :hover {
+      transform: scale(1.1);
     }
+  }
 }
 
 .memberName {
-    font-weight: 700;
-    font-size: 1.05rem;
+  font-weight: 700;
+  font-size: 1.05rem;
 
-    @media (max-width: 400px) {
-        font-size: 0.8rem;
-    }
+  @media (max-width: 400px) {
+    font-size: 0.8rem;
+  }
 }
 
 .imageContainer {
-    position: relative;
-    width: 40%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .imageBackground {
-    position: relative;
-    background: linear-gradient(135deg, #124877, #061E33 65%, #061E33);
-    width: 100%;
-    padding-bottom: 100%;
-    border-radius: 50%;
+  position: relative;
+  background: linear-gradient(135deg, #124877, #061e33 65%, #061e33);
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 50%;
 }
 
-.arrowButtonLeft, .arrowButtonRight {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 100;
+.arrowButtonLeft,
+.arrowButtonRight {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
 }
 
 .arrowButtonLeft {
-    left: -25px;
+  left: -25px;
 }
 
 .arrowButtonRight {
-    right: -25px;
+  right: -25px;
 }
 
 .imageClipMask {
-    position: absolute;
-    width: 100%;
-    height: calc(100% + 40px);
-    top: -30px;
-    left: 0;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: calc(100% + 40px);
+  top: -30px;
+  left: 0;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  overflow: hidden;
 }
 
 .boardPopUpImage {
-    width: 100%;
+  width: 100%;
 }
 
 .popUpTextContainer {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    color: #061E33;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #061e33;
 }
 
 .ourBoard {
-    font-size: 18px;
-    font-weight: 500;
-    text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
 .role {
-    font-size: 46px;
-    font-weight: 600;
-    margin: 0 0 10px 0;
+  font-size: 46px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
 }
 
 .description {
-    font-size: 18px;
-    font-weight: 400;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .discover {
-    display: flex;
-    flex-direction: column;
-    padding: 45px;
-    width: 90%;
-    max-width: 1300px;
-    border-radius: 40px;
-    background-color: white;
-    color: #061E33;
-    margin-top: 100px;
-    margin-bottom:150px;
+  display: flex;
+  flex-direction: column;
+  padding: 45px;
+  width: 90%;
+  max-width: 1300px;
+  border-radius: 40px;
+  background-color: white;
+  color: #061e33;
+  margin-top: 100px;
+  margin-bottom: 150px;
 
-    &__coming {
-        text-align: center;
-        font-size: 20px;
-        font-weight: 600;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        margin-bottom: 25px;
-    }
+  &__coming {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+  }
 
-    &__title {
-        text-align: center;
-        font-size: 60px;
-        font-weight: 700;
-        text-transform: uppercase;
-    }
+  &__title {
+    text-align: center;
+    font-size: 60px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
 }
 
 .blackArrowWhiteCircle {
-    display: none;
+  display: none;
 
-    @media (max-width: 600px) {
-        display: flex;
-    }
+  @media (max-width: 600px) {
+    display: flex;
+  }
 }
-  
+
 .whiteArrowBlackCircle {
-    display: none;
-  
-    @media (min-width: 601px) {
-      display: flex;
-    }
+  display: none;
+
+  @media (min-width: 601px) {
+    display: flex;
+  }
 }
 
-  
 @media (max-width: 800px) {
-    .arrowButtonLeft,
-    .arrowButtonRight,
-    .teamContainer__button {
-        display: none !important;
-    }
-    
-    .teamPopUp {
-        font-size: 0.9rem; /* o 14px */
-        padding: 20px;
-    
-        &__Title {
-          font-size: 2rem;
-        }
-    
-        &__Description {
-          font-size: 1rem;
-        }
-    
-        .description {
-          font-size: 0.9rem;
-        }
-    
-        .managerName{
-          font-size: 1.5rem;
-        }
+  .arrowButtonLeft,
+  .arrowButtonRight,
+  .teamContainer__button {
+    display: none !important;
+  }
 
-        .memberName {
-            font-size: 0.7rem;
-        }
-    
-        .managerTitle{
-          font-size: 1.4rem;
-        }
+  .teamPopUp {
+    font-size: 0.9rem; /* o 14px */
+    padding: 20px;
 
-        .memberTitle {
-            font-size: 0.6rem;
-        }
-
-        .managerPopUpImageContainer {
-            width: 150px;
-            height: 150px;
-        }
-
-        .teamHeaderLeft {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: flex-start;
-            min-width: 220px;
-            position: relative;
-            width: 100%;
-          }
-          
-          .managerDetails {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          }
-          
-          .arrowButtons {
-            display: flex;
-            flex-direction: row; 
-            gap: 10px;
-            position: absolute;
-            right: 0;
-          }
-          
+    &__Title {
+      font-size: 2rem;
     }
 
-    body.people-page {
-        overflow-x: hidden;
-    }
-    
-    body.people-page * {
-        box-sizing: border-box;
+    &__Description {
+      font-size: 1rem;
     }
 
-    .team {
-        flex-direction: column;
-        align-items: center;
+    .description {
+      font-size: 0.9rem;
     }
 
-    .teamRespImage {
-        height: 500px;
-        left: 0;            
+    .managerName {
+      font-size: 1.5rem;
     }
 
-    .teamTextBox {
-        width: 80%;
-        padding: 15px;
-        box-sizing: border-box;
+    .memberName {
+      font-size: 0.7rem;
     }
 
-    .boardContainer {
-        width: 75%;
-    }
-    .discoverContainer {
-        width: 75%;
-    }
-    .boardMember {
-        flex: 1 0 100%;
-    }
-    .teamsContainer {
-        width: 90%;
+    .managerTitle {
+      font-size: 1.4rem;
     }
 
-    .managementArea, .joinOurTeams {
-        font-size: 32px;
-        width: 100%;
+    .memberTitle {
+      font-size: 0.6rem;
     }
-    
-    .teamArea {
+
+    .managerPopUpImageContainer {
+      width: 150px;
+      height: 150px;
+    }
+
+    .teamHeaderLeft {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      min-width: 220px;
+      position: relative;
+      width: 100%;
+    }
+
+    .managerDetails {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .arrowButtons {
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  body.people-page {
+    overflow-x: hidden;
+  }
+
+  body.people-page * {
+    box-sizing: border-box;
+  }
+
+  .team {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .teamRespImage {
+    height: 500px;
+    left: 0;
+  }
+
+  .teamTextBox {
+    width: 80%;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .boardContainer {
+    width: 75%;
+  }
+  .discoverContainer {
+    width: 75%;
+  }
+  .boardMember {
+    flex: 1 0 100%;
+  }
+  .teamsContainer {
+    width: 90%;
+  }
+
+  .managementArea,
+  .joinOurTeams {
+    font-size: 32px;
+    width: 100%;
+  }
+
+  .teamArea {
     font-size: 24px;
-    }
+  }
 
-    .boardMemberName {
+  .boardMemberName {
     font-size: 20px;
-    }
+  }
 
-    .teamHeaderRight {
+  .teamHeaderRight {
     padding-left: 1rem;
-    }
+  }
 
-    .boardGrid, .teamsGrid, .discoverContainer {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-        gap: 1rem;
-    }
+  .boardGrid,
+  .teamsGrid,
+  .discoverContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 1rem;
+  }
 
-    .teamDescription {
-        word-wrap: break-word;        
-      overflow-wrap: break-word;   
-      white-space: normal;         
-    }
+  .teamDescription {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+  }
 
-    .teamContainer {
-        width: 100% !important;
-        height: auto;
-        position: relative;
-        display: flex;
-        overflow: visible;
-        flex-wrap: wrap;
-        gap: 8px;
-        padding: 5px 1;
-      }
-      
-    .teamRow,
-    .teamRowTwo {
-        position: static;
-        height: auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        gap: 1px;
-        width: 100%;
-    }
+  .teamContainer {
+    width: 100% !important;
+    height: auto;
+    position: relative;
+    display: flex;
+    overflow: visible;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 5px 1;
+  }
 
-    .teamMember {
-        display: flex;
-        align-items: center;
-        flex: 0 0 30%;
-        min-width: 20%;
-        max-width: 30%;
-        margin: 2% 1%;
-        min-height: 90%;
-        max-height: 95%;
-    }
+  .teamRow,
+  .teamRowTwo {
+    position: static;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1px;
+    width: 100%;
+  }
 
-    .memberRoleLink {
-        justify-content: center;
-    }
+  .teamMember {
+    display: flex;
+    align-items: center;
+    flex: 0 0 30%;
+    min-width: 20%;
+    max-width: 30%;
+    margin: 2% 1%;
+    min-height: 90%;
+    max-height: 95%;
+  }
+
+  .memberRoleLink {
+    justify-content: center;
+  }
 }
-
-
-

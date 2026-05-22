@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "prepare": "husky",
+    "lint": "next lint",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "format:check": "prettier --check \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "dependencies": {
     "@directus/sdk": "18.0.3",
@@ -26,7 +29,6 @@
     "node-telegram-bot-api": "^0.63.0",
     "nodemailer": "^6.9.5",
     "pino": "^8.15.6",
-    "prisma": "^4.11.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "sass": "^1.68.0",
@@ -37,6 +39,20 @@
   "devDependencies": {
     "@types/formidable": "^3.4.3",
     "@types/node-telegram-bot-api": "^0.61.8",
-    "@types/nodemailer": "^6.4.11"
+    "@types/nodemailer": "^6.4.11",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^13.5.11",
+    "eslint-config-prettier": "^9.1.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.2",
+    "prettier": "^3.8.3",
+    "pretty-quick": "^4.2.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix --max-warnings=0"
+    ],
+    "*.{json,css,scss,md}": "prettier --write"
   }
 }

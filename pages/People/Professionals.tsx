@@ -1,106 +1,99 @@
-import Layout from "@/components/Layout";
-import styles from '@/styles/People/Professionals.module.scss'
-import {useRouter} from "next/router";
-import {useEffect, useState} from "react";
-import { fetchProfessionals } from "../api/directus";
-import { T, useTranslate } from "@tolgee/react";
-
-
-function sortByLastName(professionals: ProfessionalProps[]): ProfessionalProps[] {
-    return professionals.sort((a, b) => {
-        const lastNameA = a.name.split(" ").pop()!.toLowerCase();
-        const lastNameB = b.name.split(" ").pop()!.toLowerCase(); 
-        if (lastNameA < lastNameB) return -1;
-        if (lastNameA > lastNameB) return 1;
-        return 0;
-    });
-}
+import Layout from '@/components/Layout';
+import styles from '@/styles/People/Professionals.module.scss';
+import { useMemo } from 'react';
+import { fetchProfessionals } from '../api/directus';
+import { T, useTranslate } from '@tolgee/react';
+import { useAsyncData } from '@/hooks/useAsyncData';
+import { useImageExists } from '@/hooks/useImageExists';
+import { sortByLastName } from '@/utils/people';
 
 export default function Professionals() {
-    const { t } = useTranslate();
-    const [ProfessionalsData, setProfessionals] = useState<ProfessionalProps[]>([]);
+  const { t } = useTranslate();
+  const ProfessionalsData = useAsyncData(fetchProfessionals, [] as ProfessionalProps[]);
+  const sortedProfessionals = useMemo(() => sortByLastName(ProfessionalsData), [ProfessionalsData]);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const data = await fetchProfessionals();
-            setProfessionals(data);
-        };
-
-        fetchData();
-    }, []);
-
-    return (
-        <Layout triangles>
-
-            <div className={styles.faculty}>
-                <div className={styles.faculty__left}>
-                    <div className={styles.faculty__left__imageContainer}>
-                        <div className={styles.faculty__left__imageContainer__mask}>
-                            <img className={styles.faculty__left__imageContainer__image}
-                                   src={'/People/professionals/paolo_montuschi.png'}
-                                   alt={t('professionals.advisor.alt')} width="0" height="0" sizes="100vw"/>
-                        </div>
-                    </div>
-                    <text className={styles.faculty__left__name}>Paolo Montuschi</text>
-                    <text className={styles.faculty__left__role}><T keyName="professionals.advisor.role" /></text>
-                </div>
-
-                <div className={styles.faculty__right}>
-                    <text className={styles.faculty__right__subtitle}><T keyName="professionals.advisor.kicker" /></text>
-                    <text className={styles.faculty__right__title}><T keyName="professionals.advisor.title" /></text>
-                    <text className={styles.faculty__right__text}>
-                        <T keyName="professionals.advisor.bio" />
-                    </text>
-                </div>
+  return (
+    <Layout triangles>
+      <div className={styles.faculty}>
+        <div className={styles.faculty__left}>
+          <div className={styles.faculty__left__imageContainer}>
+            <div className={styles.faculty__left__imageContainer__mask}>
+              <img
+                className={styles.faculty__left__imageContainer__image}
+                src={'/People/professionals/paolo_montuschi.png'}
+                alt={t('professionals.advisor.alt')}
+                width="0"
+                height="0"
+                sizes="100vw"
+              />
             </div>
+          </div>
+          <span className={styles.faculty__left__name}>Paolo Montuschi</span>
+          <span className={styles.faculty__left__role}>
+            <T keyName="professionals.advisor.role" />
+          </span>
+        </div>
 
-            <div className={styles.professionalsContainer}>
-                <text className={styles.professionalsContainer__professionals}><T keyName="professionals.list.kicker" /></text>
-                <text className={styles.professionalsContainer__inducted}><T keyName="professionals.list.title" /></text>
+        <div className={styles.faculty__right}>
+          <span className={styles.faculty__right__subtitle}>
+            <T keyName="professionals.advisor.kicker" />
+          </span>
+          <span className={styles.faculty__right__title}>
+            <T keyName="professionals.advisor.title" />
+          </span>
+          <span className={styles.faculty__right__text}>
+            <T keyName="professionals.advisor.bio" />
+          </span>
+        </div>
+      </div>
 
-                <div className={styles.professionalsContainer__grid}>
-                    {sortByLastName(ProfessionalsData).map((al, index) => (
-                        <Professional professional={al} key={index}/>
-                    ))}
-                </div>
-            </div>
+      <div className={styles.professionalsContainer}>
+        <span className={styles.professionalsContainer__professionals}>
+          <T keyName="professionals.list.kicker" />
+        </span>
+        <span className={styles.professionalsContainer__inducted}>
+          <T keyName="professionals.list.title" />
+        </span>
 
-        </Layout>
-    )
+        <div className={styles.professionalsContainer__grid}>
+          {sortedProfessionals.map((al, index) => (
+            <Professional professional={al} key={index} />
+          ))}
+        </div>
+      </div>
+    </Layout>
+  );
 }
 
-function Professional({professional}: {
-    professional: ProfessionalProps,
-}) {
+function Professional({ professional }: { professional: ProfessionalProps }) {
+  const imageExists = useImageExists(professional.imageSrc);
+  const { t } = useTranslate();
 
-    const [imageExists, setImageExists] = useState(false);
-    const { t } = useTranslate();
-
-    useEffect(() => {
-        const img = new Image();
-        img.src = professional.imageSrc || "";
-        img.onload = () => setImageExists(true);
-    }, []);
-
-    return (
-        <div className={styles.professional} onClick={() => {
-        }}>
-            <div className={styles.professional__imageContainer}>
-                {professional.imageSrc && imageExists ?
-                    <img className={styles.professional__imageContainer__image} src={professional.imageSrc}
-                          alt={professional.name} loading="lazy"/>
-                :
-                    <img className={styles.professional__imageContainer__placeholder} src="/Common/hkn_ideogramma_blu.svg"
-                         alt={t('professionals.list.placeholder_alt', { name: professional.name })} loading="lazy"/>
-                }
-
-            </div>
-            <text className={styles.professional__name}>{professional.name}</text>
-        </div>
-    );
+  return (
+    <div className={styles.professional}>
+      <div className={styles.professional__imageContainer}>
+        {professional.imageSrc && imageExists ? (
+          <img
+            className={styles.professional__imageContainer__image}
+            src={professional.imageSrc}
+            alt={professional.name}
+            loading="lazy"
+          />
+        ) : (
+          <img
+            className={styles.professional__imageContainer__placeholder}
+            src="/Common/hkn_ideogramma_blu.svg"
+            alt={t('professionals.list.placeholder_alt', { name: professional.name })}
+            loading="lazy"
+          />
+        )}
+      </div>
+      <span className={styles.professional__name}>{professional.name}</span>
+    </div>
+  );
 }
 
 export interface ProfessionalProps {
-    name: string,
-    imageSrc?: string,
+  name: string;
+  imageSrc?: string;
 }
