@@ -161,8 +161,8 @@ export async function fetchBoard() {
 	const boards = await directus.request(
 		readItems('board', {
 			"limit": IMPORT_LIMIT,
-			"sort": ["-year"],
-			"fields": ["id", "member.name", "member.last_name", "role", "year", "member.image"],
+			"sort": ["-year", "-position"],
+			"fields": ["id", "member.name", "member.last_name", "role", "year", "member.image", "position"],
 		})
 	).then(boards => boards.filter(board => board.year === boards[0].year));
 
