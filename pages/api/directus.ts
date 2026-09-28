@@ -156,13 +156,21 @@ export async function fetchTeams() {
 	return teamProps;
 }
 
+function shortVersion(input?: string | null) {
+	let hash = 0;
+	for (const char of input ?? "") {
+		hash = (hash * 31 + char.charCodeAt(0)) >>> 0;
+	}
+	return hash.toString(16).padStart(8, "0");
+}
+
 export async function fetchBoard() {
 	const directus = createDirectus(API_URL).with(rest());
 	const boards = await directus.request(
 		readItems('board', {
 			"limit": IMPORT_LIMIT,
 			"sort": ["-year", "-position"],
-			"fields": ["id", "member.name", "member.last_name", "role", "year", "member.image", "position"],
+			"fields": ["id", "member.name", "member.last_name", "role", "year", "member.image.id", "member.image.modified_on", "position"],
 		})
 	).then(boards => boards.filter(board => board.year === boards[0].year));
 
@@ -174,8 +182,7 @@ export async function fetchBoard() {
 		let memberName = member.name.split(" ")[0];
 		let name = memberName + " " + member.last_name;
 		let role = board.role;
-		let imageSrc = `${API_URL}assets/${member.image}`;
-
+		let imageSrc = `${API_URL}assets/${member.image?.id}?v=${shortVersion(member.image?.modified_on)}`;
 		boardProps.push({ name: name, role: role, imageSrc: imageSrc, roleDescription: "" });
 	}
 
@@ -188,7 +195,7 @@ export async function fetchPastBoards() {
 		readItems('board', {
 			"limit": IMPORT_LIMIT,
 			"sort": ["-year", "-id"],
-			"fields": ["id", "member.name", "member.last_name", "role", "year", "member.image"],
+			"fields": ["id", "member.name", "member.last_name", "role", "year", "member.image.id", "member.image.modified_on"],
 		})
 	);
 
@@ -199,7 +206,7 @@ export async function fetchPastBoards() {
 		let memberName = member.name.split(" ")[0];
 		let name = memberName + " " + member.last_name;
 		let role = board.role;
-		let imageSrc = `${API_URL}assets/${member.image}`;
+		let imageSrc = `${API_URL}assets/${member.image?.id}?v=${shortVersion(member.image?.modified_on)}`;
 		if (!boardMap.has(year)) {
 			boardMap.set(year, []);
 		}
@@ -221,6 +228,12 @@ export async function fetchProfessionals() {
 	const professionals = await directus.request(
 		readItems('professional', {
 			"limit": IMPORT_LIMIT,
+			"fields": [
+				"name",
+				"last_name",
+				"image.id",
+				"image.modified_on"
+			],
 		})
 	);
 
@@ -228,7 +241,7 @@ export async function fetchProfessionals() {
 	for (const professional of professionals) {
 		let profName = professional.name.split(" ")[0];
 		let name = profName + " " + professional.last_name;
-		let imageSrc = `${API_URL}assets/${professional.image}`;
+		let imageSrc = `${API_URL}assets/${professional.image?.id}?v=${shortVersion(professional.image?.modified_on)}`;
 		professionalProps.push({ name: name, imageSrc: imageSrc });
 	}
 
