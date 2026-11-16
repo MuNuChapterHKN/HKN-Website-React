@@ -22,10 +22,12 @@ export default function StudyGroup({studyGroup, index}: {studyGroup: StudyGroupP
                         <img className={styles.iconLocation} src="/Activities/StudyGroups/clock.png" alt="Calendar"/>
                         <text className={styles.textLocation}>{studyGroup.date}</text>
                     </div>
+                    {/*
                     <div className={styles.location}>
                         <img className={styles.iconLocation} src="/Activities/StudyGroups/pin.png" alt="Calendar"/>
                         <text className={styles.textLocation}>SALA C</text>
                     </div>
+                    */}
                     <RoundButton className={`darkButton ${styles.buttonTelegram}`} onClick={() => window.open(studyGroup.link)}>TELEGRAM</RoundButton>
                 </div>
             </div>
