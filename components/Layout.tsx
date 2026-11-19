@@ -4,6 +4,7 @@ import Header from "./Header";
 import BackgroundPolygons from "@/components/BackgroundPolygons";
 import Footer from "@/components/Footer";
 import {ReactNode} from "react";
+import CookiePopup from "@/components/CookiePopup";
 
 const Layout = ( { children, triangles = false, darkHeader = false }: {children: ReactNode, triangles?: boolean, darkHeader?: boolean }) => {
 
@@ -28,6 +29,8 @@ const Layout = ( { children, triangles = false, darkHeader = false }: {children:
                 <div className={styles.pageContent}>
                     {children}
                 </div>
+
+                <CookiePopup />
 
                 <Footer/>
             </div>
